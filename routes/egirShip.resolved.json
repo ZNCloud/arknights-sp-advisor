@@ -1,0 +1,223 @@
+{
+ "bondId": "egirShip",
+ "bond": "阿戈尔",
+ "patch": "卫戍协议：盟约 下半期（2026-03-14 开，03-27 更新）；与上半期差异：吞噬伤害 6000→5000、复活 2 名→3 名、吞噬优先顺序改为「更靠左和靠上」",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "深巡",
+   "chessId": "chess_char_1_04_a",
+   "baseId": "chess_char_1_04_a",
+   "group": "core_ops",
+   "role": "最便宜的阿戈尔 + 长手减速，对空/道中兜底，也是最好的「食材」",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "幽灵鲨",
+   "chessId": "chess_char_2_07_a",
+   "baseId": "chess_char_2_07_a",
+   "group": "core_ops",
+   "role": "战斗中自身被击倒 → 阿戈尔 +3（精锐+6），吞噬/送死循环的层数来源",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "斯卡蒂",
+   "chessId": "chess_char_3_05_a",
+   "baseId": "chess_char_3_05_a",
+   "group": "core_ops",
+   "role": "阿戈尔/坚守/突袭三户口：每击倒 2 名单位 → 三盟约各 +1（精锐+2）；带 1 技能",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "egirShip",
+    "steadShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "海霓",
+   "chessId": "chess_char_3_09_a",
+   "baseId": "chess_char_3_09_a",
+   "group": "core_ops",
+   "role": "阿戈尔/奥术：首次击倒敌人或我方干员 → 阿戈尔+奥术各 +3（精锐+6）",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "egirShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "乌尔比安",
+   "chessId": "chess_char_5_05_a",
+   "baseId": "chess_char_5_05_a",
+   "group": "core_ops",
+   "role": "攻击白值最高的「优质食材」，放最前被吃",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "归溟幽灵鲨",
+   "chessId": "chess_char_5_13_a",
+   "baseId": "chess_char_5_13_a",
+   "group": "core_ops",
+   "role": "阿戈尔/不屈：自身被击倒或替身与本体切换 → 阿戈尔+5、不屈+5（精锐+10/+10）",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "egirShip",
+    "indomShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "歌蕾蒂娅",
+   "chessId": "chess_char_4_12_a",
+   "baseId": "chess_char_4_12_a",
+   "group": "good_ops",
+   "role": "进入休整期时若同一行有 3 名干员 → 白给 1 个斯卡蒂/幽灵鲨/深巡（精锐 2 次）",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "水月",
+   "chessId": "chess_char_4_09_a",
+   "baseId": "chess_char_4_09_a",
+   "group": "good_ops",
+   "role": "阿戈尔/独行，每叠 3 层自身攻击 +1%（精锐+2%），可当次级终端",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "egirShip",
+    "soloShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "浊心斯卡蒂",
+   "chessId": "chess_char_6_04_a",
+   "baseId": "chess_char_6_04_a",
+   "group": "good_ops",
+   "role": "每叠 10 层每秒回 50/100 生命并加技力回复；层数 >200 时 3 技能会把自己唱死",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "砾",
+   "chessId": "chess_char_2_12_a",
+   "baseId": "chess_char_2_12_a",
+   "group": "fill_ops",
+   "role": "不屈，反复被击倒叠层",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "indomShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "亚叶",
+   "group": "fill_ops",
+   "role": "助力奶，奶量高、有协防户口",
+   "claimedTier": 4,
+   "found": false
+  },
+  {
+   "name": "缪尔赛思",
+   "chessId": "chess_char_6_11_a",
+   "baseId": "chess_char_6_11_a",
+   "group": "fill_ops",
+   "role": "调和，凑激活人数",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "maniShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "海沟实验体",
+   "itemId": "chess_item_6_04_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "阿戈尔重刃",
+   "itemId": "chess_item_3_07_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

@@ -1,0 +1,1457 @@
+{
+ "layer": 130,
+ "addonLayer": 75,
+ "refAtk": 577,
+ "minDamageRatio": 0.05,
+ "bossHitLimit": 300000,
+ "combatTimeScale": 2,
+ "lp": 15,
+ "rows": [
+  {
+   "bossId": "boss_1",
+   "name": "假想敌：胄",
+   "pool": 3600000,
+   "poolEff": 4320000,
+   "def": 1000,
+   "res": 25,
+   "lpr": 2,
+   "defHalf": 1000,
+   "resHalf": 25,
+   "phase": 0.2,
+   "atHpRatio": 0.2,
+   "windowRealS": 165,
+   "dpsNeeded": 26182,
+   "evadeMul": null,
+   "physTakenMul": 0.5,
+   "artsTakenMul": 0.5,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.139,
+     "physPreci": 0.247,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.122,
+     "physPreci": 0.235,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.025,
+     "physPreci": 0.025,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 1.133,
+     "physPreci": 1.393,
+     "arts": 3.9,
+     "artsPreci": 5.299,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.167,
+     "physPreci": 0.267,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.067,
+     "physPreci": 0.197,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.057,
+     "physPreci": 0.057,
+     "arts": 2.233,
+     "artsPreci": 3.034,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.025,
+     "physPreci": 0.025,
+     "arts": 0.975,
+     "artsPreci": 1.325,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "enemies.json 1.hp_ratio 0.2 / 1.damage_scale 0.5（bosses.js kitHelm）"
+  },
+  {
+   "bossId": "boss_2",
+   "name": "假想敌：铳",
+   "pool": 3000000,
+   "poolEff": 3000000,
+   "def": 1100,
+   "res": 60,
+   "lpr": 2,
+   "defHalf": 1100,
+   "resHalf": 60,
+   "phase": 1,
+   "atHpRatio": 1,
+   "windowRealS": 165,
+   "dpsNeeded": 18182,
+   "evadeMul": 1,
+   "physTakenMul": 1,
+   "artsTakenMul": 1,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.206,
+     "physPreci": 0.444,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.168,
+     "physPreci": 0.417,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.05,
+     "physPreci": 0.05,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 2.094,
+     "physPreci": 2.666,
+     "arts": 3.12,
+     "artsPreci": 4.524,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.267,
+     "physPreci": 0.487,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.05,
+     "physPreci": 0.333,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.115,
+     "physPreci": 0.115,
+     "arts": 1.786,
+     "artsPreci": 2.59,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.05,
+     "physPreci": 0.05,
+     "arts": 0.78,
+     "artsPreci": 1.131,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "无减伤（talents 只有 3.atk_scale 冲锋）"
+  },
+  {
+   "bossId": "boss_3",
+   "name": "假想敌：管",
+   "pool": 4000000,
+   "poolEff": 4000000,
+   "def": 700,
+   "res": 50,
+   "lpr": 2,
+   "defHalf": 700,
+   "resHalf": 50,
+   "phase": 1,
+   "atHpRatio": 1,
+   "windowRealS": 165,
+   "dpsNeeded": 24242,
+   "evadeMul": 1,
+   "physTakenMul": 1,
+   "artsTakenMul": 1,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.495,
+     "physPreci": 0.646,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.47,
+     "physPreci": 0.629,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.05,
+     "physPreci": 0.321,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 2.787,
+     "physPreci": 3.151,
+     "arts": 3.9,
+     "artsPreci": 5.07,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.533,
+     "physPreci": 0.673,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.393,
+     "physPreci": 0.575,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.115,
+     "physPreci": 0.345,
+     "arts": 2.233,
+     "artsPreci": 2.903,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.05,
+     "physPreci": 0.151,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "无减伤（talents: 1.hp_ratio 0.5 是召唤间隔，不是减伤）"
+  },
+  {
+   "bossId": "boss_4",
+   "name": "盐风主教昆图斯",
+   "pool": 4200000,
+   "poolEff": 4200000,
+   "def": 500,
+   "res": 50,
+   "lpr": 1,
+   "defHalf": 500,
+   "resHalf": 50,
+   "phase": 1,
+   "atHpRatio": 1,
+   "windowRealS": 165,
+   "dpsNeeded": 25455,
+   "evadeMul": 1,
+   "physTakenMul": 1,
+   "artsTakenMul": 1,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.639,
+     "physPreci": 0.747,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.622,
+     "physPreci": 0.735,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.307,
+     "physPreci": 0.515,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 3.133,
+     "physPreci": 3.393,
+     "arts": 3.9,
+     "artsPreci": 5.07,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.667,
+     "physPreci": 0.767,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.567,
+     "physPreci": 0.697,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.306,
+     "physPreci": 0.901,
+     "arts": 2.233,
+     "artsPreci": 2.903,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.133,
+     "physPreci": 0.393,
+     "arts": 0.975,
+     "artsPreci": 1.268,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "无减伤"
+  },
+  {
+   "bossId": "boss_5",
+   "name": "卢西恩，“猩红血钻”",
+   "pool": 3000000,
+   "poolEff": 3000000,
+   "def": 600,
+   "res": 40,
+   "lpr": 30,
+   "defHalf": 600,
+   "resHalf": 40,
+   "phase": 1,
+   "atHpRatio": 1,
+   "windowRealS": 165,
+   "dpsNeeded": 18182,
+   "evadeMul": 0.6,
+   "physTakenMul": 0.6,
+   "artsTakenMul": 0.6,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.34,
+     "physPreci": 0.418,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.328,
+     "physPreci": 0.409,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.101,
+     "physPreci": 0.251,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 1.776,
+     "physPreci": 1.963,
+     "arts": 4.68,
+     "artsPreci": 5.616,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.36,
+     "physPreci": 0.432,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.288,
+     "physPreci": 0.382,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.069,
+     "physPreci": 0.374,
+     "arts": 2.679,
+     "artsPreci": 3.215,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.03,
+     "physPreci": 0.163,
+     "arts": 1.17,
+     "artsPreci": 1.404,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "talents evade.prob 0.4（未被阻挡时闪避物理/法术）；真伤不吃闪避"
+  },
+  {
+   "bossId": "boss_6",
+   "name": "阿利斯泰尔，帝国余晖",
+   "pool": 3980000,
+   "poolEff": 3980000,
+   "def": 1030,
+   "res": 20,
+   "lpr": 2,
+   "defHalf": 2060,
+   "resHalf": 65,
+   "phase": 0.5,
+   "atHpRatio": 0.5,
+   "windowRealS": 165,
+   "dpsNeeded": 24121,
+   "evadeMul": null,
+   "physTakenMul": 1,
+   "artsTakenMul": 1,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.084,
+     "physPreci": 0.091,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.082,
+     "physPreci": 0.09,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.05,
+     "physPreci": 0.05,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 0.72,
+     "physPreci": 1.942,
+     "arts": 3.798,
+     "artsPreci": 6.307,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.086,
+     "physPreci": 0.091,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.068,
+     "physPreci": 0.088,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.115,
+     "physPreci": 0.115,
+     "arts": 2.175,
+     "artsPreci": 3.611,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.05,
+     "physPreci": 0.05,
+     "arts": 0.95,
+     "artsPreci": 1.577,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "talents advance.hp_ratio 0.5 / advance.def 1 / advance.magic_resistance 45"
+  },
+  {
+   "bossId": "boss_7",
+   "name": "“萨米的意志”",
+   "pool": 4000000,
+   "poolEff": 7000000,
+   "def": 800,
+   "res": 40,
+   "lpr": 2,
+   "defHalf": 800,
+   "resHalf": 40,
+   "phase": 0.5,
+   "atHpRatio": 0.5,
+   "windowRealS": 165,
+   "dpsNeeded": 42424,
+   "evadeMul": null,
+   "physTakenMul": 0.4,
+   "artsTakenMul": 0.4,
+   "channels": {
+    "yanShip": {
+     "atkMul": 2.4,
+     "aspdMul": 1,
+     "atkEff": 1385,
+     "phys": 0.169,
+     "physPreci": 0.238,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    },
+    "victoriaShip": {
+     "atkMul": 2.29,
+     "aspdMul": 1,
+     "atkEff": 1321,
+     "phys": 0.158,
+     "physPreci": 0.23,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    },
+    "kjeragShip": {
+     "atkMul": 1.25,
+     "aspdMul": 1,
+     "atkEff": 721,
+     "phys": 0.02,
+     "physPreci": 0.089,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    },
+    "sargonShip": {
+     "atkMul": 4,
+     "aspdMul": 4,
+     "atkEff": 2308,
+     "phys": 1.045,
+     "physPreci": 1.212,
+     "arts": 2.674,
+     "artsPreci": 4.032,
+     "true": 1
+    },
+    "kazimierzShip": {
+     "atkMul": 2.6,
+     "aspdMul": 1,
+     "atkEff": 1500,
+     "phys": 0.187,
+     "physPreci": 0.251,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    },
+    "lateranoShip": {
+     "atkMul": 2,
+     "aspdMul": 1,
+     "atkEff": 1154,
+     "phys": 0.123,
+     "physPreci": 0.206,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    },
+    "siracusaShip": {
+     "atkMul": 1,
+     "aspdMul": 2.29,
+     "atkEff": 577,
+     "phys": 0.046,
+     "physPreci": 0.046,
+     "arts": 1.531,
+     "artsPreci": 2.308,
+     "true": 1
+    },
+    "egirShip": {
+     "atkMul": 1,
+     "aspdMul": 1,
+     "atkEff": 577,
+     "phys": 0.02,
+     "physPreci": 0.02,
+     "arts": 0.669,
+     "artsPreci": 1.008,
+     "true": 1
+    }
+   },
+   "trueChannelDps": {
+    "siracusa": 1880,
+    "kazimierz": 2700
+   },
+   "note": "talents Madness.damage_resistance 0.6 → 受物法 ×0.4；真伤/元素不乘"
+  }
+ ],
+ "payoff": {
+  "boss_1": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.32,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.021
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.32,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.021
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.97,
+    "kPreci": 1.32,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.021
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 3.9,
+    "kPreci": 5.3,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.086
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.17,
+    "kPreci": 0.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.004
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.07,
+    "kPreci": 0.2,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.001
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.06,
+    "kPreci": 0.06,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.001
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.03,
+    "kPreci": 0.03,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 26182,
+    "share": 0.001
+   }
+  },
+  "boss_2": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.78,
+    "kPreci": 1.13,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.025
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.78,
+    "kPreci": 1.13,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.025
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.78,
+    "kPreci": 1.13,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.025
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 3.12,
+    "kPreci": 4.52,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.099
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.27,
+    "kPreci": 0.49,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.008
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.05,
+    "kPreci": 0.33,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.002
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.12,
+    "kPreci": 0.12,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.004
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.05,
+    "kPreci": 0.05,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.002
+   }
+  },
+  "boss_3": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.023
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.023
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.023
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 3.9,
+    "kPreci": 5.07,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.093
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.53,
+    "kPreci": 0.67,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.013
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.39,
+    "kPreci": 0.57,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.009
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.12,
+    "kPreci": 0.34,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.003
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.05,
+    "kPreci": 0.15,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24242,
+    "share": 0.001
+   }
+  },
+  "boss_4": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.022
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.022
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.97,
+    "kPreci": 1.27,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.022
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 3.9,
+    "kPreci": 5.07,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.088
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.67,
+    "kPreci": 0.77,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.015
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.57,
+    "kPreci": 0.7,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.013
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.31,
+    "kPreci": 0.9,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.007
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.13,
+    "kPreci": 0.39,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 25455,
+    "share": 0.003
+   }
+  },
+  "boss_5": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 1.17,
+    "kPreci": 1.4,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.037
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 1.17,
+    "kPreci": 1.4,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.037
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 1.17,
+    "kPreci": 1.4,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.037
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 4.68,
+    "kPreci": 5.62,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.149
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.36,
+    "kPreci": 0.43,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.011
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.29,
+    "kPreci": 0.38,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.009
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.07,
+    "kPreci": 0.37,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.002
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.03,
+    "kPreci": 0.16,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 18182,
+    "share": 0.001
+   }
+  },
+  "boss_6": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.95,
+    "kPreci": 1.58,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.023
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.95,
+    "kPreci": 1.58,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.023
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.95,
+    "kPreci": 1.58,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.023
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 3.8,
+    "kPreci": 6.31,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.091
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.09,
+    "kPreci": 0.09,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.002
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.07,
+    "kPreci": 0.09,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.002
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.12,
+    "kPreci": 0.12,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.003
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.05,
+    "kPreci": 0.05,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 24121,
+    "share": 0.001
+   }
+  },
+  "boss_7": {
+   "yanShip": {
+    "channel": "arts",
+    "k": 0.67,
+    "kPreci": 1.01,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.009
+   },
+   "victoriaShip": {
+    "channel": "arts",
+    "k": 0.67,
+    "kPreci": 1.01,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.009
+   },
+   "kjeragShip": {
+    "channel": "mixed",
+    "k": 0.67,
+    "kPreci": 1.01,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.009
+   },
+   "sargonShip": {
+    "channel": "mixed",
+    "k": 2.67,
+    "kPreci": 4.03,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.036
+   },
+   "kazimierzShip": {
+    "channel": "phys",
+    "k": 0.19,
+    "kPreci": 0.25,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.003
+   },
+   "lateranoShip": {
+    "channel": "phys",
+    "k": 0.12,
+    "kPreci": 0.21,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.002
+   },
+   "siracusaShip": {
+    "channel": "phys",
+    "k": 0.05,
+    "kPreci": 0.05,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0.001
+   },
+   "egirShip": {
+    "channel": "phys",
+    "k": 0.02,
+    "kPreci": 0.02,
+    "trueDps": {
+     "siracusa": 1880,
+     "kazimierz": 2700
+    },
+    "needDps": 42424,
+    "share": 0
+   }
+  }
+ },
+ "bossPayoff": {
+  "boss_1": {
+   "arts": 0.975,
+   "artsArcane": 1.325,
+   "phys": 0.167,
+   "physPreci": 0.267,
+   "sargon": 3.9,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 26182
+  },
+  "boss_2": {
+   "arts": 0.78,
+   "artsArcane": 1.131,
+   "phys": 0.267,
+   "physPreci": 0.487,
+   "sargon": 3.12,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 18182
+  },
+  "boss_3": {
+   "arts": 0.975,
+   "artsArcane": 1.268,
+   "phys": 0.533,
+   "physPreci": 0.673,
+   "sargon": 3.9,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 24242
+  },
+  "boss_4": {
+   "arts": 0.975,
+   "artsArcane": 1.268,
+   "phys": 0.667,
+   "physPreci": 0.901,
+   "sargon": 3.9,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 25455
+  },
+  "boss_5": {
+   "arts": 1.17,
+   "artsArcane": 1.404,
+   "phys": 0.36,
+   "physPreci": 0.432,
+   "sargon": 4.68,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 18182
+  },
+  "boss_6": {
+   "arts": 0.95,
+   "artsArcane": 1.577,
+   "phys": 0.115,
+   "physPreci": 0.115,
+   "sargon": 3.798,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 24121
+  },
+  "boss_7": {
+   "arts": 0.669,
+   "artsArcane": 1.008,
+   "phys": 0.187,
+   "physPreci": 0.251,
+   "sargon": 2.674,
+   "sargonStacksRequired": 25,
+   "true": 1,
+   "trueDpsCeiling": 2700,
+   "needDps": 42424
+  }
+ }
+}

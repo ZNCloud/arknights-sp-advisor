@@ -1,0 +1,73 @@
+[
+  {
+    "id": "baseline",
+    "name": "默认 bot（对照）",
+    "env": {},
+    "measured": {
+      "solo_ABYSS_6seed_LP45": { "wins": "0/6", "avgRounds": 12.67 },
+      "multi4_ABYSS_6seed_LP45": { "wins": "0/6", "avgRounds": 11.67 },
+      "solo_ABYSS_12seed_LP45": { "wins": "0/12", "avgRounds": 12.5 }
+    }
+  },
+  {
+    "id": "commit-late",
+    "name": "第 9 回合起锁一条盟约（commit@9）",
+    "env": {
+      "SP_LAB_COMMIT": "1",
+      "SP_LAB_COMMIT_FROM": "9",
+      "SP_LAB_COMMIT_PEN": "12",
+      "SP_LAB_COMMIT_W": "8",
+      "SP_LAB_MERGE_BONUS": "120",
+      "SP_LAB_MAX_PAIRS": "10",
+      "SP_LAB_BENCH_BUDGET": "12"
+    },
+    "measured": {
+      "solo_ABYSS_6seed_LP45_reh0": { "wins": "1/6", "avgRounds": 13 },
+      "solo_ABYSS_12seed_LP45_reh1": { "wins": "0/12", "avgRounds": 12.5 },
+      "multi4_ABYSS_6seed_LP45_reh1": { "wins": "1/6", "avgRounds": 11.67 }
+    },
+    "note": "目前唯一出现过胜场的参数集（solo 6 局的 1 胜在 rehearsal=0；rehearsal=1 的 12 局复现为 0）。"
+  },
+  {
+    "id": "siracusa-twolevel",
+    "name": "专精二本叙拉古（2 本停到 8 回合 + 刷新叠层 + 猛合精锐）",
+    "env": {
+      "SP_LAB_FOCUS": "siracusaShip",
+      "SP_LAB_COMMIT": "1",
+      "SP_LAB_COMMIT_FROM": "2",
+      "SP_LAB_COMMIT_PEN": "12",
+      "SP_LAB_COMMIT_W": "8",
+      "SP_LAB_MERGE_BONUS": "120",
+      "SP_LAB_MAX_PAIRS": "10",
+      "SP_LAB_BENCH_BUDGET": "12",
+      "SP_LAB_MAX_REFRESHES": "28",
+      "SP_LAB_LEVEL_TARGET": "[1,1,2,2,2,2,2,3,3,3,3,4,4,5,5,5]"
+    },
+    "measured": {
+      "solo_ABYSS_6seed_LP45_reh1": { "wins": "0/6", "avgRounds": 12.83 },
+      "multi4_ABYSS_6seed_LP45_reh1": { "wins": "0/6", "avgRounds": 11.67 }
+    },
+    "boardAtR13_seed1": { "elites": 5, "items": 10, "layers": 257, "siracusa_layers": 110, "lp": 43 },
+    "note": "盘面质量明显改善（精锐 2→5、LP 全程不掉的次数变多），但 BOSS 回合仍打不动 —— 与「合格曲线也要 1.4-2× 才能在 ABYSS 击杀 BOSS」的结论一致。"
+  },
+  {
+    "id": "coop-specialized",
+    "name": "四人各专精不同流派（避免抢同一个共享牌池）",
+    "env": {
+      "SP_LAB_FOCUS_BY_SEAT": "siracusaShip,yanShip,kjeragShip,victoriaShip",
+      "SP_LAB_COMMIT": "1",
+      "SP_LAB_COMMIT_FROM": "3",
+      "SP_LAB_COMMIT_PEN": "12",
+      "SP_LAB_COMMIT_W": "8",
+      "SP_LAB_MERGE_BONUS": "120",
+      "SP_LAB_MAX_PAIRS": "10",
+      "SP_LAB_BENCH_BUDGET": "12",
+      "SP_LAB_MAX_REFRESHES": "24",
+      "SP_LAB_LEVEL_TARGET": "[1,1,2,2,2,2,2,3,3,3,4,4,4,5,5,5]"
+    },
+    "measured": {
+      "multi4_ABYSS_6seed_LP45_reh1": { "wins": "0/6", "avgRounds": 12.17 }
+    },
+    "note": "分工没有带来胜场；说明缺口是「单体盘面强度」，不是牌池抢占。"
+  }
+]

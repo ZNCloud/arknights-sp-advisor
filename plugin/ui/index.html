@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>抓取顾问</title>
+<style>
+  html { color-scheme: dark; }
+  html, body { margin: 0; background: transparent; color: #e8e0d0; font: 12px/1.35 "Microsoft YaHei", system-ui, sans-serif; }
+  body { padding: 6px 8px; }
+  .hd { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+  .hd b { font-size: 13px; letter-spacing: .04em; color: #f0d9a8; }
+  .hd span { opacity: .62; font-size: 11px; }
+  .bar { height: 5px; border-radius: 3px; background: #1d2b2b; overflow: hidden; margin: 2px 0 5px; }
+  .bar i { display: block; height: 100%; background: linear-gradient(90deg, #4ed8af, #f0d9a8); }
+  .route { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 4px; }
+  .route button { font: inherit; font-size: 11px; padding: 2px 6px; color: #cfe7dd; background: #16262a;
+    border: 1px solid #27494a; border-radius: 4px; cursor: pointer; }
+  .route button.on { color: #101a1a; background: #7fe0bf; border-color: #a6f0d8; font-weight: 600; }
+  .act { margin: 4px 0 5px; padding: 3px 6px; border-radius: 4px; background: #1b2a22; color: #9ff0c8; font-weight: 600; }
+  .act.warn { background: #2c2418; color: #f0cf8a; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; gap: 5px; align-items: baseline; padding: 2px 0; border-top: 1px solid #1a2a2a; flex-wrap: wrap; }
+  li:first-child { border-top: 0; }
+  .ix { width: 14px; opacity: .5; text-align: right; font-variant-numeric: tabular-nums; }
+  .nm { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .nm em { font-style: normal; opacity: .55; }
+  .sc { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .top .nm { color: #a6f0d8; }
+  .top .sc { color: #7fe0bf; }
+  .mid .sc { color: #d8c79a; }
+  .low { opacity: .5; }
+  .why { flex: 1 1 100%; padding-left: 19px; font-size: 11px; opacity: .62; }
+  .foot { margin-top: 5px; padding-top: 4px; border-top: 1px dashed #264141; font-size: 11px; opacity: .8; }
+  .foot b { color: #f0d9a8; font-variant-numeric: tabular-nums; }
+  .none { opacity: .5; }
+</style>
+</head>
+<body>
+<div id="app"><div class="none">等待对局…</div></div>
+<script id="sp-data" type="application/json">{"v":1,"csv":"0.3.1","bonds":{"yanShip":{"n":"炎","c":1,"t":[3,6,9],"w":10,"m":"BOARD","bb":{"base_atk":0.23,"atk_per_stack":0.009,"power_bond_char_cnt":6,"ex_bond_char_cnt":9,"damage_resistance":0.9,"atk":1.5}},"sargonShip":{"n":"萨尔贡","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"base_time":5,"time_per_stack":0.22,"max_buff_stack_cnt":25,"base_attack_speed":12,"power_bond_char_cnt":6,"base_atk":0.12,"base_power_time":60,"power_time_per_stack":0,"filter_item_level":5}},"victoriaShip":{"n":"维多利亚","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"damage_scale_per_stack":0.008,"base_damage_scale":1.25,"power_bond_char_cnt":6,"atk_normal_equip":0.5,"atk_golden_equip":0.3,"layer":25,"count":1}},"kjeragShip":{"n":"谢拉格","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"base_damage_scale":1.25,"base_ex_damage_scale":1.35,"ex_damage_scale_per_stack":0.01,"power_bond_char_cnt":6,"bond_eff_kjerag[storm].interval":25,"bond_eff_kjerag[storm].base_time":20,"bond_eff_kjerag[storm].time_per_stack":0.1}},"lateranoShip":{"n":"拉特兰","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"base_ammo_percent":0.05,"ammo_percent_per_stack":0.015,"power_bond_char_cnt":6,"atk_per_consume":0.04,"max_atk_for_consume":2}},"egirShip":{"n":"阿戈尔","c":1,"t":[3,5],"w":10,"m":"BOARD","bb":{"base_max_hp":0.35,"max_hp_per_stack":0.01,"damage_value":5000,"power_bond_char_cnt":5,"max_free_respawn_cnt":3}},"siracusaShip":{"n":"叙拉古","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"base_duration":32,"duration_per_stack":0.4,"base_attack_speed":25,"attack_speed_per_stack":0.8,"power_bond_char_cnt":6,"ex_bond_char_cnt":6,"end_duration":10,"prob":0.03,"base_damage":5000,"damage_per_stack":50,"fear":3}},"kazimierzShip":{"n":"卡西米尔","c":1,"t":[3,6],"w":10,"m":"BOARD","bb":{"atk_when_born":0.2,"base_max_atk_when_born":0.5,"max_atk_when_born_per_stack":0.01,"damage_interval":2,"damage_atk_scale":1.2,"stun":0.1,"range_radius":0.8,"power_bond_char_cnt":6,"pure_atk_scale":0.3}},"preciShip":{"n":"精准","c":0,"t":[2,3],"w":10,"m":"BOARD","bb":{"base_atk":0.1,"atk_per_stack":0.012,"power_def_penetrate":0.3,"power_magic_resist_penetrate":0.3,"power_bond_char_cnt":3}},"swiftShip":{"n":"迅捷","c":0,"t":[2],"w":10,"m":"BOARD","bb":{"base_prob":0.2,"prob_per_stack":0.0035,"power_bond_stack_cnt":40,"normal_sp":12,"power_sp":15}},"skillfulShip":{"n":"灵巧","c":0,"t":[2],"w":10,"m":"BOARD","bb":{"base_attack_speed":10,"attack_speed_per_stack":1,"power_bond_stack_cnt":40}},"arcaneShip":{"n":"奥术","c":0,"t":[2,3],"w":10,"m":"BOARD","bb":{"weak_duration":3,"base_damage_scale":1.2,"damage_scale_per_stack":0.01,"power_bond_char_cnt":3,"power_weak_scale":1.4,"hp_ratio":0.5,"base_damage_scale_show":0.2,"base_damage_scale_show_ex":0.68,"damage_scale_per_stack_show_ex":0.014}},"steadShip":{"n":"坚守","c":0,"t":[2,3],"w":10,"m":"BOARD","bb":{"base_max_hp":0.25,"max_hp_per_stack":0.012,"damage_resistance":0.4,"power_bond_char_cnt":3,"cd_duration":0.2,"weak[limit]":5,"damage_scale":1.4,"base_damage_value":850,"damage_value_per_stack":10}},"deputShip":{"n":"助力","c":0,"t":[2,3],"w":10,"m":"BOARD","bb":{"base_def":0.15,"def_per_stack":0.012,"respawn_time":-0.3,"layer":2,"count":3,"more_layer":4}},"visiShip":{"n":"远见","c":0,"t":[2],"w":10,"m":"BOARD_AND_DECK","bb":{"layer":10,"count":2,"layer1":80,"discount":1,"layer2":150}},"miraShip":{"n":"奇迹","c":0,"t":[2],"w":10,"m":"BOARD_AND_DECK","bb":{"probk":0.3,"prob":0.003,"baseprob":0.18,"layer":100,"count":20}},"investShip":{"n":"投资人","c":0,"t":[3],"w":0,"m":"BOARD_AND_DECK","bb":{"layer":100,"count":3}},"raidShip":{"n":"突袭","c":0,"t":[2],"w":10,"m":"BOARD","bb":{"base_attack_speed":0,"attack_speed_per_stack":0,"base_atk":0.25,"atk_per_stack":0.01,"base_max_hp":0.25,"max_hp_per_stack":0.01,"power_bond_stack_cnt":50,"power_attack_speed":50,"no_attack_duration":10}},"indomShip":{"n":"不屈","c":0,"t":[2,3],"w":10,"m":"BOARD","bb":{"base_prob":0.18,"prob_per_stack":0.004,"power_bond_stack_cnt":0,"sp":5,"power_bond_char_cnt":3}},"maniShip":{"n":"调和","c":0,"t":[1],"w":0,"m":"BOARD","bb":{"count":1}},"emptyShip":{"n":"协防干员","c":0,"t":[2],"w":0,"m":"BOARD","bb":{"damage_resistance":0.2,"damage_scale_normal":1.2,"damage_scale_extra":1.4}},"soloShip":{"n":"独行","c":0,"t":[1],"w":10,"m":"BOARD","bb":{"atk":0.6,"max_hp":0.6,"sp":15}},"suntShip":{"n":"绝技","c":0,"t":[2,5],"w":0,"m":"BOARD_ALL_CHESS","bb":{"power_char_cnt":2,"ex_char_cnt":5,"power_atk":0.3,"sp_ratio":0.7}}},"chess":{"chess_char_1_01_a":[1,"隐现",["lateranoShip","swiftShip"],2,0,"chess_char_1_01_a","RANGED",1,"ranged",1,[],422],"chess_char_1_01_b":[1,"隐现",["lateranoShip","swiftShip"],2,1,"chess_char_1_01_a","RANGED",1,"ranged",1,[],531],"chess_char_1_02_a":[1,"角峰",["kjeragShip","steadShip"],2,0,"chess_char_1_02_a","MELEE",3,"melee",0,[{"k":"own","n":2}],313],"chess_char_1_02_b":[1,"角峰",["kjeragShip","steadShip"],2,1,"chess_char_1_02_a","MELEE",4,"melee",0,[{"k":"own","n":4}],358],"chess_char_1_03_a":[1,"惊蛰",["yanShip"],2,0,"chess_char_1_03_a","RANGED",1,"ranged",1,[{"k":"shopLv","n":1,"bond":"yanShip"}],530],"chess_char_1_03_b":[1,"惊蛰",["yanShip"],2,1,"chess_char_1_03_a","RANGED",1,"ranged",1,[{"k":"shopLv","n":2,"bond":"yanShip"}],677],"chess_char_1_04_a":[1,"深巡",["egirShip"],2,0,"chess_char_1_04_a","MELEE",3,"ranged",1,[],348],"chess_char_1_04_b":[1,"深巡",["egirShip"],2,1,"chess_char_1_04_a","MELEE",3,"ranged",1,[],449],"chess_char_1_06_a":[1,"刺玫",["victoriaShip","deputShip"],2,0,"chess_char_1_06_a","RANGED",1,"ranged",1,[],435],"chess_char_1_06_b":[1,"刺玫",["victoriaShip","deputShip"],2,1,"chess_char_1_06_a","RANGED",1,"ranged",1,[],553],"chess_char_1_07_a":[1,"普罗旺斯",["siracusaShip"],2,0,"chess_char_1_07_a","RANGED",1,"ranged",1,[{"k":"refresh","n":1}],599],"chess_char_1_07_b":[1,"普罗旺斯",["siracusaShip"],2,1,"chess_char_1_07_a","RANGED",1,"ranged",1,[{"k":"refresh","n":2}],783],"chess_char_1_08_a":[1,"德克萨斯",["soloShip","siracusaShip"],2,0,"chess_char_1_08_a","MELEE",2,"melee",0,[],410],"chess_char_1_08_b":[1,"德克萨斯",["soloShip","siracusaShip"],2,1,"chess_char_1_08_a","MELEE",2,"melee",0,[],525],"chess_char_1_09_a":[1,"跃跃",["preciShip"],2,0,"chess_char_1_09_a","RANGED",1,"ranged",1,[],502],"chess_char_1_09_b":[1,"跃跃",["preciShip"],2,1,"chess_char_1_09_a","RANGED",1,"ranged",1,[],607],"chess_char_1_10_a":[1,"古米",["steadShip"],2,0,"chess_char_1_10_a","MELEE",3,"melee",0,[],361],"chess_char_1_10_b":[1,"古米",["steadShip"],2,1,"chess_char_1_10_a","MELEE",3,"melee",0,[],471],"chess_char_1_12_a":[1,"艾丝黛尔",["sargonShip"],2,0,"chess_char_1_12_a","MELEE",2,"melee",0,[{"k":"own","n":2}],512],"chess_char_1_12_b":[1,"艾丝黛尔",["sargonShip"],2,1,"chess_char_1_12_a","MELEE",3,"melee",0,[{"k":"own","n":4}],674],"chess_char_1_13_a":[1,"波登可",["deputShip"],2,0,"chess_char_1_13_a","RANGED",1,"ranged",1,[],420],"chess_char_1_13_b":[1,"波登可",["deputShip"],2,1,"chess_char_1_13_a","RANGED",1,"ranged",1,[],514],"chess_char_1_14_a":[1,"格雷伊",["skillfulShip"],2,0,"chess_char_1_14_a","RANGED",1,"ranged",1,[],576],"chess_char_1_14_b":[1,"格雷伊",["skillfulShip"],2,1,"chess_char_1_14_a","RANGED",1,"ranged",1,[],667],"chess_char_1_17_a":[1,"深靛",["arcaneShip","preciShip"],2,0,"chess_char_1_17_a","RANGED",1,"ranged",1,[{"k":"own","n":2}],921],"chess_char_1_17_b":[1,"深靛",["arcaneShip","preciShip"],2,1,"chess_char_1_17_a","RANGED",1,"ranged",1,[{"k":"own","n":4}],1135],"chess_char_1_18_a":[1,"宴",["raidShip"],2,0,"chess_char_1_18_a","MELEE",1,"melee",0,[],587],"chess_char_1_18_b":[1,"宴",["raidShip"],2,1,"chess_char_1_18_a","MELEE",1,"melee",0,[],727],"chess_char_1_19_a":[1,"野鬃",["kazimierzShip","swiftShip"],2,0,"chess_char_1_19_a","MELEE",1,"melee",0,[{"k":"own","n":2}],443],"chess_char_1_19_b":[1,"野鬃",["kazimierzShip","swiftShip"],2,1,"chess_char_1_19_a","MELEE",1,"melee",0,[{"k":"own","n":4}],564],"chess_char_1_20_a":[1,"雷蛇",["indomShip"],2,0,"chess_char_1_20_a","MELEE",3,"ranged",1,[],337],"chess_char_1_20_b":[1,"雷蛇",["indomShip"],2,1,"chess_char_1_20_a","MELEE",3,"ranged",1,[],435],"chess_char_2_01_a":[2,"送葬人",["lateranoShip","preciShip"],3,0,"chess_char_2_01_a","RANGED",1,"ranged",1,[],613],"chess_char_2_01_b":[2,"送葬人",["lateranoShip","preciShip"],3,1,"chess_char_2_01_a","RANGED",1,"ranged",1,[],750],"chess_char_2_02_a":[2,"赫默",["visiShip"],3,0,"chess_char_2_02_a","RANGED",1,"heal",0,[],393],"chess_char_2_02_b":[2,"赫默",["visiShip"],3,1,"chess_char_2_02_a","RANGED",1,"heal",0,[],475],"chess_char_2_04_a":[2,"小满",["yanShip","skillfulShip"],3,0,"chess_char_2_04_a","RANGED",1,"ranged",1,[],442],"chess_char_2_04_b":[2,"小满",["yanShip","skillfulShip"],3,1,"chess_char_2_04_a","RANGED",1,"ranged",1,[],553],"chess_char_2_05_a":[2,"哈洛德",["kjeragShip","victoriaShip"],3,0,"chess_char_2_05_a","RANGED",1,"heal",0,[],295],"chess_char_2_05_b":[2,"哈洛德",["kjeragShip","victoriaShip"],3,1,"chess_char_2_05_a","RANGED",1,"heal",0,[],381],"chess_char_2_06_a":[2,"莎草",["sargonShip"],3,0,"chess_char_2_06_a","RANGED",1,"heal",0,[],338],"chess_char_2_06_b":[2,"莎草",["sargonShip"],3,1,"chess_char_2_06_a","RANGED",1,"heal",0,[],450],"chess_char_2_07_a":[2,"幽灵鲨",["egirShip"],3,0,"chess_char_2_07_a","MELEE",2,"melee",0,[],557],"chess_char_2_07_b":[2,"幽灵鲨",["egirShip"],3,1,"chess_char_2_07_a","MELEE",3,"melee",0,[],731],"chess_char_2_08_a":[2,"泡泡",["sargonShip","steadShip"],3,0,"chess_char_2_08_a","MELEE",3,"melee",0,[],314],"chess_char_2_08_b":[2,"泡泡",["sargonShip","steadShip"],3,1,"chess_char_2_08_a","MELEE",3,"melee",0,[],358],"chess_char_2_09_a":[2,"休谟斯",["raidShip"],3,0,"chess_char_2_09_a","MELEE",2,"melee",0,[],546],"chess_char_2_09_b":[2,"休谟斯",["raidShip"],3,1,"chess_char_2_09_a","MELEE",2,"melee",0,[],638],"chess_char_2_10_a":[2,"洛洛",["victoriaShip","arcaneShip"],3,0,"chess_char_2_10_a","RANGED",1,"ranged",1,[{"k":"equip","n":1,"item":null}],283],"chess_char_2_10_b":[2,"洛洛",["victoriaShip","arcaneShip"],3,1,"chess_char_2_10_a","RANGED",1,"ranged",1,[{"k":"equip","n":2,"item":null}],341],"chess_char_2_11_a":[2,"风丸",["miraShip"],3,0,"chess_char_2_11_a","MELEE",2,"melee",0,[],574],"chess_char_2_11_b":[2,"风丸",["miraShip"],3,1,"chess_char_2_11_a","MELEE",2,"melee",0,[],724],"chess_char_2_12_a":[2,"砾",["kazimierzShip","indomShip"],3,0,"chess_char_2_12_a","MELEE",1,"melee",0,[],352],"chess_char_2_12_b":[2,"砾",["kazimierzShip","indomShip"],3,1,"chess_char_2_12_a","MELEE",1,"melee",0,[],430],"chess_char_2_13_a":[2,"蒂比",["swiftShip","skillfulShip"],3,0,"chess_char_2_13_a","MELEE",2,"melee",1,[],592],"chess_char_2_13_b":[2,"蒂比",["swiftShip","skillfulShip"],3,1,"chess_char_2_13_a","MELEE",2,"melee",1,[],720],"chess_char_2_14_a":[2,"调香师",["deputShip","emptyShip"],3,0,"chess_char_2_14_a","RANGED",1,"heal",0,[],275],"chess_char_2_14_b":[2,"调香师",["deputShip","emptyShip"],3,1,"chess_char_2_14_a","RANGED",1,"heal",0,[],350],"chess_char_2_16_a":[2,"拉普兰德",["siracusaShip"],3,0,"chess_char_2_16_a","MELEE",2,"ranged",1,[],560],"chess_char_2_16_b":[2,"拉普兰德",["siracusaShip"],3,1,"chess_char_2_16_a","MELEE",2,"ranged",1,[],689],"chess_char_2_17_a":[2,"折桠",["steadShip","soloShip"],3,0,"chess_char_2_17_a","MELEE",3,"melee",0,[],650],"chess_char_2_17_b":[2,"折桠",["steadShip","soloShip"],3,1,"chess_char_2_17_a","MELEE",3,"melee",0,[],805],"chess_char_2_18_a":[2,"灰毫",["kazimierzShip","steadShip"],3,0,"chess_char_2_18_a","MELEE",3,"ranged",0,[{"k":"top","n":3}],728],"chess_char_2_18_b":[2,"灰毫",["kazimierzShip","steadShip"],3,1,"chess_char_2_18_a","MELEE",3,"ranged",0,[{"k":"top","n":6}],895],"chess_char_2_19_a":[2,"锡人",["investShip","swiftShip"],3,0,"chess_char_2_19_a","RANGED",1,"ranged",1,[],366],"chess_char_2_19_b":[2,"锡人",["investShip","swiftShip"],3,1,"chess_char_2_19_a","RANGED",1,"ranged",1,[],461],"chess_char_3_01_a":[3,"能天使",["lateranoShip","miraShip"],3,0,"chess_char_3_01_a","RANGED",1,"ranged",1,[{"k":"gold","n":1}],464],"chess_char_3_01_b":[3,"能天使",["lateranoShip","miraShip"],3,1,"chess_char_3_01_a","RANGED",1,"ranged",1,[{"k":"gold","n":2}],559],"chess_char_3_02_a":[3,"断崖",["skillfulShip"],3,0,"chess_char_3_02_a","MELEE",2,"ranged",1,[],568],"chess_char_3_02_b":[3,"断崖",["skillfulShip"],3,1,"chess_char_3_02_a","MELEE",2,"ranged",1,[],701],"chess_char_3_03_a":[3,"诗怀雅",["yanShip","visiShip"],3,0,"chess_char_3_03_a","MELEE",2,"melee",0,[{"k":"equip","n":1,"item":null}],577],"chess_char_3_03_b":[3,"诗怀雅",["yanShip","visiShip"],3,1,"chess_char_3_03_a","MELEE",2,"melee",0,[{"k":"equip","n":2,"item":null}],705],"chess_char_3_04_a":[3,"琳琅诗怀雅",["yanShip","investShip"],3,0,"chess_char_3_04_a","MELEE",1,"melee",0,[],702],"chess_char_3_04_b":[3,"琳琅诗怀雅",["yanShip","investShip"],3,1,"chess_char_3_04_a","MELEE",1,"melee",0,[],818],"chess_char_3_05_a":[3,"斯卡蒂",["egirShip","steadShip","raidShip"],3,0,"chess_char_3_05_a","MELEE",1,"melee",0,[],875],"chess_char_3_05_b":[3,"斯卡蒂",["egirShip","steadShip","raidShip"],3,1,"chess_char_3_05_a","MELEE",1,"melee",0,[],1045],"chess_char_3_06_a":[3,"菲莱",["sargonShip"],3,0,"chess_char_3_06_a","MELEE",3,"melee",0,[],507],"chess_char_3_06_b":[3,"菲莱",["sargonShip"],3,1,"chess_char_3_06_a","MELEE",3,"melee",0,[],642],"chess_char_3_08_a":[3,"薄绿",["victoriaShip"],3,0,"chess_char_3_08_a","RANGED",1,"none",0,[],629],"chess_char_3_08_b":[3,"薄绿",["victoriaShip"],3,1,"chess_char_3_08_a","RANGED",1,"none",0,[],746],"chess_char_3_09_a":[3,"海霓",["egirShip","arcaneShip"],3,0,"chess_char_3_09_a","RANGED",1,"ranged",1,[],365],"chess_char_3_09_b":[3,"海霓",["egirShip","arcaneShip"],3,1,"chess_char_3_09_a","RANGED",1,"ranged",1,[],434],"chess_char_3_10_a":[3,"松果",["swiftShip","emptyShip"],3,0,"chess_char_3_10_a","RANGED",1,"ranged",1,[],588],"chess_char_3_10_b":[3,"松果",["swiftShip","emptyShip"],3,1,"chess_char_3_10_a","RANGED",1,"ranged",1,[],709],"chess_char_3_11_a":[3,"雪猎",["kjeragShip","preciShip"],3,0,"chess_char_3_11_a","RANGED",1,"ranged",1,[{"k":"own","n":5}],856],"chess_char_3_11_b":[3,"雪猎",["kjeragShip","preciShip"],3,1,"chess_char_3_11_a","RANGED",1,"ranged",1,[{"k":"own","n":10}],1023],"chess_char_3_12_a":[3,"瑕光",["kazimierzShip","raidShip"],3,0,"chess_char_3_12_a","MELEE",3,"melee",0,[],428],"chess_char_3_12_b":[3,"瑕光",["kazimierzShip","raidShip"],3,1,"chess_char_3_12_a","MELEE",3,"melee",0,[],522],"chess_char_3_13_a":[3,"至简",["sargonShip","skillfulShip"],3,0,"chess_char_3_13_a","RANGED",1,"ranged",1,[],268],"chess_char_3_13_b":[3,"至简",["sargonShip","skillfulShip"],3,1,"chess_char_3_13_a","RANGED",1,"ranged",1,[],327],"chess_char_3_14_a":[3,"初雪",["kjeragShip","visiShip"],3,0,"chess_char_3_14_a","RANGED",1,"ranged",1,[],356],"chess_char_3_14_b":[3,"初雪",["kjeragShip","visiShip"],3,1,"chess_char_3_14_a","RANGED",1,"ranged",1,[],411],"chess_char_3_16_a":[3,"蛇屠箱",["steadShip","indomShip"],3,0,"chess_char_3_16_a","MELEE",3,"melee",0,[],310],"chess_char_3_16_b":[3,"蛇屠箱",["steadShip","indomShip"],3,1,"chess_char_3_16_a","MELEE",3,"melee",0,[],357],"chess_char_3_17_a":[3,"流星",["kazimierzShip","soloShip"],3,0,"chess_char_3_17_a","RANGED",1,"ranged",1,[],404],"chess_char_3_17_b":[3,"流星",["kazimierzShip","soloShip"],3,1,"chess_char_3_17_a","RANGED",1,"ranged",1,[],498],"chess_char_3_18_a":[3,"忍冬",["siracusaShip","swiftShip"],3,0,"chess_char_3_18_a","MELEE",2,"melee",0,[{"k":"own","n":6}],485],"chess_char_3_18_b":[3,"忍冬",["siracusaShip","swiftShip"],3,1,"chess_char_3_18_a","MELEE",2,"melee",0,[{"k":"own","n":12}],588],"chess_char_3_19_a":[3,"伺夜",["siracusaShip","miraShip"],3,0,"chess_char_3_19_a","RANGED",1,"ranged",1,[],378],"chess_char_3_19_b":[3,"伺夜",["siracusaShip","miraShip"],3,1,"chess_char_3_19_a","RANGED",1,"ranged",1,[],454],"chess_char_3_20_a":[3,"耶拉",["kjeragShip","deputShip"],3,0,"chess_char_3_20_a","RANGED",1,"ranged",1,[{"k":"equip","n":1,"item":null}],246],"chess_char_3_20_b":[3,"耶拉",["kjeragShip","deputShip"],3,1,"chess_char_3_20_a","RANGED",1,"ranged",1,[{"k":"equip","n":2,"item":null}],300],"chess_char_3_21_a":[3,"空弦",["lateranoShip","skillfulShip"],3,0,"chess_char_3_21_a","RANGED",1,"ranged",1,[],454],"chess_char_3_21_b":[3,"空弦",["lateranoShip","skillfulShip"],3,1,"chess_char_3_21_a","RANGED",1,"ranged",1,[],538],"chess_char_4_01_a":[4,"信仰搅拌机",["lateranoShip","steadShip"],3,0,"chess_char_4_01_a","MELEE",3,"ranged",1,[],418],"chess_char_4_01_b":[4,"信仰搅拌机",["lateranoShip","steadShip"],3,1,"chess_char_4_01_a","MELEE",3,"ranged",1,[],515],"chess_char_4_02_a":[4,"莫斯提马",["lateranoShip","arcaneShip"],3,0,"chess_char_4_02_a","RANGED",1,"ranged",1,[],734],"chess_char_4_02_b":[4,"莫斯提马",["lateranoShip","arcaneShip"],3,1,"chess_char_4_02_a","RANGED",1,"ranged",1,[],874],"chess_char_4_04_a":[4,"伊内丝",["visiShip","raidShip"],3,0,"chess_char_4_04_a","MELEE",1,"ranged",1,[],482],"chess_char_4_04_b":[4,"伊内丝",["visiShip","raidShip"],3,1,"chess_char_4_04_a","MELEE",1,"ranged",1,[],573],"chess_char_4_06_a":[4,"寒芒克洛丝",["preciShip"],3,0,"chess_char_4_06_a","RANGED",1,"ranged",1,[],411],"chess_char_4_06_b":[4,"寒芒克洛丝",["preciShip"],3,1,"chess_char_4_06_a","RANGED",1,"ranged",1,[],501],"chess_char_4_07_a":[4,"风笛",["victoriaShip","visiShip","indomShip"],3,0,"chess_char_4_07_a","MELEE",1,"melee",0,[],517],"chess_char_4_07_b":[4,"风笛",["victoriaShip","visiShip","indomShip"],3,1,"chess_char_4_07_a","MELEE",1,"melee",0,[],629],"chess_char_4_09_a":[4,"水月",["egirShip","soloShip"],3,0,"chess_char_4_09_a","MELEE",0,"melee",0,[],724],"chess_char_4_09_b":[4,"水月",["egirShip","soloShip"],3,1,"chess_char_4_09_a","MELEE",0,"melee",0,[],899],"chess_char_4_10_a":[4,"阿罗玛",["siracusaShip","arcaneShip"],3,0,"chess_char_4_10_a","RANGED",1,"ranged",1,[],671],"chess_char_4_10_b":[4,"阿罗玛",["siracusaShip","arcaneShip"],3,1,"chess_char_4_10_a","RANGED",1,"ranged",1,[],811],"chess_char_4_11_a":[4,"凯瑟琳",["victoriaShip","skillfulShip"],3,0,"chess_char_4_11_a","MELEE",2,"melee",0,[],456],"chess_char_4_11_b":[4,"凯瑟琳",["victoriaShip","skillfulShip"],3,1,"chess_char_4_11_a","MELEE",2,"melee",0,[],546],"chess_char_4_12_a":[4,"歌蕾蒂娅",["egirShip"],3,0,"chess_char_4_12_a","MELEE",2,"ranged",1,[],640],"chess_char_4_12_b":[4,"歌蕾蒂娅",["egirShip"],3,1,"chess_char_4_12_a","MELEE",2,"ranged",1,[],792],"chess_char_4_13_a":[4,"灵知",["kjeragShip","skillfulShip"],3,0,"chess_char_4_13_a","RANGED",1,"ranged",1,[{"k":"own","n":5}],410],"chess_char_4_13_b":[4,"灵知",["kjeragShip","skillfulShip"],3,1,"chess_char_4_13_a","RANGED",1,"ranged",1,[{"k":"own","n":10}],477],"chess_char_4_14_a":[4,"莱恩哈特",["swiftShip","preciShip"],3,0,"chess_char_4_14_a","RANGED",1,"ranged",1,[],681],"chess_char_4_14_b":[4,"莱恩哈特",["swiftShip","preciShip"],3,1,"chess_char_4_14_a","RANGED",1,"ranged",1,[],819],"chess_char_4_16_a":[4,"缄默德克萨斯",["siracusaShip","raidShip"],3,0,"chess_char_4_16_a","MELEE",1,"melee",0,[],465],"chess_char_4_16_b":[4,"缄默德克萨斯",["siracusaShip","raidShip"],3,1,"chess_char_4_16_a","MELEE",1,"melee",0,[],589],"chess_char_4_17_a":[4,"星熊",["yanShip"],3,0,"chess_char_4_17_a","MELEE",3,"melee",0,[{"k":"own","n":8}],356],"chess_char_4_17_b":[4,"星熊",["yanShip"],3,1,"chess_char_4_17_a","MELEE",4,"melee",0,[{"k":"own","n":16}],455],"chess_char_4_18_a":[4,"泥岩",["soloShip"],3,0,"chess_char_4_18_a","MELEE",3,"melee",0,[],687],"chess_char_4_18_b":[4,"泥岩",["soloShip"],3,1,"chess_char_4_18_a","MELEE",3,"melee",0,[],871],"chess_char_4_19_a":[4,"焰尾",["kazimierzShip"],3,0,"chess_char_4_19_a","MELEE",2,"melee",0,[],456],"chess_char_4_19_b":[4,"焰尾",["kazimierzShip"],3,1,"chess_char_4_19_a","MELEE",2,"melee",0,[],554],"chess_char_4_20_a":[4,"远牙",["kazimierzShip","preciShip"],3,0,"chess_char_4_20_a","RANGED",1,"ranged",1,[],1020],"chess_char_4_20_b":[4,"远牙",["kazimierzShip","preciShip"],3,1,"chess_char_4_20_a","RANGED",1,"ranged",1,[],1233],"chess_char_4_21_a":[4,"白面鸮",["deputShip","skillfulShip"],3,0,"chess_char_4_21_a","RANGED",1,"heal",0,[],289],"chess_char_4_21_b":[4,"白面鸮",["deputShip","skillfulShip"],3,1,"chess_char_4_21_a","RANGED",1,"heal",0,[],369],"chess_char_4_22_a":[4,"银灰",["kjeragShip"],3,0,"chess_char_4_22_a","MELEE",2,"ranged",1,[],603],"chess_char_4_22_b":[4,"银灰",["kjeragShip"],3,1,"chess_char_4_22_a","MELEE",2,"ranged",1,[],738],"chess_char_4_23_a":[4,"百炼嘉维尔",["sargonShip"],3,0,"chess_char_4_23_a","MELEE",3,"melee",0,[],610],"chess_char_4_23_b":[4,"百炼嘉维尔",["sargonShip"],3,1,"chess_char_4_23_a","MELEE",3,"melee",0,[],777],"chess_char_4_24_a":[4,"卡涅利安",["sargonShip","deputShip"],3,0,"chess_char_4_24_a","RANGED",1,"none",0,[{"k":"equip","n":1,"item":null}],761],"chess_char_4_24_b":[4,"卡涅利安",["sargonShip","deputShip"],3,1,"chess_char_4_24_a","RANGED",1,"none",0,[{"k":"equip","n":2,"item":null}],906],"chess_char_4_25_a":[4,"魔王",["emptyShip"],3,0,"chess_char_4_25_a","RANGED",1,"none",0,[],306],"chess_char_4_25_b":[4,"魔王",["emptyShip"],3,1,"chess_char_4_25_a","RANGED",1,"none",0,[],368],"chess_char_4_26_a":[4,"华法琳",["miraShip"],3,0,"chess_char_4_26_a","RANGED",1,"heal",0,[],431],"chess_char_4_26_b":[4,"华法琳",["miraShip"],3,1,"chess_char_4_26_a","RANGED",1,"heal",0,[],536],"chess_char_5_01_a":[5,"圣约送葬人",["lateranoShip","visiShip"],4,0,"chess_char_5_01_a","MELEE",2,"melee",0,[],612],"chess_char_5_01_b":[5,"圣约送葬人",["lateranoShip","visiShip"],4,1,"chess_char_5_01_a","MELEE",2,"melee",0,[],732],"chess_char_5_02_a":[5,"缇缇",["sargonShip","preciShip"],4,0,"chess_char_5_02_a","RANGED",1,"ranged",1,[],464],"chess_char_5_02_b":[5,"缇缇",["sargonShip","preciShip"],4,1,"chess_char_5_02_a","RANGED",1,"ranged",1,[],572],"chess_char_5_03_a":[5,"烛煌",["victoriaShip","yanShip"],4,0,"chess_char_5_03_a","RANGED",1,"ranged",1,[{"k":"bond","n":5,"bond":"yanShip,victoriaShip"}],587],"chess_char_5_03_b":[5,"烛煌",["victoriaShip","yanShip"],4,1,"chess_char_5_03_a","RANGED",1,"ranged",1,[{"k":"bond","n":10,"bond":"yanShip,victoriaShip"}],709],"chess_char_5_05_a":[5,"乌尔比安",["egirShip"],4,0,"chess_char_5_05_a","MELEE",2,"melee",0,[],1362],"chess_char_5_05_b":[5,"乌尔比安",["egirShip"],4,1,"chess_char_5_05_a","MELEE",2,"melee",0,[],1613],"chess_char_5_06_a":[5,"隐德来希",["indomShip","skillfulShip"],4,0,"chess_char_5_06_a","MELEE",2,"melee",0,[],611],"chess_char_5_06_b":[5,"隐德来希",["indomShip","skillfulShip"],4,1,"chess_char_5_06_a","MELEE",2,"melee",0,[],740],"chess_char_5_07_a":[5,"史尔特尔",["raidShip","arcaneShip"],4,0,"chess_char_5_07_a","MELEE",1,"melee",0,[],572],"chess_char_5_07_b":[5,"史尔特尔",["raidShip","arcaneShip"],4,1,"chess_char_5_07_a","MELEE",1,"melee",0,[],687],"chess_char_5_08_a":[5,"号角",["victoriaShip"],4,0,"chess_char_5_08_a","MELEE",3,"ranged",0,[],806],"chess_char_5_08_b":[5,"号角",["victoriaShip"],4,1,"chess_char_5_08_a","MELEE",3,"ranged",0,[],977],"chess_char_5_10_a":[5,"铃兰",["siracusaShip","emptyShip"],4,0,"chess_char_5_10_a","RANGED",1,"ranged",1,[],457],"chess_char_5_10_b":[5,"铃兰",["siracusaShip","emptyShip"],4,1,"chess_char_5_10_a","RANGED",1,"ranged",1,[],516],"chess_char_5_11_a":[5,"塞雷娅",["steadShip","soloShip"],4,0,"chess_char_5_11_a","MELEE",3,"melee",0,[],388],"chess_char_5_11_b":[5,"塞雷娅",["steadShip","soloShip"],4,1,"chess_char_5_11_a","MELEE",3,"melee",0,[],502],"chess_char_5_12_a":[5,"夕",["yanShip","arcaneShip"],4,0,"chess_char_5_12_a","RANGED",1,"ranged",1,[],805],"chess_char_5_12_b":[5,"夕",["yanShip","arcaneShip"],4,1,"chess_char_5_12_a","RANGED",1,"ranged",1,[],957],"chess_char_5_13_a":[5,"归溟幽灵鲨",["egirShip","indomShip"],4,0,"chess_char_5_13_a","MELEE",2,"melee",0,[],637],"chess_char_5_13_b":[5,"归溟幽灵鲨",["egirShip","indomShip"],4,1,"chess_char_5_13_a","MELEE",2,"melee",0,[],775],"chess_char_5_14_a":[5,"凛御银灰",["kjeragShip","investShip","swiftShip"],4,0,"chess_char_5_14_a","MELEE",2,"melee",0,[],507],"chess_char_5_14_b":[5,"凛御银灰",["kjeragShip","investShip","swiftShip"],4,1,"chess_char_5_14_a","MELEE",2,"melee",0,[],581],"chess_char_5_15_a":[5,"引星棘刺",["swiftShip","miraShip"],4,0,"chess_char_5_15_a","RANGED",1,"ranged",1,[],405],"chess_char_5_15_b":[5,"引星棘刺",["swiftShip","miraShip"],4,1,"chess_char_5_15_a","RANGED",1,"ranged",1,[],499],"chess_char_5_17_a":[5,"山",["investShip"],4,0,"chess_char_5_17_a","MELEE",1,"melee",0,[],499],"chess_char_5_17_b":[5,"山",["investShip"],4,1,"chess_char_5_17_a","MELEE",1,"melee",0,[],608],"chess_char_5_19_a":[5,"玛恩纳",["kazimierzShip"],4,0,"chess_char_5_19_a","MELEE",3,"none",0,[],326],"chess_char_5_19_b":[5,"玛恩纳",["kazimierzShip"],4,1,"chess_char_5_19_a","MELEE",3,"none",0,[],380],"chess_char_5_20_a":[5,"安洁莉娜",["siracusaShip","miraShip"],4,0,"chess_char_5_20_a","RANGED",1,"ranged",1,[],474],"chess_char_5_20_b":[5,"安洁莉娜",["siracusaShip","miraShip"],4,1,"chess_char_5_20_a","RANGED",1,"ranged",1,[],571],"chess_char_5_21_a":[5,"寒檀",["visiShip"],4,0,"chess_char_5_21_a","RANGED",1,"ranged",1,[],678],"chess_char_5_21_b":[5,"寒檀",["visiShip"],4,1,"chess_char_5_21_a","RANGED",1,"ranged",1,[],811],"chess_char_5_22_a":[5,"妮芙",["swiftShip"],4,0,"chess_char_5_22_a","RANGED",1,"ranged",1,[],577],"chess_char_5_22_b":[5,"妮芙",["swiftShip"],4,1,"chess_char_5_22_a","RANGED",1,"ranged",1,[],697],"chess_char_5_23_a":[5,"录武官",["yanShip","miraShip"],4,0,"chess_char_5_23_a","RANGED",1,"heal",0,[{"k":"multi","n":0,"bonds":["yanShip","miraShip"]}],443],"chess_char_5_23_b":[5,"录武官",["yanShip","miraShip"],4,1,"chess_char_5_23_a","RANGED",1,"heal",0,[{"k":"multi","n":0,"bonds":["yanShip","miraShip"]}],507],"chess_char_6_01_a":[6,"蕾缪安",["lateranoShip","preciShip"],4,0,"chess_char_6_01_a","RANGED",1,"ranged",1,[],1030],"chess_char_6_01_b":[6,"蕾缪安",["lateranoShip","preciShip"],4,1,"chess_char_6_01_a","RANGED",1,"ranged",1,[],1294],"chess_char_6_02_a":[6,"圣聆初雪",["kjeragShip","arcaneShip"],4,0,"chess_char_6_02_a","RANGED",1,"none",0,[],752],"chess_char_6_02_b":[6,"圣聆初雪",["kjeragShip","arcaneShip"],4,1,"chess_char_6_02_a","RANGED",1,"none",0,[],905],"chess_char_6_03_a":[6,"余",["yanShip","steadShip"],4,0,"chess_char_6_03_a","MELEE",3,"melee",0,[],548],"chess_char_6_03_b":[6,"余",["yanShip","steadShip"],4,1,"chess_char_6_03_a","MELEE",3,"melee",0,[],724],"chess_char_6_04_a":[6,"浊心斯卡蒂",["egirShip"],4,0,"chess_char_6_04_a","RANGED",1,"none",0,[],332],"chess_char_6_04_b":[6,"浊心斯卡蒂",["egirShip"],4,1,"chess_char_6_04_a","RANGED",1,"none",0,[],409],"chess_char_6_05_a":[6,"异客",["sargonShip","swiftShip","preciShip"],4,0,"chess_char_6_05_a","RANGED",1,"ranged",1,[],603],"chess_char_6_05_b":[6,"异客",["sargonShip","swiftShip","preciShip"],4,1,"chess_char_6_05_a","RANGED",1,"ranged",1,[],771],"chess_char_6_06_a":[6,"佩佩",["sargonShip","indomShip"],4,0,"chess_char_6_06_a","MELEE",2,"melee",0,[],1118],"chess_char_6_06_b":[6,"佩佩",["sargonShip","indomShip"],4,1,"chess_char_6_06_a","MELEE",2,"melee",0,[],1368],"chess_char_6_07_a":[6,"维娜·维多利亚",["victoriaShip","miraShip"],4,0,"chess_char_6_07_a","MELEE",1,"melee",0,[],574],"chess_char_6_07_b":[6,"维娜·维多利亚",["victoriaShip","miraShip"],4,1,"chess_char_6_07_a","MELEE",1,"melee",0,[],716],"chess_char_6_08_a":[6,"焰影苇草",["victoriaShip","preciShip"],4,0,"chess_char_6_08_a","RANGED",1,"ranged",1,[],466],"chess_char_6_08_b":[6,"焰影苇草",["victoriaShip","preciShip"],4,1,"chess_char_6_08_a","RANGED",1,"ranged",1,[],589],"chess_char_6_09_a":[6,"塑心",["lateranoShip"],4,0,"chess_char_6_09_a","RANGED",1,"ranged",1,[],430],"chess_char_6_09_b":[6,"塑心",["lateranoShip"],4,1,"chess_char_6_09_a","RANGED",1,"ranged",1,[],522],"chess_char_6_11_a":[6,"缪尔赛思",["maniShip"],4,0,"chess_char_6_11_a","RANGED",1,"ranged",1,[{"k":"equip","n":1,"item":null}],432],"chess_char_6_11_b":[6,"缪尔赛思",["maniShip"],4,1,"chess_char_6_11_a","RANGED",1,"ranged",1,[{"k":"equip","n":2,"item":null}],517],"chess_char_6_12_a":[6,"迷迭香",["preciShip","visiShip","emptyShip"],4,0,"chess_char_6_12_a","RANGED",1,"ranged",0,[],616],"chess_char_6_12_b":[6,"迷迭香",["preciShip","visiShip","emptyShip"],4,1,"chess_char_6_12_a","RANGED",1,"ranged",0,[],760],"chess_char_6_13_a":[6,"新约能天使",["lateranoShip"],4,0,"chess_char_6_13_a","RANGED",1,"ranged",1,[{"k":"gold","n":2}],617],"chess_char_6_13_b":[6,"新约能天使",["lateranoShip"],4,1,"chess_char_6_13_a","RANGED",1,"ranged",1,[{"k":"gold","n":4}],762],"chess_char_6_14_a":[6,"流明",["deputShip"],4,0,"chess_char_6_14_a","RANGED",1,"heal",0,[],432],"chess_char_6_14_b":[6,"流明",["deputShip"],4,1,"chess_char_6_14_a","RANGED",1,"heal",0,[],549],"chess_char_6_15_a":[6,"仇白",["yanShip","raidShip"],4,0,"chess_char_6_15_a","MELEE",2,"ranged",1,[],607],"chess_char_6_15_b":[6,"仇白",["yanShip","raidShip"],4,1,"chess_char_6_15_a","MELEE",2,"ranged",1,[],753],"chess_char_6_16_a":[6,"溯光星源",["arcaneShip","skillfulShip"],4,0,"chess_char_6_16_a","RANGED",1,"ranged",1,[],442],"chess_char_6_16_b":[6,"溯光星源",["arcaneShip","skillfulShip"],4,1,"chess_char_6_16_a","RANGED",1,"ranged",1,[],552],"chess_char_6_17_a":[6,"耀骑士临光",["kazimierzShip","raidShip"],4,0,"chess_char_6_17_a","MELEE",1,"melee",0,[],918],"chess_char_6_17_b":[6,"耀骑士临光",["kazimierzShip","raidShip"],4,1,"chess_char_6_17_a","MELEE",1,"melee",0,[],1143],"chess_char_6_18_a":[6,"荒芜拉普兰德",["siracusaShip"],4,0,"chess_char_6_18_a","RANGED",1,"ranged",1,[],312],"chess_char_6_18_b":[6,"荒芜拉普兰德",["siracusaShip"],4,1,"chess_char_6_18_a","RANGED",1,"ranged",1,[],381],"chess_char_6_19_a":[6,"锏",["kjeragShip","kazimierzShip","swiftShip"],4,0,"chess_char_6_19_a","MELEE",2,"melee",0,[{"k":"own","n":8}],518],"chess_char_6_19_b":[6,"锏",["kjeragShip","kazimierzShip","swiftShip"],4,1,"chess_char_6_19_a","MELEE",2,"melee",0,[{"k":"own","n":16}],661],"chess_char_6_20_a":[6,"纯烬艾雅法拉",["deputShip"],4,0,"chess_char_6_20_a","RANGED",1,"heal",0,[],362],"chess_char_6_20_b":[6,"纯烬艾雅法拉",["deputShip"],4,1,"chess_char_6_20_a","RANGED",1,"heal",0,[],462]},"items":{"chess_item_1_01_e_a":[1,"维式重锤",1],"chess_item_1_02_e_a":[1,"坚守盾牌",1],"chess_item_1_03_e_a":[1,"盟约之币",1],"chess_item_1_04_e_a":[1,"随身身份牌",1],"chess_item_1_05_e_a":[1,"源石溶剂",1],"chess_item_2_01_e_a":[2,"不屈弹射器",1],"chess_item_2_02_e_a":[2,"紧急调度券",2],"chess_item_2_03_e_a":[2,"战栗维式重锤",2],"chess_item_2_04_e_a":[2,"萨尔贡浓茶",2],"chess_item_2_05_e_a":[2,"精打细算玩偶",3],"chess_item_2_06_e_a":[2,"简易通讯机",2],"chess_item_2_07_e_a":[2,"见钱眼开玩偶",1],"chess_item_3_01_e_a":[3,"叙拉古正装",2],"chess_item_3_02_e_a":[3,"精准狙击镜",2],"chess_item_3_03_e_a":[3,"激光发射器",2],"chess_item_3_04_e_a":[3,"炎国短刀",2],"chess_item_3_05_e_a":[3,"迅捷作战粮",2],"chess_item_3_06_e_a":[3,"歌利亚头盔",2],"chess_item_3_07_e_a":[3,"阿戈尔重刃",2],"chess_item_3_08_e_a":[3,"奥术法阵",1],"chess_item_3_09_e_a":[3,"坚固维式重锤",2],"chess_item_3_10_e_a":[3,"加速维式重锤",2],"chess_item_3_11_e_a":[3,"突袭手雷",1],"chess_item_3_12_e_a":[3,"骑士储蓄罐",3],"chess_item_4_01_e_a":[4,"寻呼模块",4],"chess_item_4_02_e_a":[4,"蜂鸣器",1],"chess_item_4_03_e_a":[4,"有限加速器",2],"chess_item_4_04_e_a":[4,"伪装服",1],"chess_item_4_05_e_a":[4,"防暴盾",2],"chess_item_4_06_e_a":[4,"休眠子裔",2],"chess_item_4_07_e_a":[4,"卡西米尔竞技旗",2],"chess_item_4_08_e_a":[4,"拉特兰桥夹",1],"chess_item_4_09_e_a":[4,"灼燃维式重锤",2],"chess_item_4_10_e_a":[4,"浓缩嗅盐",2],"chess_item_4_11_e_a":[4,"护盾无人机",2],"chess_item_4_12_e_a":[4,"M3茧甲",3],"chess_item_5_01_e_a":[5,"催泪瓦斯",2],"chess_item_5_02_e_a":[5,"谢拉格不融冰",2],"chess_item_5_03_e_a":[5,"双模机械臂",3],"chess_item_5_04_e_a":[5,"信标",3],"chess_item_5_05_e_a":[5,"拟态物质",4],"chess_item_5_06_e_a":[5,"博士投影",5],"chess_item_5_07_e_a":[5,"商业包装方案",3],"chess_item_5_08_e_a":[5,"突变细胞",2],"chess_item_5_09_e_a":[5,"天马之盔",3],"chess_item_6_01_e_a":[6,"天马之枪",3],"chess_item_6_02_e_a":[6,"铳骑之威",4],"chess_item_6_03_e_a":[6,"天师古鼎",4],"chess_item_6_04_e_a":[6,"海沟实验体",4],"chess_item_6_05_e_a":[6,"蒸汽之心",4],"chess_item_6_06_e_a":[6,"耶拉冈德之泪",4],"chess_item_6_07_e_a":[6,"黄沙罗盘",4],"chess_item_6_08_e_a":[6,"人事部文档",4],"chess_item_6_09_e_a":[6,"变形同构体",3],"chess_item_6_10_e_a":[6,"骑士戒律",4],"chess_item_6_11_e_a":[6,"家族徽章",4]},"modes":{"mode_training_1":{"d":"TRAINING","t":"LOCAL","last":4,"up":[4,4,6,9,12],"slots":{"1":{"chess":3,"item":0},"2":{"chess":3,"item":0},"3":{"chess":3,"item":0},"4":{"chess":3,"item":0},"5":{"chess":3,"item":1},"6":{"chess":3,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":0,"addon":0}},"mode_single_funny":{"d":"FUNNY","t":"SINGLE","last":9,"up":[1,1,5,8,10],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":4,"item":1},"5":{"chess":4,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","siracusaShip"],"add":["preciShip","swiftShip","steadShip","deputShip","visiShip","indomShip","maniShip","emptyShip"],"off":["lateranoShip","egirShip","kazimierzShip","skillfulShip","arcaneShip","miraShip","investShip","raidShip","soloShip","suntShip"],"bans":{"core":0,"addon":1}},"mode_single_normal":{"d":"NORMAL","t":"SINGLE","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}},"mode_single_hard":{"d":"HARD","t":"SINGLE","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}},"mode_single_abyss":{"d":"ABYSS","t":"SINGLE","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}},"mode_multi_funny":{"d":"FUNNY","t":"MULTI","last":14,"up":[5,8,10,11,11],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":4,"item":1},"5":{"chess":4,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","siracusaShip"],"add":["preciShip","swiftShip","steadShip","deputShip","visiShip","indomShip","maniShip","emptyShip"],"off":["lateranoShip","egirShip","kazimierzShip","skillfulShip","arcaneShip","miraShip","investShip","raidShip","soloShip","suntShip"],"bans":{"core":0,"addon":1}},"mode_multi_normal":{"d":"NORMAL","t":"MULTI","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}},"mode_multi_hard":{"d":"HARD","t":"MULTI","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}},"mode_multi_abyss":{"d":"ABYSS","t":"MULTI","last":14,"up":[5,8,11,12,13],"slots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":5,"item":1},"5":{"chess":5,"item":1},"6":{"chess":5,"item":1}},"core":["yanShip","sargonShip","victoriaShip","kjeragShip","lateranoShip","egirShip","siracusaShip","kazimierzShip"],"add":["preciShip","swiftShip","skillfulShip","arcaneShip","steadShip","deputShip","visiShip","miraShip","investShip","raidShip","indomShip","maniShip","emptyShip","soloShip","suntShip"],"off":[],"bans":{"core":3,"addon":4}}},"econ":{"income":[0,4,5,6,7,8,9,10,11,12,12,12,12,12,12,12],"incomeCap":12,"prices":{"1":{"normal":2,"golden":2},"2":{"normal":3,"golden":3},"3":{"normal":3,"golden":3},"4":{"normal":3,"golden":3},"5":{"normal":4,"golden":4},"6":{"normal":4,"golden":4}},"sell":{"1":{"normal":1,"golden":1},"2":{"normal":1,"golden":1},"3":{"normal":1,"golden":1},"4":{"normal":1,"golden":1},"5":{"normal":1,"golden":1},"6":{"normal":1,"golden":1}},"refresh":1,"upgrade":[5,8,10,11,11],"shopSlots":{"1":{"chess":3,"item":1},"2":{"chess":4,"item":1},"3":{"chess":4,"item":1},"4":{"chess":4,"item":1},"5":{"chess":4,"item":1},"6":{"chess":5,"item":1}},"poolCopies":{"1":12,"2":14,"3":18,"4":16,"5":8,"6":5},"poolOverrides":{"chess_char_1_07_a":10,"chess_char_1_08_a":10,"chess_char_1_09_a":10,"chess_char_1_10_a":10,"chess_char_1_14_a":10,"chess_char_2_11_a":8,"chess_char_2_02_a":12,"chess_char_2_09_a":12,"chess_char_2_12_a":12,"chess_char_2_13_a":12,"chess_char_2_14_a":12},"mergeCount":3,"mergeOverrides":{"chess_char_2_11_a":2},"goldenCopies":3,"maxLevel":6,"lastRound":14},"routeOps":{"kjeragShip":{"keyOps":["灵知","初雪"],"rank":1,"damage":"mixed","needs":{"layer":1,"unit":0.5,"coin":0.4,"equip":0.3,"count":0.3},"policy":{"levelCap":{"level":4,"untilRound":7},"refresh":0.7,"merge":0.8,"note":"谢拉格：先叠灵巧/迅捷做底，7 回合前必须拿到灵知","equipBias":0.5}},"sargonShip":{"keyOps":["异客","至简"],"rank":2,"damage":"physical","needs":{"draw":0.8,"unit":0.7,"coin":0.5,"sp":0.4,"count":0.3},"policy":{"levelCap":{"level":4,"untilRound":6},"refresh":0.85,"merge":0.6,"note":"萨尔贡：靠开技能次数叠层，要 5 本才刷得出异客/佩佩","equipBias":0.45}},"yanShip":{"keyOps":["夕","烛煌"],"rank":2,"damage":"mixed","needs":{"unit":0.9,"coin":0.6,"layer":0.5,"count":0.4},"policy":{"levelCap":{"level":4,"untilRound":6},"refresh":0.9,"merge":0.7,"note":"炎：靠「获得时」叠层，买人比升级重要；升本要跟在关键干员之后","equipBias":0.45}},"victoriaShip":{"keyOps":["薄绿","号角","烛煌"],"rank":3,"damage":"arts","needs":{"equip":1,"coin":0.8,"unit":0.3,"layer":0.4,"count":0.5},"policy":{"levelCap":{"level":3,"untilRound":6},"refresh":0.6,"merge":0.8,"note":"维多利亚：装备=伤害，升本只为拿高阶装备与主C；前期别在 2 本、4 本久留","equipBias":1}},"siracusaShip":{"keyOps":["拉普兰德","忍冬","铃兰"],"rank":4,"damage":"physical","needs":{"draw":1,"coin":0.6,"unit":0.5},"policy":{"levelCap":{"level":2,"untilRound":8},"refresh":1,"merge":0.9,"note":"二本叙：2 回合升 2 后长时间停在 2 本，靠「刷新」叠层（拉普兰德每次首次主动刷新 +4），9 回合前后再升本","equipBias":0.5}},"lateranoShip":{"keyOps":["圣葬","空弦"],"rank":5,"damage":"physical","needs":{"unit":0.8,"coin":0.6,"equip":0.4},"policy":{"levelCap":{"level":4,"untilRound":7},"refresh":0.7,"merge":0.8,"note":"拉特兰：6 名不同干员才成型，前期先开 3 人档","equipBias":0.6}},"kazimierzShip":{"keyOps":["瑕光","远牙"],"rank":5,"damage":"physical","needs":{"redeploy":1,"unit":0.6,"count":0.4,"atk":0.3},"policy":{"levelCap":{"level":4,"untilRound":7},"refresh":0.7,"merge":0.7,"note":"卡西米尔：靠「部署次数」叠层，远牙+再部署是引擎","equipBias":0.55}},"egirShip":{"keyOps":["深巡","归溟幽灵鲨","乌尔比安"],"rank":6,"damage":"physical","needs":{"count":0.9,"unit":0.8,"atk":0.7,"coin":0.4,"layer":0.1},"policy":{"levelCap":{"level":4,"untilRound":5},"refresh":0.6,"merge":0.8,"note":"阿戈尔：5 人即满配，7 回合升 5 本；层数只加血，输出靠吃高本卡与外援转职","equipBias":0.3}}},"bandUsage":{"band_dlya":"杜遥夜：每回合前 2 次主动刷新会锁出炎干员 → 把这 2 次留到钱够买时再用，别先刷光","band_orchid":"梓兰：每次刷新必出 2 名同名并冻结其一 → 刷对子时收益最大","band_justin":"小贾斯汀：1/4/7/10 回合给储蓄罐（1~6 金）→ 第 4/7/10 回合前把钱花到 5 以下更划算","band_cannot":"坎诺特：留 ≥5 金每回合 +1 且资金可继承 → 别把钱花光","band_sarkazb":"歌利亚：起始 45 血 → 用血量换中期投资（敢停本、敢放血）","band_ermengard":"埃芒加德：前 3 个被击倒的干员立刻复活 → 站位可以更激进","band_bldsk":"华法琳：开战时每个不同等阶 1 名干员所属盟约 +2 层 → 覆盖的等阶越多越赚","band_yu":"余：第 8 回合仅 1 个激活盟约 +36 层、否则各 +12 层 → 单核流派吃满","band_duyaoy":"杜遥夜：每回合前 2 次主动刷新会锁出炎干员 → 把这 2 次留到钱够买时再用，别先刷光"},"tierEffects":{"_about":"每个盟约的人数档位到底给什么。取自引擎 server/sim/content/bonds/core.js 里 reached(power_bond_char_cnt / ex_bond_char_cnt) 的分支，不是攻略站转述。t6 = 6 人档，t9 = 9 人档（只有炎有 9 人档）。hot = 这一档值不值得为它多抓人。","yanShip":{"tiers":[3,6,9],"t6":"召唤炎佑 ×1（攻/血 = 全队炎干员攻和/血和 × share）","t9":"炎佑 ×2、攻 ×1.5、受伤 ×0.1（90% 减伤）","hot":"9 人档是整个游戏最大的单点跃升之一：多一只炎佑 + 1.5 倍攻 + 九成减伤，等于白送半个主 C。所以炎走 9 人不是「塞满」，是把 6 人档的收益翻倍","stop":9,"layers":"攻 = 0.23 + 0.009·层（4 人 96 层 +62%，9 人 86 层 +77%）—— 人数只决定「几个人吃到」，层数决定「吃到多少」，两个都要","short":"6人:炎佑×1 · 9人:炎佑×2+攻×1.5+减伤90%","t6short":"炎佑×1","t9short":"炎佑×2 + 攻×1.5 + 减伤90%"},"sargonShip":{"tiers":[3,6],"t6":"技能触发时叠攻速（最多 25 层，每层攻 +12%）","hot":"6 人档把「放技能」变成「放技能=全队增伤」，所以萨尔贡 6 人要的是技能循环快的干员","stop":6,"short":"6人:技能叠攻速 25层·每层攻+12%","t6short":"技能叠攻速25层·每层攻+12%"},"victoriaShip":{"tiers":[3,6],"t6":"每件装备加攻：普通 +50%、金装 +80%","hot":"6 人档让「装备」直接变成攻击力，所以维多利亚 6 人之后装备的边际价值最高（_matchup 里 equipBias 1.0）","stop":6,"short":"6人:装备加攻 普通+50%/金装+80%","t6short":"装备加攻 普+50%/金+80%"},"kjeragShip":{"tiers":[3,6],"t6":"冷风：对寒冷/冻结目标的伤害倍率换成 1.35 + 0.01·层","hot":"6 人档要的是「能自己上冻结」的干员，否则倍率吃不满","stop":6,"short":"6人:冷风 冻目标倍率1.35+0.01L","t6short":"冷风 冻目标倍率1.35+0.01L"},"lateranoShip":{"tiers":[3,6],"t6":"每消耗一发弹药全队攻 +4%，上限 +200%（base_max_atk_for_consume 2）","hot":"6 人档吃弹药消耗量 → 拉特兰要的是弹匣大的干员，不是面板高的","stop":6,"short":"6人:耗弹全队攻+4%/发 上限+200%","t6short":"耗弹全队攻+4%/发 上限+200%"},"egirShip":{"tiers":[3,6],"t6":"开局吞噬击倒的干员免费重部署 3 次","hot":"6 人档是「容错」不是「输出」：阿戈尔强在活得久，不是打得快","stop":6,"short":"6人:免费重部署3次","t6short":"免费重部署3次"},"siracusaShip":{"tiers":[3,6],"t6":"额外伤害 5000 + 50·层，3% 概率触发","hot":"6 人档靠攻击次数滚雪球 → 叙拉古要攻速/多重攻击，二本叙拉古就是把这档吃干","stop":6,"short":"6人:额外伤害5000+50L·3%触发","t6short":"额外伤害5000+50L·3%"},"kazimierzShip":{"tiers":[3,6],"t6":"出生时全队攻 +20%，上限 0.5 + 0.01·层，阻挡真伤 120%/2s，纯攻 0.3","hot":"6 人档强在「开局那几秒」→ 卡西米尔要的是能顶住前 10 秒的前排","stop":6,"short":"6人:出生攻+20%·阻挡真伤120%/2s","t6short":"出生攻+20%·阻挡真伤120%"}},"coinCarry":{"band_cannot":{"cap":5,"interest":1}},"addons":{"preciShip":{"n":"精准","t":[2,3],"hand":0,"mode":"BOARD","desc":"【精准】干员攻击力提升（受层数影响） / 生效范围变为【精准】干员和所有远程干员，且攻击无视一定的防御力和法术抗性","ms":[],"apmNeed":0,"humanFit":1,"note":"精准干员攻 +10%+1.2%/层；3 名不同精准 → 范围扩到所有远程，且无视 30% 防御/法抗。R13 之后高护甲波次就靠这条，2 人就有攻。"},"swiftShip":{"n":"迅捷","t":[2],"hand":0,"mode":"BOARD","desc":"【迅捷】干员技能结束时有概率（受层数影响）立刻回复12点技力 / 所有干员技能结束时有等概率额外回复15点技力","ms":["40:env_gbuff_new"],"apmNeed":0,"humanFit":0.9,"note":"技能结束时按概率回技力（2 人后为所有人 15 点）。自动生效，配技能循环快的干员。"},"skillfulShip":{"n":"灵巧","t":[2],"hand":0,"mode":"BOARD","desc":"【灵巧】干员及周围4格干员攻击速度提升（受层数影响） / 生效范围变为【灵巧】干员周围8格","ms":["40:env_gbuff_new"],"apmNeed":0,"humanFit":0.9,"note":"灵巧干员及周围攻速 +10%+1%/层，2 人到 3 名扩到 8 格。站位要求高（要围人），人类懒得微调就别硬追。"},"arcaneShip":{"n":"奥术","t":[2,3],"hand":0,"mode":"BOARD","desc":"【奥术】干员造成法术伤害时使目标受到的法术伤害提升（受层数影响），持续3秒 / 【奥术】干员对生命值低于50%的敌人施加的伤害提升比例提升（受层数影响）","ms":[],"apmNeed":0,"humanFit":0.9,"note":"法术伤害给目标挂易伤 3 秒 + 半血以下额外增伤。法伤队专属，自动生效。"},"steadShip":{"n":"坚守","t":[2,3],"hand":0,"mode":"BOARD","desc":"所有干员生命值提升（受层数影响） / 场上非【坚守】干员受到伤害时，所受伤害的40%由所有【坚守】干员平均承担。【坚守】干员受到伤害时，伤害来源将受到一定法术伤害（受层数影响，每0.2秒至多触发1次）和持续5秒的40%脆弱效果","ms":[],"apmNeed":0,"humanFit":0.8,"note":"全队生命 +25%+1.2%/层；非坚守干员受的 40% 伤害由坚守分摊，坚守挨打反伤。生存向，前排厚时才有价值。"},"deputShip":{"n":"助力","t":[2,3],"hand":0,"mode":"BOARD","desc":"所有干员防御力提升（受层数影响），再部署时间减少 / 休整期结束时，使当前所有已激活盟约层数+2 / 改为层数+4","ms":[],"apmNeed":0,"humanFit":1,"note":"唯一「每回合免费复利」的盟约：休整期结束所有已激活盟约 +2 层，在场 3 名不同助力改 +4。2 人就生效，抓到就再也不用管它。"},"visiShip":{"n":"远见","t":[2],"hand":1,"mode":"BOARD_AND_DECK","desc":"获得一次2资金 / 所有【远见】干员购买价格永久-1资金 / 以上效果改为调度中心内所有干员的购买价格永久-1资金（整备区的【远见】干员也可用于激活盟约）","ms":["10:bond_layer_gain_coin","80:bond_multi_layer_char_goods_price_bond_discount","150:bond_multi_layer_char_goods_price_bond_discount"],"apmNeed":0,"humanFit":1,"note":"每叠 10 层给 2 金（被动）；80 层远见干员永久 -1 金，150 层全店永久 -1 金。手上/整备区也算激活人数，所以见到可以收着不急着上场。"},"miraShip":{"n":"奇迹","t":[2],"hand":1,"mode":"BOARD_AND_DECK","desc":"刷新调度中心时，有概率使下次刷新不消耗资金（受层数影响） / 获得20资金（整备区的【奇迹】干员也可用于激活盟约）","ms":["100:bond_layer_gain_coin"],"apmNeed":1,"humanFit":0.7,"note":"手动刷新才有 p=0.18+0.003·层 免单 —— 人类刷新少，免单吃不满；但每 100 层 +20 金是白给的。当附带收益，不当核心。"},"investShip":{"n":"投资人","t":[3],"hand":1,"mode":"BOARD_AND_DECK","desc":"干员的“获得时”类特质每次触发2次 / “获得时”类特质每次触发3次（整备区的【投资人】干员也可用于激活盟约）","ms":["100:bond_layer_char_garrison_bonus"],"apmNeed":0,"humanFit":1,"note":"电表倒转的本体：所有「获得时」类特质每次触发 2 次（100 层后 3 次）。它不要求你多操作，只把你本来就会做的「获得」翻倍 —— 炎是靠「获得时 +调度等级层数」叠的，所以 3 个投资人 = 每抓一个炎层数直接 ×2。手上/整备区也算人数。"},"raidShip":{"n":"突袭","t":[2],"hand":0,"mode":"BOARD","desc":"【突袭】干员10秒内未进行攻击或技能就绪时，若范围内没有敌人，则保留技力立即再部署至一名地面敌人周围，期间攻击力和生命值提升（受层数影响） / 所有干员攻击速度+50","ms":["50:env_gbuff_new"],"apmNeed":0,"humanFit":0.9,"note":"突袭干员会自动再部署到敌人身边（攻/血提升），且全队攻速 +50。全自动，不需要你操作。"},"indomShip":{"n":"不屈","t":[2,3],"hand":0,"mode":"BOARD","desc":"地面干员被击倒时，有概率立即重新部署（受层数影响） / 地面干员被击倒时使场上所有干员技力+5","ms":[],"apmNeed":0,"humanFit":0.9,"note":"地面干员被击倒时按概率立刻重生（2 人后全队回 5 技力）。容错型，漏怪时的保险。"},"maniShip":{"n":"调和","t":[1],"hand":0,"mode":"BOARD","desc":"激活时使场上核心盟约的激活人数+1，【调和】干员享受已激活的核心盟约的效果","ms":[],"apmNeed":0,"humanFit":1,"note":"只要 1 个调和干员：核心盟约激活人数 +1，且调和干员自己也吃核心效果。这是最便宜的「跨档杠杆」——炎 8→9、6→7 直接靠它省一张牌，对 9 人档尤其值。"},"emptyShip":{"n":"协防干员","t":[2],"hand":0,"mode":"BOARD","desc":"所有干员受到的物理和法术伤害-20%，【协防干员】伤害提升至120%，精锐【协防】干员造成伤害提升至140%","ms":[],"apmNeed":0,"humanFit":0.9,"note":"全队受伤 -20%，协防干员自身伤害 120%/140%。纯生存，自动生效。"},"soloShip":{"n":"独行","t":[1],"hand":0,"mode":"BOARD","desc":"【独行】干员攻击力和生命值+60%，初始技力+15（在场2名及以上【独行】干员时失效）","ms":[],"apmNeed":0,"humanFit":0.3,"note":"独行干员攻/血 +60%、初始技力 +15，但场上 2 名及以上就失效 —— 和叠层路线天然冲突，只在单核玩法里考虑。"},"suntShip":{"n":"绝技","t":[2,5],"hand":0,"mode":"BOARD_ALL_CHESS","desc":"精锐状态的干员攻击力+30% / 精锐状态的干员技力消耗-30% / （所有干员的精锐状态均可激活本盟约）","ms":[],"apmNeed":0,"humanFit":0.95,"note":"精锐干员攻 +30%（5 名精锐后技力消耗 -30%）。它数的是「精锐状态」而不是某个盟约，所以任何路线都能吃 —— 和「猛精锐」打法是同一条曲线。"}},"invest":{"need":3,"mult":2,"hiLayer":100,"hiMult":3},"stack":{"_about":"由 advisor-dev/gen-tables.mjs 从 docs/research/02-bonds.json 的 layerGarrisons + data/garrisons.json 生成。不要手改；要改就改生成器或上游数据。手写判断字段（best/want/note）来自 routes/_stack.json 的合并。","_channels":{"yanShip":{"叠法":"获得时（抓牌瞬间）","key":"gain","amplified":"投资人 ×2/×3、魔王 +1/+2、小满（本回合每获得1人 +1/+2 层）"},"sargonShip":{"叠法":"开启技能时","key":"skill","amplified":"华法琳（身前一格 开技能 +1/+2 层）、魔王 +1/+2"},"lateranoShip":{"叠法":"消耗弹药时","key":"ammo","amplified":"莫斯提马（周围4格每6发 +1/+2）、圣约送葬人（自身每7发 +7/+14）"},"kjeragShip":{"叠法":"敌人进入冻结时","key":"freeze","amplified":"初雪/银灰（范围内冻结 50% 概率 +1/+2）"},"siracusaShip":{"叠法":"击倒敌人时","key":"kill","amplified":"荒芜拉普兰德（精锐后全队叙拉古都获得该特质）、休谟斯"},"egirShip":{"叠法":"被击倒 / 击倒敌人时","key":"death","amplified":"幽灵鲨/归溟幽灵鲨（自身被击倒 +3/+6、+5/+10）、斯卡蒂（每击倒2人 +1/+2）"},"victoriaShip":{"叠法":"装备 + 不同阶人数（休整期）","key":"equip","amplified":"薄绿/维娜·维多利亚（不同阶维多利亚干员 +2/+3 层）、风笛（前3次击倒 +2）"},"kazimierzShip":{"叠法":"开战时 / 被击倒","key":"onstart","amplified":"史尔特尔（突袭 +8/+16）、瑕光（自身盟约 +4/+8）"}},"_source":{"layerGarrisons":97,"triggers":61,"amplifiers":47},"trigger":{"角峰":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"地灵":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"艾丝黛尔":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"锡人":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"深靛":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"野鬃":{"event":"gain","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"自身所属盟约层数+2（无需激活盟约）","garrisonId":"garrison_25"},"惊蛰":{"event":"gain","what":"获得等于当前调度中心等级的【炎】层数（无需激活盟约）","want":"升本之后再抓她最划算（L5 = 5 层/精英 ×2 = 10 层）","bond":null,"add":null,"eliteAdd":null,"pos":null,"garrisonId":"garrison_30"},"小满":{"event":"prepfin","what":"本回合每获得过1名干员，使已激活的【炎】层数+1","bond":null,"add":null,"eliteAdd":null,"pos":null,"garrisonId":"garrison_31"},"山":{"event":"prepfin","what":"本回合每获得过1名干员，使已激活的【投资人】层数+1","bond":null,"add":null,"eliteAdd":null,"pos":null,"garrisonId":"garrison_34"},"烛煌":{"event":"gain","what":"【炎】【维多利亚】层数+5（无需激活盟约）","want":"两条线的双料发动机","bond":null,"add":5,"eliteAdd":10,"pos":null,"garrisonId":"garrison_35"},"崖心":{"event":"gain","bond":null,"add":3,"eliteAdd":6,"pos":null,"what":"自身所属盟约层数+3（无需激活盟约）","garrisonId":"garrison_41"},"薄绿":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":"全场","what":"场上每有1名不同阶的【维多利亚】干员，使已激活的【维多利亚】层数+2","garrisonId":"garrison_48"},"莱恩哈特":{"event":"prepfin","what":"使自身已激活的盟约层数+5","bond":null,"add":5,"eliteAdd":10,"pos":null,"garrisonId":"garrison_51"},"维娜·维多利亚":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":"全场","what":"场上每有1名不同阶的【维多利亚】/【奇迹】干员使已激活的【维多利亚】层数+3/【奇迹】层数+2","garrisonId":"garrison_53"},"妮芙":{"event":"prepfin","what":"整备区每有1个干员，使已激活的【迅捷】层数+2","bond":null,"add":null,"eliteAdd":null,"pos":"整备区","garrisonId":"garrison_56"},"流明":{"event":"prepfin","what":"整备区中每名干员所在的已激活盟约分别层数+2","bond":null,"add":2,"eliteAdd":4,"pos":"整备区","garrisonId":"garrison_57"},"号角":{"event":"prepfin","what":"当前已激活且层数最多的盟约每有1名不同阶干员在场，层数+2","bond":null,"add":null,"eliteAdd":null,"pos":null,"garrisonId":"garrison_61"},"星熊":{"event":"gain","what":"自身所属盟约层数+8（无需激活盟约）","want":"投资人 ×2 时一张 = 16~32 层，是全表最高的一发","bond":null,"add":8,"eliteAdd":16,"pos":null,"garrisonId":"garrison_65"},"锏":{"event":"gain","what":"自身所属盟约层数+8（无需激活盟约）","want":"同上；配魔王再 +1/+2","bond":null,"add":8,"eliteAdd":16,"pos":null,"garrisonId":"garrison_65"},"折桠":{"event":"prepfin","bond":null,"add":4,"eliteAdd":8,"pos":null,"what":"使已激活的【坚守】层数+4","garrisonId":"garrison_69"},"蛇屠箱":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":"同一行","what":"同一行每有1名干员，使已激活的【坚守】层数+1","garrisonId":"garrison_70"},"忍冬":{"event":"gain","bond":null,"add":6,"eliteAdd":12,"pos":null,"what":"自身所属盟约层数+6（无需激活盟约）","garrisonId":"garrison_71"},"赫默":{"event":"prepstart","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"使自身已激活的盟约层数+2","garrisonId":"garrison_80"},"蒂比":{"event":"prepstart","bond":null,"add":2,"eliteAdd":4,"pos":null,"what":"使自身已激活的盟约层数+2","garrisonId":"garrison_80"},"调香师":{"event":"prepfin","what":"当前激活且层数最多的盟约层数+2，此干员在整备区时也有效","bond":null,"add":2,"eliteAdd":4,"pos":"整备区","garrisonId":"garrison_81"},"波登可":{"event":"prepfin","what":"当前激活且层数最多的盟约层数+1，此干员在整备区时也有效","bond":null,"add":1,"eliteAdd":2,"pos":"整备区","garrisonId":"garrison_102"},"伊内丝":{"event":"prepfin","what":"使自身已激活的盟约层数+5","bond":null,"add":5,"eliteAdd":10,"pos":null,"garrisonId":"garrison_104"},"灰毫":{"event":"gain","what":"当前激活且层数最多的盟约层数+3","want":"不管什么路线都能吃，收敛最快","bond":null,"add":3,"eliteAdd":6,"pos":null,"garrisonId":"garrison_105"},"雪猎":{"event":"gain","what":"自身所属盟约层数+5（无需激活盟约）","bond":null,"add":5,"eliteAdd":10,"pos":null,"garrisonId":"garrison_111"},"灵知":{"event":"gain","what":"自身所属盟约层数+5（无需激活盟约）","bond":null,"add":5,"eliteAdd":10,"pos":null,"garrisonId":"garrison_111"},"夕":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":null,"what":"当前休整期每获得过一名干员，使已激活的【炎】【奥术】层数+2","garrisonId":"garrison_119"},"溯光星源":{"event":"prepfin","bond":null,"add":3,"eliteAdd":3,"pos":null,"what":"本回合每花费3资金，使已激活的【灵巧】【奥术】层数+2","garrisonId":"garrison_121"},"阿罗玛":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":null,"what":"本回合每刷新过1次，使已激活的【叙拉古】【奥术】层数+2（至多6层）","garrisonId":"garrison_122"},"拉普兰德":{"event":"other","bond":null,"add":null,"eliteAdd":null,"pos":"整备区","what":"若为本回合首次主动刷新，使已激活的【叙拉古】层数+4，此干员在整备区时也有效","garrisonId":"garrison_123"},"协律":{"event":"gain","bond":null,"add":4,"eliteAdd":8,"pos":null,"what":"自身所属盟约层数+4（无需激活盟约）","garrisonId":"garrison_130"},"寒檀":{"event":"prepstart","bond":null,"add":4,"eliteAdd":8,"pos":null,"what":"使已激活的【远见】层数+4","garrisonId":"garrison_141"},"安洁莉娜":{"event":"prepfin","bond":null,"add":null,"eliteAdd":null,"pos":null,"what":"本回合每刷新过1次，使已激活的【叙拉古】层数+4（每回合至多12层）","garrisonId":"garrison_147"},"刺玫":{"event":"prepfin","bond":null,"add":1,"eliteAdd":2,"pos":null,"what":"使已激活的【维多利亚】层数+1","garrisonId":"garrison_154"},"录武官":{"event":"gain","bond":null,"add":null,"eliteAdd":null,"pos":null,"what":"【炎】层数+6、【奇迹】层数+3（无需激活盟约）","garrisonId":"garrison_156"},"雷蛇":{"event":"prepfin","bond":null,"add":1,"eliteAdd":2,"pos":null,"what":"使已激活的【不屈】层数+1","garrisonId":"garrison_158"},"莫斯提马":{"event":"ammo","what":"周围 4 格每消耗 6 发弹药，已激活【拉特兰】+1（精锐 +2）"},"圣约送葬人":{"event":"ammo","what":"自身每消耗 7 发，【拉特兰】+7、【远见】+3（精锐 ×2；远见至多 42 层）"},"蕾缪安":{"event":"ammo","what":"自身每消耗 10 发且同一行 3 人 → 【拉特兰】【精准】+2（精锐 +4）"},"莎草":{"event":"skill","what":"首次开技能 → 【萨尔贡】+5（精锐 +10）"},"菲莱":{"event":"skill","what":"每次开技能 → 【萨尔贡】+6（精锐 +12）"},"寒芒克洛丝":{"event":"skill","what":"使身前一格获得「开技能【精准】+1/+2」特质（每场至多 10/20 层）"},"初雪":{"event":"freeze","what":"范围内敌人冻结时 50% 概率【谢拉格】+1（精锐 +2）"},"银灰":{"event":"freeze","what":"同初雪"},"荒芜拉普兰德":{"event":"kill","what":"击倒敌人【叙拉古】+2；精锐后全队叙拉古都获得该特质"},"休谟斯":{"event":"kill","what":"每击倒 2 名敌人【突袭】+1（精锐 +2）"},"斯卡蒂":{"event":"kill","what":"每击倒 2 名敌人【阿戈尔】【坚守】【突袭】+1（精锐 +2）"},"幽灵鲨":{"event":"death","what":"自身被击倒【阿戈尔】+3（精锐 +6）"},"归溟幽灵鲨":{"event":"death","what":"自身被击倒/替身切换【阿戈尔】+5、【不屈】+5（精锐 +10）"},"史尔特尔":{"event":"onstart","what":"开战【突袭】+8（精锐 +16；每场至多 50/100）"},"瑕光":{"event":"onstart","what":"开战自身盟约 +4（精锐 +8；至多 12/24）"},"风笛":{"event":"kill","what":"前 3 次击倒 → 【维多利亚】【远见】【不屈】+2","want":"维多利亚线的早期油门"},"砾":{"event":"death","what":"自身被击倒 → 【卡西米尔】+1、【不屈】+2（精锐 ×2）"},"引星棘刺":{"event":"prepfin","what":"自身与身前一格各 +4（精锐 +8）"},"断崖":{"event":"prepfin","what":"自身与身后一格各 +3（精锐 +6）"},"见行者":{"event":"prepfin","what":"自身与身后一格各 +3（精锐 +6）"},"德克萨斯":{"event":"sold","what":"卖出时获得 1 次免费刷新（精锐 2 次）","want":"唯一「卖」有收益的牌，但人类卖得少，别为它硬卖"}},"amplifier":{"莫斯提马":{"pos":"周围4格","what":"自身周围4格的干员每消耗6发弹药，使已激活的【拉特兰】层数+1","eliteAdd":6,"baseAdd":6,"garrisonId":"garrison_22"},"圣约送葬人":{"pos":"range:0-1","what":"自身每消耗7发子弹，使已激活的【拉特兰】层数+7、【远见】层数+3（每场战斗分别至多触发7次）","eliteAdd":7,"baseAdd":7,"garrisonId":"garrison_23"},"蕾缪安":{"pos":"同一行","what":"自身每消耗10发子弹，若同一行有3名干员，使已激活的【拉特兰】【精准】层数+2","eliteAdd":10,"baseAdd":10,"garrisonId":"garrison_24"},"初雪":{"pos":null,"what":"每当范围内1名敌人进入冻结时，有50%概率使已激活的【谢拉格】层数+1","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_28"},"银灰":{"pos":null,"what":"每当范围内1名敌人进入冻结时，有50%概率使已激活的【谢拉格】层数+1","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_28"},"斯卡蒂":{"pos":null,"what":"每击倒2名单位时，使已激活的【阿戈尔】【坚守】【突袭】层数+1","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_38"},"归溟幽灵鲨":{"pos":null,"what":"自身被击倒或替身与本体进行切换时，使已激活的【阿戈尔】层数+5、【不屈】层数+5","eliteAdd":10,"baseAdd":5,"garrisonId":"garrison_40"},"莎草":{"pos":null,"what":"首次开启技能时，使已激活的【萨尔贡】层数+5","eliteAdd":10,"baseAdd":5,"garrisonId":"garrison_42"},"菲莱":{"pos":null,"what":"开启技能时，使已激活的【萨尔贡】层数+6","eliteAdd":12,"baseAdd":6,"garrisonId":"garrison_43"},"幽灵鲨":{"pos":null,"what":"自身被击倒时，使已激活的【阿戈尔】层数+3","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_46"},"断崖":{"pos":"自身 + 身后一格","what":"休整期结束：自身与身后一格各 +3（精锐 +6）","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_47","best":"注意是「身后」，摆位和引星棘刺相反"},"见行者":{"pos":"自身 + 身后一格","what":"同断崖（+3/+6）","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_47"},"风笛":{"pos":null,"what":"前3次击倒敌人时，使已激活的【维多利亚】【远见】【不屈】层数+2","eliteAdd":4,"baseAdd":2,"garrisonId":"garrison_50"},"华法琳":{"pos":"身前一格","what":"使身前一格干员获得「开启技能时使自身所属已激活盟约层数 +1（精锐 +2）」特质，每场至多 7/14 层","eliteAdd":null,"baseAdd":null,"garrisonId":"garrison_72","stack":"技能频率越高收益越大 —— 这就是「华法琳配技能快的」","best":"放在技能转得快/自动技能的干员前面（她本身只回血，不输出）"},"寒芒克洛丝":{"pos":"身前一格","what":"使身前一格干员获得特质“开启技能时使已激活【精准】层数+1”（每场战斗至多10层）","eliteAdd":null,"baseAdd":null,"garrisonId":"garrison_73"},"砾":{"pos":null,"what":"使已激活的【卡西米尔】层数+1\n使已激活的【不屈】层数+2","eliteAdd":4,"baseAdd":2,"garrisonId":"garrison_75"},"休谟斯":{"pos":null,"what":"每击倒2名敌人时，使已激活的【突袭】层数+1","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_77"},"引星棘刺":{"pos":"自身 + 身前一格","what":"休整期结束：自身与身前一格已激活盟约各 +4（精锐 +8）","eliteAdd":8,"baseAdd":4,"garrisonId":"garrison_79","stack":"一次性大额，位置错了浪费一半","best":"把自己和最粗的那条线并排"},"塑心":{"pos":"同一行","what":"开启技能时，同一行每 1 名干员 → 当前层数最多的盟约 +1（每场至多 10 层）","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_90"},"瑕光":{"pos":null,"what":"使自身已激活的盟约层数+4（每场作战至多12层）","eliteAdd":8,"baseAdd":4,"garrisonId":"garrison_106"},"史尔特尔":{"pos":null,"what":"使已激活的【突袭】层数+8（每场作战至多50层）","eliteAdd":16,"baseAdd":8,"garrisonId":"garrison_107"},"荒芜拉普兰德":{"pos":null,"what":"击倒敌人时，使已激活的【叙拉古】层数+2\n将荒芜拉普兰德合成为精锐即可在战斗中使所有【叙拉古】干员获得该效果","eliteAdd":null,"baseAdd":2,"garrisonId":"garrison_118"},"缇缇":{"pos":null,"what":"每当范围内有敌人或干员进入沉睡或晕眩时，使已激活的【萨尔贡】【精准】层数+1（每场战斗至多24层）","eliteAdd":2,"baseAdd":1,"garrisonId":"garrison_125"},"凛御银灰":{"pos":"身前一格","what":"使身前一格【谢拉格】干员获得特质“范围内1名敌人进入冻结时，有60%概率使已激活的【谢拉格】层数+1”","eliteAdd":null,"baseAdd":null,"garrisonId":"garrison_126"},"百炼嘉维尔":{"pos":null,"what":"开启技能时，使已激活的【萨尔贡】层数+9","eliteAdd":18,"baseAdd":9,"garrisonId":"garrison_128"},"海霓":{"pos":null,"what":"首次击倒敌人或我方干员时，使已激活的【阿戈尔】【奥术】层数+3","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_131"},"送葬人":{"pos":null,"what":"首次击倒敌人时，使已激活的【精准】【拉特兰】层数+3","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_138"},"纯烬艾雅法拉":{"pos":null,"what":"开启技能时，当前已激活且层数最多的盟约层数+3","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_140"},"耀骑士临光":{"pos":"身前一格","what":"使自身和身前一格干员获得特质“【卡西米尔】每叠加3层，本干员再部署时间-1.5%，攻击速度+0.5”","eliteAdd":null,"baseAdd":null,"garrisonId":"garrison_145"},"远牙":{"pos":"同一行","what":"使同一行最右边一名干员获得特质“使已激活的【卡西米尔】【精准】层数+4（每场作战至多24层）”","eliteAdd":null,"baseAdd":null,"garrisonId":"garrison_148"},"空弦":{"pos":"身前一格","what":"使自身及身前一格干员的已激活盟约分别各层数+3","eliteAdd":6,"baseAdd":3,"garrisonId":"garrison_150"},"伺夜":{"pos":null,"what":"造成的伤害变为弱点伤害（基于敌人的防御力和法术抗性变换物理和法术伤害），前3次击倒敌人时使已激活的【叙拉古】层数+2、【奇迹】层数+1","eliteAdd":4,"baseAdd":2,"garrisonId":"garrison_152"},"锏":{"pos":null,"what":"自身所属的盟约层数+8\n使自身已激活的盟约层数+8（至多24层）","eliteAdd":16,"baseAdd":8,"garrisonId":"garrison_155"},"魔王":{"pos":"身前一格","what":"身前一格的干员因特质使层数提升时，额外 +1（精锐 +2）","stack":"和投资人 ×2 是乘在一起的：先 ×2 再 +1/+2","best":"放在最容易叠层的人前面（星熊/惊蛰/烛煌这种一发 +8~16 层的）"},"白面鸮":{"pos":"身前一格","what":"身前一格若是「进入休整期时」特质，本干员复制它的特质","best":"复制助力/远见这类休整期被动 → 等于多一个免费源"},"塞雷娅":{"pos":"身前一格","what":"身前一格若是「休整期结束时」特质，本干员复制它的特质","best":"助力就是休整期结束时生效 → 塞雷娅站助力前面可再吃一次"},"号角":{"pos":"全场","what":"休整期结束：当前层数最多的盟约，每有 1 名不同阶干员在场 +2（精锐 +4）","best":"堆「不同阶」的人数，比堆同阶更值"},"调香师":{"pos":"整备区也有效","what":"休整期结束：当前层数最多的盟约 +2/+4（在整备区也算）","best":"不用上场，收着就生效"},"波登可":{"pos":"整备区也有效","what":"休整期结束：当前层数最多的盟约 +1/+2（在整备区也算）"},"流明":{"pos":"整备区","what":"休整期结束：整备区每名干员所在的已激活盟约分别 +2（精锐 +4）","best":"整备区囤人也能叠层 —— 但人类手牌位有限，别为它硬囤"},"小满":{"pos":"全场","what":"休整期结束：本回合每获得过 1 名干员，已激活【炎】层数 +1（精锐 +2）","best":"和「多抓」直接挂钩 → 一回合抓 3 张 = 免费 +3/+6 层"},"山":{"pos":"全场","what":"休整期结束：本回合每获得过 1 名干员，已激活【投资人】层数 +1（精锐 +2）","best":"加速投资人冲 100 层（×3 的门槛）"},"妮芙":{"pos":"整备区","what":"休整期结束：整备区每有 1 个干员，已激活【迅捷】层数 +2（精锐 +4）"},"薄绿":{"pos":"全场","what":"场上每有 1 名不同阶【维多利亚】干员，已激活【维多利亚】层数 +2"},"维娜·维多利亚":{"pos":"全场","what":"场上每 1 名不同阶【维多利亚】/【奇迹】干员，维多利亚 +3 / 奇迹 +2 层"},"蛇屠箱":{"pos":"同一行","what":"同一行每有 1 名干员，已激活【坚守】层数 +1（精锐 +2）"},"折桠":{"pos":"全场","what":"已激活【坚守】层数 +4（精锐 +8）"}}},"apmHuman":{"assumption":"人类一回合大约：抓 2–4 张、卖 0–1 张、刷新 1–2 次、调位 1–2 次。任何依赖「反复买卖刷触发」的玩法（机器人式电表倒转）不写进建议。","buy":3,"sell":0.5,"refresh":1.5,"edit":1.5},"bossTable":{"rows":[{"id":"boss_1","n":"假想敌：胄","poolEff":4320000,"def":1000,"res":25,"lpr":2,"defHalf":1000,"resHalf":25,"win":165,"needDps":26182},{"id":"boss_2","n":"假想敌：铳","poolEff":3000000,"def":1100,"res":60,"lpr":2,"defHalf":1100,"resHalf":60,"win":165,"needDps":18182},{"id":"boss_3","n":"假想敌：管","poolEff":4000000,"def":700,"res":50,"lpr":2,"defHalf":700,"resHalf":50,"win":165,"needDps":24242},{"id":"boss_4","n":"盐风主教昆图斯","poolEff":4200000,"def":500,"res":50,"lpr":1,"defHalf":500,"resHalf":50,"win":165,"needDps":25455},{"id":"boss_5","n":"卢西恩，“猩红血钻”","poolEff":3000000,"def":600,"res":40,"lpr":30,"defHalf":600,"resHalf":40,"win":165,"needDps":18182},{"id":"boss_6","n":"阿利斯泰尔，帝国余晖","poolEff":3980000,"def":1030,"res":20,"lpr":2,"defHalf":2060,"resHalf":65,"win":165,"needDps":24121},{"id":"boss_7","n":"“萨米的意志”","poolEff":7000000,"def":800,"res":40,"lpr":2,"defHalf":800,"resHalf":40,"win":165,"needDps":42424}],"payoff":{"boss_1":{"yanShip":{"c":"arts","k":0.97,"kp":1.32},"victoriaShip":{"c":"arts","k":0.97,"kp":1.32},"kjeragShip":{"c":"mixed","k":0.97,"kp":1.32},"sargonShip":{"c":"mixed","k":3.9,"kp":5.3},"kazimierzShip":{"c":"phys","k":0.17,"kp":0.27},"lateranoShip":{"c":"phys","k":0.07,"kp":0.2},"siracusaShip":{"c":"phys","k":0.06,"kp":0.06},"egirShip":{"c":"phys","k":0.03,"kp":0.03}},"boss_2":{"yanShip":{"c":"arts","k":0.78,"kp":1.13},"victoriaShip":{"c":"arts","k":0.78,"kp":1.13},"kjeragShip":{"c":"mixed","k":0.78,"kp":1.13},"sargonShip":{"c":"mixed","k":3.12,"kp":4.52},"kazimierzShip":{"c":"phys","k":0.27,"kp":0.49},"lateranoShip":{"c":"phys","k":0.05,"kp":0.33},"siracusaShip":{"c":"phys","k":0.12,"kp":0.12},"egirShip":{"c":"phys","k":0.05,"kp":0.05}},"boss_3":{"yanShip":{"c":"arts","k":0.97,"kp":1.27},"victoriaShip":{"c":"arts","k":0.97,"kp":1.27},"kjeragShip":{"c":"mixed","k":0.97,"kp":1.27},"sargonShip":{"c":"mixed","k":3.9,"kp":5.07},"kazimierzShip":{"c":"phys","k":0.53,"kp":0.67},"lateranoShip":{"c":"phys","k":0.39,"kp":0.57},"siracusaShip":{"c":"phys","k":0.12,"kp":0.34},"egirShip":{"c":"phys","k":0.05,"kp":0.15}},"boss_4":{"yanShip":{"c":"arts","k":0.97,"kp":1.27},"victoriaShip":{"c":"arts","k":0.97,"kp":1.27},"kjeragShip":{"c":"mixed","k":0.97,"kp":1.27},"sargonShip":{"c":"mixed","k":3.9,"kp":5.07},"kazimierzShip":{"c":"phys","k":0.67,"kp":0.77},"lateranoShip":{"c":"phys","k":0.57,"kp":0.7},"siracusaShip":{"c":"phys","k":0.31,"kp":0.9},"egirShip":{"c":"phys","k":0.13,"kp":0.39}},"boss_5":{"yanShip":{"c":"arts","k":1.17,"kp":1.4},"victoriaShip":{"c":"arts","k":1.17,"kp":1.4},"kjeragShip":{"c":"mixed","k":1.17,"kp":1.4},"sargonShip":{"c":"mixed","k":4.68,"kp":5.62},"kazimierzShip":{"c":"phys","k":0.36,"kp":0.43},"lateranoShip":{"c":"phys","k":0.29,"kp":0.38},"siracusaShip":{"c":"phys","k":0.07,"kp":0.37},"egirShip":{"c":"phys","k":0.03,"kp":0.16}},"boss_6":{"yanShip":{"c":"arts","k":0.95,"kp":1.58},"victoriaShip":{"c":"arts","k":0.95,"kp":1.58},"kjeragShip":{"c":"mixed","k":0.95,"kp":1.58},"sargonShip":{"c":"mixed","k":3.8,"kp":6.31},"kazimierzShip":{"c":"phys","k":0.09,"kp":0.09},"lateranoShip":{"c":"phys","k":0.07,"kp":0.09},"siracusaShip":{"c":"phys","k":0.12,"kp":0.12},"egirShip":{"c":"phys","k":0.05,"kp":0.05}},"boss_7":{"yanShip":{"c":"arts","k":0.67,"kp":1.01},"victoriaShip":{"c":"arts","k":0.67,"kp":1.01},"kjeragShip":{"c":"mixed","k":0.67,"kp":1.01},"sargonShip":{"c":"mixed","k":2.67,"kp":4.03},"kazimierzShip":{"c":"phys","k":0.19,"kp":0.25},"lateranoShip":{"c":"phys","k":0.12,"kp":0.21},"siracusaShip":{"c":"phys","k":0.05,"kp":0.05},"egirShip":{"c":"phys","k":0.02,"kp":0.02}}},"minDamageRatio":0.05,"preciPierce":0.3},"denom":{"1":192,"2":430,"3":772,"4":1124,"5":1276,"6":1371},"perTier":{"1":16,"2":17,"3":19,"4":22,"5":19,"6":19},"notes":"Pool copies are the initial counts: the live pool is shared and invisible to a client (occupation, sold-back pieces, and the per-match banned bonds all move it), so every probability this panel shows is an estimate of the same shape, not the server's number."}</script>
+<script>
+(function () {
+  'use strict';
+
+  // ---------------------------------------------------------------------------------------------
+  // <CORE>  pure recommendation logic — no DOM, no messaging (advisor-dev/test-core.mjs evals this)
+  // ---------------------------------------------------------------------------------------------
+  var D = JSON.parse(document.getElementById('sp-data').textContent);
+  var CH = D.chess, BO = D.bonds, EC = D.econ, IT = D.items || {};
+
+  function own(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function rec(id) { return own(CH, id) ? CH[id] : null; }
+  function tierOf(id) {
+    if (own(CH, id)) return CH[id][0];
+    return own(IT, id) ? IT[id][0] : 0;
+  }
+  function nameOf(id) {
+    if (own(CH, id)) return CH[id][1];
+    return own(IT, id) ? IT[id][1] : id;
+  }
+  function bondsOf(id) { var c = rec(id); return c ? c[2] : []; }
+  function isGolden(id) { var c = rec(id); return !!(c && c[4]); }
+  function baseOf(id) { var c = rec(id); return c ? c[5] : id; }
+  function priceOf(id) { var c = rec(id); return c ? c[3] : 0; }
+  function bondName(id) { return BO[id] ? BO[id].n : id; }
+  function thresholdsOf(id) { return BO[id] ? BO[id].t : [3, 6, 9]; }
+
+  /** copies held per base chess: a piece holds 1, an elite holds `goldenCopies`. */
+  function heldCounts(priv) {
+    var held = Object.create(null);
+    var piles = [priv.board || [], priv.hand || []];
+    for (var p = 0; p < piles.length; p++) {
+      for (var i = 0; i < piles[p].length; i++) {
+        var piece = piles[p][i];
+        if (!piece || piece.kind !== 'chess' || typeof piece.id !== 'string') continue;
+        var base = baseOf(piece.id);
+        held[base] = (held[base] || 0) + (isGolden(piece.id) ? (EC.goldenCopies || 3) : 1);
+      }
+    }
+    return held;
+  }
+
+  /** merge target for a base chess (风丸 merges at 2). */
+  function mergeOf(base) {
+    var o = EC.mergeOverrides || {};
+    return Object.prototype.hasOwnProperty.call(o, base) ? o[base] : (EC.mergeCount || 3);
+  }
+
+  /** official bond progress from the server's own list, with a local count when the field is missing. */
+  function progressOf(priv, bondId) {
+    var list = priv.bonds || [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] && list[i].bondId === bondId) {
+        return { count: typeof list[i].count === 'number' ? list[i].count : 0, tier: list[i].tier };
+      }
+    }
+    var seen = Object.create(null), n = 0;
+    var piles = [priv.board || [], priv.hand || []];
+    for (var p = 0; p < piles.length; p++) {
+      for (var k = 0; k < piles[p].length; k++) {
+        var piece = piles[p][k];
+        if (!piece || piece.kind !== 'chess' || typeof piece.id !== 'string') continue;
+        var base = baseOf(piece.id);
+        if (seen[base]) continue;
+        if (bondsOf(piece.id).indexOf(bondId) >= 0) { seen[base] = 1; n += 1; }
+      }
+    }
+    return { count: n, tier: null };
+  }
+
+  function nextThreshold(bondId, count) {
+    var t = thresholdsOf(bondId);
+    for (var i = 0; i < t.length; i++) if (count < t[i]) return t[i];
+    return null;
+  }
+
+  // ── 层数 → 输出/生存倍率，用 data/bonds.json 里引擎自己读的那批系数（buffs[].bb）────────────
+  function bbOf(bondId) { return (BO[bondId] && BO[bondId].bb) || {}; }
+  function at(n, k, d) { return typeof n[k] === 'number' ? n[k] : (d || 0); }
+
+  /** the live layer count for this player (the desktop overlay sees it; the ui-plugin allowlist drops it) */
+  function layersOf(priv, bondId) {
+    var list = priv.bonds || [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i] && list[i].bondId === bondId && typeof list[i].layers === 'number') return list[i].layers;
+    }
+    return 0;
+  }
+
+  /** damage multiplier at L layers — the same arithmetic as server/sim/content/bonds/core.js */
+  function damageMultiplier(bondId, L) {
+    var n = bbOf(bondId);
+    switch (bondId) {
+      case 'yanShip': return 1 + at(n, 'base_atk', 0.23) + at(n, 'atk_per_stack', 0.009) * L;
+      case 'victoriaShip': return at(n, 'base_damage_scale', 1.25) + at(n, 'damage_scale_per_stack', 0.008) * L;
+      case 'kjeragShip': return at(n, 'base_ex_damage_scale', 1.35) + at(n, 'ex_damage_scale_per_stack', 0.01) * L;
+      case 'lateranoShip': return 1 + at(n, 'base_ammo_percent', 0.05) + at(n, 'ammo_percent_per_stack', 0.015) * L;
+      case 'sargonShip': return 1 + at(n, 'base_attack_speed', 12) * Math.min(at(n, 'max_buff_stack_cnt', 25), 25) / 100;
+      case 'siracusaShip': return 1 + (at(n, 'base_attack_speed', 25) + at(n, 'attack_speed_per_stack', 0.8) * L) / 100;
+      case 'kazimierzShip': return 1 + Math.min(at(n, 'base_max_atk_when_born', 0.5) + at(n, 'max_atk_when_born_per_stack', 0.01) * L, 2);
+      default: return 1;
+    }
+  }
+
+  /** survival multiplier at L layers (阿戈尔's HP line; the others survive through control and revives) */
+  function survivalMultiplier(bondId, L) {
+    var n = bbOf(bondId);
+    if (bondId === 'egirShip') return 1 + at(n, 'base_max_hp', 0.35) + at(n, 'max_hp_per_stack', 0.01) * L;
+    return 1;
+  }
+
+  /**
+   * the core bond to build around: the player's own pick, else the one already furthest along.
+   * `disabled` = 本局被禁的盟约（m.public.disabledBonds）——被禁的绝不能选，否则会给一套玩不了的路线。
+   */
+  function autoRoute(priv, stuck, disabled) {
+    var off = disabled || [];
+    function banned(id) { return off.indexOf(id) >= 0; }
+    if (stuck && BO[stuck] && BO[stuck].c === 1 && !banned(stuck)) return stuck;
+    var best = null, bestKey = -1;
+    var ids = Object.keys(BO);
+    for (var i = 0; i < ids.length; i++) {
+      if (BO[ids[i]].c !== 1 || banned(ids[i])) continue;
+      var p = progressOf(priv, ids[i]);
+      var key = p.count * 10 + (BO[ids[i]].w || 0);
+      if (key > bestKey) { bestKey = key; best = ids[i]; }
+    }
+    return best;
+  }
+
+  function coreBonds() {
+    return Object.keys(BO).filter(function (id) { return BO[id].c === 1; });
+  }
+
+  // ── 模式：标准单人只有 9 回合、5 条核心盟约；险境以上才 14 回合、8 条核心 + 本局禁 3+4 ───────────
+  function modeOf(modeId) {
+    return (D.modes && modeId && D.modes[modeId]) || null;
+  }
+
+  /** the core bonds this mode offers AND this match did not ban (标准模拟里没有拉特兰/阿戈尔/卡西米尔) */
+  function coreBondsFor(modeId, disabled) {
+    var m = modeOf(modeId);
+    var list = (m && m.core && m.core.length) ? m.core.slice() : coreBonds();
+    var off = disabled || [];
+    return list.filter(function (id) { return off.indexOf(id) < 0; });
+  }
+
+  function lastRoundOf(modeId) {
+    var m = modeOf(modeId);
+    return (m && m.last) || EC.lastRound || 14;
+  }
+
+  function upgradePrice(modeId, level) {
+    var m = modeOf(modeId);
+    var up = (m && m.up) || EC.upgrade || [5, 8, 11, 12, 13];
+    return up[Math.max(0, level - 1)] || 99;
+  }
+
+  function shopSlotsOf(modeId, level) {
+    var m = modeOf(modeId);
+    var slots = (m && m.slots) || EC.shopSlots || {};
+    return (slots[level] && slots[level].chess) || 4;
+  }
+
+
+  /**
+   * 有效层数（第 7 轮诊断的结论）：BOSS 伤害不取决于「堆了多少层」，而取决于「层压在哪个通道」。
+   * 同一个 bot 到 R13 都是 L6 / 8 人 / ~200 层，但最强盟约是法系（精准/维多利亚）时打掉 39.8% BOSS，
+   * 是物理/攻速（灵巧/拉特兰）时只有 2.2%。所以层数要乘本局 BOSS 对该盟约的通道系数 k。
+   */
+  function effectiveLayersOf(priv, route, bossId) {
+    var layers = layersOf(priv, route);
+    var bt = D.bossTable;
+    var pay = (bt && bt.payoff && bossId && bt.payoff[bossId] && bt.payoff[bossId][route]) || null;
+    var k = pay && typeof pay.k === 'number' ? pay.k : null;
+    return { layers: layers, k: k, eff: k === null ? layers : layers * k, channel: pay ? pay.c : null };
+  }
+
+  /** 这条路线的关键干员（来自攻略卡），名字匹配即可 —— 缺了会崩的那几张 */
+  function keyOpsOf(route) {
+    var r = (D.routeOps && D.routeOps[route]) || null;
+    return (r && r.keyOps) || [];
+  }
+  /** 这条路线的运营政策（levelCap / refresh / merge）——专精流派用 */
+  function policyOf(route) {
+    var r = (D.routeOps && D.routeOps[route]) || null;
+    return (r && r.policy) || null;
+  }
+  /** 玩家选的策略「怎么用才不浪费」（按长处触发） */
+  function bandUsageOf(bandId) {
+    return (D.bandUsage && bandId && D.bandUsage[bandId]) || null;
+  }
+  /**
+   * 人数档位：6 人档 / 9 人档各自给什么（来自 routes/_tiers.json，源头是引擎 bonds/core.js）。
+   * 回答「要不要塞满」——大多数盟约 6 人档就到顶，只有炎有 9 人档且收益翻倍。
+   */
+  function tierEffectsOf(route) {
+    var r = (D.tierEffects && D.tierEffects[route]) || null;
+    return r && r.tiers && r.tiers.length ? r : null;
+  }
+  /** 一句话说清「你现在的档位 + 下一档给什么」，以及离下一档还差几个人 */
+  function tierLineOf(route, count) {
+    var t = tierEffectsOf(route);
+    if (!t) return null;
+    var th = t.tiers, nxt = null, i;
+    for (i = 0; i < th.length; i++) { if (count < th[i]) { nxt = th[i]; break; } }
+    var parts = [];
+    if (t.t6) parts.push(th[1] + '人 ' + t.t6);
+    if (t.t9) parts.push(th[th.length - 1] + '人 ' + t.t9);
+    // 下一档到底给什么的一句话（小框只放这一句，两档全文放不下）
+    var nextText = null;
+    if (nxt !== null) nextText = (nxt === th[th.length - 1] && t.t9short) ? t.t9short : (t.t6short || t.t6 || null);
+    return {
+      line: parts.join(' · '),
+      short: t.short || parts.join(' · '),
+      nextText: nextText,
+      next: nxt,
+      need: nxt === null ? 0 : nxt - count,
+      stop: t.stop || null,
+      hot: t.hot || null,
+      full: nxt === null,
+    };
+  }
+  /**
+   * 小盟约体检：这条附加盟约现在几个人、激活没有、离下一档还差几个。
+   * 生效范围按数据里的 countMode/countsHand 算 —— 远见/奇迹/投资人「手上也算」，这条区别决定你该不该收着。
+   */
+  function addonStatusOf(priv, id) {
+    var a = (D.addons && D.addons[id]) || null;
+    if (!a) return null;
+    var seen = Object.create(null), n = 0;
+    var add = function (piece) {
+      if (!piece || piece.kind !== 'chess' || typeof piece.id !== 'string') return;
+      if (bondsOf(piece.id).indexOf(id) < 0) return;
+      var b = baseOf(piece.id);
+      if (seen[b]) return;
+      seen[b] = 1; n += 1;
+    };
+    var board = priv.board || [], i;
+    for (i = 0; i < board.length; i++) add(board[i]);
+    if (a.hand) { var hand = priv.hand || []; for (i = 0; i < hand.length; i++) add(hand[i]); }
+    var t = a.t || [2], layers = layersOf(priv, id);
+    var active = n >= (t[0] || 2), nxt = null;
+    for (i = 0; i < t.length; i++) { if (n < t[i]) { nxt = t[i]; break; } }
+    return {
+      id: id, name: a.n, count: n, active: active, next: nxt, need: nxt === null ? 0 : nxt - n,
+      layers: layers, apm: a.apmNeed || 0, fit: typeof a.humanFit === 'number' ? a.humanFit : 0.5,
+      note: a.note || null, hand: !!a.hand, desc: a.desc || null,
+    };
+  }
+
+  /** 投资人倍率：「获得时」类特质每次触发几次（3 个投资人激活 → ×2，100 层后 ×3） */
+  function investMult(priv) {
+    var iv = D.invest || { need: 3, mult: 2, hiLayer: 100, hiMult: 3 };
+    var st = addonStatusOf(priv, 'investShip');
+    if (!st || !st.active) return 1;
+    return st.layers >= (iv.hiLayer || 100) ? (iv.hiMult || 3) : (iv.mult || 2);
+  }
+
+  /**
+   * 「获得」这一步到底给什么 —— 电表倒转的本体。
+   * 引擎里 42 个干员带「获得时」特质：+N 层（自身/指定/当前层数最多的盟约）、+金、+装备、+免费刷新。
+   * 投资人把这整件事再触发 1–2 次；而人类本来就在抓人，所以这是唯一「零额外操作、收益翻倍」的机制。
+   */
+  function gainOf(id, shopLevel, mult) {
+    var r = rec(id);
+    var list = (r && r[10]) || [];
+    if (!list.length) return null;
+    var m = mult || 1, out = { layers: Object.create(null), gold: 0, equip: 0, refresh: 0, top: 0, own: 0, total: 0 };
+    for (var i = 0; i < list.length; i++) {
+      var g = list[i], n = (g.n || 0) * m;
+      if (g.k === 'own') out.own += n;
+      else if (g.k === 'shopLv') out.layers[g.bond] = (out.layers[g.bond] || 0) + (shopLevel || 1) * n;
+      else if (g.k === 'bond') out.layers[g.bond] = (out.layers[g.bond] || 0) + n;
+      else if (g.k === 'multi' && g.bonds) for (var j = 0; j < g.bonds.length; j++) out.layers[g.bonds[j]] = (out.layers[g.bonds[j]] || 0) + n;
+      else if (g.k === 'gold') out.gold += n;
+      else if (g.k === 'equip') out.equip += n;
+      else if (g.k === 'refresh') out.refresh += n;
+      else if (g.k === 'top') out.top += n;
+    }
+    // 「自身所属盟约 +N 层」：这张牌身上的每条盟约都吃到
+    if (out.own > 0) {
+      var bs = bondsOf(id);
+      for (var k = 0; k < bs.length; k++) out.layers[bs[k]] = (out.layers[bs[k]] || 0) + out.own;
+    }
+    for (var key in out.layers) out.total += out.layers[key];
+    return out;
+  }
+
+  /** 小盟约的「人类写法」：只留 fit ≥0.7 的，按「离激活还差几个人」排，附一句怎么用 */
+  function addonAdvice(priv) {
+    var out = [], ids = D.addons ? Object.keys(D.addons) : [];
+    for (var i = 0; i < ids.length; i++) {
+      var st = addonStatusOf(priv, ids[i]);
+      if (!st || st.fit < 0.7) continue;
+      if (!st.active && st.need > 2) continue;          // 差太多就不啰嗦
+      out.push(st);
+    }
+    out.sort(function (a, b) {
+      if (a.active !== b.active) return a.active ? -1 : 1;
+      if (a.need !== b.need) return a.need - b.need;
+      return b.fit - a.fit;
+    });
+    return out.slice(0, 4);
+  }
+
+  /**
+   * 资金能不能带过夜。引擎在休整期结束就把资金清零（audit.js: leftover funds are lost at prep end），
+   * 唯一例外是带 coin_carry_over 的策略（坎诺特：最多带 5 金、每回合利息 1）。
+   * 所以「攒金」这句话只对坎诺特成立，对其他人是纯亏 —— 建议里不能再出现它。
+   */
+  function carryCapOf(priv) {
+    var c = (D.coinCarry && priv.bandId && D.coinCarry[priv.bandId]) || null;
+    return c ? { cap: c.cap || 0, interest: c.interest || 0 } : { cap: 0, interest: 0 };
+  }
+
+  /**
+   * 还没到手、但真正该去刷的牌：本路线的关键干员 + 与本路线叠层方式对上的「触发器」。
+   * 人直觉「与其一直买装备不如刷一下找叠层核心」是对的：层数才是乘区，装备只是加个系数。
+   */
+  function engineTargets(priv, route) {
+    var want = [], i, id;
+    var keyOps = keyOpsOf(route);
+    for (i = 0; i < keyOps.length; i++) want.push(keyOps[i]);
+    var S = D.stack || {}, trig = S.trigger || {}, ch = stackChannelOf(route);
+    if (ch) for (var nm in trig) if (trig[nm] && trig[nm].event === ch.key) want.push(nm);
+    var held = heldCounts(priv), out = [], seen = Object.create(null);
+    for (id in CH) {
+      var row = CH[id];
+      if (row[4] !== 0) continue;
+      if (want.indexOf(row[1]) < 0) continue;
+      if (held[row[5]]) continue;
+      if (seen[row[1]]) continue;
+      seen[row[1]] = 1;
+      out.push({ id: id, name: row[1], tier: row[0] });
+    }
+    out.sort(function (a, b) { return a.tier - b.tier; });
+    return out;
+  }
+
+  /** 刷一次的期望收益：商店格数 × 单格命中率 × 一张好牌的估值 − 刷新费 */
+  function refreshEV(priv, route, modeId) {
+    var targets = engineTargets(priv, route);
+    var level = (priv.shop && priv.shop.level) || 1;
+    var cost = EC.refresh || 1;
+    if (!targets.length) return { ev: 0, targets: [], p: 0, cost: cost };
+    var p = slotHitChance(targets.map(function (t) { return t.id; }), level);
+    var slots = shopSlotsOf(modeId, level);
+    var each = 45;                                  // 一张叠层引擎/关键干员 ≈ 45 分（层数 + 档位进度）
+    var ev = Math.min(slots, 1 + Math.round(slots * p * 2)) * p * each - cost;
+    return { ev: Math.round(ev), targets: targets.slice(0, 3), p: +p.toFixed(3), cost: cost };
+  }
+
+
+  /**
+   * 摆位配对（不是「把放大器放前排」这种废话）：逐个放大器找收益最高的接收者，并算一个期望层数。
+   * 引擎事实：华法琳给身前 1 格 +「开技能时 +1/+2 层」（至多 7/14），魔王给身前 1 格 +「因特质叠层时额外 +1/+2」。
+   * 所以：
+   *   · 魔王 应该罩住「自己就会叠层」的人（菲莱/莎草/寒芒克洛斯/星熊），把她们每一发都放大一次；
+   *   · 华法琳 只是「每发 +1/+2」，罩谁都得看对方开技能频率，收益上限比魔王低一个档；
+   *   · 寒芒克洛斯 本身也是放大器（给身前 精准 +1/+2），不该被当成「接收者」白白占用位置。
+   * 收益低于阈值的配对直接不推荐 —— 宁可说「别摆」，也不给一个看起来忙其实没用的位。
+   */
+  function placementPlanOf(priv, route) {
+    var S = D.stack || {}, trig = S.trigger || {}, amps = S.amplifier || {};
+    var board = priv.board || [], i, j;
+    var weight = { '魔王': 2.0, '引星棘刺': 1.8, '断崖': 1.6, '见行者': 1.6, '白面鸮': 1.4, '塞雷娅': 1.4, '寒芒克洛斯': 1.0, '华法琳': 1.2 };
+    var ch = stackChannelOf(route), key = ch ? ch.key : null;
+    var term = terminalOf(priv, route);
+    var units = [];
+    for (i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      var nm = nameOf(p.id).replace(/★$/, '');
+      var r = rec(p.id);
+      units.push({ name: nm, id: p.id, golden: !!(r && r[4] === 1), atk: (r && r[11]) || 0 });
+    }
+    var out = [];
+    for (i = 0; i < units.length; i++) {
+      var a = amps[units[i].name];
+      if (!a) continue;
+      var w = weight[units[i].name] || 1.0;
+      for (j = 0; j < units.length; j++) {
+        if (i === j) continue;
+        var t = units[j];
+        if (amps[t.name]) continue;                     // 放大器别互相套，浪费一格
+        var v = 0;
+        var tg = trig[t.name];
+        if (tg && key && tg.event === key) v += 3;      // 接收者本身就是这条线的叠层引擎
+        else if (tg) v += 1.5;
+        if (term && term.name === t.name) v += 1.2;     // 终端吃到更值
+        if (t.golden) v += 0.5;
+        var gain = +(w * v).toFixed(1);
+        if (gain >= 2.5) out.push({ amp: units[i].name, target: t.name, gain: gain, pos: a.pos || '' });
+      }
+    }
+    out.sort(function (x, y) { return y.gain - x.gain; });
+    return out.slice(0, 2);
+  }
+
+
+  /**
+   * 这一局你该当什么位（4L 那局给出的第二解）：
+   *   续航位 —— 策略=克莱门莎，或阿戈尔/坚守/不屈/突袭 堆得起来 → 目标是不漏怪、不死，输出交给队友
+   *   输出位 —— 炎/维多利亚/谢拉格/拉特兰/萨尔贡 这些能破甲或法伤的路线
+   *   叠层位 —— 叙拉古/卡西米尔 这种靠攻击次数或开战爆发的
+   * 位不同，评分和「要不要升本」的答案都不一样：续航位不需要破甲线，输出位需要。
+   */
+  /**
+   * LP 定价（真实对局数据得出的修正）：漏怪不是一律致命。
+   * lpr=2 的对局里前期漏怪可以「用输出透支」（用户历史：漏 87 只仍打 14.33M BOSS 伤害并活到最后）；
+   * 唯一硬红线是 boss_5 那种 lpr=30 —— 漏一只 -30。
+   */
+  function lpPolicyOf(priv, armor) {
+    var lp = typeof priv.lp === 'number' ? priv.lp : 99;
+    var lpr = armor && typeof armor.lpr === 'number' ? armor.lpr : 2;
+    if (lpr >= 10) return { kind: 'hard', lpr: lpr, text: '守血线（漏1只-' + lpr + '）' };
+    if (lp <= 12) return { kind: 'spend', lpr: lpr, text: '低血可透支（漏1只-' + lpr + '）' };
+    return { kind: 'normal', lpr: lpr, text: null };
+  }
+
+  function roleOf(priv, route) {
+    var bonds = priv.bonds || [], i, egir = 0, tank = 0;
+    for (i = 0; i < bonds.length; i++) {
+      if (bonds[i].bondId === 'egirShip') egir = bonds[i].count || 0;
+      if (bonds[i].bondId === 'steadShip' || bonds[i].bondId === 'indomShip' || bonds[i].bondId === 'raidShip') tank += bonds[i].count || 0;
+    }
+    if (priv.bandId === 'band_clementia' || egir >= 3) return { kind: 'sustain', name: '续航位', why: '阿戈尔生命线 + 免重部署，靠不死不漏吃分' };
+    if (route === 'siracusaShip' || route === 'kazimierzShip') return { kind: 'burst', name: '叠层位', why: '靠攻击次数/开战爆发滚层数' };
+    if (route) return { kind: 'dps', name: '输出位', why: '要过破甲线、要通道系数' };
+    return { kind: 'unknown', name: '未定', why: '先定核心盟约' };
+  }
+
+  /**
+   * 要不要升商店（调度中心）—— 给结论 + 数字，而不是「看情况」：
+   * 值：升本提升牌池质量（高费核心/关键干员只在高级商店出），且升级价每回合只涨一次；
+   * 不值：剩余回合太少、或钱不够、或还差关键干员（先拿人再升）。
+   */
+  function upgradePlanOf(priv, route, round, modeId) {
+    var level = (priv.shop && priv.shop.level) || 1;
+    var cost = upgradePrice(modeId, level);
+    var funds = priv.funds || 0;
+    var last = lastRoundOf(modeId);
+    var left = Math.max(0, last - round);
+    var cap = (EC.maxLevel || 6);
+    var pol = policyOf(route), polCap = (pol && pol.levelCap && round < pol.levelCap.untilRound) ? pol.levelCap.level : cap;
+    if (level >= polCap) return { yes: false, cost: cost, why: '到本路线上限 Lv' + polCap };
+    if (left < 2) return { yes: false, cost: cost, why: '只剩 ' + left + ' 回合，升了用不上' };
+    if (funds < cost) return { yes: false, cost: cost, need: cost - funds, why: '缺 ' + (cost - funds) + ' 金' };
+    // 高费核心只在高级商店出：路线里 T5/T6 的牌还有没到手的，就该升
+    var miss = missingFor(priv, route).filter(function (m) { return m.tier > level; });
+    if (miss.length) return { yes: true, cost: cost, why: 'T' + miss[0].tier + ' 的 ' + miss[0].name + ' 要 Lv' + level + '+ 才出' };
+    return { yes: true, cost: cost, why: '牌池升级，还剩 ' + left + ' 回合回本' };
+  }
+
+  /** 场上有几个奶（attackKind === 'heal'）。没奶的时候，把装备喂给小身板 = 拿钱喂狗。 */
+  function healersOf(priv) {
+    var board = priv.board || [], n = 0, i;
+    for (i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      var r = rec(p.id);
+      if (r && r[8] === 'heal') n += 1;
+    }
+    return n;
+  }
+
+  /** 这个单位的「站得住」程度：阻挡数 + 阶数，越低越脆 */
+  function sturdinessOf(id) {
+    var r = rec(id);
+    if (!r) return 0;
+    var block = typeof r[7] === 'number' ? r[7] : 0;
+    var tier = r[0] || 1;
+    return block * 2 + tier;
+  }
+  /** 这条路线靠什么动作叠层（_stack.json 的 _channels：gain / skill / ammo / freeze / kill / death / onstart） */
+  function stackChannelOf(route) {
+    var S = D.stack || {};
+    return (S._channels && S._channels[route]) || null;
+  }
+
+  /**
+   * 场上的「层数引擎」：
+   *   trigger = 按行为给层的人（开技能 / 耗弹 / 击倒 / 被击倒 / 冻结 / 获得），
+   *   amplifier = 不自己叠、放大别人的人（魔王、华法琳、引星棘刺…），
+   * 放大器大多是「身前一格 / 身后一格」这种位置关系 —— 人类最容易浪费的正是这一格，所以要把摆位说清楚。
+   */
+  function stackPlanOf(priv, route) {
+    var S = D.stack || {}, trig = S.trigger || {}, amp = S.amplifier || {};
+    var cards = (priv.board || []).slice(), i;
+    var haveTrig = [], haveAmp = [], seen = Object.create(null);
+    for (i = 0; i < cards.length; i++) {
+      var p = cards[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      var nm = nameOf(p.id).replace(/★$/, '');
+      if (seen[nm]) continue;
+      seen[nm] = 1;
+      if (trig[nm]) haveTrig.push({ name: nm, event: trig[nm].event, what: trig[nm].what, want: trig[nm].want || null });
+      if (amp[nm]) haveAmp.push({ name: nm, pos: amp[nm].pos, what: amp[nm].what, best: amp[nm].best || null });
+    }
+    var ch = stackChannelOf(route);
+    var want = ch ? ch.key : null;
+    var onRoute = want ? haveTrig.filter(function (t) { return t.event === want; }) : [];
+    return {
+      channel: ch ? ch['叠法'] : null,
+      key: want,
+      triggers: haveTrig,
+      onRoute: onRoute,
+      amps: haveAmp,
+      // 放大器摆位：第一条就是最该照做的
+      place: haveAmp.length
+        ? (haveAmp[0].best ? haveAmp[0].name + '：' + haveAmp[0].best
+          : (haveAmp[0].pos ? haveAmp[0].name + '：放' + haveAmp[0].pos : null))
+        : null,
+      missing: want && !onRoute.length,
+    };
+  }
+
+  /**
+   * 破甲体检（model/MODEL-SPEC.md 的核心结论）：
+   * 物理脱离 5% 保底要 攻击力 > 防御/0.95；3 名精准穿透 30% → 门槛降到 0.7368·DEF。
+   * 再叠加这条路对这本 BOSS 的通道系数 k（<0.5 基本等于没输出），就能提前说「你杀不掉它」。
+   */
+  function armorCheckOf(priv, route, bossId) {
+    var bt = D.bossTable;
+    if (!bt || !bt.rows || !bt.rows.length || !bossId) return null;
+    var boss = null, i;
+    for (i = 0; i < bt.rows.length; i++) if (bt.rows[i].id === bossId) { boss = bt.rows[i]; break; }
+    if (!boss) return null;
+    var preci = addonStatusOf(priv, 'preciShip');
+    var pierce = preci && preci.active ? (bt.preciPierce || 0.3) : 0;
+    var minRatio = typeof bt.minDamageRatio === 'number' ? bt.minDamageRatio : 0.05;
+    var need = (boss.def * (1 - pierce)) / (1 - minRatio);
+    var mult = damageMultiplier(route, layersOf(priv, route));
+    var have = 0, board = priv.board || [];
+    for (i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      var r = rec(p.id);
+      var atk = ((r && r[11]) || 0) * mult;
+      if (atk > have) have = atk;
+    }
+    var pay = (bt.payoff && bt.payoff[bossId] && bt.payoff[bossId][route]) || null;
+    return {
+      bossId: bossId, name: boss.n, def: boss.def, res: boss.res, lpr: boss.lpr,
+      pierce: pierce, need: Math.round(need), have: Math.round(have),
+      needHalf: Math.round(((boss.defHalf || boss.def) * (1 - pierce)) / (1 - minRatio)),
+      ok: have >= need, win: boss.win, needDps: boss.needDps,
+      channel: pay ? pay.c : null, k: pay ? pay.k : null, kp: pay ? pay.kp : null,
+      weakChannel: pay ? pay.k < 0.5 : false,
+    };
+  }
+
+  function isKeyOp(id, route) {
+    var list = keyOpsOf(route);
+    if (!list.length) return false;
+    var name = nameOf(id);
+    for (var i = 0; i < list.length; i++) if (list[i] === name) return true;
+    return false;
+  }
+
+  /**
+   * 「怎么放」：用数据里的 position / blockCnt / attackKind 推一个站位提示。
+   * 不是精确解（精确解要靠引擎的 rehearsal 试排），但「挡路 / 出力 / 奶位」这三件事能说清楚。
+   */
+  function placeOf(id) {
+    var c = rec(id);
+    if (!c) return null;
+    var pos = c[6], block = c[7], kind = c[8];
+    if (kind === 'heal') return '奶位·中排覆盖';
+    if (pos === 'MELEE' || (typeof block === 'number' && block > 1)) {
+      return typeof block === 'number' && block > 1 ? '前排挡路（挡' + block + '）' : '近战位';
+    }
+    return '后排出力（高台）';
+  }
+
+  /**
+   * One shop slot's value. Heuristic, spelled out in the panel: route progress first, then merge progress,
+   * then tier, gated on what the player can pay this prep. `route`/`key`/`copies` 也一起返回，
+   * 好让小框把「本家 / 关键 / 差几张」直接标出来 —— 否则整屏 0 分看着像没刷新。
+   */
+  function scoreSlot(slot, ctx) {
+    var why = [];
+    var funds = ctx.funds, route = ctx.route, held = ctx.held, card = ctx.progress;
+    var price = typeof slot.price === 'number' ? slot.price : 0;
+    var s, t, base, copies, need, next, hasBond;
+    if (slot.kind === 'item') {
+      t = tierOf(slot.id);
+      // 装备的边际价值随路线变化：维多利亚「装备=伤害」最高，阿戈尔吃干员面板偏低
+      var epol = policyOf(route);
+      var bias = (epol && typeof epol.equipBias === 'number') ? epol.equipBias : 0.5;
+      // 装备是「加系数」，层数是「乘区」：路线还没成型时，刷一张叠层核心比买装备值
+      // 装备边际递减：场上已经装了 N 件，再买一件的边际价值就低了（装备每回合都在商店里出现）
+      var equipped = ctx.equipped || 0;
+      var eqDecay = equipped >= 5 ? 0.3 : equipped >= 3 ? 0.5 : 1;
+      var stI = tierLineOf(route, card.count);
+      var formed = !!(stI && stI.full);
+      s = (16 + t * 5) * (0.6 + bias) * (formed ? 1 : 0.55) * eqDecay;
+      why.push('装备 ' + t + '阶' + (bias >= 0.9 ? '（本家吃满）' : bias <= 0.35 ? '（本家不吃）' : ''));
+      // 人已经到档：装备是喂层的第二只手（维多利亚每件 25 层，其它家按 equipBias 折算）
+      var tierI = tierLineOf(route, card.count);
+      if (tierI && tierI.full) { s += bias * 12; why.push('档位已满·装备喂层'); }
+      if (price > funds) { s -= 30; why.push('资金不够'); }
+      else if (funds - price < 4) s -= 6;
+      return { id: slot.id, score: Math.max(0, Math.round(s)), why: why, price: price, name: nameOf(slot.id), route: false, key: false, copies: 0, item: true, place: '装备→主C/前排' };
+    }
+    base = baseOf(slot.id);
+    s = 0;
+    hasBond = bondsOf(slot.id).indexOf(route) >= 0;
+    var key = isKeyOp(slot.id, route);
+    next = nextThreshold(route, card.count);
+    // 档位到顶之后，再抓本家人只值「多一个人吃层」——不该继续当首选（_tiers.json 的 stop）
+    var tierNow = tierLineOf(route, card.count);
+    var stop = (tierNow && tierNow.stop) || 99;
+    if (hasBond) {
+      if (next !== null && card.count < stop) { s += 46; why.push(bondName(route) + ' +1（' + card.count + '→' + (card.count + 1) + '）'); }
+      else if (next !== null) { s += 8; why.push(bondName(route) + ' 已到' + stop + '人档，再抓只是多个人吃层'); }
+      else { s += 8; why.push(bondName(route) + ' 已满'); }
+    } else if (ctx.offBond) { s -= 8; why.push('不搭路线'); }
+    if (key) { s += 25; why.push('关键干员'); }
+    // 续航位（4L 的模板）：阿戈尔/坚守/不屈/突袭/调和 才值钱，输出件不值
+    if (ctx.role === 'sustain') {
+      var bb0 = bondsOf(slot.id);
+      var sustainBonds = ['egirShip', 'steadShip', 'indomShip', 'raidShip', 'maniShip'];
+      for (var sb = 0; sb < sustainBonds.length; sb++) {
+        if (bb0.indexOf(sustainBonds[sb]) >= 0) { s += 18; why.push('续航件'); break; }
+      }
+    }
+    // 调和：最便宜的人数档杠杆（1 人即 +1 激活人数）
+    if (bondsOf(slot.id).indexOf('maniShip') >= 0) {
+      var tl0 = tierLineOf(route, ctx.progress.count);
+      if (tl0 && !tl0.full && tl0.need <= 2) { s += 30; why.push('调和补档（差' + tl0.need + '人）'); }
+    }
+    // 叠层引擎：这张牌的「给层」事件正好是本路线叠层的方式（如萨尔贡吃开技能、拉特兰吃耗弹）
+    var stk = D.stack && D.stack.trigger && D.stack.trigger[nameOf(slot.id).replace(/\u2605$/, '')];
+    if (stk && ctx.stackKey && stk.event === ctx.stackKey) { s += 22; why.push('叠层引擎（' + stk.event + '）'); }
+    // 飞行波：能打飞的干员单独加分，否则这一波直接从头上过去、掉的是全额的 LP
+    if (ctx.air && ctx.air.hot && canHitFlyOf(slot.id)) { s += 18; why.push('对空（本波 ' + ctx.air.fly + ' 只飞行）'); }
+    // 「获得时」给多少层 —— 层数是本局真正的货币（0.009/层 = 全队攻），比多一张牌值钱
+    var gain = gainOf(slot.id, ctx.level, ctx.invest);
+    if (gain) {
+      var lay = gain.layers[route] || 0;
+      if (lay > 0) {
+        s += Math.min(50, lay * 2.2);
+        why.push('获得 +' + lay + ' 层' + (ctx.invest > 1 ? '（投资人×' + ctx.invest + '）' : ''));
+      }
+      if (gain.gold > 0) { s += gain.gold * 3; why.push('获得 +' + gain.gold + ' 金'); }
+      if (gain.refresh > 0) { s += gain.refresh * 4; why.push('获得 ' + gain.refresh + ' 次免费刷新'); }
+      if (gain.top > 0) { s += Math.min(30, gain.top * 2); why.push('当前最多层盟约 +' + gain.top + ' 层'); }
+    }
+    copies = held[base] || 0;
+    need = mergeOf(base);
+    if (copies >= need) { s -= 18; why.push('已精锐·多余'); }
+    else if (copies === need - 1) { s += 30; why.push('差1张精锐'); }
+    else if (copies > 0) { s += 14; why.push('已有' + copies + '张'); }
+    else { s += 4; }
+    s += Math.max(0, tierOf(slot.id) - 1) * 3;
+    if (price > funds) { s -= 35; why.push('资金不够'); }
+    return { id: slot.id, score: Math.max(0, Math.round(s)), why: why, price: price, name: nameOf(slot.id),
+      route: hasBond, key: key, copies: copies, item: false, base: base, tier: tierOf(slot.id), place: placeOf(slot.id) };
+  }
+
+  /** The one action word the panel leads with. */
+  function adviceRaw(priv, ctx) {
+    var slots = (priv.shop && priv.shop.slots) || [];
+    var best = null, bestScore = -1, r, i;
+    for (i = 0; i < slots.length; i++) {
+      if (!slots[i] || slots[i].sold) continue;
+      r = scoreSlot(slots[i], ctx);
+      if (r.score > bestScore) { bestScore = r.score; best = { index: i, name: r.name, score: r.score }; }
+    }
+    var funds = ctx.funds, level = (priv.shop && priv.shop.level) || 1;
+    var up = upgradePrice(ctx.modeId, level);
+    // 流派政策：例如二本叙在 8 回合前不该升过 2 本
+    var pol = policyOf(ctx.route);
+    var cap = (pol && pol.levelCap && (ctx.round || 0) < pol.levelCap.untilRound) ? pol.levelCap.level : (EC.maxLevel || 6);
+    if (best && best.score >= 40 && best.score > up) {
+      return { kind: 'buy', text: '抓 ' + best.name + '（槽位 ' + (best.index + 1) + '）', best: best };
+    }
+    var lvBuffer = carryCapOf(priv).cap > 0 ? 6 : 1;   // 钱本来就要被清掉，别为「留缓冲」拖一回合
+    if (level < cap && funds >= up + lvBuffer) {
+      return { kind: 'level', text: '升调度中心 Lv' + (level + 1) + '（' + up + ' 金，余 ' + (funds - up) + '）' };
+    }
+    // 刷一下的期望 ≥ 最优购买时，先刷（人类直觉：找叠层核心比一直买装备强）
+    var ev = refreshEV(priv, ctx.route, ctx.modeId);
+    var coreMissing = ev.targets.length > 0;
+    var bestSlot = best ? slots[best.index] : null;
+    var bestIsItem = !!(bestSlot && bestSlot.kind === 'item');
+    if (coreMissing && bestIsItem && funds >= (EC.refresh || 1) + 1) {
+      var nm0 = ev.targets.map(function (t) { return t.name; }).join('/');
+      return { kind: 'refresh', text: '先刷找 ' + nm0 + '（核心没到手，装备不急）', ev: ev };
+    }
+    if (ev.ev > 0 && (!best || best.score < ev.ev + 10) && funds >= (EC.refresh || 1) + 1) {
+      var names = ev.targets.map(function (t) { return t.name; }).join('/');
+      return { kind: 'refresh', text: '刷一次找 ' + (names || '叠层核心') + '（期望 ' + ev.ev + '）', ev: ev };
+    }
+    if (best && best.score >= 26) {
+      return { kind: 'buy', text: '可以抓 ' + best.name + '（槽位 ' + (best.index + 1) + '）', best: best };
+    }
+    var carry = carryCapOf(priv);
+    if (funds >= (EC.refresh || 1) + 2) {
+      return { kind: 'refresh', text: '没有值得抓的，刷一次（剩 ' + (funds - (EC.refresh || 1)) + ' 金也会清零）' };
+    }
+    // 钱不会留到下一回合（除了坎诺特 5 金上限）：宁可花光，也别让它清零
+    if (carry.cap > 0 && funds <= carry.cap) {
+      return { kind: 'wait', text: '可以留 ' + funds + ' 金过夜（坎诺特最多带 ' + carry.cap + '）' };
+    }
+    if (funds > 0) {
+      return { kind: 'wait', text: '钱会被清零（剩 ' + funds + ' 金）→ 买装备/升本/刷，别留' };
+    }
+    return { kind: 'wait', text: '没钱了，等下一回合进账' };
+  }
+
+  /**
+   * 建议外面套一层「对空闸」：飞行波 + 场上对空位不够时，先把这句话顶到最前面。
+   * 漏光的代价是全额 LP，比多抓一张牌的收益大得多 —— 所以它可以盖过任何经济建议。
+   */
+  function adviceOf(priv, ctx) {
+    var a = adviceRaw(priv, ctx);
+    // 到下一档概率很低（池子/等级卡住）时，别把资源押在「凑人数」上，改成喂输出终端
+    if (ctx.terminal && ctx.tierOdds && ctx.tierOdds.weak) {
+      ctx.tierOdds.terminal = ctx.terminal.name;
+    }
+    if (ctx.tierOdds && ctx.tierOdds.weak) {
+      a.odds = ctx.tierOdds;
+      a.text = '别赌' + ctx.tierOdds.goal + '人（约 ' + Math.round(ctx.tierOdds.p * 100) + '%）→ ' + a.text + (ctx.terminal ? ' · 资源喂终端 ' + ctx.terminal.name + '（' + ctx.terminal.eff + ' 有效攻）' : '');
+    }
+    if (ctx.air && ctx.air.hot && ctx.air.gap > 0) {
+      a.air = ctx.air;
+      a.text = '对空 ' + ctx.air.have + '/' + ctx.air.need + ' 个（本波 ' + ctx.air.fly + ' 只飞行）→ ' + a.text;
+    }
+    return a;
+  }
+
+  // --- estimate: Monte Carlo over the remaining prep phases ------------------------------------
+
+  function lcg(seed) {
+    var s = seed >>> 0;
+    return function () { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  }
+
+  function seedOf(priv, route) {
+    var seed = (Math.round((priv.funds || 0) * 7) + ((priv.shop ? priv.shop.level || 0 : 0) * 31)
+      + (priv.board || []).length * 1013 + (priv.hand || []).length * 7919) >>> 0;
+    for (var i = 0; i < route.length; i++) seed = (seed * 33 + route.charCodeAt(i)) >>> 0;
+    return seed;
+  }
+
+  /** copies one slot can draw of a target set, over the pool denominator of that shop level. */
+  function slotHitChance(targets, level) {
+    var den = D.denom[level] || 0;
+    if (!den) return 0;
+    var num = 0;
+    for (var i = 0; i < targets.length; i++) {
+      var t = tierOf(targets[i]);
+      if (t <= level) num += (EC.poolCopies || {})[t] || 0;
+    }
+    return Math.min(1, num / den);
+  }
+
+  /**
+   * P(reach the core bond's second and last threshold before the match's last round), from this prep on.
+   * Model: the published income curve, one shop level up when affordable, up to 4 paid refreshes a round,
+   * each slot drawing copy-weighted across the route's chess that are not owned yet, buying what is
+   * affordable; a copy of a chess already bought is treated as spent (a second copy only feeds a merge,
+   * which the bond count does not see). Deliberately ignores the per-match banned bonds, sold-back copies
+   * and other players' occupation — all invisible to a client — so read it as a direction, not a promise.
+   */
+  function estimate(priv, route, runs, startRound, modeId) {
+    var t = thresholdsOf(route);
+    var low = t.length > 1 ? t[1] : t[0];
+    var high = t[t.length - 1];
+    var targets = Object.keys(CH).filter(function (id) {
+      return CH[id][4] === 0 && CH[id][2].indexOf(route) >= 0;
+    });
+    var held = heldCounts(priv), owned = Object.create(null), i;
+    for (i = 0; i < targets.length; i++) if (held[baseOf(targets[i])]) owned[targets[i]] = 1;
+    var start = {
+      funds: priv.funds || 0,
+      level: (priv.shop && priv.shop.level) || 1,
+      role: roleOf(priv, route).kind,
+      distinct: Object.keys(owned).length,
+      round: startRound || priv.round || 1,
+    };
+    var N = runs || 1200, rnd = lcg(seedOf(priv, route));
+    var hitLow = 0, hitHigh = 0;
+    var income = EC.income || [];
+    var last = lastRoundOf(modeId);
+    var refresh = EC.refresh || 1, maxLevel = EC.maxLevel || 6;
+    for (var run = 0; run < N; run++) {
+      var funds = start.funds, level = start.level, distinct = start.distinct, gotLow = false, gotHigh = false;
+      var mine = Object.create(null);
+      for (var k in owned) mine[k] = 1;
+      for (var r = start.round + 1; r <= last && !gotHigh; r++) {
+        funds += income[Math.min(r, income.length - 1)] || 0;
+        if (level < maxLevel && funds >= upgradePrice(modeId, level) + 8) {
+          funds -= upgradePrice(modeId, level);
+          level += 1;
+        }
+        for (var pass = 0; pass <= 4; pass++) {
+          if (pass > 0) {
+            if (funds < refresh) break;
+            funds -= refresh;
+          }
+          var n = shopSlotsOf(modeId, level);
+          var open = targets.filter(function (id) { return !mine[id] && tierOf(id) <= level; });
+          if (!open.length) break;
+          var p = slotHitChance(open, level);
+          for (var j = 0; j < n && open.length; j++) {
+            if (rnd() >= p) continue;
+            var pick = open[Math.floor(rnd() * open.length)];
+            var price = priceOf(pick);
+            if (funds < price) continue;
+            funds -= price;
+            mine[pick] = 1;
+            distinct += 1;
+            open = open.filter(function (id) { return id !== pick; });
+          }
+          if (distinct >= high) break;
+        }
+        if (distinct >= low) gotLow = true;
+        if (distinct >= high) gotHigh = true;
+      }
+      if (gotLow || distinct >= low) hitLow += 1;
+      if (gotHigh || distinct >= high) hitHigh += 1;
+    }
+    return { pLow: hitLow / N, pHigh: hitHigh / N, low: low, high: high, runs: N, targets: targets.length };
+  }
+
+  /**
+   * 「还能凑到 N 人吗」的概率 —— 和 estimate 同一个抽卡模型，只是问的目标是人数。
+   * 这条是给「9 人档」用的：炎 9 人档收益大，但要 9 个不同的炎干员，池子和商店等级都会卡住，
+   * 所以先算概率再决定要不要赌，而不是看到「还差 3 人」就一直追。
+   */
+  function reachOdds(priv, route, goal, runs, startRound, modeId, fromCount, players) {
+    var targets = Object.keys(CH).filter(function (id) {
+      return CH[id][4] === 0 && CH[id][2].indexOf(route) >= 0;
+    });
+    var held = heldCounts(priv), owned = Object.create(null), i;
+    for (i = 0; i < targets.length; i++) if (held[baseOf(targets[i])]) owned[targets[i]] = 1;
+    // 服务端报的 count 才是权威（场上可能有没进 held 的、或整备区重复的），手算只兜底
+    var distinct0 = Math.max(Object.keys(owned).length, fromCount || 0);
+    if (distinct0 >= goal) return { p: 1, goal: goal, runs: 0, targets: targets.length };
+    // 池子里根本凑不出这么多人，就别给假希望
+    if (targets.length < goal) return { p: 0, goal: goal, runs: 0, targets: targets.length, impossible: true };
+    // 共享池子：4 人同场时同一批本家牌是抢的，客户端的抽卡模型看不到别人买了什么，
+    // 所以这里按人数折一个 share 折扣，把「理想情况」压成「你能抢到的那份」
+    var seat = Math.max(1, players || 1);
+    var share = 1 / (1 + 0.55 * (seat - 1));
+    var N = runs || 900, rnd = lcg(seedOf(priv, route) ^ (goal * 7919));
+    var income = EC.income || [], last = lastRoundOf(modeId);
+    var refresh = EC.refresh || 1, maxLevel = EC.maxLevel || 6;
+    var hits = 0;
+    for (var run = 0; run < N; run++) {
+      var funds = priv.funds || 0, level = (priv.shop && priv.shop.level) || 1, distinct = distinct0;
+      var mine = Object.create(null);
+      for (var k in owned) mine[k] = 1;
+      for (var r = (startRound || priv.round || 1) + 1; r <= last && distinct < goal; r++) {
+        funds += income[Math.min(r, income.length - 1)] || 0;
+        if (level < maxLevel && funds >= upgradePrice(modeId, level) + 8) { funds -= upgradePrice(modeId, level); level += 1; }
+        // pass 0 = 本回合白给的商店，pass 1..4 = 付费刷新（原来漏了 pass 0，概率被压成 0）
+        for (var pass = 0; pass <= 4 && distinct < goal; pass++) {
+          if (pass > 0) {
+            if (funds < refresh) break;
+            funds -= refresh;
+          }
+          var open = targets.filter(function (id) { return !mine[id] && tierOf(id) <= level; });
+          if (!open.length) break;
+          var p = slotHitChance(open, level) * share;
+          var n = shopSlotsOf(modeId, level);
+          for (var j = 0; j < n && open.length; j++) {
+            if (rnd() >= p) continue;
+            var pick = open[Math.floor(rnd() * open.length)];
+            if (funds < priceOf(pick)) continue;
+            funds -= priceOf(pick);
+            mine[pick] = 1;
+            distinct += 1;
+            open = open.filter(function (id) { return id !== pick; });
+          }
+        }
+      }
+      if (distinct >= goal) hits += 1;
+    }
+    return { p: hits / N, goal: goal, runs: N, targets: targets.length };
+  }
+
+  /**
+   * 输出终端：这条线上真正负责打 BOSS 的那一个。
+   * 低操作量的玩法不可能养十个 C，只会有一个「终端」吃装备、吃精锐、吃站位；
+   * 所以建议要指向它，而不是平均撒资源。有效攻 = 基础攻 × 本路线倍率（层数/人数档已含在倍率里）。
+   */
+  function terminalOf(priv, route) {
+    var mult = damageMultiplier(route, layersOf(priv, route));
+    var healers = healersOf(priv);   // 没奶时脆皮单位不算终端（装备喂上去等于白扔）
+    var board = priv.board || [], best = null, i;
+    for (i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      var r = rec(p.id);
+      if (!r) continue;
+      var atk = r[11] || 0;
+      if (!atk) continue;
+      // 终端得是「打人的」：奶位/纯辅助的攻击力不构成输出（华法琳面板 431 但她是医师）
+      if (r[8] === 'heal') continue;
+      var eff = atk * mult * (bondsOf(p.id).indexOf(route) >= 0 ? 1 : 0.85) * (healers > 0 ? 1 : 0.5 + sturdinessOf(p.id) * 0.1);
+      if (!best || eff > best.eff) {
+        best = {
+          id: p.id, name: nameOf(p.id), atk: Math.round(atk), eff: Math.round(eff),
+          golden: !!(r[4] === 1), tier: r[0], place: placeOf(p.id),
+          route: bondsOf(p.id).indexOf(route) >= 0,
+        };
+      }
+    }
+    if (!best) return null;
+    best.mult = +mult.toFixed(2);
+    return best;
+  }
+
+
+  function missingFor(priv, route) {
+    var held = heldCounts(priv), out = [];
+    var ids = Object.keys(CH);
+    for (var i = 0; i < ids.length; i++) {
+      var row = CH[ids[i]];
+      if (row[4] !== 0 || row[2].indexOf(route) < 0) continue;
+      if (held[row[5]]) continue;
+      out.push({ name: row[1], tier: row[0] });
+    }
+    out.sort(function (a, b) { return a.tier - b.tier; });
+    return out;
+  }
+
+  /**
+   * 悬赏（机变）估值：score = payout + coin*0.5 + tier*4 − rounds*每回合代价 − 难度惩罚。
+   * 参数来自 routes/_matchup.json 的 bountyModel（可热改）。
+   */
+  function scoreBounty(c) {
+    var bm = D.bountyModel || {};
+    var payout = typeof c.payout === 'number' ? c.payout : 0;
+    var coin = typeof c.coin === 'number' ? c.coin : 0;
+    var tier = typeof c.tier === 'number' ? c.tier : 0;
+    var rounds = typeof c.rounds === 'number' ? c.rounds : 1;
+    var s = payout + coin * (bm.coinWeight || 0.5) + tier * (bm.tierWeight || 4) - rounds * (bm.perRoundCost || 3);
+    var why = [];
+    if (payout) why.push('报酬 ' + payout);
+    if (coin) why.push('金币 ' + coin);
+    if (rounds > 1) why.push(rounds + ' 场');
+    if (String(c.enemyKey || '').indexOf('boss') >= 0) { s -= (bm.bossPenalty || 25); why.push('打 BOSS 风险'); }
+    return { name: c.name || c.label || c.id || '?', score: Math.round(s), why: why.join('·'), payout: payout, rounds: rounds };
+  }
+
+  /**
+   * 这一格打不打得到飞行。数据里 266 个干员有 124 个能打飞，所以「能打飞」不是稀缺，
+   * 稀缺的是「你场上站着的这几个里有没有」—— 所以按场上实况数，而不是按干员表拍脑袋。
+   */
+  function canHitFlyOf(id) {
+    var c = rec(id);
+    return !!(c && c[9] === 1);
+  }
+
+  /**
+   * 对空体检：本波飞行占比高的回合，场上能打飞的干员够不够。
+   * 飞行不吃地面阻挡（会直接从你头上过去），漏的代价是全额的 LP —— 所以这是「别漏光」的第一道闸。
+   */
+  function airOf(priv) {
+    var next = priv.nextEnemies || [], fly = 0, total = 0, i;
+    for (i = 0; i < next.length; i++) {
+      var n = next[i].count || 1;
+      total += n;
+      if (next[i].fly) fly += n;
+    }
+    var board = priv.board || [], have = 0, units = 0;
+    for (i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (!p || p.kind !== 'chess' || typeof p.id !== 'string') continue;
+      units += 1;
+      if (canHitFlyOf(p.id)) have += 1;
+    }
+    var hot = total > 0 && fly / total >= 0.35;
+    // 需要几个对空位：按飞行占比分三档（1/2/3）给个下限，不是精确解（精确解要引擎试排）
+    var share = total > 0 ? fly / total : 0;
+    var need = !hot ? 0 : share >= 0.85 ? 3 : share >= 0.6 ? 2 : 1;
+    return { total: total, fly: fly, hot: hot, have: have, units: units, need: need, gap: Math.max(0, need - have) };
+  }
+
+  /** Everything the panel needs for one state message. */
+  function analyseState(priv, pub, stuckRoute) {
+    var modeId = (pub && pub.modeId) || priv.modeId || null;
+    var disabled = (pub && pub.disabledBonds) || [];   // 本局被禁的盟约：不许选
+    var route = autoRoute(priv, stuckRoute, disabled);
+    var ctx = {
+      funds: priv.funds || 0,
+      route: route,
+      modeId: modeId,
+      round: (pub && pub.round) || priv.round || 1,
+      held: heldCounts(priv),
+      progress: progressOf(priv, route),
+      offBond: true,
+      air: airOf(priv),
+      equipped: (function () {
+        var n0 = 0, bs0 = priv.board || [];
+        for (var i0 = 0; i0 < bs0.length; i0++) if (bs0[i0] && bs0[i0].items) n0 += bs0[i0].items.length;
+        return n0;
+      })(),
+      level: (priv.shop && priv.shop.level) || 1,
+      invest: investMult(priv),
+      stackKey: (stackChannelOf(route) || {}).key || null,
+      terminal: terminalOf(priv, route),
+    };
+    var slots = (priv.shop && priv.shop.slots) || [];
+    var rows = [], i, r;
+    for (i = 0; i < slots.length; i++) {
+      if (!slots[i] || slots[i].sold) continue;
+      r = scoreSlot(slots[i], ctx);
+      r.index = i;
+      rows.push(r);
+    }
+    rows.sort(function (a, b) { return b.score - a.score; });
+    var round = (pub && pub.round) || priv.round || 1;
+    var layers = layersOf(priv, route);
+    return {
+      route: route,
+      progress: ctx.progress,
+      next: nextThreshold(route, ctx.progress.count),
+      layers: layers,
+      policy: policyOf(route),
+      usage: bandUsageOf(priv.bandId),
+      air: ctx.air,
+      tiers: (function () {
+        var tl = tierLineOf(route, ctx.progress.count);
+        if (tl && !tl.full) {
+          // 末回合没有「下一回合」可抓，概率无意义，别显示成 100%
+          var lastR = lastRoundOf(modeId);
+          if (round >= lastR) {
+            tl.pNext = 0;
+            tl.final = true;
+            ctx.tierOdds = { goal: tl.next, p: 0, weak: true, final: true };
+            return tl;
+          }
+          var od = reachOdds(priv, route, tl.next, 900, round, modeId, ctx.progress.count, (pub && pub.players && pub.players.length) || 1);
+          tl.pNext = od.p;
+          tl.impossible = !!od.impossible;
+          ctx.tierOdds = { goal: tl.next, p: od.p, weak: od.p < 0.35 || !!od.impossible };
+        }
+        return tl;
+      })(),
+      terminal: terminalOf(priv, route),
+      stack: stackPlanOf(priv, route),
+      role: roleOf(priv, route),
+      effLayers: effectiveLayersOf(priv, route, (pub && (pub.bossId || pub.hiddenBossId)) || null),
+      lp: lpPolicyOf(priv, armorCheckOf(priv, route, (pub && (pub.bossId || pub.hiddenBossId)) || null)),
+      upgrade: upgradePlanOf(priv, route, round, modeId),
+      pairs: placementPlanOf(priv, route),
+      armor: armorCheckOf(priv, route, (pub && (pub.bossId || pub.hiddenBossId)) || null),
+      // 小盟约（附加盟约）：激活的 + 差 1–2 个就能激活的，按人类操作口径排序
+      addons: addonAdvice(priv),
+      invest: ctx.invest,
+      // 悬赏/机变：按 payout vs 风险排序，只留前 3
+      bounties: (priv.personalChoice && Array.isArray(priv.personalChoice.cards))
+        ? priv.personalChoice.cards.map(scoreBounty).sort(function (a, b) { return b.score - a.score; }).slice(0, 3)
+        : [],
+      mult: damageMultiplier(route, layers),
+      ehp: survivalMultiplier(route, layers),
+      rows: rows,
+      advice: adviceOf(priv, ctx),
+      missing: missingFor(priv, route),
+      est: estimate(priv, route, 1200, round, modeId),
+      modeId: modeId,
+      lastRound: lastRoundOf(modeId),
+      round: round,
+      level: (priv.shop && priv.shop.level) || 1,
+      funds: priv.funds || 0,
+      lp: priv.lp,
+    };
+  }
+  // </CORE>
+
+  // ---------------------------------------------------------------------------------------------
+  // rendering + the postMessage bridge (shared/plugins/ui.js, API v1)
+  // ---------------------------------------------------------------------------------------------
+  function send(msg) {
+    var out = { v: 1 }, k;
+    for (k in msg) out[k] = msg[k];
+    try { parent.postMessage(out, '*'); } catch (e) { /* host gone */ }
+  }
+
+  var route = null;   // the player's own route, from storage
+  var last = null;    // { priv, pub } of the last state
+  var lastPlayer = null;
+  var root = document.getElementById('app');
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function pct(v) { return Math.round(v * 100) + '%'; }
+
+  function render(view) {
+    root.textContent = '';
+    if (!view) { root.appendChild(el('div', 'none', '等待对局…')); return; }
+    var head = el('div', 'hd');
+    head.appendChild(el('b', null, '抓取顾问'));
+    var bits = ['R' + view.round, 'Lv' + view.level, view.funds + ' 金'];
+    if (view.layers > 0) bits.push(view.layers + ' 层 ×' + view.mult.toFixed(2));
+    head.appendChild(el('span', null, bits.join(' · ')));
+    root.appendChild(head);
+
+    var bar = el('div', 'route');
+    coreBondsFor(last && last.pub ? last.pub.modeId : null, last && last.pub ? last.pub.disabledBonds : null).forEach(function (id) {
+      var count = last && last.priv ? progressOf(last.priv, id).count : 0;
+      var lay = last && last.priv ? layersOf(last.priv, id) : 0;
+      var b = el('button', route === id ? 'on' : null, bondName(id) + ' ' + count + (lay ? '·' + lay : ''));
+      b.type = 'button';
+      b.title = bondName(id) + ' 在场 ' + count + ' 人 / ' + lay + ' 层（阈值 ' + thresholdsOf(id).join(' / ') + '）';
+      b.addEventListener('click', function () {
+        route = id;
+        send({ t: 'storage', op: 'set', key: 'route', value: id });
+        if (last) render(viewOf(last.priv, last.pub));
+      });
+      bar.appendChild(b);
+    });
+    root.appendChild(bar);
+
+    var goal = view.next === null ? view.progress.count : view.next;
+    var fill = el('i');
+    fill.style.width = Math.max(4, Math.min(100, Math.round((view.progress.count / Math.max(1, goal)) * 100))) + '%';
+    var track = el('div', 'bar');
+    track.appendChild(fill);
+    root.appendChild(track);
+
+    var act = el('div', 'act' + (view.advice.kind === 'buy' ? '' : ' warn'), view.advice.text);
+    root.appendChild(act);
+
+    // 下一波：飞行/精英/BOSS 数 + 场上能打飞的有几个 —— 「别漏光」这一条要能当场看见
+    if (view.air && view.air.total) {
+      var wv = el('div', 'why');
+      wv.style.paddingLeft = '0';
+      var wtext = '下一波 ' + view.air.total + ' 只';
+      if (view.air.fly) wtext += ' · 飞行 ' + view.air.fly;
+      if (view.air.units) wtext += ' · 场上能打飞 ' + view.air.have + '/' + view.air.units;
+      if (view.air.gap > 0) wtext += ' ← 对空还差 ' + view.air.gap + ' 个位';
+      wv.textContent = wtext;
+      root.appendChild(wv);
+    }
+
+    // 人数档位：还差几个人到下一档、下一档给什么 —— 「塞满值不值」当场回答
+    if (view.tiers) {
+      var tl = el('div', 'why');
+      tl.style.paddingLeft = '0';
+      tl.textContent = view.tiers.full
+        ? '档位已满（' + (view.tiers.stop || '') + ' 人顶档）→ 资源转喂层'
+        : '到 ' + view.tiers.next + ' 人档：' + (view.tiers.nextText || '') + '（还差 ' + view.tiers.need + ' 人）';
+      root.appendChild(tl);
+    }
+
+    var ul = el('ul');
+    view.rows.forEach(function (r) {
+      var li = el('li', r.score >= 46 ? 'top' : r.score >= 26 ? 'mid' : 'low');
+      li.appendChild(el('span', 'ix', String(r.index + 1)));
+      var nm = el('span', 'nm', r.name);
+      if (r.price) nm.appendChild(el('em', null, ' ' + r.price + ' 金'));
+      li.appendChild(nm);
+      li.appendChild(el('span', 'sc', String(r.score)));
+      ul.appendChild(li);
+      if (r.why.length) li.appendChild(el('div', 'why', r.why.join(' · ')));
+    });
+    if (!view.rows.length) ul.appendChild(el('li', 'none', '商店为空（不在休整期？）'));
+    root.appendChild(ul);
+
+    var foot = el('div', 'foot');
+    foot.appendChild(document.createTextNode('成牌估计 '));
+    if (view.est.low === view.est.high) {
+      foot.appendChild(el('b', null, pct(view.est.pHigh)));
+      foot.appendChild(document.createTextNode(' 到 ' + view.est.high + ' 人'));
+    } else {
+      foot.appendChild(el('b', null, pct(view.est.pLow)));
+      foot.appendChild(document.createTextNode(' 到 ' + view.est.low + ' 人 · '));
+      foot.appendChild(el('b', null, pct(view.est.pHigh)));
+      foot.appendChild(document.createTextNode(' 到 ' + view.est.high + ' 人'));
+    }
+    var note = el('div', 'none');
+    note.style.marginTop = '2px';
+    note.textContent = '蒙特卡洛 ' + view.est.runs + ' 次 · 未计本局禁用羁绊、池子占用与栏位，仅供参考';
+    if (view.missing.length) {
+      var gap = el('div', 'why');
+      gap.style.paddingLeft = '0';
+      gap.style.opacity = '.72';
+      gap.textContent = '路线缺口: ' + view.missing.slice(0, 6).map(function (m) {
+        return m.name + ' T' + m.tier;
+      }).join(' · ') + (view.missing.length > 6 ? ' …' : '');
+      root.appendChild(gap);
+    }
+    root.appendChild(foot);
+    root.appendChild(note);
+
+    send({ t: 'resize', height: Math.min(480, 140 + view.rows.length * 34) });
+  }
+
+  function viewOf(priv, pub) {
+    if (!priv) return null;
+    try { return analyseState(priv, pub, route); } catch (e) { return null; }
+  }
+
+  window.addEventListener('message', function (ev) {
+    var m = ev.data;
+    if (!m || m.v !== 1 || typeof m.t !== 'string') return;
+    if (m.t === 'welcome') { send({ t: 'ready' }); return; }
+    if (m.t === 'rejected') { if (m.reason === 'intent') root.setAttribute('data-rejected', 'intent'); return; }
+    if (m.t === 'storage' && m.op === 'get' && m.ok && typeof m.value === 'string' && route === null) {
+      if (BO[m.value] && BO[m.value].c === 1) {
+        route = m.value;
+        if (last) render(viewOf(last.priv, last.pub));
+      }
+      return;
+    }
+    if (m.t !== 'state') return;
+    var priv = m.private || null;
+    if (priv && typeof priv.playerId === 'string') {
+      if (lastPlayer && priv.playerId !== lastPlayer) route = null;   // another match: start from the auto route
+      lastPlayer = priv.playerId;
+    }
+    last = { priv: priv, pub: m.public || null };
+    if (route === null && last.priv) route = autoRoute(last.priv, null);
+    render(viewOf(last.priv, last.pub));
+  });
+
+  // announce on mount: the host also posts `welcome`, but a re-attach must not deadlock
+  send({ t: 'ready' });
+  send({ t: 'slot', slot: 'hud.right' });
+  send({ t: 'resize', height: 220 });
+  send({ t: 'storage', op: 'get', key: 'route' });
+})();
+</script>
+</body>
+</html>

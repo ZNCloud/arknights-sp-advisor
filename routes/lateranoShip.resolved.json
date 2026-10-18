@@ -1,0 +1,243 @@
+{
+ "bondId": "lateranoShip",
+ "bond": "拉特兰",
+ "patch": "卫戍协议：盟约 下半期（2026-03-14 开，03-27 更新）；与上半期差异：6 人上限由「每发弹药 +4% 至多 +180%」改为「至多 +200%」",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "空弦",
+   "chessId": "chess_char_3_21_a",
+   "baseId": "chess_char_3_21_a",
+   "group": "core_ops",
+   "role": "主力叠层：进入休整期时自身及身前一格已激活盟约各 +3（精锐+6）；兼灵巧户口",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "圣葬",
+   "group": "core_ops",
+   "role": "最强叠层引擎：自身每消耗 7 发子弹 → 拉特兰+7、远见+3，每场至多 7 次（精锐+14/+6）",
+   "claimedTier": 5,
+   "found": false
+  },
+  {
+   "name": "蕾缪安",
+   "chessId": "chess_char_6_01_a",
+   "baseId": "chess_char_6_01_a",
+   "group": "core_ops",
+   "role": "主C：自身每消耗 10 发子弹，若同一行有 3 名干员 → 拉特兰+精准各 +2（精锐+4）",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "lateranoShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "新约能天使",
+   "chessId": "chess_char_6_13_a",
+   "baseId": "chess_char_6_13_a",
+   "group": "core_ops",
+   "role": "主C/对空与 Boss 收尾；也是下半期最好用的「转职拉特兰」外援位",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "lateranoShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "隐现",
+   "chessId": "chess_char_1_01_a",
+   "baseId": "chess_char_1_01_a",
+   "group": "good_ops",
+   "role": "每 5 层攻速 +1（精锐+2），前期开 3 拉特兰最便宜的抓位",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "lateranoShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "送葬人",
+   "chessId": "chess_char_2_01_a",
+   "baseId": "chess_char_2_01_a",
+   "group": "good_ops",
+   "role": "战斗中首次击倒敌人 → 精准+拉特兰各 +3（精锐+6），前期叠层主力",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "能天使",
+   "chessId": "chess_char_3_01_a",
+   "baseId": "chess_char_3_01_a",
+   "group": "good_ops",
+   "role": "理财：获得时使下个休整期额外 +1 资金（精锐+2）",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "信仰搅拌机",
+   "chessId": "chess_char_4_01_a",
+   "baseId": "chess_char_4_01_a",
+   "group": "good_ops",
+   "role": "拉特兰/坚守双户口，唯一本家前排",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "莫斯提马",
+   "chessId": "chess_char_4_02_a",
+   "baseId": "chess_char_4_02_a",
+   "group": "good_ops",
+   "role": "拉特兰/奥术：自身周围 4 格的干员每总计消耗 6 次弹药 → 拉特兰层数 +1（精锐+2）",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "塑心",
+   "chessId": "chess_char_6_09_a",
+   "baseId": "chess_char_6_09_a",
+   "group": "good_ops",
+   "role": "开技能时同一行每有 1 名干员 → 当前层数最多的盟约 +1（精锐+2，每场至多 10/20）",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "lateranoShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "寒芒克洛丝",
+   "chessId": "chess_char_4_06_a",
+   "baseId": "chess_char_4_06_a",
+   "group": "fill_ops",
+   "role": "精准，1 费级白嫖抓位",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "异客",
+   "chessId": "chess_char_6_05_a",
+   "baseId": "chess_char_6_05_a",
+   "group": "fill_ops",
+   "role": "精准主叠，六星输出",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "sargonShip",
+    "swiftShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "白面鸮",
+   "chessId": "chess_char_4_21_a",
+   "baseId": "chess_char_4_21_a",
+   "group": "fill_ops",
+   "role": "助力/灵巧，续技力与奶",
+   "claimedTier": 5,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "deputShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "拉特兰桥夹",
+   "itemId": "chess_item_4_08_e_a",
+   "tier": 4,
+   "price": 1,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "铳骑之威",
+   "itemId": "chess_item_6_02_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

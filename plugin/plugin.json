@@ -1,0 +1,32 @@
+{
+  "$schema": "../../schemas/plugin.schema.json",
+  "manifest": 2,
+  "name": {
+    "zh": "抓取顾问",
+    "en": "Pick advisor"
+  },
+  "description": {
+    "zh": "只读面板：休整期告诉你商店里该抓哪张、路线还缺谁、核心盟约成到 6/9 人的估计概率。不代替你操作对局。",
+    "en": "Read-only panel: which shop card to take, who the route is still missing, and an estimated chance of reaching the core bond's 6/9. It cannot play the match."
+  },
+  "version": "1.0.0",
+  "app": ">=0.3.0 <0.4.0",
+  "api": 2,
+  "class": "ui",
+  "scope": [
+    "personal"
+  ],
+  "authors": [
+    "built with DSH"
+  ],
+  "license": "CC0-1.0",
+  "permissions": [
+    "ui.frame"
+  ],
+  "slots": [
+    "hud.right"
+  ],
+  "entry": {
+    "client": "ui/index.html"
+  }
+}

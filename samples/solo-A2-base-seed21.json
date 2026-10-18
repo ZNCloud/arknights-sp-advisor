@@ -1,0 +1,4746 @@
+﻿[
+ {
+  "seed": 21,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m03",
+  "bossId": "boss_7",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "迅捷 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 37,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 16,
+      "total": 24,
+      "leaks": 8,
+      "bonds": "迅捷 灵巧 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 24,
+      "total": 26,
+      "leaks": 2,
+      "bonds": "炎 迅捷 灵巧 助力 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 28,
+      "total": 28,
+      "leaks": 0,
+      "bonds": "炎 灵巧 助力2 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 20,
+      "total": 22,
+      "leaks": 2,
+      "bonds": "炎 迅捷 灵巧 助力2 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "炎 维多利亚 灵巧 助力2 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 28,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 27,
+      "total": 32,
+      "leaks": 5,
+      "bonds": "炎 维多利亚 灵巧 助力 奇迹 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 7,
+      "total": 11,
+      "leaks": 4,
+      "bonds": "炎 维多利亚 灵巧 助力 奇迹 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 14,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 30,
+      "total": 50,
+      "leaks": 20,
+      "bonds": "炎 维多利亚 灵巧 助力 奇迹 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 6,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 29,
+      "total": 37,
+      "leaks": 8,
+      "bonds": "炎 维多利亚 灵巧 助力 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 7,
+      "total": 11,
+      "leaks": 4,
+      "bonds": "炎 维多利亚 灵巧 助力 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3414671,
+     "max": 4000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 22,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_2",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 6,
+      "total": 6,
+      "leaks": 0,
+      "bonds": "迅捷"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 10,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "迅捷 坚守"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 11,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "迅捷 坚守2 绝技"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 25,
+      "total": 25,
+      "leaks": 0,
+      "bonds": "迅捷 坚守2 助力 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 19,
+      "leaks": 2,
+      "bonds": "卡西米尔 迅捷 坚守2 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 28,
+      "total": 28,
+      "leaks": 0,
+      "bonds": "卡西米尔 坚守2 助力 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 坚守2 不屈 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 16,
+      "total": 16,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 坚守2 不屈 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 39,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 26,
+      "total": 30,
+      "leaks": 4,
+      "bonds": "卡西米尔 迅捷 坚守 不屈2 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 39,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 27,
+      "total": 27,
+      "leaks": 0,
+      "bonds": "卡西米尔2 迅捷 坚守 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 37,
+      "total": 38,
+      "leaks": 1,
+      "bonds": "卡西米尔2 迅捷 坚守 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 28,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 53,
+      "total": 31,
+      "leaks": 26,
+      "bonds": "卡西米尔2 精准 迅捷 坚守 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 12,
+      "total": 5,
+      "leaks": 2,
+      "bonds": "卡西米尔2 迅捷 坚守2 不屈 调和 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2478148,
+     "max": 3000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 23,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m04",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 3,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "突袭"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "突袭"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 7,
+      "total": 9,
+      "leaks": 2,
+      "bonds": "突袭"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "精准 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "谢拉格 精准 坚守 助力2 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 33,
+      "total": 33,
+      "leaks": 0,
+      "bonds": "谢拉格 精准 坚守 助力2 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 26,
+      "total": 26,
+      "leaks": 0,
+      "bonds": "谢拉格 坚守2 助力2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 12,
+      "total": 13,
+      "leaks": 1,
+      "bonds": "谢拉格 阿戈尔 精准 坚守 助力 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "谢拉格 阿戈尔 坚守2 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 27,
+      "total": 25,
+      "leaks": 2,
+      "bonds": "阿戈尔 精准2 迅捷 坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 30,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 20,
+      "total": 32,
+      "leaks": 12,
+      "bonds": "阿戈尔 精准2 迅捷 坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 36,
+      "total": 41,
+      "leaks": 5,
+      "bonds": "阿戈尔 精准2 迅捷 坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 17,
+      "total": 4,
+      "leaks": 1,
+      "bonds": "阿戈尔 精准2 迅捷 坚守 突袭 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2403266,
+     "max": 3000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 24,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m04",
+  "bossId": "boss_4",
+  "victory": false,
+  "roundsPassed": 11,
+  "reason": "eliminated",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": "精准"
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "精准"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "精准 迅捷"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "精准 迅捷"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 10,
+      "total": 17,
+      "leaks": 7,
+      "bonds": "精准 迅捷"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 12,
+      "total": 19,
+      "leaks": 7,
+      "bonds": "精准 灵巧 助力"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "精准 迅捷 助力"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 21,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 6,
+      "total": 20,
+      "leaks": 14,
+      "bonds": "精准 迅捷 奥术 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 20,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 8,
+      "total": 9,
+      "leaks": 1,
+      "bonds": "维多利亚 精准 迅捷 奥术 助力"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 15,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 8,
+      "total": 13,
+      "leaks": 5,
+      "bonds": "维多利亚 谢拉格 精准 迅捷 奥术 助力"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 5,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 9,
+      "total": 27,
+      "leaks": 18,
+      "bonds": "维多利亚 谢拉格 精准 迅捷 奥术 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 12,
+      "total": 42,
+      "leaks": 30,
+      "bonds": ""
+     }
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 25,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m01",
+  "bossId": "boss_4",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 7,
+      "total": 7,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 11,
+      "total": 13,
+      "leaks": 2,
+      "bonds": "迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 14,
+      "total": 22,
+      "leaks": 8,
+      "bonds": "萨尔贡 迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 17,
+      "leaks": 2,
+      "bonds": "萨尔贡 迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "炎 萨尔贡 灵巧 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "萨尔贡 灵巧 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 23,
+      "total": 25,
+      "leaks": 2,
+      "bonds": "炎 萨尔贡 灵巧 坚守 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 4,
+      "total": 11,
+      "leaks": 7,
+      "bonds": "萨尔贡 拉特兰 灵巧 坚守2 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 18,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 8,
+      "total": 14,
+      "leaks": 6,
+      "bonds": "萨尔贡 拉特兰 灵巧 坚守2 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 8,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 6,
+      "total": 42,
+      "leaks": 36,
+      "bonds": "萨尔贡 拉特兰 迅捷 灵巧 坚守 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 0,
+      "total": 7,
+      "leaks": 7,
+      "bonds": "萨尔贡 拉特兰 迅捷 坚守 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 4068168,
+     "max": 4200000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 26,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m01",
+  "bossId": "boss_2",
+  "victory": false,
+  "roundsPassed": 11,
+  "reason": "eliminated",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 12,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 20,
+      "total": 7,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 41,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 16,
+      "total": 16,
+      "leaks": 4,
+      "bonds": "迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 41,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "迅捷 灵巧 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 41,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 57,
+      "total": 18,
+      "leaks": 0,
+      "bonds": "迅捷 灵巧 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 25,
+      "leaks": 11,
+      "bonds": "迅捷 灵巧 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 19,
+      "total": 19,
+      "leaks": 0,
+      "bonds": "迅捷 灵巧 助力 远见 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 26,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 27,
+      "total": 32,
+      "leaks": 5,
+      "bonds": "谢拉格 叙拉古 灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 16,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 10,
+      "total": 22,
+      "leaks": 12,
+      "bonds": "谢拉格 叙拉古 灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 6,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 16,
+      "total": 29,
+      "leaks": 13,
+      "bonds": "谢拉格 叙拉古 灵巧 助力 远见 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 11,
+      "total": 37,
+      "leaks": 26,
+      "bonds": ""
+     }
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 27,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m03",
+  "bossId": "boss_6",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 2,
+      "total": 4,
+      "leaks": 2,
+      "bonds": "坚守"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 7,
+      "total": 8,
+      "leaks": 1,
+      "bonds": "坚守"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 25,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "迅捷 坚守2"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 21,
+      "leaks": 4,
+      "bonds": "卡西米尔 迅捷 坚守2 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 28,
+      "total": 28,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 坚守2 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 27,
+      "total": 27,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 坚守2 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 20,
+      "total": 20,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 35,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "卡西米尔 迅捷 灵巧 坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 37,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 33,
+      "total": 34,
+      "leaks": 1,
+      "bonds": "卡西米尔 迅捷 灵巧 坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 28,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 7,
+      "total": 16,
+      "leaks": 9,
+      "bonds": "卡西米尔 迅捷 灵巧 坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 18,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 38,
+      "total": 50,
+      "leaks": 12,
+      "bonds": "卡西米尔 迅捷 灵巧 坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 8,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 21,
+      "total": 55,
+      "leaks": 34,
+      "bonds": "卡西米尔 迅捷 灵巧 坚守2 突袭 独行 绝技2"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 4,
+      "total": 6,
+      "leaks": 2,
+      "bonds": "卡西米尔 迅捷 坚守2 突袭 独行 绝技2"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2988777,
+     "max": 3980000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 28,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m04",
+  "bossId": "boss_4",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 51,
+      "total": 16,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 27,
+      "total": 27,
+      "leaks": 0,
+      "bonds": "灵巧 坚守2 突袭 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 33,
+      "total": 33,
+      "leaks": 0,
+      "bonds": "灵巧 坚守2 突袭 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 17,
+      "total": 24,
+      "leaks": 7,
+      "bonds": "灵巧 坚守 突袭"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 27,
+      "total": 27,
+      "leaks": 0,
+      "bonds": "灵巧 坚守2 不屈"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 37,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 18,
+      "total": 19,
+      "leaks": 1,
+      "bonds": "灵巧 坚守2 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 37,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 36,
+      "total": 36,
+      "leaks": 0,
+      "bonds": "谢拉格 灵巧 坚守2 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 28,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 33,
+      "total": 42,
+      "leaks": 9,
+      "bonds": "谢拉格 灵巧 坚守2 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 23,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 34,
+      "total": 39,
+      "leaks": 5,
+      "bonds": "谢拉格 灵巧 奥术 坚守 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "谢拉格 灵巧 奥术 坚守 不屈2 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3547631,
+     "max": 4200000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 29,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m02",
+  "bossId": "boss_3",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 6,
+      "total": 6,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "助力"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守 助力"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 45,
+      "total": 14,
+      "leaks": 0,
+      "bonds": "精准 坚守 助力"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "维多利亚 精准 奥术 坚守 助力"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "维多利亚 谢拉格 奥术 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 41,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 8,
+      "total": 12,
+      "leaks": 4,
+      "bonds": "维多利亚 谢拉格 奥术 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 63,
+      "total": 22,
+      "leaks": 3,
+      "bonds": "维多利亚 奥术 坚守2 远见 不屈 独行"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 34,
+      "total": 34,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 坚守2 远见 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 61,
+      "total": 23,
+      "leaks": 7,
+      "bonds": "维多利亚 奥术 坚守2 远见 不屈 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 21,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 35,
+      "total": 57,
+      "leaks": 22,
+      "bonds": "维多利亚 奥术2 坚守 远见 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 11,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 18,
+      "total": 42,
+      "leaks": 24,
+      "bonds": "维多利亚 奥术2 坚守 远见 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 8,
+      "total": 8,
+      "leaks": 6,
+      "bonds": "维多利亚 奥术2 坚守 远见 不屈 绝技2"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3603247,
+     "max": 4000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 30,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m04",
+  "bossId": "boss_1",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 5,
+      "leaks": 1,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 18,
+      "total": 6,
+      "leaks": 0,
+      "bonds": "助力 独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 20,
+      "total": 7,
+      "leaks": 0,
+      "bonds": "助力 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "精准 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 19,
+      "total": 19,
+      "leaks": 0,
+      "bonds": "精准 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "叙拉古 精准 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 34,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 22,
+      "total": 32,
+      "leaks": 10,
+      "bonds": "叙拉古 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 34,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "叙拉古 精准 迅捷 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 34,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 66,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "叙拉古2 迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 22,
+      "total": 23,
+      "leaks": 1,
+      "bonds": "叙拉古2 迅捷 奥术 独行"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 5,
+      "units": 9,
+      "killed": 22,
+      "total": 24,
+      "leaks": 2,
+      "bonds": "叙拉古2 迅捷 奥术 协防干员 独行"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 21,
+      "alive": true,
+      "level": 6,
+      "units": 9,
+      "killed": 15,
+      "total": 34,
+      "leaks": 19,
+      "bonds": "叙拉古2 迅捷 奥术 协防干员 独行"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 11,
+      "alive": true,
+      "level": 6,
+      "units": 9,
+      "killed": 29,
+      "total": 42,
+      "leaks": 13,
+      "bonds": "炎 叙拉古2 奥术 奇迹 独行"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 9,
+      "killed": 9,
+      "total": 13,
+      "leaks": 9,
+      "bonds": "炎 维多利亚 叙拉古 奥术2 独行"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3175505,
+     "max": 3600000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 31,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m02",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 12,
+  "reason": "eliminated",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 13,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "坚守"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 10,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "迅捷 坚守"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 13,
+      "total": 18,
+      "leaks": 5,
+      "bonds": "迅捷 坚守"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 39,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 63,
+      "total": 19,
+      "leaks": 1,
+      "bonds": "迅捷 灵巧 坚守 助力"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 33,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 18,
+      "total": 24,
+      "leaks": 6,
+      "bonds": "迅捷 灵巧 坚守 助力"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 32,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 25,
+      "total": 26,
+      "leaks": 1,
+      "bonds": "迅捷 灵巧 坚守 助力2 远见"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 22,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 12,
+      "total": 23,
+      "leaks": 11,
+      "bonds": "迅捷 灵巧 坚守 助力2 远见"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 21,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 24,
+      "total": 25,
+      "leaks": 1,
+      "bonds": "迅捷 灵巧 坚守2 助力 独行"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 11,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 19,
+      "total": 30,
+      "leaks": 11,
+      "bonds": "谢拉格 迅捷 灵巧 坚守 助力2 独行"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 1,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 20,
+      "total": 39,
+      "leaks": 19,
+      "bonds": "谢拉格 迅捷 灵巧 坚守 助力2 独行"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 97,
+      "total": 35,
+      "leaks": 18,
+      "bonds": ""
+     }
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 32,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 16,
+      "total": 21,
+      "leaks": 5,
+      "bonds": "萨尔贡 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 34,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 19,
+      "total": 25,
+      "leaks": 6,
+      "bonds": "萨尔贡 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 29,
+      "leaks": 14,
+      "bonds": "萨尔贡 灵巧 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 30,
+      "total": 30,
+      "leaks": 0,
+      "bonds": "萨尔贡 灵巧 坚守 远见 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 25,
+      "total": 25,
+      "leaks": 0,
+      "bonds": "萨尔贡 灵巧 坚守 远见 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 24,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 25,
+      "total": 25,
+      "leaks": 0,
+      "bonds": "萨尔贡 坚守2 远见 突袭 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 14,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 14,
+      "total": 37,
+      "leaks": 23,
+      "bonds": "萨尔贡 坚守2 远见 突袭 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 4,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 30,
+      "total": 49,
+      "leaks": 19,
+      "bonds": "萨尔贡 精准 坚守2 远见 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 18,
+      "total": 4,
+      "leaks": 0,
+      "bonds": "萨尔贡 精准2 迅捷 坚守 突袭 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2500668,
+     "max": 3000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 33,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "不屈 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 13,
+      "total": 13,
+      "leaks": 0,
+      "bonds": "助力 不屈 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "维多利亚 助力 不屈 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 助力 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 助力 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 助力 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 35,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 助力 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 32,
+      "total": 32,
+      "leaks": 0,
+      "bonds": "维多利亚 奥术 助力 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 17,
+      "total": 29,
+      "leaks": 12,
+      "bonds": "维多利亚 奥术 助力 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 21,
+      "total": 42,
+      "leaks": 21,
+      "bonds": "维多利亚 奥术 助力 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 15,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 12,
+      "total": 32,
+      "leaks": 20,
+      "bonds": "维多利亚 奥术 远见 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 9,
+      "total": 5,
+      "leaks": 4,
+      "bonds": "维多利亚 奥术2 不屈2 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2885794,
+     "max": 3000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 34,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m02",
+  "bossId": "boss_7",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 4,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "精准"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "精准 迅捷"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "精准 迅捷 坚守"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "精准 迅捷 坚守"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 30,
+      "total": 30,
+      "leaks": 0,
+      "bonds": "精准 迅捷 奥术 坚守2"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "精准 迅捷 奥术 坚守2"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 38,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 5,
+      "total": 12,
+      "leaks": 7,
+      "bonds": "精准 迅捷 奥术 坚守2"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 22,
+      "total": 25,
+      "leaks": 3,
+      "bonds": "精准2 奥术2 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 30,
+      "total": 30,
+      "leaks": 0,
+      "bonds": "精准2 奥术2 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 17,
+      "total": 30,
+      "leaks": 17,
+      "bonds": "精准 奥术2 坚守2 突袭 独行"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 15,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 28,
+      "total": 50,
+      "leaks": 22,
+      "bonds": "精准2 奥术2 坚守2 突袭 独行"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 5,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 15,
+      "total": 35,
+      "leaks": 20,
+      "bonds": "卡西米尔 精准 奥术2 坚守2 突袭 独行"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 1,
+      "total": 11,
+      "leaks": 5,
+      "bonds": "卡西米尔 精准 奥术2 坚守2 突袭 独行"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3889214,
+     "max": 4000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 35,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m03",
+  "bossId": "boss_1",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "坚守 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "坚守2 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "坚守2 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 30,
+      "total": 30,
+      "leaks": 0,
+      "bonds": "灵巧 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 灵巧 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 灵巧 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 16,
+      "total": 43,
+      "leaks": 27,
+      "bonds": "谢拉格 迅捷 灵巧 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 22,
+      "total": 57,
+      "leaks": 35,
+      "bonds": "谢拉格 迅捷 灵巧 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 17,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 灵巧 坚守2 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2542799,
+     "max": 3600000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 36,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m04",
+  "bossId": "boss_1",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 6,
+      "total": 6,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 11,
+      "total": 11,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "坚守"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 18,
+      "total": 19,
+      "leaks": 1,
+      "bonds": "坚守2 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 26,
+      "total": 26,
+      "leaks": 0,
+      "bonds": "奥术 坚守2 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 70,
+      "total": 21,
+      "leaks": 2,
+      "bonds": "奥术 坚守2 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 32,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "阿戈尔 奥术 坚守2 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "阿戈尔 奥术 坚守 远见 突袭 不屈2 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "阿戈尔 精准 奥术2 坚守 远见 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 36,
+      "total": 36,
+      "leaks": 0,
+      "bonds": "阿戈尔 精准 奥术2 坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 32,
+      "total": 32,
+      "leaks": 0,
+      "bonds": "阿戈尔 精准 奥术2 坚守 突袭 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "阿戈尔 精准 奥术2 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 18,
+      "total": 11,
+      "leaks": 0,
+      "bonds": "阿戈尔 精准 奥术2 坚守2 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 1507565,
+     "max": 3600000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 37,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 8,
+      "total": 4,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 7,
+      "total": 7,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 11,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 17,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 22,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 26,
+      "total": 26,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 14,
+      "leaks": 0,
+      "bonds": "谢拉格 坚守 助力2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 31,
+      "total": 31,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 坚守2 助力 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 66,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "谢拉格 迅捷 坚守2 助力 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "谢拉格 精准 迅捷 坚守2 助力 远见 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 35,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 19,
+      "total": 30,
+      "leaks": 11,
+      "bonds": "谢拉格 精准 迅捷 灵巧 坚守 远见 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 87,
+      "total": 35,
+      "leaks": 28,
+      "bonds": "谢拉格 精准2 迅捷 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 16,
+      "total": 4,
+      "leaks": 0,
+      "bonds": "谢拉格 精准2 迅捷 坚守2 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 2482775,
+     "max": 3000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 38,
+  "difficulty": "ABYSS",
+  "stageId": "act2autochess_m04",
+  "bossId": "boss_6",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 6,
+      "total": 6,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "灵巧"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 17,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "炎 灵巧 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 22,
+      "total": 27,
+      "leaks": 5,
+      "bonds": "炎 灵巧 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 33,
+      "total": 33,
+      "leaks": 0,
+      "bonds": "炎 坚守 不屈 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "炎 坚守 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 32,
+      "total": 32,
+      "leaks": 0,
+      "bonds": "炎 坚守 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 32,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 16,
+      "total": 24,
+      "leaks": 8,
+      "bonds": "炎 坚守 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 17,
+      "total": 24,
+      "leaks": 7,
+      "bonds": "炎 坚守2 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 15,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 20,
+      "total": 33,
+      "leaks": 13,
+      "bonds": "炎 坚守2 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 5,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 20,
+      "total": 34,
+      "leaks": 14,
+      "bonds": "炎 灵巧 坚守2 不屈2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 2,
+      "total": 4,
+      "leaks": 2,
+      "bonds": "炎 灵巧 坚守2 不屈2 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 3919217,
+     "max": 3980000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 39,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m02",
+  "bossId": "boss_6",
+  "victory": false,
+  "roundsPassed": 12,
+  "reason": "eliminated",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 2,
+      "total": 3,
+      "leaks": 1,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "迅捷"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 44,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 16,
+      "total": 17,
+      "leaks": 1,
+      "bonds": "叙拉古 迅捷 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 43,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 23,
+      "total": 23,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 23,
+      "total": 26,
+      "leaks": 3,
+      "bonds": "叙拉古 迅捷 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 36,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 18,
+      "leaks": 4,
+      "bonds": "叙拉古 迅捷 坚守 奇迹 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 29,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 21,
+      "leaks": 7,
+      "bonds": "叙拉古 迅捷 坚守 奇迹 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 19,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 7,
+      "total": 20,
+      "leaks": 13,
+      "bonds": "叙拉古 迅捷 坚守2 奇迹 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 14,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 19,
+      "total": 24,
+      "leaks": 5,
+      "bonds": "叙拉古 迅捷 坚守 突袭 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 4,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 6,
+      "total": 20,
+      "leaks": 14,
+      "bonds": "叙拉古 迅捷 坚守 协防干员 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 11,
+      "total": 41,
+      "leaks": 30,
+      "bonds": ""
+     }
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ },
+ {
+  "seed": 40,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_1",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 8,
+      "total": 8,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 15,
+      "total": 15,
+      "leaks": 0,
+      "bonds": "灵巧 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 19,
+      "total": 19,
+      "leaks": 0,
+      "bonds": "灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 28,
+      "total": 28,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 29,
+      "total": 29,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 29,
+      "total": 29,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 灵巧 助力2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 15,
+      "total": 20,
+      "leaks": 5,
+      "bonds": "叙拉古 迅捷 灵巧 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 40,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 30,
+      "total": 30,
+      "leaks": 0,
+      "bonds": "叙拉古 迅捷 灵巧 助力 奇迹 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 34,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 23,
+      "total": 29,
+      "leaks": 6,
+      "bonds": "叙拉古 精准 迅捷 灵巧 助力 奇迹 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 27,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 30,
+      "total": 37,
+      "leaks": 7,
+      "bonds": "叙拉古 精准 迅捷 灵巧 助力 奇迹 独行 绝技2"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 25,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 39,
+      "total": 41,
+      "leaks": 2,
+      "bonds": "叙拉古 精准 迅捷 灵巧 助力 奇迹 独行 绝技2"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 19,
+      "total": 13,
+      "leaks": 0,
+      "bonds": "叙拉古 精准 迅捷 灵巧 助力 奇迹 独行 绝技2"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 1301827,
+     "max": 3600000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ }
+]

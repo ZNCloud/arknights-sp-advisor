@@ -1,0 +1,806 @@
+{
+ "_about": "由 advisor-dev/gen-tables.mjs 从 docs/research/02-bonds.json 的 layerGarrisons + data/garrisons.json 生成。不要手改；要改就改生成器或上游数据。手写判断字段（best/want/note）来自 routes/_stack.json 的合并。",
+ "_channels": {
+  "yanShip": {
+   "叠法": "获得时（抓牌瞬间）",
+   "key": "gain",
+   "amplified": "投资人 ×2/×3、魔王 +1/+2、小满（本回合每获得1人 +1/+2 层）"
+  },
+  "sargonShip": {
+   "叠法": "开启技能时",
+   "key": "skill",
+   "amplified": "华法琳（身前一格 开技能 +1/+2 层）、魔王 +1/+2"
+  },
+  "lateranoShip": {
+   "叠法": "消耗弹药时",
+   "key": "ammo",
+   "amplified": "莫斯提马（周围4格每6发 +1/+2）、圣约送葬人（自身每7发 +7/+14）"
+  },
+  "kjeragShip": {
+   "叠法": "敌人进入冻结时",
+   "key": "freeze",
+   "amplified": "初雪/银灰（范围内冻结 50% 概率 +1/+2）"
+  },
+  "siracusaShip": {
+   "叠法": "击倒敌人时",
+   "key": "kill",
+   "amplified": "荒芜拉普兰德（精锐后全队叙拉古都获得该特质）、休谟斯"
+  },
+  "egirShip": {
+   "叠法": "被击倒 / 击倒敌人时",
+   "key": "death",
+   "amplified": "幽灵鲨/归溟幽灵鲨（自身被击倒 +3/+6、+5/+10）、斯卡蒂（每击倒2人 +1/+2）"
+  },
+  "victoriaShip": {
+   "叠法": "装备 + 不同阶人数（休整期）",
+   "key": "equip",
+   "amplified": "薄绿/维娜·维多利亚（不同阶维多利亚干员 +2/+3 层）、风笛（前3次击倒 +2）"
+  },
+  "kazimierzShip": {
+   "叠法": "开战时 / 被击倒",
+   "key": "onstart",
+   "amplified": "史尔特尔（突袭 +8/+16）、瑕光（自身盟约 +4/+8）"
+  }
+ },
+ "_source": {
+  "layerGarrisons": 97,
+  "triggers": 61,
+  "amplifiers": 47
+ },
+ "trigger": {
+  "角峰": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "地灵": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "艾丝黛尔": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "锡人": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "深靛": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "野鬃": {
+   "event": "gain",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "自身所属盟约层数+2（无需激活盟约）",
+   "garrisonId": "garrison_25"
+  },
+  "惊蛰": {
+   "event": "gain",
+   "what": "获得等于当前调度中心等级的【炎】层数（无需激活盟约）",
+   "want": "升本之后再抓她最划算（L5 = 5 层/精英 ×2 = 10 层）",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "garrisonId": "garrison_30"
+  },
+  "小满": {
+   "event": "prepfin",
+   "what": "本回合每获得过1名干员，使已激活的【炎】层数+1",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "garrisonId": "garrison_31"
+  },
+  "山": {
+   "event": "prepfin",
+   "what": "本回合每获得过1名干员，使已激活的【投资人】层数+1",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "garrisonId": "garrison_34"
+  },
+  "烛煌": {
+   "event": "gain",
+   "what": "【炎】【维多利亚】层数+5（无需激活盟约）",
+   "want": "两条线的双料发动机",
+   "bond": null,
+   "add": 5,
+   "eliteAdd": 10,
+   "pos": null,
+   "garrisonId": "garrison_35"
+  },
+  "崖心": {
+   "event": "gain",
+   "bond": null,
+   "add": 3,
+   "eliteAdd": 6,
+   "pos": null,
+   "what": "自身所属盟约层数+3（无需激活盟约）",
+   "garrisonId": "garrison_41"
+  },
+  "薄绿": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": "全场",
+   "what": "场上每有1名不同阶的【维多利亚】干员，使已激活的【维多利亚】层数+2",
+   "garrisonId": "garrison_48"
+  },
+  "莱恩哈特": {
+   "event": "prepfin",
+   "what": "使自身已激活的盟约层数+5",
+   "bond": null,
+   "add": 5,
+   "eliteAdd": 10,
+   "pos": null,
+   "garrisonId": "garrison_51"
+  },
+  "维娜·维多利亚": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": "全场",
+   "what": "场上每有1名不同阶的【维多利亚】/【奇迹】干员使已激活的【维多利亚】层数+3/【奇迹】层数+2",
+   "garrisonId": "garrison_53"
+  },
+  "妮芙": {
+   "event": "prepfin",
+   "what": "整备区每有1个干员，使已激活的【迅捷】层数+2",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": "整备区",
+   "garrisonId": "garrison_56"
+  },
+  "流明": {
+   "event": "prepfin",
+   "what": "整备区中每名干员所在的已激活盟约分别层数+2",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": "整备区",
+   "garrisonId": "garrison_57"
+  },
+  "号角": {
+   "event": "prepfin",
+   "what": "当前已激活且层数最多的盟约每有1名不同阶干员在场，层数+2",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "garrisonId": "garrison_61"
+  },
+  "星熊": {
+   "event": "gain",
+   "what": "自身所属盟约层数+8（无需激活盟约）",
+   "want": "投资人 ×2 时一张 = 16~32 层，是全表最高的一发",
+   "bond": null,
+   "add": 8,
+   "eliteAdd": 16,
+   "pos": null,
+   "garrisonId": "garrison_65"
+  },
+  "锏": {
+   "event": "gain",
+   "what": "自身所属盟约层数+8（无需激活盟约）",
+   "want": "同上；配魔王再 +1/+2",
+   "bond": null,
+   "add": 8,
+   "eliteAdd": 16,
+   "pos": null,
+   "garrisonId": "garrison_65"
+  },
+  "折桠": {
+   "event": "prepfin",
+   "bond": null,
+   "add": 4,
+   "eliteAdd": 8,
+   "pos": null,
+   "what": "使已激活的【坚守】层数+4",
+   "garrisonId": "garrison_69"
+  },
+  "蛇屠箱": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": "同一行",
+   "what": "同一行每有1名干员，使已激活的【坚守】层数+1",
+   "garrisonId": "garrison_70"
+  },
+  "忍冬": {
+   "event": "gain",
+   "bond": null,
+   "add": 6,
+   "eliteAdd": 12,
+   "pos": null,
+   "what": "自身所属盟约层数+6（无需激活盟约）",
+   "garrisonId": "garrison_71"
+  },
+  "赫默": {
+   "event": "prepstart",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "使自身已激活的盟约层数+2",
+   "garrisonId": "garrison_80"
+  },
+  "蒂比": {
+   "event": "prepstart",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": null,
+   "what": "使自身已激活的盟约层数+2",
+   "garrisonId": "garrison_80"
+  },
+  "调香师": {
+   "event": "prepfin",
+   "what": "当前激活且层数最多的盟约层数+2，此干员在整备区时也有效",
+   "bond": null,
+   "add": 2,
+   "eliteAdd": 4,
+   "pos": "整备区",
+   "garrisonId": "garrison_81"
+  },
+  "波登可": {
+   "event": "prepfin",
+   "what": "当前激活且层数最多的盟约层数+1，此干员在整备区时也有效",
+   "bond": null,
+   "add": 1,
+   "eliteAdd": 2,
+   "pos": "整备区",
+   "garrisonId": "garrison_102"
+  },
+  "伊内丝": {
+   "event": "prepfin",
+   "what": "使自身已激活的盟约层数+5",
+   "bond": null,
+   "add": 5,
+   "eliteAdd": 10,
+   "pos": null,
+   "garrisonId": "garrison_104"
+  },
+  "灰毫": {
+   "event": "gain",
+   "what": "当前激活且层数最多的盟约层数+3",
+   "want": "不管什么路线都能吃，收敛最快",
+   "bond": null,
+   "add": 3,
+   "eliteAdd": 6,
+   "pos": null,
+   "garrisonId": "garrison_105"
+  },
+  "雪猎": {
+   "event": "gain",
+   "what": "自身所属盟约层数+5（无需激活盟约）",
+   "bond": null,
+   "add": 5,
+   "eliteAdd": 10,
+   "pos": null,
+   "garrisonId": "garrison_111"
+  },
+  "灵知": {
+   "event": "gain",
+   "what": "自身所属盟约层数+5（无需激活盟约）",
+   "bond": null,
+   "add": 5,
+   "eliteAdd": 10,
+   "pos": null,
+   "garrisonId": "garrison_111"
+  },
+  "夕": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "what": "当前休整期每获得过一名干员，使已激活的【炎】【奥术】层数+2",
+   "garrisonId": "garrison_119"
+  },
+  "溯光星源": {
+   "event": "prepfin",
+   "bond": null,
+   "add": 3,
+   "eliteAdd": 3,
+   "pos": null,
+   "what": "本回合每花费3资金，使已激活的【灵巧】【奥术】层数+2",
+   "garrisonId": "garrison_121"
+  },
+  "阿罗玛": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "what": "本回合每刷新过1次，使已激活的【叙拉古】【奥术】层数+2（至多6层）",
+   "garrisonId": "garrison_122"
+  },
+  "拉普兰德": {
+   "event": "other",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": "整备区",
+   "what": "若为本回合首次主动刷新，使已激活的【叙拉古】层数+4，此干员在整备区时也有效",
+   "garrisonId": "garrison_123"
+  },
+  "协律": {
+   "event": "gain",
+   "bond": null,
+   "add": 4,
+   "eliteAdd": 8,
+   "pos": null,
+   "what": "自身所属盟约层数+4（无需激活盟约）",
+   "garrisonId": "garrison_130"
+  },
+  "寒檀": {
+   "event": "prepstart",
+   "bond": null,
+   "add": 4,
+   "eliteAdd": 8,
+   "pos": null,
+   "what": "使已激活的【远见】层数+4",
+   "garrisonId": "garrison_141"
+  },
+  "安洁莉娜": {
+   "event": "prepfin",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "what": "本回合每刷新过1次，使已激活的【叙拉古】层数+4（每回合至多12层）",
+   "garrisonId": "garrison_147"
+  },
+  "刺玫": {
+   "event": "prepfin",
+   "bond": null,
+   "add": 1,
+   "eliteAdd": 2,
+   "pos": null,
+   "what": "使已激活的【维多利亚】层数+1",
+   "garrisonId": "garrison_154"
+  },
+  "录武官": {
+   "event": "gain",
+   "bond": null,
+   "add": null,
+   "eliteAdd": null,
+   "pos": null,
+   "what": "【炎】层数+6、【奇迹】层数+3（无需激活盟约）",
+   "garrisonId": "garrison_156"
+  },
+  "雷蛇": {
+   "event": "prepfin",
+   "bond": null,
+   "add": 1,
+   "eliteAdd": 2,
+   "pos": null,
+   "what": "使已激活的【不屈】层数+1",
+   "garrisonId": "garrison_158"
+  },
+  "莫斯提马": {
+   "event": "ammo",
+   "what": "周围 4 格每消耗 6 发弹药，已激活【拉特兰】+1（精锐 +2）"
+  },
+  "圣约送葬人": {
+   "event": "ammo",
+   "what": "自身每消耗 7 发，【拉特兰】+7、【远见】+3（精锐 ×2；远见至多 42 层）"
+  },
+  "蕾缪安": {
+   "event": "ammo",
+   "what": "自身每消耗 10 发且同一行 3 人 → 【拉特兰】【精准】+2（精锐 +4）"
+  },
+  "莎草": {
+   "event": "skill",
+   "what": "首次开技能 → 【萨尔贡】+5（精锐 +10）"
+  },
+  "菲莱": {
+   "event": "skill",
+   "what": "每次开技能 → 【萨尔贡】+6（精锐 +12）"
+  },
+  "寒芒克洛丝": {
+   "event": "skill",
+   "what": "使身前一格获得「开技能【精准】+1/+2」特质（每场至多 10/20 层）"
+  },
+  "初雪": {
+   "event": "freeze",
+   "what": "范围内敌人冻结时 50% 概率【谢拉格】+1（精锐 +2）"
+  },
+  "银灰": {
+   "event": "freeze",
+   "what": "同初雪"
+  },
+  "荒芜拉普兰德": {
+   "event": "kill",
+   "what": "击倒敌人【叙拉古】+2；精锐后全队叙拉古都获得该特质"
+  },
+  "休谟斯": {
+   "event": "kill",
+   "what": "每击倒 2 名敌人【突袭】+1（精锐 +2）"
+  },
+  "斯卡蒂": {
+   "event": "kill",
+   "what": "每击倒 2 名敌人【阿戈尔】【坚守】【突袭】+1（精锐 +2）"
+  },
+  "幽灵鲨": {
+   "event": "death",
+   "what": "自身被击倒【阿戈尔】+3（精锐 +6）"
+  },
+  "归溟幽灵鲨": {
+   "event": "death",
+   "what": "自身被击倒/替身切换【阿戈尔】+5、【不屈】+5（精锐 +10）"
+  },
+  "史尔特尔": {
+   "event": "onstart",
+   "what": "开战【突袭】+8（精锐 +16；每场至多 50/100）"
+  },
+  "瑕光": {
+   "event": "onstart",
+   "what": "开战自身盟约 +4（精锐 +8；至多 12/24）"
+  },
+  "风笛": {
+   "event": "kill",
+   "what": "前 3 次击倒 → 【维多利亚】【远见】【不屈】+2",
+   "want": "维多利亚线的早期油门"
+  },
+  "砾": {
+   "event": "death",
+   "what": "自身被击倒 → 【卡西米尔】+1、【不屈】+2（精锐 ×2）"
+  },
+  "引星棘刺": {
+   "event": "prepfin",
+   "what": "自身与身前一格各 +4（精锐 +8）"
+  },
+  "断崖": {
+   "event": "prepfin",
+   "what": "自身与身后一格各 +3（精锐 +6）"
+  },
+  "见行者": {
+   "event": "prepfin",
+   "what": "自身与身后一格各 +3（精锐 +6）"
+  },
+  "德克萨斯": {
+   "event": "sold",
+   "what": "卖出时获得 1 次免费刷新（精锐 2 次）",
+   "want": "唯一「卖」有收益的牌，但人类卖得少，别为它硬卖"
+  }
+ },
+ "amplifier": {
+  "莫斯提马": {
+   "pos": "周围4格",
+   "what": "自身周围4格的干员每消耗6发弹药，使已激活的【拉特兰】层数+1",
+   "eliteAdd": 6,
+   "baseAdd": 6,
+   "garrisonId": "garrison_22"
+  },
+  "圣约送葬人": {
+   "pos": "range:0-1",
+   "what": "自身每消耗7发子弹，使已激活的【拉特兰】层数+7、【远见】层数+3（每场战斗分别至多触发7次）",
+   "eliteAdd": 7,
+   "baseAdd": 7,
+   "garrisonId": "garrison_23"
+  },
+  "蕾缪安": {
+   "pos": "同一行",
+   "what": "自身每消耗10发子弹，若同一行有3名干员，使已激活的【拉特兰】【精准】层数+2",
+   "eliteAdd": 10,
+   "baseAdd": 10,
+   "garrisonId": "garrison_24"
+  },
+  "初雪": {
+   "pos": null,
+   "what": "每当范围内1名敌人进入冻结时，有50%概率使已激活的【谢拉格】层数+1",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_28"
+  },
+  "银灰": {
+   "pos": null,
+   "what": "每当范围内1名敌人进入冻结时，有50%概率使已激活的【谢拉格】层数+1",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_28"
+  },
+  "斯卡蒂": {
+   "pos": null,
+   "what": "每击倒2名单位时，使已激活的【阿戈尔】【坚守】【突袭】层数+1",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_38"
+  },
+  "归溟幽灵鲨": {
+   "pos": null,
+   "what": "自身被击倒或替身与本体进行切换时，使已激活的【阿戈尔】层数+5、【不屈】层数+5",
+   "eliteAdd": 10,
+   "baseAdd": 5,
+   "garrisonId": "garrison_40"
+  },
+  "莎草": {
+   "pos": null,
+   "what": "首次开启技能时，使已激活的【萨尔贡】层数+5",
+   "eliteAdd": 10,
+   "baseAdd": 5,
+   "garrisonId": "garrison_42"
+  },
+  "菲莱": {
+   "pos": null,
+   "what": "开启技能时，使已激活的【萨尔贡】层数+6",
+   "eliteAdd": 12,
+   "baseAdd": 6,
+   "garrisonId": "garrison_43"
+  },
+  "幽灵鲨": {
+   "pos": null,
+   "what": "自身被击倒时，使已激活的【阿戈尔】层数+3",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_46"
+  },
+  "断崖": {
+   "pos": "自身 + 身后一格",
+   "what": "休整期结束：自身与身后一格各 +3（精锐 +6）",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_47",
+   "best": "注意是「身后」，摆位和引星棘刺相反"
+  },
+  "见行者": {
+   "pos": "自身 + 身后一格",
+   "what": "同断崖（+3/+6）",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_47"
+  },
+  "风笛": {
+   "pos": null,
+   "what": "前3次击倒敌人时，使已激活的【维多利亚】【远见】【不屈】层数+2",
+   "eliteAdd": 4,
+   "baseAdd": 2,
+   "garrisonId": "garrison_50"
+  },
+  "华法琳": {
+   "pos": "身前一格",
+   "what": "使身前一格干员获得「开启技能时使自身所属已激活盟约层数 +1（精锐 +2）」特质，每场至多 7/14 层",
+   "eliteAdd": null,
+   "baseAdd": null,
+   "garrisonId": "garrison_72",
+   "stack": "技能频率越高收益越大 —— 这就是「华法琳配技能快的」",
+   "best": "放在技能转得快/自动技能的干员前面（她本身只回血，不输出）"
+  },
+  "寒芒克洛丝": {
+   "pos": "身前一格",
+   "what": "使身前一格干员获得特质“开启技能时使已激活【精准】层数+1”（每场战斗至多10层）",
+   "eliteAdd": null,
+   "baseAdd": null,
+   "garrisonId": "garrison_73"
+  },
+  "砾": {
+   "pos": null,
+   "what": "使已激活的【卡西米尔】层数+1\n使已激活的【不屈】层数+2",
+   "eliteAdd": 4,
+   "baseAdd": 2,
+   "garrisonId": "garrison_75"
+  },
+  "休谟斯": {
+   "pos": null,
+   "what": "每击倒2名敌人时，使已激活的【突袭】层数+1",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_77"
+  },
+  "引星棘刺": {
+   "pos": "自身 + 身前一格",
+   "what": "休整期结束：自身与身前一格已激活盟约各 +4（精锐 +8）",
+   "eliteAdd": 8,
+   "baseAdd": 4,
+   "garrisonId": "garrison_79",
+   "stack": "一次性大额，位置错了浪费一半",
+   "best": "把自己和最粗的那条线并排"
+  },
+  "塑心": {
+   "pos": "同一行",
+   "what": "开启技能时，同一行每 1 名干员 → 当前层数最多的盟约 +1（每场至多 10 层）",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_90"
+  },
+  "瑕光": {
+   "pos": null,
+   "what": "使自身已激活的盟约层数+4（每场作战至多12层）",
+   "eliteAdd": 8,
+   "baseAdd": 4,
+   "garrisonId": "garrison_106"
+  },
+  "史尔特尔": {
+   "pos": null,
+   "what": "使已激活的【突袭】层数+8（每场作战至多50层）",
+   "eliteAdd": 16,
+   "baseAdd": 8,
+   "garrisonId": "garrison_107"
+  },
+  "荒芜拉普兰德": {
+   "pos": null,
+   "what": "击倒敌人时，使已激活的【叙拉古】层数+2\n将荒芜拉普兰德合成为精锐即可在战斗中使所有【叙拉古】干员获得该效果",
+   "eliteAdd": null,
+   "baseAdd": 2,
+   "garrisonId": "garrison_118"
+  },
+  "缇缇": {
+   "pos": null,
+   "what": "每当范围内有敌人或干员进入沉睡或晕眩时，使已激活的【萨尔贡】【精准】层数+1（每场战斗至多24层）",
+   "eliteAdd": 2,
+   "baseAdd": 1,
+   "garrisonId": "garrison_125"
+  },
+  "凛御银灰": {
+   "pos": "身前一格",
+   "what": "使身前一格【谢拉格】干员获得特质“范围内1名敌人进入冻结时，有60%概率使已激活的【谢拉格】层数+1”",
+   "eliteAdd": null,
+   "baseAdd": null,
+   "garrisonId": "garrison_126"
+  },
+  "百炼嘉维尔": {
+   "pos": null,
+   "what": "开启技能时，使已激活的【萨尔贡】层数+9",
+   "eliteAdd": 18,
+   "baseAdd": 9,
+   "garrisonId": "garrison_128"
+  },
+  "海霓": {
+   "pos": null,
+   "what": "首次击倒敌人或我方干员时，使已激活的【阿戈尔】【奥术】层数+3",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_131"
+  },
+  "送葬人": {
+   "pos": null,
+   "what": "首次击倒敌人时，使已激活的【精准】【拉特兰】层数+3",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_138"
+  },
+  "纯烬艾雅法拉": {
+   "pos": null,
+   "what": "开启技能时，当前已激活且层数最多的盟约层数+3",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_140"
+  },
+  "耀骑士临光": {
+   "pos": "身前一格",
+   "what": "使自身和身前一格干员获得特质“【卡西米尔】每叠加3层，本干员再部署时间-1.5%，攻击速度+0.5”",
+   "eliteAdd": null,
+   "baseAdd": null,
+   "garrisonId": "garrison_145"
+  },
+  "远牙": {
+   "pos": "同一行",
+   "what": "使同一行最右边一名干员获得特质“使已激活的【卡西米尔】【精准】层数+4（每场作战至多24层）”",
+   "eliteAdd": null,
+   "baseAdd": null,
+   "garrisonId": "garrison_148"
+  },
+  "空弦": {
+   "pos": "身前一格",
+   "what": "使自身及身前一格干员的已激活盟约分别各层数+3",
+   "eliteAdd": 6,
+   "baseAdd": 3,
+   "garrisonId": "garrison_150"
+  },
+  "伺夜": {
+   "pos": null,
+   "what": "造成的伤害变为弱点伤害（基于敌人的防御力和法术抗性变换物理和法术伤害），前3次击倒敌人时使已激活的【叙拉古】层数+2、【奇迹】层数+1",
+   "eliteAdd": 4,
+   "baseAdd": 2,
+   "garrisonId": "garrison_152"
+  },
+  "锏": {
+   "pos": null,
+   "what": "自身所属的盟约层数+8\n使自身已激活的盟约层数+8（至多24层）",
+   "eliteAdd": 16,
+   "baseAdd": 8,
+   "garrisonId": "garrison_155"
+  },
+  "魔王": {
+   "pos": "身前一格",
+   "what": "身前一格的干员因特质使层数提升时，额外 +1（精锐 +2）",
+   "stack": "和投资人 ×2 是乘在一起的：先 ×2 再 +1/+2",
+   "best": "放在最容易叠层的人前面（星熊/惊蛰/烛煌这种一发 +8~16 层的）"
+  },
+  "白面鸮": {
+   "pos": "身前一格",
+   "what": "身前一格若是「进入休整期时」特质，本干员复制它的特质",
+   "best": "复制助力/远见这类休整期被动 → 等于多一个免费源"
+  },
+  "塞雷娅": {
+   "pos": "身前一格",
+   "what": "身前一格若是「休整期结束时」特质，本干员复制它的特质",
+   "best": "助力就是休整期结束时生效 → 塞雷娅站助力前面可再吃一次"
+  },
+  "号角": {
+   "pos": "全场",
+   "what": "休整期结束：当前层数最多的盟约，每有 1 名不同阶干员在场 +2（精锐 +4）",
+   "best": "堆「不同阶」的人数，比堆同阶更值"
+  },
+  "调香师": {
+   "pos": "整备区也有效",
+   "what": "休整期结束：当前层数最多的盟约 +2/+4（在整备区也算）",
+   "best": "不用上场，收着就生效"
+  },
+  "波登可": {
+   "pos": "整备区也有效",
+   "what": "休整期结束：当前层数最多的盟约 +1/+2（在整备区也算）"
+  },
+  "流明": {
+   "pos": "整备区",
+   "what": "休整期结束：整备区每名干员所在的已激活盟约分别 +2（精锐 +4）",
+   "best": "整备区囤人也能叠层 —— 但人类手牌位有限，别为它硬囤"
+  },
+  "小满": {
+   "pos": "全场",
+   "what": "休整期结束：本回合每获得过 1 名干员，已激活【炎】层数 +1（精锐 +2）",
+   "best": "和「多抓」直接挂钩 → 一回合抓 3 张 = 免费 +3/+6 层"
+  },
+  "山": {
+   "pos": "全场",
+   "what": "休整期结束：本回合每获得过 1 名干员，已激活【投资人】层数 +1（精锐 +2）",
+   "best": "加速投资人冲 100 层（×3 的门槛）"
+  },
+  "妮芙": {
+   "pos": "整备区",
+   "what": "休整期结束：整备区每有 1 个干员，已激活【迅捷】层数 +2（精锐 +4）"
+  },
+  "薄绿": {
+   "pos": "全场",
+   "what": "场上每有 1 名不同阶【维多利亚】干员，已激活【维多利亚】层数 +2"
+  },
+  "维娜·维多利亚": {
+   "pos": "全场",
+   "what": "场上每 1 名不同阶【维多利亚】/【奇迹】干员，维多利亚 +3 / 奇迹 +2 层"
+  },
+  "蛇屠箱": {
+   "pos": "同一行",
+   "what": "同一行每有 1 名干员，已激活【坚守】层数 +1（精锐 +2）"
+  },
+  "折桠": {
+   "pos": "全场",
+   "what": "已激活【坚守】层数 +4（精锐 +8）"
+  }
+ }
+}

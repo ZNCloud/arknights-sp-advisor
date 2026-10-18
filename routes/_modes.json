@@ -1,0 +1,852 @@
+{
+ "generated": "modes-export.mjs",
+ "source": "data/config.json",
+ "modes": {
+  "mode_training_1": {
+   "name": "入门协议",
+   "difficulty": "TRAINING",
+   "type": "LOCAL",
+   "lastRound": 4,
+   "upgradePrices": [
+    4,
+    4,
+    6,
+    9,
+    12
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 0
+    },
+    "2": {
+     "chess": 3,
+     "item": 0
+    },
+    "3": {
+     "chess": 3,
+     "item": 0
+    },
+    "4": {
+     "chess": 3,
+     "item": 0
+    },
+    "5": {
+     "chess": 3,
+     "item": 1
+    },
+    "6": {
+     "chess": 3,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 0,
+    "addon": 0
+   }
+  },
+  "mode_single_funny": {
+   "name": "标准模拟",
+   "difficulty": "FUNNY",
+   "type": "SINGLE",
+   "lastRound": 9,
+   "upgradePrices": [
+    1,
+    1,
+    5,
+    8,
+    10
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 4,
+     "item": 1
+    },
+    "5": {
+     "chess": 4,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "siracusaShip",
+    "preciShip",
+    "swiftShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip"
+   ],
+   "inactiveBonds": [
+    "lateranoShip",
+    "egirShip",
+    "kazimierzShip",
+    "skillfulShip",
+    "arcaneShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "siracusaShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip"
+   ],
+   "randomBans": {
+    "core": 0,
+    "addon": 1
+   }
+  },
+  "mode_single_normal": {
+   "name": "险境模拟",
+   "difficulty": "NORMAL",
+   "type": "SINGLE",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  },
+  "mode_single_hard": {
+   "name": "绝境模拟",
+   "difficulty": "HARD",
+   "type": "SINGLE",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  },
+  "mode_single_abyss": {
+   "name": "终极模拟",
+   "difficulty": "ABYSS",
+   "type": "SINGLE",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  },
+  "mode_multi_funny": {
+   "name": "标准模拟",
+   "difficulty": "FUNNY",
+   "type": "MULTI",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    10,
+    11,
+    11
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 4,
+     "item": 1
+    },
+    "5": {
+     "chess": 4,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "siracusaShip",
+    "preciShip",
+    "swiftShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip"
+   ],
+   "inactiveBonds": [
+    "lateranoShip",
+    "egirShip",
+    "kazimierzShip",
+    "skillfulShip",
+    "arcaneShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "siracusaShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip"
+   ],
+   "randomBans": {
+    "core": 0,
+    "addon": 1
+   }
+  },
+  "mode_multi_normal": {
+   "name": "险境模拟",
+   "difficulty": "NORMAL",
+   "type": "MULTI",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  },
+  "mode_multi_hard": {
+   "name": "绝境模拟",
+   "difficulty": "HARD",
+   "type": "MULTI",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  },
+  "mode_multi_abyss": {
+   "name": "终极模拟",
+   "difficulty": "ABYSS",
+   "type": "MULTI",
+   "lastRound": 14,
+   "upgradePrices": [
+    5,
+    8,
+    11,
+    12,
+    13
+   ],
+   "shopSlots": {
+    "1": {
+     "chess": 3,
+     "item": 1
+    },
+    "2": {
+     "chess": 4,
+     "item": 1
+    },
+    "3": {
+     "chess": 4,
+     "item": 1
+    },
+    "4": {
+     "chess": 5,
+     "item": 1
+    },
+    "5": {
+     "chess": 5,
+     "item": 1
+    },
+    "6": {
+     "chess": 5,
+     "item": 1
+    }
+   },
+   "activeBonds": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip",
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "inactiveBonds": [],
+   "coreAvailable": [
+    "yanShip",
+    "sargonShip",
+    "victoriaShip",
+    "kjeragShip",
+    "lateranoShip",
+    "egirShip",
+    "siracusaShip",
+    "kazimierzShip"
+   ],
+   "addonsAvailable": [
+    "preciShip",
+    "swiftShip",
+    "skillfulShip",
+    "arcaneShip",
+    "steadShip",
+    "deputShip",
+    "visiShip",
+    "miraShip",
+    "investShip",
+    "raidShip",
+    "indomShip",
+    "maniShip",
+    "emptyShip",
+    "soloShip",
+    "suntShip"
+   ],
+   "randomBans": {
+    "core": 3,
+    "addon": 4
+   }
+  }
+ }
+}

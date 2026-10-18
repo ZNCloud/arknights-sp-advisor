@@ -1,0 +1,522 @@
+﻿[
+ {
+  "seed": 1,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 10,
+  "reason": "eliminated",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": "独行"
+     },
+     "ai_1": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 0,
+      "killed": 0,
+      "total": 5,
+      "leaks": 5,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     },
+     "ai_1": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 0,
+      "killed": 0,
+      "total": 10,
+      "leaks": 10,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "助力 独行"
+     },
+     "ai_1": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 8,
+      "killed": 6,
+      "total": 9,
+      "leaks": 3,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守"
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 6,
+      "total": 9,
+      "leaks": 3,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 3,
+      "total": 9,
+      "leaks": 6,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 42,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 6,
+      "total": 9,
+      "leaks": 3,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 2,
+      "units": 7,
+      "killed": 8,
+      "total": 9,
+      "leaks": 1,
+      "bonds": "叙拉古 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 20,
+      "total": 21,
+      "leaks": 1,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 18,
+      "total": 21,
+      "leaks": 3,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 42,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 18,
+      "total": 21,
+      "leaks": 3,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 7,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "叙拉古 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 43,
+      "total": 17,
+      "leaks": 13,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 56,
+      "total": 17,
+      "leaks": 0,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 42,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 48,
+      "total": 17,
+      "leaks": 8,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 7,
+      "killed": 56,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "叙拉古 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 36,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 22,
+      "total": 28,
+      "leaks": 6,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 28,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 28,
+      "leaks": 14,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 32,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 14,
+      "total": 28,
+      "leaks": 14,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 37,
+      "alive": true,
+      "level": 4,
+      "units": 7,
+      "killed": 21,
+      "total": 28,
+      "leaks": 7,
+      "bonds": "叙拉古 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 26,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 0,
+      "total": 19,
+      "leaks": 19,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 18,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 0,
+      "total": 19,
+      "leaks": 19,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 22,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 0,
+      "total": 19,
+      "leaks": 19,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 27,
+      "alive": true,
+      "level": 4,
+      "units": 7,
+      "killed": 3,
+      "total": 19,
+      "leaks": 16,
+      "bonds": "叙拉古 坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 16,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 21,
+      "total": 34,
+      "leaks": 13,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 8,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 4,
+      "total": 34,
+      "leaks": 30,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 12,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 4,
+      "total": 34,
+      "leaks": 30,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 17,
+      "alive": true,
+      "level": 4,
+      "units": 7,
+      "killed": 11,
+      "total": 34,
+      "leaks": 23,
+      "bonds": "叙拉古 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 6,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 12,
+      "total": 24,
+      "leaks": 12,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 0,
+      "alive": false,
+      "level": 5,
+      "units": 0,
+      "killed": 6,
+      "total": 24,
+      "leaks": 18,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 2,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 7,
+      "total": 24,
+      "leaks": 17,
+      "bonds": "迅捷 坚守"
+     },
+     "ai_3": {
+      "lp": 7,
+      "alive": true,
+      "level": 5,
+      "units": 7,
+      "killed": 8,
+      "total": 24,
+      "leaks": 16,
+      "bonds": "叙拉古 坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": false,
+      "level": 5,
+      "units": 0,
+      "killed": 11,
+      "total": 34,
+      "leaks": 23,
+      "bonds": ""
+     },
+     "ai_1": {
+      "lp": 0,
+      "alive": false,
+      "level": 5,
+      "units": 0,
+      "killed": null,
+      "total": null,
+      "leaks": null,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 0,
+      "alive": false,
+      "level": 5,
+      "units": 0,
+      "killed": 4,
+      "total": 34,
+      "leaks": 30,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 0,
+      "alive": false,
+      "level": 5,
+      "units": 0,
+      "killed": 7,
+      "total": 34,
+      "leaks": 27,
+      "bonds": ""
+     }
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ }
+]

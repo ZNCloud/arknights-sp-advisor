@@ -1,0 +1,21 @@
+{
+  "lock": 1,
+  "id": "pick-advisor",
+  "version": "1.0.0",
+  "generator": "tools/plugin.mjs pack",
+  "files": {
+    "README.md": {
+      "sha256": "1a47709c5951c611b49db074f0b8af8ba2f5ac0cd171ba16206a20cb44548e5a",
+      "bytes": 5543
+    },
+    "plugin.json": {
+      "sha256": "570277cf618d385464357bed7735e3f7cb8a2b11fcad01ca020b86f8ddf865e1",
+      "bytes": 787
+    },
+    "ui/index.html": {
+      "sha256": "7f9436760a37b7a65ee7145ccf34ba4dd15daac37bcf658e1dbeeec95a26770d",
+      "bytes": 115349
+    }
+  },
+  "spine": {}
+}

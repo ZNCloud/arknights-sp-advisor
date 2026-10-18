@@ -1,0 +1,300 @@
+{
+ "bondId": "sargonShip",
+ "bond": "萨尔贡",
+ "patch": "卫戍协议：盟约 下半（2026-03 开启，含 3/27 更新#2）；一期机制同构但名单/数值不同",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "至简",
+   "chessId": "chess_char_3_13_a",
+   "baseId": "chess_char_3_13_a",
+   "group": "core_ops",
+   "role": "引擎·Ⅲ阶【萨尔贡+灵巧】：购买价格固定为 1，6 技力一技能，靠迅捷做到无限开技能",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "sargonShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "莎草",
+   "chessId": "chess_char_2_06_a",
+   "baseId": "chess_char_2_06_a",
+   "group": "core_ops",
+   "role": "叠层+奶·Ⅱ阶【萨尔贡】：战斗中首次开启技能时【萨尔贡】+5/+10",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "sargonShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "菲莱",
+   "chessId": "chess_char_3_06_a",
+   "baseId": "chess_char_3_06_a",
+   "group": "core_ops",
+   "role": "叠层·Ⅲ阶【萨尔贡】：战斗中开启技能时【萨尔贡】+6/+12",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "sargonShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "异客",
+   "chessId": "chess_char_6_05_a",
+   "baseId": "chess_char_6_05_a",
+   "group": "core_ops",
+   "role": "主C·Ⅵ阶【萨尔贡+迅捷+精准】：每 3 层（萨尔贡/迅捷/精准）攻击力 +2%/+4%，必须 1 技能且同行 3 人",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "sargonShip",
+    "swiftShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "佩佩",
+   "chessId": "chess_char_6_06_a",
+   "baseId": "chess_char_6_06_a",
+   "group": "core_ops",
+   "role": "装备产出·Ⅵ阶【萨尔贡+不屈】：进入休整期获得盟约之币/萨尔贡浓茶，小概率黄沙罗盘",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "sargonShip",
+    "indomShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "百炼嘉维尔",
+   "chessId": "chess_char_4_23_a",
+   "baseId": "chess_char_4_23_a",
+   "group": "good_ops",
+   "role": "最快叠层·Ⅳ阶【萨尔贡】：开启技能时【萨尔贡】+9/+18（二期上调）",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "sargonShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "卡涅利安",
+   "chessId": "chess_char_4_24_a",
+   "baseId": "chess_char_4_24_a",
+   "group": "good_ops",
+   "role": "装备供给·Ⅳ阶【萨尔贡+助力】：获得时给 1~2 件迅捷作战粮",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "sargonShip",
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "缇缇",
+   "chessId": "chess_char_5_02_a",
+   "baseId": "chess_char_5_02_a",
+   "group": "good_ops",
+   "role": "叠层放大器·Ⅴ阶【萨尔贡+精准】：范围内敌人/干员进入沉睡或晕眩 → 【萨尔贡】【精准】+1/+2（单场至多 24/48）",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "sargonShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "泡泡",
+   "chessId": "chess_char_2_08_a",
+   "baseId": "chess_char_2_08_a",
+   "group": "good_ops",
+   "role": "前排·Ⅱ阶【萨尔贡+坚守】：萨尔贡/坚守每 3 层防御 +1%/+2%",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "sargonShip",
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "艾丝黛尔",
+   "chessId": "chess_char_1_12_a",
+   "baseId": "chess_char_1_12_a",
+   "group": "good_ops",
+   "role": "低价凑人·Ⅰ阶【萨尔贡】：获得时自身所属盟约 +2/+4",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "sargonShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "寒芒克洛丝",
+   "chessId": "chess_char_4_06_a",
+   "baseId": "chess_char_4_06_a",
+   "group": "fill_ops",
+   "role": "Ⅳ阶·精准：给身前 1 格干员“开技能使精准 +1/+2”特质，每场最多 10/20 层",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "莱恩哈特",
+   "chessId": "chess_char_4_14_a",
+   "baseId": "chess_char_4_14_a",
+   "group": "fill_ops",
+   "role": "Ⅳ阶·精准+迅捷：休整期结束时使自身已激活盟约 +5/+10",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "swiftShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "忍冬",
+   "chessId": "chess_char_3_18_a",
+   "baseId": "chess_char_3_18_a",
+   "group": "fill_ops",
+   "role": "Ⅲ阶·叙拉古+迅捷：只当迅捷计数与外援",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "siracusaShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "引星棘刺",
+   "chessId": "chess_char_5_15_a",
+   "baseId": "chess_char_5_15_a",
+   "group": "fill_ops",
+   "role": "Ⅴ阶·奇迹+迅捷：只当迅捷计数",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "swiftShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "缪尔赛思",
+   "chessId": "chess_char_6_11_a",
+   "baseId": "chess_char_6_11_a",
+   "group": "fill_ops",
+   "role": "Ⅵ阶·调和：核心盟约激活人数+1，可把 5 萨尔贡顶成 6 计数",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "maniShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "萨尔贡浓茶",
+   "itemId": "chess_item_2_04_e_a",
+   "tier": 2,
+   "price": 2,
+   "found": true,
+   "tierOk": false
+  },
+  {
+   "name": "黄沙罗盘",
+   "itemId": "chess_item_6_07_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "护盾无人机",
+   "itemId": "chess_item_4_11_e_a",
+   "tier": 4,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "炎国短刀",
+   "itemId": "chess_item_3_04_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "迅捷作战粮",
+   "itemId": "chess_item_3_05_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "bondId": "kazimierzShip",
+ "bond": "卡西米尔",
+ "patch": "卫戍协议：盟约 下半（二期，2026-03-14~04-25）",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "瑕光",
+   "chessId": "chess_char_3_12_a",
+   "baseId": "chess_char_3_12_a",
+   "group": "core_ops",
+   "role": "核心叠层+主输出位：部署时自身已激活盟约 +4（精锐+8，每场至多 12/24）",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "远牙",
+   "chessId": "chess_char_4_20_a",
+   "baseId": "chess_char_4_20_a",
+   "group": "core_ops",
+   "role": "叠层引擎：战斗开始时使同一行最右一名干员获得“<部署时>【卡西米尔】【精准】+4（精锐+8，至多 24/48）” → 反复再部署即反复叠",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "砾",
+   "chessId": "chess_char_2_12_a",
+   "baseId": "chess_char_2_12_a",
+   "group": "core_ops",
+   "role": "阻挡位+叠层：部署时【卡西米尔】+1（精锐+2）；被击倒时【不屈】+2/+4",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "indomShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "玛恩纳",
+   "chessId": "chess_char_5_19_a",
+   "baseId": "chess_char_5_19_a",
+   "group": "core_ops",
+   "role": "主力输出：每 5 层叠层 → 部署后 100 秒内基础攻击/生命 +10/+50（精锐 +20/+100）",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "kazimierzShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "耀骑士临光",
+   "chessId": "chess_char_6_17_a",
+   "baseId": "chess_char_6_17_a",
+   "group": "core_ops",
+   "role": "后期核心：开战给自身与身前一格“每 3 层再部署 -1.5%/-3%、攻速 +0.5/+1”，放大突袭循环频率",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "kazimierzShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "锏",
+   "chessId": "chess_char_6_19_a",
+   "baseId": "chess_char_6_19_a",
+   "group": "good_ops",
+   "role": "三户口（谢拉格/卡西米尔/迅捷）：获得时自身盟约 +8/+16，部署时再 +8/+16（至多 24/48）——单卡爆层",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "kjeragShip",
+    "kazimierzShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "焰尾",
+   "chessId": "chess_char_4_19_a",
+   "baseId": "chess_char_4_19_a",
+   "group": "good_ops",
+   "role": "获得时白给 1/2 个野鬃或灰毫，靠铃兰/投资人反复触发 → 大量对子与获得时叠层",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "灰毫",
+   "chessId": "chess_char_2_18_a",
+   "baseId": "chess_char_2_18_a",
+   "group": "good_ops",
+   "role": "获得时使当前层数最多的盟约 +3/+6，阻挡位",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "野鬃",
+   "chessId": "chess_char_1_19_a",
+   "baseId": "chess_char_1_19_a",
+   "group": "good_ops",
+   "role": "获得时自身盟约 +2/+4，最便宜的卡西米尔户口",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "kazimierzShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "流星",
+   "chessId": "chess_char_3_17_a",
+   "baseId": "chess_char_3_17_a",
+   "group": "good_ops",
+   "role": "弱点伤害 + 攻血 +25%/+50%，前期过渡输出",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "kazimierzShip",
+    "soloShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "伊内丝",
+   "chessId": "chess_char_4_04_a",
+   "baseId": "chess_char_4_04_a",
+   "group": "fill_ops",
+   "role": "远见/突袭：休整期结束自身盟约 +5/+10，经济+叠层双吃",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "visiShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "赫默",
+   "chessId": "chess_char_2_02_a",
+   "baseId": "chess_char_2_02_a",
+   "group": "fill_ops",
+   "role": "远见：2 回合必找的叠层手兼奶",
+   "claimedTier": 3,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "visiShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  },
+  {
+   "name": "诗怀雅",
+   "chessId": "chess_char_3_03_a",
+   "baseId": "chess_char_3_03_a",
+   "group": "fill_ops",
+   "role": "投资人：让“获得时”类特质触发 2/3 次，配合焰尾滚雪球",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "yanShip",
+    "visiShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "地灵",
+   "group": "fill_ops",
+   "role": "远见/奇迹：凑小盟约 + 叠层",
+   "claimedTier": 3,
+   "found": false
+  }
+ ],
+ "items": [
+  {
+   "name": "卡西米尔竞技旗",
+   "itemId": "chess_item_4_07_e_a",
+   "tier": 4,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "骑士戒律",
+   "itemId": "chess_item_6_10_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "突袭手雷",
+   "itemId": "chess_item_3_11_e_a",
+   "tier": 3,
+   "price": 1,
+   "found": true,
+   "tierOk": false
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "天马之盔",
+   "itemId": "chess_item_5_09_e_a",
+   "tier": 5,
+   "price": 3,
+   "found": true,
+   "tierOk": false
+  }
+ ]
+}

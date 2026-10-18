@@ -1,0 +1,456 @@
+{
+ "version": "v1",
+ "about": "《明日方舟·卫戍协议：盟约》ABYSS 决策模型的全部阈值/权重。advisor-dev 直接读这个文件：open-brief.mjs / overlay.mjs / 插件内核（core-loader 的 DATA 块）都从这里取数，不要在代码里写常数。每个数值的证据记在同路径的 _evidence 里：E=引擎系数（data/*.json 的 bb 键或 server/ 代码位置），T=实测（REPORT.md 或 lab/ 下的命令与种子），I=推断。",
+ "engine": {
+  "minDamageRatio": 0.05,
+  "bossHitLimit": 300000,
+  "bondLayerCap": 999,
+  "combatTimeScale": 2,
+  "bossOvertimeAfterReal": 150,
+  "bossOvertimeDrainPerSec": 1,
+  "deployCap": 8,
+  "equipPerChess": 2,
+  "mergeCount": 3,
+  "goldenCopies": 3,
+  "refreshPrice": 1,
+  "maxShopLevel": 6,
+  "benchSize": 10,
+  "tempSize": 5,
+  "maxArtsPerRound": 2,
+  "lpCapPerRound": 10,
+  "defaultStartLp": 28,
+  "refAtkElite": 577,
+  "refAtkEliteMax": 1362,
+  "bossFieldTimeLimit": null
+ },
+ "channels": {
+  "preciDefPierce": 0.3,
+  "preciResPierce": 0.3,
+  "preciThreshold": 3,
+  "arcaneMagicTakenBase": 1.2,
+  "arcaneMagicTakenPerLayer": 0.01,
+  "arcaneLowHpScale": 1.4,
+  "arcaneLowHpThreshold": 0.5,
+  "siracusaProcBase": 5000,
+  "siracusaProcPerLayer": 50,
+  "siracusaPrdStep": 0.00139,
+  "siracusaExpectedAttempts": 33.6,
+  "siracusaAspdBase": 25,
+  "siracusaAspdPerLayer": 0.8,
+  "kazimierzBlockTrueScale": 1.2,
+  "kazimierzBlockIntervalS": 2,
+  "kazimierzNonBlockTrueScale": 0.3,
+  "physBreakCoef": 0.95,
+  "preciBreakCoef": 0.7368
+ },
+ "bosses": {
+  "boss_1": {
+   "pool": 3600000,
+   "poolEff": 4320000,
+   "def": 1000,
+   "res": 25,
+   "lpr": 2,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 0.2,
+    "physTakenMul": 0.5,
+    "artsTakenMul": 0.5,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 26182,
+   "dpsNeededLp45": 22154,
+   "tags": [
+    "元素/异常"
+   ]
+  },
+  "boss_2": {
+   "pool": 3000000,
+   "poolEff": 3000000,
+   "def": 1100,
+   "res": 60,
+   "lpr": 2,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 1,
+    "physTakenMul": 1,
+    "artsTakenMul": 1,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 18182,
+   "dpsNeededLp45": 15385,
+   "tags": [
+    "元素/异常",
+    "点名",
+    "攻速递增"
+   ]
+  },
+  "boss_3": {
+   "pool": 4000000,
+   "poolEff": 4000000,
+   "def": 700,
+   "res": 50,
+   "lpr": 2,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 1,
+    "physTakenMul": 1,
+    "artsTakenMul": 1,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 24242,
+   "dpsNeededLp45": 20513,
+   "tags": [
+    "点名"
+   ]
+  },
+  "boss_4": {
+   "pool": 4200000,
+   "poolEff": 4200000,
+   "def": 500,
+   "res": 50,
+   "lpr": 1,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 1,
+    "physTakenMul": 1,
+    "artsTakenMul": 1,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 25455,
+   "dpsNeededLp45": 21538,
+   "tags": []
+  },
+  "boss_5": {
+   "pool": 3000000,
+   "poolEff": 3000000,
+   "def": 600,
+   "res": 40,
+   "lpr": 30,
+   "evadeWhenUnblocked": 0.4,
+   "phase": {
+    "atHpRatio": 1,
+    "physTakenMul": 0.6,
+    "artsTakenMul": 0.6,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 18182,
+   "dpsNeededLp45": 15385,
+   "tags": [
+    "穿阻挡",
+    "元素/异常",
+    "召唤物"
+   ]
+  },
+  "boss_6": {
+   "pool": 3980000,
+   "poolEff": 3980000,
+   "def": 1030,
+   "res": 20,
+   "lpr": 2,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 0.5,
+    "physTakenMul": 1,
+    "artsTakenMul": 1,
+    "defMul": 2,
+    "resFlat": 45
+   },
+   "dpsNeededLp15": 24121,
+   "dpsNeededLp45": 20410,
+   "tags": []
+  },
+  "boss_7": {
+   "pool": 4000000,
+   "poolEff": 7000000,
+   "def": 800,
+   "res": 40,
+   "lpr": 2,
+   "evadeWhenUnblocked": 0,
+   "phase": {
+    "atHpRatio": 0.5,
+    "physTakenMul": 0.4,
+    "artsTakenMul": 0.4,
+    "defMul": 1,
+    "resFlat": 0
+   },
+   "dpsNeededLp15": 42424,
+   "dpsNeededLp45": 35897,
+   "poolEffMultiplier": 1.75,
+   "tags": [
+    "减伤",
+    "多目标"
+   ]
+  }
+ },
+ "rebuild": {
+  "windowStartRound": 10,
+  "windowEndRound": 13,
+  "lockRouteFromRound": 9,
+  "targets": {
+   "R10": {
+    "elites": 4,
+    "items": 5.5,
+    "coreLayers": 80,
+    "addonLayers": 46
+   },
+   "R11": {
+    "elites": 4.5,
+    "items": 6,
+    "coreLayers": 95,
+    "addonLayers": 55
+   },
+   "R12": {
+    "elites": 5,
+    "items": 7,
+    "coreLayers": 110,
+    "addonLayers": 65
+   },
+   "R13": {
+    "elites": 6,
+    "items": 8,
+    "coreLayers": 130,
+    "addonLayers": 75
+   },
+   "R14": {
+    "elites": 6.5,
+    "items": 9,
+    "coreLayers": 150,
+    "addonLayers": 90
+   }
+  },
+  "bossWinTargets": {
+   "elites": 8,
+   "items": 16,
+   "coreLayers": 300,
+   "addonLayers": 180
+  },
+  "minElitesForBoss": 5,
+  "minLpForBoss": 15,
+  "lpPerSecondWorthWarning": 25,
+  "defHighThreshold": 1000,
+  "resHighThreshold": 50,
+  "lprCriticalThreshold": 30,
+  "evadeThreshold": 0.3,
+  "sellNonRouteFromRound": 10,
+  "maxBoardRoutes": 2
+ },
+ "advisor": {
+  "scoreSlot": {
+   "wRoute": 46,
+   "wRouteCapped": 8,
+   "wKey": 25,
+   "wCopyFirst": 4,
+   "wCopyPartial": 14,
+   "wCopyLast": 30,
+   "wCopyExcess": -18,
+   "wTierPerLevel": 3,
+   "wAir": 18,
+   "wBossFit": 40,
+   "wBlockerGap": 12,
+   "penOffBond": -8,
+   "penNoFunds": -35,
+   "penThinFunds": -6
+  },
+  "buyThreshold": {
+   "strong": 40,
+   "weak": 26
+  },
+  "levelPolicy": {
+   "fundsBufferForLevel": 6,
+   "defaultLevelCap": {
+    "untilRound": 0,
+    "level": 6
+   },
+   "routeCaps": {
+    "siracusaShip": {
+     "level": 2,
+     "untilRound": 8
+    },
+    "victoriaShip": {
+     "level": 3,
+     "untilRound": 6
+    },
+    "sargonShip": {
+     "level": 4,
+     "untilRound": 6
+    },
+    "yanShip": {
+     "level": 4,
+     "untilRound": 6
+    },
+    "kjeragShip": {
+     "level": 4,
+     "untilRound": 7
+    },
+    "lateranoShip": {
+     "level": 4,
+     "untilRound": 7
+    },
+    "kazimierzShip": {
+     "level": 4,
+     "untilRound": 7
+    },
+    "egirShip": {
+     "level": 4,
+     "untilRound": 5
+    }
+   },
+   "bossPhaseLevelFloor": 6
+  },
+  "airGate": {
+   "flyShareHot": 0.35,
+   "penalty": 6
+  },
+  "uptime": {
+   "arts": 0.45,
+   "phys": 0.55,
+   "sargon": 0.6
+  },
+  "bounty": {
+   "coinWeight": 0.5,
+   "tierWeight": 4,
+   "perRoundCost": 3,
+   "bossPenalty": 25,
+   "elitePenalty": 10,
+   "minAcceptScore": 0
+  },
+  "pivot": {
+   "minLayers": 20,
+   "minShare": 0.6,
+   "confirmRounds": 2,
+   "lastPivotRound": 9,
+   "piecesValueFactor": 2,
+   "maxPivots": 1
+  },
+  "placement": {
+   "frontRowMinBlockers": 2,
+   "healerCol": "mid",
+   "rangedOnHigh": true,
+   "antiAirTiles": 2,
+   "bossRoundFrontPriority": "blocker-and-respawn"
+  },
+  "warn": {
+   "eliteGap": 2,
+   "itemGap": 3,
+   "layerGap": 60,
+   "lpThin": 10,
+   "r12LeakWarn": 8
+  }
+ },
+ "_evidence": {
+  "engine.minDamageRatio": "E server/sim/constants.js:68 MIN_DAMAGE_RATIO",
+  "engine.bossHitLimit": "E shared/constants.js BOSS_HIT_LIMIT=300000（单次命中 ≥300k 整体取消，damage.js leaderHitCancelled）",
+  "engine.bondLayerCap": "E shared/constants.js BOND_LAYER_CAP=999",
+  "engine.combatTimeScale": "E server/match/gamedata.js COMBAT_TIME_SCALE=2（战斗 1 真实秒 = 2 游戏秒）",
+  "engine.bossOvertimeAfterReal": "E data/config.json bossOvertimeAfter=150",
+  "engine.bossOvertimeDrainPerSec": "E data/config.json bossOvertimeDrainPerSec=1（150 真实秒后每秒 1 点队伍 LP）",
+  "engine.deployCap": "E data/config.json economy.deployCap=8",
+  "engine.equipPerChess": "E data/config.json economy.equipPerChess=2",
+  "engine.mergeCount": "E data/config.json economy.mergeCount=3",
+  "engine.maxArtsPerRound": "E data/config.json economy.maxArtsPerRound=2",
+  "engine.lpCapPerRound": "E data/config.json lpCapPerRound=10",
+  "engine.refAtkElite": "E data/chess.json 精锐 T5/T6 主 C 基础 ATK 中位数（lab/bosstable.mjs 统计）",
+  "channels.preciDefPierce": "E data/bonds.json preciShip.bb.power_def_penetrate=0.3（3 名在场：精准成员 + 所有远程干员）",
+  "channels.preciResPierce": "E data/bonds.json preciShip.bb.power_magic_resist_penetrate=0.3",
+  "channels.arcaneMagicTakenBase": "E data/bonds.json arcaneShip.bb.base_damage_scale=1.2",
+  "channels.arcaneMagicTakenPerLayer": "E data/bonds.json arcaneShip.bb.damage_scale_per_stack=0.01",
+  "channels.arcaneLowHpScale": "E data/bonds.json arcaneShip.bb.power_weak_scale=1.4（3 名在场，目标 HP<50%）",
+  "channels.siracusaProcBase": "E data/bonds.json siracusaShip.bb.base_damage=5000",
+  "channels.siracusaProcPerLayer": "E data/bonds.json siracusaShip.bb.damage_per_stack=50",
+  "channels.siracusaPrdStep": "E data/bonds.json siracusaShip spec.prdStep=0.00139（共享计数，n=720 必出）",
+  "channels.siracusaExpectedAttempts": "I PRD p_n=c·n 的期望尝试数 E[N]≈1.2533/√c=33.6（c=0.00139）",
+  "channels.siracusaAspdPerLayer": "E data/bonds.json siracusaShip.bb.attack_speed_per_stack=0.8（攻速 25+0.8L）",
+  "channels.kazimierzBlockTrueScale": "E data/bonds.json kazimierzShip.bb.damage_atk_scale=1.2（阻挡时每 damage_interval=2s 对半径 0.8 内造成 120% ATK 真伤）",
+  "channels.kazimierzNonBlockTrueScale": "E data/bonds.json kazimierzShip.bb.pure_atk_scale=0.3（未阻挡时每次普攻附加 30% ATK 真伤）",
+  "channels.physBreakCoef": "I 物理脱离 5% 保底需 ATK > DEF/0.95",
+  "channels.preciBreakCoef": "I 3 名精准下需 ATK > 0.7·DEF/0.95",
+  "bosses.boss_1.phase": "E data/enemies.json enemy_9013_acstmk talents 1.hp_ratio=0.2 / 1.damage_scale=0.5；server/sim/content/bosses.js kitHelm",
+  "bosses.boss_5.evadeWhenUnblocked": "E data/enemies.json enemy_2016_csphtm talents evade.prob=0.4（未被阻挡时闪避物理/法术）；真伤不吃闪避",
+  "bosses.boss_5.lpr": "E data/bosses.json boss_5.lpr=30（其余 BOSS=1~2）",
+  "bosses.boss_6.phase": "E data/enemies.json enemy_9032_aclionk talents advance.def=1 / advance.magic_resistance=45 / advance.hp_ratio=0.5",
+  "bosses.boss_7.phase": "E data/enemies.json enemy_9033_acdeer talents Madness.damage_resistance=0.6 → 受物法 ×0.4；bosses.js kitDeer 只写 physTakenMul/artsTakenMul",
+  "bosses.boss_7.poolEffMultiplier": "I 半血后承伤 ×0.4 → 有效血池 = 0.5P + 0.5P/0.4 = 1.75P",
+  "bosses.*.pool": "E data/bosses.json bloodPoint.ABYSS（solo ×1，finalAssault perPlayer:true）",
+  "bosses.*.poolEff": "I pool·[(1−a)+a/m]，a=phase.atHpRatio（阶段触发的 HP 比例），m=阶段后承伤乘子；boss_1 a=0.2 m=0.5 → ×1.20，boss_7 a=0.5 m=0.4 → ×1.75",
+  "bosses.*.dpsNeededLp15": "I poolEff/(150+15)；LP45 = poolEff/(150+45)。boss_5 的物法输出还要再乘 1/0.6（未阻挡闪避 0.4）",
+  "rebuild.targets": "E tools/balance.mjs CURVES（合格曲线）coreLayers/elites/items 逐回合值",
+  "rebuild.bossWinTargets": "T REPORT §10.1 + 本轮 lab/bossprobe.mjs：profile 2.0（=合格曲线×2）在 R14 只到 67-83% 单体胜率，需精锐 8 / 装备 16（曲线 ×prof 后被 deployCap 与 2·deployCap 截断）",
+  "rebuild.minElitesForBoss": "T REPORT §7/§10.2：默认 bot R13 精锐 2 时 BOSS 只打出 7% 血池",
+  "rebuild.minLpForBoss": "T REPORT §2：LP 60 时 6/6 都能到 R13，但 LP 15 时窗口只有 165 秒",
+  "advisor.scoreSlot.*": "E Stronghold-Protocol/plugins/pick-advisor/ui/index.html scoreSlot 现有权重（本规格保留其量纲，新增 wBossFit）",
+  "advisor.levelPolicy.routeCaps": "E routes/_matchup.json policy.levelCap",
+  "advisor.bounty.*": "E routes/_matchup.json bountyModel",
+  "advisor.uptime.*": "I 技能覆盖率 u（先用保守常数；校准法：ratio150_measured / ratio150_model 反解）。萨尔贡的 u 是 25 栈维持率，比别家敏感",
+  "advisor.pivot.*": "I 见 MODEL-SPEC.md §3.6（层数份额 ≥0.6 且持续 2 回合才拐，最多拐 1 次）",
+  "rebuild.lockRouteFromRound": [
+   {
+    "type": "S",
+    "at": "commit-terminal.md",
+    "note": "值 9 不变：coop4 ABYSS 种子 1..3，R9 起锁本家（SP_LAB_COMMIT_FROM=9，与 MERGE_BONUS=120/MAX_PAIRS=10/BENCH_BUDGET=12 同时开）1/3 胜、平均 12.00 回合，基线 0/3、11.67；n=3 且 7 个开关混在一起，只算方向性支持，不能单独归因于锁路线回合"
+   },
+   {
+    "type": "S",
+    "at": "commit-split.md",
+    "note": "值 9 不变：seeds 1..5 只开 COMMIT 组（FROM=9/PEN=12/W=8）0/5、avg 11.60，与同种子 baseline（level6-push.md）0/5、11.60 相同；只有 7 个开关全开为 1/5，属于组合效应，归因不干净，且只测了 FROM=9 一个值，没有可校准的对照"
+   },
+   {
+    "type": "S",
+    "at": "commit-reseed.md",
+    "note": "值 9 不变：换种子组 4..9 后 commit@9 全开 0/6 对 baseline 0/6（avg 12.17 vs 12.00），上一轮 1/3 没复现；合并 seeds 1..9 为 1/9 对 0/9，按噪声处理，方向性支持也降级"
+   },
+   {
+    "type": "S",
+    "at": "samples/solo-E-sargon.json + samples/solo-E2-sargon-seed21.json",
+    "note": "focus 对齐到 k 最高的盟约（萨尔贡）：均值 +2.5pp、R13 LP +2，但中位不变、两组种子都低于 +8pp 判据，属弱正向线索，不足以改数值"
+   }
+  ],
+  "advisor.levelPolicy": [
+   {
+    "type": "S",
+    "at": "level-pace.md",
+    "note": "数值不变：bot LEVEL_TARGET 卡 L4 与慢升级都是 0/3（平均 11.67 / 12.00 回合，基线 11.67），复现了 REPORT §7「单改升级节奏无效」；样本没测 advisor 的 routeCaps/bossPhaseLevelFloor 本身，所以不改这几个值"
+   },
+   {
+    "type": "S",
+    "at": "level6-push.md",
+    "note": "数值不变：bot LEVEL_TARGET=[1,1,1,2,2,2,3,3,3,4,4,5,6,6,6,6] 在 seeds 1..5 为 0/5 对 baseline 0/5（avg 12.20 vs 11.60，R14 存活 8 vs 6，LP 都是 0）；它和 bot 默认表从 index 12 起都是 L6，真正的差别是中期升得更慢，所以测的不是 bossPhaseLevelFloor，也没有胜场差"
+   }
+  ],
+  "advisor.buyThreshold": [
+   {
+    "type": "S",
+    "at": "samples/solo-A-baseline.json vs solo-F-layer8.json / solo-H-volume.json",
+    "note": "排序类改动均无效（层数权重 +0.19pp、动作预算 +1.17pp）；阈值不 binding：R13 总层数与 baseline 完全相同（246）"
+   }
+  ]
+ },
+ "_ceiling": {
+  "botSide": {
+   "measured": "solo/multi ABYSS，8 个策略臂 × 20 seeds，同种子配对，主指标 BOSS 掉血%",
+   "baselineMedianBossDmgPct": 19.63,
+   "bestArmPairedDeltaPp": 3.57,
+   "winsAllArms": "0 / 160+ 局",
+   "conclusion": "离线 bot 的参数/排序/阈值空间内无剩余杠杆：产出由引擎固定收入决定（阈值不 binding），因此 0% 胜率无法在该空间内提升。要再往上必须改经济曲线（违背复刻前提）或改动作预算（违背人类操作频率），二者都不属于「决策模型」范畴。",
+   "evidence": [
+    "model/REPORT-FINAL.md",
+    "model/SAMPLES-ALL.md",
+    "model/POSTMORTEM-ROUND1-2.md",
+    "model/DIAGNOSIS-R7.md"
+   ]
+  },
+  "modelSide": {
+   "delivered": [
+    "model/params.json + model/bosstable.json（逐 BOSS 参数 + 通道 k + 破甲线 + 击杀窗口）",
+    "model/STRATEGY-CARDS.md（8 张人类可执行策略卡）",
+    "model/REPORT-FINAL.md（测量协议 + 8 臂裁决 + 可复现命令）",
+    "3 个实验开关（SP_LAB_FOCUS_BOSS / SP_LAB_EQUIP_CARRY / SP_LAB_LAYER_BONUS）+ 6 个 lab 工具",
+    "顾问五要素（抓谁/配谁/下步/冻否/组谁）+ 对空闸 + 档位概率 + 升本结论 + 通道加权有效层数"
+   ]
+  }
+ }
+}

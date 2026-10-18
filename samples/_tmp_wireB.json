@@ -1,0 +1,665 @@
+﻿[
+ {
+  "seed": 1,
+  "difficulty": "ABYSS",
+  "stageId": "act1autochess_m03",
+  "bossId": "boss_5",
+  "victory": false,
+  "roundsPassed": 13,
+  "reason": "defeat",
+  "rounds": [
+   {
+    "round": 1,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": "独行"
+     },
+     "ai_1": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 0,
+      "killed": 0,
+      "total": 5,
+      "leaks": 5,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 2,
+      "killed": 5,
+      "total": 5,
+      "leaks": 0,
+      "bonds": ""
+     }
+    }
+   },
+   {
+    "round": 2,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "独行"
+     },
+     "ai_1": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 0,
+      "killed": 0,
+      "total": 10,
+      "leaks": 10,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 4,
+      "killed": 10,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 3,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "助力 独行"
+     },
+     "ai_1": {
+      "lp": 44,
+      "alive": true,
+      "level": 1,
+      "units": 8,
+      "killed": 6,
+      "total": 9,
+      "leaks": 3,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 7,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守"
+     },
+     "ai_3": {
+      "lp": 45,
+      "alive": true,
+      "level": 1,
+      "units": 6,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "坚守 独行"
+     }
+    }
+   },
+   {
+    "round": 4,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 6,
+      "total": 9,
+      "leaks": 3,
+      "bonds": "坚守 助力 独行"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 3,
+      "total": 9,
+      "leaks": 6,
+      "bonds": "迅捷"
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 9,
+      "total": 9,
+      "leaks": 0,
+      "bonds": "迅捷 坚守2 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 2,
+      "units": 7,
+      "killed": 8,
+      "total": 9,
+      "leaks": 1,
+      "bonds": "坚守2 独行"
+     }
+    }
+   },
+   {
+    "round": 5,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 20,
+      "total": 21,
+      "leaks": 1,
+      "bonds": "维多利亚 谢拉格 坚守 助力 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 2,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "迅捷"
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "迅捷 坚守2 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 7,
+      "killed": 21,
+      "total": 21,
+      "leaks": 0,
+      "bonds": "谢拉格 坚守2 助力 绝技"
+     }
+    }
+   },
+   {
+    "round": 6,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 42,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 52,
+      "total": 17,
+      "leaks": 4,
+      "bonds": "维多利亚 谢拉格 坚守 助力 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 38,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 53,
+      "total": 17,
+      "leaks": 3,
+      "bonds": "迅捷"
+     },
+     "ai_2": {
+      "lp": 45,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 50,
+      "total": 17,
+      "leaks": 6,
+      "bonds": "迅捷 坚守2 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 56,
+      "total": 17,
+      "leaks": 0,
+      "bonds": "谢拉格 卡西米尔 坚守2 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 7,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 41,
+      "alive": true,
+      "level": 3,
+      "units": 8,
+      "killed": 18,
+      "total": 28,
+      "leaks": 10,
+      "bonds": "维多利亚 谢拉格 坚守 助力 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 35,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 20,
+      "total": 28,
+      "leaks": 8,
+      "bonds": "迅捷"
+     },
+     "ai_2": {
+      "lp": 42,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 20,
+      "total": 28,
+      "leaks": 8,
+      "bonds": "迅捷 坚守2 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 28,
+      "total": 28,
+      "leaks": 0,
+      "bonds": "谢拉格 坚守2 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 8,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 5,
+      "total": 19,
+      "leaks": 14,
+      "bonds": "维多利亚 谢拉格 坚守 助力 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 25,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 6,
+      "total": 19,
+      "leaks": 13,
+      "bonds": "迅捷 助力 奇迹 协防干员 独行 绝技"
+     },
+     "ai_2": {
+      "lp": 32,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 4,
+      "total": 19,
+      "leaks": 15,
+      "bonds": "迅捷 奥术 坚守2 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 4,
+      "units": 7,
+      "killed": 19,
+      "total": 19,
+      "leaks": 0,
+      "bonds": "谢拉格 坚守2 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 9,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 34,
+      "total": 34,
+      "leaks": 0,
+      "bonds": "维多利亚 谢拉格 奥术 坚守 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 25,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 34,
+      "total": 34,
+      "leaks": 0,
+      "bonds": "阿戈尔 迅捷 助力 奇迹 协防干员 独行 绝技"
+     },
+     "ai_2": {
+      "lp": 32,
+      "alive": true,
+      "level": 4,
+      "units": 8,
+      "killed": 17,
+      "total": 34,
+      "leaks": 17,
+      "bonds": "迅捷 奥术 坚守2 突袭 独行"
+     },
+     "ai_3": {
+      "lp": 44,
+      "alive": true,
+      "level": 4,
+      "units": 7,
+      "killed": 33,
+      "total": 34,
+      "leaks": 1,
+      "bonds": "谢拉格 迅捷 坚守 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 10,
+    "unite": true,
+    "players": {
+     "ai_0": {
+      "lp": 31,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 24,
+      "total": 24,
+      "leaks": 0,
+      "bonds": "维多利亚 谢拉格 精准 奥术 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 17,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 10,
+      "total": 24,
+      "leaks": 14,
+      "bonds": "阿戈尔 迅捷 助力 奇迹 协防干员 独行 绝技"
+     },
+     "ai_2": {
+      "lp": 29,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 17,
+      "total": 24,
+      "leaks": 7,
+      "bonds": "阿戈尔 奥术 坚守2 突袭 独行"
+     },
+     "ai_3": {
+      "lp": 42,
+      "alive": true,
+      "level": 5,
+      "units": 7,
+      "killed": 21,
+      "total": 24,
+      "leaks": 3,
+      "bonds": "维多利亚 谢拉格 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 11,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 28,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 31,
+      "total": 34,
+      "leaks": 3,
+      "bonds": "维多利亚 谢拉格 精准 奥术 坚守 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 7,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 21,
+      "total": 34,
+      "leaks": 13,
+      "bonds": "萨尔贡 灵巧 助力 奇迹 协防干员 独行 绝技"
+     },
+     "ai_2": {
+      "lp": 19,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 19,
+      "total": 34,
+      "leaks": 19,
+      "bonds": "阿戈尔 叙拉古 迅捷 奥术 坚守 突袭 独行 绝技"
+     },
+     "ai_3": {
+      "lp": 32,
+      "alive": true,
+      "level": 5,
+      "units": 8,
+      "killed": 23,
+      "total": 34,
+      "leaks": 11,
+      "bonds": "维多利亚 谢拉格 精准 迅捷 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 12,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 23,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 26,
+      "total": 31,
+      "leaks": 5,
+      "bonds": "维多利亚 谢拉格 精准 奥术2 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 7,
+      "total": 31,
+      "leaks": 24,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 9,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 5,
+      "total": 31,
+      "leaks": 26,
+      "bonds": "阿戈尔 叙拉古 迅捷 奥术 坚守 突袭 独行 绝技"
+     },
+     "ai_3": {
+      "lp": 22,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 8,
+      "total": 31,
+      "leaks": 23,
+      "bonds": "维多利亚 谢拉格 精准 迅捷 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 13,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 13,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 73,
+      "total": 35,
+      "leaks": 29,
+      "bonds": "维多利亚 谢拉格 精准 奥术2 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": null,
+      "total": null,
+      "leaks": null,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": 33,
+      "total": 35,
+      "leaks": 48,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 12,
+      "alive": true,
+      "level": 6,
+      "units": 7,
+      "killed": 84,
+      "total": 35,
+      "leaks": 23,
+      "bonds": "谢拉格 精准 迅捷 助力 独行 绝技"
+     }
+    }
+   },
+   {
+    "round": 14,
+    "unite": false,
+    "players": {
+     "ai_0": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 29,
+      "total": 10,
+      "leaks": 0,
+      "bonds": "维多利亚 谢拉格 精准 奥术2 独行 绝技"
+     },
+     "ai_1": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": null,
+      "total": null,
+      "leaks": null,
+      "bonds": ""
+     },
+     "ai_2": {
+      "lp": 0,
+      "alive": false,
+      "level": 6,
+      "units": 0,
+      "killed": null,
+      "total": null,
+      "leaks": null,
+      "bonds": ""
+     },
+     "ai_3": {
+      "lp": 0,
+      "alive": true,
+      "level": 6,
+      "units": 8,
+      "killed": 0,
+      "total": 0,
+      "leaks": 0,
+      "bonds": "维多利亚 谢拉格 精准 迅捷 助力 独行 绝技"
+     }
+    },
+    "teamLp": 0,
+    "boss": {
+     "hp": 4608924,
+     "max": 6000000
+    }
+   }
+  ],
+  "errors": 0,
+  "simErrors": 0,
+  "metaErrors": 0
+ }
+]

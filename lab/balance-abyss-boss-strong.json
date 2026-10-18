@@ -1,0 +1,73 @@
+﻿[
+ {
+  "mode": "solo",
+  "modeId": "mode_single_abyss",
+  "difficulty": "ABYSS",
+  "normal": [],
+  "boss": [
+   {
+    "round": 14,
+    "n": 3,
+    "hidden": false,
+    "ratio150": 0.8368715994306059,
+    "ratio150Min": 0.5106147982918174,
+    "killRate": 0.6666666666666666,
+    "killTime": 76.85,
+    "victory": 0.6666666666666666,
+    "leakLp": 0,
+    "pool": 3860000,
+    "byBoss": {
+     "boss_1": {
+      "n": 1,
+      "pool": 3600000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 57.93333333333333
+     },
+     "boss_6": {
+      "n": 1,
+      "pool": 3980000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 95.76666666666667
+     },
+     "boss_7": {
+      "n": 1,
+      "pool": 4000000,
+      "ratio150": 0.5106147982918174,
+      "victory": 0,
+      "killTime": 0
+     }
+    }
+   },
+   {
+    "round": 15,
+    "n": 3,
+    "hidden": true,
+    "ratio150": 0.9961355443791277,
+    "ratio150Min": 0.9884066331373831,
+    "killRate": 1,
+    "killTime": 254.54444444444445,
+    "victory": 1,
+    "leakLp": 0,
+    "pool": 6116666.666666667,
+    "byBoss": {
+     "boss_8": {
+      "n": 2,
+      "pool": 7200000,
+      "ratio150": 0.9942033165686915,
+      "victory": 1,
+      "killTime": 246.63333333333333
+     },
+     "boss_9": {
+      "n": 1,
+      "pool": 3950000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 270.3666666666667
+     }
+    }
+   }
+  ]
+ }
+]

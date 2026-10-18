@@ -1,0 +1,258 @@
+{
+ "bondId": "siracusaShip",
+ "bond": "叙拉古",
+ "patch": "卫戍协议：盟约 下半（二期，2026-03-14~04-25）",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "拉普兰德",
+   "chessId": "chess_char_2_16_a",
+   "baseId": "chess_char_2_16_a",
+   "group": "core_ops",
+   "role": "叠层引擎：本回合首次主动刷新使【叙拉古】+4（精锐+8），整备区也生效；同名多只在手可叠加",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "siracusaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "忍冬",
+   "chessId": "chess_char_3_18_a",
+   "baseId": "chess_char_3_18_a",
+   "group": "core_ops",
+   "role": "单次叠层：获得时【叙拉古】+6（精锐+12），无需盟约已激活；兼【迅捷】户口",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "siracusaShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "铃兰",
+   "chessId": "chess_char_5_10_a",
+   "baseId": "chess_char_5_10_a",
+   "group": "core_ops",
+   "role": "放大器：进入休整期时触发身前一格（精锐两格）其他干员的“获得时”效果 → 反复触发忍冬",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "siracusaShip",
+    "emptyShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "荒芜拉普兰德",
+   "chessId": "chess_char_6_18_a",
+   "baseId": "chess_char_6_18_a",
+   "group": "core_ops",
+   "role": "主C/真伤核心：战斗中击倒敌人使【叙拉古】+2，精锐后开战给全体叙拉古该特质",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "siracusaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "阿罗玛",
+   "chessId": "chess_char_4_10_a",
+   "baseId": "chess_char_4_10_a",
+   "group": "good_ops",
+   "role": "叠层：休整期结束每刷新 1 次 +2（精锐+4，每回合至多 6/12）",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "siracusaShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "安洁莉娜",
+   "chessId": "chess_char_5_20_a",
+   "baseId": "chess_char_5_20_a",
+   "group": "good_ops",
+   "role": "叠层：休整期结束每刷新 1 次 +4（精锐+8，每回合至多 12/24）",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "siracusaShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "缄默德克萨斯",
+   "chessId": "chess_char_4_16_a",
+   "baseId": "chess_char_4_16_a",
+   "group": "good_ops",
+   "role": "经济+户口：进入休整期白嫖 1/2 次免费刷新",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "siracusaShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "伺夜",
+   "chessId": "chess_char_3_19_a",
+   "baseId": "chess_char_3_19_a",
+   "group": "good_ops",
+   "role": "弱点伤害（物理/法术自适应）+ 前 3 次击倒叠叙拉古与奇迹",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "siracusaShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "普罗旺斯",
+   "chessId": "chess_char_1_07_a",
+   "baseId": "chess_char_1_07_a",
+   "group": "good_ops",
+   "role": "经济基石：获得时 1/2 次免费刷新（二本期最高收益牌）",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "siracusaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "德克萨斯",
+   "chessId": "chess_char_1_08_a",
+   "baseId": "chess_char_1_08_a",
+   "group": "good_ops",
+   "role": "经济：售出时 1/2 次免费刷新，凑对子/周转",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "soloShip",
+    "siracusaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "莱恩哈特",
+   "chessId": "chess_char_4_14_a",
+   "baseId": "chess_char_4_14_a",
+   "group": "fill_ops",
+   "role": "迅捷/精准：一件激活两个小盟约，前期唯一能抗线的外援",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "swiftShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "深靛",
+   "chessId": "chess_char_1_17_a",
+   "baseId": "chess_char_1_17_a",
+   "group": "fill_ops",
+   "role": "奥术/精准：叠层 + 守线",
+   "claimedTier": 3,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "arcaneShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  },
+  {
+   "name": "瑰盐",
+   "group": "fill_ops",
+   "role": "协防干员：买卖它叠远见层数",
+   "claimedTier": 2,
+   "found": false
+  }
+ ],
+ "items": [
+  {
+   "name": "叙拉古正装",
+   "itemId": "chess_item_3_01_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "家族徽章",
+   "itemId": "chess_item_6_11_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "迅捷作战粮",
+   "itemId": "chess_item_3_05_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "激光发射器",
+   "itemId": "chess_item_3_03_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "博士投影",
+   "itemId": "chess_item_5_06_e_a",
+   "tier": 5,
+   "price": 5,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

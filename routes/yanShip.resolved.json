@@ -1,0 +1,268 @@
+{
+ "bondId": "yanShip",
+ "bond": "炎",
+ "patch": "卫戍协议：盟约 下半（2026-03 开启，含 3/27 更新#2）；一期=2025-11，无 9 人阈值",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "夕",
+   "chessId": "chess_char_5_12_a",
+   "baseId": "chess_char_5_12_a",
+   "group": "core_ops",
+   "role": "叠层核心·Ⅴ阶【炎+奥术】：休整期结束时本回合每获得过 1 名干员，【炎】【奥术】+2/+4",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "yanShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "烛煌",
+   "chessId": "chess_char_5_03_a",
+   "baseId": "chess_char_5_03_a",
+   "group": "core_ops",
+   "role": "主C·Ⅴ阶【维多利亚+炎】：获得时【炎】【维多利亚】+5/+10，兼职维式重锤体系",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "victoriaShip",
+    "yanShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "星熊",
+   "chessId": "chess_char_4_17_a",
+   "baseId": "chess_char_4_17_a",
+   "group": "core_ops",
+   "role": "战力+叠层·Ⅳ阶【炎】：获得时自身所属盟约+8/+16（无需激活）",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "yanShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "录武官",
+   "chessId": "chess_char_5_23_a",
+   "baseId": "chess_char_5_23_a",
+   "group": "core_ops",
+   "role": "叠层/周转·Ⅴ阶【炎+奇迹】：获得时【炎】+6、【奇迹】+3",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "yanShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "小满",
+   "chessId": "chess_char_2_04_a",
+   "baseId": "chess_char_2_04_a",
+   "group": "core_ops",
+   "role": "前期叠层·Ⅱ阶【炎+灵巧】：休整期结束时本回合每获得过 1 名干员，【炎】+1/+2",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "yanShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "惊蛰",
+   "chessId": "chess_char_1_03_a",
+   "baseId": "chess_char_1_03_a",
+   "group": "good_ops",
+   "role": "低价叠层·Ⅰ阶【炎】：获得时获得等于当前调度中心等级的【炎】层数（升本后再买更肥）",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "yanShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "诗怀雅",
+   "chessId": "chess_char_3_03_a",
+   "baseId": "chess_char_3_03_a",
+   "group": "good_ops",
+   "role": "经济·Ⅲ阶【炎+远见】：获得时给“盟约之币”",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "yanShip",
+    "visiShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "琳琅诗怀雅",
+   "chessId": "chess_char_3_04_a",
+   "baseId": "chess_char_3_04_a",
+   "group": "good_ops",
+   "role": "经济·Ⅲ阶【炎+投资人】：下个休整期额外 +1/+2 资金，整备区也生效",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "yanShip",
+    "investShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "余",
+   "chessId": "chess_char_6_03_a",
+   "baseId": "chess_char_6_03_a",
+   "group": "good_ops",
+   "role": "前排+白嫖·Ⅵ阶【炎+坚守】：进入休整期时随机获得 1 名当前人数最多盟约的干员",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "yanShip",
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "仇白",
+   "chessId": "chess_char_6_15_a",
+   "baseId": "chess_char_6_15_a",
+   "group": "good_ops",
+   "role": "输出·Ⅵ阶【炎+突袭】：对束缚/停顿目标伤害随层数提升",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "yanShip",
+    "raidShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "缪尔赛思",
+   "chessId": "chess_char_6_11_a",
+   "baseId": "chess_char_6_11_a",
+   "group": "fill_ops",
+   "role": "Ⅵ阶·调和：核心盟约激活人数+1（炎佑不计其属性，除非她本身是炎）",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "maniShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "溯光星源",
+   "chessId": "chess_char_6_16_a",
+   "baseId": "chess_char_6_16_a",
+   "group": "fill_ops",
+   "role": "Ⅵ阶·灵巧+奥术：变形同构体+炎国短刀转炎（推断）",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "arcaneShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "圣聆初雪",
+   "chessId": "chess_char_6_02_a",
+   "baseId": "chess_char_6_02_a",
+   "group": "fill_ops",
+   "role": "Ⅵ阶·奥术：补伤害（推断）",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "kjeragShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "炎国短刀",
+   "itemId": "chess_item_3_04_e_a",
+   "tier": 3,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "天师古鼎",
+   "itemId": "chess_item_6_03_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "人事部文档",
+   "itemId": "chess_item_6_08_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "奥术法阵",
+   "itemId": "chess_item_3_08_e_a",
+   "tier": 3,
+   "price": 1,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

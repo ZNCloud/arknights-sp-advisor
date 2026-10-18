@@ -1,0 +1,364 @@
+{
+ "bondId": "victoriaShip",
+ "bond": "维多利亚",
+ "patch": "「卫戍协议：盟约」下半期（2026-03-27 第二阶段）；上半期 2025-11-14；三期截至 2026-10 仅预热",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "刺玫",
+   "chessId": "chess_char_1_06_a",
+   "baseId": "chess_char_1_06_a",
+   "group": "core_ops",
+   "role": "奶/叠层：休整期结束时【维多利亚】+1（精锐+2），1 本就能开局",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "victoriaShip",
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "薄绿",
+   "chessId": "chess_char_3_08_a",
+   "baseId": "chess_char_3_08_a",
+   "group": "core_ops",
+   "role": "叠层核心+群攻+控：休整期结束时场上每有 1 名不同阶【维多利亚】使层数 +2/+4，面板高可当小前排",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "victoriaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "风笛",
+   "chessId": "chess_char_4_07_a",
+   "baseId": "chess_char_4_07_a",
+   "group": "core_ops",
+   "role": "叠层/经济：战斗中前 3 次击倒使【维多利亚】【远见】【不屈】各 +2/+4",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "victoriaShip",
+    "visiShip",
+    "indomShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "号角",
+   "chessId": "chess_char_5_08_a",
+   "baseId": "chess_char_5_08_a",
+   "group": "core_ops",
+   "role": "物理端输出+叠层：休整期结束时层数最多的盟约每有 1 名不同阶干员 +2/+4",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "victoriaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "烛煌",
+   "chessId": "chess_char_5_03_a",
+   "baseId": "chess_char_5_03_a",
+   "group": "core_ops",
+   "role": "法术主C：获得时【炎】【维多利亚】+5/+10，配火锤是结算级输出",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "victoriaShip",
+    "yanShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "焰影苇草",
+   "chessId": "chess_char_6_08_a",
+   "baseId": "chess_char_6_08_a",
+   "group": "core_ops",
+   "role": "输出+奶：每 3 层攻速 +1/+2，道中没 C 时的第一优先终端",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "victoriaShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "塞雷娅",
+   "chessId": "chess_char_5_11_a",
+   "baseId": "chess_char_5_11_a",
+   "group": "core_ops",
+   "role": "叠层翻倍（外援/坚守·独行）：复制身前一格干员的「休整期结束时」特质——对着精锐薄绿/号角/维娜就是双份结算",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "steadShip",
+    "soloShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "洛洛",
+   "chessId": "chess_char_2_10_a",
+   "baseId": "chess_char_2_10_a",
+   "group": "good_ops",
+   "role": "装备制造+法伤：获得时随机产出 1/2 件定制品，是装备发动机",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "victoriaShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "凯瑟琳",
+   "chessId": "chess_char_4_11_a",
+   "baseId": "chess_char_4_11_a",
+   "group": "good_ops",
+   "role": "灵巧+装备：奇数回合进休整期白拿 1/2 件装备",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "victoriaShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "维娜·维多利亚",
+   "chessId": "chess_char_6_07_a",
+   "baseId": "chess_char_6_07_a",
+   "group": "good_ops",
+   "role": "驻场叠层+真伤：每 1 名不同阶【维多利亚】/【奇迹】使层数 +3/+6；不精锐时偏菜",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "victoriaShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "哈洛德",
+   "chessId": "chess_char_2_05_a",
+   "baseId": "chess_char_2_05_a",
+   "group": "good_ops",
+   "role": "奶/前排：攻防 +20%，核心盟约每 3 层再 +1%",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "victoriaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "空弦",
+   "chessId": "chess_char_3_21_a",
+   "baseId": "chess_char_3_21_a",
+   "group": "good_ops",
+   "role": "灵巧/叠层：进入休整期时自身与身前一格干员盟约各 +3/+6，「灵巧维」的开关",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "锡人",
+   "chessId": "chess_char_2_19_a",
+   "baseId": "chess_char_2_19_a",
+   "group": "good_ops",
+   "role": "投资人+迅捷的通用经济卡",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "investShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "纯烬艾雅法拉",
+   "chessId": "chess_char_6_20_a",
+   "baseId": "chess_char_6_20_a",
+   "group": "good_ops",
+   "role": "奶/叠层（助力）：开技能使层数最高的盟约 +3/+6",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "波登可",
+   "chessId": "chess_char_1_13_a",
+   "baseId": "chess_char_1_13_a",
+   "group": "fill_ops",
+   "role": "折射对策，前期很重要",
+   "claimedTier": 3,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  },
+  {
+   "name": "古米",
+   "chessId": "chess_char_1_10_a",
+   "baseId": "chess_char_1_10_a",
+   "group": "fill_ops",
+   "role": "凑坚守稳阵线",
+   "claimedTier": 4,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  },
+  {
+   "name": "深巡",
+   "chessId": "chess_char_1_04_a",
+   "baseId": "chess_char_1_04_a",
+   "group": "fill_ops",
+   "role": "能抗能打的过渡盾",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "egirShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "诗怀雅",
+   "chessId": "chess_char_3_03_a",
+   "baseId": "chess_char_3_03_a",
+   "group": "fill_ops",
+   "role": "远见户口+经济",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "yanShip",
+    "visiShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "调香师",
+   "chessId": "chess_char_2_14_a",
+   "baseId": "chess_char_2_14_a",
+   "group": "fill_ops",
+   "role": "助力+强特质",
+   "claimedTier": 4,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "deputShip",
+    "emptyShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "维式重锤（火锤）",
+   "found": false
+  },
+  {
+   "name": "蒸汽之心",
+   "itemId": "chess_item_6_05_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "寻呼模块",
+   "itemId": "chess_item_4_01_e_a",
+   "tier": 4,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "奥术法阵",
+   "itemId": "chess_item_3_08_e_a",
+   "tier": 3,
+   "price": 1,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

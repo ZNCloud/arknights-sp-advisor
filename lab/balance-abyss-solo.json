@@ -1,0 +1,98 @@
+﻿[
+ {
+  "mode": "solo",
+  "modeId": "mode_single_abyss",
+  "difficulty": "ABYSS",
+  "normal": [
+   {
+    "round": 10,
+    "n": 4,
+    "level": 5,
+    "elites": 4,
+    "items": 5.75,
+    "layers": 231.25,
+    "leaksAvg": 1,
+    "leaksP50": 1,
+    "leaksP90": 3,
+    "lpAvg": 1,
+    "leaksCapped": 1,
+    "uniteShare": 0,
+    "perfect": 0.5,
+    "goalShare": 0.5,
+    "killRate": 0.9578804347826086,
+    "clearTime": 95.825,
+    "cleared": 1,
+    "timeLimit": 190,
+    "deaths": 2.5,
+    "topLeakers": [
+     [
+      "enemy_1425_lrcmra_2",
+      0.75
+     ],
+     [
+      "enemy_1320_wdrrl_2",
+      0.25
+     ]
+    ]
+   },
+   {
+    "round": 12,
+    "n": 4,
+    "level": 6,
+    "elites": 5,
+    "items": 7,
+    "layers": 285,
+    "leaksAvg": 6.75,
+    "leaksP50": 0,
+    "leaksP90": 27,
+    "lpAvg": 2.5,
+    "leaksCapped": 2.5,
+    "uniteShare": 0,
+    "perfect": 0.75,
+    "goalShare": 0.25,
+    "killRate": 0.8223684210526316,
+    "clearTime": 78.0915,
+    "cleared": 1,
+    "timeLimit": 230,
+    "deaths": 2.25,
+    "topLeakers": [
+     [
+      "enemy_1019_jshoot_2",
+      3.25
+     ],
+     [
+      "enemy_10031_cnvsld",
+      2
+     ],
+     [
+      "enemy_9008_acbunn",
+      1.5
+     ]
+    ]
+   },
+   {
+    "round": 13,
+    "n": 4,
+    "level": 6,
+    "elites": 6,
+    "items": 8,
+    "layers": 357.5,
+    "leaksAvg": 0,
+    "leaksP50": 0,
+    "leaksP90": 0,
+    "lpAvg": 0,
+    "leaksCapped": 0,
+    "uniteShare": 0,
+    "perfect": 1,
+    "goalShare": 0,
+    "killRate": 1,
+    "clearTime": 89.25,
+    "cleared": 1,
+    "timeLimit": 230,
+    "deaths": 2.25,
+    "topLeakers": []
+   }
+  ],
+  "boss": []
+ }
+]

@@ -1,0 +1,226 @@
+{
+ "boss_1": {
+  "name": "假想敌：胄",
+  "hidden": false,
+  "enemyKey": "enemy_9013_acstmk",
+  "weight": 6,
+  "lpr": 2,
+  "hp": 600000,
+  "atk": 650,
+  "def": 1000,
+  "res": 25,
+  "melee": false,
+  "tags": [
+   "元素/异常"
+  ],
+  "desc": "被源石严重侵蚀占据的蒸汽甲胄。 展现源石发生作用最常见的形态——侵蚀。",
+  "bloodPoint": {
+   "FUNNY": 247500,
+   "NORMAL": 675000,
+   "HARD": 1800000,
+   "ABYSS": 3600000
+  }
+ },
+ "boss_2": {
+  "name": "假想敌：铳",
+  "hidden": false,
+  "enemyKey": "enemy_9017_achunt",
+  "weight": 6,
+  "lpr": 2,
+  "hp": 120000,
+  "atk": 750,
+  "def": 1100,
+  "res": 60,
+  "melee": false,
+  "tags": [
+   "元素/异常",
+   "点名",
+   "攻速递增"
+  ],
+  "desc": "造成伤害时附带侵蚀损伤；优先攻击防御力高的敌人;对同一个单位进行攻击时攻速逐渐提升",
+  "bloodPoint": {
+   "FUNNY": 225000,
+   "NORMAL": 400000,
+   "HARD": 800000,
+   "ABYSS": 3000000
+  }
+ },
+ "boss_3": {
+  "name": "假想敌：管",
+  "hidden": false,
+  "enemyKey": "enemy_9021_acduml",
+  "weight": 6,
+  "lpr": 2,
+  "hp": 85000,
+  "atk": 300,
+  "def": 700,
+  "res": 50,
+  "melee": false,
+  "tags": [
+   "点名"
+  ],
+  "desc": "优先攻击“断弦之音”",
+  "bloodPoint": {
+   "FUNNY": 285000,
+   "NORMAL": 708750,
+   "HARD": 2000000,
+   "ABYSS": 4000000
+  }
+ },
+ "boss_4": {
+  "name": "盐风主教昆图斯",
+  "hidden": false,
+  "enemyKey": "enemy_1521_dslily",
+  "weight": 5,
+  "lpr": 1,
+  "hp": 100000,
+  "atk": 380,
+  "def": 500,
+  "res": 50,
+  "melee": false,
+  "tags": [],
+  "desc": "混入灾后伊比利亚的深海教会成员之一，真诚地用自己的理念篡改了律法，追求着个体的完美姿态，却根本无法参透海洋的意愿。话说回来，谁又能呢？",
+  "bloodPoint": {
+   "FUNNY": 307500,
+   "NORMAL": 708750,
+   "HARD": 2100000,
+   "ABYSS": 4200000
+  }
+ },
+ "boss_5": {
+  "name": "卢西恩，“猩红血钻”",
+  "hidden": false,
+  "enemyKey": "enemy_2016_csphtm",
+  "weight": 10,
+  "lpr": 30,
+  "hp": 80000,
+  "atk": 1500,
+  "def": 600,
+  "res": 40,
+  "melee": true,
+  "tags": [
+   "穿阻挡",
+   "元素/异常",
+   "召唤物"
+  ],
+  "desc": "剧团之灾卢西恩，代号傀影。会穿过阻挡其的单位并留下不祥幻影，攻击和技能额外造成神经损伤。",
+  "bloodPoint": {
+   "FUNNY": 200000,
+   "NORMAL": 390000,
+   "HARD": 780000,
+   "ABYSS": 3000000
+  }
+ },
+ "boss_6": {
+  "name": "阿利斯泰尔，帝国余晖",
+  "hidden": false,
+  "enemyKey": "enemy_9032_aclionk",
+  "weight": 5,
+  "lpr": 2,
+  "hp": 81000,
+  "atk": 820,
+  "def": 1030,
+  "res": 20,
+  "melee": false,
+  "tags": [],
+  "desc": "帝国最后的余晖，生锈冠冕下的幽灵。反驳他，反驳维多利亚无上的荣光与权力，他会审视，他可以宽恕。",
+  "bloodPoint": {
+   "FUNNY": 285000,
+   "NORMAL": 705000,
+   "HARD": 1990000,
+   "ABYSS": 3980000
+  }
+ },
+ "boss_7": {
+  "name": "“萨米的意志”",
+  "hidden": false,
+  "enemyKey": "enemy_9033_acdeer",
+  "weight": 5,
+  "lpr": 2,
+  "hp": 240000,
+  "atk": 800,
+  "def": 800,
+  "res": 40,
+  "melee": false,
+  "tags": [
+   "减伤",
+   "多目标"
+  ],
+  "desc": "因萨米的一个念想从土石和冰雪中诞生，生命值低于一半时受到的物理与法术伤害降低，所有技能可额外选择一个目标",
+  "bloodPoint": {
+   "FUNNY": 277500,
+   "NORMAL": 787500,
+   "HARD": 2000000,
+   "ABYSS": 4000000
+  }
+ },
+ "boss_8": {
+  "name": "假想敌：胄",
+  "hidden": true,
+  "enemyKey": "enemy_9013_acstmk_2",
+  "weight": 50,
+  "lpr": 2,
+  "hp": 1200000,
+  "atk": 750,
+  "def": 1200,
+  "res": 30,
+  "melee": false,
+  "tags": [
+   "元素/异常"
+  ],
+  "desc": "被源石严重侵蚀占据的蒸汽甲胄。 展现源石发生作用最常见的形态——侵蚀。",
+  "bloodPoint": {
+   "FUNNY": 750000,
+   "NORMAL": 937500,
+   "HARD": 3600000,
+   "ABYSS": 7200000
+  }
+ },
+ "boss_9": {
+  "name": "假想敌：铳",
+  "hidden": true,
+  "enemyKey": "enemy_9017_achunt_2",
+  "weight": 40,
+  "lpr": 2,
+  "hp": 120000,
+  "atk": 750,
+  "def": 1100,
+  "res": 60,
+  "melee": false,
+  "tags": [
+   "元素/异常",
+   "点名",
+   "减伤",
+   "攻速递增"
+  ],
+  "desc": "造成伤害时附带侵蚀损伤；优先攻击防御力高的敌人;对同一个单位进行攻击时攻速逐渐提升；具有高额物理法术减伤",
+  "bloodPoint": {
+   "FUNNY": 675000,
+   "NORMAL": 900000,
+   "HARD": 2800000,
+   "ABYSS": 3950000
+  }
+ },
+ "boss_10": {
+  "name": "假想敌：管",
+  "hidden": true,
+  "enemyKey": "enemy_9021_acduml_2",
+  "weight": 40,
+  "lpr": 2,
+  "hp": 85000,
+  "atk": 300,
+  "def": 700,
+  "res": 50,
+  "melee": false,
+  "tags": [
+   "点名"
+  ],
+  "desc": "优先攻击“断弦之音”",
+  "bloodPoint": {
+   "FUNNY": 825000,
+   "NORMAL": 1012500,
+   "HARD": 3800000,
+   "ABYSS": 7600000
+  }
+ }
+}

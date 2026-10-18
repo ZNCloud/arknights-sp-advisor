@@ -1,0 +1,354 @@
+{
+ "bondId": "kjeragShip",
+ "bond": "谢拉格",
+ "patch": "「卫戍协议：盟约」下半期（2026-03-27 第二阶段）；上半期 2025-11-14；三期截至 2026-10 仅在预热",
+ "generated": "routes-check.mjs",
+ "ops": [
+  {
+   "name": "初雪",
+   "chessId": "chess_char_3_14_a",
+   "baseId": "chess_char_3_14_a",
+   "group": "core_ops",
+   "role": "控制/核心叠层：范围内敌人进入冻结时 50% 概率【谢拉格】+1（精锐+2）；下半期从 Ⅳ 阶降到 Ⅲ 阶",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "visiShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "灵知",
+   "chessId": "chess_char_4_13_a",
+   "baseId": "chess_char_4_13_a",
+   "group": "core_ops",
+   "role": "控制/群冻：获得时所属盟约 +5（精锐+10），道中兜底与冻结源；**7 回合前没拿到道中极易漏**",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "银灰",
+   "chessId": "chess_char_4_22_a",
+   "baseId": "chess_char_4_22_a",
+   "group": "core_ops",
+   "role": "输出/叠层：同款「冻人 +1/+2」，下半期 Ⅳ 阶（上半 Ⅴ 阶），兼物理输出",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "kjeragShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "耶拉",
+   "chessId": "chess_char_3_20_a",
+   "baseId": "chess_char_3_20_a",
+   "group": "core_ops",
+   "role": "输出/装备供给：获得时送 1（精锐 2）件【谢拉格不融冰】",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "圣聆初雪",
+   "chessId": "chess_char_6_02_a",
+   "baseId": "chess_char_6_02_a",
+   "group": "core_ops",
+   "role": "法术主C：每 3 层攻击力 +1/+2，主流输出终端",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "kjeragShip",
+    "arcaneShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "锏",
+   "chessId": "chess_char_6_19_a",
+   "baseId": "chess_char_6_19_a",
+   "group": "core_ops",
+   "role": "物理主C：获得时盟约+8、部署时再 +8（至多 24/48），另一套终端",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "kjeragShip",
+    "kazimierzShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "凛御银灰",
+   "chessId": "chess_char_5_14_a",
+   "baseId": "chess_char_5_14_a",
+   "group": "good_ops",
+   "role": "叠层放大器：使身前一格【谢拉格】干员获得「冻结时 60% 概率 +1/+2」的特质",
+   "claimedTier": 5,
+   "tier": 5,
+   "price": 4,
+   "bonds": [
+    "kjeragShip",
+    "investShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "雪猎",
+   "chessId": "chess_char_3_11_a",
+   "baseId": "chess_char_3_11_a",
+   "group": "good_ops",
+   "role": "物理输出/前期叠层：获得时盟约 +5（精锐+10），便宜好碰",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "魔王",
+   "chessId": "chess_char_4_25_a",
+   "baseId": "chess_char_4_25_a",
+   "group": "good_ops",
+   "role": "叠层倍率（协防干员外围）：身前一格干员因特质涨层时额外 +1/+2，站叠层手身后一格",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "emptyShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "空弦",
+   "chessId": "chess_char_3_21_a",
+   "baseId": "chess_char_3_21_a",
+   "group": "good_ops",
+   "role": "灵巧/叠层：进入休整期时自身与身前一格干员已激活盟约各 +3/+6",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "白面鸮",
+   "chessId": "chess_char_4_21_a",
+   "baseId": "chess_char_4_21_a",
+   "group": "good_ops",
+   "role": "奶/灵巧：复制身前一格「进入休整期时」类特质，用于双刷",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "deputShip",
+    "skillfulShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "纯烬艾雅法拉",
+   "chessId": "chess_char_6_20_a",
+   "baseId": "chess_char_6_20_a",
+   "group": "good_ops",
+   "role": "奶/叠层（助力）：战斗中开技能使层数最高的盟约 +3/+6",
+   "claimedTier": 6,
+   "tier": 6,
+   "price": 4,
+   "bonds": [
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "角峰",
+   "chessId": "chess_char_1_02_a",
+   "baseId": "chess_char_1_02_a",
+   "group": "good_ops",
+   "role": "前排：获得时 +2，前期点亮坚守/挡线",
+   "claimedTier": 1,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "kjeragShip",
+    "steadShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "哈洛德",
+   "chessId": "chess_char_2_05_a",
+   "baseId": "chess_char_2_05_a",
+   "group": "good_ops",
+   "role": "前排/奶：攻防 +20% 且核心盟约每 3 层再 +1%，下半期改成数值卡可当盾位",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "kjeragShip",
+    "victoriaShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": true
+  },
+  {
+   "name": "波登可",
+   "chessId": "chess_char_1_13_a",
+   "baseId": "chess_char_1_13_a",
+   "group": "fill_ops",
+   "role": "折射/隐匿波次对策",
+   "claimedTier": 3,
+   "tier": 1,
+   "price": 2,
+   "bonds": [
+    "deputShip"
+   ],
+   "found": true,
+   "tierOk": false,
+   "hasBond": false
+  },
+  {
+   "name": "莱恩哈特",
+   "chessId": "chess_char_4_14_a",
+   "baseId": "chess_char_4_14_a",
+   "group": "fill_ops",
+   "role": "迅捷叠层",
+   "claimedTier": 4,
+   "tier": 4,
+   "price": 3,
+   "bonds": [
+    "swiftShip",
+    "preciShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "锡人",
+   "chessId": "chess_char_2_19_a",
+   "baseId": "chess_char_2_19_a",
+   "group": "fill_ops",
+   "role": "投资人+迅捷，顺手买放备战区",
+   "claimedTier": 2,
+   "tier": 2,
+   "price": 3,
+   "bonds": [
+    "investShip",
+    "swiftShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  },
+  {
+   "name": "能天使",
+   "chessId": "chess_char_3_01_a",
+   "baseId": "chess_char_3_01_a",
+   "group": "fill_ops",
+   "role": "奇迹叠层启动（1 技能）",
+   "claimedTier": 3,
+   "tier": 3,
+   "price": 3,
+   "bonds": [
+    "lateranoShip",
+    "miraShip"
+   ],
+   "found": true,
+   "tierOk": true,
+   "hasBond": false
+  }
+ ],
+ "items": [
+  {
+   "name": "谢拉格不融冰",
+   "itemId": "chess_item_5_02_e_a",
+   "tier": 5,
+   "price": 2,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "耶拉冈德之泪",
+   "itemId": "chess_item_6_06_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "人事部文档",
+   "itemId": "chess_item_6_08_e_a",
+   "tier": 6,
+   "price": 4,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "奥术法阵",
+   "itemId": "chess_item_3_08_e_a",
+   "tier": 3,
+   "price": 1,
+   "found": true,
+   "tierOk": true
+  },
+  {
+   "name": "变形同构体",
+   "itemId": "chess_item_6_09_e_a",
+   "tier": 6,
+   "price": 3,
+   "found": true,
+   "tierOk": true
+  }
+ ]
+}

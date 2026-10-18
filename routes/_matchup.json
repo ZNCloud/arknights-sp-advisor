@@ -1,0 +1,417 @@
+{
+  "note": "路线画像：rank=社区/TapTap 强度共识的相对位次（1 最强）；damage=主要伤害类型；antiAir/control/survival=0-10 主观刻度，来自各路线卡的强弱点；keyAddons=这套流派的命门附加盟约（被禁就掉档）；keyOps=没有就崩的关键干员（用名字，靠 routes-check 解析）。所有主观刻度都在 note 里写明来源，数值计算在 open-brief.mjs 里。 trueChannel=这套有不看防御的真伤通道（叙拉古 proc / 卡西米尔阻挡真伤），BOSS 高防时额外加分。 summons=有召唤物，专门克制「优先攻击召唤物」类 BOSS（假想敌：管 追断弦之音）。",
+  "routes": {
+    "kjeragShip": {
+      "rank": 1,
+      "damage": "mixed",
+      "antiAir": 7,
+      "control": 10,
+      "survival": 4,
+      "keyAddons": [
+        {
+          "bond": "skillfulShip",
+          "weight": "strong",
+          "why": "前期主叠灵巧，本家层数本来就容易涨"
+        },
+        {
+          "bond": "arcaneShip",
+          "weight": "strong",
+          "why": "圣聆初雪走奥术端"
+        },
+        {
+          "bond": "steadShip",
+          "weight": "medium",
+          "why": "本体偏脆，缺减伤"
+        }
+      ],
+      "keyOps": [
+        "灵知",
+        "初雪"
+      ],
+      "entryRisk": "7 回合前没拿到灵知，道中会被飞行/折射打穿",
+      "strategyNote": "专属策略是休露丝，但下半期社区更推经济型（小贾斯汀/杰芒加德同类），休露丝与队友抢谢拉格时更该让给别人",
+      "bossNote": "多数 BOSS 不吃冻结，增伤打不满（帝国余晖这类吃冻的除外）",
+      "trueChannel": false,
+      "needs": {
+        "layer": 1,
+        "unit": 0.5,
+        "coin": 0.4,
+        "equip": 0.3,
+        "count": 0.3
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 7
+        },
+        "refresh": 0.7,
+        "merge": 0.8,
+        "note": "谢拉格：先叠灵巧/迅捷做底，7 回合前必须拿到灵知",
+        "equipBias": 0.5
+      }
+    },
+    "sargonShip": {
+      "rank": 2,
+      "damage": "physical",
+      "antiAir": 5,
+      "control": 3,
+      "survival": 7,
+      "keyAddons": [
+        {
+          "bond": "preciShip",
+          "weight": "strong",
+          "why": "精准是物理破甲的唯一通道，也喂异客的层数"
+        },
+        {
+          "bond": "swiftShip",
+          "weight": "strong",
+          "why": "迅捷缩短技能循环，萨尔贡靠开技能次数叠层"
+        },
+        {
+          "bond": "steadShip",
+          "weight": "medium",
+          "why": "泡泡/坚守撑前排"
+        }
+      ],
+      "keyOps": [
+        "异客",
+        "至简"
+      ],
+      "entryRisk": "起手两三个回合打不过就得放血；7 回合刷不到缇缇要转稳态线",
+      "strategyNote": "专属策略佩佩（升本后特殊刷新萨尔贡）或娜仁图亚（改变 6 人效果，走装备光环流）",
+      "bossNote": "纯物理，BOSS 高防时只剩 5% 保底，必须靠精准的 30% 无视防御",
+      "needs": {
+        "draw": 0.8,
+        "unit": 0.7,
+        "coin": 0.5,
+        "sp": 0.4,
+        "count": 0.3
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 6
+        },
+        "refresh": 0.85,
+        "merge": 0.6,
+        "note": "萨尔贡：靠开技能次数叠层，要 5 本才刷得出异客/佩佩",
+        "equipBias": 0.45
+      }
+    },
+    "yanShip": {
+      "rank": 2,
+      "damage": "mixed",
+      "antiAir": 5,
+      "control": 3,
+      "survival": 5,
+      "keyAddons": [
+        {
+          "bond": "arcaneShip",
+          "weight": "strong",
+          "why": "烛煌/夕走奥术，法伤乘区"
+        },
+        {
+          "bond": "skillfulShip",
+          "weight": "medium",
+          "why": "小满/灵巧配合获得时节奏"
+        },
+        {
+          "bond": "miraShip",
+          "weight": "medium",
+          "why": "录武官/奇迹给经济"
+        }
+      ],
+      "keyOps": [
+        "夕",
+        "烛煌"
+      ],
+      "entryRisk": "6 人之前没有炎佑，前中期极脆；9 人档要人事部文档",
+      "strategyNote": "专属策略杜遥夜（每回合前 2 次刷新锁出炎），但要求炎干员没被大面积禁",
+      "bossNote": "炎佑的召唤物能把 BOSS 的『点名』仇恨吸走（管这类优先攻击召唤物的尤其吃香）",
+      "summons": true,
+      "summonsWhy": "炎佑是召唤物，能替全队吃「优先攻击召唤物」的仇恨",
+      "needs": {
+        "unit": 0.9,
+        "coin": 0.6,
+        "layer": 0.5,
+        "count": 0.4
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 6
+        },
+        "refresh": 0.9,
+        "merge": 0.7,
+        "note": "炎：靠「获得时」叠层，买人比升级重要；升本要跟在关键干员之后",
+        "equipBias": 0.45
+      }
+    },
+    "victoriaShip": {
+      "rank": 3,
+      "damage": "arts",
+      "antiAir": 3,
+      "control": 3,
+      "survival": 6,
+      "keyAddons": [
+        {
+          "bond": "deputShip",
+          "weight": "strong",
+          "why": "前中期靠助力点亮盟约才开始叠层，被 ban 整局节奏断"
+        },
+        {
+          "bond": "skillfulShip",
+          "weight": "medium",
+          "why": "空弦/灵巧维"
+        },
+        {
+          "bond": "arcaneShip",
+          "weight": "medium",
+          "why": "法系主C 的易伤乘区"
+        }
+      ],
+      "keyOps": [
+        "薄绿",
+        "号角",
+        "烛煌"
+      ],
+      "entryRisk": "前期道中战力全模式最弱之一，要等 3 本空弦/薄绿、4 本风笛才成型",
+      "strategyNote": "专属策略哈洛德（第 4 回合起每 2 回合给 1 名维）；但社区认为这本家更吃运营与装备",
+      "bossNote": "法伤为主，对高抗 BOSS（铳 RES60、管 RES50）会被削一半，需要奥术易伤补",
+      "needs": {
+        "equip": 1,
+        "coin": 0.8,
+        "unit": 0.3,
+        "layer": 0.4,
+        "count": 0.5
+      },
+      "needsWhy": "六维不是靠上人，是靠不同阶——转职（锤 + 变形同构体）也能凑，所以 count 也算需求",
+      "policy": {
+        "levelCap": {
+          "level": 3,
+          "untilRound": 6
+        },
+        "refresh": 0.6,
+        "merge": 0.8,
+        "note": "维多利亚：装备=伤害，升本只为拿高阶装备与主C；前期别在 2 本、4 本久留",
+        "equipBias": 1
+      }
+    },
+    "siracusaShip": {
+      "rank": 4,
+      "damage": "physical",
+      "antiAir": 5,
+      "control": 2,
+      "survival": 2,
+      "keyAddons": [
+        {
+          "bond": "swiftShip",
+          "weight": "medium",
+          "why": "忍冬兼迅捷户口"
+        },
+        {
+          "bond": "arcaneShip",
+          "weight": "medium",
+          "why": "阿罗玛走奥术"
+        }
+      ],
+      "keyOps": [
+        "拉普兰德",
+        "忍冬",
+        "铃兰"
+      ],
+      "entryRisk": "6 叙成形前输出与生存双缺，是赌狗流；霉局 300-400 层、胡局 600-700 层",
+      "strategyNote": "专属策略贾维；二本流不需要升本，经济型策略（小贾斯汀/坎诺特）更配",
+      "bossNote": "命中真伤 proc（3%×5000+50×层数）能绕过防御，是它打高防 BOSS 的唯一手段",
+      "trueChannel": true,
+      "trueWhy": "命中真伤 proc（3% × (5000+50×层数)）绕过防御",
+      "needs": {
+        "draw": 1,
+        "coin": 0.6,
+        "unit": 0.5
+      },
+      "policy": {
+        "levelCap": {
+          "level": 2,
+          "untilRound": 8
+        },
+        "refresh": 1,
+        "merge": 0.9,
+        "note": "二本叙：2 回合升 2 后长时间停在 2 本，靠「刷新」叠层（拉普兰德每次首次主动刷新 +4），9 回合前后再升本",
+        "equipBias": 0.5
+      }
+    },
+    "lateranoShip": {
+      "rank": 5,
+      "damage": "physical",
+      "antiAir": 9,
+      "control": 2,
+      "survival": 2,
+      "keyAddons": [
+        {
+          "bond": "preciShip",
+          "weight": "strong",
+          "why": "3 精准让高台无视 30% 防御/法抗，是本家唯一破甲"
+        },
+        {
+          "bond": "skillfulShip",
+          "weight": "medium",
+          "why": "空弦兼灵巧"
+        }
+      ],
+      "keyOps": [
+        "圣葬",
+        "空弦"
+      ],
+      "entryRisk": "6 名不同干员才成型，成型前伤害尴尬；无自愈无减伤",
+      "strategyNote": "专属策略潘格尼尼（累计花 55 金送 4 阶精锐拉特兰）",
+      "bossNote": "纯物理 + 对空最强，但 BOSS 高防时靠精准；隐匿 BOSS 会让弹药循环断掉",
+      "needs": {
+        "unit": 0.8,
+        "coin": 0.6,
+        "equip": 0.4
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 7
+        },
+        "refresh": 0.7,
+        "merge": 0.8,
+        "note": "拉特兰：6 名不同干员才成型，前期先开 3 人档",
+        "equipBias": 0.6
+      }
+    },
+    "kazimierzShip": {
+      "rank": 5,
+      "damage": "physical",
+      "antiAir": 2,
+      "control": 5,
+      "survival": 6,
+      "keyAddons": [
+        {
+          "bond": "raidShip",
+          "weight": "strong",
+          "why": "突袭是卡西米尔的上限（远牙+反复再部署）"
+        },
+        {
+          "bond": "indomShip",
+          "weight": "medium",
+          "why": "砾被击倒叠不屈"
+        }
+      ],
+      "keyOps": [
+        "瑕光",
+        "远牙"
+      ],
+      "entryRisk": "对最终 BOSS 输出偏低（转载口径约 20%），靠道中兜底",
+      "strategyNote": "专属策略玛恩纳，但社区明确评价低于大帝（再部署 -50%）/ 埃芒加德（3 次复活）",
+      "bossNote": "阻挡真伤（每 2s 120% 攻击力）不吃防御，是它打高防 BOSS 的通道；但对空最弱",
+      "trueChannel": true,
+      "trueWhy": "阻挡每 2s 120% 攻击力真伤，不吃防御",
+      "needs": {
+        "redeploy": 1,
+        "unit": 0.6,
+        "count": 0.4,
+        "atk": 0.3
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 7
+        },
+        "refresh": 0.7,
+        "merge": 0.7,
+        "note": "卡西米尔：靠「部署次数」叠层，远牙+再部署是引擎",
+        "equipBias": 0.55
+      }
+    },
+    "egirShip": {
+      "rank": 6,
+      "damage": "physical",
+      "antiAir": 2,
+      "control": 3,
+      "survival": 10,
+      "keyAddons": [
+        {
+          "bond": "arcaneShip",
+          "weight": "strong",
+          "why": "奥术阿戈尔是当前最强分支"
+        },
+        {
+          "bond": "skillfulShip",
+          "weight": "medium",
+          "why": "5 人后空出的位子挂灵巧"
+        },
+        {
+          "bond": "indomShip",
+          "weight": "medium",
+          "why": "砾/归鲨叠不屈"
+        }
+      ],
+      "keyOps": [
+        "深巡",
+        "归溟幽灵鲨",
+        "乌尔比安"
+      ],
+      "entryRisk": "对空弱、攻击频率慢、群攻少，破甲线低",
+      "strategyNote": "专属策略克莱门莎（吃人时给层数）；Pith 优等生（调和 +1 计数）能提前开 3 人档",
+      "bossNote": "全游最厚生存（HP ×2.85 + 3 次复活），但输出靠吃高本卡面板，纯物理",
+      "needs": {
+        "count": 0.9,
+        "unit": 0.8,
+        "atk": 0.7,
+        "coin": 0.4,
+        "layer": 0.1
+      },
+      "policy": {
+        "levelCap": {
+          "level": 4,
+          "untilRound": 5
+        },
+        "refresh": 0.6,
+        "merge": 0.8,
+        "note": "阿戈尔：5 人即满配，7 回合升 5 本；层数只加血，输出靠吃高本卡与外援转职",
+        "equipBias": 0.3
+      }
+    }
+  },
+  "bossRulesNote": "BOSS 侧的加减在 open-brief.mjs 里按 _bosses.json 的 tags 计算：高防（DEF≥900）压物理、高抗（RES≥50）压法伤、穿阻挡要求控场、点名要求减伤/复活、减伤要求真伤、多目标要求群攻。",
+  "genericBands": {
+    "小贾斯汀": "经济：第 1/4/7/10 回合各一个骑士储蓄罐（1-6 金），起始 LP 23 最低但滚起来最快",
+    "坎诺特": "利滚利：剩余资金可继承，≥5 金时每回合 +1",
+    "余": "第 8 回合若只激活 1 个盟约 +36 层，否则所有已激活盟约 +12 层——单核流派直接起飞",
+    "埃芒加德": "前 3 个被击倒的干员立刻复活，等于免费挡刀，卡西米尔/玻璃炮首选",
+    "大帝": "再部署时间 -50%，突袭/卡西米尔的循环核心",
+    "歌利亚": "初始 LP 45（标准 28），纯兜底，适合不熟的新流派",
+    "阿米娅": "场上 3/4/5 种以上激活盟约时全队攻防 +20/30/40%——多盟约骨架流（阿米娅助力维）",
+    "Pith": "第 1 回合给一个调和干员（部分盟约人数计数 +1），提前开人数档",
+    "缪尔赛思": "第 1 回合给进阶博士投影，直接把一个干员变精锐",
+    "铃兰": "每回合触发一次场上干员的『获得时』效果——阿戈尔/叙拉古这类靠获得时叠层的核心",
+    "梓兰": "每次刷新必出 2 名同名并冻结其一，凑对子/精锐最快",
+    "绮良": "每花 20 金给一名不高于当前商店等级的随机干员",
+    "凯瑟琳": "每次升商店等级刷 3 件装备选 1，装备流（维多利亚）专用"
+  },
+  "needsNote": "needs = 该路线滚起来最吃哪种资源（0-1）。来自路线卡机制：谢拉格吃层数、萨尔贡吃刷新/技能、维多利亚吃装备与钱、叙拉古吃刷新、卡西米尔吃再部署、阿戈尔特吃人数与输出件（不是层数）。",
+  "bandUsage": {
+    "band_dlya": "杜遥夜：每回合前 2 次主动刷新会锁出炎干员 → 把这 2 次留到钱够买时再用，别先刷光",
+    "band_orchid": "梓兰：每次刷新必出 2 名同名并冻结其一 → 刷对子时收益最大",
+    "band_justin": "小贾斯汀：1/4/7/10 回合给储蓄罐（1~6 金）→ 第 4/7/10 回合前把钱花到 5 以下更划算",
+    "band_cannot": "坎诺特：留 ≥5 金每回合 +1 且资金可继承 → 别把钱花光",
+    "band_sarkazb": "歌利亚：起始 45 血 → 用血量换中期投资（敢停本、敢放血）",
+    "band_ermengard": "埃芒加德：前 3 个被击倒的干员立刻复活 → 站位可以更激进",
+    "band_bldsk": "华法琳：开战时每个不同等阶 1 名干员所属盟约 +2 层 → 覆盖的等阶越多越赚",
+    "band_yu": "余：第 8 回合仅 1 个激活盟约 +36 层、否则各 +12 层 → 单核流派吃满",
+    "band_duyaoy": "杜遥夜：每回合前 2 次主动刷新会锁出炎干员 → 把这 2 次留到钱够买时再用，别先刷光"
+  },
+  "policyNote": "policy = 该流派的运营政策（levelCap/refresh/merge）供顾问判断「该升还是该刷」；bandUsage = 策略机制的正确用法（按长处触发）。",
+  "equipNote": "equipBias = 这条路线买装备的边际价值（0-1）。维多利亚「每件装备 +50%/进阶 +80% 攻击」最高；阿戈尔吃干员面板与吞噬，装备边际最低。",
+  "bountyModel": {
+    "note": "悬赏估值：score = payout + coin*0.5 + tier*4 − rounds*3 − 难度惩罚。参数可调。",
+    "perRoundCost": 3,
+    "coinWeight": 0.5,
+    "tierWeight": 4,
+    "bossPenalty": 25,
+    "elitePenalty": 10
+  }
+}
