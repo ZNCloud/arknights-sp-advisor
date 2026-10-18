@@ -1,0 +1,101 @@
+[
+ {
+  "mode": "solo",
+  "modeId": "mode_single_abyss",
+  "difficulty": "ABYSS",
+  "normal": [],
+  "boss": [
+   {
+    "round": 14,
+    "n": 20,
+    "hidden": false,
+    "ratio150": 0.9680761700069056,
+    "ratio150Min": 0.6535587922325296,
+    "killRate": 0.9,
+    "killTime": 95.74444444444444,
+    "victory": 0.9,
+    "leakLp": 0.05,
+    "pool": 3526000,
+    "byBoss": {
+     "boss_1": {
+      "n": 6,
+      "pool": 3600000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 98.18333333333334
+     },
+     "boss_2": {
+      "n": 3,
+      "pool": 3000000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 74.78888888888888
+     },
+     "boss_3": {
+      "n": 1,
+      "pool": 4000000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 102.06666666666666
+     },
+     "boss_5": {
+      "n": 4,
+      "pool": 3000000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 110.925
+     },
+     "boss_6": {
+      "n": 4,
+      "pool": 3980000,
+      "ratio150": 0.9133896980581324,
+      "victory": 0.75,
+      "killTime": 69.44444444444444
+     },
+     "boss_7": {
+      "n": 2,
+      "pool": 4000000,
+      "ratio150": 0.8539823039527896,
+      "victory": 0.5,
+      "killTime": 155.83333333333334
+     }
+    }
+   },
+   {
+    "round": 15,
+    "n": 20,
+    "hidden": true,
+    "ratio150": 0.881388007762985,
+    "ratio150Min": 0.13002376838891755,
+    "killRate": 0.85,
+    "killTime": 122.8313725490196,
+    "victory": 0.85,
+    "leakLp": 0.9,
+    "pool": 6467500,
+    "byBoss": {
+     "boss_10": {
+      "n": 4,
+      "pool": 7600000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 85.95833333333334
+     },
+     "boss_8": {
+      "n": 11,
+      "pool": 7200000,
+      "ratio150": 0.7843418322963364,
+      "victory": 0.7272727272727273,
+      "killTime": 140.975
+     },
+     "boss_9": {
+      "n": 5,
+      "pool": 3950000,
+      "ratio150": 1,
+      "victory": 1,
+      "killTime": 123.3
+     }
+    }
+   }
+  ]
+ }
+]

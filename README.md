@@ -89,3 +89,50 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\launch.ps1
 - 本仓库的**代码与文档**：MIT
 - 引擎与游戏数据：遵循上游 `Stronghold-Protocol` 的 GPL-3.0-or-later，本仓库不再分发
 - 本仓库不含任何游戏美术、音频或官方数据表
+
+## 应用到引擎（复现实验开关必需）
+
+本仓库的 `patches/bot-lab-switches.patch` 是对引擎 `server/match/bot.js` 的全部改动（新增 4 个 env 开关，**默认值等于原行为**）：
+
+```powershell
+cd Stronghold-Protocol
+git apply ..\sp-advisor\patches\bot-lab-switches.patch
+git diff --stat          # 应当只有 server/match/bot.js
+```
+
+开关一览（全部默认关）：
+
+| 开关 | 作用 |
+|---|---|
+| `SP_LAB_FOCUS=<bondId>` | 强制核心盟约（原有实验开关） |
+| `SP_LAB_FOCUS_BOSS=1` | 按本局 `public.bossId` 的通道 k 最高盟约自动 focus（`BOSS_BEST_K` 表由 `model/bosstable.json` 推导） |
+| `SP_LAB_EQUIP_CARRY=1` | 战斗类装备只喂 ATK 最高的输出（终端集中） |
+| `SP_LAB_LAYER_BONUS=<n>` | 按「获得时给层」的引擎真值给牌加价 |
+
+不应用补丁也能跑 `lab/` 里的分析和 `balance.mjs` 的 profile 测量，只是无法复现依赖这些开关的实验臂。
+
+## 在另一台电脑上继续
+
+```powershell
+# 1) 引擎（上游，GPL-3.0-or-later）
+git clone --depth 1 https://github.com/sganggs/Stronghold-Protocol.git
+cd Stronghold-Protocol; npm ci --ignore-scripts; node tools/vendor.mjs
+
+# 2) 本仓库（与本目录同级）
+git clone https://github.com/ZNCloud/arknights-sp-advisor.git
+
+# 3) 应用实验开关（可选）
+git apply ../arknights-sp-advisor/patches/bot-lab-switches.patch
+
+# 4) 冒烟验证（约 1 分钟）
+node tools/matchrun.mjs --mode solo --difficulty ABYSS --seeds 1 --rehearsal 1 --lp 45
+#    期望看到 `rounds passed: ...` 与 `wins 0/1`
+
+# 5) 单臂测量（20 seeds，约 6–10 分钟）
+node tools/matchrun.mjs --mode solo --difficulty ABYSS --seeds 20 --rehearsal 1 --lp 45 --json |
+  Out-File -Encoding utf8 ../arknights-sp-advisor/samples/arm.json
+node ../arknights-sp-advisor/lab/soloarm.mjs ../arknights-sp-advisor/samples/solo-A-baseline.json ../arknights-sp-advisor/samples/arm.json
+```
+
+**环境事实**：Node ≥ 20；`--lp 45`；`--rehearsal 1`；难度 `ABYSS` 对应 `mode_multi_abyss`（14 回合，R14 打 BOSS）；
+BOSS 血池 = `bloodPoint × 进入 BOSS 战的存活座位数`，**跨组比较只能用百分比**；结算行 `teamLp` 在 BOSS 回合恒为 0。

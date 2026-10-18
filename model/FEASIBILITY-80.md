@@ -69,3 +69,40 @@ solo 20 seeds 实测：R14 打掉 **19.63%** 池子（中位）。⇒ 需要 **5
 3. 若不能 → 80% 在这个乘区结构下不可达，结论就变成「6 本 BOSS 上限 60–70%，萨米不可杀」
 
 这个实验不需要改 bot 策略，只需要一次「盘面注入 + 跑 R14」，成本比之前的整局实验低得多。
+
+
+---
+
+## 7. 大样本复核（20 样本/组）—— 修正 §5 的乐观结论
+
+用 `tools/balance.mjs --mode solo --difficulty ABYSS --boss-only --profile P --boss-samples 20 --rehearsal 1` 测「把精锐/装备/层数一起放大」后的击杀能力（`ratio150` = 150 秒窗口内打掉池子的比例；≥1 即击杀）：
+
+| profile | 样本 | ratio150 | ratio150 最低 | 击杀率 |
+|---|---|---|---|---|
+| 1.0（≈默认 bot） | 20 | 0.74（历史 43 样本） | — | 低 |
+| **2.0** | **20** | **0.953** | 0.525 | **85%** |
+| **3.0** | **20** | **0.968** | 0.654 | **90%** |
+
+三点结论：
+
+1. **之前「profile 2.0 → 100%」是 n=3 的小样本假象**（现在 20 样本只有 85%）。这与 `POSTMORTEM` 的教训一致。
+2. **全面拉满（3× 层数/精锐/装备）也只有 90% 击杀率**，且 `ratio150` 最低值只有 0.65 —— 大约 1/10 的种子仍然打不死。
+3. 因此 §5 里「精锐 2.36× × 装备 1.14× × 层数 1.89× ≈ 5.08×」的**独立乘区假设偏乐观**：真实世界里
+   - 层数会撞 `bondLayerCap = 999`
+   - 单次伤害撞 `bossHitLimit = 300000`
+   - 战斗时序被 `combatTimeScale = 2` 压缩
+   三者叠加让「堆到 500 层」的边际收益低于线性外推。
+
+**对「80% 击杀率」的最终回答**：
+- 把层数/精锐/装备**全面拉满**，大约能到 **85–90%**，但那是「理想盘面 + 引擎级放大」，不是 14 回合内人类能稳定复现的状态；
+- 需求最高的「萨米的意志」（42k DPS）在这个乘区结构下仍然不可达；
+- 因此现实目标应设为 **「对 6 本 BOSS 中的 5 本做到 60–80% 击杀」，而不是全局 80%+**。
+
+## 8. 复现这两组数据
+
+```powershell
+node tools/balance.mjs --mode solo --difficulty ABYSS --boss-only --profile 2 --boss-samples 20 --rehearsal 1 --quiet --json |
+  Out-File -Encoding utf8 ..sp-advisorsamplesalance-p2-s20.json
+node tools/balance.mjs --mode solo --difficulty ABYSS --boss-only --profile 3 --boss-samples 20 --rehearsal 1 --quiet --json |
+  Out-File -Encoding utf8 ..sp-advisorsamplesalance-p3-s20.json
+```

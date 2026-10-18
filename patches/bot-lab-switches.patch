@@ -1,0 +1,182 @@
+﻿diff --git a/server/match/bot.js b/server/match/bot.js
+index 0fcabe7..b7ab5c7 100644
+--- a/server/match/bot.js
++++ b/server/match/bot.js
+@@ -103,26 +103,30 @@ export function runSteps(gen) {
+ }
+ 
+ /** Lineup value of each deployed member of the focus bond (up to its top threshold). */
+-const FOCUS_MEMBER = 4;
++const FOCUS_MEMBER = Number(process.env.SP_LAB_FOCUS_MEMBER ?? 4); /* SP_LAB_KNOBS */
+ /** Value per unit of armour fit (the share of a dealer's damage the round's DEF / RES lets through, armorFit). */
+-const ARMOR_WEIGHT = 10;
++const ARMOR_WEIGHT = Number(process.env.SP_LAB_ARMOR_WEIGHT ?? 10); /* SP_LAB_KNOBS */
+ /** Least buy score of a purchase once the board is full (below it the bot refreshes instead). */
+-const BUY_FULL_MIN = 8;
++const BUY_FULL_MIN = Number(process.env.SP_LAB_BUY_FULL_MIN ?? 8); /* SP_LAB_KNOBS */
+ /**
+  * Value of completing an elite (+25 % stats, skill level 7, and the merge's free pick of three tier min(level + 1, 6)
+  * chess — worth having for any pair, a cheap one included) and of making a keeper's pair; refreshValue weighs them by
+  * the shop odds.
+  */
+-const MERGE_HIT = 36;
+-const PAIR_HIT = 8;
++const MERGE_HIT = Number(process.env.SP_LAB_MERGE_HIT ?? 36); /* SP_LAB_KNOBS */
++const PAIR_HIT = Number(process.env.SP_LAB_PAIR_HIT ?? 8); /* SP_LAB_KNOBS */
+ /** Pairs the bench holds at once while refreshes hunt their third copies (each takes a hand slot or two). */
+-const MAX_PAIRS = 4;
++const MAX_PAIRS = Number(process.env.SP_LAB_MAX_PAIRS ?? 4); /* SP_LAB_KNOBS */
+ /** Refreshes per prep at most (funds bound them first). */
+-const MAX_REFRESHES = 16;
++const MAX_REFRESHES = Number(process.env.SP_LAB_MAX_REFRESHES ?? 16); /* SP_LAB_KNOBS */
+ /** Spare bench units kept beyond the lineup at the prep start (pairs first). */
+-const BENCH_BUDGET = 6;
++const BENCH_BUDGET = Number(process.env.SP_LAB_BENCH_BUDGET ?? 6); /* SP_LAB_KNOBS */
++/** 「获得时给层」的权重（0 = 现状）；>0 时按每张牌的层数产出加价，测「层数生成速率」假设 */
++const LAYER_BONUS = Number(process.env.SP_LAB_LAYER_BONUS ?? 0); /* SP_LAB_KNOBS */
++/** 1 = 装备只喂「攻击力最高的那一个」（终端集中）；0 = 现状（按 pieceValue 撒） */
++const EQUIP_CARRY = Number(process.env.SP_LAB_EQUIP_CARRY ?? 0); /* SP_LAB_KNOBS */
+ /** Shop level the bot aims for at the start of round r (index = round). */
+-const LEVEL_TARGET = [1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6];
++const LEVEL_TARGET = JSON.parse(process.env.SP_LAB_LEVEL_TARGET || '[1, 1, 1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6]'); /* SP_LAB_KNOBS */
+ /**
+  * AI 托管 of a human with 自选 picks (0.2.0; bots field none): the buy score of one of the player's own slotted pieces —
+  * the operator the player chose to field (follow-up #13: under AI 托管 they were rarely bought) — and the 调度中心 is
+@@ -151,6 +155,14 @@ export function botPickBand(m, ps) {
+   const gd = ps?.gd || m.gd;
+   const ids = gd.bandIds();
+   if (!ids.length) return gd.defaultBandId;
++  // 实验室开关：强制或偏置策略选择（默认不设，行为与原来完全一致）
++  const forced = process.env.SP_LAB_BAND || '';
++  if (forced) {
++    const want = forced.split(',').map((s) => s.trim()).filter(Boolean);
++    const hit = want.find((id) => ids.includes(id));
++    if (hit) return hit;
++  }
++  const boost = (process.env.SP_LAB_BAND_BOOST || '').split(',').map((s) => s.trim()).filter(Boolean);
+   const lateFunds = (id) => /暂存/.test(String(gd.band(id)?.desc || ''));
+   const reserved = new Set(ps && typeof m.alivePlayers === 'function'
+     ? m.alivePlayers().filter((p) => p !== ps).flatMap((p) => gd.bandBondIds(p.bandId))
+@@ -158,7 +170,8 @@ export function botPickBand(m, ps) {
+   const inactive = (id) => gd.bandBondIds(id).some((b) => gd.modeInactiveBonds.has(b));
+   const pairs = ids.map((id) => {
+     if (inactive(id)) return [id, 0];
+-    const w = Math.max(1, (gd.startLp(id) - 18) ** 2) * (m.isSolo && lateFunds(id) ? 0.02 : 1);
++    let w = Math.max(1, (gd.startLp(id) - 18) ** 2) * (m.isSolo && lateFunds(id) ? 0.02 : 1);
++    if (boost.includes(id)) w *= 8;
+     return [id, gd.bandBondIds(id).some((b) => reserved.has(b)) ? w * SOFT_BAND_RESERVE : w];
+   });
+   let total = 0;
+@@ -402,6 +415,16 @@ export function bondPlan(m, ps, owned = ownedBonds(m, ps)) {
+     const s = k * 10 + (next != null && next - k <= 1 ? 5 : 0) + (b.isCore ? 0 : 2);
+     if (s > bestK) { bestK = s; second = id; }
+   }
++  // 实验室开关：强制 focus（用来测「专精一个流派」的假设，例如二本叙拉古）
++  // SP_LAB_FOCUS_BY_SEAT=siracusaShip,yanShip,kjeragShip,victoriaShip —— 每个座位专精不同流派，避免抢同一个共享牌池
++  // 由 advisor-dev/model/bosstable.json 的 payoff 推导：每本 BOSS 上通道系数 k 最高的核心盟约。
++// SP_LAB_FOCUS_BOSS=1 时用它当 focus —— 测「把层数导向对本 BOSS 有利的通道」这个假设。
++const BOSS_BEST_K = {'boss_1':'sargonShip', 'boss_2':'sargonShip', 'boss_3':'sargonShip', 'boss_4':'sargonShip', 'boss_5':'sargonShip', 'boss_6':'sargonShip', 'boss_7':'sargonShip'}; /* SP_LAB_KNOBS */
++const bySeat = (process.env.SP_LAB_FOCUS_BY_SEAT || '').split(',').map((s) => s.trim()).filter(Boolean);
++  const seatFocus = bySeat.length ? (bySeat[ps.seat] || '') : '';
++  const bossFocus = process.env.SP_LAB_FOCUS_BOSS === '1' ? (BOSS_BEST_K[(m && m.public && m.public.bossId) || ''] || '') : '';
++const forcedFocus = seatFocus || bossFocus || process.env.SP_LAB_FOCUS || '';
++  if (forcedFocus && m.gd.bond(forcedFocus)?.isCore && !m.gd.modeInactiveBonds.has(forcedFocus)) focus = forcedFocus;
+   if (focus) ps._botFocusId = focus;
+   ps._botFocus = { key, focus, second };
+   return ps._botFocus;
+@@ -417,6 +440,21 @@ const mergeNeed = (m, base) => m.gd.mergeCount(base) || 3;
+  */
+ function keeperBases(m, ps, plan) {
+   const out = new Set();
++  if (process.env.SP_LAB_KEEP_ALL === '1') {
++    // 实验室开关：所有已持有的 base 都当 keeper（对子不卖），用来验证「精锐优先」这条假设
++    for (const p of ps.allChess()) out.add(m.gd.baseIdOf(p.id));
++    for (const p of ps.board.values()) if (p.kind === 'chess') out.add(m.gd.baseIdOf(p.id));
++    return out;
++  }
++  if (process.env.SP_LAB_COMMIT === '1' && plan && plan.focus && m.round >= Number(process.env.SP_LAB_COMMIT_FROM ?? 0)) {
++    // 锁盟约模式：只有本家 + 已在场的算 keeper，其它对子一律不留
++    for (const p of ps.board.values()) if (p.kind === 'chess') out.add(m.gd.baseIdOf(p.id));
++    for (const p of ps.allChess()) {
++      const c = chessRec(m, p.id, ps);
++      if (c && Array.isArray(c.bonds) && c.bonds.includes(plan.focus)) out.add(m.gd.baseIdOf(p.id));
++    }
++    return out;
++  }
+   for (const p of ps.board.values()) if (p.kind === 'chess') out.add(m.gd.baseIdOf(p.id));
+   for (const p of ps.allChess()) {
+     const c = chessRec(m, p.id, ps);
+@@ -449,6 +487,16 @@ function roles(m, ps) {
+ function bondValue(m, c, owned, focus, second = null) {
+   let v = 0;
+   const committed = focus && (owned.counts.get(focus) || 0) >= 3;
++  // 实验室开关：锁死一条盟约（SP_LAB_COMMIT=1）——只为本家加分，其它盟约的吸引力大幅削弱。
++  // 这是 ABYSS 诊断出的主要病因：bot 会把 8 个位置摊在 3-4 条盟约上，导致每个干员都买不齐、都合不成精锐。
++  const commitFrom = Number(process.env.SP_LAB_COMMIT_FROM ?? 0);
++  const commit = process.env.SP_LAB_COMMIT === '1' && m.round >= commitFrom;
++  const commitWeight = Number(process.env.SP_LAB_COMMIT_W ?? 6);
++  if (commit && focus) {
++    const has = ((c && c.bonds) || []).includes(focus);
++    if (!has) return -Number(process.env.SP_LAB_COMMIT_PEN ?? 6);
++    v += commitWeight * 10;
++  }
+   for (const b of (c && c.bonds) || []) {
+     const bond = m.gd.bond(b);
+     if (!bond || m.gd.modeInactiveBonds.has(b)) continue;
+@@ -510,10 +558,31 @@ function unitBase(m, piece, ctx) {
+ }
+ 
+ /** Value of an owned piece for bench / sell decisions (its bonds counted against the other owned chess). */
++/**
++ * 一张牌的「获得时」层数产出（引擎真值：garrison.eventType === 'SERVER_GAIN'），单位=层。
++ * advisor 侧同一套数据可由 advisor-dev/gen-tables.mjs 生成；这里直接读 m.gd.garrison，避免两套表漂移。
++ */
++function layerPayload(m, c) {
++  const gd = (c && c.__gd) || m.gd;
++  let n = 0;
++  for (const gid of (c && Array.isArray(c.garrisonIds) ? c.garrisonIds : [])) {
++    const g = gd.garrison ? gd.garrison(gid) : null;
++    if (!g || g.eventType !== 'SERVER_GAIN') continue;
++    const bb = g.bb || {};
++    const str = g.bbStr || {};
++    if (typeof bb.count === 'number') n += bb.count;                       // 自身盟约 +N / 指定盟约 +N / 金 +N
++    else if (typeof bb.multi === 'number' && str.add_method === 'shoplv') n += bb.multi * 3;  // 调度等级×N ⇒ 按 L3 折算
++    if (Array.isArray(str.bonds)) n += 0;                                   // multi-bond 用 count 已计入
++  }
++  return n;
++}
++
+ function pieceValue(m, ps, piece, ctx) {
+   const c = chessRec(m, piece.id, ps);
+   if (!c) return 0;
+-  return unitBase(m, piece, ctx) + bondValue(m, c, ownedBonds(m, ps, piece.uid), ctx.focus, ctx.second) * 0.8;
++  const base = unitBase(m, piece, ctx) + bondValue(m, c, ownedBonds(m, ps, piece.uid), ctx.focus, ctx.second) * 0.8;
++  if (!LAYER_BONUS) return base;
++  return base + layerPayload(m, c) * LAYER_BONUS;
+ }
+ 
+ /**
+@@ -608,7 +677,8 @@ function buyScore(m, ps, id, ctx) {
+       // merge progress: an elite plus the merge's free next-tier reward (MERGE_HIT) — for any pair; a new pair of a
+       // non-keeper only while the bench has room for it (cheap tiers: the third copy is hunted with refreshes)
+       const keep = ctx.keep.has(base);
+-      if (copies + 1 >= mergeNeed(m, base)) s += keep ? 40 : 30;
++      const mergeBonus = Number(process.env.SP_LAB_MERGE_BONUS ?? 0);
++      if (copies + 1 >= mergeNeed(m, base)) s += (keep ? 40 : 30) + mergeBonus;
+       else s += keep ? 14 : ctx.pairs < MAX_PAIRS && c.tier <= 3 ? 6 : 1;
+     }
+   }
+@@ -1918,6 +1988,13 @@ export function itemTarget(m, ps, item, ctx = context(m, ps)) {
+   // damage dealers carry equipment first (healers / non-attackers last); survival items on blockers first
+   const dealer = (p) => { const c = chessRec(m, p.id, ps); return c && !isHealer(c) && c.attackKind !== 'none'; };
+   const blocker = (p) => isBlocker(chessRec(m, p.id, ps));
++  // 终端集中（SP_LAB_EQUIP_CARRY=1）：战斗类装备只喂 ATK 最高的那个输出，先把一个 C 喂满
++  if (EQUIP_CARRY && rec.category !== 'SURVIVAL') {
++    const atk = (p) => { const c = chessRec(m, p.id, ps); return (c && c.stats && Number.isFinite(c.stats.atk)) ? c.stats.atk : 0; };
++    const carryOrder = list.filter((p) => dealer(p)).sort((a, b) => atk(b) - atk(a) || a.uid - b.uid);
++    const first = carryOrder.find(free);
++    if (first) return first;
++  }
+   const order = rec.category === 'SURVIVAL'
+     ? [...list.filter(blocker), ...list.filter((p) => !blocker(p) && dealer(p)), ...list.filter((p) => !blocker(p) && !dealer(p))]
+     : [...list.filter(dealer), ...list.filter((p) => !dealer(p))];
