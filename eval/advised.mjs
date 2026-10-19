@@ -14,7 +14,7 @@ const args = process.argv.slice(2), opt = {};
 for (let i = 0; i < args.length; i++) { if (!args[i].startsWith('--')) throw Error('Expected --flag'); opt[args[i].slice(2)] = args[++i]; }
 const seeds = (opt.seeds || '1001-1010').split(',').flatMap(r => { const [a, b] = r.split('-').map(Number); return b ? Array.from({ length: b - a + 1 }, (_, i) => a + i) : [a]; });
 const spec = JSON.parse(readFileSync(opt.guide || 'guides/g06_final.json', 'utf8'));
-const cfg = { K: +(opt.K || 8), N: +(opt.N || 6), N2: +(opt.N2 || 6), steps: +(opt.steps || 2), z: +(opt.z ?? 1), fromRound: +(opt.fromRound || 1) };
+const cfg = { K: +(opt.K || 8), N: +(opt.N ?? 6), N2: +(opt.N2 || 6), steps: +(opt.steps || 2), z: +(opt.z ?? 1), fromRound: +(opt.fromRound || 1) };
 const mode = opt.mode || 'both';
 const modelDir = opt.model || null; // v2: value-model pre-filter, rollouts only for its top K
 
@@ -23,9 +23,10 @@ function baseline(seed) {
   m.start(); const s = runToEnd(m); const o = outcomeOf(m, s, battles); m.dispose(); return o;
 }
 // Deviate from the guide only when the paired advantage clears z standard errors (guards against max-of-noise).
-export function choose(res, z) {
+export function choose(res, z, margin = .01) {
   const best = res.recommendation, guide = res.candidates.find(c => c.action.type === 'guide');
   if (!guide || best === guide || best.guideFirst) return { action: { type: 'guide' }, deviated: false };
+  if (res.rollouts === 0) return best.modelUtil > guide.modelUtil + margin ? { action: best.action, deviated: true } : { action: { type: 'guide' }, deviated: false };
   const adv = best.vsGuide;
   if (!adv || adv.se == null || adv.mean <= Math.max(.005, z * adv.se)) return { action: { type: 'guide' }, deviated: false };
   return { action: best.action, deviated: true };
@@ -46,10 +47,10 @@ async function advised(seed, pool) {
     let done = false;
     if (m.round >= cfg.fromRound) for (let step = 0; step < cfg.steps && !done; step++) {
       const res = await advise(capture(m), { playerId: 'p0', spec, pool, K: cfg.K, N: cfg.N, N2: cfg.N2, seed: seed * 100 + m.round * 7 + step,
-        scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null });
+        scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null, allowStale: opt.allowStale === '1' });
       const pick = choose(res, cfg.z);
       decisions.push({ round: m.round, step, deviated: pick.deviated, label: pick.deviated ? pick.action.label : '按guide', best: res.recommendation.label,
-        bestVsGuide: res.recommendation.vsGuide, ms: Math.round(res.ms), rollouts: res.rollouts, top: res.candidates.slice(0, 4).map(c => [c.label, +c.utility.toFixed(3), c.winRate]) });
+        bestVsGuide: res.recommendation.vsGuide, bestModelU: res.recommendation.modelUtil, guideModelU: res.candidates.find(c => c.action.type === 'guide')?.modelUtil, ms: Math.round(res.ms), rollouts: res.rollouts, top: res.candidates.slice(0, 4).map(c => [c.label, c.utility != null ? +c.utility.toFixed(3) : null, c.winRate ?? null, c.modelUtil != null ? +c.modelUtil.toFixed(3) : null]) });
       if (!pick.deviated) break;
       const f = finishTurnOrApply(m, ps, pick.action);
       if (f === 'done') done = true;
@@ -83,6 +84,6 @@ const rows = await Promise.all(seeds.map(async seed => {
 if (pool) await pool.close();
 const agg = k => { const xs = rows.map(r => r[k]).filter(Boolean); if (!xs.length) return null; const n = xs.length, m = f => xs.reduce((s, x) => s + f(x), 0) / n;
   return { n, winRate: m(x => x.win ? 1 : 0), hiddenRate: m(x => x.hidden ? 1 : 0), reachR14: m(x => x.lastRound >= 14 ? 1 : 0), meanR14Dmg: m(x => x.r14Dmg), meanLastRound: m(x => x.lastRound), meanUtility: m(x => x.utility) }; };
-const summary = { config: cfg, model: modelDir, guide: spec.id, seeds, baseline: agg('baseline'), advised: agg('advised'), wallSec: (Date.now() - t0) / 1000 };
+const summary = { config: cfg, model: modelDir, modelStatus: modelDir ? (await import('../advisor/meta.mjs')).modelStatus(modelDir).reason : null, allowStale: opt.allowStale === '1', guide: spec.id, seeds, baseline: agg('baseline'), advised: agg('advised'), wallSec: (Date.now() - t0) / 1000 };
 console.log(JSON.stringify(summary, null, 1));
 if (opt.out) { mkdirSync(dirname(opt.out), { recursive: true }); writeFileSync(opt.out, JSON.stringify({ summary, rows }, null, 1)); }

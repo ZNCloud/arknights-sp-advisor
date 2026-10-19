@@ -33,6 +33,7 @@ if (cmd === 'save') {
     scorer: opt.model ? modelScorer({ pool, spec, modelDir: opt.model }) : null });
   await pool.close();
   console.log(`round ${state.match.round} seat ${opt.player || 'p0'}: ${res.candidatesConsidered} legal actions, ${res.candidates.length} evaluated, ${res.rollouts} rollouts, ${(res.ms / 1000).toFixed(1)}s`);
+  if (res.modelStatus) console.log(`模型状态：${res.modelStatus}`);
   for (const c of res.candidates) console.log(`${c === res.recommendation ? '★' : ' '} ${c.label.padEnd(28)} win ${(c.winRate * 100).toFixed(0)}% [${c.winCI95.map(x => (x * 100).toFixed(0)).join('-')}] U=${c.utility.toFixed(3)}±${(c.utilitySE ?? 0).toFixed(3)} R14伤${(c.r14Dmg * 100).toFixed(0)}% 活到R14 ${(c.reachR14 * 100).toFixed(0)}% n=${c.n}${c.vsGuide ? ` vsGuide ${c.vsGuide.mean >= 0 ? '+' : ''}${c.vsGuide.mean.toFixed(3)}±${(c.vsGuide.se ?? 0).toFixed(3)}` : ''}${c.guideFirst ? ' (guide首选)' : ''}`);
   if (res.modelTable) { console.log(`value model, all ${res.modelTable.length} legal actions (top 12):`); for (const r of res.modelTable.slice(0, 12)) console.log(`   ${r.label.padEnd(28)} modelU=${r.modelUtil.toFixed(3)} modelWin=${(r.modelWin * 100).toFixed(1)}%`); }
   if (res.illegal.length) console.log('illegal (engine refused):', JSON.stringify(res.illegal));

@@ -4,12 +4,13 @@ Outputs value-win.json (binary: team victory) and value-util.json (regression: r
 Validation is split by game seed so no game leaks across the split."""
 import json, sys, argparse, numpy as np, lightgbm as lgb
 
-ap = argparse.ArgumentParser(); ap.add_argument('files', nargs='+'); ap.add_argument('--out', default='sp-advisor/models'); ap.add_argument('--names', default=None)
+ap = argparse.ArgumentParser(); ap.add_argument('files', nargs='+'); ap.add_argument('--out', default='sp-advisor/models'); ap.add_argument('--names', default=None); ap.add_argument('--feat', default='x', choices=['x', 't'])
 a = ap.parse_args()
 rows = [json.loads(l) for f in a.files for l in open(f) if l.strip()]
-X = np.array([r['x'] for r in rows], dtype=np.float64)
+rows = [r for r in rows if a.feat in r]
+X = np.array([r[a.feat] for r in rows], dtype=np.float32)
 seeds = np.array([r['seed'] for r in rows]); win = np.array([r['win'] for r in rows]); util = np.array([r['utility'] for r in rows])
-inj = np.array([r['inject'] is not None for r in rows]); rnd = X[:, 0]
+inj = np.array([r['inject'] is not None for r in rows]); rnd = np.array([r['round'] for r in rows])
 # Independent of datagen's policy hash (which picks injection games): seed mod 5.
 val = seeds % 5 == 0
 print(f'rows={len(rows)} games={len(set(seeds))} winRows={win.sum()} winGames={len(set(seeds[win==1]))} injectRows={inj.sum()} val={val.sum()}')
@@ -24,7 +25,7 @@ def auc(y, p):
     ranks = np.arange(1, len(y) + 1); return float((ranks[y == 1].sum() - n1 * (n1 + 1) / 2) / (n1 * n0))
 bw = fit(win.astype(float), 'binary', 'binary_logloss'); bu = fit(util, 'regression', 'l2')
 pw = bw.predict(X[val]); pu = bu.predict(X[val])
-m = {'rows': len(rows), 'games': int(len(set(seeds))), 'valRows': int(val.sum()), 'winTrees': bw.best_iteration, 'utilTrees': bu.best_iteration,
+m = {'featureSet': a.feat, 'nFeatures': int(X.shape[1]), 'rows': len(rows), 'games': int(len(set(seeds))), 'valRows': int(val.sum()), 'winTrees': bw.best_iteration, 'utilTrees': bu.best_iteration,
      'win': {'auc': auc(win[val], pw), 'brier': float(np.mean((pw - win[val]) ** 2)), 'baseRate': float(win[val].mean()),
              'aucNatural': auc(win[val & ~inj], pw[~inj[val]]), 'meanPredNatural': float(pw[~inj[val]].mean()), 'baseNatural': float(win[val & ~inj].mean())},
      'util': {'rmse': float(np.sqrt(np.mean((pu - util[val]) ** 2))), 'r2': float(1 - np.mean((pu - util[val]) ** 2) / np.var(util[val])),

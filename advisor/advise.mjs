@@ -6,13 +6,14 @@ import { wilson } from '../eval/stats.mjs';
 import { installGuide, guidePrep } from '../guides/policy.mjs';
 import { restore, toJSON } from './state.mjs';
 import { listActions, prune, sameAction } from './actions.mjs';
+import { modelStatus, staleBudget } from './meta.mjs';
 
 const mean = a => a.reduce((s, x) => s + x, 0) / Math.max(1, a.length);
 const CHANGING = new Set(['buy', 'reward', 'level', 'refresh', 'sell', 'equip', 'cycle_sell', 'level_before_merge', 'sell_space', 'sell_board_space']);
 // v2 pre-filter: score every legal action with the value model (mean over sample seeds), keep the top `K` by
 // model utility plus the guide reference and the guide's own first action.
 export function modelScorer({ pool, spec, modelDir, samples = 2 }) {
-  return async (state, playerId, all, { K, guideFirst: gf, stateJSON, stateKey }) => {
+  return Object.assign(async (state, playerId, all, { K, guideFirst: gf, stateJSON, stateKey }) => {
     const scored = await Promise.all(all.map(async a => {
       const outs = await Promise.all(Array.from({ length: samples }, (_, i) => pool.run({ kind: 'score', stateJSON, stateKey, playerId, action: a, sampleSeed: 7919 + i, spec, modelDir })));
       const ok = outs.filter(o => !o.illegal);
@@ -22,7 +23,7 @@ export function modelScorer({ pool, spec, modelDir, samples = 2 }) {
     const keep = ranked.slice(0, K);
     for (const a of ranked) if ((a.type === 'guide' || (gf && sameAction(a, gf))) && !keep.includes(a)) keep.push(a);
     return { keep, scored: ranked };
-  };
+  }, { modelDir });
 }
 
 // What the continuation policy would do first in this position (so the guide's own move is always a candidate).
@@ -40,8 +41,15 @@ export function guideFirst(state, playerId, spec, cands) {
 
 const sd = a => { const mu = mean(a); return Math.sqrt(a.reduce((s, x) => s + (x - mu) ** 2, 0) / Math.max(1, a.length - 1)); };
 
-export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8, stage2 = 3, N2 = 8, seed = 1, scorer = null, log = () => {} } = {}) {
+export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8, stage2 = 3, N2 = 8, seed = 1, scorer = null, allowStale = false, log = () => {} } = {}) {
   const t0 = performance.now();
+  // B2: a model trained on another game version is not trusted — fall back to wider pure rollouts and say so.
+  let modelNote = null;
+  if (scorer?.modelDir) {
+    const st = modelStatus(scorer.modelDir);
+    modelNote = st.reason;
+    if (st.stale && !allowStale) { scorer = null; ({ K, N, N2 } = staleBudget({ K, N, N2 })); log(st.reason); }
+  }
   const stateJSON = toJSON(state), stateKey = createHash('sha1').update(stateJSON).digest('hex').slice(0, 16);
   const live = restore(state, { rngMode: 'exact' }), ps = live.players.get(playerId);
   if (!ps?.alive) throw Error(`seat ${playerId} not alive`);
@@ -51,6 +59,12 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
   if (scorer) { const r = await scorer(state, playerId, all, { K, guideFirst: gf, stateJSON, stateKey }); cands = r.keep; modelTable = r.scored.map(a => ({ label: a.label, modelUtil: a.modelUtil, modelWin: a.modelWin })); }
   else cands = prune(all, K, gf ? [gf] : []);
   live.dispose();
+  if (N === 0) {
+    // Model-only mode (fast): no rollouts, rank by the value model; needs a scorer.
+    if (!modelTable) throw Error('N=0 (model-only) needs a value-model scorer');
+    const ranked = cands.map(a => ({ action: a, label: a.label, modelUtil: a.modelUtil, modelWin: a.modelWin, guideFirst: !!(gf && sameAction(a, gf)) })).sort((x, y) => y.modelUtil - x.modelUtil);
+    return { recommendation: ranked[0], candidates: ranked, illegal: [], modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: 0, ms: performance.now() - t0, method: 'value model only', continuation: spec.id };
+  }
   const sampleSeeds = Array.from({ length: N + N2 }, (_, i) => deriveSeed(seed, `${stateKey}:s${i}`));
   const rows = cands.map(a => ({ action: a, outcomes: [], guideFirst: !!(gf && sameAction(a, gf)) }));
   const runFor = (row, seeds) => Promise.all(seeds.map(sampleSeed => pool.run({ stateJSON, stateKey, playerId, action: row.action, sampleSeed, spec })
@@ -76,6 +90,6 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
       vsGuide: adv, guideFirst: r.guideFirst, prior: r.action.prior, modelUtil: r.action.modelUtil, modelWin: r.action.modelWin, rolloutMs: mean(r.outcomes.map(o => o.ms)) };
   }).sort((a, b) => b.utility - a.utility);
   const illegal = rows.filter(r => r.outcomes.some(o => o.illegal)).map(r => ({ label: r.action.label, reply: r.outcomes.find(o => o.illegal).reply }));
-  return { recommendation: result[0], candidates: result, illegal, modelTable, candidatesConsidered: all.length, rollouts: rows.reduce((s, r) => s + r.outcomes.length, 0),
+  return { recommendation: result[0], candidates: result, illegal, modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: rows.reduce((s, r) => s + r.outcomes.length, 0),
     ms: performance.now() - t0, method: scorer ? 'value-model prefilter + rollouts' : 'heuristic top-K + rollouts (CRN)', continuation: spec.id };
 }

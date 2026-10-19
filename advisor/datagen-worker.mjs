@@ -4,6 +4,8 @@ import { installGuide, guidePrep } from '../guides/policy.mjs';
 import { traceBattles, outcomeOf } from './rollout.mjs';
 import { listActions, applyAction } from './actions.mjs';
 import { seatFeatures } from './features.mjs';
+import { tableFeatures } from './features-table.mjs';
+const r3 = v => v.map(x => Math.round(x * 1000) / 1000);
 import { COMBOS, placeCombo } from '../eval/combos.mjs';
 
 function play({ seed, spec, policy }) {
@@ -15,6 +17,12 @@ function play({ seed, spec, policy }) {
     this.later(0, () => {
       if (this.phase !== 'PREP' || this.round !== round || !ps.alive || ps.ready) return;
       if (injectOn(round)) { placeCombo(this, ps, COMBOS[policy.inject]); ps.resolveTemp(); if (!ps.setReady(true).ok) throw Error('inject ready'); return; }
+      // B4: bias towards changed operators — buy a favoured chess from the shop when affordable (70%).
+      if (policy.favor?.length && rng() < .7) for (let i = 0; i < 2; i++) {
+        const slot = ps.shop.slots.findIndex(s => s?.kind === 'chess' && !s.sold && policy.favor.includes(this.gd.baseIdOf(s.id)) && ps.priceOf(s) <= ps.funds);
+        if (slot < 0 || ps.hand.every(Boolean)) break;
+        ps.buy(slot);
+      }
       if (policy.eps && rng() < policy.eps) {
         const k = 1 + rng.int(3);
         for (let i = 0; i < k; i++) {
@@ -29,7 +37,7 @@ function play({ seed, spec, policy }) {
   };
   const end = m.endPrep;
   m.endPrep = function (...a) {
-    for (const ps of this.alivePlayers()) rows.push({ seed, round: this.round, seat: ps.playerId, spec: spec.id, eps: policy.eps || 0, inject: injectOn(this.round) ? policy.inject : null, x: seatFeatures(this, ps) });
+    for (const ps of this.alivePlayers()) rows.push({ seed, round: this.round, seat: ps.playerId, spec: spec.id, eps: policy.eps || 0, favor: policy.favor?.length ? 1 : 0, inject: injectOn(this.round) ? policy.inject : null, x: seatFeatures(this, ps), ...(policy.table ? { t: r3(tableFeatures(this, ps)) } : {}) });
     return end.apply(this, a);
   };
   m.start();

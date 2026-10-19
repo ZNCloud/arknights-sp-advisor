@@ -27,13 +27,14 @@ export function predict(model, x) {
 // One candidate on a restored copy: apply + finish the advised seat's turn, then every other seat's guide prep; the
 // features are read inside endPrep, exactly where datagen records its rows.
 export async function scoreAction(state, { playerId, action, sampleSeed, spec, models }) {
-  const [{ restore }, { installGuide, guidePrep }, { finishTurn }, { seatFeatures }] = await Promise.all([
-    import('./state.mjs'), import('../guides/policy.mjs'), import('./rollout.mjs'), import('./features.mjs')]);
+  const [{ restore }, { installGuide, guidePrep }, { finishTurn }, { seatFeatures }, { tableFeatures }] = await Promise.all([
+    import('./state.mjs'), import('../guides/policy.mjs'), import('./rollout.mjs'), import('./features.mjs'), import('./features-table.mjs')]);
+  const featuresOf = models.featureSet === 't' ? tableFeatures : seatFeatures;
   const m = restore(state, { rngMode: 'resample', sampleSeed });
   installGuide(m, spec);
   let x = null;
   const end = m.endPrep;
-  m.endPrep = function (...a) { if (!x) x = seatFeatures(this, this.players.get(playerId)); return end.apply(this, a); };
+  m.endPrep = function (...a) { if (!x) x = featuresOf(this, this.players.get(playerId)); return end.apply(this, a); };
   const ps = m.players.get(playerId), fin = finishTurn(m, ps, action);
   if (!fin.ok) { m.dispose(); return { illegal: true, reply: fin.reply }; }
   for (const p of m.alivePlayers()) if (p !== ps && !p.ready) guidePrep(m, p);
