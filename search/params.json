@@ -1,0 +1,18 @@
+{
+  "depth": 2,
+  "beam": 3,
+  "samples": 2,
+  "maxNodes": 48,
+  "maxDecisions": 8,
+  "temperature": 8,
+  "routeWeight": 4,
+  "layerWeight": 0.10,
+  "economyWeight": 2,
+  "levelWeight": 8,
+  "riskWeight": 1,
+  "priorWeight": 0.10,
+  "teamMode": "reserved",
+  "guideMacros": true,
+  "searchSeed": 91723,
+  "calibration": null
+}
