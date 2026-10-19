@@ -233,3 +233,4 @@ export function installGuide(m,spec){
  m.scheduleBotPrep=function(ps){const round=this.round;this.later(0,()=>{if(this.phase==='PREP'&&this.round===round&&ps.alive&&!ps.ready)prep(this,ps);});};
  const end=m.endPrep;if(typeof end==='function')m.endPrep=function(...a){const r=end.apply(this,a);for(const ps of this.alivePlayers())snapshot(this,ps,'afterPrep');return r;};
 }
+export { prep as guidePrep };

@@ -5,7 +5,7 @@ const imp = p => import(new URL(`../../engine/${p}`, import.meta.url));
 export const { Match } = await imp('server/match/Match.js');
 export const { VirtualScheduler } = await imp('server/match/scheduler.js');
 export const { getData } = await imp('server/data.js');
-export const { arrange, botPrep, buyScoreOf, itemTarget } = await imp('server/match/bot.js');
+export const { arrange, botPrep, buyScoreOf, itemTarget, planLayout } = await imp('server/match/bot.js');
 export const { createRng, deriveSeed } = await imp('server/sim/rng.js');
 export const { planBoard, applyBoard } = await imp('tools/balance.mjs');
 export const data = getData({ log: { info() {}, warn() {}, error() {} } });
