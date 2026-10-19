@@ -591,18 +591,37 @@ export async function writeState(box) {
 }
 
 /**
- * 对局记录（复盘用）：每进入一个新的「回合 + 阶段」就往 records/ 追一行 JSONL。
- * 记的东西正是客户端事后不保留的：这一回合买了谁、放了哪（row/col/dir）、冻了哪格、装备给了谁、当时顾问说了什么。
+ * 对局记录（复盘用）：往 records/<日期>.jsonl 追行。
+ *
+ * 什么时候写：① 进了新的「回合 + 阶段」；② 同一阶段里经济状态变了（买了 / 卖了 / 刷了 / 冻了 / 挪了位 / 升本）。
+ * ②是逐动作粒度——只按阶段去重会把一回合里的四次购买压成一行，复盘时分不出先后，也算不出每买一张之后顾问改口成什么。
+ * 写的是客户端事后不保留的东西：买了谁、放在哪（row/col/dir）、冻了哪格、装备给了谁、当时顾问说了什么。
  * 客户端只把「最终结果 + 终局上阵」写进 localStorage 的 sp.match-history.v1，过程不会留，所以由我们来记。
  */
 const RECORD_DIR = path.join(path.dirname(STATE), 'records');
 
+/**
+ * 这一帧「经济状态」的指纹：钱、等级、上阵（含坐标）、手牌、商店（含槽位号与冻结）。
+ * 只要它变了，就是玩家动了一下（买 / 卖 / 刷 / 冻 / 摆位 / 升本），要落一行。
+ * 只按 `阶段|回合` 去重的时候，一回合里的四次购买会被压成一行，复盘时看不出先后。
+ */
+export function recordKeyOf(priv) {
+  const slots = ((priv.shop && priv.shop.slots) || [])
+    .map((s, i) => (s && !s.sold ? `${i + 1}:${s.id}:${s.price}${s.frozen ? 'F' : ''}` : '-'))
+    .join(',');
+  const board = (priv.board || []).map((p) => `${p.id}@${p.row},${p.col}`).join(',');
+  const hand = (priv.hand || []).map((p) => p.id).join(',');
+  const bonds = (priv.bonds || []).map((b) => `${b.bondId}=${b.count}/${b.layers ?? 0}`).join(',');
+  return `${priv.funds}|${(priv.shop && priv.shop.level) || 1}|${priv.lp}|${slots}|${board}|${hand}|${bonds}`;
+}
+
 async function recordTurn(snap, box) {
   if (!snap || !snap.ok || !snap.priv) return;
-  const key = `${snap.phase || '?'}|${snap.round || 0}`;
+  const priv = snap.priv;
+  // 阶段/回合变了必记；同一阶段里经济状态只要变了也记（逐动作），完全没动才跳过
+  const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv)}`;
   if (recordTurn.last === key) return;
   recordTurn.last = key;
-  const priv = snap.priv;
   const row = {
     at: new Date().toISOString(),
     phase: snap.phase, round: snap.round, mode: snap.brief && snap.brief.modeId,
@@ -613,7 +632,8 @@ async function recordTurn(snap, box) {
       at: [p.row, p.col], dir: p.dir,
     })),
     hand: (priv.hand || []).map((p) => p.id),
-    shop: ((priv.shop && priv.shop.slots) || []).map((s) => (s && !s.sold ? { id: s.id, price: s.price, frozen: !!s.frozen } : null)).filter(Boolean),
+    // slot 必须留：顾问说的是「槽位 3」，压掉已售格会让后面的位置整体前移，复盘时对不上
+    shop: ((priv.shop && priv.shop.slots) || []).map((s, i) => (s && !s.sold ? { slot: i + 1, id: s.id, price: s.price, frozen: !!s.frozen } : null)).filter(Boolean),
     advice: box && box.advice ? box.advice : null,
     pick: box && box.pick ? `${box.pick.name}(${box.pick.score})` : null,
     terminal: box && box.terminal ? box.terminal.name : null,
