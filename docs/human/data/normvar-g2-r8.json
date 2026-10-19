@@ -1,0 +1,4 @@
+{"game":"game2","round":8,"label":"owner","mods":[],"B":1,"A":6.697,"pA0":0.097}
+{"game":"game2","round":8,"label":"空位补灰毫","mods":["add:灰毫:12,6:DOWN"],"B":1,"A":5.903,"pA0":0.097}
+{"game":"game2","round":8,"label":"惊蛰精锐替野鬃","mods":["swap:惊蛰:野鬃"],"B":0,"A":5.91,"pA0":0.097}
+{"game":"game2","round":8,"label":"两个都做","mods":["add:灰毫:12,6:DOWN","swap:惊蛰:野鬃"],"B":0,"A":4.813,"pA0":0.097}

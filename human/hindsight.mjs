@@ -132,7 +132,7 @@ export function runHind({ game: name, replayPath, stateJSON, round, cand, mode, 
   const LP0 = 1000, lpRec = ps.lp;
   ps.lp = LP0;
   const R = game.rounds.find(x => x.round === round);
-  const ctx = { plan: planOf(m.gd, game.rounds, round, budgets) };
+  const ctx = { plan: planOf(m.gd, game.rounds, round, budgets), game: name, round };
   let result = null;
   const trace = [];
   // later preps: A → the owner-shadow (fresh shops); B → the owner's own recorded turn of that round replayed on top of

@@ -1581,6 +1581,1420 @@
    },
    "bounties": [],
    "effects": [],
+   "bossAlign": {
+    "tried": [
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": null,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": null,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": null,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": null,
+      "lp": 11,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": null,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": null,
+      "lp": 14,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 2,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 104730,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 2,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 209459,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 11,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 314188,
+      "lp": 18,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 18,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 22,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 3,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 418917,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 523646,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 628375,
+      "lp": 17,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 733104,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 837833,
+      "lp": 14,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 4,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 942562,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1047291,
+      "lp": 19,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1152020,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 9,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1256749,
+      "lp": 10,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1361478,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1466207,
+      "lp": 15,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 1,
+      "reachedNext": false,
+      "result": {
+       "victory": true,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1570936,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 4,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1675665,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1780394,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1885123,
+      "lp": 9,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 5,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 1989852,
+      "lp": 14,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 4,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2094581,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 3,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2199310,
+      "lp": 13,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 22,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2304039,
+      "lp": 12,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 1,
+      "mirrored": 0,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": false,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 2,
+      "mirrored": 1,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 3,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 23,
+      "reachedNext": true,
+      "result": null
+     },
+     {
+      "seats": 3,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": 2408768,
+      "lp": 21,
+      "reachedNext": true,
+      "result": null
+     }
+    ],
+    "chosen": {
+     "seats": 3,
+     "mirrored": 2,
+     "hidden": null,
+     "seed": 2408768,
+     "lp": 21,
+     "reachedNext": true,
+     "result": null
+    }
+   },
    "ownerBoss": [
     {
      "bossId": "boss_5",
@@ -1594,9 +3008,9 @@
     }
    ],
    "settle": {
-    "engineLp": 23,
+    "engineLp": 21,
     "recordLp": 21,
-    "match": false,
+    "match": true,
     "leaks": 0,
     "layerGains": {},
     "recordLayersNext": null,
@@ -1611,14 +3025,14 @@
     143
    ],
    "engineBefore": {
-    "lp": 23,
+    "lp": 21,
     "funds": 12,
     "level": 6
    },
    "lpCarried": {
-    "engine": 23,
+    "engine": 21,
     "record": 21,
-    "match": false
+    "match": true
    },
    "forceStart": {
     "notes": [],
@@ -1682,6 +3096,34 @@
    },
    "bounties": [],
    "effects": [],
+   "bossAlign": {
+    "tried": [
+     {
+      "seats": 3,
+      "mirrored": 3,
+      "hidden": "boss_8",
+      "seed": null,
+      "lp": 21,
+      "reachedNext": false,
+      "result": {
+       "victory": true,
+       "hiddenCleared": true
+      }
+     }
+    ],
+    "chosen": {
+     "seats": 3,
+     "mirrored": 3,
+     "hidden": "boss_8",
+     "seed": null,
+     "lp": 21,
+     "reachedNext": false,
+     "result": {
+      "victory": true,
+      "hiddenCleared": true
+     }
+    }
+   },
    "ownerBoss": [
     {
      "bossId": "boss_8",
@@ -1715,14 +3157,14 @@
     }
    ],
    "settle": {
-    "engineLp": 23,
+    "engineLp": 21,
     "recordLp": 21,
-    "match": false,
+    "match": true,
     "leaks": 0,
     "layerGains": {},
     "recordLayersNext": null,
     "bossDamage": {
-     "max": 14400000,
+     "max": 28800000,
      "hp": 0,
      "byPlayer": {}
     }
@@ -1734,7 +3176,7 @@
   "reason": "victory",
   "hiddenReached": true,
   "hiddenCleared": true,
-  "teamLp": 46
+  "teamLp": 84
  },
- "ms": 148606
+ "ms": 366635
 }

@@ -1,0 +1,4 @@
+{"game":"game2","round":14,"label":"owner","mods":[],"share":0.856,"shareOt":1.046,"pClear":0.188}
+{"game":"game2","round":14,"label":"玛恩纳朝左","mods":["dir:玛恩纳:LEFT"],"share":0.978,"shareOt":1.166,"pClear":0.313}
+{"game":"game2","round":14,"label":"瑕光挪后","mods":["move:瑕光:12,8"],"share":0.879,"shareOt":1.04,"pClear":0.125}
+{"game":"game2","round":14,"label":"两项都做","mods":["dir:玛恩纳:LEFT","move:瑕光:12,8"],"share":0.977,"shareOt":1.166,"pClear":0.375}

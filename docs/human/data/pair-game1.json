@@ -1,0 +1,101 @@
+{
+ "game": "game1",
+ "seeds": 8,
+ "rows": [
+  {
+   "round": 15,
+   "items": false,
+   "owner": {
+    "share": 1.961,
+    "shareOt": 2.371,
+    "pClear": 1
+   },
+   "best": {
+    "share": 2.351,
+    "shareOt": 2.833,
+    "pClear": 1
+   },
+   "ai": {
+    "share": 1.446,
+    "shareOt": 1.727,
+    "pClear": 0.462
+   },
+   "steps": [
+    "对调 圣约送葬人 与 信仰搅拌机",
+    "信仰搅拌机 朝 LEFT"
+   ]
+  },
+  {
+   "round": 14,
+   "items": false,
+   "owner": {
+    "share": 3.646,
+    "shareOt": 4.539,
+    "pClear": 1
+   },
+   "best": {
+    "share": 4.284,
+    "shareOt": 5.497,
+    "pClear": 1
+   },
+   "ai": {
+    "share": 2.666,
+    "shareOt": 3.425,
+    "pClear": 1
+   },
+   "steps": [
+    "新约能天使 挪到 12,8",
+    "对调 圣约送葬人 与 新约能天使",
+    "魔王 挪到 12,7"
+   ]
+  },
+  {
+   "round": 15,
+   "items": true,
+   "owner": {
+    "share": 1.961,
+    "shareOt": 2.371,
+    "pClear": 1
+   },
+   "best": {
+    "share": 2.288,
+    "shareOt": 2.776,
+    "pClear": 0.846
+   },
+   "ai": {
+    "share": 1.446,
+    "shareOt": 1.727,
+    "pClear": 0.462
+   },
+   "steps": [
+    "新约能天使 挪到 9,5",
+    "拉特兰桥夹 从 蕾缪安 改给 信仰搅拌机"
+   ]
+  },
+  {
+   "round": 14,
+   "items": true,
+   "owner": {
+    "share": 3.646,
+    "shareOt": 4.539,
+    "pClear": 1
+   },
+   "best": {
+    "share": 3.862,
+    "shareOt": 4.962,
+    "pClear": 1
+   },
+   "ai": {
+    "share": 2.666,
+    "shareOt": 3.425,
+    "pClear": 1
+   },
+   "steps": [
+    "圣约送葬人 挪到 12,8",
+    "拉特兰桥夹 从 蕾缪安 改给 圣约送葬人",
+    "对调 蕾缪安 与 迷迭香",
+    "奥术法阵 从 塑心 改给 新约能天使"
+   ]
+  }
+ ]
+}

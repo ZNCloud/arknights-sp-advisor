@@ -1,0 +1,4 @@
+{"game":"game1","round":8,"label":"owner","mods":[],"B":5,"A":6.355,"pA0":0}
+{"game":"game1","round":8,"label":"送葬人替能天使","mods":["swap:送葬人:能天使"],"B":0,"A":2.161,"pA0":0.6}
+{"game":"game1","round":8,"label":"雷蛇精锐替魔王","mods":["swap:雷蛇:魔王"],"B":5,"A":7.484,"pA0":0}
+{"game":"game1","round":8,"label":"两个都换","mods":["swap:送葬人:能天使","swap:雷蛇:魔王"],"B":1,"A":3.258,"pA0":0.097}

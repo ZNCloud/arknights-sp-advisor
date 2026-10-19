@@ -1,0 +1,29 @@
+// Pair-field check of one equipment re-targeting on one recorded boss board: item `itemId` moved from the recorded
+// carrier `fromId` to the operator of base `toBase`. node sp-advisor/human/itempair.mjs <game> <posDir> <round> <itemId> <fromId> <toBase> [seeds]
+import { readFileSync } from 'node:fs';
+import { restore, fromJSON } from '../advisor/state.mjs';
+import { ownerPairFight } from './battle.mjs';
+const [game, posDir, roundArg, itemId, fromId, toBase, seedsArg] = process.argv.slice(2);
+const round = +roundArg, seeds = +(seedsArg || 12);
+const st = fromJSON(readFileSync(`${posDir}/${game}-r${String(round).padStart(2, '0')}-end.json`, 'utf8'));
+const HIDDEN = { boss_8: 50, boss_9: 40, boss_10: 40 };
+const probe = restore(st, { rngMode: 'exact' }); const hidden = round === probe.gd.hiddenRound; const bosses = hidden ? Object.entries(HIDDEN) : [[probe.bossId, 1]]; probe.dispose();
+const score = (move) => {
+  let w = 0, cd = 0, ot = 0;
+  for (const [id, wt] of bosses) for (let k = 0; k < seeds; k++) {
+    const m = restore(st, { rngMode: 'exact' });
+    const ps = m.players.get('p0'), mate = m.order.find(p => p !== ps);
+    if (move) {
+      const chess = [...ps.board.values()].filter(p => p.kind === 'chess');
+      const from = chess.find(p => p.id === fromId), it = from?.items?.find(i => i.id === itemId);
+      const to = chess.filter(p => ps.gd.baseIdOf(p.id) === toBase && p !== from)[0];
+      if (!from || !it || !to || (to.items || []).length >= 2) throw Error('move not applicable');
+      from.items = from.items.filter(x => x !== it); to.items = [...(to.items || []), it]; ps.recompute();
+    }
+    mate.board = new Map([...ps.board].map(([key, p]) => [key, structuredClone(p)])); mate.layers = { ...ps.layers }; mate.recompute();
+    const f = ownerPairFight(m, ps, mate, { bossId: id, hidden, round, seed: 900 + k });
+    w += wt; cd += wt * f.shareAtCountdown; ot += wt * f.shareAtOvertime; m.dispose();
+  }
+  return { share: +(cd / w).toFixed(3), shareOt: +(ot / w).toFixed(3) };
+};
+console.log(JSON.stringify({ game, round, itemId, fromId, toBase, owner: score(false), moved: score(true) }));

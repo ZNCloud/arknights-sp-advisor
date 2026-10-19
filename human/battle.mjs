@@ -25,7 +25,7 @@ export function ownerBossFight(m, ps, { bossId, hidden = false, seed = 1, maxGs 
     rect: { ...GEO.BOSS_RECT }, timeLimit: Infinity, players: [ev.input || input], spawns: m._sanitizeSpawns(spawns), routes: wave.routes, sharedBoss: pool,
     flags: { layerGainsEnabled: false, ...gd.dp, enemyScale: gd.enemyScale(round) }, fieldId: 'owner-boss', enemyOverrides: wave.overrides, waveId: wave.templateId, bossId });
   let tShare = null, atLevel = null, lpLost = 0;
-  try { b.on('enemyLeak', (ctx) => { lpLost += Number(ctx?.enemy?.lpr ?? ctx?.enemy?.def?.lpr ?? 1) || 1; }, { priority: -1000, owner: 'match' }); } catch { /* optional */ }
+  b.on('enemyLeak', (ctx) => { lpLost += Number(ctx?.enemy?.lpr ?? ctx?.enemy?.def?.lpr ?? 1) || 1; }, { priority: -1000, owner: 'match' });
   const dealt = () => pool.byPlayer.get(ps.playerId) || 0;
   while (!b.finished) {
     b.step();
@@ -36,4 +36,33 @@ export function ownerBossFight(m, ps, { bossId, hidden = false, seed = 1, maxGs 
   const total = dealt();
   return { bossId, template: wave.templateId, share, timeToShareGs: tShare != null ? +tShare.toFixed(1) : null,
     shareAtCountdown: +((atLevel ?? total) / share).toFixed(3), shareAtOvertime: +(total / share).toFixed(3), leakLp: lpLost, errors: b.errors?.length || 0 };
+}
+
+// The same measurement on the PAIR boss field (the real R14 / R15 layout: two players, the second mirrored on the right
+// half): the partner is a stand-in seat fielding `partnerRow` (the owner's own battle board when null — the record holds
+// nothing about the real partner); the pool is two shares; only the owner's own damage is reported.
+export function ownerPairFight(m, ps, partner, { bossId, hidden = false, seed = 1, round = m.round } = {}) {
+  const gd = m.gd;
+  const wave = W.buildBossWave(gd, createRng(deriveSeed(seed, `boss-wave:${round}`)), m.factions, round, { bossId, solo: false });
+  const share = FA.bossPoolHp(gd, bossId, 1);
+  const pool = new FA.SharedBossPool(share * 40);
+  const spawns = wave.spawns.map(s => ({ ...s, mods: s.mods ? { ...s.mods } : undefined }));
+  const inputs = [ps, partner].map((p, j) => { const input = p.battleInput({ side: j === 0 ? 'L' : 'R', colOffset: j === 0 ? 0 : 8 }); input.lpForBoss = 999;
+    const ev = { input, kind: hidden ? 'hidden' : 'boss', round, spawns, routes: wave.routes, side: j === 0 ? 'L' : 'R' }; m.dispatch(p, 'onBattleStart', ev); return ev.input || input; });
+  const levelGs = (gd.bossLevelTime(round) || 120) * gd.combatTimeScale, overGs = gd.bossOvertimeAfterReal * gd.combatTimeScale;
+  const b = m.newBattle({ seed: deriveSeed(seed, `owner-pair:${round}`), kind: hidden ? 'hidden' : 'boss', modeId: m.modeId, round, stageId: m.stageId,
+    rect: { ...GEO.BOSS_RECT }, timeLimit: Infinity, players: inputs, spawns: m._sanitizeSpawns(spawns), routes: wave.routes, sharedBoss: pool,
+    flags: { layerGainsEnabled: false, ...gd.dp, enemyScale: gd.enemyScale(round) }, fieldId: 'owner-pair', enemyOverrides: wave.overrides, waveId: wave.templateId, bossId });
+  const dealt = () => pool.byPlayer.get(ps.playerId) || 0;
+  let atLevel = null, tShare = null;
+  while (!b.finished) {
+    b.step();
+    if (tShare == null && dealt() >= share) tShare = b.time;
+    if (atLevel == null && b.time >= levelGs) atLevel = dealt();
+    if (b.time >= overGs) { b.forceEnd('forced'); break; }
+  }
+  const units = (b.result().perPlayer?.[ps.playerId]?.unitStats || []).map(u => ({ id: u.id, name: u.name, dmg: u.dmg, kind: u.kind }));
+  return { bossId, template: wave.templateId, share, timeToShareGs: tShare != null ? +tShare.toFixed(1) : null, units,
+    shareAtCountdown: +((atLevel ?? dealt()) / share).toFixed(3), shareAtOvertime: +(dealt() / share).toFixed(3),
+    partnerShareAtOvertime: +((pool.byPlayer.get(partner.playerId) || 0) / share).toFixed(3) };
 }

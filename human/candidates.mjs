@@ -6,6 +6,7 @@ import { assign, guidePrep } from '../guides/policy.mjs';
 import { forceSeat } from './force.mjs';
 import { deriveTurn } from './ownerturn.mjs';
 import { shadowTurn, layout, planOf } from './shadow.mjs';
+import { applyAction, TERMINAL } from '../advisor/actions.mjs';
 
 const freeHand = ps => ps.hand.findIndex(x => !x);
 // same convention as eval/advised.mjs: the guide spec lives in the working directory (guides/g06_final.json)
@@ -44,6 +45,13 @@ function botItems(m, ps) {
   }
 }
 
+let adviceRows = null;
+const adviceOf = (game, round) => {
+  adviceRows ||= JSON.parse(readFileSync(process.env.SP_ADVICE || 'results/advice.json', 'utf8')).rows;
+  return adviceRows.find(r => r.game === game && r.round === round)?.advisor?.action || null;
+};
+const installGuideState = (m) => { if (!m.guideSpec) { const g = loadGuide(); m.guideSpec = g; m.guideActions = []; m.guideTrace = []; m.guideDecisionMs = []; m.guideTeam = assign(m, g); } };
+
 export const CANDIDATES = {
   // what the owner actually fielded (refresh finds included: they are the realised luck of that prep)
   owner: { label: 'owner 实际', apply(m, ps, R) { forceSeat(m, ps, R.end, { shop: false, funds: false, lp: false }); ps.funds = 0; ready(ps); } },
@@ -79,6 +87,17 @@ export const CANDIDATES = {
   } },
   // the engine's AI player plays this prep from the opening (AI 托管)
   ai_turn: { label: 'AI 托管这一回合（从开局商店起）', apply(m, ps) { botPrep(m, ps); if (!ps.ready) ready(ps); } },
+  // the repo advisor's recommended action for this position (eval/human-advice.mjs), then guide g06 for the rest of the
+  // prep — exactly what advisor/rollout.mjs finishTurn does for the advisor's own rollouts
+  advisor: { label: '顾问建议的那一步 + guide 打完本回合', apply(m, ps, R, ctx) {
+    const a = adviceOf(ctx.game, ctx.round);
+    if (!a) throw Error(`no advisor action for ${ctx.game} R${ctx.round}`);
+    installGuideState(m);
+    const r = applyAction(m, ps, a);
+    if (!r?.ok) throw Error(`advisor action refused: ${a.label} ${JSON.stringify(r)}`);
+    if (a.type !== 'end' && !TERMINAL.has(a.type)) guidePrep(m, ps); 
+    if (!ps.ready) ready(ps);
+  } },
   // the advisor's current baseline policy (guide g06) plays this prep
   guide: { label: '顾问 guide g06 打这一回合', apply(m, ps) {
     if (!m.guideSpec) { const g = loadGuide(); m.guideSpec = g; m.guideActions = []; m.guideTrace = []; m.guideDecisionMs = []; m.guideTeam = assign(m, g); }

@@ -1545,9 +1545,31 @@
    },
    "bounties": [],
    "effects": [],
+   "bossAlign": {
+    "tried": [
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": null,
+      "seed": null,
+      "lp": 21,
+      "reachedNext": true,
+      "result": null
+     }
+    ],
+    "chosen": {
+     "seats": 2,
+     "mirrored": 2,
+     "hidden": null,
+     "seed": null,
+     "lp": 21,
+     "reachedNext": true,
+     "result": null
+    }
+   },
    "hiddenStandIn": {
     "threshold": 1200,
-    "teamLayersMirrored": 822,
+    "teamLayers": 822,
     "addedTo": "preciShip",
     "added": 379
    },
@@ -1652,6 +1674,46 @@
    },
    "bounties": [],
    "effects": [],
+   "bossAlign": {
+    "tried": [
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": "boss_8",
+      "seed": null,
+      "lp": 0,
+      "reachedNext": false,
+      "result": {
+       "victory": true,
+       "hiddenCleared": false
+      }
+     },
+     {
+      "seats": 2,
+      "mirrored": 2,
+      "hidden": "boss_9",
+      "seed": null,
+      "lp": 21,
+      "reachedNext": false,
+      "result": {
+       "victory": true,
+       "hiddenCleared": true
+      }
+     }
+    ],
+    "chosen": {
+     "seats": 2,
+     "mirrored": 2,
+     "hidden": "boss_9",
+     "seed": null,
+     "lp": 21,
+     "reachedNext": false,
+     "result": {
+      "victory": true,
+      "hiddenCleared": true
+     }
+    }
+   },
    "ownerBoss": [
     {
      "bossId": "boss_8",
@@ -1685,15 +1747,15 @@
     }
    ],
    "settle": {
-    "engineLp": 0,
+    "engineLp": 21,
     "recordLp": 21,
-    "match": false,
-    "leaks": 3,
+    "match": true,
+    "leaks": 0,
     "layerGains": {},
     "recordLayersNext": null,
     "bossDamage": {
-     "max": 21600000,
-     "hp": 1088969.3921438023,
+     "max": 11850000,
+     "hp": 0,
      "byPlayer": {}
     }
    }
@@ -1703,8 +1765,8 @@
   "victory": true,
   "reason": "victory",
   "hiddenReached": true,
-  "hiddenCleared": false,
-  "teamLp": 0
+  "hiddenCleared": true,
+  "teamLp": 63
  },
- "ms": 162298
+ "ms": 183404
 }

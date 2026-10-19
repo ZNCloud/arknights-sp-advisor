@@ -1,0 +1,4 @@
+{"game":"game1","round":15,"label":"owner","mods":[],"share":1.933,"shareOt":2.344,"pClear":0.949}
+{"game":"game1","round":15,"label":"信仰搅拌机朝左","mods":["dir:信仰搅拌机:LEFT"],"share":1.831,"shareOt":2.181,"pClear":0.744}
+{"game":"game1","round":15,"label":"圣约送葬人与信仰搅拌机对调","mods":["move:圣约送葬人:9,8"],"share":2.631,"shareOt":3.227,"pClear":0.846}
+{"game":"game1","round":15,"label":"两项都做","mods":["move:圣约送葬人:9,8","dir:信仰搅拌机:LEFT"],"share":2.508,"shareOt":2.993,"pClear":0.949}

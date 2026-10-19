@@ -143,19 +143,70 @@ export async function replayGame(name, { log = console.log, prior = 400, maxCand
     row.bounties = ps.bounties.map(b => b.card?.id || b.id);
     row.effects = ps.effects.map(e => e.name || e.id);
     const isBoss = R.round >= m.gd.bossRound;
-    if (isBoss && mirrorTeam) {
-      // teammate stand-in: every alive teammate fields the owner's battle board (the record holds nothing about them)
-      for (const tm of m.alivePlayers()) if (tm !== ps) { forceSeat(m, tm, R.end, { shop: false, funds: false }); tm.lp = R.lpBefore; tm.ready = true; }
-      // the record reached the Hidden Core, so the real team's activated layers passed the co-op threshold; the stand-in
-      // teammates get exactly the missing layers on their strongest active bond (reported)
-      if (R.round === m.gd.bossRound && game.rounds.some(x => x.round === m.gd.hiddenRound)) {
-        const thr = m.gd.hiddenCore.multi, sum = m.alivePlayers().reduce((a, p) => a + p.activatedLayers(), 0);
+    // BOSS rounds: 4 seats share one pool and one team LP, and the record holds nothing about the teammates (nor which
+    // hidden leader came in R15). Like the enemy pick of a normal round, these unknowns are ALIGNED: teammate stand-ins
+    // (k of them field the owner's own battle board, the rest stay engine bots) × the hidden leader are tried in order
+    // (strongest team first, hidden leaders by weight) and the first configuration whose settle LP equals the record is
+    // kept; every tried configuration is reported.
+    // cfg = { seats: n teammates in the fight, mirrored: k of them field the owner's board }: alive engine bots keep
+    // their own boards for the n − k non-mirrored seats; seats beyond the alive ones are eliminated seats brought back
+    // as mirrors (the record does not say how many teammates were still alive)
+    const mirrorInto = (mm, cfg) => {
+      const alive = mm.alivePlayers().filter(p => p.playerId !== 'p0'), dead = mm.order.filter(p => p.playerId !== 'p0' && !p.alive && !p.left);
+      const revive = Math.max(0, cfg.seats - alive.length);
+      for (const p of dead.slice(0, revive)) { p.alive = true; p.eliminatedRound = null; }
+      if (revive) { mm.bossPairs = null; mm.bossWaves = null; }
+      const mates = [...dead.slice(0, revive), ...alive];
+      for (const tm of mates.slice(0, cfg.mirrored)) { forceSeat(mm, tm, R.end, { shop: false, funds: false }); tm.lp = R.lpBefore; tm.ready = true; }
+      for (const tm of mates.slice(cfg.seats)) { tm.alive = false; }   // fewer seats than alive bots: not used (never chosen below)
+      // R15 continues the R14 team LP; the owner's recorded LP is forced, so the team pool is re-opened from the seats'
+      // LP (otherwise an R14 the engine could not align would leak into R15 and fake a match there)
+      if (R.round === mm.gd.hiddenRound) { for (const p of mm.alivePlayers()) p.lpAtFinal = p.lp; mm.teamLp = mm.alivePlayers().reduce((a, p) => a + p.lp, 0); }
+      // the record reached the Hidden Core, so the real team's activated layers passed the co-op threshold
+      if (R.round === mm.gd.bossRound && game.rounds.some(x => x.round === mm.gd.hiddenRound)) {
+        const thr = mm.gd.hiddenCore.multi, sum = mm.alivePlayers().reduce((a, p) => a + p.activatedLayers(), 0);
         if (sum <= thr) {
-          const tm = m.alivePlayers().find(p => p !== ps), top = Object.entries(tm.bonds).filter(([, b]) => b.active).sort((a, b) => (b[1].layers || 0) - (a[1].layers || 0))[0];
+          const tm = mm.alivePlayers().find(p => p.playerId !== 'p0'), top = tm && Object.entries(tm.bonds).filter(([, b]) => b.active).sort((a, b) => (b[1].layers || 0) - (a[1].layers || 0))[0];
           if (top) { tm.layers[top[0]] = (tm.layers[top[0]] || 0) + (thr + 1 - sum); tm.recompute(); }
-          row.hiddenStandIn = { threshold: thr, teamLayersMirrored: sum, addedTo: top?.[0], added: thr + 1 - sum };
+          return { threshold: thr, teamLayers: sum, addedTo: top?.[0], added: thr + 1 - sum };
         }
       }
+      return null;
+    };
+    let bossCfg = null, seedOverrideBoss = null;
+    if (isBoss && mirrorTeam && m.phase === 'PREP') {
+      const st0 = capture(m), hiddenR = R.round === m.gd.hiddenRound;
+      const aliveMates = m.alivePlayers().length - 1, seatsMax = m.order.length - 1;
+      const hiddens = hiddenR ? Object.entries(m.gd.mode.hiddenBossWeights || {}).sort((a, b) => b[1] - a[1]).map(([id]) => id) : [null];
+      // fewest changes first: the alive teammates as they are, then eliminated seats brought back; within a size, the
+      // strongest (most mirrored) team first. A bot seat must be an alive bot.
+      const cfgs = [];
+      for (let n = Math.max(1, aliveMates); n <= seatsMax; n++) for (let k = n; k >= Math.max(0, n - aliveMates); k--) cfgs.push({ seats: n, mirrored: k });
+      const tried = [];
+      // the fight's own random stream is unknown too: the match seed's battle streams, then 24 variants
+      const seeds = [null, ...Array.from({ length: 24 }, (_, i) => (m.seed + 104729 * (i + 1)) >>> 0)];
+      outer: for (const seed of seeds) for (const cfg of cfgs) for (const h of hiddens) {
+        const mm = restore(st0, { rngMode: 'exact' });
+        for (const [i, p] of mm.order.entries()) if (st0.seats[i].ready) p.ready = true;
+        mirrorInto(mm, cfg);
+        if (h && h !== mm.hiddenBossId) { mm.hiddenBossId = h; mm.bossWaves = null; }   // the R15 field was planned at round start
+        if (seed != null) mm.seed = seed;
+        const p0 = mm.players.get('p0'); p0.resolveTemp(); p0.ready = false; p0.setReady(true);
+        const r0 = mm.round;
+        mm.sched.runUntil(() => (mm.round > r0 && mm.phase !== 'SETTLE') || mm.phase === 'RESULT', { maxSteps: 5e7 });
+        const t = { ...cfg, hidden: h, seed, lp: p0.lp, reachedNext: mm.round > r0, result: mm.phase === 'RESULT' ? { victory: !!mm.lastResultMsg?.victory, hiddenCleared: !!mm.lastResultMsg?.hiddenCleared } : null };
+        mm.dispose(); tried.push(t);
+        const nextNeeded = game.rounds.some(x => x.round === r0 + 1);
+        if (t.lp === R.lpAfter && (!nextNeeded || t.reachedNext)) { bossCfg = t; break outer; }
+      }
+      row.bossAlign = { tried, chosen: bossCfg };
+    }
+    if (isBoss && mirrorTeam) {
+      const cfg = bossCfg || { seats: Math.max(1, m.alivePlayers().length - 1), mirrored: Math.max(1, m.alivePlayers().length - 1) };
+      const hs = mirrorInto(m, cfg);
+      if (hs) row.hiddenStandIn = hs;
+      if (bossCfg?.hidden && bossCfg.hidden !== m.hiddenBossId) { m.hiddenBossId = bossCfg.hidden; m.bossWaves = null; }
+      if (bossCfg?.seed != null) seedOverrideBoss = bossCfg.seed;
     }
     if (isBoss && m.phase === 'PREP') {
       const st = capture(m), hidden = R.round === m.gd.hiddenRound;
@@ -186,6 +237,7 @@ export async function replayGame(name, { log = console.log, prior = 400, maxCand
     }
     const seed0 = m.seed;
     if (seedOverride != null) m.seed = seedOverride;
+    if (seedOverrideBoss != null) m.seed = seedOverrideBoss;
     ps.resolveTemp();
     const rd = ps.setReady(true);
     if (!rd.ok) row.readyRefused = rd;
@@ -197,7 +249,7 @@ export async function replayGame(name, { log = console.log, prior = 400, maxCand
     row.settle = { engineLp: ps.lp, recordLp: R.lpAfter, match: ps.lp === R.lpAfter, leaks: res?.leaked?.length ?? null, layerGains: res?.layerGains || null,
       recordLayersNext: null, bossDamage: isBoss ? (m.bossPool ? { max: m.bossPool.maxHp, hp: m.bossPool.hp, byPlayer: m.bossPool.byPlayer ? Object.fromEntries(Object.entries(m.bossPool.byPlayer)) : null } : null) : undefined };
     out.rounds.push(row);
-    log(`R${R.round} lp ${R.lpBefore}→${R.lpAfter} engine ${ps.lp} ${row.settle.match ? 'OK' : 'MISMATCH'}${row.wave ? ` wave prior-mass-agreeing ${row.wave.matchingPriorMass} chosen-rank ${row.wave.chosen?.rank ?? '-'}${row.wave.chosen?.battleSeedVaried ? ' (battle seed varied)' : ''} tested ${row.wave.testedPicks}` : ''} refused ${row.turn.refused.length} diffAfterReplay ${pre.length}`);
+    log(`R${R.round} lp ${R.lpBefore}→${R.lpAfter} engine ${ps.lp} ${row.settle.match ? 'OK' : 'MISMATCH'}${row.bossAlign ? ` boss-align ${row.bossAlign.chosen ? `teammates ${row.bossAlign.chosen.seats} mirrored ${row.bossAlign.chosen.mirrored}${row.bossAlign.chosen.seed != null ? ' battle-seed varied' : ''}${row.bossAlign.chosen.hidden ? ' hidden ' + row.bossAlign.chosen.hidden : ''}` : 'none'} (${row.bossAlign.tried.length} tried)` : ''}${row.wave ? ` wave prior-mass-agreeing ${row.wave.matchingPriorMass} chosen-rank ${row.wave.chosen?.rank ?? '-'}${row.wave.chosen?.battleSeedVaried ? ' (battle seed varied)' : ''} tested ${row.wave.testedPicks}` : ''} refused ${row.turn.refused.length} diffAfterReplay ${pre.length}`);
   }
   out.result = m.lastResultMsg ? { victory: m.lastResultMsg.victory, reason: m.lastResultMsg.reason, hiddenReached: m.lastResultMsg.hiddenReached, hiddenCleared: m.lastResultMsg.hiddenCleared, teamLp: m.lastResultMsg.teamLp } : { phase: m.phase, round: m.round };
   m.dispose();

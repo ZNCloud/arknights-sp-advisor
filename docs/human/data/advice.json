@@ -1,0 +1,4011 @@
+{
+ "cfg": {
+  "K": 4,
+  "N": 6,
+  "N2": 6
+ },
+ "model": "sp-advisor/models",
+ "rows": [
+  {
+   "game": "game1",
+   "round": 1,
+   "error": null,
+   "advisor": {
+    "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "roll",
+     "prior": 5,
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "modelUtil": 0.4876252226323137,
+     "modelWin": 0.054978815274231325
+    },
+    "utility": 0.6158302121117512,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.03446971744535208,
+     "se": 0.06750790389157407,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.4876252226323137,
+      "modelWin": 0.054978815274231325
+     },
+     "utility": 0.6158302121117512,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.03446971744535208,
+      "se": 0.06750790389157407,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.46371228329043146,
+      "modelWin": 0.054978815274231325
+     },
+     "utility": 0.5813604946663989,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "买 雷蛇(槽1,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 1,
+      "id": "chess_char_1_20_a",
+      "price": 2,
+      "prior": 25.298016554739966,
+      "label": "买 雷蛇(槽1,2金)",
+      "modelUtil": 0.46371228329043146,
+      "modelWin": 0.054978815274231325
+     },
+     "utility": 0.5190748615154109,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.06228563315098811,
+      "se": 0.05613891827897904,
+      "n": 12
+     }
+    },
+    {
+     "label": "买 深巡(槽0,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_1_04_a",
+      "price": 2,
+      "prior": 20.13284936479129,
+      "label": "买 深巡(槽0,2金)",
+      "modelUtil": 0.4876252226323137,
+      "modelWin": 0.054978815274231325
+     },
+     "utility": 0.49787784857448464,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.03517317193460275,
+      "se": 0.08427907695498116,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 深巡(槽2,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_1_04_a",
+      "price": 2,
+      "prior": 20.13284936479129,
+      "label": "买 深巡(槽2,2金)",
+      "modelUtil": 0.4876252226323137,
+      "modelWin": 0.054978815274231325
+     },
+     "utility": 0.49787784857448464,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.03517317193460275,
+      "se": 0.08427907695498116,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 48,
+   "ms": 56993,
+   "owner": "买 深巡；买 雷蛇",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 69,
+     "advice": "对空 0/1 个（本波 2 只飞行）→ 没有值得抓的，刷一次（剩 3 金也会清零）",
+     "pick": "深巡(14)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 2,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.47203154259641494,
+     "modelWin": 0.10565967288719513
+    },
+    "utility": 0.6029964091031882,
+    "winRate": 0,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.47203154259641494,
+      "modelWin": 0.10565967288719513
+     },
+     "utility": 0.6029964091031882,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.4837201806056418,
+      "modelWin": 0.09518085551516273
+     },
+     "utility": 0.5855248401331623,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": -0.017471568970025792,
+      "se": 0.06618835619059787,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.3708109777370878,
+      "modelWin": 0.02234206372660036
+     },
+     "utility": 0.5844757292303528,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.018520679872835216,
+      "se": 0.03878275343674592,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.4634092940393774,
+      "modelWin": 0.10361453653556094
+     },
+     "utility": 0.5525730201072608,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.09069164531090233,
+      "se": 0.049884763592263626,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 跃跃(槽0,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_1_09_a",
+      "price": 2,
+      "prior": 13.4,
+      "label": "买 跃跃(槽0,2金)",
+      "modelUtil": 0.47203154259641494,
+      "modelWin": 0.10565967288719513
+     },
+     "utility": 0.4589909218460426,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.18427374357212048,
+      "se": 0.06259881006248101,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 27836,
+   "owner": "买 深靛；买 跃跃；买装备 源石溶剂",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 73,
+     "advice": "抓 深巡（槽位 3）",
+     "pick": "深巡(85)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 3,
+   "error": null,
+   "advisor": {
+    "label": "宏：能升就升（商店升到钱不够为止）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "level",
+     "prior": 5,
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "modelUtil": 0.3621183242082814,
+     "modelWin": 0.012626733209024882
+    },
+    "utility": 0.6447751871828628,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.1323823611552873,
+     "se": 0.09258482959291707,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.3621183242082814,
+      "modelWin": 0.012626733209024882
+     },
+     "utility": 0.6447751871828628,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.1323823611552873,
+      "se": 0.09258482959291707,
+      "n": 12
+     }
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.4443878045814943,
+      "modelWin": 0.0550939435908971
+     },
+     "utility": 0.5823913997902709,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.06999857376269521,
+      "se": 0.05086674447446764,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 深靛 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 49,
+      "target": 45,
+      "id": "chess_item_1_05_e_a",
+      "prior": 16,
+      "label": "给 深靛 装 源石溶剂",
+      "modelUtil": 0.43961756295097665,
+      "modelWin": 0.0410777043179137
+     },
+     "utility": 0.5523391665376071,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.5504303070457053,
+      "modelWin": 0.06105763561859294
+     },
+     "utility": 0.5440458631119993,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.008293303425607662,
+      "se": 0.07490650557816668,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.43961756295097665,
+      "modelWin": 0.0410777043179137
+     },
+     "utility": 0.5123928260275755,
+     "winRate": 0,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 28833,
+   "owner": "升级×1；买 深巡",
+   "ownerTurnContainsAdvisorAction": true,
+   "liveOverlay": [
+    {
+     "line": 79,
+     "advice": "抓 深巡（槽位 3）",
+     "pick": "深巡(85)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 4,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.41346575054146195,
+     "modelWin": 0.03399196704252409
+    },
+    "utility": 0.5425936295030691,
+    "winRate": 0,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.41346575054146195,
+      "modelWin": 0.03399196704252409
+     },
+     "utility": 0.5425936295030691,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.4091530200021855,
+      "modelWin": 0.03196248662295099
+     },
+     "utility": 0.5416336351607375,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.07483211764060074,
+      "se": 0.1441729073543311,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 灰毫(槽0,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_2_18_a",
+      "price": 3,
+      "prior": 18.254748822605965,
+      "label": "买 灰毫(槽0,3金)",
+      "modelUtil": 0.41346575054146195,
+      "modelWin": 0.03399196704252409
+     },
+     "utility": 0.5414654365421735,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0011281929608957058,
+      "se": 0.046628309331907196,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 灰毫(槽2,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_2_18_a",
+      "price": 3,
+      "prior": 18.254748822605965,
+      "label": "买 灰毫(槽2,3金)",
+      "modelUtil": 0.41346575054146195,
+      "modelWin": 0.03399196704252409
+     },
+     "utility": 0.5414654365421735,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0011281929608957058,
+      "se": 0.046628309331907196,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.3535999214066401,
+      "modelWin": 0.010368691894408085
+     },
+     "utility": 0.5366311415139232,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.029480954509712876,
+      "se": 0.12857146957998408,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 25273,
+   "owner": "买 雷蛇；买 送葬人；得到 锡人（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 83,
+     "advice": "升调度中心 Lv3（8 金，余 1）",
+     "pick": "随身身份牌(10)"
+    },
+    {
+     "line": 84,
+     "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+     "pick": "随身身份牌(14)"
+    },
+    {
+     "line": 85,
+     "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+     "pick": "随身身份牌(14)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 5,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.37082246356590376,
+     "modelWin": 0.016104229495174222
+    },
+    "utility": 0.7158129170982083,
+    "winRate": 0.25,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.37082246356590376,
+      "modelWin": 0.016104229495174222
+     },
+     "utility": 0.7158129170982083,
+     "winRate": 0.25,
+     "vsGuide": null
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.37082246356590376,
+      "modelWin": 0.016104229495174222
+     },
+     "utility": 0.7158129170982083,
+     "winRate": 0.25,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 送葬人 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 94,
+      "target": 86,
+      "id": "chess_item_1_05_e_a",
+      "prior": 17,
+      "label": "给 送葬人 装 源石溶剂",
+      "modelUtil": 0.37082246356590376,
+      "modelWin": 0.016104229495174222
+     },
+     "utility": 0.7158129170982083,
+     "winRate": 0.25,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "卖 深巡(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 90,
+      "id": "chess_char_1_04_a",
+      "prior": -7,
+      "label": "卖 深巡(场上)",
+      "modelUtil": 0.3785380276172102,
+      "modelWin": 0.014152326275266127
+     },
+     "utility": 0.6951246162669006,
+     "winRate": 0.16666666666666666,
+     "vsGuide": {
+      "mean": -0.029671709317101114,
+      "se": 0.07349950286589438,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 深巡(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 91,
+      "id": "chess_char_1_04_a",
+      "prior": -7,
+      "label": "卖 深巡(场上)",
+      "modelUtil": 0.3785380276172102,
+      "modelWin": 0.014152326275266127
+     },
+     "utility": 0.6951246162669006,
+     "winRate": 0.16666666666666666,
+     "vsGuide": {
+      "mean": -0.029671709317101114,
+      "se": 0.07349950286589438,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 31563,
+   "owner": "升级×1；买 深巡；得到 魔王（非开局商店）；得到 雪猎（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 90,
+     "advice": "升调度中心 Lv3（8 金，余 2）",
+     "pick": "深巡(22)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 6,
+   "error": null,
+   "advisor": {
+    "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "roll",
+     "prior": 5,
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "modelUtil": 0.41661251859232723,
+     "modelWin": 0.0386341026849424
+    },
+    "utility": 0.6165055714768398,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.15014784047268637,
+     "se": 0.10458323348128326,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.41661251859232723,
+      "modelWin": 0.0386341026849424
+     },
+     "utility": 0.6165055714768398,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.15014784047268637,
+      "se": 0.10458323348128326,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 送葬人(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 124,
+      "id": "chess_char_2_01_a",
+      "prior": -9,
+      "label": "卖 送葬人(场上)",
+      "modelUtil": 0.4352189368837852,
+      "modelWin": 0.034883712989866866
+     },
+     "utility": 0.5452953912125675,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.009171240766146468,
+      "se": 0.03268188725321987,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 魔王 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 130,
+      "target": 121,
+      "id": "chess_item_1_05_e_a",
+      "prior": 6,
+      "label": "给 魔王 装 源石溶剂",
+      "modelUtil": 0.429679558287207,
+      "modelWin": 0.03480341577461035
+     },
+     "utility": 0.5451469199624176,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.05964968023229139,
+      "se": 0.05315199069692017,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.429679558287207,
+      "modelWin": 0.03480341577461035
+     },
+     "utility": 0.536124150446421,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "买 拉普兰德(槽3,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 3,
+      "id": "chess_char_2_16_a",
+      "price": 3,
+      "prior": 15.391717791411043,
+      "label": "买 拉普兰德(槽3,3金)",
+      "modelUtil": 0.43050265115139097,
+      "modelWin": 0.035097963924227205
+     },
+     "utility": 0.5196091428077346,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.014280083279484887,
+      "se": 0.05997421256751694,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 20907,
+   "owner": "买 空弦；得到 至简（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 94,
+     "advice": "抓 空弦（槽位 1）",
+     "pick": "空弦(81)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 7,
+   "error": null,
+   "advisor": {
+    "label": "卖 深靛(场上)",
+    "action": {
+     "type": "sell",
+     "family": "sell",
+     "uid": 149,
+     "id": "chess_char_1_17_a",
+     "prior": -7,
+     "label": "卖 深靛(场上)",
+     "modelUtil": 0.49913916870104547,
+     "modelWin": 0.038568225297238974
+    },
+    "utility": 0.6564296582608501,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.061659048552882956,
+     "se": 0.11849774497878304,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "卖 深靛(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 149,
+      "id": "chess_char_1_17_a",
+      "prior": -7,
+      "label": "卖 深靛(场上)",
+      "modelUtil": 0.49913916870104547,
+      "modelWin": 0.038568225297238974
+     },
+     "utility": 0.6564296582608501,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.061659048552882956,
+      "se": 0.11849774497878304,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 深靛 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 160,
+      "target": 149,
+      "id": "chess_item_1_05_e_a",
+      "prior": 3,
+      "label": "给 深靛 装 源石溶剂",
+      "modelUtil": 0.4888653681603747,
+      "modelWin": 0.03890050554589333
+     },
+     "utility": 0.6465655233710852,
+     "winRate": 0.16666666666666666,
+     "vsGuide": {
+      "mean": 0.030727209001726225,
+      "se": 0.035753767170356845,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 跃跃(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 150,
+      "id": "chess_char_1_09_a",
+      "prior": -7,
+      "label": "卖 跃跃(场上)",
+      "modelUtil": 0.49913916870104547,
+      "modelWin": 0.038568225297238974
+     },
+     "utility": 0.6412635821847802,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.08766371926538696,
+      "se": 0.12374109128488772,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 锡人(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 158,
+      "id": "chess_char_2_19_a",
+      "prior": -4.097691626052282,
+      "label": "卖 锡人(手牌)",
+      "modelUtil": 0.49913916870104547,
+      "modelWin": 0.038568225297238974
+     },
+     "utility": 0.6274946295239346,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.03207505562483664,
+      "se": 0.08878557081817695,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.4888653681603747,
+      "modelWin": 0.03890050554589333
+     },
+     "utility": 0.615838314369359,
+     "winRate": 0,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 22172,
+   "owner": "买 能天使；得到 雷蛇（非开局商店）；得到 至简（非开局商店）；得到 莱恩哈特（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 99,
+     "advice": "抓 能天使（槽位 2）",
+     "pick": "能天使(77)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 8,
+   "error": null,
+   "advisor": {
+    "label": "卖 锡人(手牌)",
+    "action": {
+     "type": "sell",
+     "family": "sell",
+     "uid": 203,
+     "id": "chess_char_2_19_a",
+     "prior": -4.090949778818631,
+     "label": "卖 锡人(手牌)",
+     "modelUtil": 0.5729778236680781,
+     "modelWin": 0.06399581796608758
+    },
+    "utility": 0.72054421778624,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.20152312714417556,
+     "se": 0.07696090892396537,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "卖 锡人(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 203,
+      "id": "chess_char_2_19_a",
+      "prior": -4.090949778818631,
+      "label": "卖 锡人(手牌)",
+      "modelUtil": 0.5729778236680781,
+      "modelWin": 0.06399581796608758
+     },
+     "utility": 0.72054421778624,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.20152312714417556,
+      "se": 0.07696090892396537,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 魔王(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 196,
+      "id": "chess_char_4_25_a",
+      "prior": -13,
+      "label": "卖 魔王(场上)",
+      "modelUtil": 0.5637004303464217,
+      "modelWin": 0.04369086563716471
+     },
+     "utility": 0.6482761221535135,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.13786866517761534,
+      "se": 0.06520075816129414,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 空弦(槽2,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_3_21_a",
+      "price": 3,
+      "prior": 25.550723725613594,
+      "label": "买 空弦(槽2,3金)",
+      "modelUtil": 0.5664011964991013,
+      "modelWin": 0.04419561591008411
+     },
+     "utility": 0.5668873521599351,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.01932495168558765,
+      "se": 0.03622203139283584,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 至简 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 205,
+      "target": 192,
+      "id": "chess_item_1_05_e_a",
+      "prior": 5,
+      "label": "给 至简 装 源石溶剂",
+      "modelUtil": 0.5608476040836042,
+      "modelWin": 0.04250727052919312
+     },
+     "utility": 0.5487515396924337,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.0011891392180863232,
+      "se": 0.028486113453122595,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.5608476040836042,
+      "modelWin": 0.04250727052919312
+     },
+     "utility": 0.5475624004743475,
+     "winRate": 0,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 24018,
+   "owner": "升级×1；得到 塑心（非开局商店）；得到 华法琳（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 103,
+     "advice": "抓 空弦（槽位 3）",
+     "pick": "空弦(91)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 9,
+   "error": null,
+   "advisor": {
+    "label": "宏：能升就升（商店升到钱不够为止）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "level",
+     "prior": 5,
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "modelUtil": 0.6118114750783092,
+     "modelWin": 0.12128161961546445
+    },
+    "utility": 0.6569938253198391,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0,
+     "se": 0,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.6118114750783092,
+      "modelWin": 0.12128161961546445
+     },
+     "utility": 0.6569938253198391,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 魔王(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 250,
+      "id": "chess_char_4_25_a",
+      "prior": -13,
+      "label": "卖 魔王(场上)",
+      "modelUtil": 0.6118114750783092,
+      "modelWin": 0.12128161961546445
+     },
+     "utility": 0.6569938253198391,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 至简(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 255,
+      "id": "chess_char_3_13_a",
+      "prior": -7.985384615384616,
+      "label": "卖 至简(手牌)",
+      "modelUtil": 0.6269409340769047,
+      "modelWin": 0.19640563138483047
+     },
+     "utility": 0.6508275889828493,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.014827782556324684,
+      "se": 0.0352783029640159,
+      "n": 12
+     }
+    },
+    {
+     "label": "卖 至简(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 257,
+      "id": "chess_char_3_13_a",
+      "prior": -7.985384615384616,
+      "label": "卖 至简(手牌)",
+      "modelUtil": 0.6269409340769047,
+      "modelWin": 0.19640563138483047
+     },
+     "utility": 0.6508275889828493,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.014827782556324684,
+      "se": 0.0352783029640159,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 能天使 装 奥术法阵",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 254,
+      "target": 248,
+      "id": "chess_item_3_08_e_a",
+      "prior": 5,
+      "label": "给 能天使 装 奥术法阵",
+      "modelUtil": 0.6265359624825959,
+      "modelWin": 0.14874426108396202
+     },
+     "utility": 0.6458794167502396,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.011114408569599535,
+      "se": 0.06391633085397264,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 25646,
+   "owner": "升级×1；买装备 盟约之币",
+   "ownerTurnContainsAdvisorAction": true,
+   "liveOverlay": [
+    {
+     "line": 111,
+     "advice": "升调度中心 Lv5（12 金，余 1）",
+     "pick": "歌蕾蒂娅(23)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 10,
+   "error": null,
+   "advisor": {
+    "label": "买 伺夜(槽0,3金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 0,
+     "id": "chess_char_3_19_a",
+     "price": 3,
+     "prior": 13.730139027423744,
+     "label": "买 伺夜(槽0,3金)",
+     "modelUtil": 0.779384773373586,
+     "modelWin": 0.22373672763414898
+    },
+    "utility": 0.710661452688289,
+    "winRate": 0.08333333333333333,
+    "vsGuide": {
+     "mean": 0.16046402118403444,
+     "se": 0.08691457416615252,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "买 伺夜(槽0,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_3_19_a",
+      "price": 3,
+      "prior": 13.730139027423744,
+      "label": "买 伺夜(槽0,3金)",
+      "modelUtil": 0.779384773373586,
+      "modelWin": 0.22373672763414898
+     },
+     "utility": 0.710661452688289,
+     "winRate": 0.08333333333333333,
+     "vsGuide": {
+      "mean": 0.16046402118403444,
+      "se": 0.08691457416615252,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 雪猎(槽1,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 1,
+      "id": "chess_char_3_11_a",
+      "price": 3,
+      "prior": 26.30933709388572,
+      "label": "买 雪猎(槽1,3金)",
+      "modelUtil": 0.7850088911009065,
+      "modelWin": 0.24318866639501835
+     },
+     "utility": 0.6687572471431861,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.09912424765897702,
+      "se": 0.05093629410888174,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 锡人(槽2,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_2_19_a",
+      "price": 3,
+      "prior": 13.349159979142556,
+      "label": "买 锡人(槽2,3金)",
+      "modelUtil": 0.7840961065163767,
+      "modelWin": 0.24794781037065844
+     },
+     "utility": 0.6671013141994337,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.09740891965456606,
+      "se": 0.06481165242570877,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 能天使(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 292,
+      "id": "chess_char_3_01_a",
+      "prior": -11,
+      "label": "卖 能天使(场上)",
+      "modelUtil": 0.6820443843914585,
+      "modelWin": 0.1368636999179959
+     },
+     "utility": 0.6189402890158967,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.6820443843914585,
+      "modelWin": 0.1368636999179959
+     },
+     "utility": 0.6189402890158965,
+     "winRate": 0,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 19590,
+   "owner": "买 风笛；卖 锡人×1；卖 跃跃×1；得到 送葬人（非开局商店）；得到 隐现（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 116,
+     "advice": "先刷找 莫斯提马/圣约送葬人/蕾缪安（核心没到手，装备不急）",
+     "pick": "盟约之币(14)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 11,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.6996455341091522,
+     "modelWin": 0.09632619858751598
+    },
+    "utility": 0.601390725148495,
+    "winRate": 0,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.6996455341091522,
+      "modelWin": 0.09632619858751598
+     },
+     "utility": 0.601390725148495,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "卖 魔王(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 357,
+      "id": "chess_char_4_25_a",
+      "prior": -13,
+      "label": "卖 魔王(场上)",
+      "modelUtil": 0.6996455341091522,
+      "modelWin": 0.09632619858751598
+     },
+     "utility": 0.601390725148495,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 空弦 装 源石溶剂",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 376,
+      "target": 363,
+      "id": "chess_item_1_05_e_a",
+      "prior": 5,
+      "label": "给 空弦 装 源石溶剂",
+      "modelUtil": 0.7088221276400819,
+      "modelWin": 0.10604387356286608
+     },
+     "utility": 0.5986614972304544,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.02805023955910337,
+      "se": 0.02428680438106534,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 雷蛇(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 370,
+      "id": "chess_char_1_20_b",
+      "prior": -2.3312675169264683,
+      "label": "卖 雷蛇(手牌)",
+      "modelUtil": 0.7007413930273363,
+      "modelWin": 0.09449326959196866
+     },
+     "utility": 0.5879271597494963,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.011024964673549317,
+      "se": 0.015915515563180074,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 深靛(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 373,
+      "id": "chess_char_1_17_a",
+      "prior": -3.1911415525114157,
+      "label": "卖 深靛(手牌)",
+      "modelUtil": 0.7045900100453149,
+      "modelWin": 0.10504519046807703
+     },
+     "utility": 0.5823073751476141,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.019043075656833292,
+      "se": 0.018373123221021123,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 14602,
+   "owner": "买 能天使；卖 至简×1；卖 雷蛇×3；卖 深靛×1；得到 送葬人（非开局商店）；得到 新约能天使（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 122,
+     "advice": "抓 能天使（槽位 1）",
+     "pick": "能天使(69)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 12,
+   "error": null,
+   "advisor": {
+    "label": "刷新商店(1金)",
+    "action": {
+     "type": "refresh",
+     "family": "refresh",
+     "prior": 3,
+     "label": "刷新商店(1金)",
+     "modelUtil": 0.7337429832178599,
+     "modelWin": 0.1289382150303334
+    },
+    "utility": 0.6196958676542121,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.014077637064273155,
+     "se": 0.01894158038373869,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.7337429832178599,
+      "modelWin": 0.1289382150303334
+     },
+     "utility": 0.6196958676542121,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.014077637064273155,
+      "se": 0.01894158038373869,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 雪猎 装 博士投影",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 423,
+      "target": 415,
+      "id": "chess_item_5_06_e_a",
+      "prior": 5,
+      "label": "给 雪猎 装 博士投影",
+      "modelUtil": 0.7299526975178228,
+      "modelWin": 0.11628266945933073
+     },
+     "utility": 0.6152725047813523,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.025812325668468843,
+      "se": 0.03277456666541781,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 能天使 装 博士投影",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 423,
+      "target": 411,
+      "id": "chess_item_5_06_e_a",
+      "prior": 5,
+      "label": "给 能天使 装 博士投影",
+      "modelUtil": 0.7299526975178228,
+      "modelWin": 0.11628266945933073
+     },
+     "utility": 0.6061016342611025,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.02468029992246747,
+      "se": 0.025172780648111213,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.6972931572553003,
+      "modelWin": 0.1078171458500127
+     },
+     "utility": 0.5897398508686958,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.010299561853393424,
+      "se": 0.01648764416637468,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.6972788719655962,
+      "modelWin": 0.11315889425172339
+     },
+     "utility": 0.5863683289136623,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.006928039898360013,
+      "se": 0.029433691295620262,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 13130,
+   "owner": "买 信仰搅拌机；得到 能天使（非开局商店）；得到 迷迭香（非开局商店）；得到 信仰搅拌机（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 127,
+     "advice": "抓 信仰搅拌机（槽位 1）",
+     "pick": "信仰搅拌机(59)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 13,
+   "error": null,
+   "advisor": {
+    "label": "给 新约能天使 装 博士投影",
+    "action": {
+     "type": "equip",
+     "family": "equip",
+     "uid": 486,
+     "target": 477,
+     "id": "chess_item_5_06_e_a",
+     "prior": 8,
+     "label": "给 新约能天使 装 博士投影",
+     "modelUtil": 0.784667643901469,
+     "modelWin": 0.17559242939735906
+    },
+    "utility": 0.6919891815922453,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.06663224216826752,
+     "se": 0.026154404994663486,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "给 新约能天使 装 博士投影",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 486,
+      "target": 477,
+      "id": "chess_item_5_06_e_a",
+      "prior": 8,
+      "label": "给 新约能天使 装 博士投影",
+      "modelUtil": 0.784667643901469,
+      "modelWin": 0.17559242939735906
+     },
+     "utility": 0.6919891815922453,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.06663224216826752,
+      "se": 0.026154404994663486,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.6690282671533992,
+      "modelWin": 0.10172470598949412
+     },
+     "utility": 0.6253569394239779,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "卖 华法琳(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 472,
+      "id": "chess_char_4_26_a",
+      "prior": -13,
+      "label": "卖 华法琳(场上)",
+      "modelUtil": 0.6690282671533992,
+      "modelWin": 0.10172470598949412
+     },
+     "utility": 0.6253569394239777,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.6674843960785354,
+      "modelWin": 0.09044390422111337
+     },
+     "utility": 0.6119287698894375,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0036140948288608623,
+      "se": 0.016756882489032295,
+      "n": 6
+     }
+    },
+    {
+     "label": "空弦 转向 UP",
+     "action": {
+      "type": "rotate",
+      "family": "layout",
+      "uid": 471,
+      "id": "chess_char_3_21_a",
+      "dir": "UP",
+      "prior": -6,
+      "label": "空弦 转向 UP",
+      "modelUtil": 0.6989300647903325,
+      "modelWin": 0.15867325801568333
+     },
+     "utility": 0.6107257787861307,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.004817085932167786,
+      "se": 0.018222763824043337,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 10280,
+   "owner": "卖 能天使×3；得到 信仰搅拌机（非开局商店）；得到 蕾缪安（非开局商店）；得到 圣约送葬人（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 131,
+     "advice": "升调度中心 Lv6（13 金，余 2）",
+     "pick": "紧急调度券(17)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 14,
+   "error": null,
+   "advisor": {
+    "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "roll",
+     "prior": 5,
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "modelUtil": 0.8432953008512964,
+     "modelWin": 0.2844339332362742
+    },
+    "utility": 1,
+    "winRate": 1,
+    "vsGuide": {
+     "mean": 0,
+     "se": 0,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.8432953008512964,
+      "modelWin": 0.2844339332362742
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.8375499575349339,
+      "modelWin": 0.32043037861041723
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": null
+    },
+    {
+     "label": "买 风笛(槽4,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 4,
+      "id": "chess_char_4_07_a",
+      "price": 3,
+      "prior": 21.601562141648824,
+      "label": "买 风笛(槽4,3金)",
+      "modelUtil": 0.8375499575349339,
+      "modelWin": 0.32043037861041723
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.8294078344396771,
+      "modelWin": 0.2472035996495193
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 雪猎(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 544,
+      "id": "chess_char_3_11_a",
+      "prior": -5.052631944871484,
+      "label": "卖 雪猎(手牌)",
+      "modelUtil": 0.8445569791999231,
+      "modelWin": 0.30292406100943753
+     },
+     "utility": 0.9871972498759343,
+     "winRate": 0.8333333333333334,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 7204,
+   "owner": "买装备 激光发射器；卖 至简×1；得到 空弦（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 135,
+     "advice": "别赌6人（约 0%）→ 抓 隐现（槽位 1） · 资源喂终端 蕾缪安（3194 有效攻）",
+     "pick": "隐现(60)"
+    }
+   ]
+  },
+  {
+   "game": "game1",
+   "round": 15,
+   "error": null,
+   "advisor": {
+    "label": "卖 雪猎(手牌)",
+    "action": {
+     "type": "sell",
+     "family": "sell",
+     "uid": 650,
+     "id": "chess_char_3_11_a",
+     "prior": -5.012714343762698,
+     "label": "卖 雪猎(手牌)",
+     "modelUtil": 0.9184280619808756,
+     "modelWin": 0.8822774866830851
+    },
+    "utility": 1.25,
+    "winRate": 1,
+    "vsGuide": {
+     "mean": 0,
+     "se": 0,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "卖 雪猎(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 650,
+      "id": "chess_char_3_11_a",
+      "prior": -5.012714343762698,
+      "label": "卖 雪猎(手牌)",
+      "modelUtil": 0.9184280619808756,
+      "modelWin": 0.8822774866830851
+     },
+     "utility": 1.25,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 莱恩哈特(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 653,
+      "id": "chess_char_4_14_a",
+      "prior": -6.5878881987577635,
+      "label": "卖 莱恩哈特(手牌)",
+      "modelUtil": 0.9184280619808756,
+      "modelWin": 0.8822774866830851
+     },
+     "utility": 1.25,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 隐现(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 654,
+      "id": "chess_char_1_01_a",
+      "prior": -2.698386565011333,
+      "label": "卖 隐现(手牌)",
+      "modelUtil": 0.9184280619808756,
+      "modelWin": 0.8822774866830851
+     },
+     "utility": 1.25,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 魔王(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 642,
+      "id": "chess_char_4_25_a",
+      "prior": -13,
+      "label": "卖 魔王(场上)",
+      "modelUtil": 0.917479709705411,
+      "modelWin": 0.8822774866830851
+     },
+     "utility": 1.25,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.9143905735386407,
+      "modelWin": 0.8822774866830851
+     },
+     "utility": 1.25,
+     "winRate": 1,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 4782,
+   "owner": "得到 隐现（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 138,
+     "advice": "先刷找 莫斯提马（核心没到手，装备不急）",
+     "pick": "奥术法阵(18)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 1,
+   "error": null,
+   "advisor": {
+    "label": "买 惊蛰(槽0,2金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 0,
+     "id": "chess_char_1_03_a",
+     "price": 2,
+     "prior": 10.547368421052632,
+     "label": "买 惊蛰(槽0,2金)",
+     "modelUtil": 0.4571477210936396,
+     "modelWin": 0.0858048452501922
+    },
+    "utility": 0.5299313917631823,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.07003080691265665,
+     "se": 0.03980144863261698,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "买 惊蛰(槽0,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_1_03_a",
+      "price": 2,
+      "prior": 10.547368421052632,
+      "label": "买 惊蛰(槽0,2金)",
+      "modelUtil": 0.4571477210936396,
+      "modelWin": 0.0858048452501922
+     },
+     "utility": 0.5299313917631823,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.07003080691265665,
+      "se": 0.03980144863261698,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.4571477210936396,
+      "modelWin": 0.0858048452501922
+     },
+     "utility": 0.4599005848505257,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.46166852781830453,
+      "modelWin": 0.05189565318316877
+     },
+     "utility": 0.44298858989466483,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.016911994955860838,
+      "se": 0.02824881563519725,
+      "n": 12
+     }
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.46416667111155063,
+      "modelWin": 0.08788408557320207
+     },
+     "utility": 0.4358974358974359,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0029711380076116547,
+      "se": 0.030576326507183768,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 42,
+   "ms": 25182,
+   "owner": "买 惊蛰；买 惊蛰；得到 宴（非开局商店）",
+   "ownerTurnContainsAdvisorAction": true,
+   "liveOverlay": [
+    {
+     "line": 76,
+     "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+     "pick": "随身身份牌(8)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 2,
+   "error": null,
+   "advisor": {
+    "label": "买 刺玫(槽0,2金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 0,
+     "id": "chess_char_1_06_a",
+     "price": 2,
+     "prior": 18,
+     "label": "买 刺玫(槽0,2金)",
+     "modelUtil": 0.44758614199750213,
+     "modelWin": 0.07974510118344694
+    },
+    "utility": 0.47870072863836594,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.01879980341212073,
+     "se": 0.06526942093661396,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "买 刺玫(槽0,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_1_06_a",
+      "price": 2,
+      "prior": 18,
+      "label": "买 刺玫(槽0,2金)",
+      "modelUtil": 0.44758614199750213,
+      "modelWin": 0.07974510118344694
+     },
+     "utility": 0.47870072863836594,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.01879980341212073,
+      "se": 0.06526942093661396,
+      "n": 6
+     }
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.45476404952154187,
+      "modelWin": 0.07795623528533276
+     },
+     "utility": 0.4786729596564225,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.02896299436586545,
+      "se": 0.053525950685037876,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.43067259321721013,
+      "modelWin": 0.07060454368772887
+     },
+     "utility": 0.47312804921805474,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.013227123991809586,
+      "se": 0.037453726269512946,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.44758614199750213,
+      "modelWin": 0.07974510118344694
+     },
+     "utility": 0.4599009252262452,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "卖 惊蛰(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 17,
+      "id": "chess_char_1_03_a",
+      "prior": -7,
+      "label": "卖 惊蛰(场上)",
+      "modelUtil": 0.4480678860753565,
+      "modelWin": 0.07793009443181736
+     },
+     "utility": 0.45598664590902466,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.04181595633539369,
+      "se": 0.06641018931872174,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 20899,
+   "owner": "得到 野鬃（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 77,
+     "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+     "pick": "坚守盾牌(8)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 3,
+   "error": null,
+   "advisor": {
+    "label": "买 惊蛰(槽2,2金,合精锐)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 2,
+     "id": "chess_char_1_03_a",
+     "price": 2,
+     "prior": 89.2,
+     "label": "买 惊蛰(槽2,2金,合精锐)",
+     "modelUtil": 0.6106737973755751,
+     "modelWin": 0.12096909267578132
+    },
+    "utility": 0.4382933911791212,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0,
+     "se": 0,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "买 惊蛰(槽2,2金,合精锐)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_1_03_a",
+      "price": 2,
+      "prior": 89.2,
+      "label": "买 惊蛰(槽2,2金,合精锐)",
+      "modelUtil": 0.6106737973755751,
+      "modelWin": 0.12096909267578132
+     },
+     "utility": 0.4382933911791212,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.6106737973755751,
+      "modelWin": 0.12096909267578132
+     },
+     "utility": 0.43829339117912114,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "买 野鬃(槽0,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_1_19_a",
+      "price": 2,
+      "prior": 23.045598194130925,
+      "label": "买 野鬃(槽0,2金)",
+      "modelUtil": 0.6106737973755751,
+      "modelWin": 0.12096909267578132
+     },
+     "utility": 0.4262820512820513,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.012011339897069906,
+      "se": 0.022171398817613982,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.6106737973755751,
+      "modelWin": 0.12096909267578132
+     },
+     "utility": 0.42307692307692313,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.006410256410256415,
+      "se": 0.015437941767682432,
+      "n": 6
+     }
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.6401815882123789,
+      "modelWin": 0.17408637925302367
+     },
+     "utility": 0.4038461538461538,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.02564102564102566,
+      "se": 0.02564102564102564,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 16248,
+   "owner": "升级×1；买 惊蛰；买装备 随身身份牌；得到 流星（非开局商店）",
+   "ownerTurnContainsAdvisorAction": true,
+   "liveOverlay": [
+    {
+     "line": 82,
+     "advice": "升调度中心 Lv2（5 金，余 1）",
+     "pick": "惊蛰(22)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 4,
+   "error": null,
+   "advisor": {
+    "label": "宏：能升就升（商店升到钱不够为止）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "level",
+     "prior": 5,
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "modelUtil": 0.41413281620696657,
+     "modelWin": 0.05099943005459691
+    },
+    "utility": 0.4817370526893047,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.05007054848041667,
+     "se": 0.030056058178251466,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.41413281620696657,
+      "modelWin": 0.05099943005459691
+     },
+     "utility": 0.4817370526893047,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.05007054848041667,
+      "se": 0.030056058178251466,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.4596038244520256,
+      "modelWin": 0.0697839109245234
+     },
+     "utility": 0.431666504208888,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "卖 野鬃(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 71,
+      "id": "chess_char_1_19_a",
+      "prior": -7,
+      "label": "卖 野鬃(场上)",
+      "modelUtil": 0.4837265492572867,
+      "modelWin": 0.09392564534748016
+     },
+     "utility": 0.4288214074328807,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0028450967760073284,
+      "se": 0.03446946626392284,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 流星 装 随身身份牌",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 73,
+      "target": 69,
+      "id": "chess_item_1_04_e_a",
+      "prior": 5,
+      "label": "给 流星 装 随身身份牌",
+      "modelUtil": 0.4589742279494503,
+      "modelWin": 0.06893118794226163
+     },
+     "utility": 0.4193536510751536,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "刷新商店(1金)",
+     "action": {
+      "type": "refresh",
+      "family": "refresh",
+      "prior": 3,
+      "label": "刷新商店(1金)",
+      "modelUtil": 0.46854842585140977,
+      "modelWin": 0.0734951604904028
+     },
+     "utility": 0.4166666666666667,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0026869844084868957,
+      "se": 0.035459630499509294,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 17663,
+   "owner": "买装备 简易通讯机；得到 灰毫（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 86,
+     "advice": "抓 隐现（槽位 1）",
+     "pick": "隐现(50)"
+    },
+    {
+     "line": 87,
+     "advice": "没钱了，等下一回合进账",
+     "pick": "洛洛(0)"
+    },
+    {
+     "line": 88,
+     "advice": "没钱了，等下一回合进账",
+     "pick": "洛洛(0)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 5,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.38114163754657593,
+     "modelWin": 0.036568757400875555
+    },
+    "utility": 0.49542186364759494,
+    "winRate": 0,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.38114163754657593,
+      "modelWin": 0.036568757400875555
+     },
+     "utility": 0.49542186364759494,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "给 惊蛰 装 随身身份牌",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 93,
+      "target": 87,
+      "id": "chess_item_1_04_e_a",
+      "prior": 3,
+      "label": "给 惊蛰 装 随身身份牌",
+      "modelUtil": 0.4041474971778382,
+      "modelWin": 0.035384677824228154
+     },
+     "utility": 0.49541425739759487,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.000007606249999995522,
+      "se": 0.004734294224801052,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.3935071756584121,
+      "modelWin": 0.0393845011548274
+     },
+     "utility": 0.49533296098381085,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.032902007577605565,
+      "se": 0.04863958855460712,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 砾(槽1,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 1,
+      "id": "chess_char_2_12_a",
+      "price": 3,
+      "prior": 33.51034965034965,
+      "label": "买 砾(槽1,3金)",
+      "modelUtil": 0.39699580556372904,
+      "modelWin": 0.03419516077619522
+     },
+     "utility": 0.4861924270736618,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.04204254148775453,
+      "se": 0.028834967184575226,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.3796893304230153,
+      "modelWin": 0.0388368318923827
+     },
+     "utility": 0.4702485455482408,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.02517331809935407,
+      "se": 0.032047706982362235,
+      "n": 12
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 20152,
+   "owner": "升级×1；买 砾；买 雷蛇",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 93,
+     "advice": "升调度中心 Lv3（8 金，余 3）",
+     "pick": "坚守盾牌(14)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 6,
+   "error": null,
+   "advisor": {
+    "label": "买 灰毫(槽0,3金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 0,
+     "id": "chess_char_2_18_a",
+     "price": 3,
+     "prior": 25.662859839546957,
+     "label": "买 灰毫(槽0,3金)",
+     "modelUtil": 0.436455752502379,
+     "modelWin": 0.05145756853080967
+    },
+    "utility": 0.4763586502921658,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.021998685266257412,
+     "se": 0.022932073851501547,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "买 灰毫(槽0,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 0,
+      "id": "chess_char_2_18_a",
+      "price": 3,
+      "prior": 25.662859839546957,
+      "label": "买 灰毫(槽0,3金)",
+      "modelUtil": 0.436455752502379,
+      "modelWin": 0.05145756853080967
+     },
+     "utility": 0.4763586502921658,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.021998685266257412,
+      "se": 0.022932073851501547,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.42410377576561664,
+      "modelWin": 0.05356483086545493
+     },
+     "utility": 0.4543599650259084,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "给 惊蛰 装 简易通讯机",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 128,
+      "target": 121,
+      "id": "chess_item_2_06_e_a",
+      "prior": 3,
+      "label": "给 惊蛰 装 简易通讯机",
+      "modelUtil": 0.4443275109073545,
+      "modelWin": 0.061930423641182515
+     },
+     "utility": 0.4501299468013295,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.018426189548452366,
+      "se": 0.0624964323027695,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 惊蛰 装 随身身份牌",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 129,
+      "target": 121,
+      "id": "chess_item_1_04_e_a",
+      "prior": 3,
+      "label": "给 惊蛰 装 随身身份牌",
+      "modelUtil": 0.44110108769893464,
+      "modelWin": 0.06120143406650237
+     },
+     "utility": 0.4426114015082243,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.01174856351768413,
+      "se": 0.015575622476098866,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.4262680208949114,
+      "modelWin": 0.04887906336043303
+     },
+     "utility": 0.43589743589743596,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.03265870045234593,
+      "se": 0.04318437505420738,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 15665,
+   "owner": "买 灰毫；买 瑕光",
+   "ownerTurnContainsAdvisorAction": true,
+   "liveOverlay": [
+    {
+     "line": 98,
+     "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+     "pick": "炎国短刀(20)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 7,
+   "error": null,
+   "advisor": {
+    "label": "给 流星 装 阿戈尔重刃",
+    "action": {
+     "type": "equip",
+     "family": "equip",
+     "uid": 157,
+     "target": 150,
+     "id": "chess_item_3_07_e_a",
+     "prior": 5,
+     "label": "给 流星 装 阿戈尔重刃",
+     "modelUtil": 0.45081395978128386,
+     "modelWin": 0.05047257318800215
+    },
+    "utility": 0.4524309918258895,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.029490959547473144,
+     "se": 0.022685434852744886,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "给 流星 装 阿戈尔重刃",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 157,
+      "target": 150,
+      "id": "chess_item_3_07_e_a",
+      "prior": 5,
+      "label": "给 流星 装 阿戈尔重刃",
+      "modelUtil": 0.45081395978128386,
+      "modelWin": 0.05047257318800215
+     },
+     "utility": 0.4524309918258895,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.029490959547473144,
+      "se": 0.022685434852744886,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 瑕光 装 简易通讯机",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 159,
+      "target": 151,
+      "id": "chess_item_2_06_e_a",
+      "prior": 5,
+      "label": "给 瑕光 装 简易通讯机",
+      "modelUtil": 0.45886246428082333,
+      "modelWin": 0.05404184467319531
+     },
+     "utility": 0.43411478737230763,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.006410256410256415,
+      "se": 0.011819928791401136,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.43473648184374863,
+      "modelWin": 0.02590236765887816
+     },
+     "utility": 0.4294871794871795,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.012820512820512822,
+      "se": 0.008108404256841999,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 惊蛰 装 随身身份牌",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 160,
+      "target": 149,
+      "id": "chess_item_1_04_e_a",
+      "prior": 3,
+      "label": "给 惊蛰 装 随身身份牌",
+      "modelUtil": 0.453444113092349,
+      "modelWin": 0.05080754764258782
+     },
+     "utility": 0.42307692307692313,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 野鬃 装 随身身份牌",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 160,
+      "target": 155,
+      "id": "chess_item_1_04_e_a",
+      "prior": 3,
+      "label": "给 野鬃 装 随身身份牌",
+      "modelUtil": 0.4515051496269606,
+      "modelWin": 0.05113518867253117
+     },
+     "utility": 0.4230769230769231,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 14171,
+   "owner": "升级×1；得到 瑕光（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 103,
+     "advice": "先刷找 远牙/史尔特尔（核心没到手，装备不急）",
+     "pick": "迅捷作战粮(20)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 8,
+   "error": null,
+   "advisor": {
+    "label": "直接结束回合(存钱)",
+    "action": {
+     "type": "end",
+     "family": "end",
+     "prior": 0,
+     "label": "直接结束回合(存钱)",
+     "modelUtil": 0.4630764118561861,
+     "modelWin": 0.0036115941583304252
+    },
+    "utility": 0.47974400075044565,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.037436308442753315,
+     "se": 0.031373592169044784,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "直接结束回合(存钱)",
+     "action": {
+      "type": "end",
+      "family": "end",
+      "prior": 0,
+      "label": "直接结束回合(存钱)",
+      "modelUtil": 0.4630764118561861,
+      "modelWin": 0.0036115941583304252
+     },
+     "utility": 0.47974400075044565,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.037436308442753315,
+      "se": 0.031373592169044784,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 瑕光 装 阿戈尔重刃",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 194,
+      "target": 185,
+      "id": "chess_item_3_07_e_a",
+      "prior": 5,
+      "label": "给 瑕光 装 阿戈尔重刃",
+      "modelUtil": 0.45935588791887866,
+      "modelWin": 0.01713371863927009
+     },
+     "utility": 0.47484078410608593,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.03253309179839362,
+      "se": 0.025622495716861697,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 野鬃(槽2,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_1_19_a",
+      "price": 2,
+      "prior": 21.536138879931205,
+      "label": "买 野鬃(槽2,2金)",
+      "modelUtil": 0.49032006422611174,
+      "modelWin": 0.035207516649131854
+     },
+     "utility": 0.4712394630928853,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.028931770785192934,
+      "se": 0.02214864610375674,
+      "n": 6
+     }
+    },
+    {
+     "label": "下场 野鬃",
+     "action": {
+      "type": "bench",
+      "family": "layout",
+      "uid": 191,
+      "id": "chess_char_1_19_a",
+      "prior": -4,
+      "label": "下场 野鬃",
+      "modelUtil": 0.4685412919827768,
+      "modelWin": 0.0036115941583304252
+     },
+     "utility": 0.4674361029393254,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.037436308442753315,
+      "se": 0.031373592169044784,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.4506986652325275,
+      "modelWin": 0.019523642390903526
+     },
+     "utility": 0.4646599876134962,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.03829433420135129,
+      "se": 0.03325449217930071,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 23180,
+   "owner": "买 瑕光；得到 歌蕾蒂娅（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 107,
+     "advice": "抓 瑕光（槽位 5）",
+     "pick": "瑕光(129)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 9,
+   "error": null,
+   "advisor": {
+    "label": "按现有打法(guide)打完本回合",
+    "action": {
+     "type": "guide",
+     "family": "guide",
+     "prior": 1000,
+     "label": "按现有打法(guide)打完本回合",
+     "modelUtil": 0.4252301553338773,
+     "modelWin": 0.015112631079173636
+    },
+    "utility": 0.457716935617882,
+    "winRate": 0,
+    "vsGuide": null
+   },
+   "top": [
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.4252301553338773,
+      "modelWin": 0.015112631079173636
+     },
+     "utility": 0.457716935617882,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.4252301553338773,
+      "modelWin": 0.015112631079173636
+     },
+     "utility": 0.457716935617882,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 瑕光 装 卡西米尔竞技旗",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 254,
+      "target": 246,
+      "id": "chess_item_4_07_e_a",
+      "prior": 18,
+      "label": "给 瑕光 装 卡西米尔竞技旗",
+      "modelUtil": 0.4252301553338773,
+      "modelWin": 0.015112631079173636
+     },
+     "utility": 0.457716935617882,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "买 普罗旺斯(槽4,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 4,
+      "id": "chess_char_1_07_a",
+      "price": 2,
+      "prior": 6.090458456401695,
+      "label": "买 普罗旺斯(槽4,2金)",
+      "modelUtil": 0.43538170186081804,
+      "modelWin": 0.015226587633521287
+     },
+     "utility": 0.44871794871794873,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.005177460979353603,
+      "se": 0.0240954334142258,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 奥术法阵(槽5,1金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 5,
+      "id": "chess_item_3_08_e_a",
+      "price": 1,
+      "prior": 15,
+      "label": "买 奥术法阵(槽5,1金)",
+      "modelUtil": 0.43538170186081804,
+      "modelWin": 0.015226587633521287
+     },
+     "utility": 0.44871794871794873,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.005177460979353603,
+      "se": 0.0240954334142258,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 20878,
+   "owner": "买 焰尾；卖 惊蛰×3；得到 灰毫（非开局商店）；得到 妮芙（非开局商店）；得到 至简（非开局商店）；得到 至简（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 113,
+     "advice": "抓 焰尾（槽位 1）",
+     "pick": "焰尾(59)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 10,
+   "error": null,
+   "advisor": {
+    "label": "买 寻呼模块(槽5,4金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 5,
+     "id": "chess_item_4_01_e_a",
+     "price": 4,
+     "prior": 18,
+     "label": "买 寻呼模块(槽5,4金)",
+     "modelUtil": 0.501188066852283,
+     "modelWin": 0.028205192302309896
+    },
+    "utility": 0.520697409376565,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.033441325059672435,
+     "se": 0.021757266605952206,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "买 寻呼模块(槽5,4金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 5,
+      "id": "chess_item_4_01_e_a",
+      "price": 4,
+      "prior": 18,
+      "label": "买 寻呼模块(槽5,4金)",
+      "modelUtil": 0.501188066852283,
+      "modelWin": 0.028205192302309896
+     },
+     "utility": 0.520697409376565,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.033441325059672435,
+      "se": 0.021757266605952206,
+      "n": 12
+     }
+    },
+    {
+     "label": "给 雷蛇 装 卡西米尔竞技旗",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 308,
+      "target": 303,
+      "id": "chess_item_4_07_e_a",
+      "prior": 3,
+      "label": "给 雷蛇 装 卡西米尔竞技旗",
+      "modelUtil": 0.5008882055297451,
+      "modelWin": 0.026135633462787872
+     },
+     "utility": 0.48908903257993036,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.006157912663322607,
+      "se": 0.016924907688757304,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.4997290918342966,
+      "modelWin": 0.024864258452835457
+     },
+     "utility": 0.4872560843168925,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.4997290918342966,
+      "modelWin": 0.024864258452835457
+     },
+     "utility": 0.4872560843168925,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 12
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.5024063651637951,
+      "modelWin": 0.024281365725654536
+     },
+     "utility": 0.48608281635790634,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.009164128885346567,
+      "se": 0.03427590511741224,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 13962,
+   "owner": "升级×1；得到 焰尾（非开局商店）；得到 灰毫（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 118,
+     "advice": "抓 砾（槽位 3）",
+     "pick": "砾(63)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 11,
+   "error": null,
+   "advisor": {
+    "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+    "action": {
+     "type": "macro",
+     "family": "macro",
+     "name": "roll",
+     "prior": 5,
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "modelUtil": 0.4646975078754976,
+     "modelWin": 0.017663327737887546
+    },
+    "utility": 0.545251588787007,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.018361779841384946,
+     "se": 0.016277785530260814,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.4646975078754976,
+      "modelWin": 0.017663327737887546
+     },
+     "utility": 0.545251588787007,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.018361779841384946,
+      "se": 0.016277785530260814,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 焰尾 装 阿戈尔重刃",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 371,
+      "target": 362,
+      "id": "chess_item_3_07_e_a",
+      "prior": 6,
+      "label": "给 焰尾 装 阿戈尔重刃",
+      "modelUtil": 0.5528261626895248,
+      "modelWin": 0.062474370166077264
+     },
+     "utility": 0.5438943359896463,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.03221824126801629,
+      "se": 0.022298846886742885,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：能升就升（商店升到钱不够为止）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "level",
+      "prior": 5,
+      "label": "宏：能升就升（商店升到钱不够为止）",
+      "modelUtil": 0.4975461670164102,
+      "modelWin": 0.023898899387762892
+     },
+     "utility": 0.5438592129159164,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.01433216568336724,
+      "se": 0.01605126905705171,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 焰尾 装 变形同构体",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 374,
+      "target": 362,
+      "id": "chess_item_6_09_e_a",
+      "prior": 6,
+      "label": "给 焰尾 装 变形同构体",
+      "modelUtil": 0.5528261626895248,
+      "modelWin": 0.062474370166077264
+     },
+     "utility": 0.539051796346532,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.009524749113982692,
+      "se": 0.019053317985889738,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 焰尾 装 卡西米尔竞技旗",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 369,
+      "target": 362,
+      "id": "chess_item_4_07_e_a",
+      "prior": 6,
+      "label": "给 焰尾 装 卡西米尔竞技旗",
+      "modelUtil": 0.5528261626895248,
+      "modelWin": 0.062474370166077264
+     },
+     "utility": 0.5364872161857784,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.019961225710517227,
+      "se": 0.017733490451762663,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 12900,
+   "owner": "买 焰尾；卖 至简×1；得到 灰毫（非开局商店）；得到 灰毫（非开局商店）；得到 圣聆初雪（非开局商店）；得到 隐德来希（非开局商店）；得到 余（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 124,
+     "advice": "抓 信标（槽位 6）",
+     "pick": "信标(54)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 12,
+   "error": null,
+   "advisor": {
+    "label": "给 妮芙 装 阿戈尔重刃",
+    "action": {
+     "type": "equip",
+     "family": "equip",
+     "uid": 429,
+     "target": 411,
+     "id": "chess_item_3_07_e_a",
+     "prior": 7,
+     "label": "给 妮芙 装 阿戈尔重刃",
+     "modelUtil": 0.5788898352129022,
+     "modelWin": 0.06831728169225502
+    },
+    "utility": 0.6041286050840398,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.08848628596348329,
+     "se": 0.04255966600951047,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "给 妮芙 装 阿戈尔重刃",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 429,
+      "target": 411,
+      "id": "chess_item_3_07_e_a",
+      "prior": 7,
+      "label": "给 妮芙 装 阿戈尔重刃",
+      "modelUtil": 0.5788898352129022,
+      "modelWin": 0.06831728169225502
+     },
+     "utility": 0.6041286050840398,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.08848628596348329,
+      "se": 0.04255966600951047,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 妮芙 装 萨尔贡浓茶",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 423,
+      "target": 411,
+      "id": "chess_item_2_04_e_a",
+      "prior": 7,
+      "label": "给 妮芙 装 萨尔贡浓茶",
+      "modelUtil": 0.5788898352129022,
+      "modelWin": 0.06831728169225502
+     },
+     "utility": 0.597622679455384,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.04746380394890517,
+      "se": 0.029046495129993168,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 流星(手牌)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 431,
+      "id": "chess_char_3_17_a",
+      "prior": -5.156460396039604,
+      "label": "卖 流星(手牌)",
+      "modelUtil": 0.5812679636479288,
+      "modelWin": 0.0763135212506108
+     },
+     "utility": 0.5908088275115863,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.04796476979490818,
+      "se": 0.027539961446214466,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 妮芙 装 突袭手雷",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 427,
+      "target": 411,
+      "id": "chess_item_3_11_e_a",
+      "prior": 7,
+      "label": "给 妮芙 装 突袭手雷",
+      "modelUtil": 0.5788898352129022,
+      "modelWin": 0.06831728169225502
+     },
+     "utility": 0.5840871828403974,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.033928307333918606,
+      "se": 0.02201596054850557,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.5191079984115993,
+      "modelWin": 0.04320691956124318
+     },
+     "utility": 0.5835282003466798,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.056185307692335894,
+      "se": 0.02148485220190606,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 66,
+   "ms": 9280,
+   "owner": "升级×1；卖 妮芙×1；卖 灰毫×3；卖 野鬃×1；卖 至简×1；得到 锏（非开局商店）",
+   "ownerTurnContainsAdvisorAction": null,
+   "liveOverlay": [
+    {
+     "line": 129,
+     "advice": "可以抓 灰毫（槽位 2）",
+     "pick": "灰毫(37)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 13,
+   "error": null,
+   "advisor": {
+    "label": "卖 余(场上)",
+    "action": {
+     "type": "sell",
+     "family": "sell",
+     "uid": 471,
+     "id": "chess_char_6_03_a",
+     "prior": -17,
+     "label": "卖 余(场上)",
+     "modelUtil": 0.5726260406349335,
+     "modelWin": 0.05695543232608813
+    },
+    "utility": 0.6412236284894636,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.023340215724428404,
+     "se": 0.03493505354929792,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "卖 余(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 471,
+      "id": "chess_char_6_03_a",
+      "prior": -17,
+      "label": "卖 余(场上)",
+      "modelUtil": 0.5726260406349335,
+      "modelWin": 0.05695543232608813
+     },
+     "utility": 0.6412236284894636,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.023340215724428404,
+      "se": 0.03493505354929792,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 见钱眼开玩偶(槽5,1金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 5,
+      "id": "chess_item_2_07_e_a",
+      "price": 1,
+      "prior": 12,
+      "label": "买 见钱眼开玩偶(槽5,1金)",
+      "modelUtil": 0.569623825220202,
+      "modelWin": 0.06072723772332879
+     },
+     "utility": 0.6245024249330219,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.002090007869998652,
+      "se": 0.0415233822186237,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 锏(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 472,
+      "id": "chess_char_6_19_a",
+      "prior": -17,
+      "label": "卖 锏(场上)",
+      "modelUtil": 0.569623825220202,
+      "modelWin": 0.06072723772332879
+     },
+     "utility": 0.6232306295527582,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.001690195085305768,
+      "se": 0.041582079471490195,
+      "n": 6
+     }
+    },
+    {
+     "label": "给 宴 装 突袭手雷",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 475,
+      "target": 461,
+      "id": "chess_item_3_11_e_a",
+      "prior": 3,
+      "label": "给 宴 装 突袭手雷",
+      "modelUtil": 0.5591286017861461,
+      "modelWin": 0.06258009987547015
+     },
+     "utility": 0.6184971503718607,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.001069044680692947,
+      "se": 0.005795213628204234,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.5591286017861461,
+      "modelWin": 0.06258009987547015
+     },
+     "utility": 0.6174281056911677,
+     "winRate": 0,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 60,
+   "ms": 7738,
+   "owner": "卖 灰毫×3；卖 雷蛇×1；得到 玛恩纳（非开局商店）",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 134,
+     "advice": "对空 1/3 个（本波 31 只飞行）→ 可以抓 锏（槽位 4）",
+     "pick": "锏(93)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 14,
+   "error": null,
+   "advisor": {
+    "label": "买 耶拉(槽1,3金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 1,
+     "id": "chess_char_3_20_a",
+     "price": 3,
+     "prior": 36.40719794344473,
+     "label": "买 耶拉(槽1,3金)",
+     "modelUtil": 0.5663171042007678,
+     "modelWin": 0.02299637518103018
+    },
+    "utility": 0.7135628917166154,
+    "winRate": 0,
+    "vsGuide": {
+     "mean": 0.0017141146149763549,
+     "se": 0.022750305213145656,
+     "n": 12
+    }
+   },
+   "top": [
+    {
+     "label": "买 耶拉(槽1,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 1,
+      "id": "chess_char_3_20_a",
+      "price": 3,
+      "prior": 36.40719794344473,
+      "label": "买 耶拉(槽1,3金)",
+      "modelUtil": 0.5663171042007678,
+      "modelWin": 0.02299637518103018
+     },
+     "utility": 0.7135628917166154,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": 0.0017141146149763549,
+      "se": 0.022750305213145656,
+      "n": 12
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.5594283522450307,
+      "modelWin": 0.019539250918408267
+     },
+     "utility": 0.711848777101639,
+     "winRate": 0,
+     "vsGuide": null
+    },
+    {
+     "label": "给 流星 装 阿戈尔重刃",
+     "action": {
+      "type": "equip",
+      "family": "equip",
+      "uid": 523,
+      "target": 507,
+      "id": "chess_item_3_07_e_a",
+      "prior": 5,
+      "label": "给 流星 装 阿戈尔重刃",
+      "modelUtil": 0.5594283522450307,
+      "modelWin": 0.019539250918408267
+     },
+     "utility": 0.7000863859810723,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.011762391120566715,
+      "se": 0.022050770538113457,
+      "n": 12
+     }
+    },
+    {
+     "label": "买 缪尔赛思(槽2,4金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 2,
+      "id": "chess_char_6_11_a",
+      "price": 4,
+      "prior": 23.868937446443873,
+      "label": "买 缪尔赛思(槽2,4金)",
+      "modelUtil": 0.569288720172946,
+      "modelWin": 0.023678906643244645
+     },
+     "utility": 0.6946229911602213,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.0505122075491777,
+      "se": 0.045232349142713395,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 白面鸮(槽3,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 3,
+      "id": "chess_char_4_21_a",
+      "price": 3,
+      "prior": 35.8,
+      "label": "买 白面鸮(槽3,3金)",
+      "modelUtil": 0.5660484943785873,
+      "modelWin": 0.015202507921707402
+     },
+     "utility": 0.640162882236777,
+     "winRate": 0,
+     "vsGuide": {
+      "mean": -0.10497231647262197,
+      "se": 0.035327032917270594,
+      "n": 6
+     }
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 5833,
+   "owner": "无买卖",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 139,
+     "advice": "别赌6人（约 0%）→ 可以抓 缪尔赛思（槽位 3） · 资源喂终端 圣聆初雪（2493 有效攻）",
+     "pick": "缪尔赛思(41)"
+    }
+   ]
+  },
+  {
+   "game": "game2",
+   "round": 15,
+   "error": null,
+   "advisor": {
+    "label": "买 蛇屠箱(槽3,3金)",
+    "action": {
+     "type": "buy",
+     "family": "buy",
+     "slot": 3,
+     "id": "chess_char_3_16_a",
+     "price": 3,
+     "prior": 41.881767180925664,
+     "label": "买 蛇屠箱(槽3,3金)",
+     "modelUtil": 0.6092666903467869,
+     "modelWin": 0.055548154092488616
+    },
+    "utility": 1.0625,
+    "winRate": 1,
+    "vsGuide": {
+     "mean": 0.041666666666666664,
+     "se": 0.04166666666666667,
+     "n": 6
+    }
+   },
+   "top": [
+    {
+     "label": "买 蛇屠箱(槽3,3金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 3,
+      "id": "chess_char_3_16_a",
+      "price": 3,
+      "prior": 41.881767180925664,
+      "label": "买 蛇屠箱(槽3,3金)",
+      "modelUtil": 0.6092666903467869,
+      "modelWin": 0.055548154092488616
+     },
+     "utility": 1.0625,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0.041666666666666664,
+      "se": 0.04166666666666667,
+      "n": 6
+     }
+    },
+    {
+     "label": "卖 流星(场上)",
+     "action": {
+      "type": "sell",
+      "family": "sell",
+      "uid": 589,
+      "id": "chess_char_3_17_a",
+      "prior": -11,
+      "label": "卖 流星(场上)",
+      "modelUtil": 0.6038815880725581,
+      "modelWin": 0.0742126173749948
+     },
+     "utility": 1.0208333333333333,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "action": {
+      "type": "macro",
+      "family": "macro",
+      "name": "roll",
+      "prior": 5,
+      "label": "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+      "modelUtil": 0.6147347631320517,
+      "modelWin": 0.09675475555304922
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "买 惊蛰(槽1,2金)",
+     "action": {
+      "type": "buy",
+      "family": "buy",
+      "slot": 1,
+      "id": "chess_char_1_03_a",
+      "price": 2,
+      "prior": 12.878881987577639,
+      "label": "买 惊蛰(槽1,2金)",
+      "modelUtil": 0.6035606580637204,
+      "modelWin": 0.057273354284847935
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": {
+      "mean": 0,
+      "se": 0,
+      "n": 6
+     }
+    },
+    {
+     "label": "按现有打法(guide)打完本回合",
+     "action": {
+      "type": "guide",
+      "family": "guide",
+      "prior": 1000,
+      "label": "按现有打法(guide)打完本回合",
+      "modelUtil": 0.5804996394990206,
+      "modelWin": 0.04687346334601315
+     },
+     "utility": 1,
+     "winRate": 1,
+     "vsGuide": null
+    }
+   ],
+   "modelStatus": "模型与当前游戏版本一致",
+   "rollouts": 54,
+   "ms": 5488,
+   "owner": "买装备 炎国短刀",
+   "ownerTurnContainsAdvisorAction": false,
+   "liveOverlay": [
+    {
+     "line": 142,
+     "advice": "对空 1/2 个（本波 8 只飞行）→ 可以抓 安洁莉娜（槽位 3）",
+     "pick": "安洁莉娜(26)"
+    }
+   ]
+  }
+ ]
+}

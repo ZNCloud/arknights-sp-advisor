@@ -1,0 +1,99 @@
+{
+ "game": "game2",
+ "seeds": 8,
+ "rows": [
+  {
+   "round": 14,
+   "items": false,
+   "owner": {
+    "share": 0.884,
+    "shareOt": 1.077,
+    "pClear": 0.125
+   },
+   "best": {
+    "share": 1.008,
+    "shareOt": 1.244,
+    "pClear": 0.5
+   },
+   "ai": {
+    "share": 0.867,
+    "shareOt": 1.169,
+    "pClear": 0
+   },
+   "steps": [
+    "玛恩纳 朝 LEFT",
+    "灰毫 换下 歌蕾蒂娅",
+    "瑕光 挪到 12,8"
+   ]
+  },
+  {
+   "round": 15,
+   "items": false,
+   "owner": {
+    "share": 2.317,
+    "shareOt": 2.904,
+    "pClear": 0.692
+   },
+   "best": {
+    "share": 2.577,
+    "shareOt": 3.223,
+    "pClear": 0.769
+   },
+   "ai": {
+    "share": 1.961,
+    "shareOt": 2.348,
+    "pClear": 0.577
+   },
+   "steps": [
+    "砾 挪到 11,8",
+    "瑕光 朝 RIGHT"
+   ]
+  },
+  {
+   "round": 14,
+   "items": true,
+   "owner": {
+    "share": 0.884,
+    "shareOt": 1.077,
+    "pClear": 0.125
+   },
+   "best": {
+    "share": 1.001,
+    "shareOt": 1.239,
+    "pClear": 0.625
+   },
+   "ai": {
+    "share": 0.867,
+    "shareOt": 1.169,
+    "pClear": 0
+   },
+   "steps": [
+    "萨尔贡浓茶 从 歌蕾蒂娅 改给 锏",
+    "玛恩纳 朝 DOWN",
+    "对调 歌蕾蒂娅 与 隐德来希"
+   ]
+  },
+  {
+   "round": 15,
+   "items": true,
+   "owner": {
+    "share": 2.317,
+    "shareOt": 2.904,
+    "pClear": 0.692
+   },
+   "best": {
+    "share": 2.278,
+    "shareOt": 2.879,
+    "pClear": 0.692
+   },
+   "ai": {
+    "share": 1.961,
+    "shareOt": 2.348,
+    "pClear": 0.577
+   },
+   "steps": [
+    "歌蕾蒂娅 挪到 9,4"
+   ]
+  }
+ ]
+}
