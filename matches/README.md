@@ -1,6 +1,6 @@
 # matches/ —— 真实对局的过程记录（复盘用）
 
-这里是**真人打的对局**逐回合快照，一行一回合（JSONL），由 `overlay.mjs` 的 `recordTurn()` 从客户端
+这里是**真人打的对局**快照，一行一个事件（JSONL），由 `overlay.mjs` 的 `recordTurn()` 从客户端
 `store.get('match')` 里读出来追加到 `records/<日期>.jsonl`，再拷到这里留档。
 
 和 `samples/` 的区别：
@@ -8,9 +8,19 @@
 | | 来源 | 用途 |
 |---|---|---|
 | `samples/` | 引擎 `tools/matchrun.mjs` 跑 bot，20 seeds 一臂 | 复现模型结论 |
-| `matches/` | 客户端里真人打的一局，每回合一行 | 复盘「当时顾问说了什么、我买了什么、结果怎样」 |
+| `matches/` | 客户端里真人打的一局 | 复盘「当时顾问说了什么、我买了什么、结果怎样」 |
 
 客户端自己不保存过程（只把终局结果写进 localStorage 的 `sp.match-history.v1`），所以过程是这个仓库独有的。
+
+## 什么时候写一行
+
+1. 进入新的「回合 + 阶段」（`ROUND_START` / `PREP` / `COMBAT` / `SETTLE` …）；
+2. **同一阶段里经济状态变了**——买了、卖了、刷了、冻了、挪位了、升本了。
+
+第 2 条是逐动作粒度。2026-10-19 之前的记录只有第 1 条（一回合里的四次购买被压成一行），
+所以那几天的一局其实只有 20 行左右；从 `recordTurn` 改过之后，一局会落 60–100 行。
+
+判断「变了」的指纹是 `recordKeyOf()`：资金 / 等级 / LP / 商店（含槽位号与冻结）/ 上阵（含坐标）/ 手牌 / 盟约人数层数。
 
 ## 字段
 
@@ -23,14 +33,27 @@
 | `bonds` | `盟约id:人数/层数` |
 | `board` | 场上干员：`id`、`golden`（精锐）、`tier`、`items`（装备）、`at: [row, col]`、`dir` |
 | `hand` | 手牌 id |
-| `shop` | 商店未售出的格子：`id` / `price` / `frozen` |
-| `advice` | 当时模型给的结论（`advice.kind` 的口径：buy / level / refresh / wait） |
-| `pick` | 当时推荐的那一格 |
+| `shop` | 商店未售出的格子：**`slot`（真实槽位号，1 起）**、`id`、`price`、`frozen` |
+| `advice` | 当时模型给的结论原话（“抓 X（槽位 N）” / “升调度中心 Lv5” / “先刷找 …” / “忍住，攒金”） |
+| `pick` | 当时推荐的那一格与评分 |
 | `terminal` | 当时的输出终端 |
 | `boss` | 本局 BOSS 与破甲通道 k |
 | `stats` | 服务端统计：dmgDealt / bossDamage / kills / leaks / gold / refreshes / merges / itemsEquipped |
 
+> `slot` 是后加的：早先的记录把已售出的格子直接丢掉，槽位号会整体前移，和顾问嘴里说的「槽位 3」对不上。
+
+## 复盘
+
+```powershell
+node lab\replay.mjs                 # 四局全量：每拍「顾问说什么 / 你做了什么 / 差在哪」
+node lab\replay.mjs --only-x        # 只看和顾问不一致的拍
+node lab\replay.mjs --json          # 机器可读
+```
+
+它能反推出买/卖/刷/冻/升本/挪位，名字用 `plugin/ui/index.html` 里内嵌的 `sp-data` 翻译成中文。
+逐动作记录到位之后，一拍的粒度就是「一次操作」，价格也能从商店里对上，不再出现“价不详”。
+
 ## 注意
 
-- 这些文件是**某一时刻的快照**：`records/` 在 `.gitignore` 里，还在被 overlay 持续追加；这里拷出来的是留档版本。
+- `records/` 在 `.gitignore` 里，还在被 overlay 持续追加；这里是拷出来的留档版本（每局打完再拷一次）。
 - 不含账号、昵称或任何令牌：字段全部来自对局视图本身。
