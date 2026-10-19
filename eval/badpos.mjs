@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { makeMatch, runToEnd } from './engine.mjs';
 import { installGuide } from '../guides/policy.mjs';
-import { capture, toJSON } from '../advisor/state.mjs';
+import { capture, toJSON, clone } from '../advisor/state.mjs';
 import { advise, modelScorer } from '../advisor/advise.mjs';
 import { RolloutPool } from '../advisor/pool.mjs';
 
@@ -28,12 +28,16 @@ function positions(seed) {
   m.start(); const s = runToEnd(m); m.dispose();
   const lost14 = !s.victory && out.some(p => p.round === 14);
   return out.map(p => ({ ...p, tags: [lost14 && p.round >= 13 ? 'stuck14' : null, !p.coreActive && p.round >= 8 && p.round <= 10 ? 'noCore' : null,
-    p.funds <= 2 && p.round >= 6 && p.round <= 10 ? 'broke' : null].filter(Boolean) }));
+    (p.round === 8 || p.round === 9) ? 'brokeSrc' : null].filter(Boolean) }));
 }
-const picked = { stuck14: [], noCore: [], broke: [] };
+const picked = { stuck14: [], noCore: [], broke: [], brokeSrc: [] };
 for (const seed of seeds) for (const p of positions(seed)) for (const t of p.tags) if (picked[t].length < max && !picked[t].some(q => q.seed === p.seed)) picked[t].push(p);
 // s1004 is the named stuck-at-14 case; always include its R13 spot.
 if (!picked.stuck14.some(p => p.seed === 1004)) { const p = positions(1004).find(q => q.round === 13); if (p) picked.stuck14.unshift({ ...p, tags: ['stuck14'] }); }
+// 缺钱局: prep-start funds are a fixed income (≈ round+3) in natural play, so a broke spot never occurs at prep start.
+// DIAGNOSTIC construction: a real R8/R9 position with p0's funds set to 2 (stated in every output row).
+for (const p of picked.brokeSrc) { const st = clone(p.state); st.seats.find(x => x.playerId === 'p0').funds = 2; picked.broke.push({ ...p, funds: 2, diagnostic: 'funds set to 2', state: st }); }
+delete picked.brokeSrc;
 mkdirSync('positions', { recursive: true });
 const pool = new RolloutPool(+(opt.workers || 46)), rows = [];
 for (const [tag, list] of Object.entries(picked)) for (const p of list) {
@@ -41,7 +45,7 @@ for (const [tag, list] of Object.entries(picked)) for (const p of list) {
   const res = await advise(p.state, { playerId: 'p0', spec, pool, K: +(opt.K || 4), N: +(opt.N || 12), N2: +(opt.N2 || 12), seed: p.seed,
     scorer: opt.model ? modelScorer({ pool, spec, modelDir: opt.model }) : null });
   const g = res.candidates.find(c => c.action.type === 'guide'), b = res.recommendation;
-  const row = { tag, seed: p.seed, round: p.round, funds: p.funds, lp: p.lp, core: p.core, file, best: b.label, bestWin: b.winRate, bestU: b.utility, bestR14: b.r14Dmg,
+  const row = { tag, diagnostic: p.diagnostic || null, seed: p.seed, round: p.round, funds: p.funds, lp: p.lp, core: p.core, file, best: b.label, bestWin: b.winRate, bestU: b.utility, bestR14: b.r14Dmg,
     guideWin: g?.winRate, guideU: g?.utility, guideR14: g?.r14Dmg, vsGuide: b.vsGuide, n: b.n, ms: Math.round(res.ms),
     top: res.candidates.slice(0, 5).map(c => ({ label: c.label, win: c.winRate, U: +c.utility.toFixed(3), r14: +c.r14Dmg.toFixed(3), n: c.n, vsGuide: c.vsGuide })) };
   rows.push(row);

@@ -21,7 +21,7 @@ export function modelScorer({ pool, spec, modelDir, samples = 2 }) {
     }));
     const ranked = scored.filter(a => Number.isFinite(a.modelUtil)).sort((x, y) => y.modelUtil - x.modelUtil);
     const keep = ranked.slice(0, K);
-    for (const a of ranked) if ((a.type === 'guide' || (gf && sameAction(a, gf))) && !keep.includes(a)) keep.push(a);
+    for (const a of ranked) if ((a.type === 'guide' || a.type === 'macro' || (gf && sameAction(a, gf))) && !keep.includes(a)) keep.push(a); // multi-step plans are always rolled out
     return { keep, scored: ranked };
   }, { modelDir });
 }
@@ -66,12 +66,12 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
     return { recommendation: ranked[0], candidates: ranked, illegal: [], modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: 0, ms: performance.now() - t0, method: 'value model only', continuation: spec.id };
   }
   const sampleSeeds = Array.from({ length: N + N2 }, (_, i) => deriveSeed(seed, `${stateKey}:s${i}`));
-  const rows = cands.map(a => ({ action: a, outcomes: [], guideFirst: !!(gf && sameAction(a, gf)) }));
+  const rows = cands.map(a => ({ action: a, outcomes: [], invalid: [], guideFirst: !!(gf && sameAction(a, gf)) }));
   const runFor = (row, seeds) => Promise.all(seeds.map(sampleSeed => pool.run({ stateJSON, stateKey, playerId, action: row.action, sampleSeed, spec })
-    .then(o => { row.outcomes.push({ ...o, sampleSeed }); })));
+    .then(o => { if (o.invalid) { row.invalid.push(o.engineErrors); return; } row.outcomes.push({ ...o, sampleSeed }); })));
   // Stage 1: every candidate gets N rollouts on the same sample seeds (common random numbers).
   await Promise.all(rows.map(r => runFor(r, sampleSeeds.slice(0, N))));
-  const legal = rows.filter(r => !r.outcomes.some(o => o.illegal));
+  const legal = rows.filter(r => r.outcomes.length && !r.outcomes.some(o => o.illegal));
   const score = r => mean(r.outcomes.map(o => o.utility));
   // Stage 2: the top few get N2 more samples.
   const top = [...legal].sort((a, b) => score(b) - score(a)).slice(0, stage2);
@@ -87,9 +87,9 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
     }
     return { action: r.action, label: r.action.label, n, winRate: wins / n, winCI95: wilson(wins, n), utility: mean(u), utilitySE: n > 1 ? sd(u) / Math.sqrt(n) : null,
       r14Dmg: mean(r.outcomes.map(o => o.r14Dmg)), reachR14: mean(r.outcomes.map(o => o.lastRound >= 14 ? 1 : 0)), meanLastRound: mean(r.outcomes.map(o => o.lastRound)),
-      vsGuide: adv, guideFirst: r.guideFirst, prior: r.action.prior, modelUtil: r.action.modelUtil, modelWin: r.action.modelWin, rolloutMs: mean(r.outcomes.map(o => o.ms)) };
+      vsGuide: adv, engineErrorRollouts: r.invalid.length, guideFirst: r.guideFirst, prior: r.action.prior, modelUtil: r.action.modelUtil, modelWin: r.action.modelWin, rolloutMs: mean(r.outcomes.map(o => o.ms)) };
   }).sort((a, b) => b.utility - a.utility);
   const illegal = rows.filter(r => r.outcomes.some(o => o.illegal)).map(r => ({ label: r.action.label, reply: r.outcomes.find(o => o.illegal).reply }));
-  return { recommendation: result[0], candidates: result, illegal, modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: rows.reduce((s, r) => s + r.outcomes.length, 0),
+  return { recommendation: result[0], candidates: result, illegal, modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: rows.reduce((s, r) => s + r.outcomes.length, 0), engineErrorRollouts: rows.reduce((s, r) => s + r.invalid.length, 0),
     ms: performance.now() - t0, method: scorer ? 'value-model prefilter + rollouts' : 'heuristic top-K + rollouts (CRN)', continuation: spec.id };
 }

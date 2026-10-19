@@ -1,0 +1,79 @@
+{
+ "patch": {
+  "path": "/work/sp-advisor/docs/advisor/patch-demo-angel.json",
+  "sha256": "7c6addca9798951f99681792e9348b6e14c014b8640bb978d62ee0024523af4e",
+  "ops": 2
+ },
+ "modelStatus": "模型待更新：游戏数据已变（训练时 12384e0e7bf3@c9d804f4，当前 1645ea47d4cb@c9d804f4）",
+ "rows": [
+  {
+   "file": "positions/angel-s3001-r7.json",
+   "round": 7,
+   "buy": {
+    "label": "买 能天使(槽2,3金)",
+    "win": 0,
+    "U": 0.31089743589743596,
+    "r14": 0,
+    "n": 24
+   },
+   "guide": {
+    "win": 0,
+    "U": 0.31089743589743596,
+    "r14": 0,
+    "n": 24
+   },
+   "buyVsGuide": {
+    "mean": 0,
+    "se": 0,
+    "n": 24
+   },
+   "engineErrorRollouts": 0
+  },
+  {
+   "file": "positions/angel-s3005-r7.json",
+   "round": 7,
+   "buy": {
+    "label": "买 能天使(槽2,3金,合精锐)",
+    "win": 0,
+    "U": 0.5465184393891477,
+    "r14": 0.19596690234625402,
+    "n": 24
+   },
+   "guide": {
+    "win": 0,
+    "U": 0.5819263765928515,
+    "r14": 0.24972243231459887,
+    "n": 24
+   },
+   "buyVsGuide": {
+    "mean": -0.03540793720370387,
+    "se": 0.03412446514251816,
+    "n": 24
+   },
+   "engineErrorRollouts": 0
+  },
+  {
+   "file": "positions/angel-s3002-r14.json",
+   "round": 14,
+   "buy": {
+    "label": "买 能天使(槽0,3金,合精锐)",
+    "win": 1,
+    "U": 1,
+    "r14": 1,
+    "n": 24
+   },
+   "guide": {
+    "win": 1,
+    "U": 1,
+    "r14": 1,
+    "n": 24
+   },
+   "buyVsGuide": {
+    "mean": 0,
+    "se": 0,
+    "n": 24
+   },
+   "engineErrorRollouts": 0
+  }
+ ]
+}

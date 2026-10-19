@@ -39,3 +39,24 @@ node sp-advisor/eval/advised.mjs --seeds 1001-1010 --K 8 --N 6 --N2 6 --steps 2 
 ## 效用（排序用）
 
 胜 = 1（R15 隐藏通关 +0.25）；败 = 0.5·(到达回合−1)/13 + 0.45·R14 伤害比例。自然开局胜率低，单看胜率候选间常常全是 0，所以败局按「活多久、打掉 boss 多少」细分。**报告里的胜率是真实对局结果计数，不是效用。**
+
+## M2 增补（2026-10-19）
+
+### 估胜模型（评估器 v2）
+- 数据：`datagen.mjs` 自对局，打法混合 g06 / g07 / g06_la 三份 guide × 随机扰动 eps∈{0,.1,.25,.4} + 15% 注入局（拉特兰/冻结流，标注为诊断正例）。每份数据带版本戳 `<file>.meta.json`。
+- 两套输入：`features.mjs`（聚合 123 维，默认 `models/`）与 `features-table.mjs`（局面表 1188 维，TABLE_VERSION=1，属性编码，`models-table/`）。
+- 训练：`train.py`（LightGBM，按种子 seed%5 切验证集）→ `stamp.mjs` 写 `meta.json`（数据指纹、引擎 commit、特征集）。
+- 用法：`advise --model sp-advisor/models`（模型给全部合法动作打分 → 前 K + guide + 宏动作推演细算）；`advised.mjs --N 0` 为纯模型快速模式（偏离阈值 `--margin`，默认 0.05）。
+- 宏动作：`宏：梭哈刷新`、`宏：能升就升`（多步打法，坏局用）。
+
+### 游戏更新后对齐
+| 步骤 | 命令 |
+|---|---|
+| B1 数据指纹 | `eval/version.mjs dataHash()`：data/*.json（不含 assets.json、i18n/）+ 引擎 commit (+内存补丁) 的 sha256 |
+| B2 过期降级 | 自动：`advisor/meta.mjs` 比对 `models/meta.json`；不符 → 输出「模型待更新：…」，不用模型预筛，K+4、N×2 |
+| B3 改动清单 | `node sp-advisor/tools/datadiff.mjs <旧引擎目录> <新引擎目录> [--json out.json]` |
+| B4 一键补训 | `PATCH=… FAVOR=<改动干员> PY=<python 包装> sp-advisor/tools/retrain.sh <候选目录>`：造数据 → 训练 → 打戳 → 三条验收（校准、对局不退步、改动干员估值方向）→ 通过才换上 |
+| B5 内存补丁 | `node sp-advisor/eval/with-patch.mjs <patch.json> <脚本> …`：用引擎自带 `applyPatches`/`setData` 装内容集，引擎 data 不写；worker 线程同样装上 |
+
+### 引擎错误
+采样未来里引擎自己报错（如 sim「hook nesting deeper than 32」）时，该次推演标记无效、不计入统计，并在输出 `engineErrorRollouts` 里计数；自对局同理丢弃该局并计数。

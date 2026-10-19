@@ -45,7 +45,9 @@ export function runRollout(state, { playerId, action, sampleSeed, spec }) {
   for (const p of m.alivePlayers()) if (p !== ps && !p.ready) m.scheduleBotPrep(p);
   m.maybeEndPrep();
   const summary = runToEnd(m), errors = errorsOf(m);
-  if (errors.match || errors.sim || errors.meta || errors.log.length) throw Error(`rollout engine errors ${JSON.stringify(errors).slice(0, 300)}`);
+  // An engine fault inside one sampled future (e.g. the sim's "hook nesting deeper than 32") is an engine bug, not a
+  // property of the position: that sample is marked invalid, excluded from the statistics and COUNTED in the output.
+  if (errors.match || errors.sim || errors.meta || errors.log.length) { m.dispose(); return { invalid: true, engineErrors: JSON.stringify(errors).slice(0, 300), ms: performance.now() - t }; }
   const out = { ...outcomeOf(m, summary, battles), ms: performance.now() - t };
   m.dispose();
   return out;

@@ -1,0 +1,19 @@
+{
+ "dataHash": "12384e0e7bf33b5c6b32179a79dd10e90b28c02e68deae7a001ba1a3bbde5dae",
+ "engineCommit": "c9d804f470b8d7422ae04eb66faf671cef21ad52",
+ "files": 17,
+ "contentPatch": null,
+ "fingerprint": "b78910ec8faa93596364fe444dc66c72b35046cf98e60189d6b2584fd54d470d",
+ "codeHash": "023264262cc2bef157946ff2ff2a33a95a1ef1e155e4d3fe2ba49b0791eaa7fe",
+ "trainedAt": "2026-10-19T11:05:29.559Z",
+ "sources": [
+  {
+   "file": "data/selfplay-b.jsonl",
+   "games": 2000,
+   "createdAt": "2026-10-19T10:45:55.662Z"
+  }
+ ],
+ "featureSet": "x",
+ "valWinAuc": 0.8431612171843322,
+ "valUtilR2": 0.41182293702249495
+}

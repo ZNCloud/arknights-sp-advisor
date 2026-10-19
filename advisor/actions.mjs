@@ -13,6 +13,9 @@ export function listActions(m, ps) {
   const out = [{ type: 'guide', family: 'guide', prior: 1e3, label: '按现有打法(guide)打完本回合' },
     { type: 'end', family: 'end', prior: 0, label: '直接结束回合(存钱)' }];
   const add = (a) => out.push(a);
+  // Multi-step plans for bad spots (single actions rarely move a lost position): all-in roll, all-in level.
+  if (ps.funds >= 2) add({ type: 'macro', family: 'macro', name: 'roll', prior: 5, label: '宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）' });
+  if (ps.shop.level < m.gd.maxShopLevel && ps.funds >= ps.shop.upgradePrice) add({ type: 'macro', family: 'macro', name: 'level', prior: 5, label: '宏：能升就升（商店升到钱不够为止）' });
   const hasRoom = freeHand(ps) >= 0;
   ps.shop.slots.forEach((s, slot) => {
     if (!s || s.sold || ps.priceOf(s) > ps.funds || !hasRoom) return;
@@ -58,7 +61,7 @@ export function listActions(m, ps) {
 }
 
 // Family quotas keep every kind of action represented before top-K by prior.
-const QUOTA = { guide: 1, end: 1, buy: 3, reward: 1, level: 1, refresh: 1, sell: 1, equip: 1, layout: 1, freeze: 0 };
+const QUOTA = { guide: 1, end: 1, macro: 2, buy: 3, reward: 1, level: 1, refresh: 1, sell: 1, equip: 1, layout: 1, freeze: 0 };
 export function prune(actions, k, extra = []) {
   const byFam = {};
   for (const a of [...actions].sort((x, y) => y.prior - x.prior)) (byFam[a.family] ||= []).push(a);
@@ -88,6 +91,23 @@ export function applyAction(m, ps, a) {
     case 'bench': return ps.move(a.uid, { area: 'hand', idx: freeHand(ps) });
     case 'rotate': { const loc = ps.find(a.uid); if (!loc?.key) return { error: 'NOT_ON_BOARD' };
       const [row, col] = loc.key.split(',').map(Number); return ps.move(a.uid, { area: 'board', row, col }, a.dir); }
+    case 'macro': return runMacro(m, ps, a.name);
     default: throw Error(`unknown action ${a.type}`);
   }
+}
+
+function runMacro(m, ps, name) {
+  if (name === 'level') { let n = 0; while (ps.shop.level < m.gd.maxShopLevel && ps.funds >= ps.shop.upgradePrice && ps.levelUp()?.ok) n++; return n ? { ok: true } : { error: 'CANNOT_LEVEL' }; }
+  if (name !== 'roll') throw Error(`unknown macro ${name}`);
+  for (let i = 0; i < 30 && ps.funds >= 1; i++) {
+    let best = -1, bv = 12;
+    ps.shop.slots.forEach((s, slot) => {
+      if (!s || s.sold || s.kind !== 'chess' || ps.priceOf(s) > ps.funds || freeHand(ps) < 0) return;
+      const v = buyScoreOf(m, ps, s.id) + (ps.completesChessMerge(s.id) ? 40 : 0);
+      if (v > bv) { bv = v; best = slot; }
+    });
+    if (best >= 0) { if (!ps.buy(best)?.ok) break; continue; }
+    if (ps.funds < (ps.shop.freeRefreshes > 0 ? 0 : m.gd.refreshPrice) + 1 || !ps.refresh()?.ok) break;
+  }
+  return { ok: true };
 }

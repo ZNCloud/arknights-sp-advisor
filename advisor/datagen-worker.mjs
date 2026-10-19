@@ -42,7 +42,8 @@ function play({ seed, spec, policy }) {
   };
   m.start();
   const s = runToEnd(m), errors = errorsOf(m);
-  if (errors.match || errors.sim || errors.meta || errors.log.length) throw Error(`datagen engine errors seed ${seed}`);
+  // A game with an engine fault is dropped (not trained on) and reported to the parent, which counts it.
+  if (errors.match || errors.sim || errors.meta || errors.log.length) { m.dispose(); return { rows: [], outcome: { win: false }, engineError: JSON.stringify(errors).slice(0, 200) }; }
   const outcome = outcomeOf(m, s, battles); m.dispose();
   for (const r of rows) Object.assign(r, { win: outcome.win ? 1 : 0, hidden: outcome.hidden ? 1 : 0, utility: outcome.utility, r14Dmg: outcome.r14Dmg, lastRound: outcome.lastRound });
   return { rows, outcome };

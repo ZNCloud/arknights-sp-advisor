@@ -1,0 +1,122 @@
+{
+ "old": "models-prod-demo",
+ "new": "models-cand-angel",
+ "calibration": {
+  "new": {
+   "n": 11069,
+   "meanPred": 0.0841766805724858,
+   "actual": 0.1004607462282049,
+   "auc": 0.6818026145519258
+  },
+  "old": {
+   "n": 11069,
+   "meanPred": 0.08372786172454356,
+   "actual": 0.1004607462282049,
+   "auc": 0.7138336031987907
+  },
+  "pass": false
+ },
+ "play": {
+  "old": {
+   "n": 20,
+   "winRate": 0.05,
+   "hiddenRate": 0,
+   "reachR14": 0.1,
+   "meanR14Dmg": 0.09742228971150586,
+   "meanLastRound": 10.6,
+   "meanUtility": 0.4155707996009469
+  },
+  "new": {
+   "n": 20,
+   "winRate": 0.05,
+   "hiddenRate": 0,
+   "reachR14": 0.2,
+   "meanR14Dmg": 0.0954570301968813,
+   "meanLastRound": 11.2,
+   "meanUtility": 0.43776335589628895
+  },
+  "pass": true
+ },
+ "direction": {
+  "positions": 12,
+  "meanOldDelta": -0.005323844185681353,
+  "meanNewDelta": 0.011280376110837357,
+  "movedUp": 7,
+  "rows": [
+   {
+    "seed": 3001,
+    "round": 7,
+    "oldDelta": 0,
+    "newDelta": 0.001103430941211292
+   },
+   {
+    "seed": 3002,
+    "round": 14,
+    "oldDelta": -0.023833688193893532,
+    "newDelta": -0.0033999837622316065
+   },
+   {
+    "seed": 3005,
+    "round": 7,
+    "oldDelta": -0.008794768643772821,
+    "newDelta": 0.1189809835658816
+   },
+   {
+    "seed": 3008,
+    "round": 8,
+    "oldDelta": 0.0246036018053864,
+    "newDelta": -0.02126248600895725
+   },
+   {
+    "seed": 3012,
+    "round": 8,
+    "oldDelta": -0.011535407945116316,
+    "newDelta": -0.012776961329340919
+   },
+   {
+    "seed": 3021,
+    "round": 11,
+    "oldDelta": 0,
+    "newDelta": 0.014124598349169126
+   },
+   {
+    "seed": 3028,
+    "round": 7,
+    "oldDelta": 0,
+    "newDelta": 0
+   },
+   {
+    "seed": 3033,
+    "round": 8,
+    "oldDelta": 0,
+    "newDelta": -0.0009109969552614228
+   },
+   {
+    "seed": 3034,
+    "round": 7,
+    "oldDelta": 0.013692939693474626,
+    "newDelta": 0.013182898087896078
+   },
+   {
+    "seed": 3037,
+    "round": 8,
+    "oldDelta": -0.016785376976665045,
+    "newDelta": 0.029291343966331596
+   },
+   {
+    "seed": 3041,
+    "round": 10,
+    "oldDelta": -0.039805200457802115,
+    "newDelta": -0.00763895923917135
+   },
+   {
+    "seed": 3043,
+    "round": 10,
+    "oldDelta": -0.0014282295097874376,
+    "newDelta": 0.004670645714521138
+   }
+  ],
+  "pass": true
+ },
+ "pass": false
+}

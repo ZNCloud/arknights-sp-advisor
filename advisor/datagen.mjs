@@ -16,7 +16,7 @@ mkdirSync(dirname(out), { recursive: true }); writeFileSync(out, '');
 // B1: every data file carries the game version it was generated on (sidecar <out>.meta.json).
 writeFileSync(`${out}.meta.json`, JSON.stringify({ ...dataHash(), codeHash: codeHash(), games, seed0, guides, table: opt.table === '1', favor: opt.favor || null, createdAt: new Date().toISOString() }, null, 1));
 const pool = new RolloutPool(+(opt.workers || 24), new URL('./datagen-worker.mjs', import.meta.url));
-let done = 0, rows = 0, wins = 0; const t0 = Date.now();
+let done = 0, rows = 0, wins = 0, dropped = 0; const t0 = Date.now();
 await Promise.all(Array.from({ length: games }, (_, i) => {
   const seed = seed0 + i, r = (seed * 2654435761 >>> 0) / 2 ** 32;
   // Mix: 15% injection, otherwise natural with eps in {0, .1, .25, .4}.
@@ -24,8 +24,8 @@ await Promise.all(Array.from({ length: games }, (_, i) => {
   const spec = specs[(seed >> 2) % specs.length];
   return pool.run({ seed, spec, policy: { ...policy, table: opt.table === '1', favor: opt.favor ? opt.favor.split(',') : null } }).then(res => {
     appendFileSync(out, res.rows.map(x => JSON.stringify(x)).join('\n') + (res.rows.length ? '\n' : ''));
-    done++; rows += res.rows.length; if (res.outcome.win) wins++;
-    if (done % 50 === 0 || done === games) console.log(`datagen ${done}/${games} rows=${rows} wins=${wins} ${((Date.now() - t0) / 1000).toFixed(0)}s`);
+    done++; rows += res.rows.length; if (res.outcome.win) wins++; if (res.engineError) { dropped++; console.log(`seed ${seed}: dropped (engine error) ${res.engineError}`); }
+    if (done % 50 === 0 || done === games) console.log(`datagen ${done}/${games} rows=${rows} wins=${wins} droppedEngineError=${dropped} ${((Date.now() - t0) / 1000).toFixed(0)}s`);
   });
 }));
 await pool.close();

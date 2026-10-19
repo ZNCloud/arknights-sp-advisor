@@ -1,0 +1,1099 @@
+{
+ "summary": {
+  "config": {
+   "K": 60,
+   "N": 0,
+   "N2": 6,
+   "steps": 3,
+   "z": 1,
+   "fromRound": 1,
+   "margin": 0.05
+  },
+  "model": "sp-advisor/models",
+  "modelStatus": "模型与当前游戏版本一致",
+  "allowStale": false,
+  "guide": "g06_xiaoran_general",
+  "seeds": [
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026,
+   2027,
+   2028,
+   2029,
+   2030,
+   2031,
+   2032,
+   2033,
+   2034,
+   2035,
+   2036,
+   2037,
+   2038,
+   2039,
+   2040,
+   2041,
+   2042,
+   2043,
+   2044,
+   2045,
+   2046,
+   2047,
+   2048,
+   2049,
+   2050
+  ],
+  "baseline": null,
+  "advised": {
+   "n": 50,
+   "winRate": 0.08,
+   "hiddenRate": 0,
+   "reachR14": 0.2,
+   "meanR14Dmg": 0.14926811257049993,
+   "meanLastRound": 11.1,
+   "meanUtility": 0.4596321891182635
+  },
+  "wallSec": 1033.855
+ },
+ "rows": [
+  {
+   "seed": 2001,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 刺玫(槽2,2金)",
+     "刷新商店(1金)"
+    ]
+   }
+  },
+  {
+   "seed": 2002,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2003,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2004,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2005,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2006,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2007,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.6504518483995659,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.7927033317798047,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "刷新商店(1金)",
+     "刷新商店(1金)",
+     "下场 诗怀雅"
+    ]
+   }
+  },
+  {
+   "seed": 2008,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2009,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "卖 至简(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2010,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2011,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.013520128821869148,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.5060840579698411,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   }
+  },
+  {
+   "seed": 2012,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2013,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2014,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.7736094471250131,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.8481242512062559,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "卖 松果(场上)",
+     "买 卡涅利安(槽2,3金)",
+     "买 蜂鸣器(槽5,1金)"
+    ]
+   }
+  },
+  {
+   "seed": 2015,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2016,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2017,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 海霓(槽0,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2018,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 风笛(槽1,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2019,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2020,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2021,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2022,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2023,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   }
+  },
+  {
+   "seed": 2024,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2025,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 歌利亚头盔(槽5,2金)"
+    ]
+   }
+  },
+  {
+   "seed": 2026,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2027,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 瑕光(槽1,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2028,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2029,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "刷新商店(免费)",
+     "卖 艾丝黛尔(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2030,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "刷新商店(1金)",
+     "卖 小满(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2031,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.3110850021290955,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.639988250958093,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 折桠(槽0,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2032,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2033,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2034,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 薄绿(槽2,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2035,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2036,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "卖 宴(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2037,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2038,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2039,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "卖 德克萨斯(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2040,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "宏：能升就升（商店升到钱不够为止）"
+    ]
+   }
+  },
+  {
+   "seed": 2041,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2042,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 海霓(槽0,3金)"
+    ]
+   }
+  },
+  {
+   "seed": 2043,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "上场 格雷伊 → (10,8)",
+     "卖 深靛(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2044,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.8760348616918234,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.8942156877613205,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "刷新商店(1金)",
+     "刷新商店(1金)",
+     "买 隐现(槽3,2金)",
+     "刷新商店(1金)"
+    ]
+   }
+  },
+  {
+   "seed": 2045,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 至简(槽1,1金)"
+    ]
+   }
+  },
+  {
+   "seed": 2046,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "卖 调香师(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2047,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": []
+   }
+  },
+  {
+   "seed": 2048,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "卖 深靛(场上)"
+    ]
+   }
+  },
+  {
+   "seed": 2049,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "买 波登可(槽3,2金)"
+    ]
+   }
+  },
+  {
+   "seed": 2050,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.8387043403576298,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.8774169531609334,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    },
+    "deviations": [
+     "刷新商店(1金)",
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "卖 泡泡(场上)",
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）",
+     "上场 古米 → (9,6)"
+    ]
+   }
+  }
+ ]
+}
