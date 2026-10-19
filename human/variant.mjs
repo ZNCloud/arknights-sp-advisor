@@ -2,7 +2,8 @@
 // (operator names as the engine data spells them; the first match on the board). node variant.mjs <game> <posDir> <round> <seeds> <label=mod;mod> …
 import { readFileSync } from 'node:fs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { ownerPairFight } from './battle.mjs';
+import { ownerPairFight, ownerBossFight } from './battle.mjs';
+const SOLO = process.env.SP_SOLO === '1';   // teammate-free lens: the owner alone on the solo template
 const [game, posDir, roundArg, seedsArg, ...variants] = process.argv.slice(2);
 const round = +roundArg, seeds = +seedsArg;
 const st = fromJSON(readFileSync(`${posDir}/${game}-r${String(round).padStart(2, '0')}-end.json`, 'utf8'));
@@ -29,9 +30,11 @@ for (const v of ['owner=', ...variants]) {
     const m = restore(st, { rngMode: 'exact' });
     const ps = m.players.get('p0'), mate = m.order.find(p => p !== ps);
     apply(ps, mods);
-    mate.board = new Map([...ps.board].map(([key, p]) => [key, structuredClone(p)])); mate.layers = { ...ps.layers }; mate.recompute();
-    const f = ownerPairFight(m, ps, mate, { bossId: id, hidden, round, seed: 1100 + k });
+    let f;
+    if (SOLO) f = ownerBossFight(m, ps, { bossId: id, hidden, round, seed: 1100 + k });
+    else { mate.board = new Map([...ps.board].map(([key, p]) => [key, structuredClone(p)])); mate.layers = { ...ps.layers }; mate.recompute();
+      f = ownerPairFight(m, ps, mate, { bossId: id, hidden, round, seed: 1100 + k }); }
     w += wt; cd += wt * f.shareAtCountdown; ot += wt * f.shareAtOvertime; pc += wt * (f.shareAtCountdown >= 1 ? 1 : 0); m.dispose();
   }
-  console.log(JSON.stringify({ game, round, label, mods, share: +(cd / w).toFixed(3), shareOt: +(ot / w).toFixed(3), pClear: +(pc / w).toFixed(3) }));
+  console.log(JSON.stringify({ game, round, field: SOLO ? 'solo' : 'pair', label, mods, share: +(cd / w).toFixed(3), shareOt: +(ot / w).toFixed(3), pClear: +(pc / w).toFixed(3) }));
 }
