@@ -1,0 +1,3 @@
+guide(g06) 基线              win 3/50 reachR14  7/50 meanLast 10.96 r14Dmg 0.085 U 0.4243 | vs guide dU +0.0000±0.0000 dLast +0.00±0.00  better/worse 0/0 dev 0.0/局
+混合(模型预筛+推演)                win 2/50 reachR14 12/50 meanLast 11.66 r14Dmg 0.143 U 0.4762 | vs guide dU +0.0519±0.0298 dLast +0.70±0.27  better/worse 25/12 dev 4.4/局
+纯模型 保守0.05                 win 4/50 reachR14 10/50 meanLast 11.10 r14Dmg 0.149 U 0.4596 | vs guide dU +0.0353±0.0290 dLast +0.14±0.22  better/worse 14/8 dev 0.8/局

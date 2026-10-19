@@ -1,0 +1,1964 @@
+{
+ "summary": {
+  "config": {
+   "K": 3,
+   "N": 6,
+   "N2": 6,
+   "steps": 2,
+   "z": 1,
+   "fromRound": 1
+  },
+  "model": "sp-advisor/models",
+  "modelStatus": "模型与当前游戏版本一致",
+  "allowStale": false,
+  "guide": "g06_xiaoran_general",
+  "seeds": [
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026,
+   2027,
+   2028,
+   2029,
+   2030,
+   2031,
+   2032,
+   2033,
+   2034,
+   2035,
+   2036,
+   2037,
+   2038,
+   2039,
+   2040,
+   2041,
+   2042,
+   2043,
+   2044,
+   2045,
+   2046,
+   2047,
+   2048,
+   2049,
+   2050
+  ],
+  "baseline": null,
+  "advised": {
+   "n": 50,
+   "winRate": 0.04,
+   "hiddenRate": 0,
+   "reachR14": 0.24,
+   "meanR14Dmg": 0.14277412456124883,
+   "meanLastRound": 11.66,
+   "meanUtility": 0.4762483560525621
+  },
+  "wallSec": 6027.181
+ },
+ "rows": [
+  {
+   "seed": 2001,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "买 隐现(槽0,2金)"
+    ],
+    [
+     3,
+     "买 古米(槽1,2金)"
+    ],
+    [
+     4,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "选奖励 折桠"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     8,
+     "下场 蒂比"
+    ]
+   ]
+  },
+  {
+   "seed": 2002,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "深靛 转向 RIGHT"
+    ]
+   ]
+  },
+  {
+   "seed": 2003,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.4388601690283902,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.6974870760627756,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 刺玫(槽0,2金)"
+    ],
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "买 波登可(槽0,2金)"
+    ],
+    [
+     3,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "卖 德克萨斯(场上)"
+    ],
+    [
+     8,
+     "买 深靛(槽1,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2004,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ]
+   ]
+  },
+  {
+   "seed": 2005,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     5,
+     "买 锡人(槽3,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2006,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.9304473185854849,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.9187012933634682,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     4,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2007,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "刷新商店(免费)"
+    ],
+    [
+     6,
+     "卖 断崖(场上)"
+    ],
+    [
+     6,
+     "卖 锡人(场上)"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2008,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2009,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     9,
+     "买 隐现(槽0,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2010,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "买 宴(槽0,2金)"
+    ],
+    [
+     3,
+     "卖 德克萨斯(场上)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2011,
+   "advised": {
+    "win": true,
+    "hidden": false,
+    "r14Dmg": 1,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "victory",
+    "utility": 1,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "卖 雷蛇(场上)"
+    ],
+    [
+     9,
+     "买 流星(槽2,3金)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     12,
+     "买 缇缇(槽1,4金)"
+    ],
+    [
+     13,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     13,
+     "卖 泡泡(手牌)"
+    ]
+   ]
+  },
+  {
+   "seed": 2012,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.5737258394979343,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.7581766277740705,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     8,
+     "卖 跃跃(场上)"
+    ],
+    [
+     11,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     12,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     14,
+     "卖 刺玫(手牌)"
+    ]
+   ]
+  },
+  {
+   "seed": 2013,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "刷新商店(1金)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "买 诗怀雅(槽1,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2014,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.3560357635819946,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.6602160936118976,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     10,
+     "刷新商店(1金)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2015,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "卖 野鬃(场上)"
+    ],
+    [
+     4,
+     "买 刺玫(槽2,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2016,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     11,
+     "买 莱恩哈特(槽2,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2017,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": []
+  },
+  {
+   "seed": 2018,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     6,
+     "买 波登可(槽0,2金,合精锐)"
+    ],
+    [
+     8,
+     "卖 哈洛德(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2019,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     4,
+     "刷新商店(1金)"
+    ],
+    [
+     6,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     6,
+     "下场 德克萨斯"
+    ],
+    [
+     7,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     7,
+     "刷新商店(1金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2020,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.2946307283008135,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.6325838277353661,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "刷新商店(1金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2021,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "卖 格雷伊(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2022,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "买 深巡(槽0,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2023,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 刺玫(槽0,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2024,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "卖 角峰(场上)"
+    ],
+    [
+     3,
+     "买 刺玫(槽1,2金)"
+    ],
+    [
+     3,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     6,
+     "买 折桠(槽2,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2025,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     4,
+     "买 角峰(槽1,2金)"
+    ],
+    [
+     4,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     6,
+     "卖 调香师(手牌)"
+    ],
+    [
+     7,
+     "卖 莎草(场上)"
+    ],
+    [
+     8,
+     "卖 雷蛇(场上)"
+    ],
+    [
+     9,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     11,
+     "刷新商店(1金)"
+    ],
+    [
+     11,
+     "买 流星(槽2,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2026,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "刷新商店(1金)"
+    ],
+    [
+     6,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2027,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 波登可(槽0,2金)"
+    ],
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     2,
+     "卖 深靛(场上)"
+    ],
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     3,
+     "卖 深靛(场上)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "买 随身身份牌(槽4,1金)"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     11,
+     "买 野鬃(槽4,2金)"
+    ],
+    [
+     12,
+     "买 能天使(槽4,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2028,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.4134845281053603,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.6860680376474122,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 深巡(槽1,2金)"
+    ],
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "买 折桠(槽2,3金)"
+    ],
+    [
+     5,
+     "买 灰毫(槽3,3金)"
+    ],
+    [
+     13,
+     "卖 焰尾(手牌)"
+    ],
+    [
+     14,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     14,
+     "直接结束回合(存钱)"
+    ]
+   ]
+  },
+  {
+   "seed": 2029,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 8,
+    "reason": "eliminated",
+    "utility": 0.2692307692307692,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "刷新商店(1金)"
+    ],
+    [
+     3,
+     "刷新商店(免费)"
+    ],
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     6,
+     "卖 调香师(场上)"
+    ],
+    [
+     6,
+     "买 耶拉(槽0,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2030,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     5,
+     "刷新商店(1金)"
+    ],
+    [
+     5,
+     "刷新商店(1金)"
+    ],
+    [
+     7,
+     "买 蛇屠箱(槽3,3金)"
+    ],
+    [
+     7,
+     "卖 小满(场上)"
+    ],
+    [
+     8,
+     "刷新商店(1金)"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "卖 野鬃(场上)"
+    ],
+    [
+     10,
+     "买 刺玫(槽2,2金)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     12,
+     "选奖励 阿罗玛"
+    ]
+   ]
+  },
+  {
+   "seed": 2031,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     4,
+     "买 艾丝黛尔(槽0,2金)"
+    ],
+    [
+     6,
+     "买 幽灵鲨(槽1,3金)"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     10,
+     "卖 流星(场上)"
+    ],
+    [
+     11,
+     "卖 蒂比(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2032,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     6,
+     "买 哈洛德(槽1,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2033,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.46883219940288356,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.7109744897312976,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "卖 刺玫(手牌)"
+    ],
+    [
+     6,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     8,
+     "卖 泡泡(场上)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     12,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     12,
+     "卖 休谟斯(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2034,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "卖 松果(场上)"
+    ],
+    [
+     5,
+     "刷新商店(1金)"
+    ],
+    [
+     8,
+     "买 波登可(槽2,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2035,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     4,
+     "刷新商店(1金)"
+    ],
+    [
+     5,
+     "买 休谟斯(槽1,3金)"
+    ],
+    [
+     6,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2036,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     2,
+     "直接结束回合(存钱)"
+    ],
+    [
+     3,
+     "买 拉普兰德(槽2,3金)"
+    ],
+    [
+     6,
+     "卖 隐现(场上)"
+    ],
+    [
+     6,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     7,
+     "卖 深靛(场上)"
+    ],
+    [
+     7,
+     "卖 拉普兰德(场上)"
+    ],
+    [
+     8,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2037,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 刺玫(槽0,2金)"
+    ],
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     5,
+     "买 锡人(槽1,3金)"
+    ],
+    [
+     6,
+     "买 角峰(槽1,2金)"
+    ],
+    [
+     7,
+     "卖 德克萨斯(场上)"
+    ],
+    [
+     9,
+     "买 送葬人(槽0,3金)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2038,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.7816228600699981,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.8517302870314991,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     2,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     10,
+     "买 见钱眼开玩偶(槽5,1金)"
+    ],
+    [
+     11,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2039,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.3808892285300385,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.6714001528385173,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     2,
+     "卖 德克萨斯(场上)"
+    ],
+    [
+     5,
+     "刷新商店(1金)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "直接结束回合(存钱)"
+    ],
+    [
+     10,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     10,
+     "蒂比 转向 UP"
+    ],
+    [
+     11,
+     "卖 忍冬(手牌)"
+    ],
+    [
+     11,
+     "卖 伺夜(手牌)"
+    ]
+   ]
+  },
+  {
+   "seed": 2040,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     6,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "卖 深靛(场上)"
+    ],
+    [
+     11,
+     "买 泡泡(槽4,3金)"
+    ],
+    [
+     11,
+     "卖 野鬃(手牌)"
+    ]
+   ]
+  },
+  {
+   "seed": 2041,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 雷蛇(槽2,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2042,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     7,
+     "买 幽灵鲨(槽1,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2043,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     7,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     8,
+     "宏：能升就升（商店升到钱不够为止）"
+    ]
+   ]
+  },
+  {
+   "seed": 2044,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "买 野鬃(槽1,2金)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     7,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     10,
+     "卖 野鬃(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2045,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 13,
+    "reason": "eliminated",
+    "utility": 0.46153846153846156,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     5,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     6,
+     "卖 雷蛇(场上)"
+    ]
+   ]
+  },
+  {
+   "seed": 2046,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0.5001775929595436,
+    "r15Dmg": 0,
+    "lastRound": 14,
+    "reason": "defeat",
+    "utility": 0.7250799168317946,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     3,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     6,
+     "卖 雪猎(场上)"
+    ],
+    [
+     8,
+     "卖 宴(场上)"
+    ],
+    [
+     9,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     11,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     13,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     14,
+     "卖 异客(场上)"
+    ],
+    [
+     14,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ]
+   ]
+  },
+  {
+   "seed": 2047,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 12,
+    "reason": "eliminated",
+    "utility": 0.4230769230769231,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "买 刺玫(槽2,2金)"
+    ],
+    [
+     4,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     9,
+     "下场 小满"
+    ],
+    [
+     10,
+     "买 初雪(槽2,3金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2048,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 10,
+    "reason": "eliminated",
+    "utility": 0.34615384615384615,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     6,
+     "卖 调香师(场上)"
+    ],
+    [
+     6,
+     "宏：能升就升（商店升到钱不够为止）"
+    ]
+   ]
+  },
+  {
+   "seed": 2049,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 9,
+    "reason": "eliminated",
+    "utility": 0.3076923076923077,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     1,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     3,
+     "刷新商店(1金)"
+    ],
+    [
+     3,
+     "宏：能升就升（商店升到钱不够为止）"
+    ],
+    [
+     4,
+     "刷新商店(1金)"
+    ],
+    [
+     5,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     8,
+     "买 野鬃(槽2,2金)"
+    ]
+   ]
+  },
+  {
+   "seed": 2050,
+   "advised": {
+    "win": false,
+    "hidden": false,
+    "r14Dmg": 0,
+    "r15Dmg": 0,
+    "lastRound": 11,
+    "reason": "eliminated",
+    "utility": 0.38461538461538464,
+    "engineErrors": {
+     "match": 0,
+     "sim": 0,
+     "meta": 0,
+     "log": []
+    }
+   },
+   "deviations": [
+    [
+     4,
+     "宏：梭哈刷新（刷到钱≤1，见合精锐/高分就买）"
+    ],
+    [
+     4,
+     "冻结商店"
+    ],
+    [
+     8,
+     "卖 深靛(手牌)"
+    ]
+   ]
+  }
+ ]
+}
