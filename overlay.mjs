@@ -227,7 +227,7 @@ export function boxOf(snap, route) {
     have: view.air ? view.air.have : null, units: view.air ? view.air.units : null, gap: view.air ? view.air.gap : 0,
     text: `下一波 ${allN} 只${flyN ? ` · 飞行 ${flyN}` : ''}${eliteN ? ` · 精英 ${eliteN}` : ''}${bossN ? ' · BOSS' : ''}${flyN / allN >= 0.35 ? (view.air && view.air.gap > 0 ? ` ← 对空差 ${view.air.gap}（场上能打飞 ${view.air.have}/${view.air.units}）` : ` · 对空够（${view.air ? view.air.have : '?'} 个）`) : ''}${(priv.lp || 99) <= 10 ? ' · 血少，别漏' : ''}`,
   } : null;
-  return {
+  const out = {
     at,
     online: true,
     phase: snap.phase,
@@ -293,7 +293,129 @@ export function boxOf(snap, route) {
     // 手牌：让「找谁叠」的依据可见（缺谁已经把手牌算进 heldCounts，这里把手上有什么也摆出来）
     hand: handNames(priv),
     est: { low: view.est.low, high: view.est.high, pLow: Math.round(view.est.pLow * 100), pHigh: Math.round(view.est.pHigh * 100) },
+    // ── 说人话要用的原料：原来这些只活在打分模型的内部，小框只好吐「买#2 角峰 60金」这种电报体 ──
+    level: view.level,
+    adviceKind: (view.advice && view.advice.kind) || null,
+    rows: (view.rows || []).slice(0, 3).map((r) => ({
+      tag: '#' + (r.index + 1), slot: r.index + 1, name: r.name, price: r.price, score: r.score,
+      route: !!r.route, key: !!r.key, copies: r.copies || 0, item: !!r.item, place: r.place || null,
+      why: (r.why || []).slice(0, 3),
+    })),
+    pairs: (view.pairs || []).slice(0, 2).map((p) => ({ amp: p.amp, target: p.target, gain: p.gain, pos: p.pos })),
+    upgrade: view.upgrade
+      ? { yes: !!view.upgrade.yes, cost: view.upgrade.cost, why: view.upgrade.why || null, need: view.upgrade.need ?? null }
+      : null,
+    lpKind: (view.lp && view.lp.kind) || null,
+    role: (view.role && view.role.name) || null,
   };
+  out.nl = nlOf(out);          // 自然语言版建议（小框与 --once 都读它）
+  return out;
+}
+
+/**
+ * 自然语言建议：把打分模型算出来的东西说成人话。
+ *
+ * 为什么要有它：原来的小框是「买#2 角峰 60金 / 放初雪→耶拉 / 冻#3 / 余3金别留」这种电报体，
+ * 得先背下 #号=商店第几格、→=配对放大器、余=买完剩多少钱，才看得懂一句话在说什么。
+ * 这里改成一句一件事、每句都带数字和理由。休整期先说「这回合动手做什么」，战斗中先说「这波怎么死」。
+ *
+ * 返回 string[]，空数组表示这一帧没有可说的（断连/大厅）。
+ */
+export function nlOf(box) {
+  if (!box || box.text) return [];
+  const out = [];
+  // 引擎里的触发键 / 破甲通道是英文枚举，直接摆到小框上就是黑话（「叠层引擎（freeze）」「吃phys通道」）
+  const EVENT_ZH = {
+    ammo: '耗弹', death: '阵亡', freeze: '冻结', gain: '拿到牌', kill: '击杀',
+    onstart: '开战', other: '其它触发', prepfin: '休整结束', prepstart: '休整开始',
+    skill: '开技能', sold: '卖出',
+  };
+  const CHANNEL_ZH = { phys: '物理', magic: '法术', arts: '法术', true: '真实', real: '真实' };
+  const human = (s) => {
+    let t = String(s || '');
+    for (const [k, v] of Object.entries(EVENT_ZH)) t = t.replace(new RegExp(`\\(${k}\\)`, 'g'), `（${v}时）`);
+    return t;
+  };
+  const channelOf = (c) => CHANNEL_ZH[c] || c || '?';
+  const money = (n) => `${n} 金`;
+  const funds = box.funds || 0;
+  const rows = box.rows || [];
+  const top = rows[0];
+  const inPrep = !box.phase || box.phase === 'PREP';
+  const whyOf = (r) => (r && r.why && r.why.length ? r.why.map(human).join('、') : '');
+
+  // ① 休整期：钱花在哪（三种口径来自模型的 advice.kind，这里不再拍一次脑袋）
+  if (inPrep && box.adviceKind === 'buy' && top) {
+    const gain = box.pickGain ? `；到手${box.pickGain.replace(/^\S+\s*/, '')}` : '';
+    out.push(`先花 ${money(top.price)}买商店第 ${top.slot} 格的${top.name}——${whyOf(top) || '是这条线现在最值的一格'}${gain}。`);
+    const second = rows[1];
+    if (second && second.score >= 26 && funds >= top.price + second.price) {
+      out.push(`钱还够，第 ${second.slot} 格的${second.name}（${money(second.price)}）可以顺手拿：${whyOf(second) || '补第二张'}。`);
+    }
+  } else if (inPrep && box.adviceKind === 'level' && box.upgrade) {
+    out.push(`这回合先别抓牌，花 ${money(box.upgrade.cost)} 把调度中心升到 Lv${(box.level || 1) + 1}——${box.upgrade.why || '牌池升级后核心更好出'}。`);
+  } else if (inPrep && box.adviceKind === 'refresh') {
+    const want = (box.gap || []).slice(0, 2).map((g) => String(g).split(' ')[0]).join('、');
+    out.push(`商店这几格不值得花，刷一次把它换掉${want ? `，目标是找${want}` : ''}：核心还没齐，装备可以往后放。`);
+  } else if (inPrep && top && top.score >= 26) {
+    out.push(`商店第 ${top.slot} 格的${top.name}可以拿（${money(top.price)}）：${whyOf(top) || '评分够'}。`);
+  } else if (inPrep && funds === 0) {
+    out.push(top
+      ? `现在 0 金，但商店第 ${top.slot} 格的${top.name}（${money(top.price)}）值得留：冻住它，等下回合进账再买。`
+      : '现在 0 金，商店里也没有要留的牌——这回合什么都不做，等进账。');
+  } else if (inPrep) {
+    out.push(`这回合不花这 ${money(funds)}：商店里没有这条线要的牌，留到下回合一起用。`);
+  } else if (box.wave) {
+    out.push(`第 ${box.round} 回合出怪中：这波 ${box.wave.total} 只${box.wave.fly ? `，其中 ${box.wave.fly} 只飞行` : ''}${box.wave.elite ? `、${box.wave.elite} 只精英` : ''}。`);
+  }
+
+  // ② 买到之后怎么摆（配对放大器 > 叠层放大器）——只有休整期才有得摆
+  const pair = inPrep ? (box.pairs || [])[0] : null;
+  if (pair) {
+    out.push(`买完把${pair.amp}放到${pair.target}${pair.pos ? `的${pair.pos}` : '身前那一格'}——这一格能多叠 ${pair.gain} 层，摆错一格就白拿了。`);
+  } else if (inPrep && box.stackPlace) {
+    out.push(`叠层放大器要放前排第一格${box.stackChannel ? `（${human(box.stackChannel)}）` : ''}，位置类放大器摆错等于白占一个坑。`);
+  }
+
+  // ③ 钱不够 / 血线：这两件事都比「再加层」优先（0 金的情况在 ① 里已经说完了）
+  if (inPrep && funds > 0 && top && top.price > funds && box.adviceKind !== 'buy') {
+    out.push(`想要的${top.name}要 ${money(top.price)}，现在只有 ${money(funds)}——先冻住第 ${top.slot} 格，等钱够。`);
+  }
+  if (box.lpKind === 'hard') {
+    out.push(`LP 只剩 ${box.lp}，再漏一波就结束：这回合先守，别拿血换层数。`);
+  }
+
+  // ④ 人数档位：说清楚「还差几个人、值不值得赌」
+  if (box.tiers && !box.tiers.full && box.tiers.need != null) {
+    const p = box.tierOdds ? box.tierOdds.p : null;
+    const verdict = p == null ? '' : p >= 60 ? '，值得赌' : p >= 35 ? '，得看商店脸色' : '，别硬赌';
+    const head = inPrep ? `场上 ${box.main.count} 人` : `这波打完 ${box.main.count} 人`;
+    out.push(`${head}，再抓 ${box.tiers.need} 个就到 ${box.tiers.next} 人档${p != null ? `（按共享池折算约 ${p}%${verdict}）` : ''}。`);
+  } else if (box.tiers && box.tiers.full) {
+    out.push('人数档已经满了，接下来每一金都该换成层数或装备，不是再进人。');
+  }
+
+  // ⑤ 找谁叠：手里的先合精锐，没到手的按费用从低往高找（刚推荐买的那张不算「还缺」）
+  if (box.gap && box.gap.length) {
+    const names = box.gap
+      .map((g) => String(g).trim())
+      .filter((g) => !top || g.split(/\s+/)[0] !== top.name)
+      .slice(0, 3)
+      .map((g) => g.replace(/\s+/, '（') + '）');
+    if (names.length) out.push(`这条线还缺 ${names.join('、')}，按费用从低往高抓；手上已有的先凑精锐。`);
+  }
+
+  // ⑥ 风险：飞行波 / BOSS 破甲（二选一，说更致命的那条）
+  const flyShare = box.wave ? box.wave.fly / Math.max(1, box.wave.total) : 0;
+  if (box.wave && flyShare >= 0.35) {
+    const lack = box.wave.gap || 0;
+    out.push(`这一波 ${box.wave.total} 只里有 ${box.wave.fly} 只飞行，场上能打空的只有 ${box.wave.have ?? '?'}/${box.wave.units ?? '?'} 个${lack > 0 ? `——至少再补 ${lack} 个对空，不然全从头上飞过去` : '，够用'}。`);
+  } else if (box.armor && box.armor.need) {
+    const gapAtk = Math.max(0, box.armor.need - (box.armor.have || 0));
+    out.push(`本局 BOSS 是${box.armor.name}，弱点走${channelOf(box.armor.channel)}通道（系数 ${box.armor.k}）：破甲要 ${box.armor.need} 有效攻，你现在 ${box.armor.have}${box.armor.ok ? '，够了' : `，还差 ${gapAtk}`}。`);
+  }
+
+  return out.slice(0, 6);
 }
 
 /**
@@ -442,6 +564,7 @@ function compactOf(view, priv, box) {
 
 function line(box) {
   if (box.text) return box.text;
+  if (box.nl && box.nl.length) return box.nl.join('\n');
   const est = box.est.low === box.est.high ? `成 ${box.est.high} 人 ${box.est.pHigh}%` : `成 ${box.est.low} 人 ${box.est.pLow}% / ${box.est.high} 人 ${box.est.pHigh}%`;
   const shop = (box.shop || []).map((r) => `${r.tag} ${r.name}${r.key ? '★' : r.route ? '·本家' : ''} ${r.price}金 ${r.score}`).join(' | ');
   return [

@@ -62,7 +62,9 @@ $lGap = New-BoxLabel $font $fg
 $lShop = New-BoxLabel $font $fg
 $lAux = New-BoxLabel $font $fg
 $lRisk = New-BoxLabel $fontSmall $warn
-$labels = @($lHead, $lMain, $lAdvice, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk)
+# 自然语言建议块：state.json 的 nl[] 一句一行，整段放在这一个标签里（Set-Line 会按宽度折行算高）
+$lNl = New-BoxLabel $font $fg
+$labels = @($lHead, $lMain, $lAdvice, $lNl, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk)
 
 $coreBonds = [ordered]@{
   yanShip = '炎'; sargonShip = '萨尔贡'; victoriaShip = '维多利亚'; kjeragShip = '谢拉格'
@@ -167,7 +169,7 @@ $timer.Add_Tick({
   if (-not (Test-Path $statePath)) {
     Set-Line $lHead 'state.json 未找到 · 先跑 node advisor-dev\overlay.mjs --watch' $dim
     Set-Line $lMain '等待对局…' $hi
-    Set-Line $lAdvice '' $hi ; Set-Line $lPlace '' $fg ; Set-Line $lHand '' $dim ; Set-Line $lGap '' $fg ; Set-Line $lShop '' $fg ; Set-Line $lAux '' $fg ; Set-Line $lRisk '' $warn
+    Set-Line $lAdvice '' $hi ; Set-Line $lNl '' $fg ; Set-Line $lPlace '' $fg ; Set-Line $lHand '' $dim ; Set-Line $lGap '' $fg ; Set-Line $lShop '' $fg ; Set-Line $lAux '' $fg ; Set-Line $lRisk '' $warn
     Reflow
     return
   }
@@ -214,7 +216,7 @@ $timer.Add_Tick({
   if ($box.text) {
     Set-Line $lHead ("抓取顾问 · $age ms 前" + $stale) $headColor
     Set-Line $lMain $box.text $hi
-    Set-Line $lAdvice '' $hi ; Set-Line $lPlace '' $fg ; Set-Line $lHand '' $dim ; Set-Line $lGap '' $fg ; Set-Line $lShop '' $fg ; Set-Line $lAux '' $fg ; Set-Line $lRisk '' $warn
+    Set-Line $lAdvice '' $hi ; Set-Line $lNl '' $fg ; Set-Line $lPlace '' $fg ; Set-Line $lHand '' $dim ; Set-Line $lGap '' $fg ; Set-Line $lShop '' $fg ; Set-Line $lAux '' $fg ; Set-Line $lRisk '' $warn
     Reflow
     return
   }
@@ -227,6 +229,21 @@ $timer.Add_Tick({
   # 一行说清局面：回合/钱/主线进度/倍率/成牌率
   Set-Line $lHead ("R$($box.round) · $($box.funds)金 · LP$($box.lp) · $($box.main.name) $($box.main.count)$next$layerText · $estShort" + $(if ($box.main.pivoted) { ' · 跟你的线' } else { '' }) + $stale) $headColor
   Set-Line $lMain '' $hi
+  # ── 自然语言建议：state.json 的 nl[] 一句一行，说完就收（下面那堆电报体是旧数据的兜底） ──
+  if ($box.nl -and $box.nl.Count -gt 0) {
+    Set-Line $lNl ($box.nl -join [Environment]::NewLine) $fg
+    Set-Line $lAdvice '' $hi
+    Set-Line $lPlace '' $fg
+    Set-Line $lHand '' $dim
+    Set-Line $lGap '' $fg
+    Set-Line $lShop '' $fg
+    Set-Line $lAux '' $fg
+    Set-Line $lRisk '' $warn
+    if (-not $script:picked -and $box.main.id) { $script:picked = $box.main.id; Paint-Route }
+    Reflow
+    return
+  }
+  Set-Line $lNl '' $fg
   # 抓谁（带理由）
   if ($box.advice) { Set-Line $lAdvice ('抓 → ' + ($box.advice -replace '^抓\s*','')) $hi } else { Set-Line $lAdvice '抓 → 等刷新' $hi }
   # 怎么放（顺带说这一抓换什么：层数/金币/免费刷新，投资人倍率已含）
