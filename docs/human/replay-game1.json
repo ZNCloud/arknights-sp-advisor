@@ -1,0 +1,1710 @@
+{
+ "game": "game1",
+ "seed": 1,
+ "bans": {
+  "drawn": [
+   "deputShip",
+   "raidShip",
+   "soloShip",
+   "victoriaShip",
+   "yanShip"
+  ],
+  "live": [
+   "arcaneShip",
+   "egirShip",
+   "emptyShip",
+   "indomShip",
+   "investShip",
+   "kjeragShip",
+   "lateranoShip",
+   "miraShip",
+   "preciShip",
+   "sargonShip",
+   "skillfulShip",
+   "steadShip",
+   "suntShip",
+   "swiftShip",
+   "visiShip"
+  ],
+  "want": 7,
+  "short": 2,
+  "bannedChess": 13
+ },
+ "stage": "act2autochess_m02",
+ "boss": "boss_3",
+ "hiddenBoss": "boss_8",
+ "standIns": {
+  "chess_char_4_27_a": "chess_char_4_12_a",
+  "chess_char_4_27_b": "chess_char_4_12_b"
+ },
+ "rounds": [
+  {
+   "round": 1,
+   "gaps": [],
+   "lines": [
+    69,
+    70
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 4,
+    "level": 1
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 5
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_1_04_a",
+       "shopIdx": 0
+      },
+      {
+       "id": "chess_char_1_20_a",
+       "shopIdx": 1
+      }
+     ],
+     "extra": [],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 深巡（商店，2 金）",
+     "买 雷蛇（商店，2 金）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 4,
+     "afterShopActions": 0,
+     "left": 0
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.965,
+    "matchingPriorMass": 0.965,
+    "lpDist": {
+     "0": 0.962
+    },
+    "chosen": {
+     "pick": {
+      "round": 1,
+      "type": "SPECIAL",
+      "key": "enemy_1118_lidbox_2",
+      "normal": "enemy_1116_liprr",
+      "elite": "enemy_1116_liprr_2",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.0775,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {},
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 2,
+   "gaps": [],
+   "lines": [
+    73,
+    74
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 5,
+    "level": 1
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 4
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_1_17_a",
+       "shopIdx": 1
+      },
+      {
+       "id": "chess_char_1_09_a",
+       "shopIdx": 0
+      }
+     ],
+     "extra": [],
+     "sells": [],
+     "itemBuys": [
+      {
+       "id": "chess_item_1_05_e_a",
+       "shopIdx": 0
+      }
+     ],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 深靛（商店，2 金）",
+     "买 跃跃（商店，2 金）",
+     "买装备 源石溶剂"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 5,
+     "afterShopActions": 0,
+     "left": 0
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.97,
+    "matchingPriorMass": 0.97,
+    "lpDist": {
+     "0": 0.968
+    },
+    "chosen": {
+     "pick": {
+      "round": 2,
+      "type": "ELEMENT",
+      "key": "enemy_1161_tidmag",
+      "normal": "enemy_1158_divman",
+      "elite": "enemy_1160_hvyslr",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.095,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {},
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 3,
+   "gaps": [],
+   "lines": [
+    79,
+    80
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 6,
+    "level": 1
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 3
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 1,
+     "buys": [
+      {
+       "id": "chess_char_1_04_a",
+       "shopIdx": 2
+      }
+     ],
+     "extra": [],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "升级 1→2（3 金）",
+     "买 深巡（商店，2 金）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 6,
+     "afterShopActions": 1,
+     "left": 1
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [
+    "bounty:28"
+   ],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.965,
+    "matchingPriorMass": 0.965,
+    "lpDist": {
+     "0": 0.964
+    },
+    "chosen": {
+     "pick": {
+      "round": 3,
+      "type": "SPECIAL",
+      "key": "enemy_1328_cbjedi",
+      "normal": "enemy_1251_lysyta",
+      "elite": "enemy_1249_lysdb_2",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.085,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {},
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 4,
+   "gaps": [],
+   "lines": [
+    83,
+    86
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 8,
+    "level": 2
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 7
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_1_20_a",
+       "shopIdx": 3
+      },
+      {
+       "id": "chess_char_2_01_a",
+       "shopIdx": 1
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_2_19_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 雷蛇（商店，2 金）",
+     "买 送葬人（商店，3 金）",
+     "得到 锡人（非开局商店：刷新/合成奖励/机变）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 9,
+     "afterShopActions": 4,
+     "left": 4
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [
+    "bounty:28"
+   ],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.965,
+    "matchingPriorMass": 0.93,
+    "lpDist": {
+     "0": 0.928,
+     "-1": 0.035
+    },
+    "chosen": {
+     "pick": {
+      "round": 4,
+      "type": "SPECIAL",
+      "key": "enemy_1328_cbjedi",
+      "normal": "enemy_1251_lysyta",
+      "elite": "enemy_1249_lysdb_2",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.0875,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 3
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 5,
+   "gaps": [],
+   "lines": [
+    90,
+    91
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 9,
+    "level": 2
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 6
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 1,
+     "buys": [
+      {
+       "id": "chess_char_1_04_a",
+       "shopIdx": 0
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_4_25_a"
+      },
+      {
+       "id": "chess_char_3_11_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "升级 2→3（6 金）",
+     "买 深巡（商店，2 金）",
+     "得到 魔王（非开局商店：刷新/合成奖励/机变）",
+     "得到 雪猎（非开局商店：刷新/合成奖励/机变）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 10,
+     "afterShopActions": 2,
+     "left": 2
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.97,
+    "matchingPriorMass": 0.83,
+    "lpDist": {
+     "0": 0.828,
+     "-2": 0.055,
+     "-1": 0.043,
+     "-3": 0.043
+    },
+    "chosen": {
+     "pick": {
+      "round": 5,
+      "type": "SPECIAL",
+      "key": "enemy_1010_demon_2",
+      "normal": "enemy_1071_dftman",
+      "elite": "enemy_1010_demon",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.09,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 4
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 6,
+   "gaps": [],
+   "lines": [
+    94,
+    95
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 9,
+    "level": 3
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 10
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_3_21_a",
+       "shopIdx": 0
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_3_13_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 空弦（商店，3 金）",
+     "得到 至简（非开局商店：刷新/合成奖励/机变）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 9,
+     "afterShopActions": 6,
+     "left": 6
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.962,
+    "matchingPriorMass": 0.925,
+    "lpDist": {
+     "0": 0.921,
+     "-2": 0.037
+    },
+    "chosen": {
+     "pick": {
+      "round": 6,
+      "type": "SPECIAL",
+      "key": "enemy_1325_cbgpro_2",
+      "normal": "enemy_1000_gopro_2",
+      "elite": "enemy_1325_cbgpro",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.085,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 3
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 7,
+   "gaps": [],
+   "lines": [
+    99,
+    100
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 10,
+    "level": 3
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 9
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_3_01_a",
+       "shopIdx": 1
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_1_20_a"
+      },
+      {
+       "id": "chess_char_3_13_a"
+      },
+      {
+       "id": "chess_char_4_14_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 能天使（商店，3 金）",
+     "得到 雷蛇（非开局商店：刷新/合成奖励/机变）",
+     "得到 至简（非开局商店：刷新/合成奖励/机变）",
+     "得到 莱恩哈特（非开局商店：刷新/合成奖励/机变）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 11,
+     "afterShopActions": 8,
+     "left": 8
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 27,
+    "testedPicks": 24,
+    "priorCovered": 0.975,
+    "matchingPriorMass": 0.493,
+    "lpDist": {
+     "0": 0.495,
+     "-1": 0.13,
+     "-5": 0.065,
+     "-10": 0.107,
+     "-3": 0.066,
+     "-7": 0.043,
+     "-9": 0.043,
+     "-2": 0.03
+    },
+    "chosen": {
+     "pick": {
+      "round": 7,
+      "type": "SPECIAL",
+      "key": "enemy_1325_cbgpro_2",
+      "normal": "enemy_1000_gopro_2",
+      "elite": "enemy_1325_cbgpro",
+      "fly": false,
+      "firstHalf": true
+     },
+     "w": 0.075,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 24,
+    "recordLp": 24,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 3
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 8,
+   "gaps": [],
+   "lines": [
+    103,
+    104
+   ],
+   "engineBefore": {
+    "lp": 24,
+    "funds": 12,
+    "level": 3
+   },
+   "lpCarried": {
+    "engine": 24,
+    "record": 24,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 8
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 1,
+     "buys": [],
+     "extra": [
+      {
+       "id": "chess_char_4_26_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [
+      {
+       "id": "chess_item_3_08_e_a"
+      }
+     ],
+     "itemGone": [],
+     "eliteAppeared": [
+      {
+       "id": "chess_char_6_09_b"
+      }
+     ]
+    },
+    "log": [
+     "升级 3→4（8 金）",
+     "得到精锐 塑心（非开局商店：band/奖励/投影）",
+     "得到 华法琳（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 奥术法阵（非开局商店）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 5,
+     "left": 5
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.76,
+    "matchingPriorMass": 0.1,
+    "lpDist": {
+     "0": 0.025,
+     "-7": 0.112,
+     "-10": 0.063,
+     "-5": 0.162,
+     "-9": 0.099,
+     "-3": 0.099,
+     "-4": 0.035,
+     "-1": 0.033,
+     "-6": 0.055,
+     "-2": 0.075
+    },
+    "chosen": {
+     "pick": {
+      "round": 8,
+      "type": "SPECIAL",
+      "key": "enemy_1072_dlancer",
+      "normal": "enemy_1071_dftman",
+      "elite": "enemy_1010_demon_2",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.0375,
+     "rank": 6,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 3,
+    "layerGains": {
+     "preciShip": 24,
+     "lateranoShip": 2,
+     "miraShip": 2
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 9,
+   "gaps": [],
+   "lines": [
+    111,
+    112
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 12,
+    "level": 4
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 11
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 1,
+     "buys": [],
+     "extra": [],
+     "sells": [],
+     "itemBuys": [
+      {
+       "id": "chess_item_1_03_e_a",
+       "shopIdx": 0
+      }
+     ],
+     "itemExtra": [],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "升级 4→5（11 金）",
+     "买装备 盟约之币",
+     "装备 奥术法阵 → 塑心"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 1,
+     "left": 1
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [
+    "bounty:226"
+   ],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.745,
+    "matchingPriorMass": 0.348,
+    "lpDist": {
+     "0": 0.347,
+     "-3": 0.052,
+     "-1": 0.09,
+     "-10": 0.06,
+     "-4": 0.056,
+     "-2": 0.085,
+     "-5": 0.055
+    },
+    "chosen": {
+     "pick": {
+      "round": 9,
+      "type": "SPECIAL",
+      "key": "enemy_1072_dlancer",
+      "normal": "enemy_1071_dftman",
+      "elite": "enemy_1010_demon_2",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.045,
+     "rank": 3,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 20,
+     "lateranoShip": 4,
+     "miraShip": 4
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 10,
+   "gaps": [],
+   "lines": [
+    116,
+    117
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 13,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 12
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_4_07_a",
+       "shopIdx": 4
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_2_01_a"
+      },
+      {
+       "id": "chess_char_1_01_a"
+      }
+     ],
+     "sells": [
+      {
+       "base": "chess_char_2_19_a",
+       "copies": 1
+      },
+      {
+       "base": "chess_char_1_09_a",
+       "copies": 1
+      }
+     ],
+     "itemBuys": [],
+     "itemExtra": [
+      {
+       "id": "chess_item_4_03_e_a"
+      }
+     ],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "卖 锡人",
+     "卖 跃跃",
+     "买 风笛（商店，3 金）",
+     "得到 送葬人（非开局商店：刷新/合成奖励/机变）",
+     "得到 隐现（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 有限加速器（非开局商店）",
+     "装备 有限加速器 → 能天使"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 12,
+     "left": 12
+    }
+   },
+   "diffAfterReplay": [
+    "hand: chess_char_6_09_b engine 1 record 0"
+   ],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.752,
+    "matchingPriorMass": 0.268,
+    "lpDist": {
+     "0": 0.269,
+     "-4": 0.107,
+     "-2": 0.112,
+     "-7": 0.072,
+     "-3": 0.063,
+     "-1": 0.108,
+     "-10": 0.022
+    },
+    "chosen": {
+     "pick": {
+      "round": 10,
+      "type": "TIMES",
+      "key": "enemy_9010_acpupp",
+      "normal": "enemy_1197_sfshu",
+      "elite": "enemy_1197_sfshu_2",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.0425,
+     "rank": 2,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 20,
+     "lateranoShip": 4,
+     "miraShip": 4
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 11,
+   "gaps": [],
+   "lines": [
+    122,
+    123
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 12,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 11
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_3_01_a",
+       "shopIdx": 0
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_2_01_a"
+      },
+      {
+       "id": "chess_char_6_13_a"
+      }
+     ],
+     "sells": [
+      {
+       "base": "chess_char_3_13_a",
+       "copies": 1
+      },
+      {
+       "base": "chess_char_1_20_a",
+       "copies": 3
+      },
+      {
+       "base": "chess_char_1_17_a",
+       "copies": 1
+      }
+     ],
+     "itemBuys": [],
+     "itemExtra": [
+      {
+       "id": "chess_item_5_06_e_a"
+      }
+     ],
+     "itemGone": [
+      {
+       "id": "chess_item_1_03_e_a"
+      }
+     ],
+     "eliteAppeared": []
+    },
+    "log": [
+     "卖 至简",
+     "卖 雷蛇",
+     "卖 深靛",
+     "买 能天使（商店，3 金）",
+     "得到 送葬人（非开局商店：刷新/合成奖励/机变）",
+     "得到 新约能天使（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 博士投影（非开局商店）"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 13,
+     "left": 13
+    }
+   },
+   "diffAfterReplay": [
+    "hand: chess_item_1_03_e_a engine 1 record 0"
+   ],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [
+    "bounty:333"
+   ],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.78,
+    "matchingPriorMass": 0.14,
+    "lpDist": {
+     "0": 0.14,
+     "-10": 0.549,
+     "-7": 0.071,
+     "-5": 0.022
+    },
+    "chosen": {
+     "pick": {
+      "round": 11,
+      "type": "SPECIAL",
+      "key": "enemy_1387_winshd",
+      "normal": "enemy_1381_winman",
+      "elite": "enemy_1381_winman_2",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.0425,
+     "rank": 5,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 20,
+     "lateranoShip": 2,
+     "miraShip": 2
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 12,
+   "gaps": [],
+   "lines": [
+    127,
+    128
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 16,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 10
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [
+      {
+       "id": "chess_char_4_01_a",
+       "shopIdx": 0
+      }
+     ],
+     "extra": [
+      {
+       "id": "chess_char_3_01_a"
+      },
+      {
+       "id": "chess_char_6_12_a"
+      },
+      {
+       "id": "chess_char_4_01_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [],
+     "itemGone": [
+      {
+       "id": "chess_item_3_08_e_a"
+      }
+     ],
+     "eliteAppeared": []
+    },
+    "log": [
+     "买 信仰搅拌机（商店，3 金）",
+     "得到 能天使（非开局商店：刷新/合成奖励/机变）",
+     "得到 迷迭香（非开局商店：刷新/合成奖励/机变）",
+     "得到 信仰搅拌机（非开局商店：刷新/合成奖励/机变）",
+     "装备 有限加速器 → 能天使",
+     "装备 源石溶剂 → 信仰搅拌机"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 17,
+     "afterShopActions": 14,
+     "left": 14
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.752,
+    "matchingPriorMass": 0.63,
+    "lpDist": {
+     "0": 0.63,
+     "-6": 0.052,
+     "-2": 0.045,
+     "-10": 0.025
+    },
+    "chosen": {
+     "pick": {
+      "round": 12,
+      "type": "SPECIAL",
+      "key": "enemy_1425_lrcmra_2",
+      "normal": "enemy_1422_lrsldr_2",
+      "elite": "enemy_1010_demon",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.0475,
+     "rank": 2,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "lateranoShip": 8,
+     "preciShip": 6,
+     "miraShip": 2
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 13,
+   "gaps": [],
+   "lines": [
+    131,
+    132
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 14,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 9
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [],
+     "extra": [
+      {
+       "id": "chess_char_4_01_a"
+      },
+      {
+       "id": "chess_char_6_01_a"
+      },
+      {
+       "id": "chess_char_5_01_a"
+      }
+     ],
+     "sells": [
+      {
+       "base": "chess_char_3_01_a",
+       "copies": 3
+      }
+     ],
+     "itemBuys": [],
+     "itemExtra": [
+      {
+       "id": "chess_item_3_08_e_a"
+      },
+      {
+       "id": "chess_item_3_04_e_a"
+      },
+      {
+       "id": "chess_item_4_11_e_a"
+      }
+     ],
+     "itemGone": [],
+     "eliteAppeared": []
+    },
+    "log": [
+     "卖 能天使",
+     "得到 信仰搅拌机（非开局商店：刷新/合成奖励/机变）",
+     "得到 蕾缪安（非开局商店：刷新/合成奖励/机变）",
+     "得到 圣约送葬人（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 奥术法阵（非开局商店）",
+     "得到装备 炎国短刀（非开局商店）",
+     "得到装备 护盾无人机（非开局商店）",
+     "装备 奥术法阵 → 塑心",
+     "装备 炎国短刀 → 塑心",
+     "装备 护盾无人机 → 魔王",
+     "装备 有限加速器 → 圣约送葬人",
+     "装备 博士投影 → 新约能天使",
+     "装备 源石溶剂 → 信仰搅拌机"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 15,
+     "afterShopActions": 16,
+     "left": 16
+    }
+   },
+   "diffAfterReplay": [],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "wave": {
+    "priorPicks": 40,
+    "testedPicks": 24,
+    "priorCovered": 0.782,
+    "matchingPriorMass": 0.685,
+    "lpDist": {
+     "0": 0.683,
+     "-7": 0.03,
+     "-10": 0.022,
+     "-6": 0.022,
+     "-1": 0.022
+    },
+    "chosen": {
+     "pick": {
+      "round": 13,
+      "type": "SPECIAL",
+      "key": "enemy_1045_hammer_2",
+      "normal": "enemy_1061_zomshd",
+      "elite": "enemy_1061_zomshd",
+      "fly": false,
+      "firstHalf": false
+     },
+     "w": 0.0625,
+     "rank": 1,
+     "battleSeedVaried": false
+    },
+    "forced": true
+   },
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {
+     "preciShip": 20,
+     "lateranoShip": 56,
+     "visiShip": 28
+    },
+    "recordLayersNext": null
+   }
+  },
+  {
+   "round": 14,
+   "gaps": [],
+   "lines": [
+    135,
+    136
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 16,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 8
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [],
+     "extra": [
+      {
+       "id": "chess_char_3_21_a"
+      }
+     ],
+     "sells": [
+      {
+       "base": "chess_char_3_13_a",
+       "copies": 1
+      }
+     ],
+     "itemBuys": [
+      {
+       "id": "chess_item_3_03_e_a",
+       "shopIdx": 0
+      }
+     ],
+     "itemExtra": [
+      {
+       "id": "chess_item_4_08_e_a"
+      },
+      {
+       "id": "chess_item_4_03_e_b"
+      }
+     ],
+     "itemGone": [
+      {
+       "id": "chess_item_4_03_e_a"
+      }
+     ],
+     "eliteAppeared": []
+    },
+    "log": [
+     "卖 至简",
+     "买装备 激光发射器",
+     "得到 空弦（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 拉特兰桥夹（非开局商店）",
+     "得到装备 有限加速器（非开局商店）",
+     "装备 激光发射器 → 迷迭香",
+     "装备 拉特兰桥夹 → 蕾缪安",
+     "装备 有限加速器 → 圣约送葬人"
+    ],
+    "refused": [],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 12,
+     "left": 12
+    }
+   },
+   "diffAfterReplay": [
+    "board: engine-only [\"chess_char_5_01_a@10,8:RIGHT[chess_item_4_03_e_a+chess_item_4_03_e_b]\"] record-only [\"chess_char_5_01_a@10,8:RIGHT[chess_item_4_03_e_b]\"]"
+   ],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "hiddenStandIn": {
+    "threshold": 1200,
+    "teamLayersMirrored": 822,
+    "addedTo": "preciShip",
+    "added": 379
+   },
+   "ownerBoss": [
+    {
+     "bossId": "boss_3",
+     "template": "act1autochess_h07_03_s",
+     "share": 4000000,
+     "timeToShareGs": 204.2,
+     "shareAtCountdown": 1.381,
+     "shareAtOvertime": 1.627,
+     "leakLp": 2,
+     "errors": 0
+    }
+   ],
+   "settle": {
+    "engineLp": 21,
+    "recordLp": 21,
+    "match": true,
+    "leaks": 0,
+    "layerGains": {},
+    "recordLayersNext": null,
+    "bossDamage": null
+   }
+  },
+  {
+   "round": 15,
+   "gaps": [],
+   "lines": [
+    138,
+    139
+   ],
+   "engineBefore": {
+    "lp": 21,
+    "funds": 12,
+    "level": 5
+   },
+   "lpCarried": {
+    "engine": 21,
+    "record": 21,
+    "match": true
+   },
+   "forceStart": {
+    "notes": [],
+    "bondFix": {},
+    "upgradePrice": 7
+   },
+   "turn": {
+    "derived": {
+     "levelUps": 0,
+     "buys": [],
+     "extra": [
+      {
+       "id": "chess_char_1_01_a"
+      }
+     ],
+     "sells": [],
+     "itemBuys": [],
+     "itemExtra": [
+      {
+       "id": "chess_item_3_05_e_a"
+      },
+      {
+       "id": "chess_item_5_03_e_a"
+      },
+      {
+       "id": "chess_item_3_08_e_b"
+      }
+     ],
+     "itemGone": [
+      {
+       "id": "chess_item_3_08_e_a"
+      }
+     ],
+     "eliteAppeared": []
+    },
+    "log": [
+     "得到 隐现（非开局商店：刷新/合成奖励/机变）",
+     "得到装备 迅捷作战粮（非开局商店）",
+     "得到装备 双模机械臂（非开局商店）",
+     "得到装备 奥术法阵（非开局商店）",
+     "装备 迅捷作战粮 → 新约能天使",
+     "装备 双模机械臂 → 新约能天使"
+    ],
+    "refused": [
+     "装备 奥术法阵 → 塑心: 找不到持有人"
+    ],
+    "funds": {
+     "start": 13,
+     "afterShopActions": 13,
+     "left": 13
+    }
+   },
+   "diffAfterReplay": [
+    "board: engine-only [\"chess_char_6_09_b@11,8:DOWN[chess_item_3_04_e_a+chess_item_3_08_e_a]\"] record-only [\"chess_char_6_09_b@11,8:DOWN[chess_item_3_04_e_a+chess_item_3_08_e_b]\"]",
+    "hand: chess_item_3_08_e_b engine 1 record 0"
+   ],
+   "forceEnd": {
+    "notes": [],
+    "bondFix": {},
+    "diff": []
+   },
+   "bounties": [],
+   "effects": [],
+   "ownerBoss": [
+    {
+     "bossId": "boss_8",
+     "template": "act1autochess_h08_01_s",
+     "share": 7200000,
+     "timeToShareGs": 201.7,
+     "shareAtCountdown": 1.497,
+     "shareAtOvertime": 1.911,
+     "leakLp": 5,
+     "errors": 0
+    },
+    {
+     "bossId": "boss_9",
+     "template": "act1autochess_h08_02_s",
+     "share": 3950000,
+     "timeToShareGs": null,
+     "shareAtCountdown": 0.559,
+     "shareAtOvertime": 0.67,
+     "leakLp": 0,
+     "errors": 0
+    },
+    {
+     "bossId": "boss_10",
+     "template": "act1autochess_h08_03_s",
+     "share": 7600000,
+     "timeToShareGs": null,
+     "shareAtCountdown": 0.636,
+     "shareAtOvertime": 0.676,
+     "leakLp": 7,
+     "errors": 0
+    }
+   ],
+   "settle": {
+    "engineLp": 0,
+    "recordLp": 21,
+    "match": false,
+    "leaks": 3,
+    "layerGains": {},
+    "recordLayersNext": null,
+    "bossDamage": {
+     "max": 21600000,
+     "hp": 1088969.3921438023,
+     "byPlayer": {}
+    }
+   }
+  }
+ ],
+ "result": {
+  "victory": true,
+  "reason": "victory",
+  "hiddenReached": true,
+  "hiddenCleared": false,
+  "teamLp": 0
+ },
+ "ms": 162298
+}
