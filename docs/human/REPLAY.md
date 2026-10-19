@@ -32,7 +32,9 @@
 ## 复现命令
 
 ```
-cd /jfs/home/zhiningjiao/codex_work/sphind_2254
+cd <root>
+# <root> 是包含顾问仓库和引擎工作区的本地工作区根目录；请替换成你的路径。
+# Python 报表脚本默认读取仓库内的 engine/data；引擎在仓库外时，设置 SP_ENGINE_DATA=<engine>/data。
 ./run-node.sh sp-advisor/human/replay.mjs game1 results/replay-game1.json positions 400 24 mirror
 ./run-node.sh sp-advisor/human/replay.mjs game2 results/replay-game2.json positions 400 24 mirror
 python3 gen/replay_md.py        # 生成下面的逐回合表

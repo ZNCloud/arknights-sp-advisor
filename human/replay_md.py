@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Render results/replay-<game>.json into the STEP_sphind_2254_replay markdown (both games)."""
 import json, sys
-D = "/jfs/home/zhiningjiao/codex_work/spcurve3_1612/engine/data/"
-CH = json.load(open(D + "chess.json")); IT = json.load(open(D + "items.json")); BO = json.load(open(D + "bonds.json")); BS = json.load(open(D + "bosses.json"))
+from engine_data import load_json
+CH = load_json("chess.json"); IT = load_json("items.json"); BO = load_json("bonds.json"); BS = load_json("bosses.json")
 nm = lambda i: (CH.get(i) or {}).get('name', i) + ('(精锐)' if (CH.get(i) or {}).get('isGolden') else '') if not i.startswith('chess_item') else (IT.get(i) or {}).get('name', i) + ('+' if (IT.get(i) or {}).get('isGolden') else '')
 bn = lambda b: (BO.get(b) or {}).get('name', b)
 G = {g: json.load(open(f"{sys.argv[1] if len(sys.argv) > 1 else 'results'}/replay-{g}.json")) for g in ['game1', 'game2']}

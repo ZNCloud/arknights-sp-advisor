@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Text grids of the owner's battle board vs the searched best board for chosen rounds (field-<game>.json)."""
 import json, sys
-D = "/jfs/home/zhiningjiao/codex_work/spcurve3_1612/engine/data/"
-CH = json.load(open(D + "chess.json")); IT = json.load(open(D + "items.json"))
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from engine_data import load_json
+CH = load_json("chess.json"); IT = load_json("items.json")
 ARROW = {"RIGHT": "→", "LEFT": "←", "UP": "↑", "DOWN": "↓"}
 def cn(i):
     if i.startswith('chess_char_4_12') and False: return i

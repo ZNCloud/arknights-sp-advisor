@@ -12,7 +12,9 @@
 ## 怎么复现
 
 ```bash
-cd /jfs/home/zhiningjiao/codex_work/sphind_2254          # <root>：engine 只读挂在 <root>/engine
+cd <root>
+# <root> 是包含顾问仓库和引擎工作区的本地工作区根目录；请替换成你的路径。
+# Python 报表脚本默认读取仓库内的 engine/data；引擎在仓库外时，设置 SP_ENGINE_DATA=<engine>/data。
 node sp-advisor/human/accept.mjs --positions positions     # 重建 30 个局面并核对 sha256（验收集）
 node sp-advisor/eval/human-advice.mjs --positions positions --out results/advice.json --K 4 --N 6 --N2 6 --workers 48
 SP_ADVICE=results/advice.json node sp-advisor/human/hind-run.mjs game1 results/replay-game1.json positions results/econ2-A-game1.json \

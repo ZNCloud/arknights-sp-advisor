@@ -2,10 +2,12 @@
 """Tables for STEP_sphind_2254_<game>: A (信息公平) economy rollouts, B (已知未来) same-card battle boards, equipment
 re-targeting, advisor vs owner. Usage: game_md.py <game> [econ.json ...]"""
 import json, sys, os
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, os.path.dirname(__file__))
+from engine_data import load_json
 from econ_agg import aggregate, LABEL, fd, fmt
-D = "/jfs/home/zhiningjiao/codex_work/spcurve3_1612/engine/data/"
-CH = json.load(open(D + "chess.json")); IT = json.load(open(D + "items.json"))
+CH = load_json("chess.json"); IT = load_json("items.json")
 nm = lambda i: (CH.get(i) or IT.get(i) or {}).get('name', i) + ('(精锐)' if (CH.get(i) or {}).get('isGolden') else '')
 g = sys.argv[1]
 econ_files = sys.argv[2:] or [f'results/econ-A-{g}.json']

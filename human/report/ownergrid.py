@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Owner's recorded battle board of a round as a text grid (record row: id / tile / facing / items)."""
 import json, sys
-D = "/jfs/home/zhiningjiao/codex_work/spcurve3_1612/engine/data/"
-CH = json.load(open(D + "chess.json")); IT = json.load(open(D + "items.json"))
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from engine_data import load_json
+CH = load_json("chess.json"); IT = load_json("items.json")
 AR = {"RIGHT": "→", "LEFT": "←", "UP": "↑", "DOWN": "↓"}
 def cn(i):
     if i.startswith('chess_char_4_27'): return '4_27'
@@ -18,7 +20,6 @@ def grid(row):
     bench = [cn(h) for h in row['hand'] if not h.startswith('chess_item')]
     out.append(f"\n备战席：{'、'.join(bench) or '无'}（`*` = 精锐，箭头 = 朝向，[ ] = 装备）")
     return '\n'.join(out)
-sys.path.insert(0, '/jfs/home/zhiningjiao/codex_work/sphind_2254/sp-advisor/human')
 file, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
 L = open(file).read().splitlines()[first - 1:last]
 rows = [json.loads(l) for l in L]
