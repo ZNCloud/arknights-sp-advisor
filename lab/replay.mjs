@@ -33,10 +33,12 @@ const NAME = (() => {
     const map = new Map();
     for (const [id, row] of Object.entries(d.chess || {})) map.set(id, row[1]);
     for (const [id, row] of Object.entries(d.items || {})) map.set(id, row[1]);
+    for (const [id, bond] of Object.entries(d.bonds || {})) map.set(id, bond.n);
     return map;
   } catch { return new Map(); }
 })();
 const nameOf = (id) => NAME.get(id) || id;
+const bondName = (id) => NAME.get(id) || id;
 
 const files = opt('--file')
   ? [path.resolve(opt('--file'))]
@@ -72,6 +74,9 @@ const sameShop = (a, b) => a.length === b.length && a.every((s, i) => s.id === b
 const sameUnits = (a, b) => { const x = count(units(a)), y = count(units(b)); if (x.size !== y.size) return false; for (const [k, v] of x) if (y.get(k) !== v) return false; return true; };
 /** 只差「商店开门/关门」不算操作 */
 const shopOnly = (a, b) => a.funds === b.funds && a.level === b.level && sameUnits(a, b);
+/** 我自己这一拍真的变了（钱/等级/LP/商店/上阵/手牌）——队友变化不算我的决策 */
+const selfChanged = (a, b) => a.funds !== b.funds || a.level !== b.level || a.lp !== b.lp
+  || !sameUnits(a, b) || a.shop.length !== b.shop.length || a.shop.some((s, i) => !b.shop[i] || s.id !== b.shop[i].id || s.frozen !== b.shop[i].frozen);
 
 function adviceOf(v) {
   const a = String(v.advice || '');
@@ -181,6 +186,40 @@ function splitMatches(rows) {
   return out.filter((m) => m.rows.length > 2);
 }
 
+/** "sargonShip:3/19" → { bondId, count, layers } */
+const parseBond = (s) => {
+  const m = /^(.+?):(\d+)\/(\d+)$/.exec(String(s));
+  return m ? { bondId: m[1], count: +m[2], layers: +m[3] } : null;
+};
+const topBond = (bonds) => (bonds || []).filter((b) => b.count > 0).sort((a, b) => b.layers - a.layers)[0] || null;
+
+/**
+ * 每个座位每回合的公开轨迹：LP / 调度中心等级 / 上阵人数 / 主叠盟约层数。
+ * 自己那份来自记录本体（priv），队友那份来自 m.public.players（记录里的 `mates`，2026-10-20 之后的记录才有）。
+ */
+function tracksOf(rows) {
+  const byPlayer = new Map();
+  const keyOf = (p) => `${p.seat ?? 'me'}|${p.name}`;
+  const push = (p, row) => {
+    const k = keyOf(p);
+    if (!byPlayer.has(k)) byPlayer.set(k, { name: p.name, seat: p.seat ?? null, isBot: !!p.isBot, self: p.seat == null, series: new Map() });
+    const core = topBond(p.bonds);
+    byPlayer.get(k).series.set(row.round, {
+      round: row.round, lp: p.lp, level: p.level, board: p.board,
+      core: core ? { id: core.bondId, count: core.count, layers: core.layers } : null,
+    });
+  };
+  for (const r of rows) {
+    push({ name: '我', lp: r.lp, level: r.level, board: (r.board || []).length, bonds: (r.bonds || []).map(parseBond).filter(Boolean) }, r);
+    for (const mate of r.mates || []) {
+      push({ name: mate.name, seat: mate.seat, isBot: mate.isBot, lp: mate.lp, level: mate.level, board: mate.board, bonds: (mate.bonds || []).map(parseBond).filter(Boolean) }, r);
+    }
+  }
+  return [...byPlayer.values()]
+    .map((e) => ({ ...e, series: [...e.series.values()].sort((a, b) => a.round - b.round) }))
+    .sort((a, b) => (b.self ? 1 : 0) - (a.self ? 1 : 0));
+}
+
 const report = [];
 for (const file of files) {
   splitMatches(loadRows(file)).forEach((m, mi) => {
@@ -196,14 +235,29 @@ for (const file of files) {
       if (adv.kind === 'none') continue;
 
       const steps = [];
-      for (let i = 0; i + 1 < econ.length; i++) {
-        if (shopOnly(econ[i], econ[i + 1])) continue;
-        steps.push([econ[i], econ[i + 1]]);
+      // 只看「商店开着」的帧：买 / 刷 / 冻 / 升本都发生在这里；关门之后（COMBAT 等）不构成决策
+      const shops = econ.filter((f) => f.shop.length > 0);
+      for (let i = 0; i + 1 < shops.length; i++) {
+        const [a, b] = [shops[i], shops[i + 1]];
+        if (shopOnly(a, b)) continue;
+        if (!selfChanged(a, b)) continue;              // 只有队友动了，不算我这一拍
+        const acts = actionsBetween(a, b);
+        const real = acts.some((x) => ['buy', 'golden', 'gain', 'freeze', 'refresh', 'level', 'sell'].includes(x.type));
+        const spent = acts.some((x) => x.type === 'spend');
+        if (!real && !spent) continue;                 // 过账/收息之类的空拍
+        steps.push([a, b]);
       }
+      // 整回合一次都没动手：也记一拍「没动」，这样「顾问建议了、你没做」才看得见
       if (!steps.length) {
-        const tail = inRound[inRound.length - 1];
-        if (tail !== entry) steps.push([entry, tail]);
+        // 老记录（只按阶段落盘）一回合只有一帧商店：退回「入口 → 本回合最后一帧」，把这一回合的动作合起来看
+        const tail = econ[econ.length - 1];
+        if (tail && tail !== entry) {
+          const acts = actionsBetween(entry, tail);
+          const real = acts.some((x) => ['buy', 'golden', 'gain', 'freeze', 'refresh', 'level', 'sell', 'spend'].includes(x.type));
+          if (real) steps.push([entry, tail]);
+        }
       }
+      if (!steps.length) steps.push([entry, entry]);
       const cb0 = coreBond(entry);
       for (const [a, b] of steps) {
         const acts = actionsBetween(a, b);
@@ -236,7 +290,7 @@ for (const file of files) {
       rounds: rounds.length ? rounds[rounds.length - 1] : 0,
       endLp: res ? res.lp : last.lp,
       boss: frames.map((f) => f.boss).find(Boolean) || null,
-      beats,
+      beats, players: tracksOf(m.rows),
       summary: beats.reduce((a, b) => { a[b.verdict.tag] = (a[b.verdict.tag] || 0) + 1; return a; }, {}),
     });
   });
@@ -257,6 +311,28 @@ if (flag('--json')) {
       console.log(`   你　：${b.acts.map((a) => a.detail).join(' / ')}`);
       console.log(`   ${mark} ${b.verdict.tag} — ${b.verdict.why}`);
       if (b.slotCheck && !b.slotCheck.ok) console.log(`   ⚠ 顾问说的槽位 ${b.slotCheck.slot} 上是「${b.slotCheck.name}」，和它点的「${b.advice.pickName}」不是同一张`);
+    }
+    // ── 每个座位怎么玩的：LP / 升本节奏 / 上阵人数 / 主叠层数 ──
+    if (m.players && m.players.length > 1) {
+      console.log('   —— 谁怎么玩（公开视图：LP / 调度中心 / 上阵 / 主叠盟约）——');
+      for (const p of m.players) {
+        const s = p.series.filter((x) => x.level != null || x.board != null);
+        if (!s.length) continue;
+        const first = s[0], lastS = s[s.length - 1];
+        const coreTxt = lastS.core ? `${bondName(lastS.core.id)} ${lastS.core.count}人 ${lastS.core.layers}层` : '—';
+        const who = p.self ? '我' : `${p.isBot ? 'bot' : '队友'} ${String(p.name).slice(0, 10)}${p.seat == null ? '' : `(seat${p.seat})`}`;
+        console.log(`   ${who.padEnd(14)} Lv${first.level}→${lastS.level} · 上阵${first.board}→${lastS.board} · LP${first.lp}→${lastS.lp} · 主叠 ${coreTxt}`);
+      }
+      // 层数矩阵：一眼看出谁在扛输出
+      const rounds = [...new Set(m.players.flatMap((p) => p.series.map((x) => x.round)))].sort((a, b) => a - b);
+      console.log(`   层数矩阵（主叠盟约层数，按回合）`);
+      console.log(`   ${'座位'.padEnd(14)}${rounds.map((r) => `R${r}`.padStart(5)).join('')}`);
+      for (const p of m.players) {
+        const byRound = new Map(p.series.map((x) => [x.round, x.core ? x.core.layers : 0]));
+        const cells = rounds.map((r) => String(byRound.get(r) ?? '').padStart(5)).join('');
+        const who = p.self ? '我' : `${p.isBot ? 'bot' : '队友'}${String(p.name).slice(0, 8)}`;
+        console.log(`   ${who.padEnd(14)}${cells}`);
+      }
     }
     console.log(`   —— ${Object.entries(m.summary).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}×${v}`).join('  ')}`);
   }

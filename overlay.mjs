@@ -89,12 +89,21 @@ const piece = (x) => (x && typeof x === 'object' ? {
       drawnDisabledBonds: (pub.drawnDisabledBonds || []).slice(0, 32),
       bannedChess: (pub.bannedChess || []).slice(0, 40),
       factions: (pub.factions || []).slice(0, 12),
-      // 队友在玩什么（公开的盟约条）：用来避开抢牌
+      // 队友在玩什么：公开视图 m.public.players 里每人都有 LP / 调度中心等级 / 上阵人数 / 盟约（含层数）/ 状态。
+      // 顾问只拿它「避开抢牌」，复盘要的正是同一份数据——原样带上，记录里才有「队友怎么玩」。
       players: (pub.players || []).map((x) => ({
-        name: x.name, bandId: x.bandId || null, isBot: x.isBot === true,
-        bonds: (x.bonds || []).filter((b) => (b.count || 0) > 0).map((b) => ({ bondId: b.bondId, count: b.count })),
+        playerId: x.playerId, seat: x.seat, name: x.name, bandId: x.bandId || null, isBot: x.isBot === true,
+        alive: x.alive !== false, lp: x.lp ?? null, shopLevel: x.shopLevel ?? null, boardCount: x.boardCount ?? null,
+        status: x.status ?? null, autoplay: x.autoplay === true,
+        bonds: (x.bonds || []).filter((b) => (b.count || 0) > 0 || (b.layers || 0) > 0)
+          .map((b) => ({ bondId: b.bondId, count: b.count || 0, layers: b.layers || 0, tier: b.tier ?? 0, active: b.active === true, off: b.off === true })),
       })),
+      // 合作进度：队伍 LP 与 BOSS 血池（谁在扛输出，看这个）
+      teamLp: pub.teamLp ?? null,
+      bossHp: pub.bossHp ? { hp: pub.bossHp.hp, max: pub.bossHp.max } : null,
+      bossRound: pub.bossRound ?? null, hiddenRound: pub.hiddenRound ?? null,
     } : null,
+    me: { playerId: (root.me && root.me.playerId) || null, name: (root.me && root.me.name) || null },
     priv: p ? {
       funds: p.funds, lp: p.lp,
       shop: { level: p.shop ? p.shop.level : null,
@@ -601,25 +610,44 @@ export async function writeState(box) {
 const RECORD_DIR = path.join(path.dirname(STATE), 'records');
 
 /**
- * 这一帧「经济状态」的指纹：钱、等级、上阵（含坐标）、手牌、商店（含槽位号与冻结）。
- * 只要它变了，就是玩家动了一下（买 / 卖 / 刷 / 冻 / 摆位 / 升本），要落一行。
+ * 这一帧状态的指纹：钱、等级、上阵（含坐标）、手牌、商店（含槽位号与冻结）、盟约，
+ * 外加每个队友的「粗状态」（LP / 调度中心等级 / 上阵人数 / 盟约人数）。
+ * 只要它变了，就是有人动了一下（买 / 卖 / 刷 / 冻 / 摆位 / 升本 / 队友换了阵容），要落一行。
  * 只按 `阶段|回合` 去重的时候，一回合里的四次购买会被压成一行，复盘时看不出先后。
+ *
+ * 队友那部分只算「人数」不算层数：层数在战斗里每帧都在涨，放进指纹会把记录写成刷屏。
  */
-export function recordKeyOf(priv) {
+export function recordKeyOf(priv, brief) {
   const slots = ((priv.shop && priv.shop.slots) || [])
     .map((s, i) => (s && !s.sold ? `${i + 1}:${s.id}:${s.price}${s.frozen ? 'F' : ''}` : '-'))
     .join(',');
   const board = (priv.board || []).map((p) => `${p.id}@${p.row},${p.col}`).join(',');
   const hand = (priv.hand || []).map((p) => p.id).join(',');
   const bonds = (priv.bonds || []).map((b) => `${b.bondId}=${b.count}/${b.layers ?? 0}`).join(',');
-  return `${priv.funds}|${(priv.shop && priv.shop.level) || 1}|${priv.lp}|${slots}|${board}|${hand}|${bonds}`;
+  const mates = ((brief && brief.players) || [])
+    .map((p) => `${p.seat ?? '?'}:${p.alive ? 1 : 0}:${p.lp}:${p.shopLevel}:${p.boardCount}:${(p.bonds || []).map((b) => b.bondId + b.count).join('+')}`)
+    .join(';');
+  return `${priv.funds}|${(priv.shop && priv.shop.level) || 1}|${priv.lp}|${slots}|${board}|${hand}|${bonds}|${mates}`;
+}
+
+/** 队友（不含自己）的公开状态：LP / 调度中心 / 上阵人数 / 盟约（含层数）/ 状态 */
+function matesOf(snap) {
+  const players = (snap.brief && snap.brief.players) || [];
+  const myId = snap.me && snap.me.playerId;
+  return players
+    .filter((p) => !myId || p.playerId !== myId)
+    .map((p) => ({
+      name: p.name, seat: p.seat ?? null, isBot: !!p.isBot, alive: p.alive !== false,
+      lp: p.lp, level: p.shopLevel, board: p.boardCount, status: p.status || null, bandId: p.bandId || null,
+      bonds: (p.bonds || []).filter((b) => !b.off).slice(0, 8).map((b) => `${b.bondId}:${b.count}/${b.layers}`),
+    }));
 }
 
 async function recordTurn(snap, box) {
   if (!snap || !snap.ok || !snap.priv) return;
   const priv = snap.priv;
-  // 阶段/回合变了必记；同一阶段里经济状态只要变了也记（逐动作），完全没动才跳过
-  const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv)}`;
+  // 阶段/回合变了必记；同一阶段里经济状态（含队友阵容）只要变了也记（逐动作），完全没动才跳过
+  const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv, snap.brief)}`;
   if (recordTurn.last === key) return;
   recordTurn.last = key;
   const row = {
@@ -634,6 +662,11 @@ async function recordTurn(snap, box) {
     hand: (priv.hand || []).map((p) => p.id),
     // slot 必须留：顾问说的是「槽位 3」，压掉已售格会让后面的位置整体前移，复盘时对不上
     shop: ((priv.shop && priv.shop.slots) || []).map((s, i) => (s && !s.sold ? { slot: i + 1, id: s.id, price: s.price, frozen: !!s.frozen } : null)).filter(Boolean),
+    // 队友的公开状态（m.public.players）：看「他是怎么玩的」就靠这几列——LP / 升本节奏 / 上阵人数 / 盟约层数
+    mates: matesOf(snap),
+    // 合作进度：队伍 LP、BOSS 血池（谁的输出在扛）
+    teamLp: (snap.brief && snap.brief.teamLp) ?? null,
+    bossHp: (snap.brief && snap.brief.bossHp) || null,
     advice: box && box.advice ? box.advice : null,
     pick: box && box.pick ? `${box.pick.name}(${box.pick.score})` : null,
     terminal: box && box.terminal ? box.terminal.name : null,
