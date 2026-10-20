@@ -17,7 +17,9 @@ def paired(A, B):
     (mu, su), (mr, sr) = mse(du), mse(dr)
     good = sum(1 for x in du if x > 1e-9); bad = sum(1 for x in du if x < -1e-9)
     wins = (sum(1 for k in s if A[k]['win'] and not B[k]['win']), sum(1 for k in s if B[k]['win'] and not A[k]['win']))
-    return f"效用 {mu:+.3f}±{su:.3f}，到达回合 {mr:+.2f}±{sr:.2f}，好/差 {good}/{bad}，胜局 +{wins[0]} −{wins[1]}（n={len(s)}）"
+    # exact McNemar (two-sided binomial on the seeds whose win / loss differs)
+    n = sum(wins); pv = min(1.0, 2 * sum(math.comb(n, k) for k in range(min(wins) + 1)) / 2 ** n) if n else 1.0
+    return f"效用 {mu:+.3f}±{su:.3f}，到达回合 {mr:+.2f}±{sr:.2f}，好/差 {good}/{bad}，胜局 +{wins[0]} −{wins[1]}（McNemar p={pv:.3f}，n={len(s)}）"
 if __name__ == '__main__':
     arms = [a.split('=') for a in sys.argv[1:]]
     data = {}

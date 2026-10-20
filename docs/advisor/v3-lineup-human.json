@@ -43,7 +43,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 48,
-   "ms": 68791,
+   "ms": 138869,
    "names": {
     "7": "chess_char_1_04_a",
     "8": "chess_char_1_20_a"
@@ -111,7 +111,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 85,
-   "ms": 1237,
+   "ms": 1290,
    "names": {
     "20": "chess_char_1_17_a",
     "21": "chess_char_1_09_a",
@@ -181,7 +181,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 135,
-   "ms": 1334,
+   "ms": 1749,
    "names": {
     "51": "chess_char_1_09_a",
     "52": "chess_char_1_17_a",
@@ -288,7 +288,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 170,
-   "ms": 1912,
+   "ms": 2685,
    "names": {
     "74": "chess_char_2_01_a",
     "75": "chess_char_1_09_a",
@@ -410,7 +410,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 154,
-   "ms": 2013,
+   "ms": 3388,
    "names": {
     "99": "chess_char_4_25_a",
     "100": "chess_char_1_09_a",
@@ -585,7 +585,7 @@
    },
    "recommend": false,
    "evals": 337,
-   "ms": 3032,
+   "ms": 5040,
    "names": {
     "133": "chess_char_1_17_a",
     "134": "chess_char_1_09_a",
@@ -798,7 +798,7 @@
    },
    "recommend": true,
    "evals": 532,
-   "ms": 9510,
+   "ms": 10590,
    "names": {
     "166": "chess_char_3_13_a",
     "167": "chess_char_4_14_a",
@@ -1049,7 +1049,7 @@
    },
    "recommend": true,
    "evals": 600,
-   "ms": 16045,
+   "ms": 22153,
    "names": {
     "209": "chess_char_4_26_a",
     "210": "chess_char_4_14_a",
@@ -1302,7 +1302,7 @@
    },
    "recommend": true,
    "evals": 568,
-   "ms": 17052,
+   "ms": 23163,
    "names": {
     "264": "chess_char_4_25_a",
     "265": "chess_char_4_26_a",
@@ -1555,7 +1555,7 @@
    },
    "recommend": true,
    "evals": 561,
-   "ms": 13805,
+   "ms": 21401,
    "names": {
     "313": "chess_char_4_25_a",
     "314": "chess_char_4_26_a",
@@ -1809,7 +1809,7 @@
    },
    "recommend": true,
    "evals": 576,
-   "ms": 13831,
+   "ms": 17340,
    "names": {
     "382": "chess_char_3_21_a",
     "383": "chess_char_4_26_a",
@@ -2061,7 +2061,7 @@
    },
    "recommend": true,
    "evals": 568,
-   "ms": 10205,
+   "ms": 19902,
    "names": {
     "432": "chess_char_3_21_a",
     "433": "chess_char_4_26_a",
@@ -2315,7 +2315,7 @@
    },
    "recommend": true,
    "evals": 605,
-   "ms": 13079,
+   "ms": 27832,
    "names": {
     "497": "chess_char_6_01_a",
     "498": "chess_char_6_09_b",
@@ -2531,7 +2531,7 @@
    },
    "recommend": true,
    "evals": 505,
-   "ms": 34038,
+   "ms": 52465,
    "names": {
     "555": "chess_char_6_13_b",
     "556": "chess_char_6_09_b",
@@ -2723,7 +2723,7 @@
    },
    "recommend": true,
    "evals": 520,
-   "ms": 88965,
+   "ms": 133006,
    "names": {
     "661": "chess_char_6_13_b",
     "664": "chess_char_6_09_b",
@@ -2782,7 +2782,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 136,
-   "ms": 503,
+   "ms": 939,
    "names": {
     "8": "chess_char_1_03_a",
     "9": "chess_char_1_03_a",
@@ -2851,7 +2851,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 99,
-   "ms": 831,
+   "ms": 1444,
    "names": {
     "21": "chess_char_1_03_a",
     "22": "chess_char_1_03_a",
@@ -2921,7 +2921,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 99,
-   "ms": 796,
+   "ms": 1504,
    "names": {
     "53": "chess_char_3_17_a",
     "54": "chess_char_1_03_b",
@@ -3003,7 +3003,7 @@
    "recheck": null,
    "recommend": false,
    "evals": 118,
-   "ms": 1046,
+   "ms": 1928,
    "names": {
     "76": "chess_char_1_03_b",
     "77": "chess_char_3_17_a",
@@ -3198,7 +3198,7 @@
    },
    "recommend": false,
    "evals": 457,
-   "ms": 6218,
+   "ms": 10686,
    "names": {
     "97": "chess_char_1_03_b",
     "98": "chess_char_3_17_a",
@@ -3371,7 +3371,7 @@
    },
    "recommend": true,
    "evals": 347,
-   "ms": 5885,
+   "ms": 9462,
    "names": {
     "133": "chess_char_1_03_b",
     "134": "chess_char_3_17_a",
@@ -3582,7 +3582,7 @@
    },
    "recommend": true,
    "evals": 529,
-   "ms": 10999,
+   "ms": 19149,
    "names": {
     "162": "chess_char_3_12_a",
     "163": "chess_char_3_17_a",
@@ -3752,7 +3752,7 @@
    },
    "recommend": false,
    "evals": 496,
-   "ms": 11813,
+   "ms": 16295,
    "names": {
     "203": "chess_char_3_12_b",
     "204": "chess_char_3_17_a",
@@ -4000,7 +4000,7 @@
    },
    "recommend": false,
    "evals": 541,
-   "ms": 13408,
+   "ms": 17026,
    "names": {
     "268": "chess_char_5_22_a",
     "269": "chess_char_3_12_b",
@@ -4250,7 +4250,7 @@
    },
    "recommend": true,
    "evals": 511,
-   "ms": 13273,
+   "ms": 21781,
    "names": {
     "317": "chess_char_5_22_a",
     "318": "chess_char_3_12_b",
@@ -4466,7 +4466,7 @@
    },
    "recommend": true,
    "evals": 595,
-   "ms": 17063,
+   "ms": 30530,
    "names": {
     "388": "chess_char_5_22_a",
     "389": "chess_char_3_12_b",
@@ -4683,7 +4683,7 @@
    },
    "recommend": true,
    "evals": 547,
-   "ms": 32770,
+   "ms": 48047,
    "names": {
     "435": "chess_char_1_18_a",
     "436": "chess_char_3_12_b",
@@ -4933,7 +4933,7 @@
    },
    "recommend": true,
    "evals": 547,
-   "ms": 29549,
+   "ms": 34162,
    "names": {
     "483": "chess_char_3_17_a",
     "484": "chess_char_5_06_a",
@@ -5145,7 +5145,7 @@
    },
    "recommend": true,
    "evals": 529,
-   "ms": 45975,
+   "ms": 60625,
    "names": {
     "530": "chess_char_5_06_a",
     "531": "chess_char_5_19_a",
@@ -5358,7 +5358,7 @@
    },
    "recommend": true,
    "evals": 533,
-   "ms": 220874,
+   "ms": 240082,
    "names": {
     "642": "chess_char_5_06_a",
     "643": "chess_char_5_19_a",
