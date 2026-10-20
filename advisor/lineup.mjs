@@ -105,11 +105,13 @@ export function neighbours(ctx, L) {
   return out;
 }
 
-// Steps through the engine's move handler: { ok } or { ok: false, error } at the first move the engine refuses.
+// Steps through the engine's move handler: { ok } or { ok: false, error } at the first move the engine refuses. A hand
+// piece is the exact one the step was made for (uid; copies of one operator can differ in equipment); only a board
+// rebuilt elsewhere (the recorded games' hindsight replays, other uids) falls back to the first copy of the same id.
 export function replaySteps(ps, steps) {
   for (const s of steps) {
-    const o = s.op;
-    const piece = o.from ? ps.board.get(o.from) : [...ps.hand, ...ps.temp].find(p => p?.kind === 'chess' && p.id === o.id);
+    const o = s.op, hand = [...ps.hand, ...ps.temp].filter(p => p?.kind === 'chess');
+    const piece = o.from ? ps.board.get(o.from) : (hand.find(p => p.uid === o.uid && p.id === o.id) ?? hand.find(p => p.id === o.id));
     if (!piece || piece.id !== o.id) return { ok: false, error: `lineup step "${s.what}": no ${o.id} at ${o.from ?? 'hand'}` };
     const r = ps.move(piece.uid, { area: 'board', row: o.row, col: o.col }, o.dir);
     if (!r?.ok) return { ok: false, error: `lineup step "${s.what}" refused by the engine: ${JSON.stringify(r)}` };
