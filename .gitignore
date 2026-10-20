@@ -6,3 +6,4 @@ route.json
 overlay.err.log
 records/
 *.zip
+__pycache__/

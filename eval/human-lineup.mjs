@@ -1,13 +1,14 @@
 // Lineup check (advisor/lineup.mjs) on the owner's recorded battle boards (positions/<game>-rXX-end.json of
 // human/replay.mjs): what would the advisor have said just before the owner pressed Ready? A normal round is fought
 // against the replay's aligned enemy pick (docs/human/replay-<game>.json) — the stand-in for the wave the owner saw in
-// the prep preview; boss rounds need no wave. Output: per round the greedy steps, the re-checked gain and whether it is
-// recommended.
+// the prep preview; boss rounds need no wave. The re-check stays on the owner's own field (recheckMetric 'own'): the
+// record holds nothing about the teammates, whose boards here are engine stand-ins. Output: per round the greedy steps,
+// the re-checked gain and whether it is recommended.
 // node sp-advisor/eval/human-lineup.mjs --positions positions --out results/lineup-human.json [--games game1,game2]
 //      [--rounds 1-15] [--workers 48] [--steps 3] [--seeds 4] [--recheck 24]
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fromJSON, restore, capture, toJSON } from '../advisor/state.mjs';
-import { checkLineup, poolEval } from '../advisor/lineup.mjs';
+import { checkLineup, poolEval, describe } from '../advisor/lineup.mjs';
 import { waveOf } from '../advisor/field.mjs';
 import { RolloutPool } from '../advisor/pool.mjs';
 
@@ -27,6 +28,7 @@ function ownerBoard(posDir, game, round, rep) {
   if (!pick) return { st, aligned: false };
   const m = restore(st, { rngMode: 'exact' });
   m.wave = waveOf(m, pick);
+  for (const [i, p] of m.order.entries()) p.ready = st.seats[i].ready;   // restore() un-readies every seat
   const out = capture(m); m.dispose();
   return { st: out, aligned: true };
 }
@@ -40,9 +42,8 @@ for (const g of games) {
     if (!pos) continue;
     const json = toJSON(pos.st), key = `${g}-${r}-lineup`;
     const res = await checkLineup(pos.st, { evalMany: poolEval(pool, json, key), maxSteps: out.cfg.steps, seeds: out.cfg.seeds, recheckSeeds: out.cfg.recheck ?? undefined,
-      log: s => console.log(`  ${g} R${r} ${s}`) });
-    const val = s => s ? (res.kind === 'normal' ? `漏怪扣血 ${s.loss.toFixed(2)}` : `份额 ${s.share.toFixed(2)}`) : '-';
-    console.log(`${g} R${r} [${res.kind}] ${res.steps.map(s => s.what).join(' + ') || '不动'} | recheck ${val(res.recheck?.current)} → ${val(res.recheck?.best)} gain ${res.gain ? `${res.gain.mean.toFixed(3)}±${(res.gain.se ?? 0).toFixed(3)}` : '-'} ${res.recommend ? '★建议' : ''} (${res.evals} evals, ${(res.ms / 1000).toFixed(1)} s)`);
+      recheckMetric: 'own', log: s => console.log(`  ${g} R${r} ${s}`) });
+    console.log(`${g} R${r} [${res.kind}] ${describe(res)} (${res.evals} evals, ${(res.ms / 1000).toFixed(1)} s)`);
     out.rows.push({ game: g, round: r, alignedWave: pos.aligned, ...res });
     writeFileSync(opt.out || 'results/lineup-human.json', JSON.stringify(out, null, 1));
   }

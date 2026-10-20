@@ -80,24 +80,49 @@ function ownFight(st, mutate, pick, { battleSeed = null, playerId = 'p0' } = {})
     while (!b.finished) b.step();
     const r = b.result().perPlayer?.[playerId] || {};
     const counted = (r.leaked || []).filter(l => l && l.counted !== false).length;
-    return { loss: Math.min(m.gd.lpCapPerRound ?? 10, counted), leaks: counted, killed: r.killed, total: r.total };
+    const layers = Object.values(r.layerGains || {}).reduce((a, n) => a + (Number(n) || 0), 0);   // settled after the round
+    return { loss: Math.min(m.gd.lpCapPerRound ?? 10, counted), leaks: counted, killed: r.killed, total: r.total, layers, layerGains: r.layerGains || {} };
   } finally { m.dispose(); }
 }
 
 // Mean LP charge / leaks of the seat's own field under one pick over `battleSeeds` (null entry = the position's own
 // battle stream); `losses` keeps the per-seed charges so two boards scored on the same seeds can be compared pairwise.
 export function waveLoss(st, mutate, { pick = null, battleSeeds = [null], playerId = 'p0' } = {}) {
-  const losses = [], leaks = [];
+  const losses = [], leaks = [], layers = [];
   for (const battleSeed of battleSeeds) {
     const o = ownFight(st, mutate, pick, { battleSeed, playerId });
     if (!o) return null;
-    losses.push(o.loss); leaks.push(o.leaks);
+    losses.push(o.loss); leaks.push(o.leaks); layers.push(o.layers);
   }
   const mean = a => a.reduce((x, y) => x + y, 0) / a.length;
-  return { loss: mean(losses), leaks: mean(leaks), losses };
+  return { loss: mean(losses), leaks: mean(leaks), layers: mean(layers), losses, layerSamples: layers };
 }
 // Battle seeds a player cannot know: `n` streams derived from `tag` (search and re-check use different tags).
 export const battleSeedsOf = (tag, n) => Array.from({ length: n }, (_, i) => deriveSeed(i + 1, `field:${tag}`) >>> 0);
+
+// The whole round from a PREP capture with the seat's board in place (every seat's field, 联防, settle): the seats' LP
+// after the round. The seats that were ready when the state was captured stand ready; the seat is readied last, which
+// ends the prep (restore() un-readies every seat). `wave` replaces the round's enemies, `battleSeed` the match seed the
+// round's battle streams derive from. Returns null when `mutate` refuses the board.
+export function roundOutcome(state, mutate, { wave = null, battleSeed = null, playerId = 'p0' } = {}) {
+  const m = restore(state, { rngMode: 'exact' });
+  try {
+    if (wave) m.wave = wave;
+    if (battleSeed != null) m.seed = battleSeed;
+    const ps = m.players.get(playerId);
+    if (mutate && mutate(m, ps) === false) return null;
+    for (const [i, p] of m.order.entries()) if (p !== ps && state.seats[i].ready) p.ready = true;
+    ps.resolveTemp(); ps.setReady(true);
+    const r0 = m.round;
+    let res = null;
+    m.sched.runUntil(() => { if (m.lastResults?.get?.(playerId)) res = m.lastResults.get(playerId); return (m.round > r0 && m.phase !== 'SETTLE') || m.phase === 'RESULT'; }, { maxSteps: 5e6 });
+    if (m.round === r0 && m.phase !== 'RESULT') throw Error(`roundOutcome: stuck in R${r0} ${m.phase}`);
+    return { lp: ps.lp, alive: ps.alive, leaks: res?.leaked?.length ?? res?.leaks ?? null, layerGains: res?.layerGains || null, unite: !!m.unitePlan,
+      seatLp: Object.fromEntries(m.order.map(p => [p.playerId, p.alive ? p.lp : 0])) };
+  } finally { m.dispose(); }
+}
+// Whether every other alive seat had finished its prep when the state was captured (roundOutcome needs their boards).
+export const othersReady = (state, playerId = 'p0') => state.seats.every(s => s.playerId === playerId || !s.alive || s.ready);
 
 // { B: loss under the aligned pick, A: prior-weighted mean loss over the top-K picks, pA0: prior mass with 0 loss }
 export function normalScore(st, mutate, { alignedPick, prior }) {

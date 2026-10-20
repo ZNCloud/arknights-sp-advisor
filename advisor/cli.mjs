@@ -10,7 +10,7 @@ import { installGuide } from '../guides/policy.mjs';
 import { capture, toJSON, fromJSON } from './state.mjs';
 import { advise, modelScorer } from './advise.mjs';
 import { RolloutPool } from './pool.mjs';
-import { checkLineup, poolEval } from './lineup.mjs';
+import { checkLineup, poolEval, describe } from './lineup.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2), opt = {};
 for (let i = 0; i < rest.length; i++) { if (!rest[i].startsWith('--')) throw Error(`Expected --flag, got ${rest[i]}`); opt[rest[i].slice(2)] = rest[++i]; }
@@ -46,12 +46,7 @@ if (cmd === 'save') {
   const pool = new RolloutPool(Number(opt.workers || 24));
   const res = await checkLineup(state, { playerId: opt.player || 'p0', evalMany: poolEval(pool, json, opt.state), maxSteps: Number(opt.steps || 3) });
   await pool.close();
-  const val = s => res.kind === 'normal' ? `本回合自己场预计扣血 ${s.loss.toFixed(2)}` : `倒计时内打掉自己那份 BOSS 血的 ${(s.share * 100).toFixed(0)}%`;
   console.log(`round ${res.round} (${res.kind}) seat ${opt.player || 'p0'}: ${res.evals} boards fought, ${(res.ms / 1000).toFixed(1)} s`);
-  if (!res.steps.length) console.log('站位：没找到更好的，照现在的上场。');
-  else {
-    console.log(`${res.recommend ? '★ 建议' : '（不建议，提升不显著）'}：${res.steps.map(s => s.what).join('，然后 ')}`);
-    console.log(`  复核（${res.gain.n} 场新随机）：${val(res.recheck.current)} → ${val(res.recheck.best)}，提升 ${res.gain.mean.toFixed(3)}±${(res.gain.se ?? 0).toFixed(3)}`);
-  }
+  console.log(describe(res));
   if (opt.out) writeFileSync(opt.out, JSON.stringify(res, null, 1));
 } else if (cmd) throw Error(`unknown command ${cmd}`);

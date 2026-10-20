@@ -54,10 +54,14 @@ async function advised(seed, pool) {
     try { await economyTurn(m, ps, seed, pool, decisions); } finally { if (release) asked = release(); }
     if (!asked) throw Error(`seed ${seed} R${m.round}: p0's turn never asked for Ready`);
     if (cfg.lineup) {
+      // teammates finish their prep first (their boards and 联防 enter the whole-round re-check); p0 stays not ready
+      const r0 = m.round;
+      m.sched.runUntil(() => m.alivePlayers().every(p => p === ps || p.ready) || m.phase !== 'PREP' || m.round !== r0, { maxSteps: 5e6 });
+      if (m.phase !== 'PREP' || m.round !== r0) throw Error(`seed ${seed} R${r0}: prep ended while p0 waited for its lineup check`);
       const st = capture(m), res = await checkLineup(st, { playerId: 'p0', evalMany: poolEval(pool, toJSON(st), `${seed}:${m.round}:lineup`) });
       if (res.recommend) applySteps(ps, res.steps, res.best);
       decisions.push({ round: m.round, lineup: true, deviated: res.recommend, label: res.steps.map(x => x.what).join(' + ') || '站位不动', kind: res.kind,
-        gain: res.gain, evals: res.evals, ms: res.ms });
+        gain: res.gain, recheck: res.recheck, evals: res.evals, ms: res.ms });
       ps.resolveTemp();
       const rd = ps.setReady(true);
       if (!rd.ok) throw Error(`seed ${seed} R${m.round}: ready refused after the lineup check ${JSON.stringify(rd)}`);

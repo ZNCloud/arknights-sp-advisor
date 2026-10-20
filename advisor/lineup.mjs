@@ -2,16 +2,24 @@
 // single-step change is scored by fighting this round's battle on the seat's own field (advisor/field.mjs), the best
 // improving change is taken greedily (≤ maxSteps), and the final board is re-scored against the current board on fresh
 // battle seeds; it is recommended only when that paired gain clears z standard errors.
-//   normal round: the enemies are the round's own wave (the prep preview shows it exactly) → mean LP charge of the
-//     seat's own field over battle seeds the player cannot know; ties broken by mean leaks.
+//   normal round: the enemies are the round's own wave (the prep preview shows it exactly). Score per battle seed (the
+//     fight's random stream, unknown to the player) = − lpWeight(LP left) · LP lost + LAYER_WEIGHT · bond layers the
+//     battle earns (settled after the round; who stands on the board decides them, and they compound into the boss
+//     rounds). Search: the seat's own field. Re-check: when every teammate has finished its prep, the whole round is
+//     played (all fields, 联防, settle) and the team's LP loss is used — leaks a teammate would have covered anyway are
+//     not counted as a gain; otherwise the own field again.
 //   boss round (R14) / hidden round (R15): the seat's share of one player's boss pool within the countdown (solo boss
 //     field), the hidden round averaged over the mode's hidden-boss weights.
-// Guard: a change may not lower the tier of a bond that holds layers (layer stacking is a later-round effect the single
-// battle does not see).
+// Guard: a change may not lower the tier of a bond that holds layers.
 import { restore } from './state.mjs';
-import { layoutOf, applyLayout, legalTiles, waveLoss, bossScore, battleSeedsOf } from './field.mjs';
+import { layoutOf, applyLayout, legalTiles, waveLoss, bossScore, battleSeedsOf, roundOutcome, othersReady } from './field.mjs';
 
 const DIRS = ['RIGHT', 'UP', 'DOWN', 'LEFT'];
+// Normal-round exchange rate between LP and layers. One layer is worth LAYER_WEIGHT LP when LP_REF LP are left; an LP is
+// worth more the less of it is left (lpWeight = LP_REF / LP, clamped). Measured on the owner's games (docs/MODEL.md):
+// swaps that saved 2–5 LP but cost 4–8 layers per fight ended the game with less boss damage.
+const LAYER_WEIGHT = 0.25, LP_REF = 10;
+export const lpWeight = lp => Math.min(4, Math.max(0.25, LP_REF / Math.max(1, lp)));
 const DIR_CN = { RIGHT: '朝右', LEFT: '朝左', UP: '朝上', DOWN: '朝下' };
 
 // What the scorer needs to know about the position (cheap; computed once in the caller).
@@ -26,16 +34,33 @@ export function fieldKind(st, playerId = 'p0') {
   } finally { m.dispose(); }
 }
 
-// Score of one layout. `tag` picks the battle seeds (search and re-check never share seeds). Higher `value` is better.
-export function scoreLayout(st, layout, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4 }) {
+// Score of one layout over battle seeds [seedFrom, seedFrom + seeds) of `tag` (search and re-check never share seeds).
+// Higher `value` is better; `samples` are per seed, so two layouts scored on the same seeds compare pairwise.
+// metric 'own' = the seat's own field, 'round' = the whole round (team LP loss; needs every teammate ready).
+export function scoreLayout(st, layout, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4, seedFrom = 0, metric = 'own' }) {
   const mutate = layout ? (m, ps) => applyLayout(ps, layout) : null;
   if (kind === 'normal') {
-    const s = waveLoss(st, mutate, { battleSeeds: battleSeedsOf(`${tag}:${round}`, seeds), playerId });
-    return s && { value: -s.loss - s.leaks * 1e-3, loss: s.loss, leaks: s.leaks, samples: s.losses.map(x => -x) };
+    const battleSeeds = battleSeedsOf(`${tag}:${round}`, seedFrom + seeds).slice(seedFrom);
+    const lp0 = Object.fromEntries(st.seats.map(x => [x.playerId, x.alive ? x.lp : 0])), w = lpWeight(lp0[playerId]);
+    if (metric === 'round') {
+      const own = [], team = [], layers = [];
+      for (const battleSeed of battleSeeds) {
+        const o = roundOutcome(st, mutate, { battleSeed, playerId });
+        if (!o) return null;
+        own.push(lp0[playerId] - o.seatLp[playerId]);
+        team.push(Object.keys(lp0).reduce((a, k) => a + lp0[k] - o.seatLp[k], 0));
+        layers.push(Object.values(o.layerGains || {}).reduce((a, n) => a + (Number(n) || 0), 0));
+      }
+      const samples = team.map((x, i) => -w * x + LAYER_WEIGHT * layers[i]);
+      return { value: mean(samples), loss: mean(own), teamLoss: mean(team), layers: mean(layers), samples, ownLoss: own, layerSamples: layers };
+    }
+    const s = waveLoss(st, mutate, { battleSeeds, playerId });
+    if (!s) return null;
+    const samples = s.losses.map((x, i) => -w * x + LAYER_WEIGHT * s.layerSamples[i]);
+    return { value: mean(samples) - s.leaks * 1e-3, loss: s.loss, leaks: s.leaks, layers: s.layers, samples, ownLoss: s.losses, layerSamples: s.layerSamples };
   }
-  const s = bossScore(st, mutate, { bosses, round, hidden, seeds, seedBase: tag === 'search' ? 100 : 5000, playerId });
+  const s = bossScore(st, mutate, { bosses, round, hidden, seeds, seedBase: (tag === 'search' ? 100 : 5000) + seedFrom, playerId });
   if (!s) return null;
-  // per-seed weighted share (same seeds for every layout → paired comparisons)
   const wsum = bosses.reduce((a, b) => a + b.w, 0);
   const samples = Array.from({ length: seeds }, (_, k) => bosses.reduce((a, b) => a + b.w * s.per[b.id].cds[k], 0) / wsum);
   return { value: s.share, share: s.share, shareOt: s.shareOt, pClear: s.pClear, samples };
@@ -120,14 +145,16 @@ const se = a => { const mu = mean(a); return a.length > 1 ? Math.sqrt(a.reduce((
 
 /**
  * Lineup check. `evalMany(layouts, opts)` scores a batch of layouts (a worker pool in production, inline in tests) and
- * returns scoreLayout results in order. Returns { kind, steps: [...], current, best, gain: { mean, se, n }, recommend }.
+ * returns scoreLayout results in order. `recheckMetric` (normal rounds): 'auto' = the whole round when every teammate is
+ * ready, else the own field; 'own' / 'round' force one (the recorded human games use 'own': their teammates are engine
+ * stand-ins). Returns { kind, steps: [...], current, best, gain: { mean, se, n }, recheck, recommend }.
  */
-export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3, seeds = null, recheckSeeds = null, z = 2, minGain = null, log = () => {} } = {}) {
+export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3, seeds = null, screenSeeds = 2, refine = 12, recheckSeeds = null, z = 2, minGain = null, recheckMetric = 'auto', log = () => {} } = {}) {
   const t0 = performance.now();
   const fk = fieldKind(st, playerId);
   seeds ??= 4;
   recheckSeeds ??= fk.kind === 'normal' ? 24 : 16;
-  minGain ??= fk.kind === 'normal' ? 0.5 : 0.03;   // ≥ half an LP / ≥ 3 % of one share
+  minGain ??= fk.kind === 'normal' ? 0.5 : 0.03;   // ≥ 0.5 score (half an LP at LP_REF left) / ≥ 3 % of one share
   const m = restore(st, { rngMode: 'exact' }), ps = m.players.get(playerId);
   const pieces = new Map(); for (const p of [...ps.board.values(), ...ps.hand]) if (p?.kind === 'chess') pieces.set(p.uid, p);
   const ctx = { pieces, cap: ps.deployCap, legal: new Map([...pieces].map(([u, p]) => [u, new Set(legalTiles(ps, p).map(t => t.join(',')))])),
@@ -140,29 +167,65 @@ export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3,
   let cur = current, evals = 1;
   const steps = [];
   for (let s = 0; s < maxSteps; s++) {
-    if (fk.kind === 'normal' && curScore.loss === 0 && curScore.leaks === 0) break;   // nothing left to save
     const cands = neighbours(ctx, cur).filter(n => keepsLayeredTiers(before, layeredTiers(st, n.L, playerId, tierCache)));
-    const scores = await evalMany(cands.map(n => n.L), opts);
-    evals += cands.length;
+    // screen every change on the first `screenSeeds` battle seeds, then score the `refine` best on the rest of `seeds`
+    const screen = await evalMany(cands.map(n => n.L), { ...opts, seeds: Math.min(screenSeeds, seeds) });
+    const top = cands.map((n, i) => ({ ...n, score: screen[i] })).filter(x => x.score).sort((a, b) => b.score.value - a.score.value).slice(0, refine);
+    if (seeds > screenSeeds) {
+      const more = await evalMany(top.map(x => x.L), { ...opts, seeds: seeds - screenSeeds, seedFrom: screenSeeds });
+      top.forEach((x, i) => { x.score = more[i] ? merged(x.score, more[i]) : null; });
+    }
+    evals += cands.length + (seeds > screenSeeds ? top.length : 0);
     let best = null;
-    cands.forEach((n, i) => { if (scores[i] && (!best || scores[i].value > best.score.value)) best = { ...n, score: scores[i] }; });
+    for (const x of top) if (x.score && (!best || x.score.value > best.score.value)) best = x;
     if (!best || best.score.value <= curScore.value + 1e-9) break;
     steps.push({ what: best.what, kind: best.kind, op: best.op, score: best.score });
     log(`step ${s + 1}: ${best.what} ${curScore.value.toFixed(3)} → ${best.score.value.toFixed(3)} (${cands.length} candidates)`);
     cur = best.L; curScore = best.score;
   }
-  // independent re-check on fresh seeds: the search's own max-of-noise is not reported as gain
-  let gain = null, recheck = null;
+  // independent re-check on fresh seeds (one job per seed, so it spreads over the pool): the search's own max-of-noise
+  // is not reported as gain
+  let gain = null, recheck = null, metric = null;
   if (steps.length) {
-    const ro = { ...opts, seeds: recheckSeeds, tag: 'recheck' };
-    const [a, b] = await evalMany([current, cur], ro);
+    metric = fk.kind !== 'normal' ? 'own' : recheckMetric === 'auto' ? (othersReady(st, playerId) ? 'round' : 'own') : recheckMetric;
+    const per = await Promise.all(Array.from({ length: recheckSeeds }, (_, k) => evalMany([current, cur], { ...opts, metric, seeds: 1, seedFrom: k, tag: 'recheck' })));
+    const pick = i => ({ samples: per.map(r => r[i].samples[0]), loss: per.map(r => r[i].ownLoss?.[0]), layers: per.map(r => r[i].layerSamples?.[0]),
+      teamLoss: per.map(r => r[i].teamLoss) });
+    const a = pick(0), b = pick(1);
     const d = b.samples.map((x, i) => x - a.samples[i]);
     gain = { mean: mean(d), se: se(d), n: d.length };
-    recheck = { current: a, best: b };
+    recheck = { metric, lpWeight: fk.kind === 'normal' ? lpWeight(st.seats.find(x => x.playerId === playerId).lp) : null,
+      current: summary(fk.kind, metric, a), best: summary(fk.kind, metric, b) };
   }
   const recommend = !!gain && gain.mean >= minGain && gain.se != null && gain.mean > z * gain.se;
   return { kind: fk.kind, round: fk.round, current, best: cur, steps, gain, recheck, recommend, evals, ms: Math.round(performance.now() - t0),
     names: Object.fromEntries([...pieces].map(([u, p]) => [u, p.id])) };
+}
+
+// Two scoreLayout results on disjoint seeds of the same tag → one result over all of them.
+function merged(a, b) {
+  const n = a.samples.length, k = b.samples.length, w = (x, y) => (x * n + y * k) / (n + k);
+  const out = { samples: [...a.samples, ...b.samples] };
+  if (a.share != null) return { ...out, value: mean(out.samples), share: mean(out.samples), shareOt: w(a.shareOt, b.shareOt), pClear: w(a.pClear, b.pClear) };
+  const leaks = w(a.leaks ?? 0, b.leaks ?? 0);
+  return { ...out, value: mean(out.samples) - leaks * 1e-3, loss: w(a.loss, b.loss), leaks, layers: w(a.layers, b.layers),
+    ownLoss: [...a.ownLoss, ...b.ownLoss], layerSamples: [...a.layerSamples, ...b.layerSamples] };
+}
+
+// Re-check means in the units the advice is read in: LP lost / layers earned (normal) or share (boss).
+function summary(kind, metric, { samples, loss, layers, teamLoss }) {
+  if (kind !== 'normal') return { share: mean(samples) };
+  return { loss: mean(loss), layers: mean(layers), ...(metric === 'round' ? { teamLoss: mean(teamLoss) } : {}) };
+}
+
+// One line of plain language for a checkLineup result (CLI, eval logs).
+export function describe(res) {
+  if (!res.steps.length) return '站位：没找到更好的，照现在的上场。';
+  const g = res.gain, c = res.recheck.current, b = res.recheck.best, f = x => x.toFixed(2);
+  const what = res.kind !== 'normal' ? `倒计时内打掉自己那份 BOSS 血 ${f(c.share)} → ${f(b.share)} 份，提升 ${g.mean >= 0 ? '+' : ''}${f(g.mean)}±${f(g.se ?? 0)}`
+    : `${res.recheck.metric === 'round' ? `整回合（含联防）全队掉血 ${f(c.teamLoss)} → ${f(b.teamLoss)}，自己` : '自己场'}掉血 ${f(c.loss)} → ${f(b.loss)}，`
+      + `这一仗拿层 ${f(c.layers)} → ${f(b.layers)}，净收益 ${g.mean >= 0 ? '+' : ''}${f(g.mean)}±${f(g.se ?? 0)} 分（每少掉 1 血 ${f(res.recheck.lpWeight)} 分，每多拿 1 层 ${LAYER_WEIGHT} 分）`;
+  return `${res.recommend ? '★ 建议' : '（不建议：复核提升不够显著）'}：${res.steps.map(x => x.what).join('，然后 ')}｜复核 ${g.n} 场新随机：${what}`;
 }
 
 // Batch scorers for checkLineup: inline (tests, single-threaded tools) or on the rollout pool (advisor/worker.mjs 'field').

@@ -1,0 +1,4507 @@
+{
+ "cfg": {
+  "steps": 3,
+  "seeds": 4,
+  "recheck": null
+ },
+ "rows": [
+  {
+   "game": "game1",
+   "round": 1,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 7,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 8,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 7,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 8,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 6825,
+   "names": {
+    "7": "chess_char_1_04_a",
+    "8": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 2,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 20,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 21,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 22,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 23,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 20,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 21,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 22,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 23,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 141,
+   "names": {
+    "20": "chess_char_1_17_a",
+    "21": "chess_char_1_09_a",
+    "22": "chess_char_1_04_a",
+    "23": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 3,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 51,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 52,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 53,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 54,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 51,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 52,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 53,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 54,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 138,
+   "names": {
+    "51": "chess_char_1_09_a",
+    "52": "chess_char_1_17_a",
+    "53": "chess_char_1_04_a",
+    "54": "chess_char_1_20_a",
+    "55": "chess_char_1_04_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 4,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 74,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 75,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 76,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 77,
+     "row": 10,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 78,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 79,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 80,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 74,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 75,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 76,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 77,
+     "row": 10,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 78,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 79,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 80,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 198,
+   "names": {
+    "74": "chess_char_2_01_a",
+    "75": "chess_char_1_09_a",
+    "76": "chess_char_1_17_a",
+    "77": "chess_char_2_19_a",
+    "78": "chess_char_1_04_a",
+    "79": "chess_char_1_04_a",
+    "80": "chess_char_1_20_a",
+    "81": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 5,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 99,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 100,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 101,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 102,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 103,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 104,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 105,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 106,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 99,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 100,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 101,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 102,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 103,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 104,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 105,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 106,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 272,
+   "names": {
+    "99": "chess_char_4_25_a",
+    "100": "chess_char_1_09_a",
+    "101": "chess_char_1_17_a",
+    "102": "chess_char_2_01_a",
+    "103": "chess_char_2_19_a",
+    "104": "chess_char_3_11_a",
+    "105": "chess_char_1_04_b",
+    "106": "chess_char_1_20_a",
+    "107": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 6,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 133,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 134,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 135,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 136,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 137,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 138,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 139,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 140,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 133,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 134,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 135,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 136,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 137,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 138,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 139,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 140,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 235,
+   "names": {
+    "133": "chess_char_1_17_a",
+    "134": "chess_char_1_09_a",
+    "135": "chess_char_3_21_a",
+    "136": "chess_char_2_01_a",
+    "137": "chess_char_4_25_a",
+    "138": "chess_char_3_11_a",
+    "139": "chess_char_1_04_b",
+    "140": "chess_char_1_20_a",
+    "141": "chess_char_3_13_a",
+    "142": "chess_char_2_19_a",
+    "143": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 7,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 166,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 167,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 168,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 169,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 170,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 171,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 172,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 173,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 166,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 167,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 168,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 169,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 170,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 171,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 172,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 173,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 387,
+   "names": {
+    "166": "chess_char_3_13_a",
+    "167": "chess_char_4_14_a",
+    "168": "chess_char_3_21_a",
+    "169": "chess_char_2_01_a",
+    "170": "chess_char_4_25_a",
+    "171": "chess_char_3_11_a",
+    "172": "chess_char_1_04_b",
+    "173": "chess_char_1_20_b",
+    "174": "chess_char_3_13_a",
+    "175": "chess_char_3_01_a",
+    "176": "chess_char_1_17_a",
+    "177": "chess_char_2_19_a",
+    "178": "chess_char_1_09_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 8,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 209,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 210,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 211,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 212,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 213,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 214,
+     "row": 10,
+     "col": 6,
+     "dir": "UP"
+    },
+    {
+     "uid": 215,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 216,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 221,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 210,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 211,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 212,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 213,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 214,
+     "row": 10,
+     "col": 6,
+     "dir": "UP"
+    },
+    {
+     "uid": 215,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 216,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "换下 华法琳，换上 送葬人（12,6）",
+     "kind": "swap",
+     "op": {
+      "uid": 221,
+      "id": "chess_char_2_01_a",
+      "from": null,
+      "row": 12,
+      "col": 6,
+      "dir": "DOWN"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 4.708333333333333,
+    "se": 0.27896786129023937,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -4.713041666666666,
+     "loss": 4.708333333333333,
+     "leaks": 4.708333333333333,
+     "samples": [
+      -4,
+      -3,
+      -7,
+      -2,
+      -4,
+      -6,
+      -3,
+      -6,
+      -5,
+      -6,
+      -4,
+      -4,
+      -6,
+      -5,
+      -4,
+      -5,
+      -7,
+      -4,
+      -5,
+      -4,
+      -5,
+      -3,
+      -7,
+      -4
+     ]
+    },
+    "best": {
+     "value": 0,
+     "loss": 0,
+     "leaks": 0,
+     "samples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 184,
+   "ms": 12183,
+   "names": {
+    "209": "chess_char_4_26_a",
+    "210": "chess_char_4_14_a",
+    "211": "chess_char_3_01_a",
+    "212": "chess_char_3_21_a",
+    "213": "chess_char_4_25_a",
+    "214": "chess_char_6_09_b",
+    "215": "chess_char_3_11_a",
+    "216": "chess_char_1_04_b",
+    "218": "chess_char_3_13_a",
+    "219": "chess_char_1_20_b",
+    "220": "chess_char_3_13_a",
+    "221": "chess_char_2_01_a",
+    "222": "chess_char_1_17_a",
+    "223": "chess_char_2_19_a",
+    "224": "chess_char_1_09_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 9,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 264,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 265,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 266,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 267,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 269,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 270,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 271,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 272,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 277,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 265,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 266,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 267,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 269,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 270,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 271,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 272,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "换下 魔王，换上 送葬人（11,5）",
+     "kind": "swap",
+     "op": {
+      "uid": 277,
+      "id": "chess_char_2_01_a",
+      "from": null,
+      "row": 11,
+      "col": 5,
+      "dir": "DOWN"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 5.125,
+    "se": 0.62933280751022,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -5.13025,
+     "loss": 5.125,
+     "leaks": 5.25,
+     "samples": [
+      -6,
+      -6,
+      -5,
+      -4,
+      -7,
+      -5,
+      -5,
+      0,
+      -7,
+      -8,
+      -9,
+      -6,
+      0,
+      -1,
+      0,
+      -10,
+      -4,
+      -6,
+      -7,
+      -4,
+      -8,
+      0,
+      -10,
+      -5
+     ]
+    },
+    "best": {
+     "value": 0,
+     "loss": 0,
+     "leaks": 0,
+     "samples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 166,
+   "ms": 10205,
+   "names": {
+    "264": "chess_char_4_25_a",
+    "265": "chess_char_4_26_a",
+    "266": "chess_char_3_01_a",
+    "267": "chess_char_6_09_b",
+    "269": "chess_char_3_21_a",
+    "270": "chess_char_3_11_a",
+    "271": "chess_char_4_14_a",
+    "272": "chess_char_1_04_b",
+    "274": "chess_char_3_13_a",
+    "275": "chess_char_1_20_b",
+    "276": "chess_char_3_13_a",
+    "277": "chess_char_2_01_a",
+    "278": "chess_char_1_17_a",
+    "279": "chess_char_2_19_a",
+    "280": "chess_char_1_09_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 10,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 313,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 314,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 315,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 317,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 319,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 320,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 321,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 322,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 313,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 314,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 315,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 317,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 319,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 320,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 321,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 322,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 594,
+   "names": {
+    "313": "chess_char_4_25_a",
+    "314": "chess_char_4_26_a",
+    "315": "chess_char_3_01_a",
+    "317": "chess_char_6_09_b",
+    "319": "chess_char_3_21_a",
+    "320": "chess_char_3_11_a",
+    "321": "chess_char_4_14_a",
+    "322": "chess_char_1_04_b",
+    "323": "chess_char_2_01_a",
+    "324": "chess_char_4_07_a",
+    "325": "chess_char_3_13_a",
+    "326": "chess_char_1_20_b",
+    "327": "chess_char_3_13_a",
+    "328": "chess_char_2_01_a",
+    "329": "chess_char_1_17_a",
+    "330": "chess_char_1_01_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 11,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 382,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 383,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 384,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 386,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 388,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 389,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 390,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 391,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 382,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 383,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 384,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 386,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 388,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 389,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 390,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 391,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 551,
+   "names": {
+    "382": "chess_char_3_21_a",
+    "383": "chess_char_4_26_a",
+    "384": "chess_char_3_01_a",
+    "386": "chess_char_6_09_b",
+    "388": "chess_char_3_11_a",
+    "389": "chess_char_6_13_a",
+    "390": "chess_char_4_14_a",
+    "391": "chess_char_1_04_b",
+    "392": "chess_char_3_01_a",
+    "393": "chess_char_4_07_a",
+    "394": "chess_char_3_13_a",
+    "395": "chess_char_4_25_a",
+    "397": "chess_char_1_01_a",
+    "398": "chess_char_2_01_b"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 12,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 432,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 433,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 434,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 436,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 437,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 438,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 439,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 440,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 432,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 433,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 434,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 436,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 437,
+     "row": 10,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 438,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 439,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 440,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 533,
+   "names": {
+    "432": "chess_char_3_21_a",
+    "433": "chess_char_4_26_a",
+    "434": "chess_char_3_01_b",
+    "436": "chess_char_2_01_b",
+    "437": "chess_char_6_12_a",
+    "438": "chess_char_6_13_a",
+    "439": "chess_char_4_14_a",
+    "440": "chess_char_4_01_a",
+    "442": "chess_char_4_07_a",
+    "443": "chess_char_3_11_a",
+    "444": "chess_char_1_04_b",
+    "445": "chess_char_3_13_a",
+    "446": "chess_char_4_25_a",
+    "448": "chess_char_1_01_a",
+    "449": "chess_char_6_09_b",
+    "450": "chess_char_4_01_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 13,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 497,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 498,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 501,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 502,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 504,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 506,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 508,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 509,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 497,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 498,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 501,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 502,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 504,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 506,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 508,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 509,
+     "row": 9,
+     "col": 6,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 903,
+   "names": {
+    "497": "chess_char_6_01_a",
+    "498": "chess_char_6_09_b",
+    "501": "chess_char_4_14_a",
+    "502": "chess_char_4_25_a",
+    "504": "chess_char_5_01_a",
+    "506": "chess_char_6_13_a",
+    "508": "chess_char_6_12_a",
+    "509": "chess_char_4_01_b",
+    "511": "chess_char_4_07_a",
+    "512": "chess_char_3_11_a",
+    "513": "chess_char_1_04_b",
+    "514": "chess_char_3_13_a",
+    "515": "chess_char_4_26_a",
+    "516": "chess_char_2_01_b",
+    "517": "chess_char_1_01_a",
+    "518": "chess_char_3_21_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 14,
+   "alignedWave": false,
+   "kind": "boss",
+   "current": [
+    {
+     "uid": 555,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 556,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 559,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 561,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 563,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 565,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 567,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 568,
+     "row": 9,
+     "col": 8,
+     "dir": "UP"
+    }
+   ],
+   "best": [
+    {
+     "uid": 555,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 556,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 559,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 561,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 563,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 565,
+     "row": 12,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 567,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 568,
+     "row": 9,
+     "col": 8,
+     "dir": "UP"
+    }
+   ],
+   "steps": [
+    {
+     "what": "圣约送葬人 从 10,8 挪到 12,8",
+     "kind": "move",
+     "op": {
+      "uid": 565,
+      "id": "chess_char_5_01_a",
+      "from": "10,8",
+      "row": 12,
+      "col": 8,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 2.193,
+      "share": 2.193,
+      "shareOt": 2.765,
+      "pClear": 1,
+      "samples": [
+       2.392,
+       1.862,
+       2.29,
+       2.228
+      ]
+     }
+    },
+    {
+     "what": "对调 新约能天使（11,6）与 蕾缪安（10,6）",
+     "kind": "exchange",
+     "op": {
+      "uid": 555,
+      "id": "chess_char_6_13_b",
+      "from": "11,6",
+      "row": 10,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 2.695,
+      "share": 2.695,
+      "shareOt": 3.211,
+      "pClear": 1,
+      "samples": [
+       1.98,
+       2.904,
+       2.904,
+       2.993
+      ]
+     }
+    },
+    {
+     "what": "圣约送葬人（12,8）改朝左",
+     "kind": "rotate",
+     "op": {
+      "uid": 565,
+      "id": "chess_char_5_01_a",
+      "from": "12,8",
+      "row": 12,
+      "col": 8,
+      "dir": "LEFT"
+     },
+     "score": {
+      "value": 2.939,
+      "share": 2.939,
+      "shareOt": 3.432,
+      "pClear": 1,
+      "samples": [
+       3.107,
+       2.984,
+       2.59,
+       3.074
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 1.3683750000000001,
+    "se": 0.09679638745841705,
+    "n": 16
+   },
+   "recheck": {
+    "current": {
+     "value": 1.534,
+     "share": 1.534,
+     "shareOt": 1.927,
+     "pClear": 0.938,
+     "samples": [
+      1.211,
+      1.843,
+      1.586,
+      1.419,
+      1.562,
+      1.744,
+      1.683,
+      1.714,
+      1.703,
+      1.363,
+      1.797,
+      1.58,
+      1.676,
+      0.939,
+      1.441,
+      1.287
+     ]
+    },
+    "best": {
+     "value": 2.903,
+     "share": 2.903,
+     "shareOt": 3.352,
+     "pClear": 1,
+     "samples": [
+      3.093,
+      3.052,
+      2.649,
+      3.117,
+      2.543,
+      2.996,
+      2.683,
+      3.025,
+      3.071,
+      3.086,
+      2.736,
+      2.708,
+      2.52,
+      3.09,
+      3.028,
+      3.045
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 469,
+   "ms": 43621,
+   "names": {
+    "555": "chess_char_6_13_b",
+    "556": "chess_char_6_09_b",
+    "559": "chess_char_6_12_a",
+    "561": "chess_char_6_01_a",
+    "563": "chess_char_4_25_a",
+    "565": "chess_char_5_01_a",
+    "567": "chess_char_2_01_b",
+    "568": "chess_char_4_01_b",
+    "570": "chess_char_4_07_a",
+    "571": "chess_char_3_11_a",
+    "572": "chess_char_1_04_b",
+    "573": "chess_char_4_26_a",
+    "574": "chess_char_4_14_a",
+    "575": "chess_char_1_01_a",
+    "576": "chess_char_3_21_a",
+    "577": "chess_char_3_21_a"
+   }
+  },
+  {
+   "game": "game1",
+   "round": 15,
+   "alignedWave": false,
+   "kind": "boss",
+   "current": [
+    {
+     "uid": 661,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 664,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 667,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 669,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 671,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 673,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 675,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 676,
+     "row": 9,
+     "col": 8,
+     "dir": "UP"
+    }
+   ],
+   "best": [
+    {
+     "uid": 661,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 664,
+     "row": 11,
+     "col": 8,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 667,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 669,
+     "row": 10,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 671,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 673,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 675,
+     "row": 9,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 676,
+     "row": 9,
+     "col": 8,
+     "dir": "UP"
+    }
+   ],
+   "steps": [
+    {
+     "what": "新约能天使 从 11,6 挪到 9,5",
+     "kind": "move",
+     "op": {
+      "uid": 661,
+      "id": "chess_char_6_13_b",
+      "from": "11,6",
+      "row": 9,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 1.287,
+      "share": 1.287,
+      "shareOt": 1.513,
+      "pClear": 0.385,
+      "samples": [
+       1.3194615384615382,
+       1.2583076923076921,
+       1.0446153846153847,
+       1.5245384615384616
+      ]
+     }
+    },
+    {
+     "what": "蕾缪安（10,6）改朝左",
+     "kind": "rotate",
+     "op": {
+      "uid": 669,
+      "id": "chess_char_6_01_a",
+      "from": "10,6",
+      "row": 10,
+      "col": 6,
+      "dir": "LEFT"
+     },
+     "score": {
+      "value": 1.501,
+      "share": 1.501,
+      "shareOt": 1.575,
+      "pClear": 0.538,
+      "samples": [
+       1.5685384615384614,
+       1.7772307692307692,
+       1.2395384615384617,
+       1.4205384615384617
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.47812500000000013,
+    "se": 0.06395186756182318,
+    "n": 16
+   },
+   "recheck": {
+    "current": {
+     "value": 0.816,
+     "share": 0.816,
+     "shareOt": 1.048,
+     "pClear": 0.288,
+     "samples": [
+      0.8620769230769232,
+      0.4825384615384615,
+      0.7284615384615384,
+      1.0817692307692308,
+      0.5146153846153847,
+      0.904846153846154,
+      0.8092307692307692,
+      0.9421538461538461,
+      0.8953846153846154,
+      0.9171538461538462,
+      1.0164615384615383,
+      0.8625384615384614,
+      0.7702307692307693,
+      0.6736153846153846,
+      0.9013846153846155,
+      0.6917692307692307
+     ]
+    },
+    "best": {
+     "value": 1.294,
+     "share": 1.294,
+     "shareOt": 1.459,
+     "pClear": 0.481,
+     "samples": [
+      1.655923076923077,
+      1.2191538461538463,
+      1.1570769230769231,
+      1.0603076923076922,
+      1.1700769230769232,
+      0.9760000000000002,
+      1.6316153846153845,
+      1.4919230769230771,
+      0.9816153846153846,
+      1.4263076923076925,
+      1.417769230769231,
+      1.4703846153846156,
+      1.4670769230769232,
+      1.0895384615384613,
+      1.4254615384615386,
+      1.064
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 484,
+   "ms": 121970,
+   "names": {
+    "661": "chess_char_6_13_b",
+    "664": "chess_char_6_09_b",
+    "667": "chess_char_6_12_a",
+    "669": "chess_char_6_01_a",
+    "671": "chess_char_4_25_a",
+    "673": "chess_char_5_01_a",
+    "675": "chess_char_2_01_b",
+    "676": "chess_char_4_01_b",
+    "678": "chess_char_1_01_a",
+    "679": "chess_char_4_07_a",
+    "680": "chess_char_3_11_a",
+    "681": "chess_char_1_04_b",
+    "682": "chess_char_4_26_a",
+    "683": "chess_char_4_14_a",
+    "684": "chess_char_1_01_a",
+    "685": "chess_char_3_21_a",
+    "686": "chess_char_3_21_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 1,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 8,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 9,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 8,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 9,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 59,
+   "names": {
+    "8": "chess_char_1_03_a",
+    "9": "chess_char_1_03_a",
+    "10": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 2,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 21,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 22,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 23,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 24,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 21,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 22,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 23,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 24,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 139,
+   "names": {
+    "21": "chess_char_1_03_a",
+    "22": "chess_char_1_03_a",
+    "23": "chess_char_1_19_a",
+    "24": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 3,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 53,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 54,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 55,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 56,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 53,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 54,
+     "row": 11,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 55,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 56,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 121,
+   "names": {
+    "53": "chess_char_3_17_a",
+    "54": "chess_char_1_03_b",
+    "55": "chess_char_1_19_a",
+    "56": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 4,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 76,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 77,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 78,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 79,
+     "row": 9,
+     "col": 4,
+     "dir": "UP"
+    },
+    {
+     "uid": 80,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 76,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 77,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 78,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 79,
+     "row": 9,
+     "col": 4,
+     "dir": "UP"
+    },
+    {
+     "uid": 80,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 162,
+   "names": {
+    "76": "chess_char_1_03_b",
+    "77": "chess_char_3_17_a",
+    "78": "chess_char_2_18_a",
+    "79": "chess_char_1_19_a",
+    "80": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 5,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 97,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 98,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 99,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 100,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 101,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 102,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 103,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 97,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 98,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 99,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 100,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 101,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 102,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 103,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 242,
+   "names": {
+    "97": "chess_char_1_03_b",
+    "98": "chess_char_3_17_a",
+    "99": "chess_char_2_12_a",
+    "100": "chess_char_2_18_a",
+    "101": "chess_char_1_20_a",
+    "102": "chess_char_1_19_a",
+    "103": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 6,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 133,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 134,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 135,
+     "row": 10,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 136,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 137,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 138,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 139,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 140,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 133,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 134,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 135,
+     "row": 10,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 136,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 137,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 138,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 139,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 140,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 328,
+   "names": {
+    "133": "chess_char_1_03_b",
+    "134": "chess_char_3_17_a",
+    "135": "chess_char_3_12_a",
+    "136": "chess_char_2_12_a",
+    "137": "chess_char_2_18_a",
+    "138": "chess_char_1_20_a",
+    "139": "chess_char_1_19_a",
+    "140": "chess_char_1_18_a",
+    "142": "chess_char_2_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 7,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 162,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 163,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 164,
+     "row": 10,
+     "col": 5,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 165,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 166,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 167,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 168,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 169,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 170,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 163,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 164,
+     "row": 10,
+     "col": 5,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 165,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 166,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 167,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 168,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 169,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "换下 瑕光，换上 惊蛰（11,5）",
+     "kind": "swap",
+     "op": {
+      "uid": 170,
+      "id": "chess_char_1_03_b",
+      "from": null,
+      "row": 11,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 2,
+    "se": 0,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -2.002,
+     "loss": 2,
+     "leaks": 2,
+     "samples": [
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2,
+      -2
+     ]
+    },
+    "best": {
+     "value": 0,
+     "loss": 0,
+     "leaks": 0,
+     "samples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 165,
+   "ms": 6726,
+   "names": {
+    "162": "chess_char_3_12_a",
+    "163": "chess_char_3_17_a",
+    "164": "chess_char_3_12_a",
+    "165": "chess_char_2_12_a",
+    "166": "chess_char_2_18_a",
+    "167": "chess_char_1_20_a",
+    "168": "chess_char_1_19_a",
+    "169": "chess_char_1_18_a",
+    "170": "chess_char_1_03_b",
+    "172": "chess_char_2_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 8,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 203,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 204,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 205,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 207,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 208,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 209,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 210,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 203,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 204,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 205,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 207,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 208,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 209,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 210,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 212,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "加上 惊蛰 到 10,4（朝右）",
+     "kind": "add",
+     "op": {
+      "uid": 212,
+      "id": "chess_char_1_03_b",
+      "from": null,
+      "row": 10,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 3.125,
+    "se": 0.30876389835525825,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -3.128125,
+     "loss": 3.125,
+     "leaks": 3.125,
+     "samples": [
+      -2,
+      -2,
+      -2,
+      -4,
+      -5,
+      -5,
+      -2,
+      -1,
+      -3,
+      -2,
+      -5,
+      -2,
+      -5,
+      -5,
+      -2,
+      -2,
+      -4,
+      -5,
+      -2,
+      -5,
+      -2,
+      -2,
+      -1,
+      -5
+     ]
+    },
+    "best": {
+     "value": 0,
+     "loss": 0,
+     "leaks": 0,
+     "samples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 312,
+   "ms": 10449,
+   "names": {
+    "203": "chess_char_3_12_b",
+    "204": "chess_char_3_17_a",
+    "205": "chess_char_2_12_a",
+    "207": "chess_char_4_12_a",
+    "208": "chess_char_1_20_a",
+    "209": "chess_char_1_19_a",
+    "210": "chess_char_1_18_a",
+    "212": "chess_char_1_03_b",
+    "214": "chess_char_2_18_a",
+    "215": "chess_char_2_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 9,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 268,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 269,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 270,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 271,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 274,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 275,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 276,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 277,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 268,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 269,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 270,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 271,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 279,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 275,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 276,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 277,
+     "row": 9,
+     "col": 9,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "换下 歌蕾蒂娅，换上 焰尾（9,3）",
+     "kind": "swap",
+     "op": {
+      "uid": 279,
+      "id": "chess_char_4_19_a",
+      "from": null,
+      "row": 9,
+      "col": 3,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 1.5833333333333333,
+    "se": 0.9778649225548921,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -2.919583333333333,
+     "loss": 2.9166666666666665,
+     "leaks": 2.9166666666666665,
+     "samples": [
+      0,
+      0,
+      -4,
+      -3,
+      -1,
+      -5,
+      -10,
+      0,
+      -8,
+      0,
+      -2,
+      0,
+      0,
+      0,
+      -4,
+      0,
+      0,
+      0,
+      -8,
+      0,
+      -7,
+      0,
+      -9,
+      -9
+     ]
+    },
+    "best": {
+     "value": -1.3347916666666666,
+     "loss": 1.3333333333333333,
+     "leaks": 1.4583333333333333,
+     "samples": [
+      0,
+      0,
+      0,
+      -10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -5,
+      -6,
+      0,
+      0,
+      -5,
+      0,
+      0,
+      0,
+      0,
+      -6,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": false,
+   "evals": 169,
+   "ms": 9684,
+   "names": {
+    "268": "chess_char_5_22_a",
+    "269": "chess_char_3_12_b",
+    "270": "chess_char_3_17_a",
+    "271": "chess_char_2_12_a",
+    "274": "chess_char_4_12_a",
+    "275": "chess_char_1_20_a",
+    "276": "chess_char_1_19_a",
+    "277": "chess_char_1_18_a",
+    "278": "chess_char_3_13_a",
+    "279": "chess_char_4_19_a",
+    "282": "chess_char_3_13_a",
+    "283": "chess_char_2_18_b"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 10,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 317,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 318,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 319,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 320,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 321,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 324,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 325,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 326,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 317,
+     "row": 11,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 318,
+     "row": 12,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 319,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 320,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 321,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 324,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 325,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 326,
+     "row": 9,
+     "col": 5,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "对调 妮芙（12,6）与 瑕光（11,6）",
+     "kind": "exchange",
+     "op": {
+      "uid": 317,
+      "id": "chess_char_5_22_a",
+      "from": "12,6",
+      "row": 11,
+      "col": 6,
+      "dir": "DOWN"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 3.75,
+    "se": 0.2640953933933612,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -3.75375,
+     "loss": 3.75,
+     "leaks": 3.75,
+     "samples": [
+      -5,
+      -3,
+      -3,
+      -3,
+      -5,
+      -4,
+      -6,
+      -5,
+      -4,
+      -3,
+      -3,
+      -2,
+      -5,
+      -3,
+      -5,
+      -2,
+      -4,
+      -5,
+      -4,
+      -5,
+      -3,
+      -1,
+      -2,
+      -5
+     ]
+    },
+    "best": {
+     "value": 0,
+     "loss": 0,
+     "leaks": 0,
+     "samples": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 159,
+   "ms": 9580,
+   "names": {
+    "317": "chess_char_5_22_a",
+    "318": "chess_char_3_12_b",
+    "319": "chess_char_2_18_b",
+    "320": "chess_char_3_17_a",
+    "321": "chess_char_2_12_a",
+    "324": "chess_char_4_19_a",
+    "325": "chess_char_1_20_a",
+    "326": "chess_char_1_19_a",
+    "328": "chess_char_2_18_a",
+    "329": "chess_char_3_13_a",
+    "330": "chess_char_4_19_a",
+    "332": "chess_char_4_12_a",
+    "334": "chess_char_3_13_a",
+    "335": "chess_char_1_18_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 11,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 388,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 389,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 390,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 391,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 394,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 395,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 398,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 399,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 401,
+     "row": 11,
+     "col": 5,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 389,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 390,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 391,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 394,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 395,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 398,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 399,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "换下 妮芙，换上 野鬃（11,5）",
+     "kind": "swap",
+     "op": {
+      "uid": 401,
+      "id": "chess_char_1_19_a",
+      "from": null,
+      "row": 11,
+      "col": 5,
+      "dir": "DOWN"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.9166666666666666,
+    "se": 0.5068968775248515,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -1.25125,
+     "loss": 1.25,
+     "leaks": 1.25,
+     "samples": [
+      0,
+      0,
+      -4,
+      0,
+      0,
+      -5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -5,
+      0,
+      0,
+      0,
+      -5,
+      0,
+      -5,
+      -1,
+      0,
+      0,
+      -5,
+      0,
+      0
+     ]
+    },
+    "best": {
+     "value": -0.33366666666666667,
+     "loss": 0.3333333333333333,
+     "leaks": 0.3333333333333333,
+     "samples": [
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -3
+     ]
+    }
+   },
+   "recommend": false,
+   "evals": 187,
+   "ms": 12761,
+   "names": {
+    "388": "chess_char_5_22_a",
+    "389": "chess_char_3_12_b",
+    "390": "chess_char_2_18_b",
+    "391": "chess_char_6_02_a",
+    "394": "chess_char_1_18_a",
+    "395": "chess_char_2_12_a",
+    "398": "chess_char_4_19_b",
+    "399": "chess_char_1_20_a",
+    "401": "chess_char_1_19_a",
+    "402": "chess_char_5_06_a",
+    "403": "chess_char_2_18_b",
+    "405": "chess_char_4_12_a",
+    "407": "chess_char_3_13_a",
+    "408": "chess_char_3_17_a",
+    "409": "chess_char_6_03_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 12,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 435,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 436,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 437,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 438,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 441,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 444,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 445,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 446,
+     "row": 9,
+     "col": 5,
+     "dir": "LEFT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 435,
+     "row": 10,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 436,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 437,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 438,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 441,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 444,
+     "row": 9,
+     "col": 3,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 445,
+     "row": 9,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 446,
+     "row": 9,
+     "col": 5,
+     "dir": "LEFT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "对调 宴（11,5）与 流星（10,3）",
+     "kind": "exchange",
+     "op": {
+      "uid": 435,
+      "id": "chess_char_1_18_a",
+      "from": "11,5",
+      "row": 10,
+      "col": 3,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 0,
+      "loss": 0,
+      "leaks": 0,
+      "samples": [
+       0,
+       0,
+       0,
+       0
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": -0.75,
+    "se": 0.35737570049507816,
+    "n": 24
+   },
+   "recheck": {
+    "current": {
+     "value": -1.75175,
+     "loss": 1.75,
+     "leaks": 1.75,
+     "samples": [
+      0,
+      -8,
+      0,
+      0,
+      0,
+      0,
+      -2,
+      -7,
+      0,
+      -1,
+      0,
+      0,
+      -7,
+      0,
+      -4,
+      0,
+      0,
+      -4,
+      -2,
+      -2,
+      0,
+      0,
+      0,
+      -5
+     ]
+    },
+    "best": {
+     "value": -2.5025,
+     "loss": 2.5,
+     "leaks": 2.5,
+     "samples": [
+      0,
+      -7,
+      -3,
+      -1,
+      -2,
+      -2,
+      -4,
+      -4,
+      0,
+      -4,
+      -4,
+      0,
+      -4,
+      0,
+      -4,
+      0,
+      -3,
+      -4,
+      -4,
+      -2,
+      0,
+      0,
+      -2,
+      -6
+     ]
+    }
+   },
+   "recommend": false,
+   "evals": 171,
+   "ms": 18726,
+   "names": {
+    "435": "chess_char_1_18_a",
+    "436": "chess_char_3_12_b",
+    "437": "chess_char_3_17_a",
+    "438": "chess_char_6_02_a",
+    "441": "chess_char_2_12_a",
+    "444": "chess_char_5_06_a",
+    "445": "chess_char_6_03_a",
+    "446": "chess_char_6_19_a",
+    "449": "chess_char_4_12_a",
+    "451": "chess_char_2_18_b",
+    "452": "chess_char_4_19_b",
+    "453": "chess_char_1_20_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 13,
+   "alignedWave": true,
+   "kind": "normal",
+   "current": [
+    {
+     "uid": 483,
+     "row": 12,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 484,
+     "row": 11,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 485,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 486,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 487,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 490,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 493,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 494,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 483,
+     "row": 12,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 484,
+     "row": 11,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 485,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 486,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 487,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 490,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 493,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 494,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [],
+   "gain": null,
+   "recheck": null,
+   "recommend": false,
+   "evals": 1,
+   "ms": 706,
+   "names": {
+    "483": "chess_char_3_17_a",
+    "484": "chess_char_5_06_a",
+    "485": "chess_char_4_12_a",
+    "486": "chess_char_3_12_b",
+    "487": "chess_char_5_19_a",
+    "490": "chess_char_6_02_a",
+    "493": "chess_char_6_03_a",
+    "494": "chess_char_2_12_a",
+    "497": "chess_char_4_20_a",
+    "498": "chess_char_1_18_a",
+    "500": "chess_char_4_19_b",
+    "501": "chess_char_6_19_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 14,
+   "alignedWave": false,
+   "kind": "boss",
+   "current": [
+    {
+     "uid": 530,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 531,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 534,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 535,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 537,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 538,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 541,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 543,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 530,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 531,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 534,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 535,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 537,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 538,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 541,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 543,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "对调 玛恩纳（11,5）与 砾（10,8）",
+     "kind": "exchange",
+     "op": {
+      "uid": 531,
+      "id": "chess_char_5_19_a",
+      "from": "11,5",
+      "row": 10,
+      "col": 8,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 1.067,
+      "share": 1.067,
+      "shareOt": 1.321,
+      "pClear": 0.5,
+      "samples": [
+       0.839,
+       1.005,
+       1.484,
+       0.939
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.1340625,
+    "se": 0.03018008017854381,
+    "n": 16
+   },
+   "recheck": {
+    "current": {
+     "value": 0.781,
+     "share": 0.781,
+     "shareOt": 0.994,
+     "pClear": 0,
+     "samples": [
+      0.869,
+      0.841,
+      0.77,
+      0.765,
+      0.781,
+      0.717,
+      0.777,
+      0.73,
+      0.783,
+      0.753,
+      0.642,
+      0.844,
+      0.84,
+      0.944,
+      0.683,
+      0.752
+     ]
+    },
+    "best": {
+     "value": 0.915,
+     "share": 0.915,
+     "shareOt": 1.114,
+     "pClear": 0.125,
+     "samples": [
+      0.826,
+      0.893,
+      0.955,
+      0.919,
+      0.72,
+      1.016,
+      0.843,
+      0.955,
+      0.938,
+      0.971,
+      1.047,
+      0.935,
+      0.954,
+      0.955,
+      0.797,
+      0.912
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 329,
+   "ms": 42550,
+   "names": {
+    "530": "chess_char_5_06_a",
+    "531": "chess_char_5_19_a",
+    "534": "chess_char_3_12_b",
+    "535": "chess_char_4_12_a",
+    "537": "chess_char_3_17_a",
+    "538": "chess_char_6_02_a",
+    "541": "chess_char_6_19_a",
+    "543": "chess_char_2_12_a",
+    "547": "chess_char_4_20_a",
+    "549": "chess_char_1_18_a",
+    "550": "chess_char_2_18_a",
+    "551": "chess_char_4_19_b",
+    "552": "chess_char_6_03_a"
+   }
+  },
+  {
+   "game": "game2",
+   "round": 15,
+   "alignedWave": false,
+   "kind": "boss",
+   "current": [
+    {
+     "uid": 642,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 643,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 646,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 648,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 650,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 651,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 654,
+     "row": 10,
+     "col": 7,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 657,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    }
+   ],
+   "best": [
+    {
+     "uid": 642,
+     "row": 12,
+     "col": 6,
+     "dir": "DOWN"
+    },
+    {
+     "uid": 643,
+     "row": 11,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 646,
+     "row": 11,
+     "col": 6,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 664,
+     "row": 10,
+     "col": 4,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 650,
+     "row": 10,
+     "col": 5,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 651,
+     "row": 10,
+     "col": 6,
+     "dir": "RIGHT"
+    },
+    {
+     "uid": 654,
+     "row": 11,
+     "col": 8,
+     "dir": "LEFT"
+    },
+    {
+     "uid": 657,
+     "row": 10,
+     "col": 8,
+     "dir": "RIGHT"
+    }
+   ],
+   "steps": [
+    {
+     "what": "锏 从 10,7 挪到 11,8",
+     "kind": "move",
+     "op": {
+      "uid": 654,
+      "id": "chess_char_6_19_a",
+      "from": "10,7",
+      "row": 11,
+      "col": 8,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 2.274,
+      "share": 2.274,
+      "shareOt": 2.802,
+      "pClear": 0.692,
+      "samples": [
+       2.278230769230769,
+       2.3316923076923075,
+       2.303692307692308,
+       2.1824615384615385
+      ]
+     }
+    },
+    {
+     "what": "换下 歌蕾蒂娅，换上 灰毫（10,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 664,
+      "id": "chess_char_2_18_a",
+      "from": null,
+      "row": 10,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "value": 2.407,
+      "share": 2.407,
+      "shareOt": 2.963,
+      "pClear": 0.692,
+      "samples": [
+       2.4064615384615387,
+       2.473,
+       2.355153846153846,
+       2.3924615384615384
+      ]
+     }
+    },
+    {
+     "what": "锏（11,8）改朝左",
+     "kind": "rotate",
+     "op": {
+      "uid": 654,
+      "id": "chess_char_6_19_a",
+      "from": "11,8",
+      "row": 11,
+      "col": 8,
+      "dir": "LEFT"
+     },
+     "score": {
+      "value": 2.45,
+      "share": 2.45,
+      "shareOt": 3.02,
+      "pClear": 0.692,
+      "samples": [
+       2.42,
+       2.429,
+       2.4385384615384615,
+       2.5140000000000002
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.33515384615384625,
+    "se": 0.04279002906952977,
+    "n": 16
+   },
+   "recheck": {
+    "current": {
+     "value": 2.071,
+     "share": 2.071,
+     "shareOt": 2.572,
+     "pClear": 0.75,
+     "samples": [
+      2.1883846153846154,
+      2.1797692307692302,
+      2.2166923076923073,
+      2.11,
+      1.8796923076923078,
+      1.9706153846153847,
+      1.8336923076923075,
+      1.9983846153846156,
+      2.1256153846153847,
+      1.918076923076923,
+      2.229153846153846,
+      2.055615384615385,
+      2.085538461538462,
+      2.201230769230769,
+      2.1474615384615383,
+      2.001923076923077
+     ]
+    },
+    "best": {
+     "value": 2.407,
+     "share": 2.407,
+     "shareOt": 2.97,
+     "pClear": 0.692,
+     "samples": [
+      2.4664615384615383,
+      2.348,
+      2.400076923076923,
+      2.3911538461538457,
+      2.487538461538462,
+      2.4364615384615385,
+      2.47,
+      2.3973846153846154,
+      2.5746153846153845,
+      2.270923076923077,
+      2.414076923076923,
+      2.095076923076923,
+      2.364,
+      2.3494615384615387,
+      2.519307692307692,
+      2.5197692307692305
+     ]
+    }
+   },
+   "recommend": true,
+   "evals": 497,
+   "ms": 274996,
+   "names": {
+    "642": "chess_char_5_06_a",
+    "643": "chess_char_5_19_a",
+    "646": "chess_char_3_12_b",
+    "648": "chess_char_4_12_a",
+    "650": "chess_char_3_17_a",
+    "651": "chess_char_6_02_a",
+    "654": "chess_char_6_19_a",
+    "657": "chess_char_2_12_a",
+    "662": "chess_char_4_20_a",
+    "663": "chess_char_1_18_a",
+    "664": "chess_char_2_18_a",
+    "665": "chess_char_4_19_b",
+    "666": "chess_char_6_03_a"
+   }
+  }
+ ]
+}

@@ -42,8 +42,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 6825,
+   "evals": 48,
+   "ms": 10397,
    "names": {
     "7": "chess_char_1_04_a",
     "8": "chess_char_1_20_a"
@@ -110,8 +110,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 141,
+   "evals": 85,
+   "ms": 1404,
    "names": {
     "20": "chess_char_1_17_a",
     "21": "chess_char_1_09_a",
@@ -180,8 +180,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 138,
+   "evals": 135,
+   "ms": 1850,
    "names": {
     "51": "chess_char_1_09_a",
     "52": "chess_char_1_17_a",
@@ -287,8 +287,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 198,
+   "evals": 170,
+   "ms": 2477,
    "names": {
     "74": "chess_char_2_01_a",
     "75": "chess_char_1_09_a",
@@ -409,8 +409,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 272,
+   "evals": 154,
+   "ms": 3334,
    "names": {
     "99": "chess_char_4_25_a",
     "100": "chess_char_1_09_a",
@@ -493,8 +493,8 @@
     },
     {
      "uid": 135,
-     "row": 10,
-     "col": 5,
+     "row": 9,
+     "col": 3,
      "dir": "RIGHT"
     },
     {
@@ -505,8 +505,8 @@
     },
     {
      "uid": 137,
-     "row": 9,
-     "col": 3,
+     "row": 10,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -528,12 +528,64 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
+   "steps": [
+    {
+     "what": "对调 空弦（10,5）与 魔王（9,3）",
+     "kind": "exchange",
+     "op": {
+      "uid": 135,
+      "id": "chess_char_3_21_a",
+      "from": "10,5",
+      "row": 9,
+      "col": 3,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "value": 1,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 4,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       4,
+       4,
+       4,
+       4
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.25,
+    "se": 0,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.4166666666666667,
+    "current": {
+     "loss": 0,
+     "layers": 3
+    },
+    "best": {
+     "loss": 0,
+     "layers": 4
+    }
+   },
    "recommend": false,
-   "evals": 1,
-   "ms": 235,
+   "evals": 337,
+   "ms": 5560,
    "names": {
     "133": "chess_char_1_17_a",
     "134": "chess_char_1_09_a",
@@ -605,7 +657,7 @@
    ],
    "best": [
     {
-     "uid": 166,
+     "uid": 175,
      "row": 11,
      "col": 5,
      "dir": "RIGHT"
@@ -618,8 +670,8 @@
     },
     {
      "uid": 168,
-     "row": 10,
-     "col": 5,
+     "row": 9,
+     "col": 3,
      "dir": "RIGHT"
     },
     {
@@ -630,8 +682,8 @@
     },
     {
      "uid": 170,
-     "row": 9,
-     "col": 3,
+     "row": 10,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -653,12 +705,100 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 387,
+   "steps": [
+    {
+     "what": "换下 至简，换上 能天使（11,5）",
+     "kind": "swap",
+     "op": {
+      "uid": 175,
+      "id": "chess_char_3_01_a",
+      "from": null,
+      "row": 11,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       1.5,
+       1.5,
+       1.5,
+       1.5
+      ],
+      "value": 1.5,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 6,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       6,
+       6,
+       6,
+       6
+      ]
+     }
+    },
+    {
+     "what": "对调 空弦（10,5）与 魔王（9,3）",
+     "kind": "exchange",
+     "op": {
+      "uid": 168,
+      "id": "chess_char_3_21_a",
+      "from": "10,5",
+      "row": 9,
+      "col": 3,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       2,
+       2,
+       2,
+       2
+      ],
+      "value": 2,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 8,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       8,
+       8,
+       8,
+       8
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 1.25,
+    "se": 0,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.4166666666666667,
+    "current": {
+     "loss": 0,
+     "layers": 3
+    },
+    "best": {
+     "loss": 0,
+     "layers": 8
+    }
+   },
+   "recommend": true,
+   "evals": 532,
+   "ms": 10839,
    "names": {
     "166": "chess_char_3_13_a",
     "167": "chess_char_4_14_a",
@@ -732,8 +872,8 @@
    ],
    "best": [
     {
-     "uid": 221,
-     "row": 12,
+     "uid": 209,
+     "row": 11,
      "col": 6,
      "dir": "DOWN"
     },
@@ -745,14 +885,14 @@
     },
     {
      "uid": 211,
-     "row": 11,
+     "row": 12,
      "col": 6,
      "dir": "DOWN"
     },
     {
-     "uid": 212,
-     "row": 10,
-     "col": 4,
+     "uid": 221,
+     "row": 9,
+     "col": 6,
      "dir": "RIGHT"
     },
     {
@@ -782,101 +922,134 @@
    ],
    "steps": [
     {
-     "what": "换下 华法琳，换上 送葬人（12,6）",
+     "what": "换下 空弦，换上 送葬人（10,4）",
      "kind": "swap",
      "op": {
       "uid": 221,
       "id": "chess_char_2_01_a",
       "from": null,
-      "row": 12,
-      "col": 6,
-      "dir": "DOWN"
+      "row": 10,
+      "col": 4,
+      "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
+      "samples": [
+       8.5,
+       8.5,
+       8.5,
+       8.5
+      ],
+      "value": 8.5,
       "loss": 0,
       "leaks": 0,
-      "samples": [
+      "layers": 34,
+      "ownLoss": [
        0,
        0,
        0,
        0
+      ],
+      "layerSamples": [
+       34,
+       34,
+       34,
+       34
+      ]
+     }
+    },
+    {
+     "what": "对调 华法琳（12,6）与 能天使（11,6）",
+     "kind": "exchange",
+     "op": {
+      "uid": 209,
+      "id": "chess_char_4_26_a",
+      "from": "12,6",
+      "row": 11,
+      "col": 6,
+      "dir": "DOWN"
+     },
+     "score": {
+      "samples": [
+       11,
+       11,
+       11,
+       11
+      ],
+      "value": 11,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 44,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       44,
+       44,
+       44,
+       44
+      ]
+     }
+    },
+    {
+     "what": "送葬人 从 10,4 挪到 9,6",
+     "kind": "move",
+     "op": {
+      "uid": 221,
+      "id": "chess_char_2_01_a",
+      "from": "10,4",
+      "row": 9,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       11.25,
+       11.25,
+       11.25,
+       11.25
+      ],
+      "value": 11.25,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 45,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       45,
+       45,
+       45,
+       45
       ]
      }
     }
    ],
    "gain": {
-    "mean": 4.708333333333333,
-    "se": 0.27896786129023937,
+    "mean": 6.211805555555556,
+    "se": 0.1162366088709331,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.4166666666666667,
     "current": {
-     "value": -4.713041666666666,
      "loss": 4.708333333333333,
-     "leaks": 4.708333333333333,
-     "samples": [
-      -4,
-      -3,
-      -7,
-      -2,
-      -4,
-      -6,
-      -3,
-      -6,
-      -5,
-      -6,
-      -4,
-      -4,
-      -6,
-      -5,
-      -4,
-      -5,
-      -7,
-      -4,
-      -5,
-      -4,
-      -5,
-      -3,
-      -7,
-      -4
-     ]
+     "layers": 28
     },
     "best": {
-     "value": 0,
      "loss": 0,
-     "leaks": 0,
-     "samples": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-     ]
+     "layers": 45
     }
    },
    "recommend": true,
-   "evals": 184,
-   "ms": 12183,
+   "evals": 600,
+   "ms": 16606,
    "names": {
     "209": "chess_char_4_26_a",
     "210": "chess_char_4_14_a",
@@ -952,7 +1125,7 @@
    ],
    "best": [
     {
-     "uid": 277,
+     "uid": 264,
      "row": 11,
      "col": 5,
      "dir": "DOWN"
@@ -965,14 +1138,14 @@
     },
     {
      "uid": 266,
-     "row": 10,
-     "col": 5,
+     "row": 9,
+     "col": 7,
      "dir": "RIGHT"
     },
     {
      "uid": 267,
      "row": 10,
-     "col": 6,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -988,7 +1161,7 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 271,
+     "uid": 277,
      "row": 9,
      "col": 5,
      "dir": "RIGHT"
@@ -1002,101 +1175,134 @@
    ],
    "steps": [
     {
-     "what": "换下 魔王，换上 送葬人（11,5）",
+     "what": "换下 莱恩哈特，换上 送葬人（9,5）",
      "kind": "swap",
      "op": {
       "uid": 277,
       "id": "chess_char_2_01_a",
       "from": null,
-      "row": 11,
+      "row": 9,
       "col": 5,
-      "dir": "DOWN"
+      "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
+      "samples": [
+       8.5,
+       8.5,
+       8.5,
+       8.5
+      ],
+      "value": 8.5,
       "loss": 0,
       "leaks": 0,
-      "samples": [
+      "layers": 34,
+      "ownLoss": [
        0,
        0,
        0,
        0
+      ],
+      "layerSamples": [
+       34,
+       34,
+       34,
+       34
+      ]
+     }
+    },
+    {
+     "what": "对调 能天使（10,5）与 塑心（10,6）",
+     "kind": "exchange",
+     "op": {
+      "uid": 266,
+      "id": "chess_char_3_01_a",
+      "from": "10,5",
+      "row": 10,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       11,
+       11,
+       11,
+       11
+      ],
+      "value": 11,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 44,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       44,
+       44,
+       44,
+       44
+      ]
+     }
+    },
+    {
+     "what": "能天使 从 10,6 挪到 9,7",
+     "kind": "move",
+     "op": {
+      "uid": 266,
+      "id": "chess_char_3_01_a",
+      "from": "10,6",
+      "row": 9,
+      "col": 7,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       11.25,
+       11.25,
+       11.25,
+       11.25
+      ],
+      "value": 11.25,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 45,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       45,
+       45,
+       45,
+       45
       ]
      }
     }
    ],
    "gain": {
-    "mean": 5.125,
-    "se": 0.62933280751022,
+    "mean": 6.690476190476191,
+    "se": 0.29968228929058094,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.47619047619047616,
     "current": {
-     "value": -5.13025,
      "loss": 5.125,
-     "leaks": 5.25,
-     "samples": [
-      -6,
-      -6,
-      -5,
-      -4,
-      -7,
-      -5,
-      -5,
-      0,
-      -7,
-      -8,
-      -9,
-      -6,
-      0,
-      -1,
-      0,
-      -10,
-      -4,
-      -6,
-      -7,
-      -4,
-      -8,
-      0,
-      -10,
-      -5
-     ]
+     "layers": 28
     },
     "best": {
-     "value": 0,
      "loss": 0,
-     "leaks": 0,
-     "samples": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-     ]
+     "layers": 45
     }
    },
    "recommend": true,
-   "evals": 166,
-   "ms": 10205,
+   "evals": 568,
+   "ms": 15989,
    "names": {
     "264": "chess_char_4_25_a",
     "265": "chess_char_4_26_a",
@@ -1184,15 +1390,15 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 315,
+     "uid": 323,
      "row": 10,
-     "col": 5,
+     "col": 6,
      "dir": "RIGHT"
     },
     {
      "uid": 317,
      "row": 10,
-     "col": 6,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -1202,7 +1408,7 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 320,
+     "uid": 328,
      "row": 9,
      "col": 4,
      "dir": "RIGHT"
@@ -1220,12 +1426,136 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 594,
+   "steps": [
+    {
+     "what": "对调 能天使（10,5）与 塑心（10,6）",
+     "kind": "exchange",
+     "op": {
+      "uid": 315,
+      "id": "chess_char_3_01_a",
+      "from": "10,5",
+      "row": 10,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       9.5,
+       9.5,
+       9.5,
+       9.5
+      ],
+      "value": 9.5,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 38,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       38,
+       38,
+       38,
+       38
+      ]
+     }
+    },
+    {
+     "what": "换下 能天使，换上 送葬人（10,6）",
+     "kind": "swap",
+     "op": {
+      "uid": 323,
+      "id": "chess_char_2_01_a",
+      "from": null,
+      "row": 10,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       11,
+       11,
+       11,
+       11
+      ],
+      "value": 11,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 44,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       44,
+       44,
+       44,
+       44
+      ]
+     }
+    },
+    {
+     "what": "换下 雪猎，换上 送葬人（9,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 328,
+      "id": "chess_char_2_01_a",
+      "from": null,
+      "row": 9,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       12.5,
+       12.5,
+       12.5,
+       12.5
+      ],
+      "value": 12.5,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 50,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       50,
+       50,
+       50,
+       50
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 5.29265873015873,
+    "se": 0.10377815417986745,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.47619047619047616,
+    "current": {
+     "loss": 0,
+     "layers": 28
+    },
+    "best": {
+     "loss": 0.041666666666666664,
+     "layers": 49.25
+    }
+   },
+   "recommend": true,
+   "evals": 561,
+   "ms": 15412,
    "names": {
     "313": "chess_char_4_25_a",
     "314": "chess_char_4_26_a",
@@ -1310,13 +1640,13 @@
     {
      "uid": 383,
      "row": 10,
-     "col": 4,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
      "uid": 384,
      "row": 10,
-     "col": 5,
+     "col": 4,
      "dir": "RIGHT"
     },
     {
@@ -1326,13 +1656,13 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 388,
+     "uid": 395,
      "row": 9,
      "col": 3,
      "dir": "RIGHT"
     },
     {
-     "uid": 389,
+     "uid": 398,
      "row": 9,
      "col": 4,
      "dir": "RIGHT"
@@ -1350,12 +1680,136 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 551,
+   "steps": [
+    {
+     "what": "换下 新约能天使，换上 送葬人（9,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 398,
+      "id": "chess_char_2_01_b",
+      "from": null,
+      "row": 9,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       9,
+       9,
+       9,
+       9
+      ],
+      "value": 9,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 36,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       36,
+       36,
+       36,
+       36
+      ]
+     }
+    },
+    {
+     "what": "对调 华法琳（10,4）与 能天使（10,5）",
+     "kind": "exchange",
+     "op": {
+      "uid": 383,
+      "id": "chess_char_4_26_a",
+      "from": "10,4",
+      "row": 10,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       9.75,
+       9.75,
+       9.75,
+       9.75
+      ],
+      "value": 9.75,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 39,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       39,
+       39,
+       39,
+       39
+      ]
+     }
+    },
+    {
+     "what": "换下 雪猎，换上 魔王（9,3）",
+     "kind": "swap",
+     "op": {
+      "uid": 395,
+      "id": "chess_char_4_25_a",
+      "from": null,
+      "row": 9,
+      "col": 3,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       10.25,
+       10.25,
+       10.25,
+       10.25
+      ],
+      "value": 10.25,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 41,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       41,
+       41,
+       41,
+       41
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 4.25,
+    "se": 0,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.47619047619047616,
+    "current": {
+     "loss": 0,
+     "layers": 24
+    },
+    "best": {
+     "loss": 0,
+     "layers": 41
+    }
+   },
+   "recommend": true,
+   "evals": 576,
+   "ms": 14912,
    "names": {
     "382": "chess_char_3_21_a",
     "383": "chess_char_4_26_a",
@@ -1430,9 +1884,9 @@
    ],
    "best": [
     {
-     "uid": 432,
+     "uid": 446,
      "row": 11,
-     "col": 6,
+     "col": 5,
      "dir": "DOWN"
     },
     {
@@ -1442,7 +1896,7 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 434,
+     "uid": 449,
      "row": 10,
      "col": 5,
      "dir": "RIGHT"
@@ -1478,12 +1932,136 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 533,
+   "steps": [
+    {
+     "what": "换下 能天使，换上 塑心（10,5）",
+     "kind": "swap",
+     "op": {
+      "uid": 449,
+      "id": "chess_char_6_09_b",
+      "from": null,
+      "row": 10,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       9.75,
+       9.75,
+       9.75,
+       9.75
+      ],
+      "value": 9.75,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 39,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       39,
+       39,
+       39,
+       39
+      ]
+     }
+    },
+    {
+     "what": "换下 空弦，换上 魔王（11,6）",
+     "kind": "swap",
+     "op": {
+      "uid": 446,
+      "id": "chess_char_4_25_a",
+      "from": null,
+      "row": 11,
+      "col": 6,
+      "dir": "DOWN"
+     },
+     "score": {
+      "samples": [
+       10.25,
+       10.25,
+       10.25,
+       10.25
+      ],
+      "value": 10.25,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 41,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       41,
+       41,
+       41,
+       41
+      ]
+     }
+    },
+    {
+     "what": "魔王 从 11,6 挪到 11,5",
+     "kind": "move",
+     "op": {
+      "uid": 446,
+      "id": "chess_char_4_25_a",
+      "from": "11,6",
+      "row": 11,
+      "col": 5,
+      "dir": "DOWN"
+     },
+     "score": {
+      "samples": [
+       12.25,
+       12.25,
+       12.25,
+       12.25
+      ],
+      "value": 12.25,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 49,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       49,
+       49,
+       49,
+       49
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 8.25,
+    "se": 0,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.47619047619047616,
+    "current": {
+     "loss": 0,
+     "layers": 16
+    },
+    "best": {
+     "loss": 0,
+     "layers": 49
+    }
+   },
+   "recommend": true,
+   "evals": 568,
+   "ms": 18327,
    "names": {
     "432": "chess_char_3_21_a",
     "433": "chess_char_4_26_a",
@@ -1561,7 +2139,7 @@
    "best": [
     {
      "uid": 497,
-     "row": 11,
+     "row": 9,
      "col": 5,
      "dir": "RIGHT"
     },
@@ -1572,7 +2150,7 @@
      "dir": "DOWN"
     },
     {
-     "uid": 501,
+     "uid": 517,
      "row": 10,
      "col": 4,
      "dir": "RIGHT"
@@ -1590,14 +2168,14 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 506,
+     "uid": 516,
      "row": 9,
      "col": 4,
      "dir": "RIGHT"
     },
     {
      "uid": 508,
-     "row": 9,
+     "row": 11,
      "col": 5,
      "dir": "RIGHT"
     },
@@ -1608,12 +2186,136 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 903,
+   "steps": [
+    {
+     "what": "换下 新约能天使，换上 送葬人（9,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 516,
+      "id": "chess_char_2_01_b",
+      "from": null,
+      "row": 9,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       28.523809523809526,
+       29,
+       29,
+       29
+      ],
+      "value": 28.88070238095238,
+      "loss": 0.25,
+      "leaks": 0.25,
+      "layers": 116,
+      "ownLoss": [
+       1,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       116,
+       116,
+       116,
+       116
+      ]
+     }
+    },
+    {
+     "what": "对调 蕾缪安（11,5）与 迷迭香（9,5）",
+     "kind": "exchange",
+     "op": {
+      "uid": 497,
+      "id": "chess_char_6_01_a",
+      "from": "11,5",
+      "row": 9,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       32,
+       32,
+       30.523809523809526,
+       32
+      ],
+      "value": 31.63070238095238,
+      "loss": 0.25,
+      "leaks": 0.25,
+      "layers": 127,
+      "ownLoss": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "layerSamples": [
+       128,
+       128,
+       124,
+       128
+      ]
+     }
+    },
+    {
+     "what": "换下 莱恩哈特，换上 隐现（10,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 517,
+      "id": "chess_char_1_01_a",
+      "from": null,
+      "row": 10,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       32,
+       32,
+       32,
+       32
+      ],
+      "value": 32,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 128,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       128,
+       128,
+       128,
+       128
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 6.375,
+    "se": 0.26107706119852425,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.47619047619047616,
+    "current": {
+     "loss": 0,
+     "layers": 102
+    },
+    "best": {
+     "loss": 0,
+     "layers": 127.5
+    }
+   },
+   "recommend": true,
+   "evals": 605,
+   "ms": 22885,
    "names": {
     "497": "chess_char_6_01_a",
     "498": "chess_char_6_09_b",
@@ -1751,16 +2453,16 @@
       "dir": "RIGHT"
      },
      "score": {
-      "value": 2.193,
-      "share": 2.193,
-      "shareOt": 2.765,
-      "pClear": 1,
       "samples": [
        2.392,
        1.862,
        2.29,
        2.228
-      ]
+      ],
+      "value": 2.193,
+      "share": 2.193,
+      "shareOt": 2.7645,
+      "pClear": 1
      }
     },
     {
@@ -1775,16 +2477,16 @@
       "dir": "RIGHT"
      },
      "score": {
-      "value": 2.695,
-      "share": 2.695,
-      "shareOt": 3.211,
-      "pClear": 1,
       "samples": [
        1.98,
        2.904,
        2.904,
        2.993
-      ]
+      ],
+      "value": 2.69525,
+      "share": 2.69525,
+      "shareOt": 3.2115,
+      "pClear": 1
      }
     },
     {
@@ -1799,16 +2501,16 @@
       "dir": "LEFT"
      },
      "score": {
-      "value": 2.939,
-      "share": 2.939,
-      "shareOt": 3.432,
-      "pClear": 1,
       "samples": [
        3.107,
        2.984,
        2.59,
        3.074
-      ]
+      ],
+      "value": 2.93875,
+      "share": 2.93875,
+      "shareOt": 3.4325,
+      "pClear": 1
      }
     }
    ],
@@ -1818,58 +2520,18 @@
     "n": 16
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": null,
     "current": {
-     "value": 1.534,
-     "share": 1.534,
-     "shareOt": 1.927,
-     "pClear": 0.938,
-     "samples": [
-      1.211,
-      1.843,
-      1.586,
-      1.419,
-      1.562,
-      1.744,
-      1.683,
-      1.714,
-      1.703,
-      1.363,
-      1.797,
-      1.58,
-      1.676,
-      0.939,
-      1.441,
-      1.287
-     ]
+     "share": 1.5342499999999997
     },
     "best": {
-     "value": 2.903,
-     "share": 2.903,
-     "shareOt": 3.352,
-     "pClear": 1,
-     "samples": [
-      3.093,
-      3.052,
-      2.649,
-      3.117,
-      2.543,
-      2.996,
-      2.683,
-      3.025,
-      3.071,
-      3.086,
-      2.736,
-      2.708,
-      2.52,
-      3.09,
-      3.028,
-      3.045
-     ]
+     "share": 2.902625
     }
    },
    "recommend": true,
-   "evals": 469,
-   "ms": 43621,
+   "evals": 505,
+   "ms": 44151,
    "names": {
     "555": "chess_char_6_13_b",
     "556": "chess_char_6_09_b",
@@ -2007,16 +2669,16 @@
       "dir": "RIGHT"
      },
      "score": {
-      "value": 1.287,
-      "share": 1.287,
-      "shareOt": 1.513,
-      "pClear": 0.385,
       "samples": [
        1.3194615384615382,
        1.2583076923076921,
        1.0446153846153847,
        1.5245384615384616
-      ]
+      ],
+      "value": 1.2867307692307692,
+      "share": 1.2867307692307692,
+      "shareOt": 1.513,
+      "pClear": 0.385
      }
     },
     {
@@ -2031,16 +2693,16 @@
       "dir": "LEFT"
      },
      "score": {
-      "value": 1.501,
-      "share": 1.501,
-      "shareOt": 1.575,
-      "pClear": 0.538,
       "samples": [
        1.5685384615384614,
        1.7772307692307692,
        1.2395384615384617,
        1.4205384615384617
-      ]
+      ],
+      "value": 1.5014615384615384,
+      "share": 1.5014615384615384,
+      "shareOt": 1.5745,
+      "pClear": 0.538
      }
     }
    ],
@@ -2050,58 +2712,18 @@
     "n": 16
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": null,
     "current": {
-     "value": 0.816,
-     "share": 0.816,
-     "shareOt": 1.048,
-     "pClear": 0.288,
-     "samples": [
-      0.8620769230769232,
-      0.4825384615384615,
-      0.7284615384615384,
-      1.0817692307692308,
-      0.5146153846153847,
-      0.904846153846154,
-      0.8092307692307692,
-      0.9421538461538461,
-      0.8953846153846154,
-      0.9171538461538462,
-      1.0164615384615383,
-      0.8625384615384614,
-      0.7702307692307693,
-      0.6736153846153846,
-      0.9013846153846155,
-      0.6917692307692307
-     ]
+     "share": 0.815889423076923
     },
     "best": {
-     "value": 1.294,
-     "share": 1.294,
-     "shareOt": 1.459,
-     "pClear": 0.481,
-     "samples": [
-      1.655923076923077,
-      1.2191538461538463,
-      1.1570769230769231,
-      1.0603076923076922,
-      1.1700769230769232,
-      0.9760000000000002,
-      1.6316153846153845,
-      1.4919230769230771,
-      0.9816153846153846,
-      1.4263076923076925,
-      1.417769230769231,
-      1.4703846153846156,
-      1.4670769230769232,
-      1.0895384615384613,
-      1.4254615384615386,
-      1.064
-     ]
+     "share": 1.2940144230769228
     }
    },
    "recommend": true,
-   "evals": 484,
-   "ms": 121970,
+   "evals": 520,
+   "ms": 86492,
    "names": {
     "661": "chess_char_6_13_b",
     "664": "chess_char_6_09_b",
@@ -2159,8 +2781,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 59,
+   "evals": 136,
+   "ms": 565,
    "names": {
     "8": "chess_char_1_03_a",
     "9": "chess_char_1_03_a",
@@ -2228,8 +2850,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 139,
+   "evals": 99,
+   "ms": 981,
    "names": {
     "21": "chess_char_1_03_a",
     "22": "chess_char_1_03_a",
@@ -2298,8 +2920,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 121,
+   "evals": 99,
+   "ms": 850,
    "names": {
     "53": "chess_char_3_17_a",
     "54": "chess_char_1_03_b",
@@ -2380,8 +3002,8 @@
    "gain": null,
    "recheck": null,
    "recommend": false,
-   "evals": 1,
-   "ms": 162,
+   "evals": 118,
+   "ms": 1244,
    "names": {
     "76": "chess_char_1_03_b",
     "77": "chess_char_3_17_a",
@@ -2455,7 +3077,7 @@
     {
      "uid": 99,
      "row": 10,
-     "col": 8,
+     "col": 7,
      "dir": "RIGHT"
     },
     {
@@ -2466,8 +3088,8 @@
     },
     {
      "uid": 101,
-     "row": 9,
-     "col": 4,
+     "row": 10,
+     "col": 8,
      "dir": "RIGHT"
     },
     {
@@ -2483,12 +3105,100 @@
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
+   "steps": [
+    {
+     "what": "雷蛇 从 9,4 挪到 10,7",
+     "kind": "move",
+     "op": {
+      "uid": 101,
+      "id": "chess_char_1_20_a",
+      "from": "9,4",
+      "row": 10,
+      "col": 7,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       1.75,
+       1,
+       1.5,
+       1.5
+      ],
+      "value": 1.4375,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 5.75,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       7,
+       4,
+       6,
+       6
+      ]
+     }
+    },
+    {
+     "what": "对调 砾（10,8）与 雷蛇（10,7）",
+     "kind": "exchange",
+     "op": {
+      "uid": 99,
+      "id": "chess_char_2_12_a",
+      "from": "10,8",
+      "row": 10,
+      "col": 7,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       3,
+       1.5,
+       1.75,
+       1
+      ],
+      "value": 1.8125,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 7.25,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       12,
+       6,
+       7,
+       4
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 0.1185897435897436,
+    "se": 0.08071966768669643,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.38461538461538464,
+    "current": {
+     "loss": 0,
+     "layers": 4.125
+    },
+    "best": {
+     "loss": 0.125,
+     "layers": 4.791666666666667
+    }
+   },
    "recommend": false,
-   "evals": 1,
-   "ms": 242,
+   "evals": 457,
+   "ms": 5816,
    "names": {
     "97": "chess_char_1_03_b",
     "98": "chess_char_3_17_a",
@@ -2557,8 +3267,8 @@
    "best": [
     {
      "uid": 133,
-     "row": 11,
-     "col": 5,
+     "row": 9,
+     "col": 9,
      "dir": "DOWN"
     },
     {
@@ -2599,17 +3309,69 @@
     },
     {
      "uid": 140,
-     "row": 9,
-     "col": 9,
+     "row": 11,
+     "col": 5,
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 328,
+   "steps": [
+    {
+     "what": "对调 惊蛰（11,5）与 宴（9,9）",
+     "kind": "exchange",
+     "op": {
+      "uid": 133,
+      "id": "chess_char_1_03_b",
+      "from": "11,5",
+      "row": 9,
+      "col": 9,
+      "dir": "DOWN"
+     },
+     "score": {
+      "samples": [
+       7,
+       7.75,
+       7,
+       7
+      ],
+      "value": 7.1875,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 28.75,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       28,
+       31,
+       28,
+       28
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 2.3229166666666665,
+    "se": 0.028068750783235803,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.38461538461538464,
+    "current": {
+     "loss": 0,
+     "layers": 19.25
+    },
+    "best": {
+     "loss": 0,
+     "layers": 28.541666666666668
+    }
+   },
+   "recommend": true,
+   "evals": 347,
+   "ms": 6139,
    "names": {
     "133": "chess_char_1_03_b",
     "134": "chess_char_3_17_a",
@@ -2679,9 +3441,9 @@
    ],
    "best": [
     {
-     "uid": 170,
-     "row": 11,
-     "col": 5,
+     "uid": 162,
+     "row": 9,
+     "col": 4,
      "dir": "RIGHT"
     },
     {
@@ -2703,15 +3465,15 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 166,
+     "uid": 170,
      "row": 9,
      "col": 3,
      "dir": "RIGHT"
     },
     {
      "uid": 167,
-     "row": 9,
-     "col": 4,
+     "row": 11,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -2729,101 +3491,98 @@
    ],
    "steps": [
     {
-     "what": "换下 瑕光，换上 惊蛰（11,5）",
+     "what": "换下 灰毫，换上 惊蛰（9,3）",
      "kind": "swap",
      "op": {
       "uid": 170,
       "id": "chess_char_1_03_b",
       "from": null,
-      "row": 11,
-      "col": 5,
+      "row": 9,
+      "col": 3,
       "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
+      "samples": [
+       5,
+       4.25,
+       4.25,
+       5
+      ],
+      "value": 4.625,
       "loss": 0,
       "leaks": 0,
-      "samples": [
+      "layers": 18.5,
+      "ownLoss": [
        0,
        0,
        0,
        0
+      ],
+      "layerSamples": [
+       20,
+       17,
+       17,
+       20
+      ]
+     }
+    },
+    {
+     "what": "对调 瑕光（11,5）与 雷蛇（9,4）",
+     "kind": "exchange",
+     "op": {
+      "uid": 162,
+      "id": "chess_char_3_12_a",
+      "from": "11,5",
+      "row": 9,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       5,
+       5,
+       5,
+       5
+      ],
+      "value": 5,
+      "loss": 0,
+      "leaks": 0,
+      "layers": 20,
+      "ownLoss": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "layerSamples": [
+       20,
+       20,
+       20,
+       20
       ]
      }
     }
    ],
    "gain": {
-    "mean": 2,
-    "se": 0,
+    "mean": 0.852564102564103,
+    "se": 0.08196337699901174,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.38461538461538464,
     "current": {
-     "value": -2.002,
      "loss": 2,
-     "leaks": 2,
-     "samples": [
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2,
-      -2
-     ]
+     "layers": 18.916666666666668
     },
     "best": {
-     "value": 0,
      "loss": 0,
-     "leaks": 0,
-     "samples": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-     ]
+     "layers": 19.25
     }
    },
    "recommend": true,
-   "evals": 165,
-   "ms": 6726,
+   "evals": 529,
+   "ms": 10983,
    "names": {
     "162": "chess_char_3_12_a",
     "163": "chess_char_3_17_a",
@@ -2932,107 +3691,68 @@
     {
      "uid": 212,
      "row": 10,
-     "col": 4,
-     "dir": "RIGHT"
+     "col": 7,
+     "dir": "LEFT"
     }
    ],
    "steps": [
     {
-     "what": "加上 惊蛰 到 10,4（朝右）",
+     "what": "加上 惊蛰 到 10,7（朝左）",
      "kind": "add",
      "op": {
       "uid": 212,
       "id": "chess_char_1_03_b",
       "from": null,
       "row": 10,
-      "col": 4,
-      "dir": "RIGHT"
+      "col": 7,
+      "dir": "LEFT"
      },
      "score": {
-      "value": 0,
-      "loss": 0,
-      "leaks": 0,
       "samples": [
-       0,
-       0,
-       0,
-       0
+       10.083333333333334,
+       10.083333333333334,
+       10.083333333333334,
+       10.833333333333334
+      ],
+      "value": 10.269833333333334,
+      "loss": 1,
+      "leaks": 1,
+      "layers": 42.75,
+      "ownLoss": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "layerSamples": [
+       42,
+       42,
+       42,
+       45
       ]
      }
     }
    ],
    "gain": {
-    "mean": 3.125,
-    "se": 0.30876389835525825,
+    "mean": 0.770833333333334,
+    "se": 0.5904766644193762,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.4166666666666667,
     "current": {
-     "value": -3.128125,
      "loss": 3.125,
-     "leaks": 3.125,
-     "samples": [
-      -2,
-      -2,
-      -2,
-      -4,
-      -5,
-      -5,
-      -2,
-      -1,
-      -3,
-      -2,
-      -5,
-      -2,
-      -5,
-      -5,
-      -2,
-      -2,
-      -4,
-      -5,
-      -2,
-      -5,
-      -2,
-      -2,
-      -1,
-      -5
-     ]
+     "layers": 31.166666666666668
     },
     "best": {
-     "value": 0,
-     "loss": 0,
-     "leaks": 0,
-     "samples": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-     ]
+     "loss": 1.75,
+     "layers": 31.958333333333332
     }
    },
-   "recommend": true,
-   "evals": 312,
-   "ms": 10449,
+   "recommend": false,
+   "evals": 496,
+   "ms": 10642,
    "names": {
     "203": "chess_char_3_12_b",
     "204": "chess_char_3_17_a",
@@ -3106,13 +3826,13 @@
      "uid": 268,
      "row": 12,
      "col": 6,
-     "dir": "DOWN"
+     "dir": "RIGHT"
     },
     {
      "uid": 269,
      "row": 11,
      "col": 6,
-     "dir": "LEFT"
+     "dir": "UP"
     },
     {
      "uid": 270,
@@ -3127,7 +3847,7 @@
      "dir": "RIGHT"
     },
     {
-     "uid": 279,
+     "uid": 278,
      "row": 9,
      "col": 3,
      "dir": "RIGHT"
@@ -3153,101 +3873,134 @@
    ],
    "steps": [
     {
-     "what": "换下 歌蕾蒂娅，换上 焰尾（9,3）",
+     "what": "换下 歌蕾蒂娅，换上 至简（9,3）",
      "kind": "swap",
      "op": {
-      "uid": 279,
-      "id": "chess_char_4_19_a",
+      "uid": 278,
+      "id": "chess_char_3_13_a",
       "from": null,
       "row": 9,
       "col": 3,
       "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
-      "loss": 0,
-      "leaks": 0,
       "samples": [
+       19,
+       15.51086956521739,
+       16.315217391304348,
+       16.75
+      ],
+      "value": 16.892771739130435,
+      "loss": 1.25,
+      "leaks": 1.25,
+      "layers": 69.75,
+      "ownLoss": [
        0,
-       0,
-       0,
+       4,
+       1,
        0
+      ],
+      "layerSamples": [
+       76,
+       69,
+       67,
+       67
+      ]
+     }
+    },
+    {
+     "what": "妮芙（12,6）改朝右",
+     "kind": "rotate",
+     "op": {
+      "uid": 268,
+      "id": "chess_char_5_22_a",
+      "from": "12,6",
+      "row": 12,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       19.5,
+       15.51086956521739,
+       16.315217391304348,
+       16.75
+      ],
+      "value": 17.017771739130435,
+      "loss": 1.25,
+      "leaks": 1.25,
+      "layers": 70.25,
+      "ownLoss": [
+       0,
+       4,
+       1,
+       0
+      ],
+      "layerSamples": [
+       78,
+       69,
+       67,
+       67
+      ]
+     }
+    },
+    {
+     "what": "瑕光（11,6）改朝上",
+     "kind": "rotate",
+     "op": {
+      "uid": 269,
+      "id": "chess_char_3_12_b",
+      "from": "11,6",
+      "row": 11,
+      "col": 6,
+      "dir": "UP"
+     },
+     "score": {
+      "samples": [
+       19.5,
+       17.5,
+       15.565217391304348,
+       16.75
+      ],
+      "value": 17.328554347826085,
+      "loss": 0.25,
+      "leaks": 0.25,
+      "layers": 69.75,
+      "ownLoss": [
+       0,
+       0,
+       1,
+       0
+      ],
+      "layerSamples": [
+       78,
+       70,
+       64,
+       67
       ]
      }
     }
    ],
    "gain": {
-    "mean": 1.5833333333333333,
-    "se": 0.9778649225548921,
+    "mean": -0.888134057971015,
+    "se": 0.5076933732253456,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.43478260869565216,
     "current": {
-     "value": -2.919583333333333,
      "loss": 2.9166666666666665,
-     "leaks": 2.9166666666666665,
-     "samples": [
-      0,
-      0,
-      -4,
-      -3,
-      -1,
-      -5,
-      -10,
-      0,
-      -8,
-      0,
-      -2,
-      0,
-      0,
-      0,
-      -4,
-      0,
-      0,
-      0,
-      -8,
-      0,
-      -7,
-      0,
-      -9,
-      -9
-     ]
+     "layers": 65.66666666666667
     },
     "best": {
-     "value": -1.3347916666666666,
-     "loss": 1.3333333333333333,
-     "leaks": 1.4583333333333333,
-     "samples": [
-      0,
-      0,
-      0,
-      -10,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      -5,
-      -6,
-      0,
-      0,
-      -5,
-      0,
-      0,
-      0,
-      0,
-      -6,
-      0,
-      0,
-      0
-     ]
+     "loss": 3.8333333333333335,
+     "layers": 63.708333333333336
     }
    },
    "recommend": false,
-   "evals": 169,
-   "ms": 9684,
+   "evals": 541,
+   "ms": 13459,
    "names": {
     "268": "chess_char_5_22_a",
     "269": "chess_char_3_12_b",
@@ -3321,26 +4074,26 @@
    "best": [
     {
      "uid": 317,
-     "row": 11,
+     "row": 12,
      "col": 6,
      "dir": "DOWN"
     },
     {
      "uid": 318,
-     "row": 12,
+     "row": 11,
      "col": 6,
      "dir": "LEFT"
     },
     {
-     "uid": 319,
-     "row": 10,
-     "col": 3,
+     "uid": 328,
+     "row": 11,
+     "col": 4,
      "dir": "RIGHT"
     },
     {
      "uid": 320,
-     "row": 10,
-     "col": 6,
+     "row": 12,
+     "col": 7,
      "dir": "RIGHT"
     },
     {
@@ -3370,101 +4123,134 @@
    ],
    "steps": [
     {
-     "what": "对调 妮芙（12,6）与 瑕光（11,6）",
-     "kind": "exchange",
+     "what": "灰毫 从 10,3 挪到 11,4",
+     "kind": "move",
      "op": {
-      "uid": 317,
-      "id": "chess_char_5_22_a",
-      "from": "12,6",
+      "uid": 319,
+      "id": "chess_char_2_18_b",
+      "from": "10,3",
       "row": 11,
-      "col": 6,
-      "dir": "DOWN"
+      "col": 4,
+      "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
-      "loss": 0,
-      "leaks": 0,
       "samples": [
+       7.5,
+       6,
+       7.380434782608695,
+       7.25
+      ],
+      "value": 7.032108695652174,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 29,
+      "ownLoss": [
        0,
+       0,
+       2,
+       0
+      ],
+      "layerSamples": [
+       30,
+       24,
+       33,
+       29
+      ]
+     }
+    },
+    {
+     "what": "换下 灰毫，换上 灰毫（11,4）",
+     "kind": "swap",
+     "op": {
+      "uid": 328,
+      "id": "chess_char_2_18_a",
+      "from": null,
+      "row": 11,
+      "col": 4,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       7.5,
+       8.25,
+       7.130434782608695,
+       6
+      ],
+      "value": 7.219608695652174,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 29.75,
+      "ownLoss": [
+       0,
+       0,
+       2,
+       0
+      ],
+      "layerSamples": [
+       30,
+       33,
+       32,
+       24
+      ]
+     }
+    },
+    {
+     "what": "流星 从 10,6 挪到 12,7",
+     "kind": "move",
+     "op": {
+      "uid": 320,
+      "id": "chess_char_3_17_a",
+      "from": "10,6",
+      "row": 12,
+      "col": 7,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       8.130434782608695,
+       6.75,
+       7.5,
+       6.75
+      ],
+      "value": 7.282108695652174,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 30,
+      "ownLoss": [
+       2,
        0,
        0,
        0
+      ],
+      "layerSamples": [
+       36,
+       27,
+       30,
+       27
       ]
      }
     }
    ],
    "gain": {
-    "mean": 3.75,
-    "se": 0.2640953933933612,
+    "mean": 2.0416666666666665,
+    "se": 0.3222154300992773,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.43478260869565216,
     "current": {
-     "value": -3.75375,
      "loss": 3.75,
-     "leaks": 3.75,
-     "samples": [
-      -5,
-      -3,
-      -3,
-      -3,
-      -5,
-      -4,
-      -6,
-      -5,
-      -4,
-      -3,
-      -3,
-      -2,
-      -5,
-      -3,
-      -5,
-      -2,
-      -4,
-      -5,
-      -4,
-      -5,
-      -3,
-      -1,
-      -2,
-      -5
-     ]
+     "layers": 24.083333333333332
     },
     "best": {
-     "value": 0,
-     "loss": 0,
-     "leaks": 0,
-     "samples": [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-     ]
+     "loss": 0.875,
+     "layers": 27.25
     }
    },
    "recommend": true,
-   "evals": 159,
-   "ms": 9580,
+   "evals": 511,
+   "ms": 13977,
    "names": {
     "317": "chess_char_5_22_a",
     "318": "chess_char_3_12_b",
@@ -3539,7 +4325,7 @@
    ],
    "best": [
     {
-     "uid": 401,
+     "uid": 388,
      "row": 11,
      "col": 5,
      "dir": "DOWN"
@@ -3570,14 +4356,14 @@
     },
     {
      "uid": 395,
-     "row": 10,
-     "col": 7,
+     "row": 9,
+     "col": 9,
      "dir": "RIGHT"
     },
     {
      "uid": 398,
      "row": 9,
-     "col": 3,
+     "col": 6,
      "dir": "RIGHT"
     },
     {
@@ -3589,101 +4375,98 @@
    ],
    "steps": [
     {
-     "what": "换下 妮芙，换上 野鬃（11,5）",
-     "kind": "swap",
+     "what": "砾 从 10,7 挪到 9,9",
+     "kind": "move",
      "op": {
-      "uid": 401,
-      "id": "chess_char_1_19_a",
-      "from": null,
-      "row": 11,
-      "col": 5,
-      "dir": "DOWN"
+      "uid": 395,
+      "id": "chess_char_2_12_a",
+      "from": "10,7",
+      "row": 9,
+      "col": 9,
+      "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
+      "samples": [
+       22,
+       17.5,
+       19.630434782608695,
+       23.5
+      ],
+      "value": 20.657108695652173,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 83.5,
+      "ownLoss": [
+       0,
+       0,
+       2,
+       0
+      ],
+      "layerSamples": [
+       88,
+       70,
+       82,
+       94
+      ]
+     }
+    },
+    {
+     "what": "焰尾 从 9,3 挪到 9,6",
+     "kind": "move",
+     "op": {
+      "uid": 398,
+      "id": "chess_char_4_19_b",
+      "from": "9,3",
+      "row": 9,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       27.75,
+       17.5,
+       20.5,
+       18.25
+      ],
+      "value": 21,
       "loss": 0,
       "leaks": 0,
-      "samples": [
+      "layers": 84,
+      "ownLoss": [
        0,
        0,
        0,
        0
+      ],
+      "layerSamples": [
+       111,
+       70,
+       82,
+       73
       ]
      }
     }
    ],
    "gain": {
-    "mean": 0.9166666666666666,
-    "se": 0.5068968775248515,
+    "mean": 1.630434782608696,
+    "se": 0.6868835356408526,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.43478260869565216,
     "current": {
-     "value": -1.25125,
      "loss": 1.25,
-     "leaks": 1.25,
-     "samples": [
-      0,
-      0,
-      -4,
-      0,
-      0,
-      -5,
-      0,
-      0,
-      0,
-      0,
-      0,
-      -5,
-      0,
-      0,
-      0,
-      -5,
-      0,
-      -5,
-      -1,
-      0,
-      0,
-      -5,
-      0,
-      0
-     ]
+     "layers": 67.04166666666667
     },
     "best": {
-     "value": -0.33366666666666667,
-     "loss": 0.3333333333333333,
-     "leaks": 0.3333333333333333,
-     "samples": [
-      -1,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      -1,
-      -3,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      -3
-     ]
+     "loss": 0.375,
+     "layers": 72.04166666666667
     }
    },
-   "recommend": false,
-   "evals": 187,
-   "ms": 12761,
+   "recommend": true,
+   "evals": 595,
+   "ms": 15523,
    "names": {
     "388": "chess_char_5_22_a",
     "389": "chess_char_3_12_b",
@@ -3761,7 +4544,7 @@
     {
      "uid": 435,
      "row": 10,
-     "col": 3,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -3772,20 +4555,20 @@
     },
     {
      "uid": 437,
-     "row": 11,
-     "col": 5,
+     "row": 10,
+     "col": 3,
      "dir": "RIGHT"
     },
     {
      "uid": 438,
-     "row": 10,
+     "row": 11,
      "col": 5,
      "dir": "RIGHT"
     },
     {
      "uid": 441,
      "row": 10,
-     "col": 7,
+     "col": 8,
      "dir": "RIGHT"
     },
     {
@@ -3809,101 +4592,98 @@
    ],
    "steps": [
     {
-     "what": "对调 宴（11,5）与 流星（10,3）",
+     "what": "砾 从 10,7 挪到 10,8",
+     "kind": "move",
+     "op": {
+      "uid": 441,
+      "id": "chess_char_2_12_a",
+      "from": "10,7",
+      "row": 10,
+      "col": 8,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       48.56521739130435,
+       48.56521739130435,
+       28.75,
+       38
+      ],
+      "value": 40.96960869565217,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 164.75,
+      "ownLoss": [
+       1,
+       1,
+       0,
+       0
+      ],
+      "layerSamples": [
+       196,
+       196,
+       115,
+       152
+      ]
+     }
+    },
+    {
+     "what": "对调 宴（11,5）与 圣聆初雪（10,5）",
      "kind": "exchange",
      "op": {
       "uid": 435,
       "id": "chess_char_1_18_a",
       "from": "11,5",
       "row": 10,
-      "col": 3,
+      "col": 5,
       "dir": "RIGHT"
      },
      "score": {
-      "value": 0,
-      "loss": 0,
-      "leaks": 0,
       "samples": [
-       0,
-       0,
+       48.56521739130435,
+       48.56521739130435,
+       40.75,
+       40.75
+      ],
+      "value": 44.65710869565217,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 179.5,
+      "ownLoss": [
+       1,
+       1,
        0,
        0
+      ],
+      "layerSamples": [
+       196,
+       196,
+       163,
+       163
       ]
      }
     }
    ],
    "gain": {
-    "mean": -0.75,
-    "se": 0.35737570049507816,
+    "mean": 6.9737318840579725,
+    "se": 2.266711822299933,
     "n": 24
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": 0.43478260869565216,
     "current": {
-     "value": -1.75175,
      "loss": 1.75,
-     "leaks": 1.75,
-     "samples": [
-      0,
-      -8,
-      0,
-      0,
-      0,
-      0,
-      -2,
-      -7,
-      0,
-      -1,
-      0,
-      0,
-      -7,
-      0,
-      -4,
-      0,
-      0,
-      -4,
-      -2,
-      -2,
-      0,
-      0,
-      0,
-      -5
-     ]
+     "layers": 99.91666666666667
     },
     "best": {
-     "value": -2.5025,
-     "loss": 2.5,
-     "leaks": 2.5,
-     "samples": [
-      0,
-      -7,
-      -3,
-      -1,
-      -2,
-      -2,
-      -4,
-      -4,
-      0,
-      -4,
-      -4,
-      0,
-      -4,
-      0,
-      -4,
-      0,
-      -3,
-      -4,
-      -4,
-      -2,
-      0,
-      0,
-      -2,
-      -6
-     ]
+     "loss": 0.7083333333333334,
+     "layers": 126
     }
    },
-   "recommend": false,
-   "evals": 171,
-   "ms": 18726,
+   "recommend": true,
+   "evals": 547,
+   "ms": 24675,
    "names": {
     "435": "chess_char_1_18_a",
     "436": "chess_char_3_12_b",
@@ -3983,8 +4763,8 @@
     },
     {
      "uid": 484,
-     "row": 11,
-     "col": 4,
+     "row": 10,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
@@ -4001,12 +4781,12 @@
     },
     {
      "uid": 487,
-     "row": 10,
-     "col": 5,
+     "row": 11,
+     "col": 4,
      "dir": "RIGHT"
     },
     {
-     "uid": 490,
+     "uid": 501,
      "row": 10,
      "col": 6,
      "dir": "RIGHT"
@@ -4019,17 +4799,141 @@
     },
     {
      "uid": 494,
-     "row": 10,
-     "col": 8,
+     "row": 9,
+     "col": 9,
      "dir": "RIGHT"
     }
    ],
-   "steps": [],
-   "gain": null,
-   "recheck": null,
-   "recommend": false,
-   "evals": 1,
-   "ms": 706,
+   "steps": [
+    {
+     "what": "砾 从 10,8 挪到 9,9",
+     "kind": "move",
+     "op": {
+      "uid": 494,
+      "id": "chess_char_2_12_a",
+      "from": "10,8",
+      "row": 9,
+      "col": 9,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       60.56521739130435,
+       28.75,
+       60.56521739130435,
+       25.75
+      ],
+      "value": 43.90710869565217,
+      "loss": 0.5,
+      "leaks": 0.5,
+      "layers": 176.5,
+      "ownLoss": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "layerSamples": [
+       244,
+       115,
+       244,
+       103
+      ]
+     }
+    },
+    {
+     "what": "换下 圣聆初雪，换上 锏（10,6）",
+     "kind": "swap",
+     "op": {
+      "uid": 501,
+      "id": "chess_char_6_19_a",
+      "from": null,
+      "row": 10,
+      "col": 6,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       64.56521739130434,
+       64.56521739130434,
+       64.56521739130434,
+       62.31521739130435
+      ],
+      "value": 64.00171739130434,
+      "loss": 1,
+      "leaks": 1,
+      "layers": 257.75,
+      "ownLoss": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "layerSamples": [
+       260,
+       260,
+       260,
+       251
+      ]
+     }
+    },
+    {
+     "what": "对调 隐德来希（11,4）与 玛恩纳（10,5）",
+     "kind": "exchange",
+     "op": {
+      "uid": 484,
+      "id": "chess_char_5_06_a",
+      "from": "11,4",
+      "row": 10,
+      "col": 5,
+      "dir": "RIGHT"
+     },
+     "score": {
+      "samples": [
+       64.56521739130434,
+       68.56521739130434,
+       64.56521739130434,
+       62.31521739130435
+      ],
+      "value": 65.00171739130434,
+      "loss": 1,
+      "leaks": 1,
+      "layers": 261.75,
+      "ownLoss": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "layerSamples": [
+       260,
+       276,
+       260,
+       251
+      ]
+     }
+    }
+   ],
+   "gain": {
+    "mean": 32.64764492753624,
+    "se": 3.387492134024972,
+    "n": 24
+   },
+   "recheck": {
+    "metric": "own",
+    "lpWeight": 0.43478260869565216,
+    "current": {
+     "loss": 0,
+     "layers": 80.125
+    },
+    "best": {
+     "loss": 0.6666666666666666,
+     "layers": 211.875
+    }
+   },
+   "recommend": true,
+   "evals": 547,
+   "ms": 15587,
    "names": {
     "483": "chess_char_3_17_a",
     "484": "chess_char_5_06_a",
@@ -4109,21 +5013,21 @@
     },
     {
      "uid": 531,
-     "row": 10,
-     "col": 8,
+     "row": 11,
+     "col": 5,
      "dir": "RIGHT"
     },
     {
      "uid": 534,
      "row": 11,
-     "col": 6,
+     "col": 7,
      "dir": "LEFT"
     },
     {
      "uid": 535,
      "row": 10,
      "col": 4,
-     "dir": "RIGHT"
+     "dir": "DOWN"
     },
     {
      "uid": 537,
@@ -4139,101 +5043,109 @@
     },
     {
      "uid": 541,
-     "row": 10,
-     "col": 7,
+     "row": 9,
+     "col": 4,
      "dir": "RIGHT"
     },
     {
      "uid": 543,
-     "row": 11,
-     "col": 5,
+     "row": 10,
+     "col": 8,
      "dir": "RIGHT"
     }
    ],
    "steps": [
     {
-     "what": "对调 玛恩纳（11,5）与 砾（10,8）",
-     "kind": "exchange",
+     "what": "锏 从 10,7 挪到 9,4",
+     "kind": "move",
      "op": {
-      "uid": 531,
-      "id": "chess_char_5_19_a",
-      "from": "11,5",
-      "row": 10,
-      "col": 8,
+      "uid": 541,
+      "id": "chess_char_6_19_a",
+      "from": "10,7",
+      "row": 9,
+      "col": 4,
       "dir": "RIGHT"
      },
      "score": {
-      "value": 1.067,
-      "share": 1.067,
-      "shareOt": 1.321,
-      "pClear": 0.5,
       "samples": [
-       0.839,
-       1.005,
-       1.484,
-       0.939
-      ]
+       1.125,
+       1.058,
+       0.896,
+       1.083
+      ],
+      "value": 1.0405,
+      "share": 1.0405,
+      "shareOt": 1.2850000000000001,
+      "pClear": 0.75
+     }
+    },
+    {
+     "what": "歌蕾蒂娅（10,4）改朝下",
+     "kind": "rotate",
+     "op": {
+      "uid": 535,
+      "id": "chess_char_4_12_a",
+      "from": "10,4",
+      "row": 10,
+      "col": 4,
+      "dir": "DOWN"
+     },
+     "score": {
+      "samples": [
+       1.437,
+       1.158,
+       1.26,
+       1.117
+      ],
+      "value": 1.2429999999999999,
+      "share": 1.2429999999999999,
+      "shareOt": 1.4885000000000002,
+      "pClear": 1
+     }
+    },
+    {
+     "what": "瑕光 从 11,6 挪到 11,7",
+     "kind": "move",
+     "op": {
+      "uid": 534,
+      "id": "chess_char_3_12_b",
+      "from": "11,6",
+      "row": 11,
+      "col": 7,
+      "dir": "LEFT"
+     },
+     "score": {
+      "samples": [
+       1.437,
+       1.158,
+       1.261,
+       1.117
+      ],
+      "value": 1.24325,
+      "share": 1.24325,
+      "shareOt": 1.4885000000000002,
+      "pClear": 1
      }
     }
    ],
    "gain": {
-    "mean": 0.1340625,
-    "se": 0.03018008017854381,
+    "mean": 0.17456249999999995,
+    "se": 0.021448187326283154,
     "n": 16
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": null,
     "current": {
-     "value": 0.781,
-     "share": 0.781,
-     "shareOt": 0.994,
-     "pClear": 0,
-     "samples": [
-      0.869,
-      0.841,
-      0.77,
-      0.765,
-      0.781,
-      0.717,
-      0.777,
-      0.73,
-      0.783,
-      0.753,
-      0.642,
-      0.844,
-      0.84,
-      0.944,
-      0.683,
-      0.752
-     ]
+     "share": 0.7806875000000001
     },
     "best": {
-     "value": 0.915,
-     "share": 0.915,
-     "shareOt": 1.114,
-     "pClear": 0.125,
-     "samples": [
-      0.826,
-      0.893,
-      0.955,
-      0.919,
-      0.72,
-      1.016,
-      0.843,
-      0.955,
-      0.938,
-      0.971,
-      1.047,
-      0.935,
-      0.954,
-      0.955,
-      0.797,
-      0.912
-     ]
+     "share": 0.95525
     }
    },
    "recommend": true,
-   "evals": 329,
-   "ms": 42550,
+   "evals": 529,
+   "ms": 33901,
    "names": {
     "530": "chess_char_5_06_a",
     "531": "chess_char_5_19_a",
@@ -4314,8 +5226,8 @@
     },
     {
      "uid": 643,
-     "row": 11,
-     "col": 5,
+     "row": 12,
+     "col": 8,
      "dir": "RIGHT"
     },
     {
@@ -4346,7 +5258,7 @@
      "uid": 654,
      "row": 11,
      "col": 8,
-     "dir": "LEFT"
+     "dir": "RIGHT"
     },
     {
      "uid": 657,
@@ -4368,16 +5280,16 @@
       "dir": "RIGHT"
      },
      "score": {
-      "value": 2.274,
-      "share": 2.274,
-      "shareOt": 2.802,
-      "pClear": 0.692,
       "samples": [
        2.278230769230769,
        2.3316923076923075,
        2.303692307692308,
        2.1824615384615385
-      ]
+      ],
+      "value": 2.2740192307692304,
+      "share": 2.2740192307692304,
+      "shareOt": 2.802,
+      "pClear": 0.692
      }
     },
     {
@@ -4392,101 +5304,61 @@
       "dir": "RIGHT"
      },
      "score": {
-      "value": 2.407,
-      "share": 2.407,
-      "shareOt": 2.963,
-      "pClear": 0.692,
       "samples": [
        2.4064615384615387,
        2.473,
        2.355153846153846,
        2.3924615384615384
-      ]
+      ],
+      "value": 2.406769230769231,
+      "share": 2.406769230769231,
+      "shareOt": 2.9625000000000004,
+      "pClear": 0.692
      }
     },
     {
-     "what": "锏（11,8）改朝左",
-     "kind": "rotate",
+     "what": "玛恩纳 从 11,5 挪到 12,8",
+     "kind": "move",
      "op": {
-      "uid": 654,
-      "id": "chess_char_6_19_a",
-      "from": "11,8",
-      "row": 11,
+      "uid": 643,
+      "id": "chess_char_5_19_a",
+      "from": "11,5",
+      "row": 12,
       "col": 8,
-      "dir": "LEFT"
+      "dir": "RIGHT"
      },
      "score": {
-      "value": 2.45,
-      "share": 2.45,
-      "shareOt": 3.02,
-      "pClear": 0.692,
       "samples": [
-       2.42,
-       2.429,
-       2.4385384615384615,
-       2.5140000000000002
-      ]
+       2.478230769230769,
+       2.394,
+       2.4476923076923076,
+       2.3672307692307695
+      ],
+      "value": 2.4217884615384615,
+      "share": 2.4217884615384615,
+      "shareOt": 2.965,
+      "pClear": 0.692
      }
     }
    ],
    "gain": {
-    "mean": 0.33515384615384625,
-    "se": 0.04279002906952977,
+    "mean": 0.2847788461538462,
+    "se": 0.04552927557807935,
     "n": 16
    },
    "recheck": {
+    "metric": "own",
+    "lpWeight": null,
     "current": {
-     "value": 2.071,
-     "share": 2.071,
-     "shareOt": 2.572,
-     "pClear": 0.75,
-     "samples": [
-      2.1883846153846154,
-      2.1797692307692302,
-      2.2166923076923073,
-      2.11,
-      1.8796923076923078,
-      1.9706153846153847,
-      1.8336923076923075,
-      1.9983846153846156,
-      2.1256153846153847,
-      1.918076923076923,
-      2.229153846153846,
-      2.055615384615385,
-      2.085538461538462,
-      2.201230769230769,
-      2.1474615384615383,
-      2.001923076923077
-     ]
+     "share": 2.0713653846153846
     },
     "best": {
-     "value": 2.407,
-     "share": 2.407,
-     "shareOt": 2.97,
-     "pClear": 0.692,
-     "samples": [
-      2.4664615384615383,
-      2.348,
-      2.400076923076923,
-      2.3911538461538457,
-      2.487538461538462,
-      2.4364615384615385,
-      2.47,
-      2.3973846153846154,
-      2.5746153846153845,
-      2.270923076923077,
-      2.414076923076923,
-      2.095076923076923,
-      2.364,
-      2.3494615384615387,
-      2.519307692307692,
-      2.5197692307692305
-     ]
+     "share": 2.3561442307692304
     }
    },
    "recommend": true,
-   "evals": 497,
-   "ms": 274996,
+   "evals": 533,
+   "ms": 132002,
    "names": {
     "642": "chess_char_5_06_a",
     "643": "chess_char_5_19_a",

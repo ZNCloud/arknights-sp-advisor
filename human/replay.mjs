@@ -15,7 +15,7 @@ import { loadSegment, roundsOf, bondsOf, GAMES } from './record.mjs';
 import { forceSeat, diffSeat, engineId, STAND_INS } from './force.mjs';
 import { deriveTurn, replayTurn, replayLayout } from './ownerturn.mjs';
 import { ownerBossFight } from '../advisor/battle.mjs';
-import { pickPrior } from '../advisor/field.mjs';
+import { pickPrior, roundOutcome } from '../advisor/field.mjs';
 
 const W = await import(new URL('../../engine/server/match/waves.js', import.meta.url));
 const { SharedPool } = await import(new URL('../../engine/server/match/pool.js', import.meta.url));
@@ -75,24 +75,6 @@ export function alignedMatch(game, { seed = 1, players = 4 } = {}) {
 
 function waveFor(m, cand) {
   return W.buildNormalWave(m.gd, createRng(1), cand.factions, m.round);
-}
-
-// From a PREP capture with the owner's battle board in place: the owner's settle LP and own-field result under `wave`.
-function battleOutcome(state, wave, seed = null) {
-  const m = restore(state, { rngMode: 'exact' });
-  if (wave) m.wave = wave;
-  if (seed != null) m.seed = seed;
-  const ps = m.players.get('p0');
-  // restore() un-readies every seat; the teammates were ready when the state was captured
-  for (const [i, p] of m.order.entries()) if (p !== ps && state.seats[i].ready) p.ready = true;
-  ps.resolveTemp(); ps.setReady(true);
-  const r0 = m.round;
-  let res = null;
-  m.sched.runUntil(() => { if (m.lastResults?.get?.('p0')) res = m.lastResults.get('p0'); return (m.round > r0 && m.phase !== 'SETTLE') || m.phase === 'RESULT'; }, { maxSteps: 5e6 });
-  if (m.round === r0 && m.phase !== 'RESULT') throw Error(`battleOutcome: stuck in R${r0} ${m.phase}`);
-  const out = { lp: ps.lp, alive: ps.alive, leaks: res?.leaked?.length ?? res?.leaks ?? null, layerGains: res?.layerGains || null, unite: !!m.unitePlan };
-  m.dispose();
-  return out;
 }
 
 export async function replayGame(name, { log = console.log, prior = 400, maxCands = 24, captureEach = null, mirrorTeam = false } = {}) {
@@ -207,7 +189,7 @@ export async function replayGame(name, { log = console.log, prior = 400, maxCand
       const state = capture(m);
       const all = pickPrior(m.gd, R.round, prior);
       const tested = [];
-      const test = (c, seed = null) => { const o = battleOutcome(state, waveFor(m, c), seed); const t = { pick: c.pick, w: c.w, seed, cand: c, ...o }; tested.push(t); return t; };
+      const test = (c, seed = null) => { const o = roundOutcome(state, null, { wave: waveFor(m, c), battleSeed: seed }); const t = { pick: c.pick, w: c.w, seed, cand: c, ...o }; tested.push(t); return t; };
       // the prior's distribution of the owner's LP change (top picks), then the first pick that reproduces the record
       for (const c of all.slice(0, maxCands)) test(c);
       let hit = tested.find(t => t.lp === R.lpAfter);
