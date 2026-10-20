@@ -151,7 +151,10 @@ export function runHind({ game: name, replayPath, stateJSON, round, cand, mode, 
         if (spare > 0) { const keep = p.funds; p.funds = spare; shadowTurn(mm, p, { ...planOf(mm.gd, game.rounds, t, budgets), budget: spare }); p.funds = Math.max(0, keep - (spare - p.funds)); }
       }
     }
-    else shadowTurn(mm, p, planOf(mm.gd, game.rounds, t, budgets));
+    else {
+      if (TRACE) trace.push({ t, phase: 'start', lp: p.lp, layers: p.activatedLayers() });
+      shadowTurn(mm, p, planOf(mm.gd, game.rounds, t, budgets));
+    }
     if (TRACE) trace.push({ t, phase: 'end', funds: p.funds, diffEnd: diffSeat(p, Rt.end).filter(x => !x.startsWith('lp')) });
   };
   installShadow(m, game.rounds, budgets, { from: round + 1, onPrep: (mm, p) => {

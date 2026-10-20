@@ -12,7 +12,7 @@
 //     field), the hidden round averaged over the mode's hidden-boss weights.
 // Guard: a change may not lower the tier of a bond that holds layers.
 import { restore } from './state.mjs';
-import { layoutOf, applyLayout, legalTiles, waveLoss, bossScore, battleSeedsOf, roundOutcome, othersReady } from './field.mjs';
+import { layoutOf, legalTiles, waveLoss, bossScore, battleSeedsOf, roundOutcome, othersReady } from './field.mjs';
 
 const DIRS = ['RIGHT', 'UP', 'DOWN', 'LEFT'];
 // Normal-round exchange rate between LP and layers. One layer is worth LAYER_WEIGHT LP when LP_REF LP are left; an LP is
@@ -34,11 +34,13 @@ export function fieldKind(st, playerId = 'p0') {
   } finally { m.dispose(); }
 }
 
-// Score of one layout over battle seeds [seedFrom, seedFrom + seeds) of `tag` (search and re-check never share seeds).
-// Higher `value` is better; `samples` are per seed, so two layouts scored on the same seeds compare pairwise.
+// Score of the board the moves `steps` make from the position's own board (replayed through the engine's move handler,
+// so summons, swaps and tile rules are the game's own; null when the engine refuses a move), over battle seeds
+// [seedFrom, seedFrom + seeds) of `tag` (search and re-check never share seeds). Higher `value` is better; `samples` are
+// per seed, so two boards scored on the same seeds compare pairwise.
 // metric 'own' = the seat's own field, 'round' = the whole round (team LP loss; needs every teammate ready).
-export function scoreLayout(st, layout, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4, seedFrom = 0, metric = 'own' }) {
-  const mutate = layout ? (m, ps) => applyLayout(ps, layout) : null;
+export function scoreSteps(st, steps, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4, seedFrom = 0, metric = 'own' }) {
+  const mutate = steps.length ? (m, ps) => replaySteps(ps, steps).ok : null;
   if (kind === 'normal') {
     const battleSeeds = battleSeedsOf(`${tag}:${round}`, seedFrom + seeds).slice(seedFrom);
     const lp0 = Object.fromEntries(st.seats.map(x => [x.playerId, x.alive ? x.lp : 0])), w = lpWeight(lp0[playerId]);
@@ -103,36 +105,42 @@ export function neighbours(ctx, L) {
   return out;
 }
 
-// Replay recommended steps on a live seat through the engine's move handler. A refused move or a board that does not end
-// as `expect` (when given) throws: the advice is never applied half-way silently.
-export function applySteps(ps, steps, expect = null) {
+// Steps through the engine's move handler: { ok } or { ok: false, error } at the first move the engine refuses.
+export function replaySteps(ps, steps) {
   for (const s of steps) {
     const o = s.op;
     const piece = o.from ? ps.board.get(o.from) : [...ps.hand, ...ps.temp].find(p => p?.kind === 'chess' && p.id === o.id);
-    if (!piece || piece.id !== o.id) throw Error(`lineup step "${s.what}": no ${o.id} at ${o.from ?? 'hand'}`);
+    if (!piece || piece.id !== o.id) return { ok: false, error: `lineup step "${s.what}": no ${o.id} at ${o.from ?? 'hand'}` };
     const r = ps.move(piece.uid, { area: 'board', row: o.row, col: o.col }, o.dir);
-    if (!r?.ok) throw Error(`lineup step "${s.what}" refused by the engine: ${JSON.stringify(r)}`);
+    if (!r?.ok) return { ok: false, error: `lineup step "${s.what}" refused by the engine: ${JSON.stringify(r)}` };
   }
+  return { ok: true };
+}
+// Play recommended steps on a live seat. A refused move or a board that does not end as `expect` (when given) throws:
+// the advice is never applied half-way silently.
+export function applySteps(ps, steps, expect = null) {
+  const r = replaySteps(ps, steps);
+  if (!r.ok) throw Error(r.error);
   if (expect) {
     const key = L => L.map(x => `${x.uid}@${x.row},${x.col}:${x.dir}`).sort().join('|');
     if (key(layoutOf(ps)) !== key(expect)) throw Error(`lineup steps did not produce the checked board: ${key(layoutOf(ps))} vs ${key(expect)}`);
   }
 }
 
-// Bond guard: tiers of the bonds that hold layers, for a layout (null when the engine refuses the layout). Bonds count
-// who is deployed (board + hand together are unchanged by any change here), so the result is cached by the deployed set.
-function layeredTiers(st, L, playerId, cache = new Map()) {
-  const key = L ? L.map(x => x.uid).sort((a, b) => a - b).join(',') : '';
+// Bond guard: tiers of the bonds that hold layers after `steps` (null when the engine refuses a move). Bonds count who is
+// deployed (board + hand together are unchanged by any change here), so the result is cached by the deployed set `L`.
+function layeredTiers(st, L, steps, playerId, cache = new Map()) {
+  const key = L.map(x => x.uid).sort((a, b) => a - b).join(',');
   if (cache.has(key)) return cache.get(key);
-  const v = layeredTiersOf(st, L, playerId);
+  const v = layeredTiersOf(st, steps, playerId);
   cache.set(key, v);
   return v;
 }
-function layeredTiersOf(st, L, playerId) {
+function layeredTiersOf(st, steps, playerId) {
   const m = restore(st, { rngMode: 'exact' });
   try {
     const ps = m.players.get(playerId);
-    if (L && !applyLayout(ps, L)) return null;
+    if (!replaySteps(ps, steps).ok) return null;
     const o = {};
     for (const [id, b] of Object.entries(ps.bonds || {})) if ((b.layers || 0) > 0) o[id] = b.tier || 0;
     return o;
@@ -144,8 +152,8 @@ const mean = a => a.reduce((x, y) => x + y, 0) / Math.max(1, a.length);
 const se = a => { const mu = mean(a); return a.length > 1 ? Math.sqrt(a.reduce((s, x) => s + (x - mu) ** 2, 0) / (a.length - 1) / a.length) : null; };
 
 /**
- * Lineup check. `evalMany(layouts, opts)` scores a batch of layouts (a worker pool in production, inline in tests) and
- * returns scoreLayout results in order. `recheckMetric` (normal rounds): 'auto' = the whole round when every teammate is
+ * Lineup check. `evalMany(stepLists, opts)` scores a batch of candidate boards, each given as the moves that make it
+ * from the current board (a worker pool in production, inline in tests), and returns scoreSteps results in order. `recheckMetric` (normal rounds): 'auto' = the whole round when every teammate is
  * ready, else the own field; 'own' / 'round' force one (the recorded human games use 'own': their teammates are engine
  * stand-ins). Returns { kind, steps: [...], current, best, gain: { mean, se, n }, recheck, recommend }.
  */
@@ -162,17 +170,18 @@ export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3,
   const current = layoutOf(ps);
   m.dispose();
   const opts = { ...fk, playerId, seeds, tag: 'search' };
-  const tierCache = new Map(), before = layeredTiers(st, null, playerId, tierCache);
-  let [curScore] = await evalMany([current], opts);
+  const steps = [], tierCache = new Map(), before = layeredTiers(st, current, steps, playerId, tierCache);
+  let [curScore] = await evalMany([steps], opts);
   let cur = current, evals = 1;
-  const steps = [];
+  const bare = () => steps.map(({ what, op }) => ({ what, op }));   // what a worker needs to replay the moves
+  const plus = n => [...bare(), { what: n.what, op: n.op }];
   for (let s = 0; s < maxSteps; s++) {
-    const cands = neighbours(ctx, cur).filter(n => keepsLayeredTiers(before, layeredTiers(st, n.L, playerId, tierCache)));
+    const cands = neighbours(ctx, cur).filter(n => keepsLayeredTiers(before, layeredTiers(st, n.L, plus(n), playerId, tierCache)));
     // screen every change on the first `screenSeeds` battle seeds, then score the `refine` best on the rest of `seeds`
-    const screen = await evalMany(cands.map(n => n.L), { ...opts, seeds: Math.min(screenSeeds, seeds) });
+    const screen = await evalMany(cands.map(plus), { ...opts, seeds: Math.min(screenSeeds, seeds) });
     const top = cands.map((n, i) => ({ ...n, score: screen[i] })).filter(x => x.score).sort((a, b) => b.score.value - a.score.value).slice(0, refine);
     if (seeds > screenSeeds) {
-      const more = await evalMany(top.map(x => x.L), { ...opts, seeds: seeds - screenSeeds, seedFrom: screenSeeds });
+      const more = await evalMany(top.map(plus), { ...opts, seeds: seeds - screenSeeds, seedFrom: screenSeeds });
       top.forEach((x, i) => { x.score = more[i] ? merged(x.score, more[i]) : null; });
     }
     evals += cands.length + (seeds > screenSeeds ? top.length : 0);
@@ -188,7 +197,7 @@ export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3,
   let gain = null, recheck = null, metric = null;
   if (steps.length) {
     metric = fk.kind !== 'normal' ? 'own' : recheckMetric === 'auto' ? (othersReady(st, playerId) ? 'round' : 'own') : recheckMetric;
-    const per = await Promise.all(Array.from({ length: recheckSeeds }, (_, k) => evalMany([current, cur], { ...opts, metric, seeds: 1, seedFrom: k, tag: 'recheck' })));
+    const per = await Promise.all(Array.from({ length: recheckSeeds }, (_, k) => evalMany([[], bare()], { ...opts, metric, seeds: 1, seedFrom: k, tag: 'recheck' })));
     const pick = i => ({ samples: per.map(r => r[i].samples[0]), loss: per.map(r => r[i].ownLoss?.[0]), layers: per.map(r => r[i].layerSamples?.[0]),
       teamLoss: per.map(r => r[i].teamLoss) });
     const a = pick(0), b = pick(1);
@@ -202,7 +211,7 @@ export async function checkLineup(st, { playerId = 'p0', evalMany, maxSteps = 3,
     names: Object.fromEntries([...pieces].map(([u, p]) => [u, p.id])) };
 }
 
-// Two scoreLayout results on disjoint seeds of the same tag → one result over all of them.
+// Two scoreSteps results on disjoint seeds of the same tag → one result over all of them.
 function merged(a, b) {
   const n = a.samples.length, k = b.samples.length, w = (x, y) => (x * n + y * k) / (n + k);
   const out = { samples: [...a.samples, ...b.samples] };
@@ -228,7 +237,8 @@ export function describe(res) {
   return `${res.recommend ? '★ 建议' : '（不建议：复核提升不够显著）'}：${res.steps.map(x => x.what).join('，然后 ')}｜复核 ${g.n} 场新随机：${what}`;
 }
 
-// Batch scorers for checkLineup: inline (tests, single-threaded tools) or on the rollout pool (advisor/worker.mjs 'field').
-export const inlineEval = st => async (layouts, opts) => layouts.map(L => scoreLayout(st, L, opts));
-export const poolEval = (pool, stateJSON, stateKey) => (layouts, opts) =>
-  Promise.all(layouts.map(layout => pool.run({ kind: 'field', stateJSON, stateKey, layout, opts })));
+// Batch scorers for checkLineup (a list of step lists → scoreSteps results): inline (tests, single-threaded tools) or on
+// the rollout pool (advisor/worker.mjs 'field').
+export const inlineEval = st => async (stepLists, opts) => stepLists.map(steps => scoreSteps(st, steps, opts));
+export const poolEval = (pool, stateJSON, stateKey) => (stepLists, opts) =>
+  Promise.all(stepLists.map(steps => pool.run({ kind: 'field', stateJSON, stateKey, steps, opts })));

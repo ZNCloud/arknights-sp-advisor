@@ -89,9 +89,11 @@ async function economyTurn(m, ps, seed, pool, decisions) {
 }
 // p0's Ready is held back while its turn runs (guide / terminal action) so the lineup check sees the board it would
 // fight with; the returned release() restores the handler and says whether the turn asked for Ready.
+// (non-enumerable: state capture during the turn must not see it)
 function holdReady(ps) {
   let wanted = false;
-  ps.setReady = function (on) { if (on === true) { wanted = true; return { ok: true }; } return Object.getPrototypeOf(this).setReady.call(this, on); };
+  Object.defineProperty(ps, 'setReady', { configurable: true, writable: true, enumerable: false,
+    value: function (on) { if (on === true) { wanted = true; return { ok: true }; } return Object.getPrototypeOf(this).setReady.call(this, on); } });
   return () => { delete ps.setReady; return wanted; };
 }
 // A terminal action ends the turn; a non-terminal one is applied and the seat is asked again.
