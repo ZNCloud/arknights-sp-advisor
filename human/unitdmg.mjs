@@ -2,8 +2,8 @@
 // board of a boss round: the "why" behind a layout / item change. node sp-advisor/human/unitdmg.mjs <field.json> <posDir> <round> <items:0|1> [seeds]
 import { readFileSync } from 'node:fs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { applyLayout, applyItems } from './fieldeval.mjs';
-import { ownerPairFight } from './battle.mjs';
+import { applyLayout, applyItems } from '../advisor/field.mjs';
+import { ownerPairFight } from '../advisor/battle.mjs';
 const [fieldPath, posDir, roundArg, itemsArg, seedsArg] = process.argv.slice(2);
 const F = JSON.parse(readFileSync(fieldPath, 'utf8')), round = +roundArg, seeds = +(seedsArg || 6);
 const r = F.rows.find(x => x.task.kind === 'layout' && x.round === round && !!x.task.items === (itemsArg === '1'));

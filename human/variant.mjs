@@ -2,7 +2,7 @@
 // (operator names as the engine data spells them; the first match on the board). node variant.mjs <game> <posDir> <round> <seeds> <label=mod;mod> …
 import { readFileSync } from 'node:fs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { ownerPairFight, ownerBossFight } from './battle.mjs';
+import { ownerPairFight, ownerBossFight } from '../advisor/battle.mjs';
 const SOLO = process.env.SP_SOLO === '1';   // teammate-free lens: the owner alone on the solo template
 const [game, posDir, roundArg, seedsArg, ...variants] = process.argv.slice(2);
 const round = +roundArg, seeds = +seedsArg;

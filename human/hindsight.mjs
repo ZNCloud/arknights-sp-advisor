@@ -13,7 +13,7 @@ import { setShop, forceSeat, engineId, diffSeat } from './force.mjs';
 import { deriveTurn, replayTurn, replayLayout } from './ownerturn.mjs';
 import { installShadow, shadowTurn, planOf } from './shadow.mjs';
 import { CANDIDATES } from './candidates.mjs';
-import { ownerBossFight } from './battle.mjs';
+import { ownerBossFight } from '../advisor/battle.mjs';
 const W = await import(new URL('../../engine/server/match/waves.js', import.meta.url));
 
 const games = new Map(), replays = new Map();

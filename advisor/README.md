@@ -12,6 +12,8 @@
 | `advise.mjs` | 两阶段推演：所有候选 N 次（共同随机数），前 3 名再加 N2 次；可选 v2 估胜模型预筛（`modelScorer`）。|
 | `features.mjs` / `model.mjs` / `train.py` / `datagen*.mjs` | 评估器 v2：自对局特征 → LightGBM（胜/效用两模型）→ JSON 树在 JS 里实时推理。|
 | `pool.mjs` / `worker.mjs` | worker_threads 池。|
+| `lineup.mjs` | **站位检查（v3）**：按 Ready 前，对当前棋盘 + 手牌枚举「换下 X 换上 Y / 对调两人 / 挪位 / 转向 / 加人」单步改动，每个改动在引擎里打本回合那一仗（`field.mjs`），贪心最多 3 步，再用新随机复核，显著才建议。|
+| `field.mjs` / `battle.mjs` | 单场战斗打分：普通回合 = 自己场漏怪扣血（本回合敌人 = 准备阶段预告的那一波），BOSS 回合 = 单人打 BOSS 倒计时内打掉自己那份血的比例。站位检查和 `human/` 事后诸葛亮共用这一份。|
 
 ## 用法（目录布局同仓库 README：`<root>/engine` 为引擎、`<root>/sp-advisor` 为本仓；docker node:22，见 `run-node.example.sh`）
 
@@ -24,6 +26,10 @@ node sp-advisor/advisor/cli.mjs advise --state positions/s1004-r10.json --K 8 --
 node sp-advisor/advisor/cli.mjs advise --state positions/s1004-r10.json --model sp-advisor/models --K 4 --N 8 --N2 8
 # 「按建议打」vs guide 对比
 node sp-advisor/eval/advised.mjs --seeds 1001-1010 --K 8 --N 6 --N2 6 --steps 2 --workers 46 --out results/m1.json
+# 站位检查（按 Ready 前）：换人 / 对调 / 挪位 / 转向
+node sp-advisor/advisor/cli.mjs lineup --state positions/game1-r08-end.json --workers 32
+# guide 经济 + 站位检查 vs guide（50 种子）
+node sp-advisor/eval/advised.mjs --seeds 2001-2050 --mode both --steps 0 --lineup 1 --workers 60 --out results/v3-guide-lineup-50.json
 ```
 
 ## 每步要多久（实测，本机 32–46 线程）

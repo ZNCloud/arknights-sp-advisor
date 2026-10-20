@@ -1,10 +1,10 @@
-// Own-field leak score of hand-picked variants of a recorded NORMAL-round battle board (fieldeval.normalScore: the
+// Own-field leak score of hand-picked variants of a recorded NORMAL-round battle board (advisor/field.mjs normalScore: the
 // replay's aligned enemy pick + the engine's 10 most likely picks). Mods: "swap:<benchName>:<boardName>" (the bench
 // operator takes the board operator's tile and facing), "add:<benchName>:<r>,<c>:<DIR>", "move:<name>:<r>,<c>", "dir:<name>:<DIR>".
 // node normvariant.mjs <game> <replay.json> <posDir> <round> <label=mod;mod> …
 import { readFileSync } from 'node:fs';
 import { fromJSON } from '../advisor/state.mjs';
-import { normalScore, priorFor } from './fieldeval.mjs';
+import { normalScore, priorFor } from '../advisor/field.mjs';
 const [game, replayPath, posDir, roundArg, ...variants] = process.argv.slice(2);
 const round = +roundArg, rep = JSON.parse(readFileSync(replayPath, 'utf8'));
 const st = fromJSON(readFileSync(`${posDir}/${game}-r${String(round).padStart(2, '0')}-end.json`, 'utf8'));

@@ -11,11 +11,10 @@
 | `force.mjs` | 把引擎里一个座位强制成记录快照（商店 / 手牌 / 棋盘站位朝向 / 装备 / 金币 / 血量 / 等级 / 盟约层数，卡池份数照实归还和取出）；盟约人数和记录不一样的地方用引擎自带的人数补正对齐并返回；`diffSeat` 逐项比对。`STAND_INS`：客户端有、引擎没有的干员的替身。 |
 | `ownerturn.mjs` | 比较两张快照推出 owner 这回合的净操作（升级 / 开局商店买入 / 卖出 / 非开局商店得到 / 装备 / 站位），并用引擎接口（`levelUp / buy / sell / equip / move`）重放，引擎拒绝的照录。 |
 | `replay.mjs` | 复现主程序：开局对齐（地图由站位合法性反推、禁用盟约只取记录里没出现过的、BOSS / band 按记录），每回合强制开局 → 重放 → 比对 → 强制战斗棋盘 → 在引擎这一回合的敌人分布里找与记录结算血量一致的那一波。可选把每回合存档写盘（`advisor/state.mjs` 格式）。 |
-| `battle.mjs` | owner 单人打 BOSS（引擎单人模板，看「倒计时内打掉自己那一份血池的比例」），与队友无关。 |
 | `shadow.mjs` | 「owner 影子打法」：后续回合尽量照 owner 记录里的目标（等级 / 阵容 / 装备 / 站位）去打，牌不够时用引擎 AI 的启发式补位。A 口径的续打策略。 |
-| `candidates.mjs` | 一个准备回合的整回合替代打法：owner 实际 / 照计划重抽刷新 / 剩钱全升级 / 剩钱全刷新 / AI 选人摆位 / AI 分新装备 / AI 托管 / 顾问 guide / 顾问建议一步。 |
+| `candidates.mjs` | 一个准备回合的整回合替代打法：owner 实际 / 照计划重抽刷新 / 剩钱全升级 / 剩钱全刷新 / AI 选人摆位 / AI 分新装备 / AI 托管 / 顾问 guide / 旧顾问建议一步 / owner 实际 + 新顾问站位检查（`lineup`）/ 新顾问 v3 经济门槛（`advisor_v3`）。 |
 | `hindsight.mjs` + `hind-run.mjs` + `hind-worker.mjs` | 经济路线推演：从某回合开局存档出发换一种打法，之后续打到 R14，量 owner 自己的掉血、R14 / R15 单人份额；共同随机数配对。 |
-| `fieldeval.mjs` + `fieldsearch.mjs` + `field-run.mjs` + `field-worker.mjs` | 单场战斗事后最优：同一批牌的上场阵容 / 站位 / 朝向爬山搜索（普通回合最小化漏怪，BOSS 回合最大化单人份额，可选重分装备），以及「这件装备当初给另一个人」对之后每一仗的影响。 |
+| `fieldsearch.mjs` + `field-run.mjs` + `field-worker.mjs`（打分在 `advisor/field.mjs`，单人打 BOSS 在 `advisor/battle.mjs`，顾问的站位检查用同一份） | 单场战斗事后最优：同一批牌的上场阵容 / 站位 / 朝向爬山搜索（普通回合最小化漏怪，BOSS 回合最大化单人份额，可选重分装备），以及「这件装备当初给另一个人」对之后每一仗的影响。 |
 | `pairverify.mjs` / `variant.mjs` / `normvariant.mjs` / `itempair.mjs` / `unitdmg.mjs` | 复核：搜索出的 BOSS 回合最优棋盘在双人场（搭档 = owner 同一块棋盘镜像）多种子重打；手写单步改动（换人 / 挪位 / 转向 / 装备换人）的打分；逐个干员伤害拆分。 |
 | `accept.mjs` + `accept-set.json` | 验收集：重建两局 60 个存档，断言普通回合结算血量全对、存档 sha256 与清单一致（`--write` 重写清单）。 |
 | `replay_md.py`、`report/` | 把复现 / 推演 / 搜索结果渲染成 `docs/human/` 里的表。 |

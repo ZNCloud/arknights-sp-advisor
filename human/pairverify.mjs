@@ -1,10 +1,10 @@
-// Re-score the owner's board and the searched best boards of the boss rounds on the PAIR field (battle.mjs
+// Re-score the owner's board and the searched best boards of the boss rounds on the PAIR field (advisor/battle.mjs
 // ownerPairFight; partner = the same board) with many seeds: guards against a layout that only exploits the solo template.
 // node sp-advisor/human/pairverify.mjs <field.json> <positionsDir> <out.json> [seeds]
 import { readFileSync, writeFileSync } from 'node:fs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { applyLayout, applyItems } from './fieldeval.mjs';
-import { ownerPairFight } from './battle.mjs';
+import { applyLayout, applyItems } from '../advisor/field.mjs';
+import { ownerPairFight } from '../advisor/battle.mjs';
 const [fieldPath, posDir, outPath, seedsArg] = process.argv.slice(2);
 const F = JSON.parse(readFileSync(fieldPath, 'utf8')), seeds = +(seedsArg || 12);
 const HIDDEN = { boss_8: 50, boss_9: 40, boss_10: 40 };

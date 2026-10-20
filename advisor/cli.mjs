@@ -1,6 +1,8 @@
 // Usage:
 //   node sp-advisor/advisor/cli.mjs save --seed 1004 --round 10 --out positions/s1004-r10.json [--guide guides/g06_final.json]
 //   node sp-advisor/advisor/cli.mjs advise --state positions/s1004-r10.json [--player p0] [--K 8 --N 8 --N2 8 --workers 24] [--model sp-advisor/models]
+//   node sp-advisor/advisor/cli.mjs lineup --state positions/game1-r08-end.json [--player p0] [--workers 24] [--steps 3]
+//        (lineup check just before Ready: 换人 / 对调 / 挪位 / 转向 on the seat's current board + hand)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { makeMatch, runToEnd } from '../eval/engine.mjs';
@@ -8,6 +10,7 @@ import { installGuide } from '../guides/policy.mjs';
 import { capture, toJSON, fromJSON } from './state.mjs';
 import { advise, modelScorer } from './advise.mjs';
 import { RolloutPool } from './pool.mjs';
+import { checkLineup, poolEval } from './lineup.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2), opt = {};
 for (let i = 0; i < rest.length; i++) { if (!rest[i].startsWith('--')) throw Error(`Expected --flag, got ${rest[i]}`); opt[rest[i].slice(2)] = rest[++i]; }
@@ -37,5 +40,18 @@ if (cmd === 'save') {
   for (const c of res.candidates) console.log(`${c === res.recommendation ? '★' : ' '} ${c.label.padEnd(28)} win ${(c.winRate * 100).toFixed(0)}% [${c.winCI95.map(x => (x * 100).toFixed(0)).join('-')}] U=${c.utility.toFixed(3)}±${(c.utilitySE ?? 0).toFixed(3)} R14伤${(c.r14Dmg * 100).toFixed(0)}% 活到R14 ${(c.reachR14 * 100).toFixed(0)}% n=${c.n}${c.vsGuide ? ` vsGuide ${c.vsGuide.mean >= 0 ? '+' : ''}${c.vsGuide.mean.toFixed(3)}±${(c.vsGuide.se ?? 0).toFixed(3)}` : ''}${c.guideFirst ? ' (guide首选)' : ''}`);
   if (res.modelTable) { console.log(`value model, all ${res.modelTable.length} legal actions (top 12):`); for (const r of res.modelTable.slice(0, 12)) console.log(`   ${r.label.padEnd(28)} modelU=${r.modelUtil.toFixed(3)} modelWin=${(r.modelWin * 100).toFixed(1)}%`); }
   if (res.illegal.length) console.log('illegal (engine refused):', JSON.stringify(res.illegal));
+  if (opt.out) writeFileSync(opt.out, JSON.stringify(res, null, 1));
+} else if (cmd === 'lineup') {
+  const json = readFileSync(opt.state, 'utf8'), state = fromJSON(json);
+  const pool = new RolloutPool(Number(opt.workers || 24));
+  const res = await checkLineup(state, { playerId: opt.player || 'p0', evalMany: poolEval(pool, json, opt.state), maxSteps: Number(opt.steps || 3) });
+  await pool.close();
+  const val = s => res.kind === 'normal' ? `本回合自己场预计扣血 ${s.loss.toFixed(2)}` : `倒计时内打掉自己那份 BOSS 血的 ${(s.share * 100).toFixed(0)}%`;
+  console.log(`round ${res.round} (${res.kind}) seat ${opt.player || 'p0'}: ${res.evals} boards fought, ${(res.ms / 1000).toFixed(1)} s`);
+  if (!res.steps.length) console.log('站位：没找到更好的，照现在的上场。');
+  else {
+    console.log(`${res.recommend ? '★ 建议' : '（不建议，提升不显著）'}：${res.steps.map(s => s.what).join('，然后 ')}`);
+    console.log(`  复核（${res.gain.n} 场新随机）：${val(res.recheck.current)} → ${val(res.recheck.best)}，提升 ${res.gain.mean.toFixed(3)}±${(res.gain.se ?? 0).toFixed(3)}`);
+  }
   if (opt.out) writeFileSync(opt.out, JSON.stringify(res, null, 1));
 } else if (cmd) throw Error(`unknown command ${cmd}`);

@@ -14,7 +14,8 @@ import { capture, restore } from '../advisor/state.mjs';
 import { loadSegment, roundsOf, bondsOf, GAMES } from './record.mjs';
 import { forceSeat, diffSeat, engineId, STAND_INS } from './force.mjs';
 import { deriveTurn, replayTurn, replayLayout } from './ownerturn.mjs';
-import { ownerBossFight } from './battle.mjs';
+import { ownerBossFight } from '../advisor/battle.mjs';
+import { pickPrior } from '../advisor/field.mjs';
 
 const W = await import(new URL('../../engine/server/match/waves.js', import.meta.url));
 const { SharedPool } = await import(new URL('../../engine/server/match/pool.js', import.meta.url));
@@ -71,19 +72,6 @@ export function alignedMatch(game, { seed = 1, players = 4 } = {}) {
   return m;
 }
 
-// The engine's prior over round r's enemy pick: N setups → distinct picks with their frequency.
-export function pickPrior(gd, r, n = 400) {
-  const byKey = new Map();
-  for (let k = 1; k <= n; k++) {
-    const setup = W.setupMatchWaves(gd, createRng(deriveSeed(k, 'prior-setup')));
-    const p = setup.picks[r];
-    if (!p) continue;
-    const key = JSON.stringify([p.type, p.key, p.normal, p.elite]);
-    const e = byKey.get(key) || { key, pick: p, factions: setup.factions, n: 0 };
-    e.n++; byKey.set(key, e);
-  }
-  return [...byKey.values()].sort((a, b) => b.n - a.n).map(e => ({ ...e, w: e.n / n }));
-}
 
 function waveFor(m, cand) {
   return W.buildNormalWave(m.gd, createRng(1), cand.factions, m.round);

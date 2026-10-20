@@ -2,7 +2,7 @@
 // carrier `fromId` to the operator of base `toBase`. node sp-advisor/human/itempair.mjs <game> <posDir> <round> <itemId> <fromId> <toBase> [seeds]
 import { readFileSync } from 'node:fs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { ownerPairFight } from './battle.mjs';
+import { ownerPairFight } from '../advisor/battle.mjs';
 const [game, posDir, roundArg, itemId, fromId, toBase, seedsArg] = process.argv.slice(2);
 const round = +roundArg, seeds = +(seedsArg || 12);
 const st = fromJSON(readFileSync(`${posDir}/${game}-r${String(round).padStart(2, '0')}-end.json`, 'utf8'));

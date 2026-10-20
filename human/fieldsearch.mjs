@@ -1,8 +1,8 @@
-// Layout / lineup hill-climb and equipment re-targeting on recorded battle boards (see fieldeval.mjs for the scores).
+// Layout / lineup hill-climb and equipment re-targeting on recorded battle boards (see advisor/field.mjs for the scores).
 import { readFileSync } from 'node:fs';
 import { createRng, arrange } from '../eval/engine.mjs';
 import { restore, fromJSON } from '../advisor/state.mjs';
-import { layoutOf, applyLayout, applyItems, itemsOf, legalTiles, normalScore, bossScore, priorFor } from './fieldeval.mjs';
+import { layoutOf, applyLayout, applyItems, itemsOf, legalTiles, normalScore, bossScore, priorFor } from '../advisor/field.mjs';
 
 const DIRS = ['RIGHT', 'UP', 'DOWN', 'LEFT'];
 const posOf = (posDir, game, round) => fromJSON(readFileSync(`${posDir}/${game}-r${String(round).padStart(2, '0')}-end.json`, 'utf8'));

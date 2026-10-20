@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fromJSON } from './state.mjs';
 import { runRollout } from './rollout.mjs';
 import { loadTrees, scoreAction } from './model.mjs';
+import { scoreLayout } from './lineup.mjs';
 let cacheKey = null, cacheState = null, models = null, modelKey = null;
 parentPort.on('message', async (task) => {
   try {
@@ -12,6 +13,7 @@ parentPort.on('message', async (task) => {
       if (modelKey !== task.modelDir) { const meta = existsSync(`${task.modelDir}/meta.json`) ? JSON.parse(readFileSync(`${task.modelDir}/meta.json`, 'utf8')) : {};
         models = { win: loadTrees(`${task.modelDir}/value-win.json`), util: loadTrees(`${task.modelDir}/value-util.json`), featureSet: meta.featureSet || 'x' }; modelKey = task.modelDir; }
       parentPort.postMessage({ result: await scoreAction(cacheState, { ...task, models }) });
-    } else parentPort.postMessage({ result: runRollout(cacheState, task) });
+    } else if (task.kind === 'field') parentPort.postMessage({ result: scoreLayout(cacheState, task.layout, task.opts) });
+    else parentPort.postMessage({ result: runRollout(cacheState, task) });
   } catch (e) { parentPort.postMessage({ error: e.stack || String(e) }); }
 });

@@ -7,6 +7,7 @@ import { forceSeat } from './force.mjs';
 import { deriveTurn } from './ownerturn.mjs';
 import { shadowTurn, layout, planOf } from './shadow.mjs';
 import { applyAction, TERMINAL } from '../advisor/actions.mjs';
+import { applySteps } from '../advisor/lineup.mjs';
 
 const freeHand = ps => ps.hand.findIndex(x => !x);
 // same convention as eval/advised.mjs: the guide spec lives in the working directory (guides/g06_final.json)
@@ -49,6 +50,23 @@ let adviceRows = null;
 const adviceOf = (game, round) => {
   adviceRows ||= JSON.parse(readFileSync(process.env.SP_ADVICE || 'results/advice.json', 'utf8')).rows;
   return adviceRows.find(r => r.game === game && r.round === round)?.advisor?.action || null;
+};
+// lineup check results of eval/human-lineup.mjs (recommended steps only)
+let lineupRows = null;
+const lineupOf = (game, round) => {
+  lineupRows ||= JSON.parse(readFileSync(process.env.SP_LINEUP || 'results/lineup-human.json', 'utf8')).rows;
+  const r = lineupRows.find(x => x.game === game && x.round === round);
+  if (!r) throw Error(`no lineup check for ${game} R${round}`);
+  return r.recommend ? r.steps : [];
+};
+// v3 economy gate: the advisor's action is shown only when its paired advantage over the guide continuation clears
+// z = 2 standard errors; otherwise the advice is "keep your own plan"
+const V3_Z = 2;
+const gatedAdvice = (game, round) => {
+  adviceRows ||= JSON.parse(readFileSync(process.env.SP_ADVICE || 'results/advice.json', 'utf8')).rows;
+  const a = adviceRows.find(r => r.game === game && r.round === round)?.advisor;
+  const v = a?.vsGuide;
+  return a && v?.se > 0 && v.mean > V3_Z * v.se && !['guide', 'end'].includes(a.action.type) ? a.action : null;
 };
 const installGuideState = (m) => { if (!m.guideSpec) { const g = loadGuide(); m.guideSpec = g; m.guideActions = []; m.guideTrace = []; m.guideDecisionMs = []; m.guideTeam = assign(m, g); } };
 
@@ -97,6 +115,20 @@ export const CANDIDATES = {
     if (!r?.ok) throw Error(`advisor action refused: ${a.label} ${JSON.stringify(r)}`);
     if (a.type !== 'end' && !TERMINAL.has(a.type)) guidePrep(m, ps); 
     if (!ps.ready) ready(ps);
+  } },
+  // the owner's battle board with the advisor's lineup check applied before Ready (advisor/lineup.mjs; the steps were
+  // found on positions/<game>-rXX-end.json under the round's aligned wave, eval/human-lineup.mjs)
+  lineup: { label: 'owner 实际 + 顾问站位检查', apply(m, ps, R, ctx) {
+    forceSeat(m, ps, R.end, { shop: false, funds: false, lp: false }); ps.funds = 0;
+    applySteps(ps, lineupOf(ctx.game, ctx.round));
+    ready(ps);
+  } },
+  // v3 economy advice as a change to the owner's own plan: the gated action first, then the owner-shadow plays the rest
+  // of the prep (no gated action → exactly `shadow`)
+  advisor_v3: { label: '顾问 v3：过门槛的那一步 + owner 自己的计划', apply(m, ps, R, ctx) {
+    const a = gatedAdvice(ctx.game, ctx.round);
+    if (a) { const r = applyAction(m, ps, a); if (!r?.ok) throw Error(`advisor action refused: ${a.label} ${JSON.stringify(r)}`); }
+    shadowTurn(m, ps, ctx.plan); ready(ps);
   } },
   // the advisor's current baseline policy (guide g06) plays this prep
   guide: { label: '顾问 guide g06 打这一回合', apply(m, ps) {

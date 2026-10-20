@@ -1,6 +1,8 @@
 // Head-to-head: seat p0 plays by the advisor, all other seats (and the baseline p0) play the guide.
 // Usage: node sp-advisor/eval/advised.mjs --seeds 1001-1010 --guide guides/g06_final.json --out results/m1.json
-//        [--K 8 --N 6 --N2 6 --steps 2 --workers 46 --mode advised|baseline|both --z 1]
+//        [--K 8 --N 6 --N2 6 --steps 2 --workers 46 --mode advised|baseline|both --z 1] [--lineup 1]
+//   --lineup 1: before p0 presses Ready, the lineup check (advisor/lineup.mjs) runs on its final board and its steps are
+//   played when recommended. `--steps 0 --lineup 1` = guide economy + lineup check.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { makeMatch, runToEnd, errorsOf } from './engine.mjs';
@@ -10,12 +12,14 @@ import { advise, modelScorer } from '../advisor/advise.mjs';
 import { RolloutPool } from '../advisor/pool.mjs';
 import { traceBattles, outcomeOf, finishTurn } from '../advisor/rollout.mjs';
 import { applyAction } from '../advisor/actions.mjs';
+import { checkLineup, poolEval, applySteps } from '../advisor/lineup.mjs';
+import { toJSON } from '../advisor/state.mjs';
 
 const args = process.argv.slice(2), opt = {};
 for (let i = 0; i < args.length; i++) { if (!args[i].startsWith('--')) throw Error('Expected --flag'); opt[args[i].slice(2)] = args[++i]; }
 const seeds = (opt.seeds || '1001-1010').split(',').flatMap(r => { const [a, b] = r.split('-').map(Number); return b ? Array.from({ length: b - a + 1 }, (_, i) => a + i) : [a]; });
 const spec = JSON.parse(readFileSync(opt.guide || 'guides/g06_final.json', 'utf8'));
-const cfg = { K: +(opt.K || 8), N: +(opt.N ?? 6), N2: +(opt.N2 || 6), steps: +(opt.steps || 2), z: +(opt.z ?? 1), fromRound: +(opt.fromRound || 1), margin: +(opt.margin ?? .05) }; // model-only deviation margin (0.05: 50-seed test kept wins, 0.01 lost them)
+const cfg = { K: +(opt.K || 8), N: +(opt.N ?? 6), N2: +(opt.N2 || 6), steps: +(opt.steps ?? 2), z: +(opt.z ?? 1), fromRound: +(opt.fromRound || 1), margin: +(opt.margin ?? .05), lineup: opt.lineup === '1' }; // model-only deviation margin (0.05: 50-seed test kept wins, 0.01 lost them)
 const mode = opt.mode || 'both';
 const modelDir = opt.model || null; // v2: value-model pre-filter, rollouts only for its top K
 
@@ -45,23 +49,46 @@ async function advised(seed, pool) {
     m.sched.runUntil(() => m._awaitAdvice || m.phase === 'RESULT', { maxSteps: 5e6 });
     if (m.phase === 'RESULT') break;
     const ps = m._awaitAdvice; m._awaitAdvice = null;
-    let done = false;
-    if (m.round >= cfg.fromRound) for (let step = 0; step < cfg.steps && !done; step++) {
-      const res = await advise(capture(m), { playerId: 'p0', spec, pool, K: cfg.K, N: cfg.N, N2: cfg.N2, seed: seed * 100 + m.round * 7 + step,
-        scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null, allowStale: opt.allowStale === '1' });
-      const pick = choose(res, cfg.z, cfg.margin);
-      decisions.push({ round: m.round, step, deviated: pick.deviated, label: pick.deviated ? pick.action.label : '按guide', best: res.recommendation.label,
-        bestVsGuide: res.recommendation.vsGuide, bestModelU: res.recommendation.modelUtil, guideModelU: res.candidates.find(c => c.action.type === 'guide')?.modelUtil, ms: Math.round(res.ms), rollouts: res.rollouts, engineErrorRollouts: res.engineErrorRollouts || 0, top: res.candidates.slice(0, 4).map(c => [c.label, c.utility != null ? +c.utility.toFixed(3) : null, c.winRate ?? null, c.modelUtil != null ? +c.modelUtil.toFixed(3) : null]) });
-      if (!pick.deviated) break;
-      const f = finishTurnOrApply(m, ps, pick.action);
-      if (f === 'done') done = true;
+    const release = cfg.lineup ? holdReady(ps) : null;
+    let asked = true;
+    try { await economyTurn(m, ps, seed, pool, decisions); } finally { if (release) asked = release(); }
+    if (!asked) throw Error(`seed ${seed} R${m.round}: p0's turn never asked for Ready`);
+    if (cfg.lineup) {
+      const st = capture(m), res = await checkLineup(st, { playerId: 'p0', evalMany: poolEval(pool, toJSON(st), `${seed}:${m.round}:lineup`) });
+      if (res.recommend) applySteps(ps, res.steps, res.best);
+      decisions.push({ round: m.round, lineup: true, deviated: res.recommend, label: res.steps.map(x => x.what).join(' + ') || '站位不动', kind: res.kind,
+        gain: res.gain, evals: res.evals, ms: res.ms });
+      ps.resolveTemp();
+      const rd = ps.setReady(true);
+      if (!rd.ok) throw Error(`seed ${seed} R${m.round}: ready refused after the lineup check ${JSON.stringify(rd)}`);
     }
-    if (!done && !ps.ready) { const f = finishTurn(m, ps, { type: 'guide' }); if (!f.ok) throw Error(`seed ${seed}: guide turn failed ${JSON.stringify(f.reply)}`); }
     if (!ps.ready) throw Error(`seed ${seed} R${m.round}: p0 not ready after its turn`);
     m.maybeEndPrep();
   }
   const s = m.lastResultMsg, o = { ...outcomeOf(m, s, battles), engineErrors: errorsOf(m) }; m.dispose();
   return { ...o, decisions };
+}
+// p0's buy / sell / level part of the turn: up to cfg.steps advised actions, then the guide finishes the turn.
+async function economyTurn(m, ps, seed, pool, decisions) {
+  let done = false;
+  if (m.round >= cfg.fromRound) for (let step = 0; step < cfg.steps && !done; step++) {
+    const res = await advise(capture(m), { playerId: 'p0', spec, pool, K: cfg.K, N: cfg.N, N2: cfg.N2, seed: seed * 100 + m.round * 7 + step,
+      scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null, allowStale: opt.allowStale === '1' });
+    const pick = choose(res, cfg.z, cfg.margin);
+    decisions.push({ round: m.round, step, deviated: pick.deviated, label: pick.deviated ? pick.action.label : '按guide', best: res.recommendation.label,
+      bestVsGuide: res.recommendation.vsGuide, bestModelU: res.recommendation.modelUtil, guideModelU: res.candidates.find(c => c.action.type === 'guide')?.modelUtil, ms: Math.round(res.ms), rollouts: res.rollouts, engineErrorRollouts: res.engineErrorRollouts || 0, top: res.candidates.slice(0, 4).map(c => [c.label, c.utility != null ? +c.utility.toFixed(3) : null, c.winRate ?? null, c.modelUtil != null ? +c.modelUtil.toFixed(3) : null]) });
+    if (!pick.deviated) break;
+    const f = finishTurnOrApply(m, ps, pick.action);
+    if (f === 'done') done = true;
+  }
+  if (!done && !ps.ready) { const f = finishTurn(m, ps, { type: 'guide' }); if (!f.ok) throw Error(`seed ${seed}: guide turn failed ${JSON.stringify(f.reply)}`); }
+}
+// p0's Ready is held back while its turn runs (guide / terminal action) so the lineup check sees the board it would
+// fight with; the returned release() restores the handler and says whether the turn asked for Ready.
+function holdReady(ps) {
+  let wanted = false;
+  ps.setReady = function (on) { if (on === true) { wanted = true; return { ok: true }; } return Object.getPrototypeOf(this).setReady.call(this, on); };
+  return () => { delete ps.setReady; return wanted; };
 }
 // A terminal action ends the turn; a non-terminal one is applied and the seat is asked again.
 function finishTurnOrApply(m, ps, action) {
