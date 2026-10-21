@@ -22,6 +22,7 @@ const spec = JSON.parse(readFileSync(opt.guide || 'guides/g06_final.json', 'utf8
 const cfg = { K: +(opt.K || 8), N: +(opt.N ?? 6), N2: +(opt.N2 || 6), steps: +(opt.steps ?? 2), z: +(opt.z ?? 1), fromRound: +(opt.fromRound || 1), margin: +(opt.margin ?? .05), lineup: opt.lineup === '1' }; // model-only deviation margin (0.05: 50-seed test kept wins, 0.01 lost them)
 const mode = opt.mode || 'both';
 const modelDir = opt.model || null; // v2: value-model pre-filter, rollouts only for its top K
+const team = opt.team ? { profile: JSON.parse(readFileSync(opt.team, 'utf8')) } : null; // advisor/team.mjs team view (+ learned profile)
 
 function baseline(seed) {
   const m = makeMatch(seed, 4); installGuide(m, spec); const battles = traceBattles(m);
@@ -77,7 +78,7 @@ async function economyTurn(m, ps, seed, pool, decisions) {
   let done = false;
   if (m.round >= cfg.fromRound) for (let step = 0; step < cfg.steps && !done; step++) {
     const res = await advise(capture(m), { playerId: 'p0', spec, pool, K: cfg.K, N: cfg.N, N2: cfg.N2, seed: seed * 100 + m.round * 7 + step,
-      scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null, allowStale: opt.allowStale === '1' });
+      scorer: modelDir ? modelScorer({ pool, spec, modelDir }) : null, allowStale: opt.allowStale === '1', team });
     const pick = choose(res, cfg.z, cfg.margin);
     decisions.push({ round: m.round, step, deviated: pick.deviated, label: pick.deviated ? pick.action.label : '按guide', best: res.recommendation.label,
       bestVsGuide: res.recommendation.vsGuide, bestModelU: res.recommendation.modelUtil, guideModelU: res.candidates.find(c => c.action.type === 'guide')?.modelUtil, ms: Math.round(res.ms), rollouts: res.rollouts, engineErrorRollouts: res.engineErrorRollouts || 0, top: res.candidates.slice(0, 4).map(c => [c.label, c.utility != null ? +c.utility.toFixed(3) : null, c.winRate ?? null, c.modelUtil != null ? +c.modelUtil.toFixed(3) : null]) });
@@ -118,6 +119,6 @@ const rows = await Promise.all(seeds.map(async seed => {
 if (pool) await pool.close();
 const agg = k => { const xs = rows.map(r => r[k]).filter(Boolean); if (!xs.length) return null; const n = xs.length, m = f => xs.reduce((s, x) => s + f(x), 0) / n;
   return { n, winRate: m(x => x.win ? 1 : 0), hiddenRate: m(x => x.hidden ? 1 : 0), reachR14: m(x => x.lastRound >= 14 ? 1 : 0), meanR14Dmg: m(x => x.r14Dmg), meanLastRound: m(x => x.lastRound), meanUtility: m(x => x.utility) }; };
-const summary = { config: cfg, model: modelDir, modelStatus: modelDir ? (await import('../advisor/meta.mjs')).modelStatus(modelDir).reason : null, allowStale: opt.allowStale === '1', guide: spec.id, seeds, baseline: agg('baseline'), advised: agg('advised'), wallSec: (Date.now() - t0) / 1000 };
+const summary = { config: cfg, model: modelDir, modelStatus: modelDir ? (await import('../advisor/meta.mjs')).modelStatus(modelDir).reason : null, allowStale: opt.allowStale === '1', team: opt.team || null, guide: spec.id, seeds, baseline: agg('baseline'), advised: agg('advised'), wallSec: (Date.now() - t0) / 1000 };
 console.log(JSON.stringify(summary, null, 1));
 if (opt.out) { mkdirSync(dirname(opt.out), { recursive: true }); writeFileSync(opt.out, JSON.stringify({ summary, rows }, null, 1)); }
