@@ -1,0 +1,219 @@
+{
+ "ref": "owner_blind",
+ "control": "blind",
+ "arms": {
+  "owner_blind": "results/evalmix800-owner_blind.jsonl",
+  "blind": "results/evalmix800-blind.jsonl",
+  "teamview": "results/evalmix800-teamview.jsonl",
+  "learned": "results/evalmix800-learned.jsonl"
+ },
+ "profile": "sp-advisor/models/team-profile.json",
+ "seeds": [
+  3001,
+  3800
+ ],
+ "summary": {
+  "owner_blind": {
+   "n": 800,
+   "wins": 22,
+   "reachR14": 150,
+   "meanLastRound": 11.123,
+   "meanU": 0.4344,
+   "p0O": 0.3836,
+   "collisions": 471,
+   "vsRef": null
+  },
+  "blind": {
+   "n": 800,
+   "wins": 33,
+   "reachR14": 152,
+   "meanLastRound": 11.081,
+   "meanU": 0.4364,
+   "p0O": 0.3866,
+   "collisions": 471,
+   "vsRef": {
+    "dU": 0.002,
+    "seU": 0.0035,
+    "dP0O": 0.0029,
+    "seP0O": 0.0035,
+    "winsGained": 17,
+    "winsLost": 6,
+    "mcnemarP": 0.0347,
+    "better": 115,
+    "worse": 115
+   }
+  },
+  "teamview": {
+   "n": 800,
+   "wins": 31,
+   "reachR14": 150,
+   "meanLastRound": 11.2,
+   "meanU": 0.4402,
+   "p0O": 0.3821,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0058,
+    "seU": 0.0057,
+    "dP0O": -0.0015,
+    "seP0O": 0.0049,
+    "winsGained": 22,
+    "winsLost": 13,
+    "mcnemarP": 0.1755,
+    "better": 264,
+    "worse": 225
+   }
+  },
+  "learned": {
+   "n": 800,
+   "wins": 41,
+   "reachR14": 172,
+   "meanLastRound": 11.354,
+   "meanU": 0.4572,
+   "p0O": 0.3923,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0228,
+    "seU": 0.0063,
+    "dP0O": 0.0087,
+    "seP0O": 0.0055,
+    "winsGained": 32,
+    "winsLost": 13,
+    "mcnemarP": 0.0066,
+    "better": 311,
+    "worse": 218
+   }
+  }
+ },
+ "subsetMateBetter": {
+  "n": 401,
+  "of": 800,
+  "arms": {
+   "owner_blind": {
+    "vsControl": null,
+    "tempoDistToBetterMate": 0.1321,
+    "seDist": 0.0057,
+    "wins": 16,
+    "meanU": 0.4657,
+    "p0O": 0.3543,
+    "vsRef": null
+   },
+   "blind": {
+    "vsControl": null,
+    "tempoDistToBetterMate": 0.1548,
+    "seDist": 0.0061,
+    "wins": 20,
+    "meanU": 0.4619,
+    "p0O": 0.3621,
+    "vsRef": {
+     "dU": -0.0039,
+     "seU": 0.0048,
+     "dP0O": 0.0078,
+     "seP0O": 0.0039
+    }
+   },
+   "teamview": {
+    "vsControl": {
+     "dU": -0.0045,
+     "seU": 0.0073,
+     "dP0O": 0.0148,
+     "seP0O": 0.0056
+    },
+    "tempoDistToBetterMate": 0.1489,
+    "seDist": 0.0061,
+    "wins": 19,
+    "meanU": 0.4574,
+    "p0O": 0.3768,
+    "vsRef": {
+     "dU": -0.0083,
+     "seU": 0.0081,
+     "dP0O": 0.0225,
+     "seP0O": 0.0055
+    }
+   },
+   "learned": {
+    "vsControl": {
+     "dU": 0.0186,
+     "seU": 0.0095,
+     "dP0O": 0.0255,
+     "seP0O": 0.0068
+    },
+    "tempoDistToBetterMate": 0.1864,
+    "seDist": 0.0067,
+    "wins": 26,
+    "meanU": 0.4805,
+    "p0O": 0.3876,
+    "vsRef": {
+     "dU": 0.0148,
+     "seU": 0.0092,
+     "dP0O": 0.0333,
+     "seP0O": 0.0065
+    }
+   }
+  },
+  "byBetterMate": {
+   "slow": {
+    "n": 72,
+    "tempoDist": {
+     "owner_blind": 0.237,
+     "blind": 0.235,
+     "teamview": 0.226,
+     "learned": 0.132
+    }
+   },
+   "early": {
+    "n": 61,
+    "tempoDist": {
+     "owner_blind": 0.107,
+     "blind": 0.108,
+     "teamview": 0.107,
+     "learned": 0.162
+    }
+   },
+   "late6": {
+    "n": 61,
+    "tempoDist": {
+     "owner_blind": 0.125,
+     "blind": 0.167,
+     "teamview": 0.146,
+     "learned": 0.218
+    }
+   },
+   "owner": {
+    "n": 60,
+    "tempoDist": {
+     "owner_blind": 0.063,
+     "blind": 0.124,
+     "teamview": 0.115,
+     "learned": 0.184
+    }
+   },
+   "g06": {
+    "n": 57,
+    "tempoDist": {
+     "owner_blind": 0.106,
+     "blind": 0.123,
+     "teamview": 0.128,
+     "learned": 0.167
+    }
+   },
+   "fast6": {
+    "n": 54,
+    "tempoDist": {
+     "owner_blind": 0.114,
+     "blind": 0.153,
+     "teamview": 0.149,
+     "learned": 0.238
+    }
+   },
+   "sloppy": {
+    "n": 36,
+    "tempoDist": {
+     "owner_blind": 0.161,
+     "blind": 0.156,
+     "teamview": 0.161,
+     "learned": 0.24
+    }
+   }
+  }
+ }
+}

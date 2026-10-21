@@ -2,7 +2,7 @@ import { parentPort } from 'node:worker_threads';
 import { makeMatch, runToEnd, errorsOf, createRng, deriveSeed } from '../eval/engine.mjs';
 import { installGuide, guidePrep } from '../guides/policy.mjs';
 import { traceBattles, outcomeOf } from './rollout.mjs';
-import { listActions, applyAction } from './actions.mjs';
+import { randomEconomy } from './actions.mjs';
 import { seatFeatures } from './features.mjs';
 import { tableFeatures } from './features-table.mjs';
 const r3 = v => v.map(x => Math.round(x * 1000) / 1000);
@@ -24,12 +24,7 @@ function play({ seed, spec, policy }) {
         ps.buy(slot);
       }
       if (policy.eps && rng() < policy.eps) {
-        const k = 1 + rng.int(3);
-        for (let i = 0; i < k; i++) {
-          const acts = listActions(this, ps).filter(a => !['guide', 'end', 'move', 'bench', 'rotate'].includes(a.type));
-          if (!acts.length) break;
-          applyAction(this, ps, rng.pick(acts)); // engine refusals are legal no-ops here (random exploration)
-        }
+        randomEconomy(this, ps, rng);
         if (rng() < .3) { ps.resolveTemp(); if (ps.setReady(true).ok) return; }
       }
       guidePrep(this, ps);

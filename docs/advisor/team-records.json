@@ -1,0 +1,158 @@
+[
+ {
+  "file": "2026-10-18.jsonl",
+  "index": 0,
+  "rows": 64,
+  "lastRound": 14,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ },
+ {
+  "file": "2026-10-18.jsonl",
+  "index": 1,
+  "rows": 74,
+  "lastRound": 15,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ },
+ {
+  "file": "2026-10-19.jsonl",
+  "index": 0,
+  "rows": 69,
+  "lastRound": 15,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ },
+ {
+  "file": "2026-10-19.jsonl",
+  "index": 1,
+  "rows": 71,
+  "lastRound": 15,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ },
+ {
+  "file": "2026-10-20.jsonl",
+  "index": 0,
+  "rows": 324,
+  "lastRound": 15,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ },
+ {
+  "file": "2026-10-20.jsonl",
+  "index": 1,
+  "rows": 294,
+  "lastRound": 15,
+  "hasMates": false,
+  "hasResult": false,
+  "fields": {
+   "mates": 0,
+   "teamLp": 0,
+   "bossHp": 0,
+   "stats": 0,
+   "result": 0,
+   "self": 0
+  },
+  "seats": [
+   {
+    "name": "我",
+    "seat": null,
+    "self": true,
+    "O": null,
+    "dO": null
+   }
+  ],
+  "behind": []
+ }
+]

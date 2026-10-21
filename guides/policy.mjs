@@ -15,7 +15,11 @@ function legal(ps,p,r,c){return legalTiles(ps.deployMap(),placeClass(ps,rec(ps,p
 export function assign(m,spec){
  const avail=m.gd.bondIds.filter(b=>m.gd.bond(b).isCore&&!m.disabledBonds.includes(b)&&!m.staticInactiveBonds.includes(b));
  const wanted=[...new Set([...spec.coreOrder,...avail])].filter(b=>avail.includes(b));
- const routes={};m.order.forEach((ps,i)=>routes[ps.playerId]=wanted[i%wanted.length]);
+ // A seat whose line is given (spec.seats[pid].route: the advisor's line pick, a teammate's observed line) keeps it; the
+ // other seats take the remaining wanted lines in seat order (no override = the original seat-order assignment).
+ const fixed={};for(const [pid,o] of Object.entries(spec.seats||{}))if(o&&o.route&&avail.includes(o.route)&&spec.recipes[o.route])fixed[pid]=o.route;
+ const rest=wanted.filter(b=>!Object.values(fixed).includes(b));let k=0;
+ const routes={};m.order.forEach(ps=>routes[ps.playerId]=fixed[ps.playerId]??rest[k++%rest.length]);
  const reservations={};
  // Explicit scarce names first: a multi-core terminal belongs to the earliest assigned route that needs it.
  for(const ps of m.order){const r=spec.recipes[routes[ps.playerId]];for(const id of m.gd.visibleChess){const c=m.gd.chess(id);if([...r.producers,...r.terminals].includes(c.name)&&reservations[id]==null)reservations[id]=ps.playerId;}}
@@ -169,7 +173,15 @@ function snapshot(m,ps,phase){
  board:board.map(p=>({id:p.id,name:name(ps,p),cell:ps.find(p.uid)?.key,dir:p.dir,items:p.items?.map(i=>i.id)})),hand:ps.hand.filter(Boolean).map(p=>({id:p.id,name:name(ps,p)})),
  checks:{targetCoreActive:!!ps.bonds[r.core]?.active,producerOwned:r.producers.filter(n=>owned.some(p=>name(ps,p)===n)),producerDeployed:r.producers.filter(n=>board.some(p=>name(ps,p)===n)),terminalOwned:r.terminals.filter(n=>owned.some(p=>name(ps,p)===n)),terminalDeployed:r.terminals.filter(n=>board.some(p=>name(ps,p)===n)),investActive:!!ps.bonds.investShip?.active,investTriple:!!ps.bonds.investShip?.active&&ps.layers.investShip>=100,visiAll:ps.layers.visiShip>=150,miracleLayers:ps.layers.miraShip||0}});
 }
+// Per-seat play profile (advisor/team.mjs): `spec.seats[playerId]` overrides spec fields for that seat only (a
+// teammate's observed tempo, a learned levelTargets). The seat's prep runs with the merged spec; the team's route
+// assignment and reservations (assign) stay the base spec's.
+export function seatSpec(spec,ps){const o=spec.seats&&spec.seats[ps.playerId];return o?{...spec,...o,seats:spec.seats}:spec;}
 function prep(m,ps){
+ const base=m.guideSpec;m.guideSpec=seatSpec(base,ps);
+ try{prepSeat(m,ps);}finally{m.guideSpec=base;}
+}
+function prepSeat(m,ps){
  const spec=m.guideSpec;const start=performance.now();m.autoPickPersonalChoice(ps,'bot');snapshot(m,ps,'before');
  r15Transform(m,ps);
  rewards(m,ps);arrangeGuide(m,ps);equip(m,ps);

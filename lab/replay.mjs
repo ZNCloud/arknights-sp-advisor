@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { splitMatches, tracksOf } from '../advisor/team.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
@@ -175,51 +176,6 @@ const loadRows = (file) => fs.readFileSync(file, 'utf8').split('\n').filter(Bool
   .filter(Boolean)
   .sort((a, b) => String(a.at).localeCompare(String(b.at)));
 
-function splitMatches(rows) {
-  const out = [];
-  let cur = { rows: [] };
-  out.push(cur);
-  for (const r of rows) {
-    if ((r.phase === 'INFO_CHECK' || (r.round === 0 && r.phase !== 'RESULT')) && cur.rows.length) { cur = { rows: [] }; out.push(cur); }
-    cur.rows.push(r);
-  }
-  return out.filter((m) => m.rows.length > 2);
-}
-
-/** "sargonShip:3/19" → { bondId, count, layers } */
-const parseBond = (s) => {
-  const m = /^(.+?):(\d+)\/(\d+)$/.exec(String(s));
-  return m ? { bondId: m[1], count: +m[2], layers: +m[3] } : null;
-};
-const topBond = (bonds) => (bonds || []).filter((b) => b.count > 0).sort((a, b) => b.layers - a.layers)[0] || null;
-
-/**
- * 每个座位每回合的公开轨迹：LP / 调度中心等级 / 上阵人数 / 主叠盟约层数。
- * 自己那份来自记录本体（priv），队友那份来自 m.public.players（记录里的 `mates`，2026-10-20 之后的记录才有）。
- */
-function tracksOf(rows) {
-  const byPlayer = new Map();
-  const keyOf = (p) => `${p.seat ?? 'me'}|${p.name}`;
-  const push = (p, row) => {
-    const k = keyOf(p);
-    if (!byPlayer.has(k)) byPlayer.set(k, { name: p.name, seat: p.seat ?? null, isBot: !!p.isBot, self: p.seat == null, series: new Map() });
-    const core = topBond(p.bonds);
-    byPlayer.get(k).series.set(row.round, {
-      round: row.round, lp: p.lp, level: p.level, board: p.board,
-      core: core ? { id: core.bondId, count: core.count, layers: core.layers } : null,
-    });
-  };
-  for (const r of rows) {
-    push({ name: '我', lp: r.lp, level: r.level, board: (r.board || []).length, bonds: (r.bonds || []).map(parseBond).filter(Boolean) }, r);
-    for (const mate of r.mates || []) {
-      push({ name: mate.name, seat: mate.seat, isBot: mate.isBot, lp: mate.lp, level: mate.level, board: mate.board, bonds: (mate.bonds || []).map(parseBond).filter(Boolean) }, r);
-    }
-  }
-  return [...byPlayer.values()]
-    .map((e) => ({ ...e, series: [...e.series.values()].sort((a, b) => a.round - b.round) }))
-    .sort((a, b) => (b.self ? 1 : 0) - (a.self ? 1 : 0));
-}
-
 const report = [];
 for (const file of files) {
   splitMatches(loadRows(file)).forEach((m, mi) => {
@@ -290,7 +246,7 @@ for (const file of files) {
       rounds: rounds.length ? rounds[rounds.length - 1] : 0,
       endLp: res ? res.lp : last.lp,
       boss: frames.map((f) => f.boss).find(Boolean) || null,
-      beats, players: tracksOf(m.rows),
+      beats, players: tracksOf(m.rows).seats.map((p) => ({ ...p, series: p.rounds.map((x) => x.end) })),
       summary: beats.reduce((a, b) => { a[b.verdict.tag] = (a[b.verdict.tag] || 0) + 1; return a; }, {}),
     });
   });

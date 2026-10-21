@@ -1,0 +1,290 @@
+{
+ "ref": "blind",
+ "arms": {
+  "blind": "results/eval-blind.jsonl",
+  "owner_blind": "results/eval-owner_blind.jsonl",
+  "teamview": "results/eval-teamview.jsonl",
+  "learned_line": "results/eval-learned_line.jsonl",
+  "learned_tempo": "results/eval-learned_tempo.jsonl",
+  "learned": "results/eval-learned.jsonl",
+  "learned_flat": "results/eval-learned_flat.jsonl",
+  "learned_anti": "results/eval-learned_anti.jsonl"
+ },
+ "profile": "sp-advisor/models/team-profile.json",
+ "seeds": [
+  3001,
+  3400
+ ],
+ "summary": {
+  "blind": {
+   "n": 400,
+   "wins": 13,
+   "reachR14": 67,
+   "meanLastRound": 10.98,
+   "meanU": 0.4254,
+   "p0O": 0.3638,
+   "collisions": 237,
+   "vsRef": null
+  },
+  "owner_blind": {
+   "n": 400,
+   "wins": 14,
+   "reachR14": 74,
+   "meanLastRound": 11.068,
+   "meanU": 0.4357,
+   "p0O": 0.3757,
+   "collisions": 237,
+   "vsRef": {
+    "dU": 0.0103,
+    "seU": 0.0051,
+    "dP0O": 0.0118,
+    "seP0O": 0.0041,
+    "winsGained": 5,
+    "winsLost": 4,
+    "mcnemarP": 1,
+    "better": 56,
+    "worse": 43
+   }
+  },
+  "teamview": {
+   "n": 400,
+   "wins": 11,
+   "reachR14": 80,
+   "meanLastRound": 11.24,
+   "meanU": 0.4459,
+   "p0O": 0.3774,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0205,
+    "seU": 0.0076,
+    "dP0O": 0.0135,
+    "seP0O": 0.0056,
+    "winsGained": 3,
+    "winsLost": 5,
+    "mcnemarP": 0.7266,
+    "better": 112,
+    "worse": 75
+   }
+  },
+  "learned_line": {
+   "n": 400,
+   "wins": 13,
+   "reachR14": 85,
+   "meanLastRound": 11.29,
+   "meanU": 0.4512,
+   "p0O": 0.3807,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0257,
+    "seU": 0.0078,
+    "dP0O": 0.0169,
+    "seP0O": 0.0054,
+    "winsGained": 5,
+    "winsLost": 5,
+    "mcnemarP": 1,
+    "better": 122,
+    "worse": 76
+   }
+  },
+  "learned_tempo": {
+   "n": 400,
+   "wins": 16,
+   "reachR14": 92,
+   "meanLastRound": 11.402,
+   "meanU": 0.4596,
+   "p0O": 0.3899,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0342,
+    "seU": 0.0088,
+    "dP0O": 0.026,
+    "seP0O": 0.0069,
+    "winsGained": 13,
+    "winsLost": 10,
+    "mcnemarP": 0.6776,
+    "better": 163,
+    "worse": 94
+   }
+  },
+  "learned": {
+   "n": 400,
+   "wins": 17,
+   "reachR14": 95,
+   "meanLastRound": 11.463,
+   "meanU": 0.4653,
+   "p0O": 0.3929,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0399,
+    "seU": 0.009,
+    "dP0O": 0.0291,
+    "seP0O": 0.0068,
+    "winsGained": 15,
+    "winsLost": 11,
+    "mcnemarP": 0.5572,
+    "better": 169,
+    "worse": 93
+   }
+  },
+  "learned_flat": {
+   "n": 400,
+   "wins": 12,
+   "reachR14": 83,
+   "meanLastRound": 11.313,
+   "meanU": 0.4547,
+   "p0O": 0.3842,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0293,
+    "seU": 0.0077,
+    "dP0O": 0.0204,
+    "seP0O": 0.0062,
+    "winsGained": 6,
+    "winsLost": 7,
+    "mcnemarP": 1,
+    "better": 143,
+    "worse": 88
+   }
+  },
+  "learned_anti": {
+   "n": 400,
+   "wins": 14,
+   "reachR14": 67,
+   "meanLastRound": 11.15,
+   "meanU": 0.4336,
+   "p0O": 0.3632,
+   "collisions": 0,
+   "vsRef": {
+    "dU": 0.0082,
+    "seU": 0.008,
+    "dP0O": -0.0006,
+    "seP0O": 0.0047,
+    "winsGained": 7,
+    "winsLost": 6,
+    "mcnemarP": 1,
+    "better": 114,
+    "worse": 89
+   }
+  }
+ },
+ "subsetMateBetter": {
+  "n": 206,
+  "of": 400,
+  "arms": {
+   "blind": {
+    "tempoDistToBetterMate": 0.1043,
+    "seDist": 0.0074,
+    "wins": 11,
+    "meanU": 0.4734,
+    "p0O": 0.3514,
+    "vsRef": null
+   },
+   "owner_blind": {
+    "tempoDistToBetterMate": 0.1023,
+    "seDist": 0.0075,
+    "wins": 11,
+    "meanU": 0.4763,
+    "p0O": 0.3612,
+    "vsRef": {
+     "dU": 0.0029,
+     "seU": 0.0075,
+     "dP0O": 0.0098,
+     "seP0O": 0.0045
+    }
+   },
+   "teamview": {
+    "tempoDistToBetterMate": 0.1044,
+    "seDist": 0.0072,
+    "wins": 8,
+    "meanU": 0.4711,
+    "p0O": 0.3764,
+    "vsRef": {
+     "dU": -0.0023,
+     "seU": 0.0112,
+     "dP0O": 0.025,
+     "seP0O": 0.0081
+    }
+   },
+   "learned_line": {
+    "tempoDistToBetterMate": 0.1044,
+    "seDist": 0.0073,
+    "wins": 10,
+    "meanU": 0.4765,
+    "p0O": 0.3778,
+    "vsRef": {
+     "dU": 0.0031,
+     "seU": 0.0119,
+     "dP0O": 0.0264,
+     "seP0O": 0.008
+    }
+   },
+   "learned_tempo": {
+    "tempoDistToBetterMate": 0.1713,
+    "seDist": 0.0087,
+    "wins": 12,
+    "meanU": 0.4843,
+    "p0O": 0.3944,
+    "vsRef": {
+     "dU": 0.0108,
+     "seU": 0.0136,
+     "dP0O": 0.043,
+     "seP0O": 0.0101
+    }
+   },
+   "learned": {
+    "tempoDistToBetterMate": 0.1753,
+    "seDist": 0.0085,
+    "wins": 12,
+    "meanU": 0.49,
+    "p0O": 0.3959,
+    "vsRef": {
+     "dU": 0.0166,
+     "seU": 0.014,
+     "dP0O": 0.0445,
+     "seP0O": 0.0098
+    }
+   },
+   "learned_flat": {
+    "tempoDistToBetterMate": 0.0706,
+    "seDist": 0.0071,
+    "wins": 11,
+    "meanU": 0.4888,
+    "p0O": 0.3932,
+    "vsRef": {
+     "dU": 0.0154,
+     "seU": 0.0114,
+     "dP0O": 0.0418,
+     "seP0O": 0.0092
+    }
+   },
+   "learned_anti": {
+    "tempoDistToBetterMate": 0.1075,
+    "seDist": 0.0072,
+    "wins": 10,
+    "meanU": 0.4554,
+    "p0O": 0.359,
+    "vsRef": {
+     "dU": -0.018,
+     "seU": 0.0123,
+     "dP0O": 0.0076,
+     "seP0O": 0.0064
+    }
+   }
+  },
+  "byBetterMate": {
+   "g06": {
+    "n": 206,
+    "tempoDist": {
+     "blind": 0.104,
+     "owner_blind": 0.102,
+     "teamview": 0.104,
+     "learned_line": 0.104,
+     "learned_tempo": 0.171,
+     "learned": 0.175,
+     "learned_flat": 0.071,
+     "learned_anti": 0.107
+    }
+   }
+  }
+ }
+}

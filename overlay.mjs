@@ -18,6 +18,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { connect } from './cdp-client.mjs';
 import { loadAdvisor, PLUGIN_PAGE } from './core-loader.mjs';
+import { matesOf, resultOf } from './advisor/team.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(here, 'state.json');
@@ -104,6 +105,28 @@ const piece = (x) => (x && typeof x === 'object' ? {
       bossRound: pub.bossRound ?? null, hiddenRound: pub.hiddenRound ?? null,
     } : null,
     me: { playerId: (root.me && root.me.playerId) || null, name: (root.me && root.me.name) || null },
+    // 终局结算 m.result：每个人（含队友）的阵容 / 盟约 / 统计（bossDamage、lpLost、活到第几回合）——「谁打得好」靠它
+    result: m.result && Array.isArray(m.result.players) ? {
+      victory: m.result.victory === true, roundsPassed: m.result.roundsPassed ?? null, hiddenCleared: m.result.hiddenCleared === true,
+      reason: m.result.reason || null, bossId: m.result.bossId || null,
+      players: m.result.players.map((x) => ({
+        playerId: x.playerId, seat: x.seat, name: x.name, isBot: x.isBot === true, alive: x.alive === true,
+        roundsPassed: x.roundsPassed ?? null, eliminatedRound: x.eliminatedRound ?? null, lp: x.lp ?? null,
+        lineup: (x.lineup || []).map((u) => ({ id: u.id, golden: u.golden === true, row: u.row, col: u.col, items: u.items || [] })),
+        bonds: (x.bonds || []).map((b) => ({ bondId: b.bondId, count: b.count || 0, layers: b.layers || 0 })),
+        stats: x.stats || null,
+      })),
+    } : null,
+    // 队友的棋盘：休整期点开队友看（m.field 'n:<playerId>'）时客户端才收到；BOSS 回合的搭档棋盘在 m.private.bossMate
+    scout: m.field && m.field.prep === true && typeof m.field.fieldId === 'string' && m.field.fieldId.startsWith('n:') ? {
+      playerId: m.field.fieldId.slice(2),
+      units: (m.field.units || []).filter((u) => u.ownerId === m.field.fieldId.slice(2)).map((u) => ({
+        id: u.defId, area: u.area || 'board', row: u.y, col: u.x, dir: u.dir || null, golden: u.golden === true, tier: u.tier, items: u.items || [] })),
+    } : null,
+    bossMate: p && p.bossMate ? {
+      playerId: p.bossMate.playerId,
+      units: (p.bossMate.units || []).map((u) => ({ id: u.defId, row: u.y, col: u.x, dir: u.dir || null, golden: u.golden === true, tier: u.tier, items: u.items || [] })),
+    } : null,
     priv: p ? {
       funds: p.funds, lp: p.lp,
       shop: { level: p.shop ? p.shop.level : null,
@@ -112,6 +135,8 @@ const piece = (x) => (x && typeof x === 'object' ? {
       board: (p.board || []).filter(Boolean).map(piece),
       bonds: (p.bonds || []).map((b) => ({ bondId: b.bondId, count: b.count, tier: b.tier === undefined ? null : b.tier, layers: typeof b.layers === 'number' ? b.layers : 0 })),
       bandId: p.bandId || null,
+      // 服务端统计（m.private.stats）：以前 recordTurn 读 priv.stats 但这里没带上，记录里的 stats 一直是 null
+      stats: p.stats || null,
       // 下一波怪预览：enemyKey/count/fly/elite/boss —— 「别漏光」靠它
       nextEnemies: (p.nextEnemies || []).slice(0, 12).map((e) => ({
         key: e.enemyKey || e.id || null, count: e.count || 1, fly: e.fly === true, elite: e.elite === true, boss: e.boss === true, t: e.t ?? null,
@@ -630,24 +655,22 @@ export function recordKeyOf(priv, brief) {
   return `${priv.funds}|${(priv.shop && priv.shop.level) || 1}|${priv.lp}|${slots}|${board}|${hand}|${bonds}|${mates}`;
 }
 
-/** 队友（不含自己）的公开状态：LP / 调度中心 / 上阵人数 / 盟约（含层数）/ 状态 */
-function matesOf(snap) {
-  const players = (snap.brief && snap.brief.players) || [];
-  const myId = snap.me && snap.me.playerId;
-  return players
-    .filter((p) => !myId || p.playerId !== myId)
-    .map((p) => ({
-      name: p.name, seat: p.seat ?? null, isBot: !!p.isBot, alive: p.alive !== false,
-      lp: p.lp, level: p.shopLevel, board: p.boardCount, status: p.status || null, bandId: p.bandId || null,
-      bonds: (p.bonds || []).filter((b) => !b.off).slice(0, 8).map((b) => `${b.bondId}:${b.count}/${b.layers}`),
-    }));
+/** 队友（不含自己）的公开状态：LP / 调度中心 / 上阵人数 / 盟约（含层数）/ 状态（同一份 matesOf：advisor/team.mjs，自对局记录也用它） */
+const matesOfSnap = (snap) => matesOf((snap.brief && snap.brief.players) || [], snap.me && snap.me.playerId);
+/** 座位号 → 队友棋盘（点开看过的 / BOSS 搭档）：只在客户端收到时才有 */
+function mateBoardsOf(snap) {
+  const seatOf = (pid) => (((snap.brief && snap.brief.players) || []).find((p) => p.playerId === pid) || {}).seat;
+  const out = {};
+  for (const b of [snap.scout, snap.bossMate]) if (b && b.playerId && b.playerId !== (snap.me && snap.me.playerId) && seatOf(b.playerId) != null) out[seatOf(b.playerId)] = b.units;
+  return Object.keys(out).length ? out : null;
 }
 
 async function recordTurn(snap, box) {
   if (!snap || !snap.ok || !snap.priv) return;
   const priv = snap.priv;
   // 阶段/回合变了必记；同一阶段里经济状态（含队友阵容）只要变了也记（逐动作），完全没动才跳过
-  const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv, snap.brief)}`;
+  const boards = mateBoardsOf(snap);
+  const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv, snap.brief)}|${snap.result ? 'R' : ''}|${boards ? JSON.stringify(boards).length : 0}`;
   if (recordTurn.last === key) return;
   recordTurn.last = key;
   const row = {
@@ -663,7 +686,12 @@ async function recordTurn(snap, box) {
     // slot 必须留：顾问说的是「槽位 3」，压掉已售格会让后面的位置整体前移，复盘时对不上
     shop: ((priv.shop && priv.shop.slots) || []).map((s, i) => (s && !s.sold ? { slot: i + 1, id: s.id, price: s.price, frozen: !!s.frozen } : null)).filter(Boolean),
     // 队友的公开状态（m.public.players）：看「他是怎么玩的」就靠这几列——LP / 升本节奏 / 上阵人数 / 盟约层数
-    mates: matesOf(snap),
+    mates: matesOfSnap(snap),
+    // 自己的座位（和 mates / result 里的 seat 对上）
+    self: { seat: ((((snap.brief && snap.brief.players) || []).find((p) => p.playerId === (snap.me && snap.me.playerId))) || {}).seat ?? null },
+    // 队友棋盘（点开看过才有，见 mateBoardsOf）与终局结算（只在 RESULT）
+    mateBoards: boards,
+    result: snap.result ? resultOf(snap.result, (snap.brief && snap.brief.bossHp && snap.brief.bossHp.max) || null) : null,
     // 合作进度：队伍 LP、BOSS 血池（谁的输出在扛）
     teamLp: (snap.brief && snap.brief.teamLp) ?? null,
     bossHp: (snap.brief && snap.brief.bossHp) || null,

@@ -1,0 +1,58 @@
+{
+  "_notes": {
+    "levelTargets": "index = round (index 0 unused), value = the 调度中心 level the guide levels to that round when funds allow (guides/policy.mjs prep)",
+    "g06": "the guide as is (guides/g06_final.json): 5 at R9, never 6",
+    "owner": "the owner's median level per round over the 6 recorded matches 2026-10-18..20 (matches/*.jsonl, last PREP row of each round)",
+    "fast6": "g06 one round earlier from R3 and 6 from R11",
+    "slow": "g06 about two rounds later, 5 only at R12",
+    "sloppy": "g06 plus, with chance 0.3 per turn, 1-3 random legal economy actions first (advisor/actions.mjs randomEconomy)",
+    "late6": "g06, then 6 from R12",
+    "early": "g06 one round earlier from R3, still capped at 5",
+    "blind": "lines=mates scenario: p0 takes the guide's first-choice line even when a teammate is on it (the advisor before the team view)",
+    "teamview": "lines=mates scenario: p0 takes the first-choice line no teammate is on (team view, nothing learned)",
+    "learned": "team view + the learned profile: line by pickLine (learned line value for this boss), tempo = learned levelTargets",
+    "owner_blind": "the owner's tempo, line chosen without looking at teammates",
+    "learned_line": "team view + learned line only (guide tempo)",
+    "learned_tempo": "team view (first free line) + learned tempo only"
+  },
+  "g06": {},
+  "owner": {
+    "levelTargets": [1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6]
+  },
+  "fast6": {
+    "levelTargets": [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 6, 6, 6]
+  },
+  "slow": {
+    "levelTargets": [1, 1, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5]
+  },
+  "sloppy": {
+    "eps": 0.3
+  },
+  "late6": {
+    "levelTargets": [1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6, 6]
+  },
+  "early": {
+    "levelTargets": [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5]
+  },
+  "blind": {
+    "line": "blind"
+  },
+  "teamview": {
+    "line": "free"
+  },
+  "learned": {
+    "line": "learned",
+    "tempo": "learned"
+  },
+  "owner_blind": {
+    "line": "blind",
+    "levelTargets": [1, 1, 1, 1, 2, 3, 3, 3, 4, 4, 5, 5, 5, 6, 6, 6]
+  },
+  "learned_line": {
+    "line": "learned"
+  },
+  "learned_tempo": {
+    "line": "free",
+    "tempo": "learned"
+  }
+}

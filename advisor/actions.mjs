@@ -96,6 +96,16 @@ export function applyAction(m, ps, a) {
   }
 }
 
+// Exploration / a sloppy seat: 1–3 random legal economy actions (an engine refusal is a legal no-op here).
+export function randomEconomy(m, ps, rng) {
+  const k = 1 + rng.int(3);
+  for (let i = 0; i < k; i++) {
+    const acts = listActions(m, ps).filter(a => !['guide', 'end', 'move', 'bench', 'rotate'].includes(a.type));
+    if (!acts.length) break;
+    applyAction(m, ps, rng.pick(acts));
+  }
+}
+
 function runMacro(m, ps, name) {
   if (name === 'level') { let n = 0; while (ps.shop.level < m.gd.maxShopLevel && ps.funds >= ps.shop.upgradePrice && ps.levelUp()?.ok) n++; return n ? { ok: true } : { error: 'CANNOT_LEVEL' }; }
   if (name !== 'roll') throw Error(`unknown macro ${name}`);

@@ -7,6 +7,7 @@ import { installGuide, guidePrep } from '../guides/policy.mjs';
 import { restore, toJSON } from './state.mjs';
 import { listActions, prune, sameAction } from './actions.mjs';
 import { modelStatus, staleBudget } from './meta.mjs';
+import { teamSpec, teamSummary } from './team.mjs';
 
 const mean = a => a.reduce((s, x) => s + x, 0) / Math.max(1, a.length);
 const CHANGING = new Set(['buy', 'reward', 'level', 'refresh', 'sell', 'equip', 'cycle_sell', 'level_before_merge', 'sell_space', 'sell_board_space']);
@@ -41,8 +42,18 @@ export function guideFirst(state, playerId, spec, cands) {
 
 const sd = a => { const mu = mean(a); return Math.sqrt(a.reduce((s, x) => s + (x - mu) ** 2, 0) / Math.max(1, a.length - 1)); };
 
-export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8, stage2 = 3, N2 = 8, seed = 1, scorer = null, allowStale = false, log = () => {} } = {}) {
+export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8, stage2 = 3, N2 = 8, seed = 1, scorer = null, allowStale = false, team = null, log = () => {} } = {}) {
   const t0 = performance.now();
+  // Team view (advisor/team.mjs teamSpec): the continuation keeps every seat on the line it is visibly playing and each
+  // teammate at its observed tempo; the advised seat plays the profile learned from whoever played better.
+  // `team` = { profile } (models/team-profile.json, may be null = team view without the learned profile).
+  let teamView = null;
+  if (team) {
+    const m0 = restore(state, { rngMode: 'exact' });
+    spec = teamSpec(spec, m0, playerId, team.profile || null);
+    teamView = teamSummary(m0, playerId, spec, team.profile || null);
+    m0.dispose();
+  }
   // B2: a model trained on another game version is not trusted — fall back to wider pure rollouts and say so.
   let modelNote = null;
   if (scorer?.modelDir) {
@@ -63,7 +74,7 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
     // Model-only mode (fast): no rollouts, rank by the value model; needs a scorer.
     if (!modelTable) throw Error('N=0 (model-only) needs a value-model scorer');
     const ranked = cands.map(a => ({ action: a, label: a.label, modelUtil: a.modelUtil, modelWin: a.modelWin, guideFirst: !!(gf && sameAction(a, gf)) })).sort((x, y) => y.modelUtil - x.modelUtil);
-    return { recommendation: ranked[0], candidates: ranked, illegal: [], modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: 0, ms: performance.now() - t0, method: 'value model only', continuation: spec.id };
+    return { recommendation: ranked[0], candidates: ranked, illegal: [], modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: 0, ms: performance.now() - t0, method: 'value model only', continuation: spec.id, ...(teamView ? { team: teamView } : {}) };
   }
   const sampleSeeds = Array.from({ length: N + N2 }, (_, i) => deriveSeed(seed, `${stateKey}:s${i}`));
   const rows = cands.map(a => ({ action: a, outcomes: [], invalid: [], guideFirst: !!(gf && sameAction(a, gf)) }));
@@ -91,5 +102,5 @@ export async function advise(state, { playerId = 'p0', spec, pool, K = 8, N = 8,
   }).sort((a, b) => b.utility - a.utility);
   const illegal = rows.filter(r => r.outcomes.some(o => o.illegal)).map(r => ({ label: r.action.label, reply: r.outcomes.find(o => o.illegal).reply }));
   return { recommendation: result[0], candidates: result, illegal, modelTable, modelStatus: modelNote, candidatesConsidered: all.length, rollouts: rows.reduce((s, r) => s + r.outcomes.length, 0), engineErrorRollouts: rows.reduce((s, r) => s + r.invalid.length, 0),
-    ms: performance.now() - t0, method: scorer ? 'value-model prefilter + rollouts' : 'heuristic top-K + rollouts (CRN)', continuation: spec.id };
+    ms: performance.now() - t0, method: scorer ? 'value-model prefilter + rollouts' : 'heuristic top-K + rollouts (CRN)', continuation: spec.id, ...(teamView ? { team: teamView } : {}) };
 }

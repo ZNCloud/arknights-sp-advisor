@@ -3,6 +3,9 @@
 //   node sp-advisor/advisor/cli.mjs advise --state positions/s1004-r10.json [--player p0] [--K 8 --N 8 --N2 8 --workers 24] [--model sp-advisor/models]
 //   node sp-advisor/advisor/cli.mjs lineup --state positions/game1-r08-end.json [--player p0] [--workers 24] [--steps 3]
 //        (lineup check just before Ready: 换人 / 对调 / 挪位 / 转向 on the seat's current board + hand)
+//   node sp-advisor/advisor/cli.mjs advise ... --team sp-advisor/models/team-profile.json   (team view + learned profile)
+//   node sp-advisor/advisor/cli.mjs team --records sp-advisor/matches/2026-10-20.jsonl[,...] [--profile sp-advisor/models/team-profile.json] [--json out.json]
+//        (per recorded match: which teammate fields the record has, every seat's rating, the rounds a teammate out-played you)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { makeMatch, runToEnd } from '../eval/engine.mjs';
@@ -11,6 +14,7 @@ import { capture, toJSON, fromJSON } from './state.mjs';
 import { advise, modelScorer } from './advise.mjs';
 import { RolloutPool } from './pool.mjs';
 import { checkLineup, poolEval, describe } from './lineup.mjs';
+import { teamReport, describeTeam } from './team-report.mjs';
 
 const [cmd, ...rest] = process.argv.slice(2), opt = {};
 for (let i = 0; i < rest.length; i++) { if (!rest[i].startsWith('--')) throw Error(`Expected --flag, got ${rest[i]}`); opt[rest[i].slice(2)] = rest[++i]; }
@@ -33,14 +37,19 @@ if (cmd === 'save') {
   const state = fromJSON(readFileSync(opt.state, 'utf8'));
   const pool = new RolloutPool(Number(opt.workers || 24));
   const res = await advise(state, { playerId: opt.player || 'p0', spec, pool, K: Number(opt.K || 8), N: Number(opt.N || 8), N2: Number(opt.N2 || 8), seed: Number(opt.seed || 1),
-    scorer: opt.model ? modelScorer({ pool, spec, modelDir: opt.model }) : null });
+    scorer: opt.model ? modelScorer({ pool, spec, modelDir: opt.model }) : null, team: opt.team ? { profile: JSON.parse(readFileSync(opt.team, 'utf8')) } : null });
   await pool.close();
   console.log(`round ${state.match.round} seat ${opt.player || 'p0'}: ${res.candidatesConsidered} legal actions, ${res.candidates.length} evaluated, ${res.rollouts} rollouts, ${(res.ms / 1000).toFixed(1)}s`);
   if (res.modelStatus) console.log(`模型状态：${res.modelStatus}`);
   for (const c of res.candidates) console.log(`${c === res.recommendation ? '★' : ' '} ${c.label.padEnd(28)} win ${(c.winRate * 100).toFixed(0)}% [${c.winCI95.map(x => (x * 100).toFixed(0)).join('-')}] U=${c.utility.toFixed(3)}±${(c.utilitySE ?? 0).toFixed(3)} R14伤${(c.r14Dmg * 100).toFixed(0)}% 活到R14 ${(c.reachR14 * 100).toFixed(0)}% n=${c.n}${c.vsGuide ? ` vsGuide ${c.vsGuide.mean >= 0 ? '+' : ''}${c.vsGuide.mean.toFixed(3)}±${(c.vsGuide.se ?? 0).toFixed(3)}` : ''}${c.guideFirst ? ' (guide首选)' : ''}`);
   if (res.modelTable) { console.log(`value model, all ${res.modelTable.length} legal actions (top 12):`); for (const r of res.modelTable.slice(0, 12)) console.log(`   ${r.label.padEnd(28)} modelU=${r.modelUtil.toFixed(3)} modelWin=${(r.modelWin * 100).toFixed(1)}%`); }
   if (res.illegal.length) console.log('illegal (engine refused):', JSON.stringify(res.illegal));
+  if (res.team) console.log(describeTeam(res.team));
   if (opt.out) writeFileSync(opt.out, JSON.stringify(res, null, 1));
+} else if (cmd === 'team') {
+  const rep = teamReport((opt.records || '').split(',').filter(Boolean), opt.profile ? JSON.parse(readFileSync(opt.profile, 'utf8')) : null);
+  console.log(rep.text);
+  if (opt.json) { mkdirSync(dirname(opt.json), { recursive: true }); writeFileSync(opt.json, JSON.stringify(rep.matches, null, 1)); }
 } else if (cmd === 'lineup') {
   const json = readFileSync(opt.state, 'utf8'), state = fromJSON(json);
   const pool = new RolloutPool(Number(opt.workers || 24));
