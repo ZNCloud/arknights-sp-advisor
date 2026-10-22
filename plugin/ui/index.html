@@ -168,6 +168,18 @@
     return best;
   }
 
+  /**
+   * 这一局的指纹（m.public 里整局不变、换一局就变的字段）：存下来的主线带着它，换了局就作废。
+   * 不能靠 playerId——那是账号 id，连打两局不变（2026-10-21 第二局前 6 回合还在找第一局的维多利亚）。
+   * hiddenBossId 局中才揭晓、round 每回合变，都不进指纹。null = 还看不出是哪一局（大厅 / 没有公开视图）。
+   */
+  function matchKeyOf(pub) {
+    if (!pub || (!pub.bossId && !pub.modeId)) return null;
+    function list(a) { return (Array.isArray(a) ? a.map(String) : []).sort().join(','); }
+    return [pub.modeId || '', pub.difficulty == null ? '' : pub.difficulty, pub.bossId || '',
+      list(pub.drawnDisabledBonds), list(pub.bannedChess)].join('|');
+  }
+
   function coreBonds() {
     return Object.keys(BO).filter(function (id) { return BO[id].c === 1; });
   }
@@ -1124,9 +1136,11 @@
     try { parent.postMessage(out, '*'); } catch (e) { /* host gone */ }
   }
 
-  var route = null;   // the player's own route, from storage
+  var route = null;   // this match's route: the player's pick (click / storage), else the first state's auto route
   var last = null;    // { priv, pub } of the last state
-  var lastPlayer = null;
+  var lastMatch = null;   // matchKeyOf(pub) of the match `route` belongs to
+  var stored = null;      // a stored {route, match} that arrived before any state: checked against the first match key
+  var clicked = false;    // the player picked in this match: a late storage reply must not override it
   var root = document.getElementById('app');
 
   function el(tag, cls, text) {
@@ -1157,7 +1171,9 @@
       b.title = bondName(id) + ' 在场 ' + count + ' 人 / ' + lay + ' 层（阈值 ' + thresholdsOf(id).join(' / ') + '）';
       b.addEventListener('click', function () {
         route = id;
-        send({ t: 'storage', op: 'set', key: 'route', value: id });
+        clicked = true;
+        // tagged with the match: a pick from the last game must not steer the next one
+        send({ t: 'storage', op: 'set', key: 'route', value: JSON.stringify({ route: id, match: lastMatch }) });
         if (last) render(viewOf(last.priv, last.pub));
       });
       bar.appendChild(b);
@@ -1249,18 +1265,28 @@
     if (!m || m.v !== 1 || typeof m.t !== 'string') return;
     if (m.t === 'welcome') { send({ t: 'ready' }); return; }
     if (m.t === 'rejected') { if (m.reason === 'intent') root.setAttribute('data-rejected', 'intent'); return; }
-    if (m.t === 'storage' && m.op === 'get' && m.ok && typeof m.value === 'string' && route === null) {
-      if (BO[m.value] && BO[m.value].c === 1) {
-        route = m.value;
+    if (m.t === 'storage' && m.op === 'get' && m.ok && typeof m.value === 'string') {
+      // {route, match} only: a legacy bare id has no match key, so nobody can tell which game it was picked in — ignored
+      var s = null;
+      try { s = JSON.parse(m.value); } catch (e) { s = null; }
+      if (!s || typeof s !== 'object' || typeof s.match !== 'string' || !BO[s.route] || BO[s.route].c !== 1) return;
+      if (lastMatch === null) { stored = s; return; }
+      if (s.match === lastMatch && !clicked) {
+        route = s.route;
         if (last) render(viewOf(last.priv, last.pub));
       }
       return;
     }
     if (m.t !== 'state') return;
     var priv = m.private || null;
-    if (priv && typeof priv.playerId === 'string') {
-      if (lastPlayer && priv.playerId !== lastPlayer) route = null;   // another match: start from the auto route
-      lastPlayer = priv.playerId;
+    // another match → back to the auto route. The old playerId check is gone: playerId is the account id, the same in
+    // back-to-back games, so it never fired (the match key does).
+    var mk = matchKeyOf(m.public || null);
+    if (mk !== null && mk !== lastMatch) {
+      route = stored && stored.match === mk ? stored.route : null;
+      clicked = false;
+      stored = null;
+      lastMatch = mk;
     }
     last = { priv: priv, pub: m.public || null };
     if (route === null && last.priv) route = autoRoute(last.priv, null);

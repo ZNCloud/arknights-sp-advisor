@@ -19,6 +19,8 @@ import { fileURLToPath } from 'node:url';
 import { connect } from './cdp-client.mjs';
 import { loadAdvisor, PLUGIN_PAGE } from './core-loader.mjs';
 import { matesOf, resultOf } from './advisor/team.mjs';
+import { redactRow } from './advisor/redact.mjs';
+import { routeFor } from './route-pick.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(here, 'state.json');
@@ -31,6 +33,8 @@ const flag = (name, fallback) => {
 };
 const once = args.includes('--once');
 const log = args.includes('--log') || once;
+// --redact：记录行里的昵称 / 账号 id 换成座位号再落盘（advisor/redact.mjs）；不加则记录与原来逐字节相同
+const redact = args.includes('--redact');
 const port = flag('--port', process.env.CDP_PORT || '9222');
 const interval = Number(flag('--interval', '600')) || 600;
 
@@ -150,13 +154,11 @@ const piece = (x) => (x && typeof x === 'object' ? {
   };
 })()`;
 
-async function readRoute() {
+/** the player's pick from box.ps1 (route.json), only if made in this match (route-pick.mjs) */
+async function readRoute(match) {
   try {
-    const saved = JSON.parse(await fs.readFile(ROUTE, 'utf8'));
-    const id = typeof saved === 'string' ? saved : saved && saved.route;
-    if (id && DATA.bonds[id] && DATA.bonds[id].c === 1) return id;
-  } catch { /* no pick yet */ }
-  return null;
+    return routeFor(JSON.parse(await fs.readFile(ROUTE, 'utf8')), match, (id) => !!(DATA.bonds[id] && DATA.bonds[id].c === 1));
+  } catch { return null; }   // no pick yet
 }
 
 /** the bond to support the main one: the board's second bond with room left, cheapest threshold first */
@@ -227,14 +229,16 @@ export function boxOf(snap, route) {
   const at = Date.now();
   if (!snap || !snap.ok) return { at, online: false, text: '未连上客户端（需用带调试端口的启动器）' };
   const roundsPlayed = (snap.priv && (snap.priv.bonds || []).reduce((n, b) => n + (b.layers || 0), 0)) || 0;
+  // 本局指纹：box.ps1 用它给点选的主线打标签，换了局就清掉自动选中的那条
+  const match = api.matchKeyOf(snap.brief);
   // 只要进了休整期（有私有视图 + PREP）就给抓取建议；开局决策只在「还没开始打」的阶段显示
   const opening = OPEN_PHASES.has(snap.phase);
   if (opening) {
     const brief = briefBoxOf(snap);
-    if (brief && (!snap.priv || !roundsPlayed)) return Object.assign(brief, { demo: !!snap.demo });
+    if (brief && (!snap.priv || !roundsPlayed)) return Object.assign(brief, { demo: !!snap.demo, match });
   }
   if (!snap.priv) {
-    return { at, online: true, phase: snap.phase, idle: true, text: snap.phase ? `对局阶段 ${snap.phase}，等休整期` : '在大厅，等开局' };
+    return { at, online: true, phase: snap.phase, idle: true, match, text: snap.phase ? `对局阶段 ${snap.phase}，等休整期` : '在大厅，等开局' };
   }
   const priv = snap.priv;
   priv.round = snap.round || 1;      // the core's estimate needs the round; the private view has none
@@ -264,6 +268,7 @@ export function boxOf(snap, route) {
   const out = {
     at,
     online: true,
+    match,
     phase: snap.phase,
     round: snap.round,
     funds: priv.funds,
@@ -704,10 +709,12 @@ async function recordTurn(snap, box) {
     stats: priv.stats || null,
   };
   try {
+    // --redact 换不干净会抛：宁可丢这一行，也不落半脱敏的数据
+    const out = redact ? redactRow(row) : row;
     await fs.mkdir(RECORD_DIR, { recursive: true });
     const day = new Date().toISOString().slice(0, 10);
-    await fs.appendFile(path.join(RECORD_DIR, `${day}.jsonl`), JSON.stringify(row) + '\n');
-  } catch { /* 记录失败不该影响顾问 */ }
+    await fs.appendFile(path.join(RECORD_DIR, `${day}.jsonl`), JSON.stringify(out) + '\n');
+  } catch (error) { if (log && redact) console.log(`记录跳过：${String(error.message || error).slice(0, 90)}`); }   // 记录失败不该影响顾问
 }
 
 async function main() {
@@ -718,7 +725,7 @@ async function main() {
       if (!cdp) cdp = await connect({ port });
       await reloadAdvisor();                       // 逻辑/数据热更新：文件一变就用新的
       const snap = await cdp.evaluate(SNAPSHOT);
-      const box = boxOf(snap, await readRoute());
+      const box = boxOf(snap, await readRoute(snap && snap.ok ? api.matchKeyOf(snap.brief) : null));
       await writeState(box);
       await recordTurn(snap, box);                 // 复盘：逐回合落盘（客户端自己不存过程）
       const text = line(box);
