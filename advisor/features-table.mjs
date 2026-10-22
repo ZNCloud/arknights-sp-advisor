@@ -22,8 +22,11 @@ export function tableNames(gd) {
   for (let i = 0; i < HAND; i++) names.push(...unitNames(`hand${i}`, bonds));
   for (let i = 0; i < SHOP; i++) names.push(...unitNames(`shop${i}`, bonds));
   for (const b of bonds) names.push(`bond.${b}.count`, `bond.${b}.tier`, `bond.${b}.active`, `bond.${b}.layers`, `bond.${b}.pace`, `bond.${b}.projR13`);
+  // selfN: the seat's own block (everything before the teammates) — the distilled student (distill/features.mjs) reuses
+  // it and swaps the teammate block for public-only teammate state.
+  const selfN = names.length;
   for (let i = 0; i < MATES; i++) names.push(...['alive', 'lp', 'level', 'funds', 'strength', 'mainTier', 'mainLayers', 'golden'].map(n => `mate${i}.${n}`));
-  cache = { names, bonds, version: TABLE_VERSION };
+  cache = { names, selfN, bonds, version: TABLE_VERSION };
   return cache;
 }
 function unit(gd, ps, id, piece, loc, bonds) {
@@ -40,7 +43,13 @@ function unit(gd, ps, id, piece, loc, bonds) {
 }
 const strength = (gd, p) => gd.tierOf(p.id) * 3 + (gd.isGolden(p.id) ? 6 : 0) + (p.items?.length || 0) * 2;
 export function tableFeatures(m, ps) {
-  const gd = m.gd, { names, bonds } = tableNames(gd), width = unitNames('x', bonds).length, v = [];
+  const v = [...tableSelf(m, ps), ...tableMates(m, ps)];
+  if (v.length !== tableNames(m.gd).names.length) throw Error(`table length ${v.length} != ${tableNames(m.gd).names.length}`);
+  return v;
+}
+// The seat's own block: round / economy / boss, board, hand, shop, bonds (tableNames().selfN values).
+export function tableSelf(m, ps) {
+  const gd = m.gd, { selfN, bonds } = tableNames(gd), width = unitNames('x', bonds).length, v = [];
   const boss = gd.boss(m.round === gd.hiddenRound ? m.hiddenBossId : m.bossId), be = gd.enemy(boss?.enemyKey)?.stats || {};
   v.push(m.round, Math.max(0, gd.bossRound - m.round), ps.lp, ps.funds, ps.shop.level, ps.shop.upgradePrice ?? 0, gd.refreshPrice, ps.shop.freeRefreshes || 0, ps.deployCap,
     typeof m.teamLp === 'number' ? m.teamLp : 0, m.alivePlayers().length, m.hiddenLayerSum || 0, ps.creditedKills || 0, be.maxHp || 0, be.atk || 0, be.def || 0, be.res || 0, ps.shop.frozen ? 1 : 0);
@@ -56,6 +65,12 @@ export function tableFeatures(m, ps) {
     // Pace vs the natural-opening stacking curve (model/stacking.mjs) and a power-law projection to R13.
     v.push(st.count || 0, st.tier || 0, st.active ? 1 : 0, L, ref > 0 ? L / ref : 0, L * Math.pow(13 / r, 1.5));
   }
+  if (v.length !== selfN) throw Error(`table self length ${v.length} != ${selfN}`);
+  return v.map(x => Number.isFinite(x) ? x : 0);
+}
+// Teammates in seat order (simulator view: includes their funds and full boards, which a live client does not see).
+function tableMates(m, ps) {
+  const gd = m.gd, v = [];
   const mates = m.order.filter(p => p !== ps);
   for (let i = 0; i < MATES; i++) {
     const q = mates[i];
@@ -64,6 +79,5 @@ export function tableFeatures(m, ps) {
     v.push(q.alive ? 1 : 0, q.lp, q.shop.level, q.funds, q.allChess().reduce((s, p) => s + strength(gd, p), 0),
       main ? (q.bonds[main[0]]?.tier || 0) : 0, main ? main[1] : 0, q.allChess().filter(p => gd.isGolden(p.id)).length);
   }
-  if (v.length !== names.length) throw Error(`table length ${v.length} != ${names.length}`);
   return v.map(x => Number.isFinite(x) ? x : 0);
 }

@@ -1,0 +1,9 @@
+# Template — not installed. Copy to ~/.config/systemd/user/, fix the three paths, then see docs/distill-framework.md.
+[Unit]
+Description=sp-advisor distillation: start / resume only when the machine is idle
+
+[Service]
+Type=oneshot
+# <checkout>/distill/idle-run.sh <run config> <python with torch>
+ExecStart=%h/CHANGE-ME/sp-advisor/distill/idle-run.sh %h/CHANGE-ME/distill-full.json %h/CHANGE-ME/venv/bin/python
+WorkingDirectory=%h/CHANGE-ME/sp-advisor

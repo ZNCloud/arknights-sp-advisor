@@ -7,3 +7,10 @@ overlay.err.log
 records/
 *.zip
 __pycache__/
+
+# distillation (distill/): data, checkpoints, students and logs live outside the repo; never commit them
+/data/
+/distill-work/
+*.pt
+*.npz
+/venv/

@@ -1,0 +1,35 @@
+{
+ "_comment": "Real run (idle-gated). iter0: value-model teacher on 1000 games (~12k positions, cheap pre-training, ~5-8 h of 16-24 threads); iters 1-3: rollout-advisor teacher, DAgger on 150 games each (~1.8k positions, ~15 h of 16 threads each). Eval on the fixed 150 seeds of the spfull report.",
+ "work_dir": "../data/distill-full",
+ "workers": 16,
+ "concurrent": 8,
+ "datagen": {
+  "teacher": [
+   "model",
+   "rollout"
+  ],
+  "seed_base": 100001,
+  "games_iter0": 1000,
+  "games_per_iter": 150,
+  "K": 8,
+  "N": 6,
+  "N2": 6
+ },
+ "dagger": {
+  "iters": 3,
+  "beta0": 0.5,
+  "beta_decay": 0.5
+ },
+ "train": {
+  "max_steps": 20000,
+  "finetune_steps": 5000,
+  "max_minutes": 90
+ },
+ "eval": {
+  "seeds": "5001-5150"
+ },
+ "idle": {
+  "cpu_load_per_core_max": 0.4,
+  "allowed_hours": []
+ }
+}

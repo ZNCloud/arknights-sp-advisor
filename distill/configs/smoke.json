@@ -1,0 +1,9 @@
+{
+  "_comment": "Smoke run: a few dozen teacher games, one DAgger round, minutes of training, 10 eval seeds. Paths resolve against the checkout root.",
+  "work_dir": "../data/smoke",
+  "workers": 16, "concurrent": 8,
+  "datagen": {"teacher": "model", "seed_base": 100101, "games_iter0": 24, "games_per_iter": 8},
+  "dagger": {"iters": 1, "beta0": 0.5, "beta_decay": 0.5},
+  "train": {"max_steps": 1500, "finetune_steps": 500, "max_minutes": 4, "batch": 128, "eval_every": 250, "ckpt_every_sec": 60},
+  "eval": {"seeds": "5001-5010"}
+}

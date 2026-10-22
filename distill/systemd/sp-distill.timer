@@ -1,0 +1,10 @@
+# Template — not installed. Every 30 min after the previous run ended, try again (the run itself checks idleness).
+[Unit]
+Description=Try the sp-advisor distillation every 30 minutes (idle-gated)
+
+[Timer]
+OnBootSec=15min
+OnUnitInactiveSec=30min
+
+[Install]
+WantedBy=timers.target
