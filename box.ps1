@@ -72,6 +72,10 @@ $coreBonds = [ordered]@{
 }
 $buttons = @()
 $script:picked = $null
+# 本局指纹（state.json 的 match，= 插件核心 matchKeyOf）：点选的主线带着它写进 route.json，换了局就清掉选中
+$script:matchKey = $null
+# 启动时 route.json 里的旧选择：先不认，等第一帧 match 对上了才用（上一局的选择不能带进这一局）
+$script:savedRoute = $null
 
 foreach ($id in $coreBonds.Keys) {
   $b = New-Object System.Windows.Forms.Button
@@ -88,7 +92,9 @@ foreach ($id in $coreBonds.Keys) {
   $b.Tag = $id
   $b.Add_Click({
     $script:picked = $this.Tag
-    [System.IO.File]::WriteAllText($routePath, '{"route":"' + $this.Tag + '"}', (New-Object System.Text.UTF8Encoding($false)))
+    # match 为空（还没见过对局）时 overlay 不认这次选择，照样走自动主线
+    $json = [ordered]@{ route = [string]$this.Tag; match = $script:matchKey } | ConvertTo-Json -Compress
+    [System.IO.File]::WriteAllText($routePath, $json, (New-Object System.Text.UTF8Encoding($false)))
     Paint-Route
   })
   $form.Controls.Add($b)
@@ -105,7 +111,7 @@ function Paint-Route {
 if (Test-Path $routePath) {
   try {
     $saved = [System.IO.File]::ReadAllText($routePath, [System.Text.Encoding]::UTF8) | ConvertFrom-Json
-    if ($saved.route -and $coreBonds.Contains($saved.route)) { $script:picked = $saved.route }
+    if ($saved.route -and $coreBonds.Contains($saved.route) -and $saved.match) { $script:savedRoute = $saved }
   } catch { }
 }
 Paint-Route
@@ -176,6 +182,15 @@ $timer.Add_Tick({
   $box = $null
   try { $box = [System.IO.File]::ReadAllText($statePath, [System.Text.Encoding]::UTF8) | ConvertFrom-Json } catch { return }
   if (-not $box) { return }
+
+  # 换了一局：清掉上一局的选中（下面的自动选中会按这一局的主线重选）；启动时读到的旧选择只在第一局对得上时才用
+  if ($box.match -and [string]$box.match -ne $script:matchKey) {
+    $script:matchKey = [string]$box.match
+    $script:picked = $null
+    if ($script:savedRoute -and [string]$script:savedRoute.match -eq $script:matchKey) { $script:picked = [string]$script:savedRoute.route }
+    $script:savedRoute = $null
+    Paint-Route
+  }
 
   $age = [int](([DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) - $box.at)
   $stale = if ($age -gt 4000) { " · 数据 $age ms 旧" } else { '' }

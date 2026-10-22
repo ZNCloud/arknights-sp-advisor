@@ -38,7 +38,7 @@ export async function loadAdvisor(page = PLUGIN_PAGE) {
   // the core starts by reading the data block off a document; give it one
   const stub = { getElementById: (id) => (id === 'sp-data' ? { textContent: html.slice(dataStart, dataEnd) } : null) };
   const api = new Function('document', `${core}
-    return { analyseState, estimate, scoreSlot, adviceOf, autoRoute, coreBonds, heldCounts, progressOf,
+    return { analyseState, estimate, scoreSlot, adviceOf, autoRoute, matchKeyOf, coreBonds, heldCounts, progressOf,
       nextThreshold, nameOf, bondsOf, baseOf, tierOf, isGolden, mergeOf, missingFor, bondName, thresholdsOf,
       layersOf, damageMultiplier, survivalMultiplier, bbOf, coreBondsFor, modeOf, lastRoundOf, upgradePrice, shopSlotsOf,
       placeOf, isKeyOp, keyOpsOf, canHitFlyOf, airOf, tierEffectsOf, tierLineOf, addonStatusOf, addonAdvice, investMult, gainOf, stackPlanOf, stackChannelOf, placementPlanOf, armorCheckOf, reachOdds, terminalOf, carryCapOf, effectiveLayersOf, policyOf, bandUsageOf, scoreBounty };`)(stub);
