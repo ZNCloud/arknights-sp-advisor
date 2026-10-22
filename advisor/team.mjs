@@ -234,10 +234,13 @@ export function teamSpec(spec, m, playerId, profile = null, { lines = {} } = {})
   const cores = new Set(Object.keys(spec.recipes)), seats = {};
   const avail = m.gd.bondIds.filter((b) => cores.has(b) && !m.disabledBonds.includes(b) && !m.staticInactiveBonds.includes(b));
   const bondsOf = (ps) => Object.entries(ps.bonds || {}).map(([bondId, b]) => ({ bondId, count: b.count || 0, layers: b.layers || 0 }));
-  const taken = [];
+  // only this match's lines: a bond drawn as disabled (or statically inactive) still counts members on a board, but it
+  // is nobody's line — taking it as one sent the advised seat to a banned route (guides/policy.mjs assign() then drops it)
+  const open = new Set(avail), taken = [];
   for (const ps of m.order) {
     if (!ps.alive) continue;
-    const line = observedLine(bondsOf(ps), cores) || lines[ps.playerId] || null, o = {};
+    const known = open.has(lines[ps.playerId]) ? lines[ps.playerId] : null;
+    const line = observedLine(bondsOf(ps), open) || known, o = {};
     if (line) { o.route = line; if (ps.playerId !== playerId) taken.push(line); }
     if (ps.playerId !== playerId) {
       const off = ps.shop.level - (spec.levelTargets[m.round] ?? ps.shop.level);

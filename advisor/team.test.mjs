@@ -52,6 +52,19 @@ test('teamSpec: visible lines kept, a teammate ahead of the base tempo keeps its
   assert.equal(observedLine([{ bondId: 'yanShip', count: 1, layers: 0 }], new Set(['yanShip'])), null);   // one member, no layers: not a line yet
 });
 
+test('teamSpec: a bond disabled this match is nobody\'s line (members on the board, or a known draft line)', () => {
+  const ps = (playerId, level, bonds) => ({ playerId, alive: true, shop: { level }, bonds });
+  const m = { round: 6, bossId: 'B', disabledBonds: ['sargonShip'], staticInactiveBonds: ['egirShip'], gd: { bondIds: Object.keys(base.recipes), maxShopLevel: 6 },
+    order: [ps('p0', 3, { sargonShip: { count: 3, layers: 0 } }), ps('p1', 3, { sargonShip: { count: 4, layers: 0 }, kjeragShip: { count: 2, layers: 0 } }),
+      ps('p2', 3, { egirShip: { count: 3, layers: 0 } }), ps('p3', 3, {})] };
+  const s = teamSpec(base, m, 'p0', null, { lines: { p3: 'sargonShip' } });
+  const off = ['sargonShip', 'egirShip'];
+  for (const pid of ['p0', 'p1', 'p2', 'p3']) assert.ok(!off.includes(s.seats[pid]?.route), `${pid} routed to a disabled bond: ${s.seats[pid]?.route}`);
+  assert.equal(s.seats.p1.route, 'kjeragShip');                     // its open line, not the bigger disabled one
+  assert.ok(!s.seats.p2 && !s.seats.p3);                            // no open line seen: left to the guide's assignment
+  assert.equal(s.seats.p0.route, 'yanShip');                        // the advised seat picks among open lines (coreOrder, minus kjeragShip taken)
+});
+
 test('learnTempo: a significant lower level later also caps the rounds before it', () => {
   const S = [];
   for (let i = 0; i < 60; i++) { S.push({ round: 3, level: 3, w: 0 }, { round: 3, level: 2, w: 0 }); S.push({ round: 4, level: 2, w: 1 + (i % 3) * 0.1 }, { round: 4, level: 3, w: -1 - (i % 3) * 0.1 }); }
