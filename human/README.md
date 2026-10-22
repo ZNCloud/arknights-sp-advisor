@@ -44,3 +44,17 @@ SP_ADVICE=results/advice.json node sp-advisor/human/hind-run.mjs game1 results/r
 - BOSS 回合由 4 人共同决定，记录没有队友；主指标一律用 owner 自己的场（单人份额、自己场漏怪）。
 - 引擎（0.3.2-dev）里 owner 的中后期阵容比真实局更容易漏怪：A 口径的掉血绝对值偏高，只比较同一批随机未来上的差。
 - B 口径钉死了后续商店，所以「早升级」在 B 里没有收益可言；升级 / 刷新这类经济决策只在 A 口径里比。
+
+## 记录脱敏（昵称 / 账号 id → 座位号）
+
+`matches/*.jsonl` 的 `mates[].name`、`result.players[].name / playerId` 是真人昵称和账号 id。外发前先脱敏：
+昵称 → `座位<seat>`、账号 id → `seat<seat>`（`advisor/redact.mjs`）。一局里座位就是人，`advisor/team.mjs`
+（`tracksOf` / `splitMatches` / `rateMatch`）和 `cli.mjs team` 在脱敏前后数字完全一样，只有名字不同。
+换不干净（缺座位、原值还留在任何字段里）直接报错，不落半脱敏的文件。
+
+```bash
+# 写到别处（默认不动受版本管理的 matches/；真要原地改加 --in-place）；只打印行数与替换个数，不打印原值
+node tools/redact-matches.mjs matches/2026-10-21.jsonl --out-dir ../data/redacted
+# 顾问现场记录时就脱敏（不加 --redact 时记录与原来逐字节相同）
+node overlay.mjs --watch --redact
+```
