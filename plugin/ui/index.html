@@ -637,6 +637,15 @@
     var price = typeof slot.price === 'number' ? slot.price : 0;
     var s, t, base, copies, need, next, hasBond;
     if (slot.kind === 'item') {
+      // 变形同构体（T6「球」）：和任意带 giveBondId 的装备同槽 ⇒ 该单位额外算 1 个那条盟约的成员。
+      // 队友真实样本：装球的两个玩家层数 500–543（全场最高两档）。所以它值一个档位成员，不是一件普通装备。
+      if (typeof slot.id === 'string' && slot.id.indexOf('chess_item_6_09_e_') === 0) {
+        var tlI = tierLineOf(route, card.count);
+        var gap = tlI && !tlI.full ? tlI.need : 0;
+        var bonus = gap <= 2 ? 40 : 18;
+        why.push('ISOMORPH 假成员（+1 个' + bondName(route) + '）');
+        s = (16 + tierOf(slot.id) * 5) * (0.6 + bias) * eqDecay + bonus;
+      }
       t = tierOf(slot.id);
       // 装备的边际价值随路线变化：维多利亚「装备=伤害」最高，阿戈尔吃干员面板偏低
       var epol = policyOf(route);
