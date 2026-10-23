@@ -32,6 +32,8 @@ const flag = (name, fallback) => {
   return i >= 0 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : fallback;
 };
 const once = args.includes('--once');
+// 记录默认开启：用户要求「点带顾问的启动器就必须带上所有信息」
+const record = !args.includes('--no-record');
 const log = args.includes('--log') || once;
 // --redact：记录行里的昵称 / 账号 id 换成座位号再落盘（advisor/redact.mjs）；不加则记录与原来逐字节相同
 const redact = args.includes('--redact');
@@ -773,6 +775,39 @@ async function recordTurn(snap, box) {
   } catch (error) { if (log && redact) console.log(`记录跳过：${String(error.message || error).slice(0, 90)}`); }   // 记录失败不该影响顾问
 }
 
+
+/**
+ * 对局结束时把结果落盘（append 到 records/<date>-results.jsonl）。
+ * 客户端 localStorage['sp.match-history.v1'] 只保留极少数条目，而 match.result 在离开对局后就没了，
+ * 所以必须在结束的那一刻抓下来 —— 否则「谁用缪尔赛思滚到多少层」这类复盘永远查不到。
+ */
+async function recordResult(cdp, snap) {
+  if (!snap || !snap.ok) return;
+  const key = `result|${snap.round || 0}|${snap.phase || ''}`;
+  if (recordResult.last === key) return;
+  const raw = await cdp.evaluate(`(() => {
+    const st = (globalThis.__SP__.store.get() || {});
+    const res = (st.match && st.match.result) || null;
+    let histLast = null;
+    try {
+      const h = JSON.parse(localStorage.getItem('sp.match-history.v1') || '{}');
+      const e = (h.entries || [])[(h.entries || []).length - 1] || null;
+      histLast = e ? { id: e.id, savedAt: e.savedAt, result: e.result } : null;
+    } catch (err) { histLast = null; }
+    return JSON.stringify({ result: res, historyLast: histLast });
+  })()`);
+  recordResult.last = key;
+  let parsed = null;
+  try { parsed = JSON.parse(raw); } catch { return; }
+  if (!parsed || (!parsed.result && !parsed.historyLast)) return;
+  try {
+    await fs.mkdir(RECORD_DIR, { recursive: true });
+    const day = new Date().toISOString().slice(0, 10);
+    await fs.appendFile(path.join(RECORD_DIR, `${day}-results.jsonl`),
+      JSON.stringify({ at: new Date().toISOString(), phase: snap.phase, round: snap.round, ...parsed }) + '\n');
+  } catch { /* 记录失败不影响顾问 */ }
+}
+
 async function main() {
   let cdp = null;
   let said = '';
@@ -783,7 +818,8 @@ async function main() {
       const snap = await cdp.evaluate(SNAPSHOT);
       const box = boxOf(snap, await readRoute(snap && snap.ok ? api.matchKeyOf(snap.brief) : null));
       await writeState(box);
-      await recordTurn(snap, box);                 // 复盘：逐回合落盘（客户端自己不存过程）
+      if (record) await recordTurn(snap, box);     // 复盘：逐回合落盘（含所有座位的公开快照）
+      if (record && (snap.phase === 'RESULT' || snap.phase === 'FINAL_ASSAULT')) await recordResult(cdp, snap);
       const text = line(box);
       if (log && text !== said) { said = text; console.log(`\n[${new Date().toLocaleTimeString()}] ${text}`); }
       return true;
