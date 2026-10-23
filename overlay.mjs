@@ -69,7 +69,7 @@ async function reloadAdvisor(force = false) {
 }
 await reloadAdvisor(true);
 
-const SNAPSHOT = `(() => {
+const SNAPSHOT = `(async () => {
   const S = globalThis.__SP__;
   const store = S && S.store;
   if (!store || typeof store.get !== 'function') return { ok: false, why: 'no __SP__.store' };
@@ -77,6 +77,18 @@ const SNAPSHOT = `(() => {
   // store.get() 不接受参数，返回整个状态；对局在 .match 里
   const m = root.match || {};
   const pub = m.public || null, p = m.private || null;
+  // 本服自己的盟约表（顾问的数值表是官方 0.3.1）：按 origin 缓存，换服才重取
+  let dataBonds = null;
+  try {
+    const origin = (typeof location !== 'undefined' && location.origin) || '';
+    const cached = globalThis.__spAdvisorDataBonds;
+    if (cached && cached.origin === origin) dataBonds = cached.ids;
+    else if (S.data && typeof S.data.get === 'function') {
+      const v = await S.data.get('bonds');
+      dataBonds = v ? Object.keys(v) : null;
+      globalThis.__spAdvisorDataBonds = { origin, ids: dataBonds };
+    }
+  } catch { dataBonds = null; }
   // row/col/dir/items 也带上：复盘要看「放哪了、朝哪、装了啥」（顾问逻辑用不到，但记录要用）
 const piece = (x) => (x && typeof x === 'object' ? {
   kind: x.kind, id: x.id, golden: x.golden === true, tier: x.tier,
@@ -85,6 +97,9 @@ const piece = (x) => (x && typeof x === 'object' ? {
   return {
     ok: true,
     connection: root.connection ? { status: root.connection.status } : null,
+    // 服务器身份 + 它自己的盟约表（顾问的数值表是官方 0.3.1；这一句让 overlay 能判断「本服数据对不对得上」）
+    origin: (typeof location !== 'undefined' && location.origin) || null,
+    dataBonds,
     phase: pub ? pub.phase : null,
     round: pub ? pub.round : null,
     // 开局决策用的那份 m.public（boss、禁用名单、模式、队友策略）——服务端在 INFO_CHECK 就发下来了
@@ -238,7 +253,7 @@ export function boxOf(snap, route) {
     if (brief && (!snap.priv || !roundsPlayed)) return Object.assign(brief, { demo: !!snap.demo, match });
   }
   if (!snap.priv) {
-    return { at, online: true, phase: snap.phase, idle: true, match, text: snap.phase ? `对局阶段 ${snap.phase}，等休整期` : '在大厅，等开局' };
+    return { at, online: true, phase: snap.phase, idle: true, match, server: serverInfoOf(snap), text: snap.phase ? `对局阶段 ${snap.phase}，等休整期` : '在大厅，等开局' };
   }
   const priv = snap.priv;
   priv.round = snap.round || 1;      // the core's estimate needs the round; the private view has none
@@ -347,8 +362,31 @@ export function boxOf(snap, route) {
     lpKind: (view.lp && view.lp.kind) || null,
     role: (view.role && view.role.name) || null,
   };
+  out.server = serverInfoOf(snap);   // 这台服务器是谁、它的盟约表和顾问的 0.3.1 差在哪
   out.nl = nlOf(out);          // 自然语言版建议（小框与 --once 都读它）
   return out;
+}
+
+/**
+ * 服务器指纹：origin + 它自己的盟约表 vs 顾问本地数据表（plugin/ui 里那份官方 0.3.1）。
+ * 社区服经常改数据（合并服、MOD 服），顾问的数值按官方版算 —— 差多少要让玩家看见，而不是闷着头给建议。
+ * 返回 null 表示这一帧没拿到（大厅/页面还没取数据）。
+ */
+function serverInfoOf(snap) {
+  if (!snap || !snap.ok) return null;
+  const ids = Array.isArray(snap.dataBonds) ? snap.dataBonds : null;
+  if (!ids) return snap.origin ? { origin: snap.origin, bonds: null } : null;
+  const local = Object.keys(DATA.bonds || {});
+  const serverSet = new Set(ids);
+  const localSet = new Set(local);
+  const missing = local.filter((id) => !serverSet.has(id));      // 顾问认、本服没有（不该出现：会造成错误建议）
+  const extra = ids.filter((id) => !localSet.has(id));           // 本服有、顾问不认（MOD/合服内容，顾问不会推荐）
+  return {
+    origin: snap.origin || null,
+    bonds: ids.length, localBonds: local.length,
+    missing: missing.slice(0, 12), extra: extra.slice(0, 12),
+    exact: !missing.length && !extra.length,
+  };
 }
 
 /**
@@ -454,7 +492,16 @@ export function nlOf(box) {
     out.push(`本局 BOSS 是${box.armor.name}，弱点走${channelOf(box.armor.channel)}通道（系数 ${box.armor.k}）：破甲要 ${box.armor.need} 有效攻，你现在 ${box.armor.have}${box.armor.ok ? '，够了' : `，还差 ${gapAtk}`}。`);
   }
 
-  return out.slice(0, 6);
+  // ⑦ 服务器数据对不上：顾问按官方 0.3.1 的盟约表算，社区服（合服/MOD）常常改表，先说清差在哪
+  const sv = box.server;
+  if (sv && sv.bonds != null && !sv.exact) {
+    const bits = [];
+    if (sv.extra && sv.extra.length) bits.push(`多 ${sv.extra.length} 个顾问不认识的盟约`);
+    if (sv.missing && sv.missing.length) bits.push(`少 ${sv.missing.length} 个顾问要用的盟约（${sv.missing.slice(0, 3).join('/')}）`);
+    out.push(`⚠ 本服（${String(sv.origin || '?').replace(/^https?:\/\//, '')}）有 ${sv.bonds} 个盟约，顾问按官方 0.3.1 的 ${sv.localBonds} 个算：${bits.join('、')}——建议里涉及这些盟约的部分会偏。`);
+  }
+
+  return out.slice(0, 7);
 }
 
 /**
@@ -675,12 +722,15 @@ async function recordTurn(snap, box) {
   const priv = snap.priv;
   // 阶段/回合变了必记；同一阶段里经济状态（含队友阵容）只要变了也记（逐动作），完全没动才跳过
   const boards = mateBoardsOf(snap);
+  const server = serverInfoOf(snap);
   const key = `${snap.phase || '?'}|${snap.round || 0}|${recordKeyOf(priv, snap.brief)}|${snap.result ? 'R' : ''}|${boards ? JSON.stringify(boards).length : 0}`;
   if (recordTurn.last === key) return;
   recordTurn.last = key;
   const row = {
     at: new Date().toISOString(),
     phase: snap.phase, round: snap.round, mode: snap.brief && snap.brief.modeId,
+    // 哪台服务器（社区服数据表常和官方不同；复盘时才知道这条记录来自哪个服）
+    server,
     funds: priv.funds, lp: priv.lp, level: priv.shop && priv.shop.level,
     bonds: (priv.bonds || []).map((b) => `${b.bondId}:${b.count}/${b.layers ?? 0}`),
     board: (priv.board || []).map((p) => ({
@@ -707,6 +757,12 @@ async function recordTurn(snap, box) {
     // 服务端给的统计（dmgDealt/bossDamage/kills/leaks/gold/refreshes/merges/itemsEquipped）——
     // 复盘时这比「赢没赢」有用得多，也直接对应 history 里的 stats 字段
     stats: priv.stats || null,
+    // 所有座位的公开快照（局内可见：band / lp / 商店等级 / 各盟约人数）。
+    // 之前只记自己的私视图，导致"别人怎么滚雪球"事后查不到 —— 这条补上。
+    table: ((snap.brief && snap.brief.players) || []).map((q) => ({
+      seat: q.seat, name: q.name, band: q.bandId, lp: q.lp, lv: q.shopLevel,
+      bonds: (q.bonds || []).map((b) => (b.bondId || b.id) + ':' + (b.count || 0)).join(' '),
+    })),
   };
   try {
     // --redact 换不干净会抛：宁可丢这一行，也不落半脱敏的数据
