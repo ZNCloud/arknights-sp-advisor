@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:00:40.682Z",
+ "generatedAt": "2026-10-24T14:04:57.863Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -579,9 +579,9 @@
   },
   {
    "round": 9,
-   "funds": 9,
+   "funds": 0,
    "lp": 11,
-   "level": 4,
+   "level": 5,
    "bonds": [
     "egirShip:5/60",
     "indomShip:2/34",
@@ -602,22 +602,21 @@
     "chess_item_4_06_e_a@2"
    ],
    "hand": [
-    "chess_char_4_12_a",
+    "chess_char_1_04_a",
     "chess_char_2_02_a",
-    "chess_char_2_07_a",
-    "chess_char_2_17_a",
+    "chess_char_1_04_a",
     "chess_char_3_02_a",
     "chess_char_1_03_a",
     "chess_char_1_03_a"
    ],
-   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
-   "pick": "休眠子裔(18)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "雪猎(0)",
    "after": {
-    "lp": 11,
+    "lp": 9,
     "bonds": [
-     "egirShip:5/60",
-     "indomShip:2/34",
-     "steadShip:2/6",
+     "egirShip:5/77",
+     "indomShip:2/44",
+     "steadShip:2/9",
      "maniShip:1/0",
      "soloShip:1/0",
      "yanShip:0/4",
@@ -631,33 +630,121 @@
       "seat": 0,
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
-      "lp": 11,
+      "lp": 0,
       "lv": 4,
-      "bonds": "skillfulShip:2 swiftShip:2 deputShip:2 preciShip:2 kazimierzShip:1 arcaneShip:1 yanShip:1 sargonShip:1 lateranoShip:2 investShip:2 emptyShip:1"
+      "bonds": ""
      },
      {
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 11,
-      "lv": 4,
+      "lp": 9,
+      "lv": 5,
       "bonds": "egirShip:5 indomShip:2 steadShip:2 maniShip:1 soloShip:1 yanShip:0 kazimierzShip:2 visiShip:1 raidShip:1 emptyShip:1"
      },
      {
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_chiave",
-      "lp": 4,
+      "lp": 0,
       "lv": 4,
-      "bonds": "siracusaShip:4 suntShip:2 swiftShip:1 preciShip:0 arcaneShip:0 lateranoShip:2 skillfulShip:1 steadShip:1 miraShip:1 raidShip:1"
+      "bonds": ""
      },
      {
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 9,
+      "lp": 7,
       "lv": 4,
-      "bonds": "skillfulShip:2 preciShip:2 visiShip:2 lateranoShip:3 suntShip:2 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 steadShip:1 investShip:1"
+      "bonds": "lateranoShip:3 skillfulShip:2 preciShip:2 visiShip:4 suntShip:2 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 10,
+   "funds": 2,
+   "lp": 9,
+   "level": 5,
+   "bonds": [
+    "egirShip:5/77",
+    "indomShip:2/44",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "steadShip:1/9",
+    "yanShip:0/4",
+    "kazimierzShip:2/0",
+    "visiShip:1/0",
+    "emptyShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_16_a@3",
+    "chess_char_4_04_a@3",
+    "chess_char_3_19_a@3",
+    "chess_char_2_14_a@3",
+    "chess_char_3_10_a@3",
+    "chess_item_3_06_e_a@2"
+   ],
+   "hand": [
+    "chess_char_3_13_a",
+    "chess_char_3_05_a",
+    "chess_char_1_04_a",
+    "chess_char_2_02_a",
+    "chess_char_6_16_a",
+    "chess_char_3_05_a",
+    "chess_char_3_02_a",
+    "chess_char_1_03_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
+   "pick": "歌利亚头盔(9)",
+   "after": {
+    "lp": 9,
+    "bonds": [
+     "egirShip:5/77",
+     "indomShip:2/44",
+     "steadShip:2/9",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "yanShip:0/4",
+     "kazimierzShip:2/0",
+     "visiShip:1/0",
+     "raidShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 9,
+      "lv": 5,
+      "bonds": "egirShip:5 indomShip:2 steadShip:2 maniShip:1 soloShip:1 yanShip:0 kazimierzShip:2 visiShip:1 raidShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 7,
+      "lv": 4,
+      "bonds": "lateranoShip:3 skillfulShip:2 preciShip:2 visiShip:4 suntShip:2 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
      }
     ]
    }
@@ -9030,6 +9117,118 @@
    "round": 8,
    "type": "CHAR_DAMAGE",
    "text": "大兜特兜#9944博士的水月干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 504,
+   "at": 1792850463522,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的缄默德克萨斯干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 505,
+   "at": 1792850471246,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的送葬人干员晋升为精锐",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 506,
+   "at": 1792850471380,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "草莓泡芙#0279博士的隐现干员晋升为精锐",
+   "playerId": "p_699082202c"
+  },
+  {
+   "id": 507,
+   "at": 1792850471913,
+   "round": 9,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为5级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 508,
+   "at": 1792850548475,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的伺夜干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 509,
+   "at": 1792850586686,
+   "round": 9,
+   "type": "CUSTOM",
+   "text": "草莓泡芙#0279博士中途退出了模拟",
+   "playerId": null
+  },
+  {
+   "id": 510,
+   "at": 1792850621585,
+   "round": 9,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的水月干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 511,
+   "at": 1792850621585,
+   "round": 9,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 512,
+   "at": 1792850621586,
+   "round": 9,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的予愿安洁莉娜干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 513,
+   "at": 1792850621587,
+   "round": 9,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的缇缇干员造成的伤害量达到200000",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 514,
+   "at": 1792850621587,
+   "round": 9,
+   "type": "CUSTOM",
+   "text": "大漏特漏#1989博士的目标生命值已耗尽",
+   "playerId": null
+  },
+  {
+   "id": 515,
+   "at": 1792850635361,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为5级",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 516,
+   "at": 1792850666503,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的莫斯提马干员晋升为精锐",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 517,
+   "at": 1792850679719,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的幽灵鲨干员晋升为精锐",
    "playerId": "p_0c4a6121fd"
   }
  ],
