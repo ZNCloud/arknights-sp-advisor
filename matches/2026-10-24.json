@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:01:34.338Z",
+ "generatedAt": "2026-10-24T12:05:38.587Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -763,22 +763,57 @@
   },
   {
    "round": 11,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 15,
+   "level": 5,
+   "bonds": [
+    "sargonShip:5/105",
+    "swiftShip:2/66",
+    "suntShip:3/0",
+    "kazimierzShip:0/8",
+    "kjeragShip:0/5",
+    "preciShip:0/5",
+    "siracusaShip:1/0",
+    "skillfulShip:1/0",
+    "deputShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_01_a@2",
+    "chess_char_1_10_a@2",
+    "chess_char_2_13_a@3",
+    "chess_char_4_24_a@3",
+    "chess_char_1_09_a@2",
+    "chess_item_3_03_e_a@2"
+   ],
+   "hand": [
+    "chess_char_2_08_a",
+    "chess_char_3_13_a",
+    "chess_char_4_10_a",
+    "chess_char_1_06_a",
+    "chess_char_5_10_a",
+    "chess_char_1_12_a",
+    "chess_char_1_01_a",
+    "chess_char_2_08_b",
+    "chess_char_3_11_a"
+   ],
+   "advice": "可以抓 卡涅利安（槽位 4）",
+   "pick": "卡涅利安(34)",
    "after": {
     "lp": 15,
     "bonds": [
-     "sargonShip:6/105",
-     "swiftShip:2/66",
-     "suntShip:4/0",
+     "sargonShip:5/163",
+     "swiftShip:2/92",
+     "suntShip:3/0",
      "kazimierzShip:0/8",
      "kjeragShip:0/5",
      "preciShip:0/5",
+     "siracusaShip:1/0",
      "skillfulShip:1/0",
-     "steadShip:1/0",
      "deputShip:1/0",
-     "miraShip:1/0"
+     "miraShip:1/0",
+     "emptyShip:1/0"
     ],
     "table": [
      {
@@ -787,7 +822,7 @@
       "band": "band_chiave",
       "lp": 16,
       "lv": 5,
-      "bonds": "siracusaShip:6 swiftShip:2 miraShip:2 suntShip:2 yanShip:1 kjeragShip:0 steadShip:1 skillfulShip:1 arcaneShip:1 raidShip:1 emptyShip:1"
+      "bonds": "siracusaShip:6 swiftShip:2 miraShip:3 suntShip:3 yanShip:1 kjeragShip:0 steadShip:1 raidShip:1 skillfulShip:1 arcaneShip:1 emptyShip:1"
      },
      {
       "seat": 1,
@@ -795,15 +830,15 @@
       "band": "band_bldsk",
       "lp": 22,
       "lv": 5,
-      "bonds": "swiftShip:2 deputShip:2 miraShip:2 steadShip:2 suntShip:3 soloShip:1 emptyShip:1 kjeragShip:2 sargonShip:0 skillfulShip:1 victoriaShip:1 kazimierzShip:0 investShip:2"
+      "bonds": "swiftShip:3 miraShip:2 kjeragShip:3 steadShip:2 suntShip:2 soloShip:1 investShip:4 deputShip:1 emptyShip:1 sargonShip:0 skillfulShip:1 kazimierzShip:0 victoriaShip:0"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_pepe",
       "lp": 15,
-      "lv": 4,
-      "bonds": "sargonShip:6 swiftShip:2 suntShip:4 kazimierzShip:0 kjeragShip:0 preciShip:0 skillfulShip:1 steadShip:1 deputShip:1 miraShip:1"
+      "lv": 5,
+      "bonds": "sargonShip:5 swiftShip:2 suntShip:3 kazimierzShip:0 kjeragShip:0 preciShip:0 siracusaShip:1 skillfulShip:1 deputShip:1 miraShip:1 emptyShip:1"
      },
      {
       "seat": 3,
@@ -811,7 +846,97 @@
       "band": "band_damaztic",
       "lp": 22,
       "lv": 5,
-      "bonds": "victoriaShip:6 skillfulShip:2 maniShip:1 suntShip:3 kjeragShip:0 steadShip:0 preciShip:0 arcaneShip:0 deputShip:1 visiShip:1 indomShip:1"
+      "bonds": "victoriaShip:6 skillfulShip:3 deputShip:2 suntShip:3 kjeragShip:0 steadShip:0 yanShip:1 preciShip:0 arcaneShip:0 visiShip:1 indomShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 12,
+   "funds": 0,
+   "lp": 15,
+   "level": 6,
+   "bonds": [
+    "sargonShip:5/163",
+    "swiftShip:2/92",
+    "suntShip:3/0",
+    "kazimierzShip:0/8",
+    "kjeragShip:0/5",
+    "preciShip:0/5",
+    "siracusaShip:1/0",
+    "skillfulShip:1/0",
+    "deputShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_06_a@3",
+    "chess_char_2_06_a@3",
+    "chess_char_3_06_a@3",
+    "chess_char_3_06_a@3",
+    "chess_char_4_23_a@3",
+    "chess_item_2_07_e_a@1"
+   ],
+   "hand": [
+    "chess_item_3_05_e_b",
+    "chess_char_2_08_a",
+    "chess_char_3_13_a",
+    "chess_char_4_10_a",
+    "chess_char_5_10_a",
+    "chess_char_1_12_a",
+    "chess_char_1_01_a",
+    "chess_char_2_08_b",
+    "chess_char_3_11_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "菲莱(21)",
+   "after": {
+    "lp": 15,
+    "bonds": [
+     "sargonShip:5/163",
+     "swiftShip:2/92",
+     "suntShip:3/0",
+     "kazimierzShip:0/8",
+     "kjeragShip:0/5",
+     "preciShip:0/5",
+     "siracusaShip:1/0",
+     "skillfulShip:1/0",
+     "deputShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 16,
+      "lv": 5,
+      "bonds": "siracusaShip:6 swiftShip:2 miraShip:3 suntShip:4 yanShip:1 kjeragShip:0 steadShip:1 raidShip:1 skillfulShip:1 arcaneShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_bldsk",
+      "lp": 22,
+      "lv": 5,
+      "bonds": "swiftShip:3 miraShip:2 kjeragShip:3 steadShip:2 suntShip:2 soloShip:1 investShip:4 deputShip:1 emptyShip:1 sargonShip:0 skillfulShip:1 kazimierzShip:0 victoriaShip:0"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_pepe",
+      "lp": 15,
+      "lv": 5,
+      "bonds": "sargonShip:5 swiftShip:2 suntShip:3 kazimierzShip:0 kjeragShip:0 preciShip:0 siracusaShip:1 skillfulShip:1 deputShip:1 miraShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_damaztic",
+      "lp": 22,
+      "lv": 5,
+      "bonds": "victoriaShip:6 skillfulShip:3 deputShip:2 suntShip:3 kjeragShip:0 steadShip:0 yanShip:1 preciShip:0 arcaneShip:0 visiShip:1 indomShip:1"
      }
     ]
    }
@@ -6921,6 +7046,126 @@
    "type": "CUSTOM",
    "text": "联防阶段：大漏特漏#1989 迎战突破防线的敌人",
    "playerId": null
+  },
+  {
+   "id": 216,
+   "at": 1792843314670,
+   "round": 11,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为5级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 217,
+   "at": 1792843330431,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的阿罗玛干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 218,
+   "at": 1792843480043,
+   "round": 11,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、大漏特漏#1989 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 219,
+   "at": 1792843505916,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的予愿安洁莉娜干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 220,
+   "at": 1792843505916,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的阿罗玛干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 221,
+   "at": 1792843505917,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的引星棘刺干员造成的伤害量达到500000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 222,
+   "at": 1792843505917,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的灵知干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 223,
+   "at": 1792843505917,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的凛御银灰干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 224,
+   "at": 1792843505917,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的百炼嘉维尔干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 225,
+   "at": 1792843505917,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的烛煌干员造成的伤害量达到1000000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 226,
+   "at": 1792843508905,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的忍冬干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 227,
+   "at": 1792843514663,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为6级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 228,
+   "at": 1792843516596,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为6级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 229,
+   "at": 1792843522583,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的拉普兰德干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 230,
+   "at": 1792843531235,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的引星棘刺干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
