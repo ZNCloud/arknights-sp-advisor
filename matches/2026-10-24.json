@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:46:43.158Z",
+ "generatedAt": "2026-10-24T12:50:47.730Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -688,30 +688,30 @@
   },
   {
    "round": 10,
-   "funds": 8,
+   "funds": 0,
    "lp": 24,
    "level": 5,
    "bonds": [
-    "lateranoShip:4/68",
+    "lateranoShip:3/68",
     "preciShip:2/21",
     "swiftShip:2/19",
     "kjeragShip:2/28",
     "deputShip:0/14",
     "kazimierzShip:0/8",
-    "suntShip:1/4",
+    "suntShip:0/4",
     "sargonShip:0/2",
     "skillfulShip:1/0",
-    "arcaneShip:1/0",
     "visiShip:1/0",
     "miraShip:1/0",
-    "investShip:1/0"
+    "investShip:1/0",
+    "emptyShip:1/0"
    ],
    "shop": [
-    "chess_char_4_22_a@3",
-    "chess_char_4_18_a@3",
+    "chess_char_1_19_a@2",
+    "chess_char_4_14_a@3",
     "chess_char_3_09_a@3",
-    "chess_char_4_18_a@3",
-    "chess_char_4_22_a@3",
+    "chess_char_1_09_a@2",
+    "chess_char_3_20_a@3",
     "chess_item_2_02_e_a@2"
    ],
    "hand": [
@@ -719,29 +719,29 @@
     "chess_char_3_01_a",
     "chess_char_1_09_a",
     "chess_char_1_13_a",
-    "chess_item_5_02_e_b",
+    "chess_char_4_02_b",
     "chess_char_1_19_b",
     "chess_item_1_05_e_a",
     "chess_char_3_20_b"
    ],
-   "advice": "先刷找 圣约送葬人/蕾缪安（核心没到手，装备不急）",
-   "pick": "紧急调度券(17)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "野鬃(0)",
    "after": {
     "lp": 24,
     "bonds": [
-     "lateranoShip:5/68",
-     "preciShip:2/21",
-     "swiftShip:2/19",
+     "lateranoShip:3/72",
+     "preciShip:2/44",
+     "swiftShip:2/33",
      "kjeragShip:2/28",
      "deputShip:0/14",
      "kazimierzShip:0/8",
-     "suntShip:1/4",
+     "suntShip:0/4",
      "sargonShip:0/2",
      "skillfulShip:1/0",
-     "arcaneShip:1/0",
      "visiShip:1/0",
      "miraShip:1/0",
-     "investShip:1/0"
+     "investShip:1/0",
+     "emptyShip:1/0"
     ],
     "table": [
      {
@@ -750,15 +750,15 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 5,
-      "bonds": "sargonShip:6 skillfulShip:2 suntShip:4 steadShip:1 kjeragShip:0 lateranoShip:1 indomShip:1"
+      "bonds": "sargonShip:6 skillfulShip:2 suntShip:4 steadShip:1 kjeragShip:0 lateranoShip:1 swiftShip:1 indomShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
       "band": "band_dusk",
       "lp": 28,
-      "lv": 5,
-      "bonds": "swiftShip:2 miraShip:2 emptyShip:2 kjeragShip:2 skillfulShip:1 kazimierzShip:0 steadShip:1 lateranoShip:1 preciShip:1 deputShip:1 investShip:1 suntShip:1"
+      "lv": 6,
+      "bonds": "swiftShip:2 miraShip:2 emptyShip:2 kjeragShip:2 skillfulShip:1 kazimierzShip:1 steadShip:1 lateranoShip:1 deputShip:1 investShip:1"
      },
      {
       "seat": 2,
@@ -766,7 +766,7 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 5,
-      "bonds": "lateranoShip:5 preciShip:2 swiftShip:2 kjeragShip:2 deputShip:0 kazimierzShip:0 suntShip:1 sargonShip:0 skillfulShip:1 arcaneShip:1 visiShip:1 miraShip:1 investShip:1"
+      "bonds": "lateranoShip:3 preciShip:2 swiftShip:2 kjeragShip:2 deputShip:0 kazimierzShip:0 suntShip:0 sargonShip:0 skillfulShip:1 visiShip:1 miraShip:1 investShip:1 emptyShip:1"
      },
      {
       "seat": 3,
@@ -774,7 +774,65 @@
       "band": "band_cathy",
       "lp": 25,
       "lv": 5,
-      "bonds": "kazimierzShip:6 indomShip:2 preciShip:2 swiftShip:2 soloShip:1 steadShip:1 kjeragShip:0 raidShip:1 suntShip:1"
+      "bonds": "kazimierzShip:6 indomShip:2 soloShip:1 preciShip:1 steadShip:1 swiftShip:1 kjeragShip:0 raidShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "lateranoShip:3/75",
+     "preciShip:2/44",
+     "swiftShip:2/33",
+     "kjeragShip:2/28",
+     "deputShip:0/14",
+     "kazimierzShip:0/8",
+     "suntShip:0/4",
+     "sargonShip:0/2",
+     "skillfulShip:1/0",
+     "visiShip:1/0",
+     "miraShip:1/0",
+     "investShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 5,
+      "bonds": "sargonShip:6 skillfulShip:2 suntShip:4 steadShip:1 kjeragShip:0 lateranoShip:1 swiftShip:1 indomShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 6,
+      "bonds": "swiftShip:2 miraShip:2 emptyShip:2 kjeragShip:2 skillfulShip:1 kazimierzShip:1 steadShip:1 lateranoShip:1 deputShip:1 investShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 5,
+      "bonds": "lateranoShip:3 preciShip:2 swiftShip:2 kjeragShip:2 deputShip:0 kazimierzShip:0 suntShip:0 sargonShip:0 skillfulShip:1 visiShip:1 miraShip:1 investShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 25,
+      "lv": 5,
+      "bonds": "kazimierzShip:6 indomShip:2 soloShip:1 preciShip:1 steadShip:1 swiftShip:1 kjeragShip:0 raidShip:1 suntShip:1"
      }
     ]
    }
@@ -7987,6 +8045,46 @@
    "round": 10,
    "type": "SHOP_LEVEL",
    "text": "pipiwu#3933博士将调度中心等级提升为6级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 358,
+   "at": 1792846166747,
+   "round": 10,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 359,
+   "at": 1792846221128,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的至简干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 360,
+   "at": 1792846221128,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的妮芙干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 361,
+   "at": 1792846221129,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的妮芙干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 362,
+   "at": 1792846221129,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的塑心干员造成的伤害量达到200000",
    "playerId": "p_84d2b46a2b"
   }
  ],
