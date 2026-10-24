@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T16:07:25.467Z",
+ "generatedAt": "2026-10-24T16:11:31.345Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -659,22 +659,56 @@
   },
   {
    "round": 10,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 16,
+   "level": 3,
+   "bonds": [
+    "indomShip:2/54",
+    "kazimierzShip:5/42",
+    "steadShip:2/18",
+    "swiftShip:2/12",
+    "soloShip:1/4",
+    "suntShip:2/0",
+    "deputShip:0/34",
+    "preciShip:1/2",
+    "arcaneShip:0/2",
+    "raidShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_18_a@3",
+    "chess_char_1_18_a@2",
+    "chess_char_3_09_a@3",
+    "chess_item_3_03_e_a@2"
+   ],
+   "hand": [
+    "chess_item_3_05_e_a",
+    "chess_char_4_24_a",
+    "chess_char_3_12_a",
+    "chess_char_1_17_a",
+    "chess_char_1_18_a",
+    "chess_char_1_09_b",
+    "chess_char_1_13_b",
+    "chess_char_1_06_a",
+    "chess_item_2_02_e_b",
+    "chess_char_4_25_a"
+   ],
+   "advice": "对空 2/3 个（本波 8 只飞行）→ 没钱了，等下一回合进账",
+   "pick": "忍冬(0)",
    "after": {
     "lp": 16,
     "bonds": [
-     "indomShip:2/48",
-     "kazimierzShip:4/42",
-     "deputShip:2/34",
-     "steadShip:2/18",
-     "swiftShip:2/12",
+     "indomShip:2/88",
+     "kazimierzShip:5/65",
+     "steadShip:2/19",
+     "swiftShip:2/17",
      "soloShip:1/4",
-     "sargonShip:1/0",
-     "victoriaShip:1/0",
-     "emptyShip:1/0",
-     "suntShip:1/0"
+     "suntShip:2/0",
+     "deputShip:0/34",
+     "preciShip:1/2",
+     "arcaneShip:0/2",
+     "raidShip:1/0",
+     "emptyShip:1/0"
     ],
     "table": [
      {
@@ -683,7 +717,7 @@
       "band": "band_chiave",
       "lp": 12,
       "lv": 5,
-      "bonds": "siracusaShip:6 preciShip:2 swiftShip:2 deputShip:0 soloShip:0 suntShip:1 sargonShip:1 miraShip:1 raidShip:1 emptyShip:1"
+      "bonds": "siracusaShip:7 miraShip:2 preciShip:0 swiftShip:1 deputShip:0 soloShip:0 suntShip:1 arcaneShip:1 emptyShip:1"
      },
      {
       "seat": 1,
@@ -691,23 +725,79 @@
       "band": "band_emperor",
       "lp": 16,
       "lv": 3,
-      "bonds": "indomShip:2 kazimierzShip:4 deputShip:2 steadShip:2 swiftShip:2 soloShip:1 sargonShip:1 victoriaShip:1 emptyShip:1 suntShip:1"
+      "bonds": "indomShip:2 kazimierzShip:5 steadShip:2 swiftShip:2 soloShip:1 suntShip:2 deputShip:0 preciShip:1 arcaneShip:0 raidShip:1 emptyShip:1"
      },
      {
       "seat": 2,
       "name": "夜行灯#1097",
       "band": "band_quintus",
       "lp": 20,
-      "lv": 4,
-      "bonds": "yanShip:5 skillfulShip:3 indomShip:1 sargonShip:1 lateranoShip:1 arcaneShip:1 visiShip:1 investShip:2 suntShip:1"
+      "lv": 5,
+      "bonds": "yanShip:6 skillfulShip:3 suntShip:2 indomShip:0 victoriaShip:1 lateranoShip:1 arcaneShip:1 visiShip:1 investShip:2"
      },
      {
       "seat": 3,
       "name": "TAKELU#9928",
       "band": "band_jesica",
       "lp": 11,
-      "lv": 4,
-      "bonds": "kjeragShip:4 skillfulShip:3 deputShip:2 investShip:3 suntShip:2 yanShip:0 soloShip:0 kazimierzShip:0 swiftShip:1 lateranoShip:1 visiShip:1 emptyShip:1"
+      "lv": 5,
+      "bonds": "kjeragShip:3 skillfulShip:3 investShip:3 suntShip:4 emptyShip:2 kazimierzShip:0 swiftShip:1 yanShip:0 soloShip:0 deputShip:1 lateranoShip:1 siracusaShip:1 visiShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 16,
+    "bonds": [
+     "indomShip:2/88",
+     "kazimierzShip:5/65",
+     "steadShip:2/19",
+     "swiftShip:2/17",
+     "soloShip:1/4",
+     "suntShip:2/0",
+     "deputShip:0/34",
+     "preciShip:1/2",
+     "arcaneShip:0/2",
+     "raidShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 12,
+      "lv": 5,
+      "bonds": "siracusaShip:7 miraShip:2 preciShip:0 swiftShip:1 deputShip:0 soloShip:0 suntShip:1 arcaneShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 16,
+      "lv": 3,
+      "bonds": "indomShip:2 kazimierzShip:5 steadShip:2 swiftShip:2 soloShip:1 suntShip:2 deputShip:0 preciShip:1 arcaneShip:0 raidShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": "band_quintus",
+      "lp": 20,
+      "lv": 5,
+      "bonds": "yanShip:6 skillfulShip:3 suntShip:2 indomShip:0 victoriaShip:1 lateranoShip:1 arcaneShip:1 visiShip:1 investShip:2"
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": "band_jesica",
+      "lp": 11,
+      "lv": 5,
+      "bonds": "kjeragShip:3 skillfulShip:3 investShip:3 suntShip:4 emptyShip:2 kazimierzShip:0 swiftShip:1 yanShip:0 soloShip:0 deputShip:1 lateranoShip:1 siracusaShip:1 visiShip:1"
      }
     ]
    }
@@ -10961,6 +11051,86 @@
    "type": "CUSTOM",
    "text": "联防阶段：TAKELU#9928、夜行灯#1097 迎战突破防线的敌人",
    "playerId": null
+  },
+  {
+   "id": 760,
+   "at": 1792858046448,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "TAKELU#9928博士的初雪干员晋升为精锐",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 761,
+   "at": 1792858046996,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为5级",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 762,
+   "at": 1792858050366,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "TAKELU#9928博士将调度中心等级提升为5级",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 763,
+   "at": 1792858063478,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "TAKELU#9928博士的银灰干员晋升为精锐",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 764,
+   "at": 1792858072457,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的空弦干员晋升为精锐",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 765,
+   "at": 1792858090941,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的灰毫干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 766,
+   "at": 1792858128814,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "TAKELU#9928博士的灵知干员晋升为精锐",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 767,
+   "at": 1792858245655,
+   "round": 10,
+   "type": "CUSTOM",
+   "text": "联防阶段：TAKELU#9928、大漏特漏#1989 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 768,
+   "at": 1792858274582,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的予愿安洁莉娜干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 769,
+   "at": 1792858274582,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的银灰干员造成的伤害量达到200000",
+   "playerId": "p_c80438b339"
   }
  ],
  "results": [
