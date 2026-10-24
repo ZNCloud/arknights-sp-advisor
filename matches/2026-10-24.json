@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:23:00.667Z",
+ "generatedAt": "2026-10-24T12:25:03.877Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -62,25 +62,28 @@
   },
   {
    "round": 2,
-   "funds": 5,
+   "funds": 0,
    "lp": 24,
    "level": 1,
    "bonds": [
+    "kazimierzShip:1/4",
+    "swiftShip:1/4",
     "preciShip:1/0",
     "deputShip:1/0"
    ],
    "shop": [
-    "chess_char_1_19_a@2",
-    "chess_char_1_19_a@2",
-    "chess_char_1_12_a@2",
-    "chess_item_1_04_e_a@1"
+    "chess_char_1_12_a@2"
    ],
-   "hand": [],
-   "advice": "抓 艾丝黛尔（槽位 3）",
-   "pick": "艾丝黛尔(54)",
+   "hand": [
+    "chess_item_1_04_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "艾丝黛尔(0)",
    "after": {
     "lp": 24,
     "bonds": [
+     "kazimierzShip:1/4",
+     "swiftShip:1/4",
      "preciShip:1/0",
      "deputShip:1/0"
     ],
@@ -90,7 +93,7 @@
       "name": "大漏特漏#1989",
       "band": "band_pepe",
       "lp": 23,
-      "lv": 1,
+      "lv": 2,
       "bonds": "kjeragShip:1 steadShip:1 deputShip:1"
      },
      {
@@ -98,7 +101,7 @@
       "name": "pipiwu#3933",
       "band": "band_dusk",
       "lp": 28,
-      "lv": 1,
+      "lv": 2,
       "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
      },
      {
@@ -107,7 +110,7 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 1,
-      "bonds": "preciShip:1 deputShip:1"
+      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 deputShip:1"
      },
      {
       "seat": 3,
@@ -115,7 +118,56 @@
       "band": "band_cathy",
       "lp": 26,
       "lv": 1,
-      "bonds": "kazimierzShip:1 swiftShip:1"
+      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 indomShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "kazimierzShip:1/4",
+     "swiftShip:1/4",
+     "preciShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 1,
+      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 1,
+      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 indomShip:1"
      }
     ]
    }
@@ -7009,6 +7061,30 @@
    "type": "CHAR_DAMAGE",
    "text": "pipiwu#3933博士的初雪干员造成的伤害量达到500000",
    "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 317,
+   "at": 1792844588217,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 318,
+   "at": 1792844607510,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为2级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 319,
+   "at": 1792844657079,
+   "round": 2,
+   "type": "CUSTOM",
+   "text": "联防阶段：大兜特兜#9944、黑#5507 迎战突破防线的敌人",
+   "playerId": null
   }
  ],
  "results": [
