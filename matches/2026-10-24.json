@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:28:07.817Z",
+ "generatedAt": "2026-10-24T12:30:25.112Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -199,7 +199,7 @@
    "lp": 24,
    "level": 3,
    "bonds": [
-    "deputShip:2/3",
+    "deputShip:2/6",
     "kazimierzShip:1/8",
     "swiftShip:1/8",
     "kjeragShip:1/0",
@@ -223,7 +223,7 @@
    "after": {
     "lp": 24,
     "bonds": [
-     "deputShip:2/3",
+     "deputShip:2/6",
      "kazimierzShip:1/8",
      "swiftShip:1/8",
      "kjeragShip:1/0",
@@ -237,14 +237,14 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 2,
-      "bonds": "steadShip:2 kjeragShip:1 sargonShip:2 deputShip:1"
+      "bonds": "sargonShip:3 steadShip:2 kjeragShip:1 lateranoShip:1 skillfulShip:1 deputShip:1 suntShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
       "band": "band_dusk",
       "lp": 28,
-      "lv": 2,
+      "lv": 3,
       "bonds": "kjeragShip:1 steadShip:1 lateranoShip:1 siracusaShip:1 preciShip:1"
      },
      {
@@ -252,7 +252,7 @@
       "name": "大兜特兜#9944",
       "band": "band_paganini",
       "lp": 24,
-      "lv": 2,
+      "lv": 3,
       "bonds": "deputShip:2 kazimierzShip:1 swiftShip:1 kjeragShip:1 preciShip:1 suntShip:1"
      },
      {
@@ -261,7 +261,83 @@
       "band": "band_cathy",
       "lp": 26,
       "lv": 2,
-      "bonds": "kazimierzShip:1 swiftShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 indomShip:1 suntShip:1"
+      "bonds": "indomShip:2 kazimierzShip:2 swiftShip:1 kjeragShip:1 steadShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 5,
+   "funds": 0,
+   "lp": 24,
+   "level": 3,
+   "bonds": [
+    "swiftShip:2/8",
+    "deputShip:2/6",
+    "lateranoShip:3/0",
+    "preciShip:2/0",
+    "kazimierzShip:1/8",
+    "kjeragShip:1/0",
+    "miraShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_18_a@3",
+    "chess_char_3_16_a@3",
+    "chess_char_2_10_a@3",
+    "chess_item_3_08_e_a@1"
+   ],
+   "hand": [
+    "chess_item_5_02_e_a",
+    "chess_item_1_05_e_a",
+    "chess_item_1_04_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "忍冬(0)",
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "swiftShip:2/11",
+     "deputShip:2/8",
+     "lateranoShip:3/2",
+     "preciShip:2/2",
+     "kazimierzShip:1/8",
+     "kjeragShip:1/0",
+     "miraShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 3,
+      "bonds": "sargonShip:4 steadShip:2 suntShip:2 kjeragShip:1 lateranoShip:1 skillfulShip:1 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 3,
+      "bonds": "miraShip:2 kjeragShip:1 steadShip:1 lateranoShip:2 siracusaShip:2 preciShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 3,
+      "bonds": "swiftShip:2 deputShip:2 lateranoShip:3 preciShip:2 kazimierzShip:1 kjeragShip:1 miraShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 3,
+      "bonds": "kazimierzShip:3 steadShip:2 indomShip:2 soloShip:1 swiftShip:1 kjeragShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
      }
     ]
    }
@@ -7243,6 +7319,38 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为3级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 328,
+   "at": 1792844929673,
+   "round": 4,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 329,
+   "at": 1792844948111,
+   "round": 5,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为3级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 330,
+   "at": 1792844954816,
+   "round": 5,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的泡泡干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 331,
+   "at": 1792844956205,
+   "round": 5,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为3级",
+   "playerId": "p_04c4fbf1ae"
   }
  ],
  "results": [
