@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T11:39:18.436Z",
+ "generatedAt": "2026-10-24T11:40:33.886Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -85,6 +85,75 @@
    ],
    "advice": "没钱了，等下一回合进账",
    "pick": "跃跃(0)",
+   "after": {
+    "lp": 23,
+    "bonds": [
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "swiftShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_bldsk",
+      "lp": 28,
+      "lv": 1,
+      "bonds": "kjeragShip:1 steadShip:1 victoriaShip:1 deputShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "victoriaShip:1 lateranoShip:1 swiftShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 1,
+      "bonds": "preciShip:2 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "funds": 3,
+   "lp": 23,
+   "level": 2,
+   "bonds": [
+    "sargonShip:0/2",
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "swiftShip:1/0",
+    "deputShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_06_a@3",
+    "chess_char_2_06_a@3",
+    "chess_char_2_06_a@3",
+    "chess_char_2_08_a@3",
+    "chess_item_2_04_e_a@2"
+   ],
+   "hand": [
+    "chess_char_1_12_a",
+    "chess_item_1_02_e_a"
+   ],
+   "advice": "先刷找 薄绿/烛煌/号角（核心没到手，装备不急）",
+   "pick": "萨尔贡浓茶(17)",
    "after": {
     "lp": 23,
     "bonds": [
@@ -5930,6 +5999,30 @@
    "type": "SHOP_LEVEL",
    "text": "大漏特漏#1989博士将调度中心等级提升为2级",
    "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 174,
+   "at": 1792841964211,
+   "round": 2,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 175,
+   "at": 1792842015690,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为2级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 176,
+   "at": 1792842021796,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为2级",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
