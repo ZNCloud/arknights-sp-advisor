@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T11:04:43.767Z",
+ "generatedAt": "2026-10-24T11:06:47.637Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -504,13 +504,14 @@
    "after": {
     "lp": 26,
     "bonds": [
-     "kazimierzShip:5/43",
-     "raidShip:3/28",
+     "kazimierzShip:4/72",
+     "raidShip:3/47",
      "soloShip:1/1",
-     "swiftShip:1/4",
-     "preciShip:1/0",
+     "swiftShip:0/4",
      "steadShip:1/0",
-     "indomShip:1/0"
+     "miraShip:1/0",
+     "indomShip:1/0",
+     "emptyShip:1/0"
     ],
     "table": [
      {
@@ -519,15 +520,15 @@
       "band": "band_pith",
       "lp": 24,
       "lv": 4,
-      "bonds": "egirShip:5 maniShip:1 kazimierzShip:2 swiftShip:0 siracusaShip:2 steadShip:1 miraShip:1 raidShip:1 indomShip:1 emptyShip:1 suntShip:1"
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 kazimierzShip:2 swiftShip:0 victoriaShip:2 siracusaShip:2 steadShip:1 visiShip:1 raidShip:1 emptyShip:1 suntShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
       "band": "band_cathy",
       "lp": 26,
-      "lv": 4,
-      "bonds": "visiShip:2 deputShip:2 yanShip:3 suntShip:2 preciShip:1 kjeragShip:1 arcaneShip:0 victoriaShip:1 lateranoShip:1 skillfulShip:1 investShip:1 raidShip:1 emptyShip:1"
+      "lv": 5,
+      "bonds": "visiShip:2 deputShip:2 yanShip:5 suntShip:3 preciShip:0 kjeragShip:0 arcaneShip:0 victoriaShip:1 lateranoShip:1 skillfulShip:1 steadShip:1 investShip:1 emptyShip:1"
      },
      {
       "seat": 2,
@@ -535,7 +536,60 @@
       "band": "band_emperor",
       "lp": 26,
       "lv": 4,
-      "bonds": "kazimierzShip:5 raidShip:3 soloShip:1 swiftShip:1 preciShip:1 steadShip:1 indomShip:1"
+      "bonds": "kazimierzShip:4 raidShip:3 soloShip:1 swiftShip:0 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "siracusaShip:3 preciShip:3 swiftShip:2 suntShip:5 arcaneShip:1 kazimierzShip:0 yanShip:1 lateranoShip:1 miraShip:1 investShip:2"
+     }
+    ]
+   }
+  },
+  {
+   "round": 9,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:4/72",
+     "raidShip:3/47",
+     "soloShip:1/1",
+     "swiftShip:0/4",
+     "steadShip:1/0",
+     "miraShip:1/0",
+     "indomShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 4,
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 kazimierzShip:2 swiftShip:0 victoriaShip:2 siracusaShip:2 steadShip:1 visiShip:1 raidShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 5,
+      "bonds": "visiShip:2 deputShip:2 yanShip:5 suntShip:3 preciShip:0 kjeragShip:0 arcaneShip:0 victoriaShip:1 lateranoShip:1 skillfulShip:1 steadShip:1 investShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 4,
+      "bonds": "kazimierzShip:4 raidShip:3 soloShip:1 swiftShip:0 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
      },
      {
       "seat": 3,
@@ -5333,6 +5387,38 @@
    "type": "GOLDEN_CHAR",
    "text": "黑#5507博士的拉普兰德干员晋升为精锐",
    "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 32,
+   "at": 1792839945119,
+   "round": 8,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、大漏特漏#1989 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 33,
+   "at": 1792839979724,
+   "round": 8,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 34,
+   "at": 1792839979724,
+   "round": 8,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的圣约送葬人干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 35,
+   "at": 1792839979724,
+   "round": 8,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的琳琅诗怀雅干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
