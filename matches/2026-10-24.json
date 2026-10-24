@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:11:08.369Z",
+ "generatedAt": "2026-10-24T14:13:13.004Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -844,11 +844,11 @@
    "lp": 6,
    "level": 6,
    "bonds": [
-    "egirShip:5/119",
+    "egirShip:5/125",
     "indomShip:2/68",
     "maniShip:1/0",
     "soloShip:1/0",
-    "suntShip:3/0",
+    "suntShip:2/0",
     "steadShip:1/9",
     "yanShip:0/4",
     "kazimierzShip:2/0",
@@ -861,17 +861,16 @@
     "chess_char_5_06_a@4",
     "chess_char_3_14_a@3",
     "chess_char_4_16_a@3",
-    "chess_char_3_18_a@3",
-    "chess_item_1_04_e_a@1"
+    "chess_char_3_18_a@3"
    ],
    "hand": [
     "chess_char_4_12_a",
     "chess_char_3_21_a",
     "chess_char_3_05_a",
     "chess_char_6_12_a",
-    "chess_char_5_05_a",
+    "chess_char_1_04_b",
     "chess_char_6_16_a",
-    "chess_char_3_05_b",
+    "chess_item_1_04_e_a",
     "chess_char_6_12_a",
     "chess_char_1_03_a",
     "chess_char_1_03_a"
@@ -879,13 +878,13 @@
    "advice": "没钱了，等下一回合进账",
    "pick": "泡泡(0)",
    "after": {
-    "lp": 6,
+    "lp": 2,
     "bonds": [
-     "egirShip:5/119",
-     "indomShip:2/68",
+     "egirShip:5/148",
+     "indomShip:2/80",
      "maniShip:1/0",
      "soloShip:1/0",
-     "suntShip:3/0",
+     "suntShip:2/0",
      "steadShip:1/9",
      "yanShip:0/4",
      "kazimierzShip:2/0",
@@ -906,9 +905,9 @@
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 6,
-      "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 suntShip:3 steadShip:1 yanShip:0 kazimierzShip:2 deputShip:1 visiShip:1 emptyShip:1"
+      "lp": 2,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 suntShip:2 steadShip:1 yanShip:0 kazimierzShip:2 deputShip:1 visiShip:1 emptyShip:1"
      },
      {
       "seat": 2,
@@ -922,9 +921,100 @@
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 3,
-      "lv": 5,
-      "bonds": "lateranoShip:3 visiShip:3 skillfulShip:2 preciShip:2 suntShip:4 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 miraShip:1 investShip:1 raidShip:1"
+      "lp": 0,
+      "lv": 6,
+      "bonds": ""
+     }
+    ]
+   }
+  },
+  {
+   "round": 13,
+   "funds": 4,
+   "lp": 2,
+   "level": 6,
+   "bonds": [
+    "egirShip:5/151",
+    "indomShip:2/80",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "suntShip:2/0",
+    "steadShip:0/9",
+    "yanShip:0/4",
+    "kazimierzShip:2/0",
+    "skillfulShip:1/0",
+    "deputShip:1/0",
+    "visiShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_19_a@3",
+    "chess_char_3_11_a@3",
+    "chess_char_1_14_a@2",
+    "chess_char_3_20_a@3",
+    "chess_item_4_02_e_a@1"
+   ],
+   "hand": [
+    "chess_char_4_12_a",
+    "chess_char_3_21_a",
+    "chess_char_3_05_a",
+    "chess_char_6_12_a",
+    "chess_char_3_16_a",
+    "chess_char_6_16_a",
+    "chess_char_1_04_a",
+    "chess_char_6_12_a",
+    "chess_char_1_03_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "先刷找 归溟幽灵鲨（核心没到手，装备不急）",
+   "pick": "蜂鸣器(3)",
+   "after": {
+    "lp": 2,
+    "bonds": [
+     "egirShip:5/148",
+     "indomShip:2/80",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "suntShip:2/0",
+     "steadShip:1/9",
+     "yanShip:0/4",
+     "kazimierzShip:2/0",
+     "deputShip:1/0",
+     "visiShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 2,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 suntShip:2 steadShip:1 yanShip:0 kazimierzShip:2 deputShip:1 visiShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 0,
+      "lv": 6,
+      "bonds": ""
      }
     ]
    }
@@ -9490,6 +9580,78 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为6级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 535,
+   "at": 1792851145650,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的幽灵鲨干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 536,
+   "at": 1792851145650,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的水月干员造成的伤害量达到500000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 537,
+   "at": 1792851145651,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 538,
+   "at": 1792851145651,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的乌尔比安干员造成的伤害量达到500000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 539,
+   "at": 1792851145651,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的缇缇干员造成的伤害量达到200000",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 540,
+   "at": 1792851145653,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的新约能天使干员造成的伤害量达到200000",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 541,
+   "at": 1792851145653,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的圣约送葬人干员造成的伤害量达到200000",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 542,
+   "at": 1792851145653,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的送葬人干员造成的伤害量达到200000",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 543,
+   "at": 1792851145653,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "夜行灯#1097博士的目标生命值已耗尽",
+   "playerId": null
   }
  ],
  "results": [
