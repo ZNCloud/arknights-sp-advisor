@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:51:54.296Z",
+ "generatedAt": "2026-10-24T13:55:26.950Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -363,21 +363,21 @@
    ],
    "hand": [
     "chess_char_2_17_a",
-    "chess_char_1_03_a"
+    "chess_char_1_03_a",
+    "token_10000_silent_healrb"
    ],
    "advice": "钱会被清零（剩 1 金）→ 买装备/升本/刷，别留",
    "pick": "赫默(0)",
    "after": {
     "lp": 21,
     "bonds": [
-     "egirShip:3/17",
+     "egirShip:3/29",
+     "indomShip:2/8",
      "maniShip:1/0",
-     "soloShip:1/0",
-     "yanShip:2/1",
+     "yanShip:2/4",
      "kazimierzShip:2/0",
      "steadShip:1/0",
      "visiShip:1/0",
-     "indomShip:1/0",
      "emptyShip:1/0"
     ],
     "table": [
@@ -385,9 +385,9 @@
       "seat": 0,
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
-      "lp": 23,
+      "lp": 21,
       "lv": 3,
-      "bonds": "swiftShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 emptyShip:1"
+      "bonds": "swiftShip:2 deputShip:2 skillfulShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:2 steadShip:1 investShip:1 emptyShip:1"
      },
      {
       "seat": 1,
@@ -395,7 +395,7 @@
       "band": "band_pith",
       "lp": 21,
       "lv": 3,
-      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 indomShip:1 emptyShip:1"
+      "bonds": "egirShip:3 indomShip:2 maniShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 emptyShip:1"
      },
      {
       "seat": 2,
@@ -403,15 +403,91 @@
       "band": "band_chiave",
       "lp": 14,
       "lv": 2,
-      "bonds": "siracusaShip:3 soloShip:1 suntShip:2 preciShip:0 arcaneShip:0 lateranoShip:1 skillfulShip:1 steadShip:1"
+      "bonds": "siracusaShip:3 soloShip:1 suntShip:3 preciShip:0 arcaneShip:0 lateranoShip:2 skillfulShip:1 steadShip:1 miraShip:1"
      },
      {
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 21,
+      "lp": 19,
       "lv": 3,
-      "bonds": "skillfulShip:2 swiftShip:3 yanShip:1 kazimierzShip:0 sargonShip:1 steadShip:1 visiShip:1 investShip:1 emptyShip:1"
+      "bonds": "skillfulShip:2 swiftShip:4 visiShip:2 yanShip:0 kazimierzShip:0 sargonShip:1 lateranoShip:1 steadShip:1 investShip:1 emptyShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 7,
+   "funds": 1,
+   "lp": 21,
+   "level": 4,
+   "bonds": [
+    "egirShip:3/29",
+    "indomShip:2/8",
+    "maniShip:1/0",
+    "yanShip:2/4",
+    "kazimierzShip:2/0",
+    "steadShip:1/0",
+    "visiShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_20_a@3",
+    "chess_char_3_02_a@3",
+    "chess_char_1_13_a@2",
+    "chess_char_1_04_a@2",
+    "chess_item_2_06_e_a@2"
+   ],
+   "hand": [
+    "chess_char_2_17_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "抓 深巡（槽位 4）",
+   "pick": "深巡(50)",
+   "after": {
+    "lp": 21,
+    "bonds": [
+     "egirShip:3/29",
+     "indomShip:2/8",
+     "maniShip:1/0",
+     "yanShip:2/4",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "visiShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 21,
+      "lv": 4,
+      "bonds": "swiftShip:2 skillfulShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:1 victoriaShip:1 lateranoShip:2 investShip:2 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 21,
+      "lv": 4,
+      "bonds": "egirShip:3 indomShip:2 maniShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 14,
+      "lv": 4,
+      "bonds": "siracusaShip:3 suntShip:2 swiftShip:1 preciShip:0 arcaneShip:0 lateranoShip:2 skillfulShip:1 steadShip:1 miraShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 19,
+      "lv": 4,
+      "bonds": "skillfulShip:3 swiftShip:2 visiShip:2 steadShip:2 yanShip:0 kazimierzShip:0 preciShip:0 arcaneShip:0 sargonShip:2 lateranoShip:2 investShip:1 suntShip:1"
      }
     ]
    }
@@ -8689,6 +8765,62 @@
    "type": "GOLDEN_CHAR",
    "text": "大漏特漏#1989博士的普罗旺斯干员晋升为精锐",
    "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 492,
+   "at": 1792849987088,
+   "round": 6,
+   "type": "CUSTOM",
+   "text": "联防阶段：大漏特漏#1989 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 493,
+   "at": 1792850012668,
+   "round": 6,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 494,
+   "at": 1792850021481,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为4级",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 495,
+   "at": 1792850023846,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "草莓泡芙#0279博士将调度中心等级提升为4级",
+   "playerId": "p_699082202c"
+  },
+  {
+   "id": 496,
+   "at": 1792850025886,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为3级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 497,
+   "at": 1792850026817,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为4级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 498,
+   "at": 1792850033696,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为4级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
