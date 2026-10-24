@@ -91,7 +91,10 @@ function buildSession(turns, events, results) {
       shop: (p.shop || []).map((x) => x.id + '@' + x.price + (x.frozen ? 'f' : '')),
       hand: p.hand,
       advice: p.advice || null, pick: p.pick || null,
-      after: { lp: e.lp, bonds: e.bonds, table: e.table || null },
+      // 站位与队友：盘面（at/dir/items）、队友公开状态、输出终端、BOSS、队伍 LP / BOSS 血池——站位复盘和以后学站位要用
+      board: p.board ?? null, mates: p.mates ?? null, terminal: p.terminal ?? null, boss: p.boss ?? null,
+      teamLp: p.teamLp ?? null, bossHp: p.bossHp ?? null,
+      after: { lp: e.lp, bonds: e.bonds, table: e.table || null, board: e.board ?? null },
     };
   });
 
