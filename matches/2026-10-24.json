@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:25:03.877Z",
+ "generatedAt": "2026-10-24T12:28:07.817Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -125,16 +125,37 @@
   },
   {
    "round": 3,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 24,
+   "level": 2,
+   "bonds": [
+    "deputShip:2/0",
+    "kazimierzShip:1/8",
+    "swiftShip:1/8",
+    "kjeragShip:1/0",
+    "preciShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_07_a@2",
+    "chess_char_1_06_a@2"
+   ],
+   "hand": [
+    "chess_item_5_02_e_a",
+    "chess_item_1_05_e_a",
+    "chess_item_1_04_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "普罗旺斯(0)",
    "after": {
     "lp": 24,
     "bonds": [
-     "kazimierzShip:1/4",
-     "swiftShip:1/4",
+     "deputShip:2/3",
+     "kazimierzShip:1/8",
+     "swiftShip:1/8",
+     "kjeragShip:1/0",
      "preciShip:1/0",
-     "deputShip:1/0"
+     "suntShip:1/0"
     ],
     "table": [
      {
@@ -143,7 +164,7 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 2,
-      "bonds": "kjeragShip:1 steadShip:1 deputShip:1"
+      "bonds": "steadShip:2 kjeragShip:1 sargonShip:2 deputShip:1"
      },
      {
       "seat": 1,
@@ -151,23 +172,96 @@
       "band": "band_dusk",
       "lp": 28,
       "lv": 2,
-      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
+      "bonds": "kjeragShip:1 steadShip:1 lateranoShip:1 siracusaShip:1 preciShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
       "lp": 24,
-      "lv": 1,
-      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 deputShip:1"
+      "lv": 2,
+      "bonds": "deputShip:2 kazimierzShip:1 swiftShip:1 kjeragShip:1 preciShip:1 suntShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
       "band": "band_cathy",
       "lp": 26,
-      "lv": 1,
-      "bonds": "kazimierzShip:1 swiftShip:1 preciShip:1 indomShip:1"
+      "lv": 2,
+      "bonds": "kazimierzShip:1 swiftShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 indomShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 4,
+   "funds": 0,
+   "lp": 24,
+   "level": 3,
+   "bonds": [
+    "deputShip:2/3",
+    "kazimierzShip:1/8",
+    "swiftShip:1/8",
+    "kjeragShip:1/0",
+    "preciShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_01_a@3",
+    "chess_char_3_10_a@3",
+    "chess_char_1_01_a@2",
+    "chess_char_1_13_a@2",
+    "chess_item_2_01_e_a@1"
+   ],
+   "hand": [
+    "chess_item_5_02_e_a",
+    "chess_item_1_05_e_a",
+    "chess_item_1_04_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "能天使(0)",
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "deputShip:2/3",
+     "kazimierzShip:1/8",
+     "swiftShip:1/8",
+     "kjeragShip:1/0",
+     "preciShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "steadShip:2 kjeragShip:1 sargonShip:2 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 lateranoShip:1 siracusaShip:1 preciShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "deputShip:2 kazimierzShip:1 swiftShip:1 kjeragShip:1 preciShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 2,
+      "bonds": "kazimierzShip:1 swiftShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 indomShip:1 suntShip:1"
      }
     ]
    }
@@ -7085,6 +7179,70 @@
    "type": "CUSTOM",
    "text": "联防阶段：大兜特兜#9944、黑#5507 迎战突破防线的敌人",
    "playerId": null
+  },
+  {
+   "id": 320,
+   "at": 1792844710925,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为2级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 321,
+   "at": 1792844718502,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为2级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 322,
+   "at": 1792844720821,
+   "round": 3,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的野鬃干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 323,
+   "at": 1792844728503,
+   "round": 3,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的野鬃干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 324,
+   "at": 1792844803152,
+   "round": 3,
+   "type": "CUSTOM",
+   "text": "联防阶段：大兜特兜#9944、黑#5507 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 325,
+   "at": 1792844846627,
+   "round": 4,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为3级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 326,
+   "at": 1792844862106,
+   "round": 4,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的艾丝黛尔干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 327,
+   "at": 1792844876118,
+   "round": 4,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为3级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
