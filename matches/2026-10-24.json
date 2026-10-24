@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T10:50:14.463Z",
+ "generatedAt": "2026-10-24T10:51:17.714Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -58,6 +58,117 @@
       "lp": 23,
       "lv": 1,
       "bonds": "preciShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "funds": 0,
+   "lp": 26,
+   "level": 2,
+   "bonds": [
+    "kazimierzShip:1/2",
+    "swiftShip:1/2",
+    "raidShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_17_a@2",
+    "chess_char_1_08_a@2",
+    "chess_char_1_18_a@2"
+   ],
+   "hand": [
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "深靛(0)",
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:1/2",
+     "swiftShip:1/2",
+     "raidShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 1,
+      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 1,
+      "bonds": "preciShip:1 arcaneShip:1 victoriaShip:1 deputShip:1 raidShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 2,
+      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 1,
+      "bonds": "preciShip:2 arcaneShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:1/2",
+     "swiftShip:1/2",
+     "raidShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 1,
+      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 1,
+      "bonds": "preciShip:1 arcaneShip:1 victoriaShip:1 deputShip:1 raidShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 2,
+      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 1,
+      "bonds": "preciShip:2 arcaneShip:1"
      }
     ]
    }
@@ -4615,6 +4726,22 @@
    "type": "CHAR_DAMAGE",
    "text": "12#3327博士的维娜·维多利亚干员造成的伤害量达到200000",
    "playerId": "p_f00c338ce9"
+  },
+  {
+   "id": 1,
+   "at": 1792839021115,
+   "round": 1,
+   "type": "CUSTOM",
+   "text": "联防阶段：大漏特漏#1989、大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 2,
+   "at": 1792839038943,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为2级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
