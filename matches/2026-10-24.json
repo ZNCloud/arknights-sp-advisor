@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:55:26.950Z",
+ "generatedAt": "2026-10-24T13:57:33.716Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -445,10 +445,10 @@
    "advice": "抓 深巡（槽位 4）",
    "pick": "深巡(50)",
    "after": {
-    "lp": 21,
+    "lp": 11,
     "bonds": [
-     "egirShip:3/29",
-     "indomShip:2/8",
+     "egirShip:3/42",
+     "indomShip:2/24",
      "maniShip:1/0",
      "yanShip:2/4",
      "kazimierzShip:2/0",
@@ -461,7 +461,7 @@
       "seat": 0,
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
-      "lp": 21,
+      "lp": 11,
       "lv": 4,
       "bonds": "swiftShip:2 skillfulShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:1 victoriaShip:1 lateranoShip:2 investShip:2 emptyShip:1"
      },
@@ -469,7 +469,7 @@
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 21,
+      "lp": 11,
       "lv": 4,
       "bonds": "egirShip:3 indomShip:2 maniShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 emptyShip:1"
      },
@@ -477,7 +477,7 @@
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_chiave",
-      "lp": 14,
+      "lp": 4,
       "lv": 4,
       "bonds": "siracusaShip:3 suntShip:2 swiftShip:1 preciShip:0 arcaneShip:0 lateranoShip:2 skillfulShip:1 steadShip:1 miraShip:1"
      },
@@ -485,7 +485,85 @@
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 19,
+      "lp": 9,
+      "lv": 4,
+      "bonds": "skillfulShip:3 swiftShip:2 visiShip:2 steadShip:2 yanShip:0 kazimierzShip:0 preciShip:0 arcaneShip:0 sargonShip:2 lateranoShip:2 investShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 8,
+   "funds": 6,
+   "lp": 11,
+   "level": 4,
+   "bonds": [
+    "egirShip:4/42",
+    "indomShip:2/24",
+    "steadShip:2/0",
+    "maniShip:1/0",
+    "yanShip:0/4",
+    "kazimierzShip:2/0",
+    "visiShip:1/0",
+    "raidShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_20_a@3",
+    "chess_char_3_02_a@3",
+    "chess_char_1_13_a@2",
+    "chess_item_2_06_e_a@2"
+   ],
+   "hand": [
+    "chess_char_2_02_a",
+    "chess_char_2_17_a",
+    "chess_char_1_03_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
+   "pick": "简易通讯机(13)",
+   "after": {
+    "lp": 11,
+    "bonds": [
+     "egirShip:3/42",
+     "indomShip:2/24",
+     "maniShip:1/0",
+     "yanShip:2/4",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "visiShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 11,
+      "lv": 4,
+      "bonds": "skillfulShip:2 swiftShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:1 victoriaShip:1 lateranoShip:2 investShip:2 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 11,
+      "lv": 4,
+      "bonds": "egirShip:3 indomShip:2 maniShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 4,
+      "lv": 4,
+      "bonds": "siracusaShip:3 suntShip:2 swiftShip:1 preciShip:0 arcaneShip:0 lateranoShip:2 skillfulShip:1 steadShip:1 miraShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 9,
       "lv": 4,
       "bonds": "skillfulShip:3 swiftShip:2 visiShip:2 steadShip:2 yanShip:0 kazimierzShip:0 preciShip:0 arcaneShip:0 sargonShip:2 lateranoShip:2 investShip:1 suntShip:1"
      }
@@ -8821,6 +8899,30 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为4级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 499,
+   "at": 1792850195840,
+   "round": 7,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 500,
+   "at": 1792850208561,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的至简干员晋升为精锐",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 501,
+   "at": 1792850242058,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的断崖干员晋升为精锐",
+   "playerId": "p_1774e4067c"
   }
  ],
  "results": [
