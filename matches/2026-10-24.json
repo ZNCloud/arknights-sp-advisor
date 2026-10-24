@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T15:48:30.030Z",
+ "generatedAt": "2026-10-24T15:49:35.417Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -81,6 +81,7 @@
    "after": {
     "lp": 26,
     "bonds": [
+     "egirShip:1/0",
      "preciShip:1/0",
      "deputShip:1/0"
     ],
@@ -90,7 +91,7 @@
       "name": "大漏特漏#1989",
       "band": "band_chiave",
       "lp": 23,
-      "lv": 1,
+      "lv": 2,
       "bonds": "victoriaShip:1 deputShip:1 raidShip:1"
      },
      {
@@ -99,14 +100,14 @@
       "band": "band_emperor",
       "lp": 26,
       "lv": 1,
-      "bonds": "preciShip:1 deputShip:1"
+      "bonds": "egirShip:1 preciShip:1 deputShip:1"
      },
      {
       "seat": 2,
       "name": "夜行灯#1097",
       "band": "band_quintus",
       "lp": 31,
-      "lv": 1,
+      "lv": 2,
       "bonds": "siracusaShip:1"
      },
      {
@@ -115,7 +116,55 @@
       "band": "band_jesica",
       "lp": 22,
       "lv": 1,
-      "bonds": "yanShip:1 deputShip:1"
+      "bonds": "yanShip:1 siracusaShip:1 skillfulShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "victoriaShip:1 deputShip:1 raidShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 1,
+      "bonds": "egirShip:1 preciShip:1 deputShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": "band_quintus",
+      "lp": 31,
+      "lv": 2,
+      "bonds": "siracusaShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": "band_jesica",
+      "lp": 22,
+      "lv": 1,
+      "bonds": "yanShip:1 siracusaShip:1 skillfulShip:1 deputShip:1"
      }
     ]
    }
@@ -10161,6 +10210,14 @@
    "type": "SHOP_LEVEL",
    "text": "夜行灯#1097博士将调度中心等级提升为2级",
    "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 733,
+   "at": 1792856942638,
+   "round": 2,
+   "type": "CUSTOM",
+   "text": "联防阶段：大兜特兜#9944、TAKELU#9928 迎战突破防线的敌人",
+   "playerId": null
   }
  ],
  "results": [
