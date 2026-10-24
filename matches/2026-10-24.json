@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T16:03:18.854Z",
+ "generatedAt": "2026-10-24T16:07:25.467Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -572,18 +572,51 @@
   },
   {
    "round": 9,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 16,
+   "level": 3,
+   "bonds": [
+    "deputShip:2/30",
+    "kazimierzShip:4/26",
+    "indomShip:2/22",
+    "steadShip:2/12",
+    "swiftShip:2/10",
+    "soloShip:1/2",
+    "sargonShip:1/0",
+    "victoriaShip:1/0",
+    "emptyShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_19_a@2",
+    "chess_char_2_05_a@3",
+    "chess_char_3_02_a@3",
+    "chess_item_1_03_e_a@1"
+   ],
+   "hand": [
+    "chess_item_3_05_e_a",
+    "chess_char_1_18_a",
+    "chess_item_1_03_e_a",
+    "chess_char_4_14_a",
+    "chess_char_4_25_a",
+    "chess_char_1_09_b",
+    "chess_char_1_13_b",
+    "chess_char_3_13_b",
+    "chess_item_2_02_e_b",
+    "chess_char_2_18_a"
+   ],
+   "advice": "可以抓 野鬃（槽位 1）",
+   "pick": "野鬃(29)",
    "after": {
     "lp": 16,
     "bonds": [
-     "deputShip:2/30",
-     "kazimierzShip:4/26",
-     "indomShip:2/22",
-     "steadShip:2/12",
-     "swiftShip:2/10",
-     "soloShip:1/2",
+     "indomShip:2/48",
+     "kazimierzShip:4/42",
+     "deputShip:2/34",
+     "steadShip:2/18",
+     "swiftShip:2/12",
+     "soloShip:1/4",
+     "sargonShip:1/0",
      "victoriaShip:1/0",
      "emptyShip:1/0",
      "suntShip:1/0"
@@ -594,8 +627,8 @@
       "name": "大漏特漏#1989",
       "band": "band_chiave",
       "lp": 12,
-      "lv": 4,
-      "bonds": "preciShip:2 siracusaShip:3 deputShip:2 soloShip:0 suntShip:1 sargonShip:1 victoriaShip:1 swiftShip:1 visiShip:1 miraShip:1 raidShip:1"
+      "lv": 5,
+      "bonds": "preciShip:2 siracusaShip:6 swiftShip:2 deputShip:0 soloShip:0 suntShip:1 sargonShip:1 miraShip:1 raidShip:1 emptyShip:1"
      },
      {
       "seat": 1,
@@ -603,7 +636,7 @@
       "band": "band_emperor",
       "lp": 16,
       "lv": 3,
-      "bonds": "deputShip:2 kazimierzShip:4 indomShip:2 steadShip:2 swiftShip:2 soloShip:1 victoriaShip:1 emptyShip:1 suntShip:1"
+      "bonds": "indomShip:2 kazimierzShip:4 deputShip:2 steadShip:2 swiftShip:2 soloShip:1 sargonShip:1 victoriaShip:1 emptyShip:1 suntShip:1"
      },
      {
       "seat": 2,
@@ -611,7 +644,7 @@
       "band": "band_quintus",
       "lp": 20,
       "lv": 4,
-      "bonds": "skillfulShip:4 yanShip:4 indomShip:1 sargonShip:1 lateranoShip:1 swiftShip:1 investShip:2"
+      "bonds": "yanShip:5 skillfulShip:3 indomShip:1 sargonShip:1 lateranoShip:1 arcaneShip:1 visiShip:1 investShip:2 suntShip:1"
      },
      {
       "seat": 3,
@@ -619,7 +652,62 @@
       "band": "band_jesica",
       "lp": 11,
       "lv": 4,
-      "bonds": "kjeragShip:3 skillfulShip:2 soloShip:1 deputShip:2 yanShip:0 lateranoShip:1 swiftShip:1 steadShip:1 visiShip:1 investShip:1 emptyShip:1 suntShip:1"
+      "bonds": "kjeragShip:4 skillfulShip:3 deputShip:2 investShip:3 suntShip:2 yanShip:0 soloShip:0 kazimierzShip:0 swiftShip:1 lateranoShip:1 visiShip:1 emptyShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 10,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 16,
+    "bonds": [
+     "indomShip:2/48",
+     "kazimierzShip:4/42",
+     "deputShip:2/34",
+     "steadShip:2/18",
+     "swiftShip:2/12",
+     "soloShip:1/4",
+     "sargonShip:1/0",
+     "victoriaShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 12,
+      "lv": 5,
+      "bonds": "siracusaShip:6 preciShip:2 swiftShip:2 deputShip:0 soloShip:0 suntShip:1 sargonShip:1 miraShip:1 raidShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 16,
+      "lv": 3,
+      "bonds": "indomShip:2 kazimierzShip:4 deputShip:2 steadShip:2 swiftShip:2 soloShip:1 sargonShip:1 victoriaShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": "band_quintus",
+      "lp": 20,
+      "lv": 4,
+      "bonds": "yanShip:5 skillfulShip:3 indomShip:1 sargonShip:1 lateranoShip:1 arcaneShip:1 visiShip:1 investShip:2 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": "band_jesica",
+      "lp": 11,
+      "lv": 4,
+      "bonds": "kjeragShip:4 skillfulShip:3 deputShip:2 investShip:3 suntShip:2 yanShip:0 soloShip:0 kazimierzShip:0 swiftShip:1 lateranoShip:1 visiShip:1 emptyShip:1"
      }
     ]
    }
@@ -10833,6 +10921,46 @@
    "type": "GOLDEN_CHAR",
    "text": "大兜特兜#9944博士的至简干员晋升为精锐",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 754,
+   "at": 1792857817881,
+   "round": 9,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为5级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 755,
+   "at": 1792857817914,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "TAKELU#9928博士的断崖干员晋升为精锐",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 756,
+   "at": 1792857848353,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的琳琅诗怀雅干员晋升为精锐",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 757,
+   "at": 1792857889899,
+   "round": 9,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的砾干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 759,
+   "at": 1792857991732,
+   "round": 9,
+   "type": "CUSTOM",
+   "text": "联防阶段：TAKELU#9928、夜行灯#1097 迎战突破防线的敌人",
+   "playerId": null
   }
  ],
  "results": [
