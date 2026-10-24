@@ -1,7 +1,51 @@
 {
- "generatedAt": "2026-10-24T15:45:15.756Z",
+ "generatedAt": "2026-10-24T15:46:21.030Z",
  "day": "2026-10-24",
  "rounds": [
+  {
+   "round": 0,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 0,
+    "bonds": [],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     }
+    ]
+   }
+  },
   {
    "round": 1,
    "funds": 0,
