@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:35:15.725Z",
+ "generatedAt": "2026-10-24T14:38:21.386Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -377,52 +377,52 @@
   },
   {
    "round": 6,
-   "funds": 10,
+   "funds": 0,
    "lp": 21,
-   "level": 2,
+   "level": 3,
    "bonds": [
     "swiftShip:2/2",
+    "miraShip:2/0",
     "soloShip:1/0",
     "sargonShip:1/4",
     "kazimierzShip:1/2",
     "preciShip:1/2",
     "arcaneShip:1/2",
-    "yanShip:1/1",
+    "yanShip:0/1",
     "victoriaShip:1/0",
     "lateranoShip:1/0",
-    "siracusaShip:1/0",
-    "deputShip:1/0",
-    "miraShip:1/0"
+    "siracusaShip:2/0",
+    "deputShip:1/0"
    ],
    "shop": [
-    "chess_char_2_06_a@3",
-    "chess_char_1_19_a@2",
-    "chess_char_2_14_a@3",
-    "chess_char_2_05_a@3",
-    "chess_item_2_01_e_a@1"
+    "chess_char_3_19_a@3",
+    "chess_char_3_06_a@3",
+    "chess_char_3_19_a@3",
+    "chess_char_3_18_a@3"
    ],
    "hand": [
+    "chess_char_1_03_a",
     "chess_char_1_12_a",
     "chess_char_1_08_a",
     "chess_item_1_05_e_b"
    ],
-   "advice": "升调度中心 Lv3（8 金，余 2）",
-   "pick": "野鬃(28)",
+   "advice": "抓 菲莱（槽位 2）",
+   "pick": "菲莱(43)",
    "after": {
-    "lp": 21,
+    "lp": 20,
     "bonds": [
+     "miraShip:2/3",
      "swiftShip:2/2",
      "soloShip:1/0",
      "sargonShip:1/4",
      "kazimierzShip:1/2",
      "preciShip:1/2",
      "arcaneShip:1/2",
-     "yanShip:1/1",
+     "yanShip:0/1",
      "victoriaShip:1/0",
      "lateranoShip:1/0",
-     "siracusaShip:1/0",
-     "deputShip:1/0",
-     "miraShip:1/0"
+     "siracusaShip:2/0",
+     "deputShip:1/0"
     ],
     "table": [
      {
@@ -431,31 +431,117 @@
       "band": "band_duyaoy",
       "lp": 29,
       "lv": 3,
-      "bonds": "yanShip:3 skillfulShip:2 victoriaShip:1 swiftShip:1 deputShip:1 investShip:1 suntShip:1"
+      "bonds": "yanShip:4 skillfulShip:2 victoriaShip:1 swiftShip:1 deputShip:1 investShip:2 suntShip:1"
      },
      {
       "seat": 1,
       "name": "轻音永驻#6434",
       "band": "band_justin",
-      "lp": 21,
+      "lp": 20,
       "lv": 4,
-      "bonds": "yanShip:1 preciShip:1 arcaneShip:1 sargonShip:1 swiftShip:1 skillfulShip:1 steadShip:1 deputShip:1 investShip:1 raidShip:1 emptyShip:1"
+      "bonds": "visiShip:2 emptyShip:2 yanShip:1 preciShip:0 arcaneShip:0 victoriaShip:1 swiftShip:1 deputShip:1 miraShip:1 investShip:1 raidShip:1 indomShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
-      "lp": 21,
-      "lv": 2,
-      "bonds": "swiftShip:2 soloShip:1 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:1 victoriaShip:1 lateranoShip:1 siracusaShip:1 deputShip:1 miraShip:1"
+      "lp": 20,
+      "lv": 3,
+      "bonds": "miraShip:2 swiftShip:2 soloShip:1 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:0 victoriaShip:1 lateranoShip:1 siracusaShip:2 deputShip:1"
      },
      {
       "seat": 3,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
+      "lp": 19,
+      "lv": 3,
+      "bonds": "sargonShip:5 miraShip:2 siracusaShip:1 skillfulShip:1 steadShip:1 deputShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 7,
+   "funds": 5,
+   "lp": 20,
+   "level": 3,
+   "bonds": [
+    "miraShip:2/3",
+    "swiftShip:2/2",
+    "soloShip:1/0",
+    "sargonShip:1/4",
+    "kazimierzShip:1/2",
+    "preciShip:1/2",
+    "arcaneShip:1/2",
+    "yanShip:0/1",
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "siracusaShip:2/0",
+    "deputShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_06_a@3",
+    "chess_char_3_18_a@3",
+    "chess_item_2_05_e_a@3"
+   ],
+   "hand": [
+    "chess_char_1_03_a",
+    "token_10028_vigil_wolf",
+    "chess_char_1_12_a",
+    "chess_char_1_08_a",
+    "chess_item_1_05_e_b"
+   ],
+   "advice": "抓 菲莱（槽位 2）",
+   "pick": "菲莱(78)",
+   "after": {
+    "lp": 20,
+    "bonds": [
+     "miraShip:2/3",
+     "swiftShip:2/2",
+     "soloShip:1/0",
+     "sargonShip:1/4",
+     "kazimierzShip:1/2",
+     "preciShip:1/2",
+     "arcaneShip:1/2",
+     "yanShip:0/1",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "siracusaShip:2/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "UUU#7461",
+      "band": "band_duyaoy",
+      "lp": 29,
+      "lv": 3,
+      "bonds": "yanShip:4 skillfulShip:2 victoriaShip:1 swiftShip:1 deputShip:1 investShip:2 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "轻音永驻#6434",
+      "band": "band_justin",
+      "lp": 20,
+      "lv": 4,
+      "bonds": "visiShip:2 emptyShip:2 yanShip:1 preciShip:0 arcaneShip:0 victoriaShip:1 swiftShip:1 deputShip:1 miraShip:1 investShip:1 raidShip:1 indomShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
       "lp": 20,
       "lv": 3,
-      "bonds": "sargonShip:4 skillfulShip:1 steadShip:1 deputShip:1 miraShip:1 suntShip:1"
+      "bonds": "miraShip:2 swiftShip:2 soloShip:1 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:0 victoriaShip:1 lateranoShip:1 siracusaShip:2 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 19,
+      "lv": 3,
+      "bonds": "sargonShip:5 miraShip:2 siracusaShip:1 skillfulShip:1 steadShip:1 deputShip:1 suntShip:1"
      }
     ]
    }
@@ -9261,6 +9347,62 @@
    "type": "CUSTOM",
    "text": "联防阶段：UUU#7461 迎战突破防线的敌人",
    "playerId": null
+  },
+  {
+   "id": 567,
+   "at": 1792852516597,
+   "round": 6,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为3级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 568,
+   "at": 1792852612680,
+   "round": 6,
+   "type": "CUSTOM",
+   "text": "联防阶段：UUU#7461 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 572,
+   "at": 1792852662882,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "UUU#7461博士将调度中心等级提升为4级",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 573,
+   "at": 1792852664334,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "UUU#7461博士的琳琅诗怀雅干员晋升为精锐",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 574,
+   "at": 1792852664586,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为4级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 575,
+   "at": 1792852671722,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的伺夜干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 576,
+   "at": 1792852688405,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "轻音永驻#6434博士的华法琳干员晋升为精锐",
+   "playerId": "p_2bd526a5ec"
   }
  ],
  "results": [
