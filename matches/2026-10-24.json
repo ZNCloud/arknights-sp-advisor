@@ -1,7 +1,51 @@
 {
- "generatedAt": "2026-10-24T13:39:51.330Z",
+ "generatedAt": "2026-10-24T13:40:57.796Z",
  "day": "2026-10-24",
  "rounds": [
+  {
+   "round": 0,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 0,
+    "bonds": [],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     }
+    ]
+   }
+  },
   {
    "round": 1,
    "funds": 0,
