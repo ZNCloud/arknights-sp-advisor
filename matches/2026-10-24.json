@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:30:25.112Z",
+ "generatedAt": "2026-10-24T12:32:28.479Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -299,8 +299,85 @@
     "bonds": [
      "swiftShip:2/11",
      "deputShip:2/8",
-     "lateranoShip:3/2",
-     "preciShip:2/2",
+     "lateranoShip:3/5",
+     "preciShip:2/5",
+     "kazimierzShip:1/8",
+     "kjeragShip:1/0",
+     "miraShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 3,
+      "bonds": "sargonShip:4 steadShip:2 suntShip:2 kjeragShip:1 lateranoShip:1 skillfulShip:1 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 3,
+      "bonds": "miraShip:2 kjeragShip:1 steadShip:1 lateranoShip:2 siracusaShip:2 preciShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 3,
+      "bonds": "swiftShip:2 deputShip:2 lateranoShip:3 preciShip:2 kazimierzShip:1 kjeragShip:1 miraShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 3,
+      "bonds": "kazimierzShip:3 indomShip:2 steadShip:2 soloShip:1 swiftShip:1 kjeragShip:1 lateranoShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 6,
+   "funds": 7,
+   "lp": 24,
+   "level": 3,
+   "bonds": [
+    "swiftShip:2/11",
+    "deputShip:2/8",
+    "lateranoShip:3/5",
+    "preciShip:2/5",
+    "kazimierzShip:1/8",
+    "kjeragShip:2/0",
+    "visiShip:1/0",
+    "miraShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_20_a@3",
+    "chess_char_1_19_a@2",
+    "chess_char_1_02_a@2",
+    "chess_item_1_03_e_a@1"
+   ],
+   "hand": [
+    "chess_item_5_02_e_a",
+    "chess_item_1_05_e_a",
+    "chess_item_1_04_e_a"
+   ],
+   "advice": "先刷找 空弦/莫斯提马/圣约送葬人（核心没到手，装备不急）",
+   "pick": "盟约之币(14)",
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "swiftShip:2/11",
+     "deputShip:2/8",
+     "lateranoShip:3/5",
+     "preciShip:2/5",
      "kazimierzShip:1/8",
      "kjeragShip:1/0",
      "miraShip:1/0",
@@ -7351,6 +7428,38 @@
    "type": "SHOP_LEVEL",
    "text": "黑#5507博士将调度中心等级提升为3级",
    "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 332,
+   "at": 1792845077445,
+   "round": 5,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 333,
+   "at": 1792845134196,
+   "round": 6,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为4级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 334,
+   "at": 1792845134678,
+   "round": 6,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为4级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 335,
+   "at": 1792845143743,
+   "round": 6,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的能天使干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
