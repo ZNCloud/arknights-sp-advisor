@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:47:31.142Z",
+ "generatedAt": "2026-10-24T13:49:37.801Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -200,7 +200,7 @@
   },
   {
    "round": 4,
-   "funds": 5,
+   "funds": 0,
    "lp": 24,
    "level": 2,
    "bonds": [
@@ -213,24 +213,19 @@
     "indomShip:1/0",
     "emptyShip:1/0"
    ],
-   "shop": [
-    "chess_char_2_10_a@3",
-    "chess_char_2_02_a@3",
-    "chess_char_1_03_a@2",
-    "chess_item_2_02_e_a@2"
-   ],
+   "shop": [],
    "hand": [
     "chess_item_1_05_e_a"
    ],
-   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
-   "pick": "紧急调度券(7)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": null,
    "after": {
-    "lp": 24,
+    "lp": 22,
     "bonds": [
+     "egirShip:3/6",
      "maniShip:1/0",
      "soloShip:1/0",
      "yanShip:2/1",
-     "egirShip:2/0",
      "kazimierzShip:2/0",
      "steadShip:1/0",
      "indomShip:1/0",
@@ -241,33 +236,107 @@
       "seat": 0,
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
-      "lp": 29,
+      "lp": 28,
       "lv": 2,
-      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 lateranoShip:1 steadShip:1"
+      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 deputShip:1"
      },
      {
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 24,
+      "lp": 22,
       "lv": 2,
-      "bonds": "maniShip:1 soloShip:1 yanShip:2 egirShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
+      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
      },
      {
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_chiave",
-      "lp": 23,
+      "lp": 18,
       "lv": 2,
-      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1"
+      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1 suntShip:1"
      },
      {
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 24,
+      "lp": 22,
+      "lv": 3,
+      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:0 sargonShip:1 steadShip:1 investShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 5,
+   "funds": 0,
+   "lp": 22,
+   "level": 3,
+   "bonds": [
+    "egirShip:3/6",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "yanShip:2/1",
+    "kazimierzShip:2/0",
+    "steadShip:1/0",
+    "visiShip:1/0",
+    "indomShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_14_a@3",
+    "chess_char_1_17_a@2"
+   ],
+   "hand": [
+    "chess_char_2_02_a",
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "调香师(0)",
+   "after": {
+    "lp": 22,
+    "bonds": [
+     "egirShip:3/6",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "yanShip:2/1",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "indomShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 28,
       "lv": 2,
-      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:1 sargonShip:1 steadShip:1"
+      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 22,
+      "lv": 2,
+      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 18,
+      "lv": 2,
+      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 22,
+      "lv": 3,
+      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:0 sargonShip:1 steadShip:1 investShip:1"
      }
     ]
    }
@@ -8513,6 +8582,30 @@
    "type": "SHOP_LEVEL",
    "text": "夜行灯#1097博士将调度中心等级提升为3级",
    "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 488,
+   "at": 1792849729913,
+   "round": 5,
+   "type": "SHOP_LEVEL",
+   "text": "草莓泡芙#0279博士将调度中心等级提升为3级",
+   "playerId": "p_699082202c"
+  },
+  {
+   "id": 489,
+   "at": 1792849758951,
+   "round": 5,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的德克萨斯干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 490,
+   "at": 1792849766321,
+   "round": 5,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为3级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
