@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:44:17.471Z",
+ "generatedAt": "2026-10-24T13:47:31.142Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -127,33 +127,39 @@
   },
   {
    "round": 3,
-   "funds": 3,
+   "funds": 0,
    "lp": 24,
    "level": 2,
    "bonds": [
     "maniShip:1/0",
+    "soloShip:1/0",
     "yanShip:2/1",
     "egirShip:2/0",
+    "kazimierzShip:2/0",
+    "steadShip:1/0",
+    "indomShip:1/0",
     "emptyShip:1/0"
    ],
    "shop": [
-    "chess_char_2_17_a@3",
     "chess_char_1_14_a@2",
     "chess_char_1_06_a@2",
     "chess_item_1_03_e_a@1"
    ],
    "hand": [
-    "chess_char_2_12_a",
     "chess_item_1_05_e_a"
    ],
-   "advice": "先刷找 角峰/艾丝黛尔/深靛（核心没到手，装备不急）",
-   "pick": "盟约之币(6)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "格雷伊(0)",
    "after": {
     "lp": 24,
     "bonds": [
      "maniShip:1/0",
+     "soloShip:1/0",
      "yanShip:2/1",
      "egirShip:2/0",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "indomShip:1/0",
      "emptyShip:1/0"
     ],
     "table": [
@@ -162,8 +168,8 @@
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
       "lp": 29,
-      "lv": 1,
-      "bonds": "preciShip:1 arcaneShip:1 lateranoShip:1 swiftShip:1 steadShip:1"
+      "lv": 2,
+      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 lateranoShip:1 steadShip:1"
      },
      {
       "seat": 1,
@@ -171,7 +177,7 @@
       "band": "band_pith",
       "lp": 24,
       "lv": 2,
-      "bonds": "maniShip:1 yanShip:2 egirShip:2 emptyShip:1"
+      "bonds": "maniShip:1 soloShip:1 yanShip:2 egirShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
      },
      {
       "seat": 2,
@@ -179,7 +185,7 @@
       "band": "band_chiave",
       "lp": 23,
       "lv": 2,
-      "bonds": "preciShip:1 arcaneShip:1 steadShip:1"
+      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1"
      },
      {
       "seat": 3,
@@ -187,7 +193,81 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 2,
-      "bonds": "kazimierzShip:1 swiftShip:1 skillfulShip:1"
+      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:1 sargonShip:1 steadShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 4,
+   "funds": 5,
+   "lp": 24,
+   "level": 2,
+   "bonds": [
+    "egirShip:3/0",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "yanShip:2/1",
+    "kazimierzShip:2/0",
+    "steadShip:1/0",
+    "indomShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_10_a@3",
+    "chess_char_2_02_a@3",
+    "chess_char_1_03_a@2",
+    "chess_item_2_02_e_a@2"
+   ],
+   "hand": [
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
+   "pick": "紧急调度券(7)",
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "yanShip:2/1",
+     "egirShip:2/0",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "indomShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 2,
+      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 lateranoShip:1 steadShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "maniShip:1 soloShip:1 yanShip:2 egirShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:1 sargonShip:1 steadShip:1"
      }
     ]
    }
@@ -8409,6 +8489,30 @@
    "type": "SHOP_LEVEL",
    "text": "草莓泡芙#0279博士将调度中心等级提升为2级",
    "playerId": "p_699082202c"
+  },
+  {
+   "id": 485,
+   "at": 1792849554289,
+   "round": 3,
+   "type": "CUSTOM",
+   "text": "联防阶段：草莓泡芙#0279、大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 486,
+   "at": 1792849613667,
+   "round": 4,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的拉普兰德干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 487,
+   "at": 1792849616140,
+   "round": 4,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为3级",
+   "playerId": "p_1774e4067c"
   }
  ],
  "results": [
