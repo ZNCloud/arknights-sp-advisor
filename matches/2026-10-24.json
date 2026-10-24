@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T15:08:21.668Z",
+ "generatedAt": "2026-10-24T15:11:26.696Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -381,11 +381,11 @@
    "advice": "抓 耶拉（槽位 3）",
    "pick": "耶拉(47)",
    "after": {
-    "lp": 24,
+    "lp": 22,
     "bonds": [
-     "preciShip:2/4",
-     "swiftShip:2/4",
-     "deputShip:2/2",
+     "preciShip:2/6",
+     "swiftShip:2/6",
+     "deputShip:2/4",
      "kjeragShip:2/2",
      "kazimierzShip:1/2",
      "arcaneShip:1/2",
@@ -398,9 +398,9 @@
       "seat": 0,
       "name": "苍蓝残响#8014",
       "band": "band_cannot",
-      "lp": 27,
-      "lv": 3,
-      "bonds": "yanShip:3 preciShip:2 sargonShip:1 arcaneShip:1 lateranoShip:1 skillfulShip:1 miraShip:1 investShip:1"
+      "lp": 25,
+      "lv": 4,
+      "bonds": "yanShip:3 preciShip:2 arcaneShip:1 sargonShip:1 lateranoShip:1 skillfulShip:1 miraShip:1 investShip:1"
      },
      {
       "seat": 1,
@@ -408,22 +408,105 @@
       "band": "band_emperor",
       "lp": 26,
       "lv": 3,
-      "bonds": "indomShip:2 kazimierzShip:3 swiftShip:2 soloShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 suntShip:1"
+      "bonds": "indomShip:2 kazimierzShip:4 swiftShip:2 soloShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
      },
      {
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
-      "lp": 23,
-      "lv": 3,
-      "bonds": "sargonShip:4 yanShip:1 skillfulShip:1 steadShip:1 deputShip:1 suntShip:1"
+      "lp": 21,
+      "lv": 4,
+      "bonds": "sargonShip:4 suntShip:2 yanShip:2 miraShip:1 skillfulShip:1 steadShip:1 deputShip:1"
      },
      {
       "seat": 3,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
-      "lp": 24,
+      "lp": 22,
+      "lv": 4,
+      "bonds": "preciShip:2 swiftShip:2 deputShip:2 kjeragShip:2 kazimierzShip:1 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 7,
+   "funds": 6,
+   "lp": 22,
+   "level": 4,
+   "bonds": [
+    "preciShip:2/6",
+    "swiftShip:2/6",
+    "deputShip:2/4",
+    "kjeragShip:2/2",
+    "kazimierzShip:1/2",
+    "arcaneShip:1/2",
+    "steadShip:1/2",
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_13_a@3",
+    "chess_char_2_13_a@3",
+    "chess_char_3_10_a@3",
+    "chess_char_2_05_a@3",
+    "chess_char_4_13_a@3",
+    "chess_item_3_02_e_a@2"
+   ],
+   "hand": [
+    "chess_char_5_diy2_a",
+    "chess_item_1_04_e_a",
+    "chess_item_5_02_e_b",
+    "chess_item_5_02_e_b",
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "抓 灵知（槽位 5）",
+   "pick": "灵知(95)",
+   "after": {
+    "lp": 22,
+    "bonds": [
+     "preciShip:2/6",
+     "swiftShip:2/6",
+     "deputShip:2/4",
+     "kjeragShip:2/2",
+     "kazimierzShip:1/2",
+     "arcaneShip:1/2",
+     "steadShip:1/2",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "苍蓝残响#8014",
+      "band": "band_cannot",
+      "lp": 25,
+      "lv": 4,
+      "bonds": "yanShip:3 preciShip:2 arcaneShip:1 sargonShip:1 lateranoShip:1 skillfulShip:1 miraShip:1 investShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "XHR#4671",
+      "band": "band_emperor",
+      "lp": 26,
       "lv": 3,
+      "bonds": "indomShip:2 kazimierzShip:4 swiftShip:2 soloShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 21,
+      "lv": 4,
+      "bonds": "sargonShip:4 suntShip:2 yanShip:2 miraShip:1 skillfulShip:1 steadShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 22,
+      "lv": 4,
       "bonds": "preciShip:2 swiftShip:2 deputShip:2 kjeragShip:2 kazimierzShip:1 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:1"
      }
     ]
@@ -9694,6 +9777,30 @@
    "type": "SHOP_LEVEL",
    "text": "苍蓝残响#8014博士将调度中心等级提升为4级",
    "playerId": "p_8b1c32ff6e"
+  },
+  {
+   "id": 636,
+   "at": 1792854585162,
+   "round": 6,
+   "type": "CUSTOM",
+   "text": "联防阶段：XHR#4671 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 637,
+   "at": 1792854639642,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的耶拉干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 638,
+   "at": 1792854640625,
+   "round": 7,
+   "type": "SHOP_LEVEL",
+   "text": "XHR#4671博士将调度中心等级提升为4级",
+   "playerId": "p_ab7fb90a21"
   }
  ],
  "results": [
