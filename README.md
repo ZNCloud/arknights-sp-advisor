@@ -84,6 +84,16 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\launch.ps1
 ```
 需要客户端以 `--remote-debugging-port=9222` 启动（只读读取 `store.get().match`，不发送任何对局意图）。
 
+### 站位检查（可选，默认关）
+每个休整期里，小框多一行站位建议：「把 X 从 r,c 挪到 r,c / 换下 X 换上 Y——预计少掉几滴血、多拿几层」（BOSS 回合说「自己那份 BOSS 血多打几成」）。
+只给建议，不替你操作。坐标就是对局记录 `board[].at` 的 `[行, 列]`。
+
+- **开**：`launcher\advisor-launch.cmd --lineup`，或 `node overlay.mjs --watch --log --lineup [--lineup-threads 16]`。
+- **关**：不带 `--lineup` 启动即可（默认关）。关着时顾问的输出与没有这个功能时逐字节相同（`test/overlay-lineup.test.mjs`）。
+- **需要引擎**：和 `eval/` 工具一样读本目录同级的 `..\engine`（上游 Stronghold-Protocol 的 checkout，`npm ci --ignore-scripts`）。找不到时小框显示「站位检查没开起来：…」，其余建议照常。
+- **线程**：默认 `min(16, 核数 − 2)`。在一个单独的工作线程里跑，不卡别的建议；棋盘停手 1.5 秒后开算，你又动了棋盘就按新站位重算；休整期剩不到 10 秒还没算完就放弃这一回合，显示「站位检查超时」。
+- **怎么算的**：`advisor/live.mjs` 把客户端里的局面（盘面 / 手牌 / 装备 / 召唤物 / 盟约层数 / 悬赏 / 本回合的怪）还原成引擎局面，再跑 `advisor/lineup.mjs` 的检查（只看你自己这块场地；队友的棋盘客户端拿不到）。本回合的怪按客户端的预告对上引擎的那一波，对不上就报错、不猜。自选编队的局面引擎还原不了，会直接说。
+
 ## 许可
 
 - 本仓库的**代码与文档**：MIT

@@ -10,6 +10,10 @@ set "ADV=D:\CodeProject\advisor-dev"
 set "PORT=9222"
 set "EXE="
 
+rem --- optional: --lineup turns the lineup check on (off by default) ---
+set "LINEUP="
+for %%A in (%*) do if /i "%%~A"=="--lineup" set "LINEUP=--lineup"
+
 for %%F in ("%~dp0*.exe") do if not defined EXE set "EXE=%%~fF"
 if not defined EXE (
   echo [x] No .exe next to this script.
@@ -40,7 +44,8 @@ if errorlevel 1 (
 
 rem --- 2) overlay: recording is ON by default (--no-record to disable) ---
 echo [2/4] starting advisor overlay - recording ON - %ADV%\records
-start "advisor-overlay" /min cmd /c "cd /d %ADV% && node overlay.mjs --watch --port %PORT% --log > overlay.log 2>&1"
+if defined LINEUP echo       lineup check ON
+start "advisor-overlay" /min cmd /c "cd /d %ADV% && node overlay.mjs --watch --port %PORT% --log %LINEUP% > overlay.log 2>&1"
 
 rem --- 3) the box (must be a visible window) ---
 rem --- 4/4) match data sync to GitHub (uploads on round change) ---

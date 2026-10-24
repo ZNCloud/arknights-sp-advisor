@@ -7,6 +7,9 @@
 //   # keep it running next to the game (box.ps1 reads state.json)
 //   node advisor-dev/overlay.mjs --watch
 //
+//   # + the lineup check (站位检查) in every prep: off unless asked for (lineup-live.mjs; needs the engine checkout)
+//   node advisor-dev/overlay.mjs --watch --lineup [--lineup-threads 16]
+//
 // What it reads: `globalThis.__SP__.store.get('match')` — the same public/private views the game page renders. It
 // posts nothing, sends no match intent, and touches no client file. The client must have been started with
 // `--remote-debugging-port=9222` (see 卫戍协议-带顾问启动.cmd next to the exe).
@@ -39,6 +42,8 @@ const log = args.includes('--log') || once;
 const redact = args.includes('--redact');
 const port = flag('--port', process.env.CDP_PORT || '9222');
 const interval = Number(flag('--interval', '600')) || 600;
+// --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；不加则顾问的一切输出与原来逐字节相同
+const lineupOn = args.includes('--lineup');
 
 // ── 热更新：顾问逻辑/数据的文件一变，下一 tick 就用新的（不用重启游戏，也不用重启这个进程）──
 const WATCHED = [
@@ -70,6 +75,13 @@ async function reloadAdvisor(force = false) {
   return true;
 }
 await reloadAdvisor(true);
+
+const lineup = lineupOn ? await (async () => {
+  const { LiveLineup, defaultThreads } = await import('./lineup-live.mjs');
+  const threads = Number(flag('--lineup-threads', String(defaultThreads())));
+  if (log) console.log(`[${new Date().toLocaleTimeString()}] 站位检查已开（${threads} 线程）`);
+  return new LiveLineup({ threads, log: log ? (s) => console.log(`[${new Date().toLocaleTimeString()}] ${s}`) : () => {} });
+})() : null;
 
 const SNAPSHOT = `(async () => {
   const S = globalThis.__SP__;
@@ -817,6 +829,7 @@ async function main() {
       await reloadAdvisor();                       // 逻辑/数据热更新：文件一变就用新的
       const snap = await cdp.evaluate(SNAPSHOT);
       const box = boxOf(snap, await readRoute(snap && snap.ok ? api.matchKeyOf(snap.brief) : null));
+      if (lineup) await lineup.attach(box, snap, cdp);   // 站位检查：在宿主线程里异步跑，这里只取它当前的结果（不等）
       await writeState(box);
       if (record) await recordTurn(snap, box);     // 复盘：逐回合落盘（含所有座位的公开快照）
       if (record && (snap.phase === 'RESULT' || snap.phase === 'FINAL_ASSAULT')) await recordResult(cdp, snap);
@@ -836,13 +849,14 @@ async function main() {
   if (once) {
     await tick();
     cdp?.close();
+    await lineup?.close();
     const box = JSON.parse(await fs.readFile(STATE, 'utf8'));
     console.log(JSON.stringify(box, null, 2));
     return;
   }
 
   let stop = false;
-  process.on('SIGINT', () => { stop = true; cdp?.close(); process.exit(0); });
+  process.on('SIGINT', () => { stop = true; cdp?.close(); lineup?.close(); process.exit(0); });
   while (!stop) {
     const ok = await tick();
     await new Promise((r) => setTimeout(r, ok ? interval : 3000));
