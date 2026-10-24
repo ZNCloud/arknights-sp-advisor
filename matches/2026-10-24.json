@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T15:21:42.556Z",
+ "generatedAt": "2026-10-24T15:23:46.815Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -697,9 +697,9 @@
    "lp": 22,
    "level": 6,
    "bonds": [
-    "kjeragShip:6/36",
+    "kjeragShip:6/39",
     "skillfulShip:2/11",
-    "visiShip:2/5",
+    "visiShip:2/8",
     "preciShip:0/6",
     "swiftShip:0/6",
     "deputShip:1/4",
@@ -720,22 +720,20 @@
     "chess_item_4_05_e_a@2"
    ],
    "hand": [
-    "chess_item_5_02_e_b",
     "chess_char_1_01_a",
     "chess_char_4_02_b",
     "chess_char_1_19_a",
     "chess_char_1_09_a",
-    "chess_item_1_04_e_a",
     "chess_item_1_05_e_a"
    ],
    "advice": "没钱了，等下一回合进账",
-   "pick": "防暴盾(16)",
+   "pick": "塑心(0)",
    "after": {
     "lp": 22,
     "bonds": [
-     "kjeragShip:6/36",
-     "skillfulShip:2/11",
-     "visiShip:2/5",
+     "kjeragShip:6/63",
+     "skillfulShip:2/17",
+     "visiShip:2/13",
      "preciShip:0/6",
      "swiftShip:0/6",
      "deputShip:1/4",
@@ -753,31 +751,89 @@
       "name": "苍蓝残响#8014",
       "band": "band_cannot",
       "lp": 25,
-      "lv": 4,
-      "bonds": "yanShip:4 arcaneShip:2 preciShip:2 swiftShip:2 skillfulShip:2 sargonShip:0 miraShip:1 investShip:1 suntShip:1"
+      "lv": 5,
+      "bonds": "yanShip:4 arcaneShip:2 preciShip:2 swiftShip:2 skillfulShip:2 suntShip:2 sargonShip:0 steadShip:1 miraShip:1 investShip:1 raidShip:1"
      },
      {
       "seat": 1,
       "name": "XHR#4671",
       "band": "band_emperor",
       "lp": 26,
-      "lv": 4,
-      "bonds": "indomShip:3 kazimierzShip:3 soloShip:1 suntShip:2 swiftShip:0 siracusaShip:0 sargonShip:1 egirShip:1 preciShip:1 skillfulShip:1 visiShip:1 miraShip:1 raidShip:1"
+      "lv": 5,
+      "bonds": "indomShip:2 kazimierzShip:4 swiftShip:3 raidShip:2 visiShip:2 soloShip:1 kjeragShip:1 siracusaShip:1 egirShip:1 preciShip:1 miraShip:1 suntShip:1"
      },
      {
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
       "lp": 21,
-      "lv": 5,
-      "bonds": "sargonShip:6 steadShip:2 suntShip:4 yanShip:2 miraShip:1 skillfulShip:1 deputShip:1"
+      "lv": 6,
+      "bonds": "sargonShip:6 steadShip:2 suntShip:3 yanShip:2 miraShip:0 preciShip:1 deputShip:1"
      },
      {
       "seat": 3,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
       "lp": 22,
+      "lv": 6,
+      "bonds": "kjeragShip:6 visiShip:2 skillfulShip:2 preciShip:0 swiftShip:0 deputShip:1 kazimierzShip:0 arcaneShip:0 steadShip:1 victoriaShip:1 lateranoShip:1 raidShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 22,
+    "bonds": [
+     "kjeragShip:6/63",
+     "skillfulShip:2/17",
+     "visiShip:2/13",
+     "preciShip:0/6",
+     "swiftShip:0/6",
+     "deputShip:1/4",
+     "kazimierzShip:0/2",
+     "arcaneShip:0/2",
+     "steadShip:1/2",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "raidShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "苍蓝残响#8014",
+      "band": "band_cannot",
+      "lp": 25,
       "lv": 5,
+      "bonds": "yanShip:4 arcaneShip:2 preciShip:2 swiftShip:2 skillfulShip:2 suntShip:2 sargonShip:0 steadShip:1 miraShip:1 investShip:1 raidShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "XHR#4671",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 5,
+      "bonds": "indomShip:2 kazimierzShip:4 swiftShip:3 raidShip:2 visiShip:2 soloShip:1 kjeragShip:1 siracusaShip:1 egirShip:1 preciShip:1 miraShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 21,
+      "lv": 6,
+      "bonds": "sargonShip:6 steadShip:2 suntShip:3 yanShip:2 miraShip:0 preciShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 22,
+      "lv": 6,
       "bonds": "kjeragShip:6 skillfulShip:2 visiShip:2 preciShip:0 swiftShip:0 deputShip:1 kazimierzShip:0 arcaneShip:0 steadShip:1 victoriaShip:1 lateranoShip:1 raidShip:1 suntShip:1"
      }
     ]
@@ -10208,6 +10264,14 @@
    "type": "GOLDEN_CHAR",
    "text": "苍蓝残响#8014博士的能天使干员晋升为精锐",
    "playerId": "p_8b1c32ff6e"
+  },
+  {
+   "id": 656,
+   "at": 1792855337041,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的菲莱干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
   }
  ],
  "results": [
