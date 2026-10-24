@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:26:13.859Z",
+ "generatedAt": "2026-10-24T14:27:17.763Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -59,6 +59,75 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 1,
+      "bonds": "sargonShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "funds": 0,
+   "lp": 24,
+   "level": 1,
+   "bonds": [
+    "soloShip:1/0",
+    "kazimierzShip:1/2",
+    "preciShip:1/2",
+    "swiftShip:1/2",
+    "arcaneShip:1/2",
+    "victoriaShip:1/0",
+    "siracusaShip:1/0",
+    "deputShip:1/0"
+   ],
+   "shop": [],
+   "hand": [
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": null,
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "soloShip:1/0",
+     "kazimierzShip:1/2",
+     "preciShip:1/2",
+     "swiftShip:1/2",
+     "arcaneShip:1/2",
+     "victoriaShip:1/0",
+     "siracusaShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "UUU#7461",
+      "band": "band_duyaoy",
+      "lp": 29,
+      "lv": 1,
+      "bonds": "yanShip:1 victoriaShip:1 skillfulShip:1 deputShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "轻音永驻#6434",
+      "band": "band_justin",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "yanShip:1 preciShip:1 arcaneShip:1 skillfulShip:1 raidShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 1,
+      "bonds": "soloShip:1 kazimierzShip:1 preciShip:1 swiftShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
       "bonds": "sargonShip:1 deputShip:1"
      }
     ]
@@ -8761,6 +8830,22 @@
    "type": "CUSTOM",
    "text": "联防阶段：大兜特兜#9944、大漏特漏#1989 迎战突破防线的敌人",
    "playerId": null
+  },
+  {
+   "id": 552,
+   "at": 1792851995231,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 553,
+   "at": 1792852009401,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "轻音永驻#6434博士将调度中心等级提升为2级",
+   "playerId": "p_2bd526a5ec"
   }
  ],
  "results": [
