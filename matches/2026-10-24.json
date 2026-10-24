@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:53:25.251Z",
+ "generatedAt": "2026-10-24T14:56:29.375Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -827,60 +827,61 @@
   },
   {
    "round": 11,
-   "funds": 9,
+   "funds": 0,
    "lp": 5,
    "level": 5,
    "bonds": [
     "lateranoShip:3/51",
     "miraShip:3/17",
-    "swiftShip:2/11",
+    "swiftShip:3/11",
+    "preciShip:2/2",
     "arcaneShip:2/2",
-    "suntShip:3/0",
+    "suntShip:2/0",
     "sargonShip:1/4",
     "kazimierzShip:0/2",
-    "preciShip:1/2",
     "yanShip:0/1",
     "kjeragShip:2/0",
-    "siracusaShip:1/0",
     "skillfulShip:1/0",
+    "visiShip:1/0",
     "investShip:1/0",
     "emptyShip:1/0"
    ],
    "shop": [
-    "chess_char_4_09_a@3",
-    "chess_char_1_12_a@2",
-    "chess_char_3_01_a@3",
-    "chess_char_3_05_a@3",
-    "chess_char_4_14_a@3",
-    "chess_item_4_08_e_a@1"
+    "chess_char_3_12_a@3",
+    "chess_char_3_08_a@3",
+    "chess_char_2_19_a@3",
+    "chess_char_3_20_a@3",
+    "chess_char_4_10_a@3",
+    "chess_item_3_02_e_a@2"
    ],
    "hand": [
     "chess_char_3_01_a",
+    "chess_char_4_07_a",
     "chess_char_1_12_a",
+    "chess_char_3_19_b",
     "chess_char_2_11_a",
     "chess_item_1_01_e_a",
     "chess_char_3_13_a",
-    "chess_item_5_02_e_b",
     "chess_char_3_20_a",
     "chess_item_1_05_e_b"
    ],
-   "advice": "抓 能天使（槽位 3）",
-   "pick": "能天使(69)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "瑕光(0)",
    "after": {
-    "lp": 5,
+    "lp": 3,
     "bonds": [
-     "lateranoShip:3/51",
+     "lateranoShip:3/75",
+     "preciShip:2/41",
      "miraShip:3/17",
-     "swiftShip:2/11",
+     "swiftShip:3/16",
      "arcaneShip:2/2",
-     "suntShip:3/0",
+     "suntShip:2/0",
      "sargonShip:1/4",
      "kazimierzShip:0/2",
-     "preciShip:0/2",
      "yanShip:0/1",
      "kjeragShip:2/0",
-     "siracusaShip:1/0",
      "skillfulShip:1/0",
+     "visiShip:1/0",
      "investShip:1/0",
      "emptyShip:1/0"
     ],
@@ -891,7 +892,7 @@
       "band": "band_duyaoy",
       "lp": 17,
       "lv": 5,
-      "bonds": "yanShip:6 visiShip:2 swiftShip:2 investShip:3 suntShip:3 miraShip:1 kjeragShip:1 skillfulShip:1 arcaneShip:1"
+      "bonds": "yanShip:6 swiftShip:2 suntShip:2 visiShip:1 victoriaShip:1 miraShip:1 preciShip:1 skillfulShip:1 arcaneShip:1 investShip:2"
      },
      {
       "seat": 1,
@@ -905,17 +906,76 @@
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
-      "lp": 5,
+      "lp": 3,
       "lv": 5,
-      "bonds": "lateranoShip:3 miraShip:3 swiftShip:2 arcaneShip:2 suntShip:3 sargonShip:1 kazimierzShip:0 preciShip:0 yanShip:0 kjeragShip:2 siracusaShip:1 skillfulShip:1 investShip:1 emptyShip:1"
+      "bonds": "lateranoShip:3 preciShip:2 miraShip:3 swiftShip:3 arcaneShip:2 suntShip:2 sargonShip:1 kazimierzShip:0 yanShip:0 kjeragShip:2 skillfulShip:1 visiShip:1 investShip:1 emptyShip:1"
      },
      {
       "seat": 3,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
-      "lp": 12,
+      "lp": 10,
+      "lv": 6,
+      "bonds": "sargonShip:6 miraShip:3 suntShip:3 yanShip:0 skillfulShip:1 steadShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 12,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 3,
+    "bonds": [
+     "lateranoShip:3/78",
+     "preciShip:2/41",
+     "miraShip:3/17",
+     "swiftShip:3/16",
+     "arcaneShip:2/2",
+     "suntShip:2/0",
+     "sargonShip:1/4",
+     "kazimierzShip:0/2",
+     "yanShip:0/1",
+     "kjeragShip:2/0",
+     "skillfulShip:1/0",
+     "visiShip:1/0",
+     "investShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "UUU#7461",
+      "band": "band_duyaoy",
+      "lp": 17,
       "lv": 5,
-      "bonds": "sargonShip:6 miraShip:3 suntShip:2 yanShip:0 siracusaShip:1 skillfulShip:1 steadShip:1"
+      "bonds": "yanShip:6 swiftShip:2 suntShip:2 visiShip:1 victoriaShip:1 miraShip:1 preciShip:1 skillfulShip:1 arcaneShip:1 investShip:2"
+     },
+     {
+      "seat": 1,
+      "name": "轻音永驻#6434",
+      "band": "band_justin",
+      "lp": 0,
+      "lv": 6,
+      "bonds": ""
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 3,
+      "lv": 5,
+      "bonds": "lateranoShip:3 preciShip:2 miraShip:3 swiftShip:3 arcaneShip:2 suntShip:2 sargonShip:1 kazimierzShip:0 yanShip:0 kjeragShip:2 skillfulShip:1 visiShip:1 investShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 10,
+      "lv": 6,
+      "bonds": "sargonShip:6 miraShip:3 suntShip:3 yanShip:0 skillfulShip:1 steadShip:1 deputShip:1"
      }
     ]
    }
@@ -9976,6 +10036,54 @@
    "round": 11,
    "type": "GOLDEN_CHAR",
    "text": "大漏特漏#1989博士的莎草干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 610,
+   "at": 1792853754817,
+   "round": 11,
+   "type": "CUSTOM",
+   "text": "联防阶段：UUU#7461 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 611,
+   "at": 1792853784573,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "UUU#7461博士的烛煌干员造成的伤害量达到200000",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 612,
+   "at": 1792853784573,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "UUU#7461博士的\"炎佑\"干员造成的伤害量达到200000",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 613,
+   "at": 1792853784574,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的圣聆初雪干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 614,
+   "at": 1792853784574,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的莱恩哈特干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 615,
+   "at": 1792853784574,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的百炼嘉维尔干员造成的伤害量达到200000",
    "playerId": "p_fefd3905ce"
   }
  ],
