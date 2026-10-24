@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T11:11:51.523Z",
+ "generatedAt": "2026-10-24T11:26:43.532Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -627,49 +627,46 @@
   },
   {
    "round": 10,
-   "funds": 14,
+   "funds": 0,
    "lp": 26,
-   "level": 4,
+   "level": 5,
    "bonds": [
-    "kazimierzShip:5/114",
+    "kazimierzShip:4/114",
     "raidShip:2/52",
     "soloShip:1/1",
+    "indomShip:2/0",
     "swiftShip:0/4",
+    "egirShip:1/0",
     "preciShip:1/0",
-    "steadShip:1/0",
     "miraShip:1/0",
-    "indomShip:1/0",
     "emptyShip:1/0"
    ],
    "shop": [
-    "chess_char_3_05_a@3",
-    "chess_char_1_17_a@2",
-    "chess_char_4_11_a@3",
+    "chess_char_1_08_a@2",
+    "chess_char_3_04_a@3",
     "chess_char_3_09_a@3",
-    "chess_char_4_09_a@3",
-    "chess_item_4_10_e_a@2"
+    "chess_char_4_26_a@3",
+    "chess_item_3_11_e_a@1"
    ],
    "hand": [
     "chess_item_4_01_e_a",
-    "chess_char_2_09_a",
-    "chess_char_1_19_a",
     "chess_item_4_07_e_a",
-    "chess_char_1_09_a",
+    "chess_char_2_18_a",
     "chess_char_1_19_a"
    ],
-   "advice": "对空 2/3 个（本波 12 只飞行）→ 升调度中心 Lv5（12 金，余 2）",
-   "pick": "浓缩嗅盐(23)",
+   "advice": "对空 2/3 个（本波 12 只飞行）→ 没钱了，等下一回合进账",
+   "pick": "德克萨斯(0)",
    "after": {
     "lp": 26,
     "bonds": [
-     "kazimierzShip:5/114",
-     "raidShip:2/52",
+     "kazimierzShip:4/153",
+     "raidShip:2/57",
+     "indomShip:2/18",
      "soloShip:1/1",
      "swiftShip:0/4",
+     "egirShip:1/0",
      "preciShip:1/0",
-     "steadShip:1/0",
      "miraShip:1/0",
-     "indomShip:1/0",
      "emptyShip:1/0"
     ],
     "table": [
@@ -679,7 +676,7 @@
       "band": "band_pith",
       "lp": 24,
       "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 steadShip:2 miraShip:2 maniShip:1 suntShip:2 kazimierzShip:2 swiftShip:0 yanShip:2 victoriaShip:2 visiShip:1 raidShip:1 emptyShip:1"
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 visiShip:1 emptyShip:1"
      },
      {
       "seat": 1,
@@ -687,23 +684,279 @@
       "band": "band_cathy",
       "lp": 26,
       "lv": 6,
-      "bonds": "visiShip:2 yanShip:6 deputShip:2 suntShip:2 preciShip:0 kjeragShip:0 arcaneShip:0 victoriaShip:1 skillfulShip:1 steadShip:1 investShip:1"
+      "bonds": "visiShip:2 yanShip:6 skillfulShip:2 steadShip:2 soloShip:1 deputShip:0 preciShip:0 suntShip:1 kjeragShip:0 arcaneShip:1 investShip:2"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_emperor",
       "lp": 26,
-      "lv": 4,
-      "bonds": "kazimierzShip:5 raidShip:2 soloShip:1 swiftShip:0 preciShip:1 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
+      "lv": 5,
+      "bonds": "kazimierzShip:4 raidShip:2 indomShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
       "band": "band_chiave",
       "lp": 23,
-      "lv": 4,
-      "bonds": "siracusaShip:4 preciShip:2 arcaneShip:2 suntShip:6 swiftShip:1 kazimierzShip:0 yanShip:1 miraShip:1 investShip:2"
+      "lv": 5,
+      "bonds": "siracusaShip:6 swiftShip:2 suntShip:4 preciShip:0 arcaneShip:1 kazimierzShip:0 yanShip:1 miraShip:1 investShip:2 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "funds": 0,
+   "lp": 26,
+   "level": 5,
+   "bonds": [
+    "kazimierzShip:4/165",
+    "raidShip:2/57",
+    "indomShip:2/18",
+    "soloShip:1/1",
+    "swiftShip:0/4",
+    "egirShip:1/0",
+    "preciShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_02_a@3",
+    "chess_char_4_09_a@3",
+    "chess_char_4_25_a@3",
+    "chess_char_4_07_a@3",
+    "chess_char_5_19_a@4",
+    "chess_item_3_12_e_a@3"
+   ],
+   "hand": [
+    "chess_char_3_12_a",
+    "chess_item_4_01_e_a",
+    "chess_char_2_12_a",
+    "chess_item_3_11_e_a",
+    "chess_item_4_07_e_a",
+    "chess_char_2_18_a",
+    "chess_char_1_19_a"
+   ],
+   "advice": "可以抓 玛恩纳（槽位 5）",
+   "pick": "玛恩纳(27)",
+   "after": {
+    "lp": 25,
+    "bonds": [
+     "kazimierzShip:4/211",
+     "raidShip:2/73",
+     "indomShip:2/38",
+     "soloShip:1/1",
+     "swiftShip:0/4",
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 visiShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 6,
+      "bonds": "visiShip:2 skillfulShip:2 yanShip:5 arcaneShip:2 suntShip:4 steadShip:2 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 kjeragShip:1 miraShip:1 lateranoShip:1 investShip:2"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 25,
+      "lv": 5,
+      "bonds": "kazimierzShip:4 raidShip:2 indomShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 6,
+      "bonds": "siracusaShip:6 swiftShip:2 suntShip:2 preciShip:0 kazimierzShip:0 arcaneShip:1 miraShip:1 investShip:2 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 12,
+   "funds": 1,
+   "lp": 25,
+   "level": 5,
+   "bonds": [
+    "kazimierzShip:4/211",
+    "raidShip:2/73",
+    "indomShip:2/38",
+    "soloShip:1/1",
+    "swiftShip:0/4",
+    "egirShip:1/0",
+    "preciShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_07_a@2",
+    "chess_char_2_10_a@3",
+    "chess_char_5_21_a@4",
+    "chess_char_5_01_a@4",
+    "chess_char_4_14_a@3"
+   ],
+   "hand": [
+    "chess_char_3_17_a",
+    "chess_char_5_19_a",
+    "chess_char_3_12_a",
+    "chess_item_4_01_e_a",
+    "chess_char_2_12_a",
+    "chess_item_4_01_e_a",
+    "chess_item_4_07_e_a",
+    "chess_char_2_18_a",
+    "chess_char_1_19_a"
+   ],
+   "advice": "钱会被清零（剩 1 金）→ 买装备/升本/刷，别留",
+   "pick": "普罗旺斯(0)",
+   "after": {
+    "lp": 15,
+    "bonds": [
+     "kazimierzShip:4/266",
+     "indomShip:2/88",
+     "raidShip:2/83",
+     "soloShip:1/1",
+     "swiftShip:0/4",
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 14,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 6,
+      "bonds": "skillfulShip:2 arcaneShip:2 yanShip:5 visiShip:2 suntShip:4 steadShip:2 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 victoriaShip:0 kjeragShip:1 miraShip:1 swiftShip:0 lateranoShip:1 investShip:2"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 15,
+      "lv": 5,
+      "bonds": "kazimierzShip:4 indomShip:2 raidShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 6,
+      "bonds": "siracusaShip:7 swiftShip:2 maniShip:1 suntShip:4 preciShip:0 kazimierzShip:0 arcaneShip:1 miraShip:1 investShip:2 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 13,
+   "funds": 0,
+   "lp": 15,
+   "level": 6,
+   "bonds": [
+    "kazimierzShip:6/269",
+    "indomShip:2/88",
+    "raidShip:2/83",
+    "soloShip:1/1",
+    "swiftShip:0/4",
+    "egirShip:1/0",
+    "preciShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_03_a@2",
+    "chess_char_4_19_a@3",
+    "chess_char_5_13_a@4",
+    "chess_char_5_07_a@4",
+    "chess_item_3_02_e_a@2"
+   ],
+   "hand": [
+    "chess_char_4_26_a",
+    "chess_char_2_18_a",
+    "chess_char_3_12_a",
+    "chess_char_6_16_a",
+    "chess_char_2_12_a",
+    "chess_char_4_19_a",
+    "chess_item_4_07_e_a",
+    "chess_char_2_18_a",
+    "chess_char_1_19_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "惊蛰(0)",
+   "after": {
+    "lp": 15,
+    "bonds": [
+     "kazimierzShip:6/269",
+     "indomShip:2/88",
+     "raidShip:2/83",
+     "soloShip:1/1",
+     "swiftShip:0/4",
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 14,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 6,
+      "bonds": "skillfulShip:2 arcaneShip:2 yanShip:5 visiShip:2 suntShip:5 steadShip:2 soloShip:1 deputShip:0 preciShip:0 kazimierzShip:0 victoriaShip:0 kjeragShip:1 miraShip:1 swiftShip:0 lateranoShip:1 investShip:2"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 15,
+      "lv": 6,
+      "bonds": "kazimierzShip:6 indomShip:2 raidShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 6,
+      "bonds": "siracusaShip:6 swiftShip:2 raidShip:2 suntShip:4 kazimierzShip:1 preciShip:0 kjeragShip:1 arcaneShip:1 miraShip:1 investShip:2"
      }
     ]
    }
@@ -5605,6 +5858,286 @@
    "type": "SHOP_LEVEL",
    "text": "黑#5507博士将调度中心等级提升为5级",
    "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 47,
+   "at": 1792840314805,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为5级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 48,
+   "at": 1792840346160,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的波登可干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 49,
+   "at": 1792840369079,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的琳琅诗怀雅干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 50,
+   "at": 1792840468734,
+   "round": 10,
+   "type": "CUSTOM",
+   "text": "联防阶段：pipiwu#3933、大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 51,
+   "at": 1792840518751,
+   "round": 11,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为6级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 52,
+   "at": 1792840546624,
+   "round": 11,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为6级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 53,
+   "at": 1792840614485,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的溯光星源干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 54,
+   "at": 1792840621758,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的惊蛰干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 56,
+   "at": 1792840693866,
+   "round": 11,
+   "type": "CUSTOM",
+   "text": "联防阶段：pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 58,
+   "at": 1792840753244,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的溯光星源干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 59,
+   "at": 1792840753244,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的惊蛰干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 60,
+   "at": 1792840753245,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的圣约送葬人干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 61,
+   "at": 1792840753245,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的流星干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 62,
+   "at": 1792840753245,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的瑕光干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 63,
+   "at": 1792840753245,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的阿罗玛干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 64,
+   "at": 1792840753245,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的荒芜拉普兰德干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 65,
+   "at": 1792840759587,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的忍冬干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 66,
+   "at": 1792840784404,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的荒芜拉普兰德干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 67,
+   "at": 1792840810373,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的水月干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 68,
+   "at": 1792840811441,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的星熊干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 72,
+   "at": 1792840999862,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 74,
+   "at": 1792841034698,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的水月干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 75,
+   "at": 1792841034698,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的溯光星源干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 76,
+   "at": 1792841034698,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的惊蛰干员造成的伤害量达到500000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 77,
+   "at": 1792841034698,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的流星干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 78,
+   "at": 1792841034699,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的拉普兰德干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 79,
+   "at": 1792841034699,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的忍冬干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 80,
+   "at": 1792841034699,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的阿罗玛干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 81,
+   "at": 1792841034699,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的荒芜拉普兰德干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 82,
+   "at": 1792841043901,
+   "round": 13,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为6级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 83,
+   "at": 1792841053222,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的斯卡蒂干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 84,
+   "at": 1792841055876,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的流星干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 85,
+   "at": 1792841087400,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的缄默德克萨斯干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 86,
+   "at": 1792841105600,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的浊心斯卡蒂干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 87,
+   "at": 1792841106697,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的小满干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
