@@ -1,63 +1,65 @@
 {
- "generatedAt": "2026-10-24T11:31:54.083Z",
+ "generatedAt": "2026-10-24T11:39:18.436Z",
  "day": "2026-10-24",
  "rounds": [
   {
    "round": 1,
    "funds": 0,
-   "lp": 26,
+   "lp": 23,
    "level": 1,
    "bonds": [
-    "kazimierzShip:1/2",
-    "swiftShip:1/2",
-    "raidShip:1/0"
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "swiftShip:1/0",
+    "deputShip:1/0"
    ],
    "shop": [
-    "chess_char_1_08_a@2",
-    "chess_item_1_05_e_a@1"
+    "chess_char_1_14_a@2",
+    "chess_item_1_04_e_a@1"
    ],
    "hand": [],
    "advice": "没钱了，等下一回合进账",
-   "pick": "德克萨斯(0)",
+   "pick": "格雷伊(0)",
    "after": {
-    "lp": 26,
+    "lp": 23,
     "bonds": [
-     "kazimierzShip:1/2",
-     "swiftShip:1/2",
-     "raidShip:1/0"
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "swiftShip:1/0",
+     "deputShip:1/0"
     ],
     "table": [
      {
       "seat": 0,
       "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
+      "band": "band_chiave",
+      "lp": 23,
       "lv": 1,
-      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
+      "band": "band_bldsk",
+      "lp": 28,
       "lv": 1,
-      "bonds": "victoriaShip:1 deputShip:1"
+      "bonds": "kjeragShip:1 steadShip:1 victoriaShip:1 deputShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
+      "band": "band_pepe",
+      "lp": 23,
       "lv": 1,
-      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
+      "bonds": "victoriaShip:1 lateranoShip:1 swiftShip:1 deputShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
+      "band": "band_damaztic",
+      "lp": 29,
       "lv": 1,
-      "bonds": "preciShip:1"
+      "bonds": "victoriaShip:1 siracusaShip:1 deputShip:1"
      }
     ]
    }
@@ -65,1066 +67,64 @@
   {
    "round": 2,
    "funds": 0,
-   "lp": 26,
+   "lp": 23,
    "level": 2,
    "bonds": [
-    "kazimierzShip:1/2",
-    "swiftShip:1/2",
-    "raidShip:1/0"
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "swiftShip:1/0",
+    "deputShip:1/0"
    ],
    "shop": [
-    "chess_char_1_17_a@2",
-    "chess_char_1_08_a@2",
-    "chess_char_1_18_a@2"
+    "chess_char_1_09_a@2",
+    "chess_char_1_12_a@2",
+    "chess_char_1_19_a@2"
    ],
    "hand": [
-    "chess_item_1_05_e_a"
+    "chess_item_1_02_e_a"
    ],
    "advice": "没钱了，等下一回合进账",
-   "pick": "深靛(0)",
+   "pick": "跃跃(0)",
    "after": {
-    "lp": 26,
+    "lp": 23,
     "bonds": [
-     "kazimierzShip:1/2",
-     "swiftShip:1/2",
-     "raidShip:1/0"
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "swiftShip:1/0",
+     "deputShip:1/0"
     ],
     "table": [
      {
       "seat": 0,
       "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_bldsk",
+      "lp": 28,
       "lv": 1,
-      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
+      "bonds": "kjeragShip:1 steadShip:1 victoriaShip:1 deputShip:1"
      },
      {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "victoriaShip:1 lateranoShip:1 swiftShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_damaztic",
+      "lp": 29,
       "lv": 1,
-      "bonds": "preciShip:1 arcaneShip:1 victoriaShip:1 deputShip:1 raidShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 2,
-      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 1,
-      "bonds": "preciShip:2 arcaneShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 3,
-   "funds": 0,
-   "lp": 26,
-   "level": 2,
-   "bonds": [
-    "kazimierzShip:2/2",
-    "swiftShip:1/2",
-    "deputShip:1/0",
-    "raidShip:1/0",
-    "indomShip:1/0"
-   ],
-   "shop": [],
-   "hand": [],
-   "advice": "没钱了，等下一回合进账",
-   "pick": null,
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:2/2",
-     "swiftShip:1/2",
-     "deputShip:1/0",
-     "raidShip:1/0",
-     "indomShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 2,
-      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 2,
-      "bonds": "deputShip:2 preciShip:1 arcaneShip:1 victoriaShip:1 raidShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 2,
-      "bonds": "kazimierzShip:2 swiftShip:1 deputShip:1 raidShip:1 indomShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "preciShip:2 arcaneShip:1 siracusaShip:1 swiftShip:1 victoriaShip:1 deputShip:1 suntShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 4,
-   "funds": 0,
-   "lp": 26,
-   "level": 2,
-   "bonds": [
-    "soloShip:1/0",
-    "kazimierzShip:2/2",
-    "swiftShip:1/2",
-    "egirShip:1/0",
-    "siracusaShip:1/0",
-    "preciShip:1/0",
-    "deputShip:1/0",
-    "raidShip:1/0",
-    "indomShip:1/0"
-   ],
-   "shop": [
-    "chess_char_2_16_a@3",
-    "chess_item_1_05_e_a@1"
-   ],
-   "hand": [],
-   "advice": "没钱了，等下一回合进账",
-   "pick": "拉普兰德(0)",
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "soloShip:1/1",
-     "kazimierzShip:2/2",
-     "swiftShip:1/2",
-     "egirShip:1/0",
-     "siracusaShip:1/0",
-     "preciShip:1/0",
-     "deputShip:1/0",
-     "raidShip:1/0",
-     "indomShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 2,
-      "bonds": "egirShip:3 maniShip:1 kazimierzShip:2 swiftShip:1 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 3,
-      "bonds": "deputShip:2 preciShip:0 arcaneShip:0 victoriaShip:1 raidShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 2,
-      "bonds": "soloShip:1 kazimierzShip:2 swiftShip:1 egirShip:1 siracusaShip:1 preciShip:1 deputShip:1 raidShip:1 indomShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "preciShip:3 swiftShip:2 arcaneShip:1 siracusaShip:2 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:1 suntShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 5,
-   "funds": 0,
-   "lp": 26,
-   "level": 3,
-   "bonds": [
-    "kazimierzShip:3/2",
-    "soloShip:1/1",
-    "swiftShip:1/2",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "deputShip:1/0",
-    "raidShip:1/0",
-    "indomShip:1/0"
-   ],
-   "shop": [
-    "chess_char_2_01_a@3",
-    "chess_char_3_01_a@3",
-    "chess_char_3_01_a@3",
-    "chess_char_2_07_a@3",
-    "chess_item_3_03_e_a@2"
-   ],
-   "hand": [],
-   "advice": "没钱了，等下一回合进账",
-   "pick": "送葬人(0)",
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:3/10",
-     "soloShip:1/1",
-     "swiftShip:1/2",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "deputShip:1/0",
-     "raidShip:1/0",
-     "indomShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 3,
-      "bonds": "egirShip:4 maniShip:1 kazimierzShip:2 swiftShip:1 siracusaShip:2 miraShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 3,
-      "bonds": "deputShip:2 preciShip:0 arcaneShip:0 yanShip:2 victoriaShip:1 visiShip:1 investShip:1 raidShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 3,
-      "bonds": "kazimierzShip:3 soloShip:1 swiftShip:1 egirShip:1 preciShip:1 deputShip:1 raidShip:1 indomShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "preciShip:3 swiftShip:2 siracusaShip:3 arcaneShip:1 kazimierzShip:0 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:1 suntShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 6,
-   "funds": 0,
-   "lp": 26,
-   "level": 3,
-   "bonds": [
-    "kazimierzShip:4/12",
-    "soloShip:1/1",
-    "raidShip:3/0",
-    "swiftShip:1/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "indomShip:1/0"
-   ],
-   "shop": [
-    "chess_char_3_10_a@3",
-    "chess_char_2_07_a@3",
-    "chess_char_3_04_a@3"
-   ],
-   "hand": [
-    "chess_char_1_13_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "没钱了，等下一回合进账",
-   "pick": "松果(0)",
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:4/24",
-     "raidShip:3/17",
-     "soloShip:1/1",
-     "swiftShip:1/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "indomShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 3,
-      "bonds": "egirShip:5 maniShip:1 kazimierzShip:2 swiftShip:1 siracusaShip:2 steadShip:1 miraShip:1 raidShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 4,
-      "bonds": "deputShip:2 visiShip:2 preciShip:0 arcaneShip:0 yanShip:2 victoriaShip:1 lateranoShip:1 investShip:1 raidShip:1 suntShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 3,
-      "bonds": "kazimierzShip:4 raidShip:3 soloShip:1 swiftShip:1 egirShip:1 preciShip:1 indomShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "preciShip:2 siracusaShip:3 swiftShip:2 suntShip:3 arcaneShip:1 kazimierzShip:0 yanShip:1 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 7,
-   "funds": 0,
-   "lp": 26,
-   "level": 4,
-   "bonds": [
-    "kazimierzShip:5/27",
-    "raidShip:3/17",
-    "soloShip:1/1",
-    "swiftShip:1/4",
-    "preciShip:1/0",
-    "steadShip:1/0",
-    "indomShip:1/0"
-   ],
-   "shop": [],
-   "hand": [
-    "chess_char_1_19_a"
-   ],
-   "advice": "没钱了，等下一回合进账",
-   "pick": null,
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:5/43",
-     "raidShip:3/28",
-     "soloShip:1/1",
-     "swiftShip:1/4",
-     "preciShip:1/0",
-     "steadShip:1/0",
-     "indomShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 4,
-      "bonds": "egirShip:5 maniShip:1 kazimierzShip:2 swiftShip:0 siracusaShip:2 steadShip:1 miraShip:1 raidShip:1 indomShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 4,
-      "bonds": "visiShip:2 deputShip:2 yanShip:3 suntShip:2 preciShip:1 kjeragShip:1 arcaneShip:0 victoriaShip:1 lateranoShip:1 skillfulShip:1 investShip:1 raidShip:1 emptyShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 4,
-      "bonds": "kazimierzShip:5 raidShip:3 soloShip:1 swiftShip:1 preciShip:1 steadShip:1 indomShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "siracusaShip:3 preciShip:3 swiftShip:2 suntShip:5 arcaneShip:1 kazimierzShip:0 yanShip:1 lateranoShip:1 miraShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 8,
-   "funds": 0,
-   "lp": 26,
-   "level": 4,
-   "bonds": [
-    "kazimierzShip:4/43",
-    "raidShip:3/28",
-    "soloShip:1/1",
-    "swiftShip:0/4",
-    "steadShip:1/0",
-    "miraShip:1/0",
-    "indomShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [
-    "chess_char_1_06_a@2",
-    "chess_char_3_11_a@3",
-    "chess_char_4_20_a@3",
-    "chess_char_3_14_a@3",
-    "chess_char_3_01_a@3",
-    "chess_item_4_01_e_a@4"
-   ],
-   "hand": [
-    "chess_char_1_19_a",
-    "chess_item_4_07_e_a",
-    "chess_char_1_09_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "抓 远牙（槽位 3）",
-   "pick": "远牙(49)",
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:4/72",
-     "raidShip:3/47",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "steadShip:1/0",
-     "miraShip:1/0",
-     "indomShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 4,
-      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 kazimierzShip:2 swiftShip:0 victoriaShip:2 siracusaShip:2 steadShip:1 visiShip:1 raidShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 5,
-      "bonds": "visiShip:2 deputShip:2 yanShip:5 suntShip:3 preciShip:0 kjeragShip:0 arcaneShip:0 victoriaShip:1 lateranoShip:1 skillfulShip:1 steadShip:1 investShip:1 emptyShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 4,
-      "bonds": "kazimierzShip:4 raidShip:3 soloShip:1 swiftShip:0 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 2,
-      "bonds": "siracusaShip:3 preciShip:3 swiftShip:2 suntShip:5 arcaneShip:1 kazimierzShip:0 yanShip:1 lateranoShip:1 miraShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 9,
-   "funds": 0,
-   "lp": 26,
-   "level": 4,
-   "bonds": [
-    "kazimierzShip:5/72",
-    "raidShip:2/47",
-    "soloShip:1/1",
-    "swiftShip:0/4",
-    "preciShip:1/0",
-    "steadShip:1/0",
-    "miraShip:1/0",
-    "indomShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [],
-   "hand": [
-    "chess_item_4_01_e_a",
-    "chess_char_2_09_a",
-    "chess_char_1_19_a",
-    "chess_item_4_07_e_a",
-    "chess_char_1_09_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "对空 2/3 个（本波 8 只飞行）→ 没钱了，等下一回合进账",
-   "pick": null,
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:5/114",
-     "raidShip:2/52",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "preciShip:1/0",
-     "steadShip:1/0",
-     "miraShip:1/0",
-     "indomShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 steadShip:2 miraShip:2 maniShip:1 suntShip:2 kazimierzShip:2 swiftShip:0 yanShip:2 victoriaShip:2 visiShip:1 raidShip:1 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "visiShip:2 yanShip:6 deputShip:2 suntShip:2 preciShip:0 kjeragShip:0 arcaneShip:0 victoriaShip:1 skillfulShip:1 steadShip:1 investShip:1"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 4,
-      "bonds": "kazimierzShip:5 raidShip:2 soloShip:1 swiftShip:0 preciShip:1 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 4,
-      "bonds": "siracusaShip:4 preciShip:2 arcaneShip:2 suntShip:6 swiftShip:1 kazimierzShip:0 yanShip:1 miraShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 10,
-   "funds": 0,
-   "lp": 26,
-   "level": 5,
-   "bonds": [
-    "kazimierzShip:4/114",
-    "raidShip:2/52",
-    "soloShip:1/1",
-    "indomShip:2/0",
-    "swiftShip:0/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [
-    "chess_char_1_08_a@2",
-    "chess_char_3_04_a@3",
-    "chess_char_3_09_a@3",
-    "chess_char_4_26_a@3",
-    "chess_item_3_11_e_a@1"
-   ],
-   "hand": [
-    "chess_item_4_01_e_a",
-    "chess_item_4_07_e_a",
-    "chess_char_2_18_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "对空 2/3 个（本波 12 只飞行）→ 没钱了，等下一回合进账",
-   "pick": "德克萨斯(0)",
-   "after": {
-    "lp": 26,
-    "bonds": [
-     "kazimierzShip:4/153",
-     "raidShip:2/57",
-     "indomShip:2/18",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 visiShip:1 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "visiShip:2 yanShip:6 skillfulShip:2 steadShip:2 soloShip:1 deputShip:0 preciShip:0 suntShip:1 kjeragShip:0 arcaneShip:1 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 26,
-      "lv": 5,
-      "bonds": "kazimierzShip:4 raidShip:2 indomShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 5,
-      "bonds": "siracusaShip:6 swiftShip:2 suntShip:4 preciShip:0 arcaneShip:1 kazimierzShip:0 yanShip:1 miraShip:1 investShip:2 raidShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 11,
-   "funds": 0,
-   "lp": 26,
-   "level": 5,
-   "bonds": [
-    "kazimierzShip:4/165",
-    "raidShip:2/57",
-    "indomShip:2/18",
-    "soloShip:1/1",
-    "swiftShip:0/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [
-    "chess_char_2_02_a@3",
-    "chess_char_4_09_a@3",
-    "chess_char_4_25_a@3",
-    "chess_char_4_07_a@3",
-    "chess_char_5_19_a@4",
-    "chess_item_3_12_e_a@3"
-   ],
-   "hand": [
-    "chess_char_3_12_a",
-    "chess_item_4_01_e_a",
-    "chess_char_2_12_a",
-    "chess_item_3_11_e_a",
-    "chess_item_4_07_e_a",
-    "chess_char_2_18_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "可以抓 玛恩纳（槽位 5）",
-   "pick": "玛恩纳(27)",
-   "after": {
-    "lp": 25,
-    "bonds": [
-     "kazimierzShip:4/211",
-     "raidShip:2/73",
-     "indomShip:2/38",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 24,
-      "lv": 6,
-      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 visiShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "visiShip:2 skillfulShip:2 yanShip:5 arcaneShip:2 suntShip:4 steadShip:2 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 kjeragShip:1 miraShip:1 lateranoShip:1 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 25,
-      "lv": 5,
-      "bonds": "kazimierzShip:4 raidShip:2 indomShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 6,
-      "bonds": "siracusaShip:6 swiftShip:2 suntShip:2 preciShip:0 kazimierzShip:0 arcaneShip:1 miraShip:1 investShip:2 raidShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 12,
-   "funds": 1,
-   "lp": 25,
-   "level": 5,
-   "bonds": [
-    "kazimierzShip:4/211",
-    "raidShip:2/73",
-    "indomShip:2/38",
-    "soloShip:1/1",
-    "swiftShip:0/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [
-    "chess_char_1_07_a@2",
-    "chess_char_2_10_a@3",
-    "chess_char_5_21_a@4",
-    "chess_char_5_01_a@4",
-    "chess_char_4_14_a@3"
-   ],
-   "hand": [
-    "chess_char_3_17_a",
-    "chess_char_5_19_a",
-    "chess_char_3_12_a",
-    "chess_item_4_01_e_a",
-    "chess_char_2_12_a",
-    "chess_item_4_01_e_a",
-    "chess_item_4_07_e_a",
-    "chess_char_2_18_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "钱会被清零（剩 1 金）→ 买装备/升本/刷，别留",
-   "pick": "普罗旺斯(0)",
-   "after": {
-    "lp": 15,
-    "bonds": [
-     "kazimierzShip:4/266",
-     "indomShip:2/88",
-     "raidShip:2/83",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 14,
-      "lv": 6,
-      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "skillfulShip:2 arcaneShip:2 yanShip:5 visiShip:2 suntShip:4 steadShip:2 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 victoriaShip:0 kjeragShip:1 miraShip:1 swiftShip:0 lateranoShip:1 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 15,
-      "lv": 5,
-      "bonds": "kazimierzShip:4 indomShip:2 raidShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 6,
-      "bonds": "siracusaShip:7 swiftShip:2 maniShip:1 suntShip:4 preciShip:0 kazimierzShip:0 arcaneShip:1 miraShip:1 investShip:2 raidShip:1"
-     }
-    ]
-   }
-  },
-  {
-   "round": 13,
-   "funds": 0,
-   "lp": 15,
-   "level": 6,
-   "bonds": [
-    "kazimierzShip:6/269",
-    "indomShip:2/88",
-    "raidShip:2/83",
-    "soloShip:1/1",
-    "swiftShip:0/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0",
-    "suntShip:1/0"
-   ],
-   "shop": [
-    "chess_char_1_03_a@2",
-    "chess_char_4_19_a@3",
-    "chess_char_5_13_a@4",
-    "chess_char_5_07_a@4",
-    "chess_item_3_02_e_a@2"
-   ],
-   "hand": [
-    "chess_char_4_26_a",
-    "chess_char_2_18_a",
-    "chess_char_3_12_a",
-    "chess_char_6_16_a",
-    "chess_char_2_12_a",
-    "chess_char_4_19_a",
-    "chess_item_4_07_e_a",
-    "chess_char_2_18_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "没钱了，等下一回合进账",
-   "pick": "惊蛰(0)",
-   "after": {
-    "lp": 15,
-    "bonds": [
-     "kazimierzShip:6/324",
-     "indomShip:2/122",
-     "raidShip:2/96",
-     "soloShip:1/1",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0",
-     "suntShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 14,
-      "lv": 6,
-      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 emptyShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "skillfulShip:2 arcaneShip:2 yanShip:5 visiShip:2 suntShip:5 steadShip:2 soloShip:1 deputShip:0 preciShip:0 kazimierzShip:0 victoriaShip:0 kjeragShip:1 miraShip:1 swiftShip:0 lateranoShip:1 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 15,
-      "lv": 6,
-      "bonds": "kazimierzShip:6 indomShip:2 raidShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1 suntShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 6,
-      "bonds": "siracusaShip:6 swiftShip:2 raidShip:2 suntShip:4 kazimierzShip:1 preciShip:0 kjeragShip:1 arcaneShip:1 miraShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 14,
-   "funds": 0,
-   "lp": 15,
-   "level": 6,
-   "bonds": [
-    "kazimierzShip:6/330",
-    "indomShip:2/122",
-    "raidShip:3/96",
-    "soloShip:1/1",
-    "suntShip:2/0",
-    "swiftShip:0/4",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [],
-   "hand": [
-    "chess_char_4_19_a",
-    "chess_char_4_26_a",
-    "chess_char_6_05_a",
-    "chess_char_6_11_a",
-    "chess_char_6_16_a",
-    "chess_char_2_12_a",
-    "chess_char_4_19_a",
-    "chess_item_4_07_e_a",
-    "chess_char_1_19_a"
-   ],
-   "advice": "没钱了，等下一回合进账",
-   "pick": null,
-   "after": {
-    "lp": 15,
-    "bonds": [
-     "kazimierzShip:6/330",
-     "indomShip:2/122",
-     "raidShip:3/96",
-     "soloShip:1/1",
-     "suntShip:2/0",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 14,
-      "lv": 6,
-      "bonds": "egirShip:6 indomShip:2 miraShip:2 maniShip:1 emptyShip:2 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:0 yanShip:2 steadShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "skillfulShip:2 arcaneShip:3 yanShip:7 visiShip:2 suntShip:3 steadShip:2 maniShip:1 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 victoriaShip:0 kjeragShip:2 swiftShip:0 miraShip:1 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 15,
-      "lv": 6,
-      "bonds": "kazimierzShip:6 indomShip:2 raidShip:3 soloShip:1 suntShip:2 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 6,
-      "bonds": "siracusaShip:6 swiftShip:2 arcaneShip:3 raidShip:2 miraShip:2 suntShip:6 kazimierzShip:1 kjeragShip:1 preciShip:0 skillfulShip:1 investShip:2"
-     }
-    ]
-   }
-  },
-  {
-   "round": 15,
-   "funds": 11,
-   "lp": 15,
-   "level": 6,
-   "bonds": [
-    "kazimierzShip:6/335",
-    "indomShip:2/122",
-    "raidShip:3/96",
-    "soloShip:1/1",
-    "suntShip:2/0",
-    "swiftShip:0/6",
-    "egirShip:1/0",
-    "preciShip:1/0",
-    "miraShip:1/0",
-    "emptyShip:1/0"
-   ],
-   "shop": [
-    "chess_char_3_18_a@3",
-    "chess_char_2_04_a@3",
-    "chess_char_6_07_a@4",
-    "chess_char_4_02_a@3",
-    "chess_item_2_02_e_a@2"
-   ],
-   "hand": [
-    "chess_char_1_19_a",
-    "chess_char_4_26_a",
-    "chess_char_6_05_a",
-    "chess_item_6_09_e_a",
-    "chess_char_6_16_a",
-    "chess_char_2_12_a",
-    "chess_item_4_07_e_a",
-    "chess_char_4_19_b",
-    "chess_char_1_19_a"
-   ],
-   "advice": "没有值得抓的，刷一次（剩 10 金也会清零）",
-   "pick": "莫斯提马(23)",
-   "after": {
-    "lp": 15,
-    "bonds": [
-     "kazimierzShip:6/330",
-     "indomShip:2/122",
-     "raidShip:3/96",
-     "soloShip:1/1",
-     "suntShip:2/0",
-     "swiftShip:0/4",
-     "egirShip:1/0",
-     "preciShip:1/0",
-     "miraShip:1/0",
-     "emptyShip:1/0"
-    ],
-    "table": [
-     {
-      "seat": 0,
-      "name": "大漏特漏#1989",
-      "band": "band_pith",
-      "lp": 14,
-      "lv": 6,
-      "bonds": "egirShip:6 indomShip:2 miraShip:2 maniShip:1 emptyShip:2 soloShip:1 suntShip:3 kazimierzShip:2 swiftShip:0 yanShip:2 steadShip:1"
-     },
-     {
-      "seat": 1,
-      "name": "pipiwu#3933",
-      "band": "band_cathy",
-      "lp": 26,
-      "lv": 6,
-      "bonds": "skillfulShip:2 arcaneShip:3 yanShip:7 visiShip:2 suntShip:3 steadShip:2 maniShip:1 soloShip:1 deputShip:0 kazimierzShip:0 preciShip:0 victoriaShip:0 miraShip:1 kjeragShip:2 swiftShip:0 investShip:2"
-     },
-     {
-      "seat": 2,
-      "name": "大兜特兜#9944",
-      "band": "band_emperor",
-      "lp": 15,
-      "lv": 6,
-      "bonds": "kazimierzShip:6 indomShip:2 raidShip:3 soloShip:1 suntShip:2 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1"
-     },
-     {
-      "seat": 3,
-      "name": "黑#5507",
-      "band": "band_chiave",
-      "lp": 23,
-      "lv": 6,
-      "bonds": "siracusaShip:6 swiftShip:2 arcaneShip:3 raidShip:2 miraShip:2 suntShip:6 kazimierzShip:1 kjeragShip:1 preciShip:0 skillfulShip:1 investShip:2"
+      "bonds": "preciShip:2 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
      }
     ]
    }
@@ -6706,6 +5706,230 @@
    "type": "GOLDEN_CHAR",
    "text": "大兜特兜#9944博士的焰尾干员晋升为精锐",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 140,
+   "at": 1792841513790,
+   "round": 15,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的烛煌干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 141,
+   "at": 1792841556782,
+   "round": 15,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的风丸干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 142,
+   "at": 1792841638997,
+   "round": 15,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的砾干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 143,
+   "at": 1792841729389,
+   "round": 15,
+   "type": "BOSS_HIT",
+   "text": "pipiwu#3933博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 144,
+   "at": 1792841731986,
+   "round": 15,
+   "type": "BOSS_HIT",
+   "text": "大兜特兜#9944博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 145,
+   "at": 1792841737691,
+   "round": 15,
+   "type": "BOSS_HIT",
+   "text": "黑#5507博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 152,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的归溟幽灵鲨干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 153,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的拉普兰德干员造成的伤害量达到1000000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 154,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的锡人干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 155,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的荒芜拉普兰德干员造成的伤害量达到1000000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 156,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的安洁莉娜干员造成的伤害量达到1000000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 157,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的阿罗玛干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 158,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的忍冬干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 159,
+   "at": 1792841757159,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的缄默德克萨斯干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 160,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的流星干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 161,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的瑕光干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 162,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的异客干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 163,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的耀骑士临光干员造成的伤害量达到500000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 164,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的玛恩纳干员造成的伤害量达到500000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 165,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的砾干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 166,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的烛煌干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 167,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的琳琅诗怀雅干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 168,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的夕干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 169,
+   "at": 1792841757160,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的溯光星源干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 170,
+   "at": 1792841757161,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的圣聆初雪干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 171,
+   "at": 1792841757161,
+   "round": 15,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的\"炎佑\"干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 172,
+   "at": 1792841906718,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为2级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 173,
+   "at": 1792841924001,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
   }
  ],
  "results": [
@@ -14227,6 +13451,1610 @@
    "phase": "FINAL_ASSAULT",
    "round": 14,
    "result": null,
+   "historyLast": {
+    "id": "NXQB:cfsdg5-1:1792156812736",
+    "savedAt": 1792159915110,
+    "result": {
+     "resultId": "NXQB:cfsdg5-1:1792156812736",
+     "endedAt": 1792159915110,
+     "gameMode": "normal",
+     "capacity": 4,
+     "extensions": {
+      "personalPool": false,
+      "bossHp": 1,
+      "enemyHp": 1,
+      "bossNoDamageLimit": false,
+      "duckEnhanced": 0
+     },
+     "trophyPolicy": {
+      "version": 1,
+      "custom": false,
+      "multiplier": 1,
+      "reason": "normal"
+     },
+     "victory": true,
+     "roundsPassed": 15,
+     "hiddenReached": true,
+     "hiddenCleared": true,
+     "reason": "victory",
+     "teamLp": 47,
+     "modeId": "mode_multi_abyss",
+     "difficulty": "ABYSS",
+     "stageId": "act2autochess_m04",
+     "bossId": "boss_3",
+     "hiddenBossId": "boss_8",
+     "seed": 752112149,
+     "durationMs": 3102374,
+     "players": [
+      {
+       "playerId": "p_178a37e403",
+       "seat": 0,
+       "name": "问了吗",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 8,
+       "bandId": "band_jesica",
+       "lineup": [
+        {
+         "id": "chess_char_6_16_b",
+         "golden": true,
+         "tier": 6,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_3_10_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_5_08_b",
+         "golden": true,
+         "tier": 5,
+         "row": 12,
+         "col": 8,
+         "items": [
+          "chess_item_3_09_e_b",
+          "chess_item_2_03_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_05_b",
+         "golden": true,
+         "tier": 2,
+         "row": 11,
+         "col": 7,
+         "items": [
+          "chess_item_3_10_e_b",
+          "chess_item_4_11_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_5_03_a",
+         "golden": false,
+         "tier": 5,
+         "row": 11,
+         "col": 8,
+         "items": [
+          "chess_item_4_09_e_a",
+          "chess_item_4_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_5_12_a",
+         "golden": false,
+         "tier": 5,
+         "row": 10,
+         "col": 7,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_4_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_4_11_b",
+         "golden": true,
+         "tier": 4,
+         "row": 10,
+         "col": 8,
+         "items": [
+          "chess_item_3_11_e_a",
+          "chess_item_3_06_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_11_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 8,
+         "items": [
+          "chess_item_4_02_e_b",
+          "chess_item_3_08_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_6_07_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 9,
+         "items": [
+          "chess_item_1_01_e_a",
+          "chess_item_3_09_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "victoriaShip",
+         "count": 7,
+         "active": true,
+         "tier": 2,
+         "layers": 377,
+         "harmony": 1
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 76
+        },
+        {
+         "bondId": "skillfulShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 55
+        },
+        {
+         "bondId": "yanShip",
+         "count": 3,
+         "active": true,
+         "tier": 1,
+         "layers": 35,
+         "harmony": 1
+        },
+        {
+         "bondId": "maniShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 4,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "visiShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 124
+        },
+        {
+         "bondId": "miraShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 29
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 2,
+         "active": false,
+         "tier": 0,
+         "layers": 16,
+         "harmony": 1
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 16
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 8
+        }
+       ],
+       "stats": {
+        "dmgDealt": 20209737,
+        "kills": 385,
+        "leaks": 87,
+        "gold": 198,
+        "refreshes": 79,
+        "merges": 10,
+        "itemsEquipped": 46,
+        "bossDamage": 14334642,
+        "activatedLayers": 543,
+        "lpLost": 13,
+        "perfectRounds": 6
+       },
+       "title": {
+        "id": "comment_2",
+        "name": "不朽盟约",
+        "picId": "comment_icon_2",
+        "text": "激活的盟约层数总和最高"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_0baf7ee2cf",
+       "seat": 1,
+       "name": "Cloud",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 15,
+       "bandId": "band_damaztic",
+       "lineup": [
+        {
+         "id": "chess_char_5_08_a",
+         "golden": false,
+         "tier": 5,
+         "row": 12,
+         "col": 5,
+         "items": [
+          "chess_item_3_05_e_b",
+          "chess_item_3_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_3_08_a",
+         "golden": false,
+         "tier": 3,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_5_02_e_b",
+          "chess_item_5_07_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_08_b",
+         "golden": true,
+         "tier": 6,
+         "row": 11,
+         "col": 5,
+         "items": [
+          "chess_item_3_03_e_b",
+          "chess_item_6_05_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_4_14_a",
+         "golden": false,
+         "tier": 4,
+         "row": 11,
+         "col": 8,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_3_10_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_05_a",
+         "golden": false,
+         "tier": 6,
+         "row": 10,
+         "col": 5,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_4_09_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_05_a",
+         "golden": false,
+         "tier": 2,
+         "row": 10,
+         "col": 8,
+         "items": [
+          "chess_item_4_11_e_b",
+          "chess_item_4_03_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_6_12_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 5,
+         "items": [
+          "chess_item_1_01_e_b",
+          "chess_item_6_09_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_4_11_a",
+         "golden": false,
+         "tier": 4,
+         "row": 9,
+         "col": 8,
+         "items": [
+          "chess_item_4_02_e_b",
+          "chess_item_1_02_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "victoriaShip",
+         "count": 8,
+         "active": true,
+         "tier": 2,
+         "layers": 136
+        },
+        {
+         "bondId": "preciShip",
+         "count": 4,
+         "active": true,
+         "tier": 2,
+         "layers": 42
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 38
+        },
+        {
+         "bondId": "visiShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 28
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        },
+        {
+         "bondId": "steadShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 15587260,
+        "kills": 392,
+        "leaks": 52,
+        "gold": 172,
+        "refreshes": 44,
+        "merges": 5,
+        "itemsEquipped": 39,
+        "bossDamage": 9580605,
+        "activatedLayers": 244,
+        "lpLost": 12,
+        "perfectRounds": 6
+       },
+       "title": {
+        "id": "comment_5",
+        "name": "万事俱备",
+        "picId": "comment_icon_5",
+        "text": "装备配发数量最多"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_20e740ba1f",
+       "seat": 2,
+       "name": "大漏特漏",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 12,
+       "bandId": "band_chiave",
+       "lineup": [
+        {
+         "id": "chess_char_5_diy2_b",
+         "golden": true,
+         "tier": 5,
+         "row": 12,
+         "col": 5,
+         "items": [],
+         "diy": {
+          "charId": "char_1015_aglna2",
+          "skillIndex": 2,
+          "uniEquipId": null
+         }
+        },
+        {
+         "id": "chess_char_5_22_a",
+         "golden": false,
+         "tier": 5,
+         "row": 12,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_4_10_b",
+         "golden": true,
+         "tier": 4,
+         "row": 11,
+         "col": 3,
+         "items": []
+        },
+        {
+         "id": "chess_char_3_19_b",
+         "golden": true,
+         "tier": 3,
+         "row": 11,
+         "col": 5,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_20_b",
+         "golden": true,
+         "tier": 5,
+         "row": 11,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_18_b",
+         "golden": true,
+         "tier": 6,
+         "row": 10,
+         "col": 5,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_10_a",
+         "golden": false,
+         "tier": 5,
+         "row": 10,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_diy2_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 8,
+         "items": [],
+         "diy": {
+          "charId": "char_4182_oblvns",
+          "skillIndex": 2,
+          "uniEquipId": "uniequip_002_oblvns"
+         }
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "siracusaShip",
+         "count": 6,
+         "active": true,
+         "tier": 2,
+         "layers": 436
+        },
+        {
+         "bondId": "miraShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 43
+        },
+        {
+         "bondId": "emptyShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 5,
+         "active": true,
+         "tier": 2,
+         "layers": 0
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 130
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 11
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 8
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 26474472,
+        "kills": 440,
+        "leaks": 34,
+        "gold": 190,
+        "refreshes": 61,
+        "merges": 10,
+        "itemsEquipped": 12,
+        "bossDamage": 15650416,
+        "activatedLayers": 479,
+        "lpLost": 9,
+        "perfectRounds": 8
+       },
+       "title": {
+        "id": "comment_1",
+        "name": "卫戍之星",
+        "picId": "comment_icon_1",
+        "text": "对敌方领袖造成伤害最高（仅胜利时）"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_257c2282d2",
+       "seat": 3,
+       "name": "mmfish#6111",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 12,
+       "bandId": "band_clementia",
+       "lineup": [
+        {
+         "id": "chess_char_6_02_b",
+         "golden": true,
+         "tier": 6,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_3_07_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_07_b",
+         "golden": true,
+         "tier": 2,
+         "row": 12,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_4_09_a",
+         "golden": false,
+         "tier": 4,
+         "row": 11,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_14_a",
+         "golden": false,
+         "tier": 5,
+         "row": 11,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_3_05_a",
+         "golden": false,
+         "tier": 3,
+         "row": 10,
+         "col": 4,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_11_a",
+         "golden": false,
+         "tier": 6,
+         "row": 10,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_1_04_b",
+         "golden": true,
+         "tier": 1,
+         "row": 9,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_13_b",
+         "golden": true,
+         "tier": 5,
+         "row": 9,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_07_a",
+         "golden": false,
+         "tier": 5,
+         "row": 9,
+         "col": 9,
+         "items": [
+          "chess_item_4_06_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "egirShip",
+         "count": 7,
+         "active": true,
+         "tier": 2,
+         "layers": 400,
+         "harmony": 1
+        },
+        {
+         "bondId": "raidShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 87
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 3,
+         "active": true,
+         "tier": 1,
+         "layers": 10,
+         "harmony": 1
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 3
+        },
+        {
+         "bondId": "maniShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "soloShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 4,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "investShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        },
+        {
+         "bondId": "steadShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 16223541,
+        "kills": 468,
+        "leaks": 53,
+        "gold": 170,
+        "refreshes": 50,
+        "merges": 3,
+        "itemsEquipped": 11,
+        "bossDamage": 5232251,
+        "activatedLayers": 500,
+        "lpLost": 13,
+        "perfectRounds": 4
+       },
+       "title": {
+        "id": "comment_3",
+        "name": "坚若磐石",
+        "picId": "comment_icon_3",
+        "text": "目标生命值损失最少"
+       },
+       "trophies": 8,
+       "reward": 425
+      }
+     ],
+     "playerId": "p_0baf7ee2cf"
+    }
+   }
+  },
+  {
+   "at": "2026-10-24T11:36:00.546Z",
+   "phase": "RESULT",
+   "round": 15,
+   "result": {
+    "victory": true,
+    "roundsPassed": 15,
+    "hiddenReached": true,
+    "hiddenCleared": true,
+    "reason": "victory",
+    "teamLp": 78,
+    "modeId": "mode_multi_abyss",
+    "difficulty": "ABYSS",
+    "stageId": "act2autochess_m01",
+    "bossId": "boss_4",
+    "hiddenBossId": "boss_8",
+    "seed": 935747754,
+    "durationMs": 2891983,
+    "players": [
+     {
+      "playerId": "p_fefd3905ce",
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "isBot": false,
+      "left": false,
+      "alive": true,
+      "victory": true,
+      "roundsPassed": 15,
+      "creditedKills": 248,
+      "eliminatedRound": null,
+      "lp": 14,
+      "bandId": "band_pith",
+      "lineup": [
+       {
+        "id": "chess_char_1_15_a",
+        "golden": false,
+        "tier": 1,
+        "row": 12,
+        "col": 6,
+        "items": []
+       },
+       {
+        "id": "chess_char_4_12_b",
+        "golden": true,
+        "tier": 4,
+        "row": 12,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_5_05_b",
+        "golden": true,
+        "tier": 5,
+        "row": 12,
+        "col": 8,
+        "items": [
+         "chess_item_5_03_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_4_09_b",
+        "golden": true,
+        "tier": 4,
+        "row": 11,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_6_04_b",
+        "golden": true,
+        "tier": 6,
+        "row": 11,
+        "col": 8,
+        "items": []
+       },
+       {
+        "id": "chess_char_6_diy2_a",
+        "golden": false,
+        "tier": 6,
+        "row": 10,
+        "col": 7,
+        "items": [
+         "chess_item_6_09_e_a",
+         "chess_item_3_07_e_b"
+        ],
+        "diy": {
+         "charId": "char_4182_oblvns",
+         "skillIndex": 2,
+         "uniEquipId": "uniequip_002_oblvns"
+        }
+       },
+       {
+        "id": "chess_char_5_13_b",
+        "golden": true,
+        "tier": 5,
+        "row": 10,
+        "col": 8,
+        "items": []
+       },
+       {
+        "id": "chess_char_2_12_a",
+        "golden": false,
+        "tier": 2,
+        "row": 9,
+        "col": 8,
+        "items": [
+         "chess_item_1_05_e_a"
+        ]
+       }
+      ],
+      "bonds": [
+       {
+        "bondId": "egirShip",
+        "count": 7,
+        "active": true,
+        "tier": 2,
+        "layers": 248,
+        "harmony": 1
+       },
+       {
+        "bondId": "indomShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 176
+       },
+       {
+        "bondId": "miraShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 16
+       },
+       {
+        "bondId": "maniShip",
+        "count": 1,
+        "active": true,
+        "tier": 1,
+        "layers": 4
+       },
+       {
+        "bondId": "emptyShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 0
+       },
+       {
+        "bondId": "soloShip",
+        "count": 1,
+        "active": true,
+        "tier": 1,
+        "layers": 0
+       },
+       {
+        "bondId": "suntShip",
+        "count": 5,
+        "active": true,
+        "tier": 2,
+        "layers": 0
+       },
+       {
+        "bondId": "kazimierzShip",
+        "count": 2,
+        "active": false,
+        "tier": 0,
+        "layers": 25,
+        "harmony": 1
+       },
+       {
+        "bondId": "swiftShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 10
+       },
+       {
+        "bondId": "kjeragShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 8
+       }
+      ],
+      "stats": {
+       "dmgDealt": 15679118,
+       "kills": 267,
+       "leaks": 49,
+       "gold": 176,
+       "refreshes": 36,
+       "merges": 7,
+       "itemsEquipped": 18,
+       "bossDamage": 7561714,
+       "activatedLayers": 444,
+       "lpLost": 10,
+       "perfectRounds": 6
+      },
+      "title": {
+       "id": "comment_6",
+       "name": "挥金如土",
+       "picId": "comment_icon_6",
+       "text": "消耗资金最多"
+      },
+      "trophies": 8,
+      "reward": 425,
+      "officialTrophies": 8,
+      "accountCups": {
+       "baseCups": 8,
+       "contractBonusCups": 0,
+       "trophies": 8
+      }
+     },
+     {
+      "playerId": "p_84d2b46a2b",
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "isBot": false,
+      "left": false,
+      "alive": true,
+      "victory": true,
+      "roundsPassed": 15,
+      "creditedKills": 326,
+      "eliminatedRound": null,
+      "lp": 26,
+      "bandId": "band_cathy",
+      "lineup": [
+       {
+        "id": "chess_char_5_03_b",
+        "golden": true,
+        "tier": 5,
+        "row": 12,
+        "col": 6,
+        "items": [
+         "chess_item_6_05_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_5_23_a",
+        "golden": false,
+        "tier": 5,
+        "row": 12,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_6_11_a",
+        "golden": false,
+        "tier": 6,
+        "row": 12,
+        "col": 8,
+        "items": [
+         "chess_item_3_04_e_b",
+         "chess_item_6_09_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_3_04_b",
+        "golden": true,
+        "tier": 3,
+        "row": 11,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_3_03_a",
+        "golden": false,
+        "tier": 3,
+        "row": 11,
+        "col": 8,
+        "items": []
+       },
+       {
+        "id": "chess_char_5_12_a",
+        "golden": false,
+        "tier": 5,
+        "row": 10,
+        "col": 7,
+        "items": [
+         "chess_item_6_09_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_16_b",
+        "golden": true,
+        "tier": 6,
+        "row": 10,
+        "col": 8,
+        "items": [
+         "chess_item_6_09_e_a",
+         "chess_item_3_04_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_02_a",
+        "golden": false,
+        "tier": 6,
+        "row": 9,
+        "col": 7,
+        "items": [
+         "chess_item_3_03_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_03_a",
+        "golden": false,
+        "tier": 6,
+        "row": 9,
+        "col": 8,
+        "items": []
+       }
+      ],
+      "bonds": [
+       {
+        "bondId": "arcaneShip",
+        "count": 3,
+        "active": true,
+        "tier": 2,
+        "layers": 386
+       },
+       {
+        "bondId": "yanShip",
+        "count": 9,
+        "active": true,
+        "tier": 3,
+        "layers": 241,
+        "harmony": 1
+       },
+       {
+        "bondId": "suntShip",
+        "count": 3,
+        "active": true,
+        "tier": 1,
+        "layers": 6
+       },
+       {
+        "bondId": "maniShip",
+        "count": 1,
+        "active": true,
+        "tier": 1,
+        "layers": 0
+       },
+       {
+        "bondId": "skillfulShip",
+        "count": 1,
+        "active": false,
+        "tier": 0,
+        "layers": 318
+       },
+       {
+        "bondId": "visiShip",
+        "count": 1,
+        "active": false,
+        "tier": 0,
+        "layers": 99
+       },
+       {
+        "bondId": "kazimierzShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 32
+       },
+       {
+        "bondId": "victoriaShip",
+        "count": 2,
+        "active": false,
+        "tier": 0,
+        "layers": 30,
+        "harmony": 1
+       },
+       {
+        "bondId": "kjeragShip",
+        "count": 2,
+        "active": false,
+        "tier": 0,
+        "layers": 21,
+        "harmony": 1
+       },
+       {
+        "bondId": "swiftShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 20
+       },
+       {
+        "bondId": "deputShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 19
+       },
+       {
+        "bondId": "preciShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 17
+       },
+       {
+        "bondId": "miraShip",
+        "count": 1,
+        "active": false,
+        "tier": 0,
+        "layers": 6
+       }
+      ],
+      "stats": {
+       "dmgDealt": 24874663,
+       "kills": 312,
+       "leaks": 13,
+       "gold": 259,
+       "refreshes": 44,
+       "merges": 11,
+       "itemsEquipped": 37,
+       "bossDamage": 12750604,
+       "activatedLayers": 633,
+       "lpLost": 0,
+       "perfectRounds": 8
+      },
+      "title": {
+       "id": "comment_2",
+       "name": "不朽盟约",
+       "picId": "comment_icon_2",
+       "text": "激活的盟约层数总和最高"
+      },
+      "trophies": 8,
+      "reward": 425,
+      "officialTrophies": 8,
+      "accountCups": {
+       "baseCups": 8,
+       "contractBonusCups": 0,
+       "trophies": 8
+      }
+     },
+     {
+      "playerId": "p_0c4a6121fd",
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "isBot": false,
+      "left": false,
+      "alive": true,
+      "victory": true,
+      "roundsPassed": 15,
+      "creditedKills": 262,
+      "eliminatedRound": null,
+      "lp": 15,
+      "bandId": "band_emperor",
+      "lineup": [
+       {
+        "id": "chess_char_3_17_b",
+        "golden": true,
+        "tier": 3,
+        "row": 12,
+        "col": 5,
+        "items": [
+         "chess_item_4_04_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_4_25_a",
+        "golden": false,
+        "tier": 4,
+        "row": 12,
+        "col": 6,
+        "items": []
+       },
+       {
+        "id": "chess_char_3_12_b",
+        "golden": true,
+        "tier": 3,
+        "row": 12,
+        "col": 7,
+        "items": [
+         "chess_item_5_03_e_a",
+         "chess_item_1_01_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_05_a",
+        "golden": false,
+        "tier": 6,
+        "row": 11,
+        "col": 5,
+        "items": [
+         "chess_item_6_09_e_a",
+         "chess_item_4_07_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_17_a",
+        "golden": false,
+        "tier": 6,
+        "row": 11,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_5_19_a",
+        "golden": false,
+        "tier": 5,
+        "row": 9,
+        "col": 7,
+        "items": [
+         "chess_item_3_11_e_a",
+         "chess_item_6_09_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_5_13_a",
+        "golden": false,
+        "tier": 5,
+        "row": 9,
+        "col": 8,
+        "items": []
+       },
+       {
+        "id": "chess_char_2_12_b",
+        "golden": true,
+        "tier": 2,
+        "row": 9,
+        "col": 9,
+        "items": [
+         "chess_item_1_05_e_b",
+         "chess_item_2_01_e_a"
+        ]
+       }
+      ],
+      "bonds": [
+       {
+        "bondId": "kazimierzShip",
+        "count": 6,
+        "active": true,
+        "tier": 2,
+        "layers": 335
+       },
+       {
+        "bondId": "indomShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 122
+       },
+       {
+        "bondId": "raidShip",
+        "count": 3,
+        "active": true,
+        "tier": 1,
+        "layers": 96
+       },
+       {
+        "bondId": "soloShip",
+        "count": 1,
+        "active": true,
+        "tier": 1,
+        "layers": 1
+       },
+       {
+        "bondId": "suntShip",
+        "count": 3,
+        "active": true,
+        "tier": 1,
+        "layers": 0
+       },
+       {
+        "bondId": "swiftShip",
+        "count": 1,
+        "active": false,
+        "tier": 0,
+        "layers": 6
+       }
+      ],
+      "stats": {
+       "dmgDealt": 20986192,
+       "kills": 278,
+       "leaks": 41,
+       "gold": 163,
+       "refreshes": 39,
+       "merges": 5,
+       "itemsEquipped": 19,
+       "bossDamage": 12423982,
+       "activatedLayers": 554,
+       "lpLost": 11,
+       "perfectRounds": 7
+      },
+      "title": {
+       "id": "comment_5",
+       "name": "万事俱备",
+       "picId": "comment_icon_5",
+       "text": "装备配发数量最多"
+      },
+      "trophies": 8,
+      "reward": 425,
+      "officialTrophies": 8,
+      "accountCups": {
+       "baseCups": 8,
+       "contractBonusCups": 0,
+       "trophies": 8
+      }
+     },
+     {
+      "playerId": "p_04c4fbf1ae",
+      "seat": 3,
+      "name": "黑#5507",
+      "isBot": false,
+      "left": false,
+      "alive": true,
+      "victory": true,
+      "roundsPassed": 15,
+      "creditedKills": 355,
+      "eliminatedRound": null,
+      "lp": 23,
+      "bandId": "band_chiave",
+      "lineup": [
+       {
+        "id": "chess_char_6_16_a",
+        "golden": false,
+        "tier": 6,
+        "row": 12,
+        "col": 6,
+        "items": []
+       },
+       {
+        "id": "chess_char_2_16_b",
+        "golden": true,
+        "tier": 2,
+        "row": 12,
+        "col": 7,
+        "items": []
+       },
+       {
+        "id": "chess_char_2_19_b",
+        "golden": true,
+        "tier": 2,
+        "row": 12,
+        "col": 8,
+        "items": [
+         "chess_item_3_01_e_a",
+         "chess_item_6_09_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_6_18_b",
+        "golden": true,
+        "tier": 6,
+        "row": 11,
+        "col": 4,
+        "items": [
+         "chess_item_3_08_e_a",
+         "chess_item_6_09_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_5_20_a",
+        "golden": false,
+        "tier": 5,
+        "row": 11,
+        "col": 8,
+        "items": [
+         "chess_item_3_05_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_4_10_b",
+        "golden": true,
+        "tier": 4,
+        "row": 10,
+        "col": 4,
+        "items": [
+         "chess_item_3_03_e_a"
+        ]
+       },
+       {
+        "id": "chess_char_3_18_b",
+        "golden": true,
+        "tier": 3,
+        "row": 10,
+        "col": 8,
+        "items": []
+       },
+       {
+        "id": "chess_char_4_16_b",
+        "golden": true,
+        "tier": 4,
+        "row": 9,
+        "col": 9,
+        "items": [
+         "chess_item_3_11_e_a"
+        ]
+       }
+      ],
+      "bonds": [
+       {
+        "bondId": "siracusaShip",
+        "count": 7,
+        "active": true,
+        "tier": 2,
+        "layers": 467
+       },
+       {
+        "bondId": "swiftShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 89
+       },
+       {
+        "bondId": "arcaneShip",
+        "count": 3,
+        "active": true,
+        "tier": 2,
+        "layers": 60
+       },
+       {
+        "bondId": "miraShip",
+        "count": 2,
+        "active": true,
+        "tier": 1,
+        "layers": 0
+       },
+       {
+        "bondId": "suntShip",
+        "count": 6,
+        "active": true,
+        "tier": 2,
+        "layers": 0
+       },
+       {
+        "bondId": "kazimierzShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 50
+       },
+       {
+        "bondId": "kjeragShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 32
+       },
+       {
+        "bondId": "preciShip",
+        "count": 0,
+        "active": false,
+        "tier": 0,
+        "layers": 20
+       },
+       {
+        "bondId": "raidShip",
+        "count": 1,
+        "active": false,
+        "tier": 0,
+        "layers": 16
+       }
+      ],
+      "stats": {
+       "dmgDealt": 24953889,
+       "kills": 330,
+       "leaks": 2,
+       "gold": 218,
+       "refreshes": 64,
+       "merges": 14,
+       "itemsEquipped": 30,
+       "bossDamage": 12863700,
+       "activatedLayers": 616,
+       "lpLost": 0,
+       "perfectRounds": 12
+      },
+      "title": {
+       "id": "comment_1",
+       "name": "卫戍之星",
+       "picId": "comment_icon_1",
+       "text": "对敌方领袖造成伤害最高（仅胜利时）"
+      },
+      "trophies": 8,
+      "reward": 425,
+      "officialTrophies": 8,
+      "accountCups": {
+       "baseCups": 8,
+       "contractBonusCups": 0,
+       "trophies": 8
+      }
+     }
+    ],
+    "playerId": "p_0c4a6121fd"
+   },
    "historyLast": {
     "id": "NXQB:cfsdg5-1:1792156812736",
     "savedAt": 1792159915110,
