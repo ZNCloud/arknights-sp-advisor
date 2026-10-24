@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T15:11:26.696Z",
+ "generatedAt": "2026-10-24T15:13:31.486Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -431,18 +431,19 @@
   },
   {
    "round": 7,
-   "funds": 6,
+   "funds": 0,
    "lp": 22,
    "level": 4,
    "bonds": [
-    "preciShip:2/6",
+    "kjeragShip:4/7",
     "swiftShip:2/6",
-    "deputShip:2/4",
-    "kjeragShip:2/2",
+    "preciShip:1/6",
+    "skillfulShip:1/5",
+    "deputShip:1/4",
     "kazimierzShip:1/2",
     "arcaneShip:1/2",
     "steadShip:1/2",
-    "victoriaShip:1/0",
+    "victoriaShip:2/0",
     "lateranoShip:1/0",
     "suntShip:1/0"
    ],
@@ -450,31 +451,30 @@
     "chess_char_2_13_a@3",
     "chess_char_2_13_a@3",
     "chess_char_3_10_a@3",
-    "chess_char_2_05_a@3",
-    "chess_char_4_13_a@3",
     "chess_item_3_02_e_a@2"
    ],
    "hand": [
-    "chess_char_5_diy2_a",
+    "chess_char_1_06_a",
+    "chess_char_1_09_a",
     "chess_item_1_04_e_a",
-    "chess_item_5_02_e_b",
-    "chess_item_5_02_e_b",
     "chess_item_1_05_e_a"
    ],
-   "advice": "抓 灵知（槽位 5）",
-   "pick": "灵知(95)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "蒂比(0)",
    "after": {
     "lp": 22,
     "bonds": [
-     "preciShip:2/6",
+     "kjeragShip:4/7",
      "swiftShip:2/6",
-     "deputShip:2/4",
-     "kjeragShip:2/2",
+     "preciShip:1/6",
+     "skillfulShip:1/5",
+     "deputShip:1/4",
      "kazimierzShip:1/2",
      "arcaneShip:1/2",
      "steadShip:1/2",
-     "victoriaShip:1/0",
-     "lateranoShip:1/0"
+     "victoriaShip:2/0",
+     "lateranoShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
@@ -483,15 +483,15 @@
       "band": "band_cannot",
       "lp": 25,
       "lv": 4,
-      "bonds": "yanShip:3 preciShip:2 arcaneShip:1 sargonShip:1 lateranoShip:1 skillfulShip:1 miraShip:1 investShip:1"
+      "bonds": "yanShip:5 preciShip:2 swiftShip:2 skillfulShip:2 arcaneShip:1 sargonShip:0 visiShip:1 miraShip:1 investShip:1"
      },
      {
       "seat": 1,
       "name": "XHR#4671",
       "band": "band_emperor",
       "lp": 26,
-      "lv": 3,
-      "bonds": "indomShip:2 kazimierzShip:4 swiftShip:2 soloShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
+      "lv": 4,
+      "bonds": "indomShip:2 kazimierzShip:3 soloShip:1 swiftShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
      },
      {
       "seat": 2,
@@ -499,7 +499,7 @@
       "band": "band_pepe",
       "lp": 21,
       "lv": 4,
-      "bonds": "sargonShip:4 suntShip:2 yanShip:2 miraShip:1 skillfulShip:1 steadShip:1 deputShip:1"
+      "bonds": "sargonShip:6 suntShip:2 yanShip:0 miraShip:1 skillfulShip:1 steadShip:1 deputShip:1"
      },
      {
       "seat": 3,
@@ -507,7 +507,92 @@
       "band": "band_paganini",
       "lp": 22,
       "lv": 4,
-      "bonds": "preciShip:2 swiftShip:2 deputShip:2 kjeragShip:2 kazimierzShip:1 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:1"
+      "bonds": "kjeragShip:4 swiftShip:2 preciShip:1 skillfulShip:1 deputShip:1 kazimierzShip:1 arcaneShip:1 steadShip:1 victoriaShip:2 lateranoShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 8,
+   "funds": 11,
+   "lp": 22,
+   "level": 4,
+   "bonds": [
+    "kjeragShip:4/7",
+    "swiftShip:2/6",
+    "preciShip:1/6",
+    "skillfulShip:1/5",
+    "deputShip:1/4",
+    "kazimierzShip:1/2",
+    "arcaneShip:1/2",
+    "steadShip:1/2",
+    "victoriaShip:2/0",
+    "lateranoShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_21_a@3",
+    "chess_char_1_08_a@2",
+    "chess_char_4_04_a@3",
+    "chess_char_1_02_a@2",
+    "chess_char_4_14_a@3",
+    "chess_item_3_06_e_a@2"
+   ],
+   "hand": [
+    "chess_char_1_06_a",
+    "chess_char_1_09_a",
+    "chess_item_1_04_e_a",
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "抓 角峰（槽位 4）",
+   "pick": "角峰(64)",
+   "after": {
+    "lp": 22,
+    "bonds": [
+     "kjeragShip:4/7",
+     "swiftShip:2/6",
+     "preciShip:1/6",
+     "skillfulShip:1/5",
+     "deputShip:1/4",
+     "kazimierzShip:1/2",
+     "arcaneShip:1/2",
+     "steadShip:1/2",
+     "victoriaShip:2/0",
+     "lateranoShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "苍蓝残响#8014",
+      "band": "band_cannot",
+      "lp": 25,
+      "lv": 4,
+      "bonds": "yanShip:5 preciShip:2 swiftShip:2 skillfulShip:2 arcaneShip:1 sargonShip:0 visiShip:1 miraShip:1 investShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "XHR#4671",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 4,
+      "bonds": "indomShip:2 kazimierzShip:3 soloShip:1 swiftShip:1 siracusaShip:1 sargonShip:1 preciShip:1 skillfulShip:1 raidShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 21,
+      "lv": 4,
+      "bonds": "sargonShip:6 suntShip:2 yanShip:0 miraShip:1 skillfulShip:1 steadShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 22,
+      "lv": 4,
+      "bonds": "kjeragShip:4 swiftShip:2 preciShip:1 skillfulShip:1 deputShip:1 kazimierzShip:1 arcaneShip:1 steadShip:1 victoriaShip:2 lateranoShip:1 suntShip:1"
      }
     ]
    }
@@ -9801,6 +9886,22 @@
    "type": "SHOP_LEVEL",
    "text": "XHR#4671博士将调度中心等级提升为4级",
    "playerId": "p_ab7fb90a21"
+  },
+  {
+   "id": 639,
+   "at": 1792854786719,
+   "round": 7,
+   "type": "CUSTOM",
+   "text": "联防阶段：XHR#4671、大漏特漏#1989 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 640,
+   "at": 1792854808731,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为5级",
+   "playerId": "p_fefd3905ce"
   }
  ],
  "results": [
