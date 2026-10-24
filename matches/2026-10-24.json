@@ -1,25 +1,29 @@
 {
- "generatedAt": "2026-10-24T15:47:25.878Z",
+ "generatedAt": "2026-10-24T15:48:30.030Z",
  "day": "2026-10-24",
  "rounds": [
   {
    "round": 1,
-   "funds": 4,
+   "funds": 0,
    "lp": 26,
    "level": 1,
-   "bonds": [],
+   "bonds": [
+    "preciShip:1/0",
+    "deputShip:1/0"
+   ],
    "shop": [
-    "chess_char_1_13_a@2",
     "chess_char_1_04_a@2",
-    "chess_char_1_09_a@2",
     "chess_item_1_02_e_a@1"
    ],
    "hand": [],
-   "advice": "先刷找 角峰/惊蛰/艾丝黛尔（核心没到手，装备不急）",
-   "pick": "坚守盾牌(6)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "深巡(0)",
    "after": {
     "lp": 26,
-    "bonds": [],
+    "bonds": [
+     "preciShip:1/0",
+     "deputShip:1/0"
+    ],
     "table": [
      {
       "seat": 0,
@@ -27,7 +31,7 @@
       "band": "band_chiave",
       "lp": 23,
       "lv": 1,
-      "bonds": ""
+      "bonds": "victoriaShip:1 deputShip:1 raidShip:1"
      },
      {
       "seat": 1,
@@ -35,7 +39,7 @@
       "band": "band_emperor",
       "lp": 26,
       "lv": 1,
-      "bonds": ""
+      "bonds": "preciShip:1 deputShip:1"
      },
      {
       "seat": 2,
@@ -43,7 +47,7 @@
       "band": "band_quintus",
       "lp": 31,
       "lv": 1,
-      "bonds": ""
+      "bonds": "siracusaShip:1"
      },
      {
       "seat": 3,
@@ -51,7 +55,67 @@
       "band": "band_jesica",
       "lp": 22,
       "lv": 1,
-      "bonds": ""
+      "bonds": "yanShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "funds": 0,
+   "lp": 26,
+   "level": 1,
+   "bonds": [
+    "egirShip:1/0",
+    "preciShip:1/0",
+    "deputShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_13_a@2"
+   ],
+   "hand": [
+    "chess_item_1_02_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "波登可(0)",
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "preciShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 1,
+      "bonds": "victoriaShip:1 deputShip:1 raidShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 1,
+      "bonds": "preciShip:1 deputShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": "band_quintus",
+      "lp": 31,
+      "lv": 1,
+      "bonds": "siracusaShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": "band_jesica",
+      "lp": 22,
+      "lv": 1,
+      "bonds": "yanShip:1 deputShip:1"
      }
     ]
    }
@@ -10081,6 +10145,22 @@
    "type": "CHAR_DAMAGE",
    "text": "XHR#4671博士的砾干员造成的伤害量达到200000",
    "playerId": "p_ab7fb90a21"
+  },
+  {
+   "id": 731,
+   "at": 1792856884904,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 732,
+   "at": 1792856888507,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为2级",
+   "playerId": "p_fbc4281279"
   }
  ],
  "results": [
