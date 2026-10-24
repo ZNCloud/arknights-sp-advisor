@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:05:20.683Z",
+ "generatedAt": "2026-10-24T13:06:25.308Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -1110,6 +1110,98 @@
    ],
    "advice": "没钱了，等下一回合进账",
    "pick": "天师古鼎(5)",
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "lateranoShip:6/237",
+     "preciShip:3/114",
+     "swiftShip:2/33",
+     "visiShip:1/33",
+     "kjeragShip:0/28",
+     "deputShip:0/14",
+     "kazimierzShip:0/8",
+     "suntShip:1/4",
+     "sargonShip:2/2",
+     "steadShip:1/0",
+     "miraShip:1/0",
+     "investShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 6,
+      "bonds": "sargonShip:6 skillfulShip:2 suntShip:6 steadShip:1 kjeragShip:0 lateranoShip:1 preciShip:1 indomShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_dusk",
+      "lp": 28,
+      "lv": 6,
+      "bonds": "swiftShip:3 preciShip:4 sargonShip:6 kjeragShip:0 steadShip:1 kazimierzShip:0 miraShip:1 skillfulShip:1 indomShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 6,
+      "bonds": "lateranoShip:6 preciShip:3 swiftShip:2 visiShip:1 kjeragShip:0 deputShip:0 kazimierzShip:0 suntShip:1 sargonShip:2 steadShip:1 miraShip:1 investShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_cathy",
+      "lp": 25,
+      "lv": 6,
+      "bonds": "kazimierzShip:6 preciShip:2 indomShip:2 swiftShip:2 raidShip:2 suntShip:4 steadShip:1 kjeragShip:1 soloShip:0 egirShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 15,
+   "funds": 14,
+   "lp": 24,
+   "level": 6,
+   "bonds": [
+    "lateranoShip:6/237",
+    "preciShip:3/114",
+    "swiftShip:2/33",
+    "visiShip:1/33",
+    "kjeragShip:0/28",
+    "deputShip:0/14",
+    "kazimierzShip:0/8",
+    "suntShip:1/4",
+    "sargonShip:2/2",
+    "steadShip:1/0",
+    "miraShip:1/0",
+    "investShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_17_a@3",
+    "chess_char_4_09_a@3",
+    "chess_char_6_18_a@4",
+    "chess_char_1_19_a@2",
+    "chess_char_4_16_a@3",
+    "chess_item_2_07_e_a@1"
+   ],
+   "hand": [
+    "chess_char_2_01_a",
+    "chess_char_5_22_a",
+    "chess_char_4_25_a",
+    "chess_item_6_09_e_a",
+    "chess_char_3_01_b",
+    "chess_char_5_14_a",
+    "chess_char_6_08_a",
+    "chess_char_4_02_b",
+    "chess_char_3_21_a"
+   ],
+   "advice": "没有值得抓的，刷一次（剩 13 金也会清零）",
+   "pick": "见钱眼开玩偶(23)",
    "after": {
     "lp": 24,
     "bonds": [
@@ -8747,6 +8839,174 @@
    "type": "GOLDEN_CHAR",
    "text": "大兜特兜#9944博士的寒芒克洛丝干员晋升为精锐",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 406,
+   "at": 1792847137626,
+   "round": 14,
+   "type": "BOSS_HIT",
+   "text": "pipiwu#3933博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 407,
+   "at": 1792847161577,
+   "round": 14,
+   "type": "BOSS_HIT",
+   "text": "黑#5507博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 408,
+   "at": 1792847163151,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的至简干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 409,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的缇缇干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 410,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的佩佩干员造成的伤害量达到1000000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 411,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的百炼嘉维尔干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 412,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的缇缇干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 413,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的隐现干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 414,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的异客干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 415,
+   "at": 1792847163178,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的新约能天使干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 416,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的妮芙干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 417,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的缇缇干员造成的伤害量达到500000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 418,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的异客干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 419,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的佩佩干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 420,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的至简干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 421,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的瑕光干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 422,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的锏干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 423,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的远牙干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 424,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的耀骑士临光干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 425,
+   "at": 1792847163179,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的砾干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 426,
+   "at": 1792847166160,
+   "round": 14,
+   "type": "CUSTOM",
+   "text": "隐秘核心已解锁",
+   "playerId": null
   }
  ],
  "results": [
