@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:43:10.770Z",
+ "generatedAt": "2026-10-24T13:44:17.471Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -81,6 +81,73 @@
    ],
    "advice": "没钱了，等下一回合进账",
    "pick": null,
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "maniShip:1/0",
+     "yanShip:2/1",
+     "egirShip:2/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 1,
+      "bonds": "preciShip:1 arcaneShip:1 lateranoShip:1 swiftShip:1 steadShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "maniShip:1 yanShip:2 egirShip:2 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "preciShip:1 arcaneShip:1 steadShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "kazimierzShip:1 swiftShip:1 skillfulShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 3,
+   "funds": 3,
+   "lp": 24,
+   "level": 2,
+   "bonds": [
+    "maniShip:1/0",
+    "yanShip:2/1",
+    "egirShip:2/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_17_a@3",
+    "chess_char_1_14_a@2",
+    "chess_char_1_06_a@2",
+    "chess_item_1_03_e_a@1"
+   ],
+   "hand": [
+    "chess_char_2_12_a",
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "先刷找 角峰/艾丝黛尔/深靛（核心没到手，装备不急）",
+   "pick": "盟约之币(6)",
    "after": {
     "lp": 24,
     "bonds": [
@@ -8326,6 +8393,22 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为2级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 483,
+   "at": 1792849414108,
+   "round": 2,
+   "type": "CUSTOM",
+   "text": "联防阶段：草莓泡芙#0279、大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 484,
+   "at": 1792849454107,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "草莓泡芙#0279博士将调度中心等级提升为2级",
+   "playerId": "p_699082202c"
   }
  ],
  "results": [
