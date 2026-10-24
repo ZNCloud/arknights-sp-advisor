@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:04:57.863Z",
+ "generatedAt": "2026-10-24T14:07:02.772Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -663,7 +663,7 @@
   },
   {
    "round": 10,
-   "funds": 2,
+   "funds": 0,
    "lp": 9,
    "level": 5,
    "bonds": [
@@ -683,8 +683,7 @@
     "chess_char_4_04_a@3",
     "chess_char_3_19_a@3",
     "chess_char_2_14_a@3",
-    "chess_char_3_10_a@3",
-    "chess_item_3_06_e_a@2"
+    "chess_char_3_10_a@3"
    ],
    "hand": [
     "chess_char_3_13_a",
@@ -697,21 +696,21 @@
     "chess_char_1_03_a",
     "chess_char_1_03_a"
    ],
-   "advice": "先刷找 乌尔比安/归溟幽灵鲨（核心没到手，装备不急）",
-   "pick": "歌利亚头盔(9)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "蛇屠箱(0)",
    "after": {
     "lp": 9,
     "bonds": [
-     "egirShip:5/77",
-     "indomShip:2/44",
-     "steadShip:2/9",
+     "egirShip:5/92",
+     "indomShip:2/56",
      "maniShip:1/0",
      "soloShip:1/0",
+     "steadShip:1/9",
      "yanShip:0/4",
      "kazimierzShip:2/0",
      "visiShip:1/0",
-     "raidShip:1/0",
-     "emptyShip:1/0"
+     "emptyShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
@@ -728,7 +727,7 @@
       "band": "band_pith",
       "lp": 9,
       "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 steadShip:2 maniShip:1 soloShip:1 yanShip:0 kazimierzShip:2 visiShip:1 raidShip:1 emptyShip:1"
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 steadShip:1 yanShip:0 kazimierzShip:2 visiShip:1 emptyShip:1 suntShip:1"
      },
      {
       "seat": 2,
@@ -743,8 +742,63 @@
       "name": "夜行灯#1097",
       "band": "band_paganini",
       "lp": 7,
+      "lv": 5,
+      "bonds": "lateranoShip:3 skillfulShip:2 visiShip:3 preciShip:2 suntShip:3 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 9,
+    "bonds": [
+     "egirShip:5/92",
+     "indomShip:2/56",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "steadShip:1/9",
+     "yanShip:0/4",
+     "kazimierzShip:2/0",
+     "visiShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 0,
       "lv": 4,
-      "bonds": "lateranoShip:3 skillfulShip:2 preciShip:2 visiShip:4 suntShip:2 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 9,
+      "lv": 5,
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 steadShip:1 yanShip:0 kazimierzShip:2 visiShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 7,
+      "lv": 5,
+      "bonds": "lateranoShip:3 skillfulShip:2 visiShip:3 preciShip:2 suntShip:3 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
      }
     ]
    }
@@ -9229,6 +9283,30 @@
    "round": 10,
    "type": "GOLDEN_CHAR",
    "text": "大兜特兜#9944博士的幽灵鲨干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 520,
+   "at": 1792850779427,
+   "round": 10,
+   "type": "CUSTOM",
+   "text": "联防阶段：大兜特兜#9944 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 522,
+   "at": 1792850808204,
+   "round": 10,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 524,
+   "at": 1792850811208,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的斯卡蒂干员晋升为精锐",
    "playerId": "p_0c4a6121fd"
   }
  ],
