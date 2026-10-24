@@ -1,7 +1,62 @@
 {
- "generatedAt": "2026-10-24T14:20:04.596Z",
+ "generatedAt": "2026-10-24T14:23:08.940Z",
  "day": "2026-10-24",
  "rounds": [
+  {
+   "round": null,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 0,
+    "bonds": [],
+    "table": []
+   }
+  },
+  {
+   "round": 0,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 0,
+    "bonds": [],
+    "table": [
+     {
+      "seat": 0,
+      "name": "UUU#7461",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "轻音永驻#6434",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     }
+    ]
+   }
+  },
   {
    "round": 1,
    "funds": 0,
