@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:38:21.386Z",
+ "generatedAt": "2026-10-24T14:41:27.122Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -462,13 +462,12 @@
   },
   {
    "round": 7,
-   "funds": 5,
+   "funds": 0,
    "lp": 20,
    "level": 3,
    "bonds": [
     "miraShip:2/3",
     "swiftShip:2/2",
-    "soloShip:1/0",
     "sargonShip:1/4",
     "kazimierzShip:1/2",
     "preciShip:1/2",
@@ -476,30 +475,32 @@
     "yanShip:0/1",
     "victoriaShip:1/0",
     "lateranoShip:1/0",
-    "siracusaShip:2/0",
+    "siracusaShip:1/0",
     "deputShip:1/0",
+    "emptyShip:1/0",
     "suntShip:1/0"
    ],
    "shop": [
-    "chess_char_3_06_a@3",
+    "chess_char_1_01_a@2",
     "chess_char_3_18_a@3",
+    "chess_char_3_09_a@3",
     "chess_item_2_05_e_a@3"
    ],
    "hand": [
+    "chess_char_1_08_a",
     "chess_char_1_03_a",
-    "token_10028_vigil_wolf",
+    "chess_char_3_13_a",
     "chess_char_1_12_a",
     "chess_char_1_08_a",
     "chess_item_1_05_e_b"
    ],
-   "advice": "抓 菲莱（槽位 2）",
-   "pick": "菲莱(78)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "隐现(0)",
    "after": {
-    "lp": 20,
+    "lp": 10,
     "bonds": [
      "miraShip:2/3",
      "swiftShip:2/2",
-     "soloShip:1/0",
      "sargonShip:1/4",
      "kazimierzShip:1/2",
      "preciShip:1/2",
@@ -507,41 +508,132 @@
      "yanShip:0/1",
      "victoriaShip:1/0",
      "lateranoShip:1/0",
-     "siracusaShip:2/0",
-     "deputShip:1/0"
+     "siracusaShip:1/0",
+     "deputShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
       "seat": 0,
       "name": "UUU#7461",
       "band": "band_duyaoy",
-      "lp": 29,
-      "lv": 3,
-      "bonds": "yanShip:4 skillfulShip:2 victoriaShip:1 swiftShip:1 deputShip:1 investShip:2 suntShip:1"
+      "lp": 19,
+      "lv": 4,
+      "bonds": "yanShip:4 skillfulShip:2 suntShip:2 victoriaShip:1 lateranoShip:1 deputShip:1 visiShip:1 investShip:2"
      },
      {
       "seat": 1,
       "name": "轻音永驻#6434",
       "band": "band_justin",
-      "lp": 20,
+      "lp": 10,
       "lv": 4,
-      "bonds": "visiShip:2 emptyShip:2 yanShip:1 preciShip:0 arcaneShip:0 victoriaShip:1 swiftShip:1 deputShip:1 miraShip:1 investShip:1 raidShip:1 indomShip:1"
+      "bonds": "visiShip:3 swiftShip:2 miraShip:2 emptyShip:2 yanShip:0 preciShip:0 arcaneShip:0 victoriaShip:1 deputShip:1 investShip:1 raidShip:1 indomShip:1 suntShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
-      "lp": 20,
+      "lp": 10,
       "lv": 3,
-      "bonds": "miraShip:2 swiftShip:2 soloShip:1 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:0 victoriaShip:1 lateranoShip:1 siracusaShip:2 deputShip:1"
+      "bonds": "miraShip:2 swiftShip:2 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:0 victoriaShip:1 lateranoShip:1 siracusaShip:1 deputShip:1 emptyShip:1 suntShip:1"
      },
      {
       "seat": 3,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
+      "lp": 16,
+      "lv": 4,
+      "bonds": "sargonShip:6 miraShip:2 siracusaShip:1 skillfulShip:1 steadShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 8,
+   "funds": 7,
+   "lp": 10,
+   "level": 3,
+   "bonds": [
+    "miraShip:2/3",
+    "swiftShip:2/2",
+    "arcaneShip:2/2",
+    "lateranoShip:3/0",
+    "sargonShip:1/4",
+    "kazimierzShip:1/2",
+    "preciShip:1/2",
+    "yanShip:0/1",
+    "skillfulShip:1/0",
+    "emptyShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_09_a@3",
+    "chess_char_3_01_a@3",
+    "chess_item_3_04_e_a@2"
+   ],
+   "hand": [
+    "chess_char_3_19_b",
+    "chess_char_3_20_a",
+    "chess_char_1_06_a",
+    "chess_char_1_08_a",
+    "chess_char_1_03_a",
+    "chess_char_3_13_a",
+    "chess_char_1_12_a",
+    "chess_char_1_08_a",
+    "chess_item_1_05_e_b"
+   ],
+   "advice": "抓 能天使（槽位 4）",
+   "pick": "能天使(59)",
+   "after": {
+    "lp": 10,
+    "bonds": [
+     "miraShip:2/3",
+     "swiftShip:2/2",
+     "sargonShip:1/4",
+     "kazimierzShip:1/2",
+     "preciShip:1/2",
+     "arcaneShip:1/2",
+     "yanShip:0/1",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "siracusaShip:1/0",
+     "deputShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "UUU#7461",
+      "band": "band_duyaoy",
       "lp": 19,
+      "lv": 4,
+      "bonds": "yanShip:4 skillfulShip:2 suntShip:2 victoriaShip:1 lateranoShip:1 deputShip:1 visiShip:1 investShip:2"
+     },
+     {
+      "seat": 1,
+      "name": "轻音永驻#6434",
+      "band": "band_justin",
+      "lp": 10,
+      "lv": 4,
+      "bonds": "visiShip:3 swiftShip:2 miraShip:2 emptyShip:2 yanShip:0 preciShip:0 arcaneShip:0 victoriaShip:1 deputShip:1 investShip:1 raidShip:1 indomShip:1 suntShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 10,
       "lv": 3,
-      "bonds": "sargonShip:5 miraShip:2 siracusaShip:1 skillfulShip:1 steadShip:1 deputShip:1 suntShip:1"
+      "bonds": "miraShip:2 swiftShip:2 sargonShip:1 kazimierzShip:1 preciShip:1 arcaneShip:1 yanShip:0 victoriaShip:1 lateranoShip:1 siracusaShip:1 deputShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 16,
+      "lv": 4,
+      "bonds": "sargonShip:6 miraShip:2 siracusaShip:1 skillfulShip:1 steadShip:1 suntShip:1"
      }
     ]
    }
@@ -9403,6 +9495,46 @@
    "type": "GOLDEN_CHAR",
    "text": "轻音永驻#6434博士的华法琳干员晋升为精锐",
    "playerId": "p_2bd526a5ec"
+  },
+  {
+   "id": 579,
+   "at": 1792852838491,
+   "round": 7,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的百炼嘉维尔干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 580,
+   "at": 1792852845116,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "轻音永驻#6434博士的伊内丝干员晋升为精锐",
+   "playerId": "p_2bd526a5ec"
+  },
+  {
+   "id": 581,
+   "at": 1792852847662,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "UUU#7461博士的格雷伊干员晋升为精锐",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 582,
+   "at": 1792852849299,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的菲莱干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 583,
+   "at": 1792852861428,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "UUU#7461博士的小满干员晋升为精锐",
+   "playerId": "p_2620fed817"
   }
  ],
  "results": [
