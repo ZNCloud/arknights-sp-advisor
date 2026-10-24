@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T11:26:43.532Z",
+ "generatedAt": "2026-10-24T11:27:47.079Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -914,9 +914,97 @@
    "after": {
     "lp": 15,
     "bonds": [
-     "kazimierzShip:6/269",
-     "indomShip:2/88",
-     "raidShip:2/83",
+     "kazimierzShip:6/324",
+     "indomShip:2/122",
+     "raidShip:2/96",
+     "soloShip:1/1",
+     "swiftShip:0/4",
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 14,
+      "lv": 6,
+      "bonds": "egirShip:5 indomShip:2 miraShip:2 maniShip:1 soloShip:1 suntShip:2 kazimierzShip:2 swiftShip:1 yanShip:2 steadShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 6,
+      "bonds": "skillfulShip:2 arcaneShip:2 yanShip:5 visiShip:2 suntShip:5 steadShip:2 soloShip:1 deputShip:0 preciShip:0 kazimierzShip:0 victoriaShip:0 kjeragShip:1 miraShip:1 swiftShip:0 lateranoShip:1 investShip:2"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 15,
+      "lv": 6,
+      "bonds": "kazimierzShip:6 indomShip:2 raidShip:2 soloShip:1 swiftShip:0 egirShip:1 preciShip:1 miraShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 6,
+      "bonds": "siracusaShip:6 swiftShip:2 raidShip:2 suntShip:4 kazimierzShip:1 preciShip:0 kjeragShip:1 arcaneShip:1 miraShip:1 investShip:2"
+     }
+    ]
+   }
+  },
+  {
+   "round": 14,
+   "funds": 12,
+   "lp": 15,
+   "level": 6,
+   "bonds": [
+    "kazimierzShip:6/324",
+    "indomShip:2/122",
+    "raidShip:2/96",
+    "soloShip:1/1",
+    "swiftShip:0/4",
+    "egirShip:1/0",
+    "preciShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_03_a@2",
+    "chess_char_4_19_a@3",
+    "chess_char_4_26_a@3",
+    "chess_char_5_13_a@4",
+    "chess_char_5_07_a@4",
+    "chess_item_3_02_e_a@2"
+   ],
+   "hand": [
+    "chess_char_4_26_a",
+    "chess_char_2_18_a",
+    "chess_char_3_12_a",
+    "chess_char_6_16_a",
+    "chess_char_2_12_a",
+    "chess_char_4_19_a",
+    "chess_item_4_07_e_a",
+    "chess_char_2_18_a",
+    "chess_char_1_19_a"
+   ],
+   "advice": "可以抓 焰尾（槽位 2）",
+   "pick": "焰尾(31)",
+   "after": {
+    "lp": 15,
+    "bonds": [
+     "kazimierzShip:6/324",
+     "indomShip:2/122",
+     "raidShip:2/96",
      "soloShip:1/1",
      "swiftShip:0/4",
      "egirShip:1/0",
@@ -6137,6 +6225,158 @@
    "round": 13,
    "type": "GOLDEN_CHAR",
    "text": "pipiwu#3933博士的小满干员晋升为精锐",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 88,
+   "at": 1792841239624,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的乌尔比安干员造成的伤害量达到1000000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 89,
+   "at": 1792841239624,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的盟约·辅助干员干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 90,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的水月干员造成的伤害量达到1000000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 91,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的浊心斯卡蒂干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 92,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的溯光星源干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 93,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的余干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 94,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的惊蛰干员造成的伤害量达到1000000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 95,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的耀骑士临光干员造成的伤害量达到500000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 96,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的瑕光干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 97,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的玛恩纳干员造成的伤害量达到1000000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 98,
+   "at": 1792841239625,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的砾干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 99,
+   "at": 1792841239635,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的拉普兰德干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 100,
+   "at": 1792841239636,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的伺夜干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 101,
+   "at": 1792841239636,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的忍冬干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 102,
+   "at": 1792841239636,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的阿罗玛干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 103,
+   "at": 1792841239636,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的荒芜拉普兰德干员造成的伤害量达到500000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 104,
+   "at": 1792841239636,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的缄默德克萨斯干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 105,
+   "at": 1792841246396,
+   "round": 14,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的阿罗玛干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 106,
+   "at": 1792841265764,
+   "round": 14,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的诗怀雅干员晋升为精锐",
    "playerId": "p_84d2b46a2b"
   }
  ],
