@@ -3,7 +3,7 @@
 state.json
 box.pid
 route.json
-overlay.err.log
 records/
+.sync-secret.json
+.sync-state.json
 *.zip
-__pycache__/
