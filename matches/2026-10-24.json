@@ -1,47 +1,63 @@
 {
- "generatedAt": "2026-10-24T10:48:10.445Z",
+ "generatedAt": "2026-10-24T10:50:14.463Z",
  "day": "2026-10-24",
  "rounds": [
   {
-   "round": 0,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "round": 1,
+   "funds": 0,
+   "lp": 26,
+   "level": 1,
+   "bonds": [
+    "kazimierzShip:1/2",
+    "swiftShip:1/2",
+    "raidShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_08_a@2",
+    "chess_item_1_05_e_a@1"
+   ],
+   "hand": [],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "德克萨斯(0)",
    "after": {
-    "lp": 0,
-    "bonds": [],
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:1/2",
+     "swiftShip:1/2",
+     "raidShip:1/0"
+    ],
     "table": [
      {
       "seat": 0,
       "name": "大漏特漏#1989",
-      "band": null,
-      "lp": 0,
+      "band": "band_pith",
+      "lp": 24,
       "lv": 1,
-      "bonds": ""
+      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
-      "band": null,
-      "lp": 0,
+      "band": "band_cathy",
+      "lp": 26,
       "lv": 1,
-      "bonds": ""
+      "bonds": "victoriaShip:1 deputShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
-      "band": null,
-      "lp": 0,
+      "band": "band_emperor",
+      "lp": 26,
       "lv": 1,
-      "bonds": ""
+      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
-      "band": null,
-      "lp": 0,
+      "band": "band_chiave",
+      "lp": 23,
       "lv": 1,
-      "bonds": ""
+      "bonds": "preciShip:1"
      }
     ]
    }
