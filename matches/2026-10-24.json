@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:49:37.801Z",
+ "generatedAt": "2026-10-24T13:51:54.296Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -288,20 +288,20 @@
     "chess_char_1_17_a@2"
    ],
    "hand": [
-    "chess_char_2_02_a",
     "chess_item_1_05_e_a"
    ],
    "advice": "没钱了，等下一回合进账",
    "pick": "调香师(0)",
    "after": {
-    "lp": 22,
+    "lp": 21,
     "bonds": [
-     "egirShip:3/6",
+     "egirShip:3/17",
      "maniShip:1/0",
      "soloShip:1/0",
      "yanShip:2/1",
      "kazimierzShip:2/0",
      "steadShip:1/0",
+     "visiShip:1/0",
      "indomShip:1/0",
      "emptyShip:1/0"
     ],
@@ -310,33 +310,108 @@
       "seat": 0,
       "name": "草莓泡芙#0279",
       "band": "band_damaztic",
-      "lp": 28,
-      "lv": 2,
-      "bonds": "swiftShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 deputShip:1"
+      "lp": 23,
+      "lv": 3,
+      "bonds": "swiftShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 emptyShip:1"
      },
      {
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 22,
-      "lv": 2,
-      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 indomShip:1 emptyShip:1"
+      "lp": 21,
+      "lv": 3,
+      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 indomShip:1 emptyShip:1"
      },
      {
       "seat": 2,
       "name": "大漏特漏#1989",
       "band": "band_chiave",
-      "lp": 18,
+      "lp": 14,
       "lv": 2,
-      "bonds": "soloShip:1 preciShip:0 arcaneShip:0 siracusaShip:2 steadShip:1 suntShip:1"
+      "bonds": "siracusaShip:3 soloShip:1 suntShip:2 preciShip:0 arcaneShip:0 lateranoShip:1 skillfulShip:1 steadShip:1"
      },
      {
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 22,
+      "lp": 21,
       "lv": 3,
-      "bonds": "swiftShip:2 skillfulShip:2 kazimierzShip:0 sargonShip:1 steadShip:1 investShip:1"
+      "bonds": "skillfulShip:2 swiftShip:3 yanShip:1 kazimierzShip:0 sargonShip:1 steadShip:1 visiShip:1 investShip:1 emptyShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 6,
+   "funds": 1,
+   "lp": 21,
+   "level": 3,
+   "bonds": [
+    "egirShip:3/17",
+    "indomShip:2/0",
+    "maniShip:1/0",
+    "yanShip:2/4",
+    "kazimierzShip:2/0",
+    "steadShip:1/0",
+    "visiShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_02_a@3",
+    "chess_char_2_18_a@3",
+    "chess_char_3_17_a@3"
+   ],
+   "hand": [
+    "chess_char_2_17_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "钱会被清零（剩 1 金）→ 买装备/升本/刷，别留",
+   "pick": "赫默(0)",
+   "after": {
+    "lp": 21,
+    "bonds": [
+     "egirShip:3/17",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "yanShip:2/1",
+     "kazimierzShip:2/0",
+     "steadShip:1/0",
+     "visiShip:1/0",
+     "indomShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 23,
+      "lv": 3,
+      "bonds": "swiftShip:2 deputShip:2 kazimierzShip:1 preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 steadShip:1 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 21,
+      "lv": 3,
+      "bonds": "egirShip:3 maniShip:1 soloShip:1 yanShip:2 kazimierzShip:2 steadShip:1 visiShip:1 indomShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 14,
+      "lv": 2,
+      "bonds": "siracusaShip:3 soloShip:1 suntShip:2 preciShip:0 arcaneShip:0 lateranoShip:1 skillfulShip:1 steadShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 21,
+      "lv": 3,
+      "bonds": "skillfulShip:2 swiftShip:3 yanShip:1 kazimierzShip:0 sargonShip:1 steadShip:1 visiShip:1 investShip:1 emptyShip:1"
      }
     ]
    }
@@ -8606,6 +8681,14 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为3级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 491,
+   "at": 1792849852073,
+   "round": 6,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的普罗旺斯干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
   }
  ],
  "results": [
