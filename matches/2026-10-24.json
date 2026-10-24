@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:42:04.157Z",
+ "generatedAt": "2026-10-24T13:43:10.770Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -9,24 +9,23 @@
    "level": 1,
    "bonds": [
     "maniShip:1/0",
-    "yanShip:0/1",
+    "yanShip:2/1",
+    "egirShip:2/0",
     "emptyShip:1/0"
    ],
    "shop": [
     "chess_char_1_03_a@2",
     "chess_item_1_01_e_a@1"
    ],
-   "hand": [
-    "chess_char_1_03_a",
-    "chess_char_1_04_a"
-   ],
-   "advice": "没钱了，等下一回合进账",
-   "pick": "惊蛰(0)",
+   "hand": [],
+   "advice": "抓 惊蛰（槽位 3）",
+   "pick": "惊蛰(49)",
    "after": {
     "lp": 24,
     "bonds": [
      "maniShip:1/0",
-     "yanShip:0/1",
+     "yanShip:2/1",
+     "egirShip:2/0",
      "emptyShip:1/0"
     ],
     "table": [
@@ -36,7 +35,7 @@
       "band": "band_damaztic",
       "lp": 29,
       "lv": 1,
-      "bonds": "preciShip:0 arcaneShip:0"
+      "bonds": "preciShip:1 arcaneShip:1 steadShip:1"
      },
      {
       "seat": 1,
@@ -44,7 +43,7 @@
       "band": "band_pith",
       "lp": 24,
       "lv": 1,
-      "bonds": "maniShip:1 yanShip:0 emptyShip:1"
+      "bonds": "maniShip:1 yanShip:2 egirShip:2 emptyShip:1"
      },
      {
       "seat": 2,
@@ -52,7 +51,7 @@
       "band": "band_chiave",
       "lp": 23,
       "lv": 1,
-      "bonds": ""
+      "bonds": "preciShip:1 arcaneShip:1 steadShip:1"
      },
      {
       "seat": 3,
@@ -60,6 +59,67 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 1,
+      "bonds": "kazimierzShip:1 swiftShip:1 skillfulShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 2,
+   "funds": 0,
+   "lp": 24,
+   "level": 2,
+   "bonds": [
+    "maniShip:1/0",
+    "yanShip:2/1",
+    "egirShip:2/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [],
+   "hand": [
+    "chess_item_1_05_e_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": null,
+   "after": {
+    "lp": 24,
+    "bonds": [
+     "maniShip:1/0",
+     "yanShip:2/1",
+     "egirShip:2/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 1,
+      "bonds": "preciShip:1 arcaneShip:1 lateranoShip:1 swiftShip:1 steadShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "maniShip:1 yanShip:2 egirShip:2 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "preciShip:1 arcaneShip:1 steadShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 2,
       "bonds": "kazimierzShip:1 swiftShip:1 skillfulShip:1"
      }
     ]
@@ -8242,6 +8302,30 @@
    "type": "CUSTOM",
    "text": "一袋米扛几楼#8855博士的目标生命值已耗尽",
    "playerId": null
+  },
+  {
+   "id": 480,
+   "at": 1792849363370,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 481,
+   "at": 1792849367714,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为2级",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 482,
+   "at": 1792849373370,
+   "round": 2,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为2级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
