@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T13:31:30.896Z",
+ "generatedAt": "2026-10-24T13:34:37.782Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -437,85 +437,177 @@
   },
   {
    "round": 7,
-   "funds": 7,
+   "funds": 0,
    "lp": 24,
    "level": 3,
    "bonds": [
     "preciShip:2/10",
     "swiftShip:2/3",
-    "kjeragShip:2/4",
+    "lateranoShip:4/0",
+    "skillfulShip:2/0",
+    "kjeragShip:0/4",
     "arcaneShip:1/4",
     "steadShip:1/4",
     "victoriaShip:1/0",
-    "lateranoShip:2/0",
-    "skillfulShip:1/0",
     "deputShip:1/0",
     "visiShip:1/0",
-    "investShip:1/0"
+    "investShip:1/0",
+    "suntShip:1/0"
    ],
    "shop": [
-    "chess_char_3_08_a@3",
-    "chess_char_3_16_a@3",
-    "chess_char_3_11_a@3",
-    "chess_item_3_02_e_a@2"
+    "chess_char_2_14_a@3",
+    "chess_char_1_20_a@2",
+    "chess_char_3_02_a@3"
    ],
    "hand": [
+    "chess_char_3_14_a",
+    "chess_char_3_21_a",
     "chess_char_1_17_a",
     "chess_char_1_02_a",
-    "chess_char_1_14_a",
-    "chess_char_3_21_a",
+    "chess_char_1_02_a",
     "chess_char_1_01_a",
     "chess_item_2_04_e_a"
    ],
-   "advice": "抓 雪猎（槽位 4）",
-   "pick": "雪猎(67)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "调香师(0)",
    "after": {
-    "lp": 24,
+    "lp": 16,
     "bonds": [
      "preciShip:2/10",
-     "swiftShip:2/3",
-     "kjeragShip:2/4",
+     "swiftShip:2/6",
+     "lateranoShip:4/3",
+     "skillfulShip:2/3",
+     "kjeragShip:0/4",
      "arcaneShip:1/4",
      "steadShip:1/4",
      "victoriaShip:1/0",
-     "lateranoShip:2/0",
-     "skillfulShip:1/0",
      "deputShip:1/0",
      "visiShip:1/0",
-     "investShip:1/0"
+     "investShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
       "seat": 0,
       "name": "大兜特兜#9944",
       "band": "band_paganini",
-      "lp": 24,
+      "lp": 16,
       "lv": 3,
-      "bonds": "preciShip:2 swiftShip:2 kjeragShip:2 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:2 skillfulShip:1 deputShip:1 visiShip:1 investShip:1"
+      "bonds": "preciShip:2 swiftShip:2 lateranoShip:4 skillfulShip:2 kjeragShip:0 arcaneShip:1 steadShip:1 victoriaShip:1 deputShip:1 visiShip:1 investShip:1 suntShip:1"
      },
      {
       "seat": 1,
       "name": "大漏特漏#1989",
       "band": "band_lisa",
-      "lp": 19,
+      "lp": 9,
       "lv": 3,
-      "bonds": "kjeragShip:4 preciShip:2 suntShip:2 steadShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 skillfulShip:1 deputShip:1 visiShip:1 miraShip:1"
+      "bonds": "kjeragShip:5 preciShip:2 suntShip:2 steadShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1 visiShip:1 miraShip:1"
      },
      {
       "seat": 2,
       "name": "一袋米扛几楼#8855",
       "band": "band_cathy",
-      "lp": 26,
+      "lp": 16,
       "lv": 4,
-      "bonds": "kjeragShip:3 swiftShip:1 yanShip:0 victoriaShip:2 kazimierzShip:1 steadShip:1 sargonShip:1 skillfulShip:1 suntShip:1"
+      "bonds": "victoriaShip:4 skillfulShip:2 swiftShip:0 yanShip:1 kjeragShip:2 kazimierzShip:0 steadShip:1 lateranoShip:1 visiShip:1 miraShip:1 indomShip:1 suntShip:1"
      },
      {
       "seat": 3,
       "name": "NANXI#8431",
       "band": "band_jesica",
-      "lp": 22,
+      "lp": 12,
+      "lv": 4,
+      "bonds": "siracusaShip:4 suntShip:3 preciShip:0 swiftShip:1 arcaneShip:1 kazimierzShip:1 miraShip:1 soloShip:2"
+     }
+    ]
+   }
+  },
+  {
+   "round": 8,
+   "funds": 3,
+   "lp": 16,
+   "level": 4,
+   "bonds": [
+    "preciShip:2/10",
+    "lateranoShip:4/9",
+    "swiftShip:2/9",
+    "skillfulShip:2/6",
+    "kjeragShip:0/4",
+    "arcaneShip:1/4",
+    "steadShip:1/4",
+    "victoriaShip:1/0",
+    "deputShip:1/0",
+    "visiShip:1/0",
+    "investShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_3_01_a@3",
+    "chess_char_4_24_a@3",
+    "chess_char_3_14_a@3",
+    "chess_char_4_09_a@3",
+    "chess_char_3_16_a@3",
+    "chess_item_1_01_e_a@1"
+   ],
+   "hand": [
+    "chess_char_3_14_a",
+    "chess_char_3_21_a",
+    "chess_char_1_17_a",
+    "chess_char_1_02_a",
+    "chess_char_1_02_a",
+    "chess_char_1_01_a",
+    "chess_item_2_04_e_a"
+   ],
+   "advice": "抓 能天使（槽位 1）",
+   "pick": "能天使(59)",
+   "after": {
+    "lp": 16,
+    "bonds": [
+     "preciShip:2/10",
+     "lateranoShip:4/9",
+     "swiftShip:2/9",
+     "skillfulShip:2/6",
+     "kjeragShip:0/4",
+     "arcaneShip:1/4",
+     "steadShip:1/4",
+     "victoriaShip:1/0",
+     "deputShip:1/0",
+     "visiShip:1/0",
+     "investShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大兜特兜#9944",
+      "band": "band_paganini",
+      "lp": 16,
       "lv": 3,
-      "bonds": "siracusaShip:3 suntShip:3 preciShip:0 arcaneShip:1 kazimierzShip:2 swiftShip:1 victoriaShip:1 deputShip:1 miraShip:1 soloShip:2"
+      "bonds": "preciShip:2 lateranoShip:4 swiftShip:2 skillfulShip:2 kjeragShip:0 arcaneShip:1 steadShip:1 victoriaShip:1 deputShip:1 visiShip:1 investShip:1 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大漏特漏#1989",
+      "band": "band_lisa",
+      "lp": 9,
+      "lv": 3,
+      "bonds": "kjeragShip:5 preciShip:2 suntShip:2 steadShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1 visiShip:1 miraShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "一袋米扛几楼#8855",
+      "band": "band_cathy",
+      "lp": 16,
+      "lv": 4,
+      "bonds": "victoriaShip:4 skillfulShip:2 swiftShip:0 yanShip:1 kjeragShip:2 kazimierzShip:0 steadShip:1 lateranoShip:1 visiShip:1 miraShip:1 indomShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "NANXI#8431",
+      "band": "band_jesica",
+      "lp": 12,
+      "lv": 4,
+      "bonds": "siracusaShip:4 suntShip:3 preciShip:0 swiftShip:1 arcaneShip:1 kazimierzShip:1 miraShip:1 soloShip:2"
      }
     ]
    }
@@ -8593,6 +8685,30 @@
    "type": "SHOP_LEVEL",
    "text": "NANXI#8431博士将调度中心等级提升为4级",
    "playerId": "p_44695e2bf5"
+  },
+  {
+   "id": 467,
+   "at": 1792848836155,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为4级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 468,
+   "at": 1792848845246,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "一袋米扛几楼#8855博士将调度中心等级提升为5级",
+   "playerId": "p_a9e35ffdd2"
+  },
+  {
+   "id": 469,
+   "at": 1792848849322,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为4级",
+   "playerId": "p_0c4a6121fd"
   }
  ],
  "results": [
