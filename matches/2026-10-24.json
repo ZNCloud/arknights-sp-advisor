@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T14:07:02.772Z",
+ "generatedAt": "2026-10-24T14:11:08.369Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -750,22 +750,57 @@
   },
   {
    "round": 11,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 9,
+   "level": 5,
+   "bonds": [
+    "egirShip:5/92",
+    "indomShip:2/56",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "suntShip:2/0",
+    "steadShip:1/9",
+    "yanShip:0/4",
+    "kazimierzShip:2/0",
+    "deputShip:1/0",
+    "visiShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_4_20_a@3",
+    "chess_char_4_02_a@3",
+    "chess_char_2_08_a@3",
+    "chess_char_3_20_a@3",
+    "chess_char_3_12_a@3",
+    "chess_item_4_10_e_a@2"
+   ],
+   "hand": [
+    "chess_char_4_12_a",
+    "chess_char_3_05_a",
+    "chess_char_1_04_a",
+    "chess_char_5_05_a",
+    "chess_char_6_16_a",
+    "chess_char_3_05_b",
+    "chess_char_6_12_a",
+    "chess_char_1_03_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "远牙(0)",
    "after": {
-    "lp": 9,
+    "lp": 6,
     "bonds": [
-     "egirShip:5/92",
-     "indomShip:2/56",
+     "egirShip:5/119",
+     "indomShip:2/68",
      "maniShip:1/0",
      "soloShip:1/0",
+     "suntShip:2/0",
      "steadShip:1/9",
      "yanShip:0/4",
      "kazimierzShip:2/0",
+     "deputShip:1/0",
      "visiShip:1/0",
-     "emptyShip:1/0",
-     "suntShip:1/0"
+     "emptyShip:1/0"
     ],
     "table": [
      {
@@ -780,9 +815,9 @@
       "seat": 1,
       "name": "大兜特兜#9944",
       "band": "band_pith",
-      "lp": 9,
+      "lp": 6,
       "lv": 5,
-      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 steadShip:1 yanShip:0 kazimierzShip:2 visiShip:1 emptyShip:1 suntShip:1"
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 suntShip:2 steadShip:1 yanShip:0 kazimierzShip:2 deputShip:1 visiShip:1 emptyShip:1"
      },
      {
       "seat": 2,
@@ -796,9 +831,100 @@
       "seat": 3,
       "name": "夜行灯#1097",
       "band": "band_paganini",
-      "lp": 7,
+      "lp": 3,
       "lv": 5,
-      "bonds": "lateranoShip:3 skillfulShip:2 visiShip:3 preciShip:2 suntShip:3 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 investShip:1 raidShip:1"
+      "bonds": "lateranoShip:3 visiShip:3 skillfulShip:2 preciShip:2 suntShip:4 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 miraShip:1 investShip:1 raidShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 12,
+   "funds": 0,
+   "lp": 6,
+   "level": 6,
+   "bonds": [
+    "egirShip:5/119",
+    "indomShip:2/68",
+    "maniShip:1/0",
+    "soloShip:1/0",
+    "suntShip:3/0",
+    "steadShip:1/9",
+    "yanShip:0/4",
+    "kazimierzShip:2/0",
+    "deputShip:1/0",
+    "visiShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_08_a@3",
+    "chess_char_5_06_a@4",
+    "chess_char_3_14_a@3",
+    "chess_char_4_16_a@3",
+    "chess_char_3_18_a@3",
+    "chess_item_1_04_e_a@1"
+   ],
+   "hand": [
+    "chess_char_4_12_a",
+    "chess_char_3_21_a",
+    "chess_char_3_05_a",
+    "chess_char_6_12_a",
+    "chess_char_5_05_a",
+    "chess_char_6_16_a",
+    "chess_char_3_05_b",
+    "chess_char_6_12_a",
+    "chess_char_1_03_a",
+    "chess_char_1_03_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "泡泡(0)",
+   "after": {
+    "lp": 6,
+    "bonds": [
+     "egirShip:5/119",
+     "indomShip:2/68",
+     "maniShip:1/0",
+     "soloShip:1/0",
+     "suntShip:3/0",
+     "steadShip:1/9",
+     "yanShip:0/4",
+     "kazimierzShip:2/0",
+     "deputShip:1/0",
+     "visiShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "草莓泡芙#0279",
+      "band": "band_damaztic",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_pith",
+      "lp": 6,
+      "lv": 5,
+      "bonds": "egirShip:5 indomShip:2 maniShip:1 soloShip:1 suntShip:3 steadShip:1 yanShip:0 kazimierzShip:2 deputShip:1 visiShip:1 emptyShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 0,
+      "lv": 4,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "夜行灯#1097",
+      "band": "band_paganini",
+      "lp": 3,
+      "lv": 5,
+      "bonds": "lateranoShip:3 visiShip:3 skillfulShip:2 preciShip:2 suntShip:4 swiftShip:1 yanShip:0 kazimierzShip:0 arcaneShip:1 sargonShip:1 miraShip:1 investShip:1 raidShip:1"
      }
     ]
    }
@@ -9307,6 +9433,62 @@
    "round": 10,
    "type": "GOLDEN_CHAR",
    "text": "大兜特兜#9944博士的斯卡蒂干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 525,
+   "at": 1792850833423,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的伊内丝干员晋升为精锐",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 526,
+   "at": 1792850843314,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的锡人干员晋升为精锐",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 527,
+   "at": 1792850892525,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的水月干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 528,
+   "at": 1792851009812,
+   "round": 11,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的盟约·辅助干员干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 530,
+   "at": 1792851012819,
+   "round": 11,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的深巡干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 531,
+   "at": 1792851021572,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "夜行灯#1097博士将调度中心等级提升为6级",
+   "playerId": "p_1774e4067c"
+  },
+  {
+   "id": 532,
+   "at": 1792851053233,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为6级",
    "playerId": "p_0c4a6121fd"
   }
  ],
