@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T10:55:23.824Z",
+ "generatedAt": "2026-10-24T10:57:27.177Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -274,24 +274,22 @@
     "indomShip:1/0"
    ],
    "shop": [
-    "chess_char_2_04_a@3",
-    "chess_char_1_03_a@2",
-    "chess_char_2_02_a@3",
-    "chess_item_3_04_e_a@2"
+    "chess_char_2_01_a@3",
+    "chess_char_3_01_a@3",
+    "chess_char_3_01_a@3",
+    "chess_char_2_07_a@3",
+    "chess_item_3_03_e_a@2"
    ],
-   "hand": [
-    "chess_item_1_05_e_b"
-   ],
+   "hand": [],
    "advice": "没钱了，等下一回合进账",
-   "pick": "小满(0)",
+   "pick": "送葬人(0)",
    "after": {
     "lp": 26,
     "bonds": [
+     "kazimierzShip:3/10",
      "soloShip:1/1",
-     "kazimierzShip:2/2",
      "swiftShip:1/2",
      "egirShip:1/0",
-     "siracusaShip:1/0",
      "preciShip:1/0",
      "deputShip:1/0",
      "raidShip:1/0",
@@ -303,8 +301,8 @@
       "name": "大漏特漏#1989",
       "band": "band_pith",
       "lp": 24,
-      "lv": 2,
-      "bonds": "egirShip:3 maniShip:1 kazimierzShip:2 swiftShip:1 emptyShip:1"
+      "lv": 3,
+      "bonds": "egirShip:4 maniShip:1 kazimierzShip:2 swiftShip:1 siracusaShip:2 miraShip:1 emptyShip:1 suntShip:1"
      },
      {
       "seat": 1,
@@ -312,15 +310,15 @@
       "band": "band_cathy",
       "lp": 26,
       "lv": 3,
-      "bonds": "deputShip:2 preciShip:0 arcaneShip:0 victoriaShip:1 raidShip:1"
+      "bonds": "deputShip:2 preciShip:0 arcaneShip:0 yanShip:2 victoriaShip:1 visiShip:1 investShip:1 raidShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_emperor",
       "lp": 26,
-      "lv": 2,
-      "bonds": "soloShip:1 kazimierzShip:2 swiftShip:1 egirShip:1 siracusaShip:1 preciShip:1 deputShip:1 raidShip:1 indomShip:1"
+      "lv": 3,
+      "bonds": "kazimierzShip:3 soloShip:1 swiftShip:1 egirShip:1 preciShip:1 deputShip:1 raidShip:1 indomShip:1"
      },
      {
       "seat": 3,
@@ -328,7 +326,60 @@
       "band": "band_chiave",
       "lp": 23,
       "lv": 2,
-      "bonds": "preciShip:3 swiftShip:2 arcaneShip:1 siracusaShip:2 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:1 suntShip:1"
+      "bonds": "preciShip:3 swiftShip:2 siracusaShip:3 arcaneShip:1 kazimierzShip:0 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 6,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:3/10",
+     "soloShip:1/1",
+     "swiftShip:1/2",
+     "egirShip:1/0",
+     "preciShip:1/0",
+     "deputShip:1/0",
+     "raidShip:1/0",
+     "indomShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 3,
+      "bonds": "egirShip:4 maniShip:1 kazimierzShip:2 swiftShip:1 siracusaShip:2 miraShip:1 emptyShip:1 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 3,
+      "bonds": "deputShip:2 preciShip:0 arcaneShip:0 yanShip:2 victoriaShip:1 visiShip:1 investShip:1 raidShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 3,
+      "bonds": "kazimierzShip:3 soloShip:1 swiftShip:1 egirShip:1 preciShip:1 deputShip:1 raidShip:1 indomShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "preciShip:3 swiftShip:2 siracusaShip:3 arcaneShip:1 kazimierzShip:0 victoriaShip:1 lateranoShip:1 deputShip:1 investShip:1 suntShip:1"
      }
     ]
    }
@@ -4982,6 +5033,14 @@
    "type": "GOLDEN_CHAR",
    "text": "大漏特漏#1989博士的深巡干员晋升为精锐",
    "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 14,
+   "at": 1792839411602,
+   "round": 5,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507 迎战突破防线的敌人",
+   "playerId": null
   }
  ],
  "results": [
