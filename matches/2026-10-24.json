@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T16:23:48.155Z",
+ "generatedAt": "2026-10-24T16:26:53.825Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -1023,58 +1023,58 @@
   },
   {
    "round": 14,
-   "funds": 5,
+   "funds": 0,
    "lp": 16,
    "level": 6,
    "bonds": [
     "indomShip:2/197",
-    "kazimierzShip:5/169",
+    "kazimierzShip:6/169",
     "raidShip:2/46",
+    "steadShip:2/19",
     "soloShip:1/4",
     "suntShip:2/0",
     "deputShip:0/34",
     "swiftShip:0/25",
-    "steadShip:1/19",
     "kjeragShip:0/8",
     "investShip:0/8",
     "preciShip:0/2",
     "arcaneShip:0/2",
-    "yanShip:1/0",
-    "emptyShip:1/0"
+    "yanShip:1/0"
    ],
    "shop": [
-    "chess_char_4_13_a@3",
-    "chess_char_2_05_a@3",
-    "chess_char_4_25_a@3",
-    "chess_char_3_05_a@3",
-    "chess_item_2_04_e_a@2"
+    "chess_char_2_07_a@3",
+    "chess_char_1_02_a@2",
+    "chess_char_5_12_a@4",
+    "chess_char_4_07_a@3",
+    "chess_char_2_09_a@3",
+    "chess_item_4_04_e_a@1"
    ],
    "hand": [
-    "chess_char_2_18_b",
+    "chess_char_4_25_b",
     "chess_char_3_12_a",
     "chess_char_1_19_a",
     "chess_char_1_09_b",
-    "chess_char_2_18_a",
-    "chess_char_1_18_a"
+    "chess_item_6_09_e_a",
+    "chess_char_2_18_a"
    ],
-   "advice": "别赌6人（约 0%）→ 没有值得抓的，刷一次（剩 4 金也会清零） · 资源喂终端 仇白（2322 有效攻）",
-   "pick": "灵知(5)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "幽灵鲨(0)",
    "after": {
     "lp": 16,
     "bonds": [
      "indomShip:2/197",
-     "kazimierzShip:5/169",
+     "kazimierzShip:6/169",
      "raidShip:2/46",
+     "steadShip:2/23",
      "soloShip:1/4",
      "suntShip:2/0",
      "deputShip:0/34",
      "swiftShip:0/25",
-     "steadShip:1/19",
      "kjeragShip:0/8",
      "investShip:0/8",
      "preciShip:0/2",
      "arcaneShip:0/2",
-     "emptyShip:1/0"
+     "yanShip:1/0"
     ],
     "table": [
      {
@@ -1083,7 +1083,7 @@
       "band": "band_chiave",
       "lp": 12,
       "lv": 6,
-      "bonds": "siracusaShip:7 miraShip:2 suntShip:2 emptyShip:2 swiftShip:1 preciShip:0 kjeragShip:0 investShip:0 deputShip:0 soloShip:0 yanShip:1 arcaneShip:1 steadShip:1"
+      "bonds": "siracusaShip:7 miraShip:2 suntShip:4 emptyShip:2 swiftShip:1 preciShip:0 kjeragShip:0 investShip:0 deputShip:0 soloShip:0 yanShip:1 arcaneShip:1 steadShip:1"
      },
      {
       "seat": 1,
@@ -1091,7 +1091,7 @@
       "band": "band_emperor",
       "lp": 16,
       "lv": 6,
-      "bonds": "indomShip:2 kazimierzShip:5 raidShip:2 soloShip:1 suntShip:2 deputShip:0 swiftShip:0 steadShip:1 kjeragShip:0 investShip:0 preciShip:0 arcaneShip:0 emptyShip:1"
+      "bonds": "indomShip:2 kazimierzShip:6 raidShip:2 steadShip:2 soloShip:1 suntShip:2 deputShip:0 swiftShip:0 kjeragShip:0 investShip:0 preciShip:0 arcaneShip:0 yanShip:1"
      },
      {
       "seat": 2,
@@ -1099,7 +1099,7 @@
       "band": "band_quintus",
       "lp": 20,
       "lv": 6,
-      "bonds": "yanShip:6 skillfulShip:4 arcaneShip:2 investShip:3 suntShip:2 victoriaShip:0 swiftShip:0 kjeragShip:0 kazimierzShip:0 indomShip:0 lateranoShip:1 steadShip:1"
+      "bonds": "yanShip:7 skillfulShip:2 arcaneShip:2 victoriaShip:3 investShip:3 suntShip:2 swiftShip:0 kazimierzShip:0 kjeragShip:0 miraShip:1 indomShip:0 steadShip:1"
      },
      {
       "seat": 3,
@@ -1107,7 +1107,98 @@
       "band": "band_jesica",
       "lp": 11,
       "lv": 6,
-      "bonds": "kjeragShip:4 skillfulShip:2 investShip:3 suntShip:4 emptyShip:3 swiftShip:1 kazimierzShip:0 yanShip:0 soloShip:0 deputShip:0 victoriaShip:1 siracusaShip:1"
+      "bonds": "kjeragShip:5 skillfulShip:3 arcaneShip:2 investShip:3 suntShip:5 swiftShip:1 kazimierzShip:0 yanShip:1 soloShip:0 deputShip:0 victoriaShip:1 indomShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 15,
+   "funds": 13,
+   "lp": 16,
+   "level": 6,
+   "bonds": [
+    "indomShip:2/197",
+    "kazimierzShip:6/169",
+    "raidShip:2/46",
+    "steadShip:2/23",
+    "soloShip:1/4",
+    "suntShip:2/0",
+    "deputShip:0/34",
+    "swiftShip:0/25",
+    "kjeragShip:0/8",
+    "investShip:0/8",
+    "preciShip:0/2",
+    "arcaneShip:0/2",
+    "yanShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_10_a@3",
+    "chess_char_1_04_a@2",
+    "chess_char_4_07_a@3",
+    "chess_char_4_07_a@3",
+    "chess_char_4_12_a@3",
+    "chess_item_2_07_e_a@1"
+   ],
+   "hand": [
+    "chess_char_4_25_b",
+    "chess_char_3_12_a",
+    "chess_char_1_19_a",
+    "chess_char_1_09_b",
+    "chess_item_6_09_e_a",
+    "chess_char_2_18_a"
+   ],
+   "advice": "先刷找 远牙/史尔特尔（核心没到手，装备不急）",
+   "pick": "见钱眼开玩偶(16)",
+   "after": {
+    "lp": 16,
+    "bonds": [
+     "indomShip:2/197",
+     "kazimierzShip:6/169",
+     "raidShip:2/46",
+     "steadShip:2/23",
+     "soloShip:1/4",
+     "suntShip:2/0",
+     "deputShip:0/34",
+     "swiftShip:0/25",
+     "kjeragShip:0/8",
+     "investShip:0/8",
+     "preciShip:0/2",
+     "arcaneShip:0/2",
+     "yanShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 12,
+      "lv": 6,
+      "bonds": "siracusaShip:7 miraShip:2 suntShip:4 emptyShip:2 swiftShip:1 preciShip:0 kjeragShip:0 investShip:0 deputShip:0 soloShip:0 yanShip:1 arcaneShip:1 steadShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 16,
+      "lv": 6,
+      "bonds": "indomShip:2 kazimierzShip:6 raidShip:2 steadShip:2 soloShip:1 suntShip:2 deputShip:0 swiftShip:0 kjeragShip:0 investShip:0 preciShip:0 arcaneShip:0 yanShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "夜行灯#1097",
+      "band": "band_quintus",
+      "lp": 20,
+      "lv": 6,
+      "bonds": "yanShip:7 skillfulShip:2 arcaneShip:2 victoriaShip:3 investShip:3 suntShip:3 swiftShip:0 kazimierzShip:0 kjeragShip:0 miraShip:1 indomShip:0 steadShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "TAKELU#9928",
+      "band": "band_jesica",
+      "lp": 11,
+      "lv": 6,
+      "bonds": "kjeragShip:5 skillfulShip:3 arcaneShip:2 investShip:3 suntShip:5 swiftShip:1 kazimierzShip:0 yanShip:1 soloShip:0 deputShip:0 victoriaShip:1 indomShip:1"
      }
     ]
    }
@@ -11849,6 +11940,174 @@
    "type": "GOLDEN_CHAR",
    "text": "大漏特漏#1989博士的缄默德克萨斯干员晋升为精锐",
    "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 821,
+   "at": 1792859117234,
+   "round": 14,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的余干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 822,
+   "at": 1792859118801,
+   "round": 14,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的丰川祥子干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 823,
+   "at": 1792859186783,
+   "round": 14,
+   "type": "BOSS_HIT",
+   "text": "夜行灯#1097博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 824,
+   "at": 1792859189762,
+   "round": 14,
+   "type": "BOSS_HIT",
+   "text": "TAKELU#9928博士对敌方领袖造成的伤害超过20%!",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 825,
+   "at": 1792859194496,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的烛煌干员造成的伤害量达到1000000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 826,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的夕干员造成的伤害量达到200000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 827,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的小满干员造成的伤害量达到200000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 828,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的赤刃明霄陈干员造成的伤害量达到1000000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 829,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的望干员造成的伤害量达到200000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 830,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "夜行灯#1097博士的\"炎佑\"干员造成的伤害量达到200000",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 831,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的灵知干员造成的伤害量达到1000000",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 832,
+   "at": 1792859194515,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的断崖干员造成的伤害量达到200000",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 833,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的银灰干员造成的伤害量达到1000000",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 834,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的圣聆初雪干员造成的伤害量达到1000000",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 835,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "TAKELU#9928博士的隐德来希干员造成的伤害量达到500000",
+   "playerId": "p_c80438b339"
+  },
+  {
+   "id": 836,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的荒芜拉普兰德干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 837,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的丰川祥子干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 838,
+   "at": 1792859194516,
+   "round": 14,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的忍冬干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 839,
+   "at": 1792859197397,
+   "round": 14,
+   "type": "CUSTOM",
+   "text": "隐秘核心已解锁",
+   "playerId": null
+  },
+  {
+   "id": 840,
+   "at": 1792859197397,
+   "round": 14,
+   "type": "GOLDEN_CHAR",
+   "text": "夜行灯#1097博士的望干员晋升为精锐",
+   "playerId": "p_fbc4281279"
+  },
+  {
+   "id": 841,
+   "at": 1792859202431,
+   "round": 15,
+   "type": "GOLDEN_CHAR",
+   "text": "TAKELU#9928博士的耶拉干员晋升为精锐",
+   "playerId": "p_c80438b339"
   }
  ],
  "results": [
@@ -31416,6 +31675,828 @@
     ],
     "playerId": "p_0c4a6121fd"
    },
+   "historyLast": {
+    "id": "NXQB:cfsdg5-1:1792156812736",
+    "savedAt": 1792159915110,
+    "result": {
+     "resultId": "NXQB:cfsdg5-1:1792156812736",
+     "endedAt": 1792159915110,
+     "gameMode": "normal",
+     "capacity": 4,
+     "extensions": {
+      "personalPool": false,
+      "bossHp": 1,
+      "enemyHp": 1,
+      "bossNoDamageLimit": false,
+      "duckEnhanced": 0
+     },
+     "trophyPolicy": {
+      "version": 1,
+      "custom": false,
+      "multiplier": 1,
+      "reason": "normal"
+     },
+     "victory": true,
+     "roundsPassed": 15,
+     "hiddenReached": true,
+     "hiddenCleared": true,
+     "reason": "victory",
+     "teamLp": 47,
+     "modeId": "mode_multi_abyss",
+     "difficulty": "ABYSS",
+     "stageId": "act2autochess_m04",
+     "bossId": "boss_3",
+     "hiddenBossId": "boss_8",
+     "seed": 752112149,
+     "durationMs": 3102374,
+     "players": [
+      {
+       "playerId": "p_178a37e403",
+       "seat": 0,
+       "name": "问了吗",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 8,
+       "bandId": "band_jesica",
+       "lineup": [
+        {
+         "id": "chess_char_6_16_b",
+         "golden": true,
+         "tier": 6,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_3_10_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_5_08_b",
+         "golden": true,
+         "tier": 5,
+         "row": 12,
+         "col": 8,
+         "items": [
+          "chess_item_3_09_e_b",
+          "chess_item_2_03_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_05_b",
+         "golden": true,
+         "tier": 2,
+         "row": 11,
+         "col": 7,
+         "items": [
+          "chess_item_3_10_e_b",
+          "chess_item_4_11_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_5_03_a",
+         "golden": false,
+         "tier": 5,
+         "row": 11,
+         "col": 8,
+         "items": [
+          "chess_item_4_09_e_a",
+          "chess_item_4_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_5_12_a",
+         "golden": false,
+         "tier": 5,
+         "row": 10,
+         "col": 7,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_4_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_4_11_b",
+         "golden": true,
+         "tier": 4,
+         "row": 10,
+         "col": 8,
+         "items": [
+          "chess_item_3_11_e_a",
+          "chess_item_3_06_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_11_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 8,
+         "items": [
+          "chess_item_4_02_e_b",
+          "chess_item_3_08_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_6_07_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 9,
+         "items": [
+          "chess_item_1_01_e_a",
+          "chess_item_3_09_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "victoriaShip",
+         "count": 7,
+         "active": true,
+         "tier": 2,
+         "layers": 377,
+         "harmony": 1
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 76
+        },
+        {
+         "bondId": "skillfulShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 55
+        },
+        {
+         "bondId": "yanShip",
+         "count": 3,
+         "active": true,
+         "tier": 1,
+         "layers": 35,
+         "harmony": 1
+        },
+        {
+         "bondId": "maniShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 4,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "visiShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 124
+        },
+        {
+         "bondId": "miraShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 29
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 2,
+         "active": false,
+         "tier": 0,
+         "layers": 16,
+         "harmony": 1
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 16
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 8
+        }
+       ],
+       "stats": {
+        "dmgDealt": 20209737,
+        "kills": 385,
+        "leaks": 87,
+        "gold": 198,
+        "refreshes": 79,
+        "merges": 10,
+        "itemsEquipped": 46,
+        "bossDamage": 14334642,
+        "activatedLayers": 543,
+        "lpLost": 13,
+        "perfectRounds": 6
+       },
+       "title": {
+        "id": "comment_2",
+        "name": "不朽盟约",
+        "picId": "comment_icon_2",
+        "text": "激活的盟约层数总和最高"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_0baf7ee2cf",
+       "seat": 1,
+       "name": "Cloud",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 15,
+       "bandId": "band_damaztic",
+       "lineup": [
+        {
+         "id": "chess_char_5_08_a",
+         "golden": false,
+         "tier": 5,
+         "row": 12,
+         "col": 5,
+         "items": [
+          "chess_item_3_05_e_b",
+          "chess_item_3_09_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_3_08_a",
+         "golden": false,
+         "tier": 3,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_5_02_e_b",
+          "chess_item_5_07_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_08_b",
+         "golden": true,
+         "tier": 6,
+         "row": 11,
+         "col": 5,
+         "items": [
+          "chess_item_3_03_e_b",
+          "chess_item_6_05_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_4_14_a",
+         "golden": false,
+         "tier": 4,
+         "row": 11,
+         "col": 8,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_3_10_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_6_05_a",
+         "golden": false,
+         "tier": 6,
+         "row": 10,
+         "col": 5,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_4_09_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_05_a",
+         "golden": false,
+         "tier": 2,
+         "row": 10,
+         "col": 8,
+         "items": [
+          "chess_item_4_11_e_b",
+          "chess_item_4_03_e_b"
+         ]
+        },
+        {
+         "id": "chess_char_6_12_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 5,
+         "items": [
+          "chess_item_1_01_e_b",
+          "chess_item_6_09_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_4_11_a",
+         "golden": false,
+         "tier": 4,
+         "row": 9,
+         "col": 8,
+         "items": [
+          "chess_item_4_02_e_b",
+          "chess_item_1_02_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "victoriaShip",
+         "count": 8,
+         "active": true,
+         "tier": 2,
+         "layers": 136
+        },
+        {
+         "bondId": "preciShip",
+         "count": 4,
+         "active": true,
+         "tier": 2,
+         "layers": 42
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 38
+        },
+        {
+         "bondId": "visiShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 28
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        },
+        {
+         "bondId": "steadShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 15587260,
+        "kills": 392,
+        "leaks": 52,
+        "gold": 172,
+        "refreshes": 44,
+        "merges": 5,
+        "itemsEquipped": 39,
+        "bossDamage": 9580605,
+        "activatedLayers": 244,
+        "lpLost": 12,
+        "perfectRounds": 6
+       },
+       "title": {
+        "id": "comment_5",
+        "name": "万事俱备",
+        "picId": "comment_icon_5",
+        "text": "装备配发数量最多"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_20e740ba1f",
+       "seat": 2,
+       "name": "大漏特漏",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 12,
+       "bandId": "band_chiave",
+       "lineup": [
+        {
+         "id": "chess_char_5_diy2_b",
+         "golden": true,
+         "tier": 5,
+         "row": 12,
+         "col": 5,
+         "items": [],
+         "diy": {
+          "charId": "char_1015_aglna2",
+          "skillIndex": 2,
+          "uniEquipId": null
+         }
+        },
+        {
+         "id": "chess_char_5_22_a",
+         "golden": false,
+         "tier": 5,
+         "row": 12,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_4_10_b",
+         "golden": true,
+         "tier": 4,
+         "row": 11,
+         "col": 3,
+         "items": []
+        },
+        {
+         "id": "chess_char_3_19_b",
+         "golden": true,
+         "tier": 3,
+         "row": 11,
+         "col": 5,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_20_b",
+         "golden": true,
+         "tier": 5,
+         "row": 11,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_18_b",
+         "golden": true,
+         "tier": 6,
+         "row": 10,
+         "col": 5,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_10_a",
+         "golden": false,
+         "tier": 5,
+         "row": 10,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_diy2_a",
+         "golden": false,
+         "tier": 6,
+         "row": 9,
+         "col": 8,
+         "items": [],
+         "diy": {
+          "charId": "char_4182_oblvns",
+          "skillIndex": 2,
+          "uniEquipId": "uniequip_002_oblvns"
+         }
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "siracusaShip",
+         "count": 6,
+         "active": true,
+         "tier": 2,
+         "layers": 436
+        },
+        {
+         "bondId": "miraShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 43
+        },
+        {
+         "bondId": "emptyShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 5,
+         "active": true,
+         "tier": 2,
+         "layers": 0
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 130
+        },
+        {
+         "bondId": "investShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 11
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 8
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 26474472,
+        "kills": 440,
+        "leaks": 34,
+        "gold": 190,
+        "refreshes": 61,
+        "merges": 10,
+        "itemsEquipped": 12,
+        "bossDamage": 15650416,
+        "activatedLayers": 479,
+        "lpLost": 9,
+        "perfectRounds": 8
+       },
+       "title": {
+        "id": "comment_1",
+        "name": "卫戍之星",
+        "picId": "comment_icon_1",
+        "text": "对敌方领袖造成伤害最高（仅胜利时）"
+       },
+       "trophies": 8,
+       "reward": 425
+      },
+      {
+       "playerId": "p_257c2282d2",
+       "seat": 3,
+       "name": "mmfish#6111",
+       "isBot": false,
+       "left": false,
+       "alive": true,
+       "victory": true,
+       "roundsPassed": 15,
+       "eliminatedRound": null,
+       "lp": 12,
+       "bandId": "band_clementia",
+       "lineup": [
+        {
+         "id": "chess_char_6_02_b",
+         "golden": true,
+         "tier": 6,
+         "row": 12,
+         "col": 7,
+         "items": [
+          "chess_item_6_09_e_a",
+          "chess_item_3_07_e_a"
+         ]
+        },
+        {
+         "id": "chess_char_2_07_b",
+         "golden": true,
+         "tier": 2,
+         "row": 12,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_4_09_a",
+         "golden": false,
+         "tier": 4,
+         "row": 11,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_14_a",
+         "golden": false,
+         "tier": 5,
+         "row": 11,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_3_05_a",
+         "golden": false,
+         "tier": 3,
+         "row": 10,
+         "col": 4,
+         "items": []
+        },
+        {
+         "id": "chess_char_6_11_a",
+         "golden": false,
+         "tier": 6,
+         "row": 10,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_1_04_b",
+         "golden": true,
+         "tier": 1,
+         "row": 9,
+         "col": 7,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_13_b",
+         "golden": true,
+         "tier": 5,
+         "row": 9,
+         "col": 8,
+         "items": []
+        },
+        {
+         "id": "chess_char_5_07_a",
+         "golden": false,
+         "tier": 5,
+         "row": 9,
+         "col": 9,
+         "items": [
+          "chess_item_4_06_e_a"
+         ]
+        }
+       ],
+       "bonds": [
+        {
+         "bondId": "egirShip",
+         "count": 7,
+         "active": true,
+         "tier": 2,
+         "layers": 400,
+         "harmony": 1
+        },
+        {
+         "bondId": "raidShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 87
+        },
+        {
+         "bondId": "kjeragShip",
+         "count": 3,
+         "active": true,
+         "tier": 1,
+         "layers": 10,
+         "harmony": 1
+        },
+        {
+         "bondId": "arcaneShip",
+         "count": 2,
+         "active": true,
+         "tier": 1,
+         "layers": 3
+        },
+        {
+         "bondId": "maniShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "soloShip",
+         "count": 1,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "suntShip",
+         "count": 4,
+         "active": true,
+         "tier": 1,
+         "layers": 0
+        },
+        {
+         "bondId": "investShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 18
+        },
+        {
+         "bondId": "yanShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "swiftShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 10
+        },
+        {
+         "bondId": "kazimierzShip",
+         "count": 0,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        },
+        {
+         "bondId": "steadShip",
+         "count": 1,
+         "active": false,
+         "tier": 0,
+         "layers": 2
+        }
+       ],
+       "stats": {
+        "dmgDealt": 16223541,
+        "kills": 468,
+        "leaks": 53,
+        "gold": 170,
+        "refreshes": 50,
+        "merges": 3,
+        "itemsEquipped": 11,
+        "bossDamage": 5232251,
+        "activatedLayers": 500,
+        "lpLost": 13,
+        "perfectRounds": 4
+       },
+       "title": {
+        "id": "comment_3",
+        "name": "坚若磐石",
+        "picId": "comment_icon_3",
+        "text": "目标生命值损失最少"
+       },
+       "trophies": 8,
+       "reward": 425
+      }
+     ],
+     "playerId": "p_0baf7ee2cf"
+    }
+   }
+  },
+  {
+   "at": "2026-10-24T16:26:16.227Z",
+   "phase": "FINAL_ASSAULT",
+   "round": 14,
+   "result": null,
    "historyLast": {
     "id": "NXQB:cfsdg5-1:1792156812736",
     "savedAt": 1792159915110,
