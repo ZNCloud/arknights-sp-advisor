@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T10:51:17.714Z",
+ "generatedAt": "2026-10-24T10:53:20.867Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -127,15 +127,28 @@
   },
   {
    "round": 3,
+   "funds": 0,
+   "lp": 26,
+   "level": 2,
+   "bonds": [
+    "kazimierzShip:2/2",
+    "swiftShip:1/2",
+    "deputShip:1/0",
+    "raidShip:1/0",
+    "indomShip:1/0"
+   ],
    "shop": [],
-   "advice": null,
+   "hand": [],
+   "advice": "没钱了，等下一回合进账",
    "pick": null,
    "after": {
     "lp": 26,
     "bonds": [
-     "kazimierzShip:1/2",
+     "kazimierzShip:2/2",
      "swiftShip:1/2",
-     "raidShip:1/0"
+     "deputShip:1/0",
+     "raidShip:1/0",
+     "indomShip:1/0"
     ],
     "table": [
      {
@@ -143,7 +156,7 @@
       "name": "大漏特漏#1989",
       "band": "band_pith",
       "lp": 24,
-      "lv": 1,
+      "lv": 2,
       "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
      },
      {
@@ -151,8 +164,8 @@
       "name": "pipiwu#3933",
       "band": "band_cathy",
       "lp": 26,
-      "lv": 1,
-      "bonds": "preciShip:1 arcaneShip:1 victoriaShip:1 deputShip:1 raidShip:1"
+      "lv": 2,
+      "bonds": "deputShip:2 preciShip:1 arcaneShip:1 victoriaShip:1 raidShip:1"
      },
      {
       "seat": 2,
@@ -160,15 +173,82 @@
       "band": "band_emperor",
       "lp": 26,
       "lv": 2,
-      "bonds": "kazimierzShip:1 swiftShip:1 raidShip:1"
+      "bonds": "kazimierzShip:2 swiftShip:1 deputShip:1 raidShip:1 indomShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
       "band": "band_chiave",
       "lp": 23,
-      "lv": 1,
-      "bonds": "preciShip:2 arcaneShip:1"
+      "lv": 2,
+      "bonds": "preciShip:2 arcaneShip:1 siracusaShip:1 swiftShip:1 victoriaShip:1 deputShip:1 suntShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 4,
+   "funds": 7,
+   "lp": 26,
+   "level": 2,
+   "bonds": [
+    "kazimierzShip:2/2",
+    "swiftShip:1/2",
+    "deputShip:1/0",
+    "raidShip:1/0",
+    "indomShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_16_a@3",
+    "chess_char_2_07_a@3",
+    "chess_char_1_08_a@2",
+    "chess_char_1_09_a@2",
+    "chess_item_1_05_e_a@1"
+   ],
+   "hand": [],
+   "advice": "先刷找 瑕光/远牙/史尔特尔（核心没到手，装备不急）",
+   "pick": "源石溶剂(13)",
+   "after": {
+    "lp": 26,
+    "bonds": [
+     "kazimierzShip:2/2",
+     "swiftShip:1/2",
+     "deputShip:1/0",
+     "raidShip:1/0",
+     "indomShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_pith",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "maniShip:1 kazimierzShip:2 swiftShip:1 egirShip:2 emptyShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_cathy",
+      "lp": 26,
+      "lv": 2,
+      "bonds": "deputShip:2 preciShip:1 arcaneShip:1 victoriaShip:1 raidShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 2,
+      "bonds": "kazimierzShip:2 swiftShip:1 deputShip:1 raidShip:1 indomShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "preciShip:2 arcaneShip:1 siracusaShip:1 swiftShip:1 victoriaShip:1 deputShip:1 suntShip:1"
      }
     ]
    }
@@ -4742,6 +4822,54 @@
    "type": "SHOP_LEVEL",
    "text": "大兜特兜#9944博士将调度中心等级提升为2级",
    "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 3,
+   "at": 1792839098691,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "大漏特漏#1989博士将调度中心等级提升为2级",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 4,
+   "at": 1792839099642,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "黑#5507博士将调度中心等级提升为2级",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 5,
+   "at": 1792839100357,
+   "round": 3,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为2级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 6,
+   "at": 1792839101009,
+   "round": 3,
+   "type": "GOLDEN_CHAR",
+   "text": "黑#5507博士的深靛干员晋升为精锐",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 7,
+   "at": 1792839175609,
+   "round": 3,
+   "type": "CUSTOM",
+   "text": "联防阶段：黑#5507、pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 8,
+   "at": 1792839198385,
+   "round": 4,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为3级",
+   "playerId": "p_84d2b46a2b"
   }
  ],
  "results": [
