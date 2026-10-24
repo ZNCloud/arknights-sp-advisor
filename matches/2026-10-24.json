@@ -1,7 +1,51 @@
 {
- "generatedAt": "2026-10-24T14:56:29.375Z",
+ "generatedAt": "2026-10-24T14:58:32.905Z",
  "day": "2026-10-24",
  "rounds": [
+  {
+   "round": 0,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 0,
+    "bonds": [],
+    "table": [
+     {
+      "seat": 0,
+      "name": "苍蓝残响#8014",
+      "band": "band_cannot",
+      "lp": 27,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 1,
+      "name": "XHR#4671",
+      "band": "band_emperor",
+      "lp": 26,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 2,
+      "name": "大漏特漏#1989",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     },
+     {
+      "seat": 3,
+      "name": "大兜特兜#9944",
+      "band": null,
+      "lp": 0,
+      "lv": 1,
+      "bonds": ""
+     }
+    ]
+   }
+  },
   {
    "round": 1,
    "funds": 0,
@@ -923,9 +967,46 @@
   },
   {
    "round": 12,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 3,
+   "level": 6,
+   "bonds": [
+    "lateranoShip:3/78",
+    "preciShip:2/41",
+    "miraShip:3/17",
+    "swiftShip:3/16",
+    "arcaneShip:2/2",
+    "suntShip:2/0",
+    "sargonShip:1/4",
+    "kazimierzShip:0/2",
+    "yanShip:0/1",
+    "kjeragShip:2/0",
+    "skillfulShip:1/0",
+    "visiShip:1/0",
+    "investShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_6_12_a@4",
+    "chess_char_1_19_a@2",
+    "chess_char_3_04_a@3",
+    "chess_char_1_14_a@2",
+    "chess_char_4_07_a@3",
+    "chess_item_2_01_e_a@1"
+   ],
+   "hand": [
+    "chess_char_3_01_a",
+    "chess_char_4_07_a",
+    "chess_char_1_12_a",
+    "chess_char_3_19_b",
+    "chess_char_2_11_a",
+    "chess_item_1_01_e_a",
+    "chess_char_3_13_a",
+    "chess_char_1_01_a",
+    "chess_item_1_05_e_b"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "迷迭香(0)",
    "after": {
     "lp": 3,
     "bonds": [
@@ -10085,6 +10166,46 @@
    "type": "CHAR_DAMAGE",
    "text": "大漏特漏#1989博士的百炼嘉维尔干员造成的伤害量达到200000",
    "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 616,
+   "at": 1792853796185,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的艾丝黛尔干员晋升为精锐",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 617,
+   "at": 1792853812650,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "UUU#7461博士将调度中心等级提升为6级",
+   "playerId": "p_2620fed817"
+  },
+  {
+   "id": 618,
+   "at": 1792853814937,
+   "round": 12,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为6级",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 619,
+   "at": 1792853827524,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "UUU#7461博士中途退出了模拟",
+   "playerId": null
+  },
+  {
+   "id": 620,
+   "at": 1792853852698,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "大漏特漏#1989博士中途退出了模拟",
+   "playerId": null
   }
  ],
  "results": [
