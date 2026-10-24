@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T11:40:33.886Z",
+ "generatedAt": "2026-10-24T11:41:38.928Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -131,35 +131,36 @@
   },
   {
    "round": 3,
-   "funds": 3,
+   "funds": 0,
    "lp": 23,
    "level": 2,
    "bonds": [
-    "sargonShip:0/2",
+    "sargonShip:2/2",
     "victoriaShip:1/0",
     "lateranoShip:1/0",
     "swiftShip:1/0",
+    "steadShip:1/0",
     "deputShip:1/0"
    ],
    "shop": [
     "chess_char_2_06_a@3",
     "chess_char_2_06_a@3",
     "chess_char_2_06_a@3",
-    "chess_char_2_08_a@3",
     "chess_item_2_04_e_a@2"
    ],
    "hand": [
-    "chess_char_1_12_a",
     "chess_item_1_02_e_a"
    ],
-   "advice": "先刷找 薄绿/烛煌/号角（核心没到手，装备不急）",
-   "pick": "萨尔贡浓茶(17)",
+   "advice": "抓 莎草（槽位 1）",
+   "pick": "莎草(40)",
    "after": {
     "lp": 23,
     "bonds": [
+     "sargonShip:2/2",
      "victoriaShip:1/0",
      "lateranoShip:1/0",
      "swiftShip:1/0",
+     "steadShip:1/0",
      "deputShip:1/0"
     ],
     "table": [
@@ -169,15 +170,15 @@
       "band": "band_chiave",
       "lp": 23,
       "lv": 2,
-      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:1"
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:2"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
       "band": "band_bldsk",
       "lp": 28,
-      "lv": 1,
-      "bonds": "kjeragShip:1 steadShip:1 victoriaShip:1 deputShip:1"
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 kazimierzShip:1 swiftShip:1 victoriaShip:1 deputShip:1"
      },
      {
       "seat": 2,
@@ -185,15 +186,86 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 2,
-      "bonds": "victoriaShip:1 lateranoShip:1 swiftShip:1 deputShip:1"
+      "bonds": "sargonShip:2 victoriaShip:1 lateranoShip:1 swiftShip:1 steadShip:1 deputShip:1"
      },
      {
       "seat": 3,
       "name": "黑#5507",
       "band": "band_damaztic",
       "lp": 29,
-      "lv": 1,
-      "bonds": "preciShip:2 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
+      "lv": 2,
+      "bonds": "preciShip:2 soloShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 4,
+   "funds": 8,
+   "lp": 23,
+   "level": 2,
+   "bonds": [
+    "sargonShip:2/2",
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "swiftShip:1/0",
+    "steadShip:1/0",
+    "deputShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_06_a@3",
+    "chess_char_2_06_a@3",
+    "chess_char_2_06_a@3",
+    "chess_char_2_04_a@3",
+    "chess_item_2_04_e_a@2"
+   ],
+   "hand": [
+    "chess_item_1_02_e_a"
+   ],
+   "advice": "对空 2/3 个（本波 16 只飞行）→ 抓 莎草（槽位 1）",
+   "pick": "莎草(75)",
+   "after": {
+    "lp": 23,
+    "bonds": [
+     "sargonShip:2/2",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "swiftShip:1/0",
+     "steadShip:1/0",
+     "deputShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 siracusaShip:2"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_bldsk",
+      "lp": 28,
+      "lv": 2,
+      "bonds": "kjeragShip:1 steadShip:1 kazimierzShip:1 swiftShip:1 victoriaShip:1 deputShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "sargonShip:2 victoriaShip:1 lateranoShip:1 swiftShip:1 steadShip:1 deputShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 2,
+      "bonds": "preciShip:2 soloShip:1 arcaneShip:1 victoriaShip:1 siracusaShip:1 deputShip:1"
      }
     ]
    }
@@ -6022,6 +6094,22 @@
    "round": 3,
    "type": "SHOP_LEVEL",
    "text": "pipiwu#3933博士将调度中心等级提升为2级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 177,
+   "at": 1792842094517,
+   "round": 4,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为3级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 178,
+   "at": 1792842095882,
+   "round": 4,
+   "type": "GOLDEN_CHAR",
+   "text": "pipiwu#3933博士的角峰干员晋升为精锐",
    "playerId": "p_84d2b46a2b"
   }
  ],
