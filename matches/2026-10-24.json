@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-24T12:07:42.746Z",
+ "generatedAt": "2026-10-24T12:11:46.074Z",
  "day": "2026-10-24",
  "rounds": [
   {
@@ -942,20 +942,53 @@
   },
   {
    "round": 13,
-   "shop": [],
-   "advice": null,
-   "pick": null,
+   "funds": 0,
+   "lp": 15,
+   "level": 6,
+   "bonds": [
+    "sargonShip:5/203",
+    "preciShip:2/5",
+    "suntShip:3/0",
+    "swiftShip:1/116",
+    "kazimierzShip:0/8",
+    "kjeragShip:1/5",
+    "siracusaShip:1/0",
+    "deputShip:1/0",
+    "miraShip:1/0",
+    "emptyShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_13_a@3",
+    "chess_char_5_23_a@4",
+    "chess_char_1_10_a@2",
+    "chess_char_5_10_a@4",
+    "chess_char_3_20_a@3",
+    "chess_item_4_11_e_a@2"
+   ],
+   "hand": [
+    "chess_char_5_15_a",
+    "chess_char_2_08_a",
+    "chess_item_6_09_e_a",
+    "chess_char_4_10_a",
+    "chess_char_3_13_a",
+    "chess_char_5_10_a",
+    "chess_char_1_12_a",
+    "chess_char_1_01_a",
+    "chess_char_2_08_b",
+    "chess_char_3_13_b"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "蒂比(0)",
    "after": {
     "lp": 15,
     "bonds": [
-     "sargonShip:5/203",
-     "swiftShip:2/116",
+     "sargonShip:5/267",
+     "preciShip:2/29",
      "suntShip:3/0",
+     "swiftShip:1/116",
      "kazimierzShip:0/8",
-     "kjeragShip:0/5",
-     "preciShip:0/5",
+     "kjeragShip:1/5",
      "siracusaShip:1/0",
-     "skillfulShip:1/0",
      "deputShip:1/0",
      "miraShip:1/0",
      "emptyShip:1/0"
@@ -967,15 +1000,15 @@
       "band": "band_chiave",
       "lp": 16,
       "lv": 6,
-      "bonds": "siracusaShip:6 swiftShip:2 miraShip:2 suntShip:4 yanShip:1 kjeragShip:0 steadShip:1 raidShip:1 skillfulShip:1 arcaneShip:1"
+      "bonds": "siracusaShip:6 swiftShip:2 miraShip:2 suntShip:4 yanShip:1 kjeragShip:0 steadShip:1 raidShip:1 arcaneShip:1"
      },
      {
       "seat": 1,
       "name": "pipiwu#3933",
       "band": "band_bldsk",
       "lp": 22,
-      "lv": 5,
-      "bonds": "swiftShip:2 kjeragShip:4 miraShip:2 skillfulShip:2 steadShip:2 suntShip:3 soloShip:1 visiShip:2 investShip:4 deputShip:1 emptyShip:1 kazimierzShip:0 sargonShip:0 victoriaShip:0 arcaneShip:1"
+      "lv": 6,
+      "bonds": "kjeragShip:3 swiftShip:2 miraShip:2 skillfulShip:2 suntShip:2 soloShip:1 visiShip:2 investShip:4 deputShip:1 emptyShip:1 steadShip:1 kazimierzShip:0 sargonShip:0 victoriaShip:0 arcaneShip:1 lateranoShip:1"
      },
      {
       "seat": 2,
@@ -983,7 +1016,62 @@
       "band": "band_pepe",
       "lp": 15,
       "lv": 6,
-      "bonds": "sargonShip:5 swiftShip:2 suntShip:3 kazimierzShip:0 kjeragShip:0 preciShip:0 siracusaShip:1 skillfulShip:1 deputShip:1 miraShip:1 emptyShip:1"
+      "bonds": "sargonShip:5 preciShip:2 suntShip:3 swiftShip:1 kazimierzShip:0 kjeragShip:1 siracusaShip:1 deputShip:1 miraShip:1 emptyShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "黑#5507",
+      "band": "band_damaztic",
+      "lp": 22,
+      "lv": 6,
+      "bonds": "victoriaShip:6 skillfulShip:3 deputShip:2 suntShip:3 kjeragShip:0 steadShip:0 yanShip:1 preciShip:0 arcaneShip:0 visiShip:1 indomShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 14,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 15,
+    "bonds": [
+     "sargonShip:5/267",
+     "preciShip:2/29",
+     "suntShip:3/0",
+     "swiftShip:1/116",
+     "kazimierzShip:0/8",
+     "kjeragShip:1/5",
+     "siracusaShip:1/0",
+     "deputShip:1/0",
+     "miraShip:1/0",
+     "emptyShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "大漏特漏#1989",
+      "band": "band_chiave",
+      "lp": 16,
+      "lv": 6,
+      "bonds": "siracusaShip:6 swiftShip:2 miraShip:2 suntShip:4 yanShip:1 kjeragShip:0 steadShip:1 raidShip:1 arcaneShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "pipiwu#3933",
+      "band": "band_bldsk",
+      "lp": 22,
+      "lv": 6,
+      "bonds": "kjeragShip:3 swiftShip:2 miraShip:2 skillfulShip:2 suntShip:2 soloShip:1 visiShip:2 investShip:4 deputShip:1 emptyShip:1 steadShip:1 kazimierzShip:0 sargonShip:0 victoriaShip:0 arcaneShip:1 lateranoShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_pepe",
+      "lp": 15,
+      "lv": 6,
+      "bonds": "sargonShip:5 preciShip:2 suntShip:3 swiftShip:1 kazimierzShip:0 kjeragShip:1 siracusaShip:1 deputShip:1 miraShip:1 emptyShip:1"
      },
      {
       "seat": 3,
@@ -7322,6 +7410,134 @@
    "id": 243,
    "at": 1792843658389,
    "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的风笛干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 244,
+   "at": 1792843666416,
+   "round": 13,
+   "type": "SHOP_LEVEL",
+   "text": "pipiwu#3933博士将调度中心等级提升为6级",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 245,
+   "at": 1792843757139,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的至简干员晋升为精锐",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 246,
+   "at": 1792843876117,
+   "round": 13,
+   "type": "CUSTOM",
+   "text": "联防阶段：pipiwu#3933 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 247,
+   "at": 1792843902308,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的伺夜干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 248,
+   "at": 1792843902308,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的予愿安洁莉娜干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 249,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的阿罗玛干员造成的伤害量达到500000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 250,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的缄默德克萨斯干员造成的伤害量达到200000",
+   "playerId": "p_fefd3905ce"
+  },
+  {
+   "id": 251,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的初雪干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 252,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的引星棘刺干员造成的伤害量达到500000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 253,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的灵知干员造成的伤害量达到200000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 254,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "pipiwu#3933博士的凛御银灰干员造成的伤害量达到500000",
+   "playerId": "p_84d2b46a2b"
+  },
+  {
+   "id": 255,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的卡涅利安干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 256,
+   "at": 1792843902309,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的菲莱干员造成的伤害量达到200000",
+   "playerId": "p_0c4a6121fd"
+  },
+  {
+   "id": 257,
+   "at": 1792843902310,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的烛煌干员造成的伤害量达到1000000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 258,
+   "at": 1792843902310,
+   "round": 13,
+   "type": "CHAR_DAMAGE",
+   "text": "黑#5507博士的断崖干员造成的伤害量达到200000",
+   "playerId": "p_04c4fbf1ae"
+  },
+  {
+   "id": 259,
+   "at": 1792843902310,
+   "round": 13,
    "type": "CHAR_DAMAGE",
    "text": "黑#5507博士的风笛干员造成的伤害量达到200000",
    "playerId": "p_04c4fbf1ae"
