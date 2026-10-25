@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T13:06:25.494Z",
+ "generatedAt": "2026-10-25T13:09:29.965Z",
  "day": "2026-10-25",
  "rounds": [
   {
@@ -706,57 +706,53 @@
   },
   {
    "round": 10,
-   "funds": 13,
+   "funds": 0,
    "lp": 19,
-   "level": 4,
+   "level": 5,
    "bonds": [
     "victoriaShip:6/81",
     "raidShip:2/77",
     "skillfulShip:2/6",
     "kjeragShip:1/2",
     "preciShip:0/2",
-    "arcaneShip:1/2",
+    "arcaneShip:0/2",
     "steadShip:0/2",
     "lateranoShip:1/0",
     "kazimierzShip:1/0",
-    "deputShip:1/0",
     "visiShip:1/0"
    ],
    "shop": [
-    "chess_char_3_04_a@3",
-    "chess_char_2_17_a@3",
-    "chess_char_3_13_a@1",
-    "chess_char_3_01_a@3",
-    "chess_char_4_25_a@3",
-    "chess_item_1_03_e_a@1"
+    "chess_char_2_07_a@3",
+    "chess_char_4_07_a@3",
+    "chess_char_1_08_a@2",
+    "chess_char_2_07_a@3",
+    "chess_item_3_02_e_a@2"
    ],
    "hand": [
-    "chess_item_2_03_e_a",
     "chess_char_1_06_a",
-    "chess_char_1_10_b",
+    "token_10041_cathy_catsld",
     "chess_char_3_13_a",
     "chess_char_3_12_a",
-    "chess_char_1_18_b",
-    "chess_char_1_02_a",
-    "chess_char_4_11_a",
+    "chess_char_3_13_a",
+    "chess_char_1_06_a",
+    "chess_char_2_10_a",
     "chess_char_2_10_a",
     "chess_char_1_17_a"
    ],
-   "advice": "升调度中心 Lv5（12 金，余 1）",
-   "pick": "盟约之币(22)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "幽灵鲨(0)",
    "after": {
     "lp": 19,
     "bonds": [
-     "victoriaShip:6/81",
-     "raidShip:2/77",
+     "victoriaShip:6/109",
+     "raidShip:2/94",
      "skillfulShip:2/6",
      "kjeragShip:1/2",
      "preciShip:0/2",
-     "arcaneShip:1/2",
+     "arcaneShip:0/2",
      "steadShip:0/2",
      "lateranoShip:1/0",
      "kazimierzShip:1/0",
-     "deputShip:1/0",
      "visiShip:1/0"
     ],
     "table": [
@@ -765,24 +761,24 @@
       "name": "LiQt#7731",
       "band": "band_paganini",
       "lp": 24,
-      "lv": 5,
-      "bonds": "lateranoShip:6 preciShip:3 swiftShip:2 suntShip:4 arcaneShip:1 sargonShip:1 egirShip:1 steadShip:1 miraShip:1"
+      "lv": 6,
+      "bonds": "lateranoShip:6 preciShip:2 suntShip:4 arcaneShip:1 egirShip:1 swiftShip:1 steadShip:1 miraShip:1"
      },
      {
       "seat": 1,
       "name": "异类臆想病患#1697",
       "band": "band_clementia",
       "lp": 8,
-      "lv": 4,
-      "bonds": "egirShip:5 suntShip:3 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1 visiShip:1"
+      "lv": 5,
+      "bonds": "egirShip:6 suntShip:3 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_damaztic",
       "lp": 19,
-      "lv": 4,
-      "bonds": "victoriaShip:6 raidShip:2 skillfulShip:2 kjeragShip:1 preciShip:0 arcaneShip:1 steadShip:0 lateranoShip:1 kazimierzShip:1 deputShip:1 visiShip:1"
+      "lv": 5,
+      "bonds": "victoriaShip:6 raidShip:2 skillfulShip:2 kjeragShip:1 preciShip:0 arcaneShip:0 steadShip:0 lateranoShip:1 kazimierzShip:1 visiShip:1"
      },
      {
       "seat": 3,
@@ -790,7 +786,62 @@
       "band": "band_pepe",
       "lp": 2,
       "lv": 5,
-      "bonds": "sargonShip:6 suntShip:2 soloShip:0 swiftShip:1 steadShip:1 deputShip:1 miraShip:1 emptyShip:1"
+      "bonds": "sargonShip:6 suntShip:2 soloShip:0 swiftShip:1 steadShip:1 deputShip:1 miraShip:1 indomShip:1 emptyShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 11,
+   "shop": [],
+   "advice": null,
+   "pick": null,
+   "after": {
+    "lp": 19,
+    "bonds": [
+     "victoriaShip:6/115",
+     "raidShip:2/97",
+     "skillfulShip:2/9",
+     "kjeragShip:1/2",
+     "preciShip:0/2",
+     "arcaneShip:0/2",
+     "steadShip:0/2",
+     "lateranoShip:1/0",
+     "kazimierzShip:1/0",
+     "visiShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "LiQt#7731",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 6,
+      "bonds": "lateranoShip:6 preciShip:2 suntShip:4 arcaneShip:1 egirShip:1 swiftShip:1 steadShip:1 miraShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "异类臆想病患#1697",
+      "band": "band_clementia",
+      "lp": 8,
+      "lv": 5,
+      "bonds": "egirShip:6 suntShip:3 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_damaztic",
+      "lp": 19,
+      "lv": 5,
+      "bonds": "victoriaShip:6 raidShip:2 skillfulShip:2 kjeragShip:1 preciShip:0 arcaneShip:0 steadShip:0 lateranoShip:1 kazimierzShip:1 visiShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 2,
+      "lv": 5,
+      "bonds": "sargonShip:6 suntShip:2 soloShip:0 swiftShip:1 steadShip:1 deputShip:1 miraShip:1 indomShip:1 emptyShip:1"
      }
     ]
    }
@@ -6932,6 +6983,30 @@
    "type": "SHOP_LEVEL",
    "text": "LiQt#7731博士将调度中心等级提升为6级",
    "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 969,
+   "at": 1792933588187,
+   "round": 10,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的百炼嘉维尔干员晋升为精锐",
+   "playerId": "p_0316675e94"
+  },
+  {
+   "id": 970,
+   "at": 1792933588721,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "异类臆想病患#1697博士将调度中心等级提升为5级",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 971,
+   "at": 1792933592325,
+   "round": 10,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为5级",
+   "playerId": "p_1f97f7399d"
   }
  ],
  "results": [
