@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T12:48:45.462Z",
+ "generatedAt": "2026-10-25T12:49:50.429Z",
  "day": "2026-10-25",
  "rounds": [
   {
@@ -208,15 +208,16 @@
    "lp": 29,
    "level": 2,
    "bonds": [
+    "raidShip:2/0",
     "kjeragShip:0/2",
     "preciShip:1/2",
     "arcaneShip:1/2",
     "steadShip:1/2",
     "victoriaShip:1/0",
     "lateranoShip:1/0",
+    "kazimierzShip:1/0",
     "swiftShip:1/0",
     "deputShip:1/0",
-    "raidShip:1/0",
     "indomShip:1/0",
     "suntShip:1/0"
    ],
@@ -224,24 +225,25 @@
    "hand": [
     "chess_char_1_02_a",
     "chess_item_1_01_e_a",
-    "chess_item_1_04_e_a",
-    "chess_char_3_12_a",
-    "chess_char_1_10_a"
+    "chess_item_1_04_e_a"
    ],
    "advice": "没钱了，等下一回合进账",
    "pick": null,
    "after": {
     "lp": 29,
     "bonds": [
+     "raidShip:2/8",
+     "kjeragShip:0/2",
      "preciShip:1/2",
      "arcaneShip:1/2",
+     "steadShip:1/2",
      "victoriaShip:1/0",
      "lateranoShip:1/0",
+     "kazimierzShip:1/0",
      "swiftShip:1/0",
-     "steadShip:1/0",
      "deputShip:1/0",
-     "raidShip:1/0",
-     "indomShip:1/0"
+     "indomShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
@@ -250,23 +252,23 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 2,
-      "bonds": "preciShip:2 arcaneShip:1 lateranoShip:1 egirShip:1 raidShip:1"
+      "bonds": "lateranoShip:3 preciShip:1 arcaneShip:0 egirShip:1 swiftShip:1 miraShip:1 suntShip:1"
      },
      {
       "seat": 1,
       "name": "异类臆想病患#1697",
       "band": "band_clementia",
       "lp": 26,
-      "lv": 2,
-      "bonds": "lateranoShip:1 preciShip:1 swiftShip:1 indomShip:1"
+      "lv": 3,
+      "bonds": "lateranoShip:1 egirShip:1 preciShip:1 swiftShip:1 indomShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_damaztic",
       "lp": 29,
-      "lv": 1,
-      "bonds": "preciShip:1 arcaneShip:1 victoriaShip:1 lateranoShip:1 swiftShip:1 steadShip:1 deputShip:1 raidShip:1 indomShip:1"
+      "lv": 2,
+      "bonds": "raidShip:2 kjeragShip:0 preciShip:1 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:1 kazimierzShip:1 swiftShip:1 deputShip:1 indomShip:1 suntShip:1"
      },
      {
       "seat": 3,
@@ -274,7 +276,93 @@
       "band": "band_pepe",
       "lp": 23,
       "lv": 2,
-      "bonds": "soloShip:1 sargonShip:1 lateranoShip:1 siracusaShip:1 swiftShip:1 steadShip:1"
+      "bonds": "soloShip:1 sargonShip:2 lateranoShip:1 siracusaShip:1 swiftShip:1 steadShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 5,
+   "funds": 10,
+   "lp": 29,
+   "level": 2,
+   "bonds": [
+    "raidShip:2/8",
+    "kjeragShip:0/2",
+    "preciShip:1/2",
+    "arcaneShip:1/2",
+    "steadShip:1/2",
+    "victoriaShip:1/0",
+    "lateranoShip:1/0",
+    "kazimierzShip:1/0",
+    "swiftShip:1/0",
+    "deputShip:1/0",
+    "indomShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_08_a@3",
+    "chess_char_2_12_a@3",
+    "chess_char_2_07_a@3",
+    "chess_char_2_08_a@3",
+    "chess_item_1_03_e_a@1"
+   ],
+   "hand": [
+    "chess_char_1_02_a",
+    "chess_item_1_01_e_a",
+    "chess_item_1_04_e_a",
+    "chess_item_6_09_e_a"
+   ],
+   "advice": "升调度中心 Lv3（8 金，余 2）",
+   "pick": "盟约之币(18)",
+   "after": {
+    "lp": 29,
+    "bonds": [
+     "raidShip:2/8",
+     "kjeragShip:0/2",
+     "preciShip:1/2",
+     "arcaneShip:1/2",
+     "steadShip:1/2",
+     "victoriaShip:1/0",
+     "lateranoShip:1/0",
+     "kazimierzShip:1/0",
+     "swiftShip:1/0",
+     "deputShip:1/0",
+     "indomShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "LiQt#7731",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 2,
+      "bonds": "lateranoShip:3 preciShip:1 arcaneShip:0 egirShip:1 swiftShip:1 miraShip:1 suntShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "异类臆想病患#1697",
+      "band": "band_clementia",
+      "lp": 26,
+      "lv": 3,
+      "bonds": "lateranoShip:1 egirShip:1 preciShip:1 swiftShip:1 indomShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 2,
+      "bonds": "raidShip:2 kjeragShip:0 preciShip:1 arcaneShip:1 steadShip:1 victoriaShip:1 lateranoShip:1 kazimierzShip:1 swiftShip:1 deputShip:1 indomShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 23,
+      "lv": 2,
+      "bonds": "soloShip:1 sargonShip:2 lateranoShip:1 siracusaShip:1 swiftShip:1 steadShip:1"
      }
     ]
    }
