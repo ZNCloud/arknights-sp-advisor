@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T13:13:37.992Z",
+ "generatedAt": "2026-10-25T13:17:42.823Z",
  "day": "2026-10-25",
  "rounds": [
   {
@@ -884,50 +884,53 @@
   },
   {
    "round": 12,
-   "funds": 16,
+   "funds": 1,
    "lp": 19,
    "level": 6,
    "bonds": [
     "victoriaShip:7/145",
-    "raidShip:2/113",
     "skillfulShip:2/12",
+    "visiShip:3/0",
+    "raidShip:1/113",
     "yanShip:0/6",
-    "miraShip:0/3",
+    "miraShip:1/3",
     "kjeragShip:1/2",
     "preciShip:0/2",
     "arcaneShip:1/2",
     "steadShip:0/2",
     "lateranoShip:1/0",
     "kazimierzShip:1/0",
-    "visiShip:1/0"
+    "indomShip:1/0",
+    "suntShip:1/0"
    ],
    "shop": [
-    "chess_char_4_25_a@3",
-    "chess_char_4_04_a@3",
-    "chess_char_6_02_a@4",
-    "chess_char_6_07_a@4",
-    "chess_char_4_07_a@3",
-    "chess_item_2_01_e_a@1"
+    "chess_char_2_07_a@3",
+    "chess_char_4_06_a@3",
+    "chess_char_2_18_a@3",
+    "chess_char_6_11_a@4",
+    "chess_char_6_03_a@4"
    ],
    "hand": [
+    "chess_char_3_08_a",
     "chess_char_1_06_a",
-    "chess_item_2_03_e_a",
+    "chess_char_4_04_a",
     "chess_char_3_13_a",
     "chess_char_3_12_a",
     "chess_char_3_13_a",
     "chess_char_1_06_a",
     "chess_char_2_10_a",
-    "chess_char_4_11_a",
-    "chess_char_1_17_a"
+    "chess_item_3_08_e_a",
+    "chess_char_2_10_a"
    ],
-   "advice": "可以抓 维娜·维多利亚（槽位 4）",
-   "pick": "维娜·维多利亚(27)",
+   "advice": "钱会被清零（剩 1 金）→ 买装备/升本/刷，别留",
+   "pick": "幽灵鲨(0)",
    "after": {
-    "lp": 19,
+    "lp": 9,
     "bonds": [
-     "victoriaShip:7/145",
-     "raidShip:2/113",
-     "skillfulShip:2/12",
+     "victoriaShip:7/174",
+     "skillfulShip:2/22",
+     "visiShip:3/0",
+     "raidShip:1/113",
      "yanShip:0/6",
      "miraShip:1/3",
      "kjeragShip:1/2",
@@ -936,7 +939,8 @@
      "steadShip:0/2",
      "lateranoShip:1/0",
      "kazimierzShip:1/0",
-     "visiShip:1/0"
+     "indomShip:1/0",
+     "suntShip:1/0"
     ],
     "table": [
      {
@@ -945,31 +949,128 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 6,
-      "bonds": "lateranoShip:6 preciShip:2 suntShip:4 arcaneShip:1 egirShip:1 swiftShip:1 steadShip:1 miraShip:1"
+      "bonds": "lateranoShip:6 preciShip:3 suntShip:4 arcaneShip:1 victoriaShip:1 steadShip:1 miraShip:1"
      },
      {
       "seat": 1,
       "name": "异类臆想病患#1697",
       "band": "band_clementia",
-      "lp": 7,
+      "lp": 1,
       "lv": 5,
-      "bonds": "egirShip:6 soloShip:1 suntShip:3 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1"
+      "bonds": "egirShip:6 soloShip:1 suntShip:2 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1 indomShip:1"
      },
      {
       "seat": 2,
       "name": "大兜特兜#9944",
       "band": "band_damaztic",
-      "lp": 19,
+      "lp": 9,
       "lv": 6,
-      "bonds": "victoriaShip:7 raidShip:2 skillfulShip:2 yanShip:0 miraShip:1 kjeragShip:1 preciShip:0 arcaneShip:1 steadShip:0 lateranoShip:1 kazimierzShip:1 visiShip:1"
+      "bonds": "victoriaShip:7 skillfulShip:2 visiShip:3 raidShip:1 yanShip:0 miraShip:1 kjeragShip:1 preciShip:0 arcaneShip:1 steadShip:0 lateranoShip:1 kazimierzShip:1 indomShip:1 suntShip:1"
      },
      {
       "seat": 3,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
-      "lp": 2,
+      "lp": 0,
       "lv": 6,
-      "bonds": "sargonShip:6 skillfulShip:2 suntShip:3 soloShip:0 lateranoShip:1 steadShip:1 miraShip:1 indomShip:1 emptyShip:1"
+      "bonds": ""
+     }
+    ]
+   }
+  },
+  {
+   "round": 13,
+   "funds": 13,
+   "lp": 9,
+   "level": 6,
+   "bonds": [
+    "victoriaShip:7/174",
+    "skillfulShip:2/22",
+    "visiShip:3/0",
+    "raidShip:1/113",
+    "yanShip:0/6",
+    "miraShip:1/3",
+    "kjeragShip:1/2",
+    "preciShip:0/2",
+    "arcaneShip:1/2",
+    "steadShip:0/2",
+    "lateranoShip:1/0",
+    "kazimierzShip:1/0",
+    "indomShip:1/0",
+    "suntShip:1/0"
+   ],
+   "shop": [
+    "chess_char_2_07_a@3",
+    "chess_char_4_06_a@3",
+    "chess_char_2_18_a@3",
+    "chess_char_6_11_a@4",
+    "chess_char_6_03_a@4",
+    "chess_item_3_06_e_a@2"
+   ],
+   "hand": [
+    "chess_char_3_08_a",
+    "chess_char_1_06_a",
+    "chess_char_4_04_a",
+    "chess_char_3_13_a",
+    "chess_char_3_12_a",
+    "chess_char_3_13_a",
+    "chess_char_1_06_a",
+    "chess_char_2_10_a",
+    "chess_item_3_08_e_a",
+    "chess_char_2_10_a"
+   ],
+   "advice": "先刷找 烛煌（核心没到手，装备不急）",
+   "pick": "歌利亚头盔(27)",
+   "after": {
+    "lp": 9,
+    "bonds": [
+     "victoriaShip:7/174",
+     "skillfulShip:2/22",
+     "visiShip:3/0",
+     "raidShip:1/113",
+     "yanShip:0/6",
+     "miraShip:1/3",
+     "kjeragShip:1/2",
+     "preciShip:0/2",
+     "arcaneShip:1/2",
+     "steadShip:0/2",
+     "lateranoShip:1/0",
+     "kazimierzShip:1/0",
+     "indomShip:1/0",
+     "suntShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "LiQt#7731",
+      "band": "band_paganini",
+      "lp": 24,
+      "lv": 6,
+      "bonds": "lateranoShip:6 preciShip:3 suntShip:4 arcaneShip:1 victoriaShip:1 steadShip:1 miraShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "异类臆想病患#1697",
+      "band": "band_clementia",
+      "lp": 1,
+      "lv": 5,
+      "bonds": "egirShip:6 soloShip:1 suntShip:2 yanShip:1 steadShip:1 miraShip:1 raidShip:1 arcaneShip:1 indomShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_damaztic",
+      "lp": 9,
+      "lv": 6,
+      "bonds": "victoriaShip:7 skillfulShip:2 visiShip:3 raidShip:1 yanShip:0 miraShip:1 kjeragShip:1 preciShip:0 arcaneShip:1 steadShip:0 lateranoShip:1 kazimierzShip:1 indomShip:1 suntShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 0,
+      "lv": 6,
+      "bonds": ""
      }
     ]
    }
@@ -7238,6 +7339,150 @@
    "round": 12,
    "type": "GOLDEN_CHAR",
    "text": "LiQt#7731博士的空弦干员晋升为精锐",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 986,
+   "at": 1792934029310,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "异类臆想病患#1697博士的斯卡蒂干员晋升为精锐",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 987,
+   "at": 1792934072999,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "LiQt#7731博士的莫斯提马干员晋升为精锐",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 988,
+   "at": 1792934077846,
+   "round": 12,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的凯瑟琳干员晋升为精锐",
+   "playerId": "p_1f97f7399d"
+  },
+  {
+   "id": 990,
+   "at": 1792934182511,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "联防阶段：LiQt#7731 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 991,
+   "at": 1792934223228,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "LiQt#7731博士的新约能天使干员造成的伤害量达到1000000",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 992,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "LiQt#7731博士的蕾缪安干员造成的伤害量达到500000",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 993,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "LiQt#7731博士的莫斯提马干员造成的伤害量达到200000",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 994,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "异类臆想病患#1697博士的水月干员造成的伤害量达到500000",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 995,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "异类臆想病患#1697博士的乌尔比安干员造成的伤害量达到500000",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 996,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "异类臆想病患#1697博士的归溟幽灵鲨干员造成的伤害量达到200000",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 997,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大兜特兜#9944博士的溯光星源干员造成的伤害量达到200000",
+   "playerId": "p_1f97f7399d"
+  },
+  {
+   "id": 998,
+   "at": 1792934223229,
+   "round": 12,
+   "type": "CHAR_DAMAGE",
+   "text": "大漏特漏#1989博士的佩佩干员造成的伤害量达到1000000",
+   "playerId": "p_0316675e94"
+  },
+  {
+   "id": 999,
+   "at": 1792934223230,
+   "round": 12,
+   "type": "CUSTOM",
+   "text": "大漏特漏#1989博士的目标生命值已耗尽",
+   "playerId": null
+  },
+  {
+   "id": 1000,
+   "at": 1792934226231,
+   "round": 12,
+   "type": "CHAR_GIFT",
+   "text": "LiQt#7731博士给你赠送了异客",
+   "playerId": null
+  },
+  {
+   "id": 1001,
+   "at": 1792934231257,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "异类臆想病患#1697博士的录武官干员晋升为精锐",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 1002,
+   "at": 1792934232856,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "LiQt#7731博士的至简干员晋升为精锐",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 1003,
+   "at": 1792934257179,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "异类臆想病患#1697博士的至简干员晋升为精锐",
+   "playerId": "p_d2a9bdde8f"
+  },
+  {
+   "id": 1004,
+   "at": 1792934259230,
+   "round": 13,
+   "type": "GOLDEN_CHAR",
+   "text": "LiQt#7731博士的新约能天使干员晋升为精锐",
    "playerId": "p_95ee8bffde"
   }
  ],
