@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-25T12:55:00.076Z",
+ "generatedAt": "2026-10-25T12:59:05.406Z",
  "day": "2026-10-25",
  "rounds": [
   {
@@ -451,13 +451,14 @@
   },
   {
    "round": 7,
-   "funds": 10,
+   "funds": 0,
    "lp": 29,
    "level": 3,
    "bonds": [
-    "raidShip:2/24",
+    "raidShip:3/24",
     "victoriaShip:3/16",
     "steadShip:2/2",
+    "suntShip:2/0",
     "kjeragShip:1/2",
     "preciShip:0/2",
     "arcaneShip:0/2",
@@ -465,30 +466,30 @@
     "kazimierzShip:1/0",
     "skillfulShip:1/0",
     "deputShip:1/0",
-    "suntShip:1/0"
+    "visiShip:1/0"
    ],
    "shop": [
     "chess_char_2_07_a@3",
-    "chess_char_3_18_a@3",
-    "chess_char_3_12_a@3",
-    "chess_char_2_08_a@3",
-    "chess_item_3_02_e_a@2"
+    "chess_char_2_18_a@3",
+    "chess_char_3_18_a@3"
    ],
    "hand": [
+    "chess_char_3_13_a",
+    "chess_char_3_12_a",
     "chess_char_1_20_a",
     "chess_char_1_01_a",
     "chess_item_1_04_e_a",
-    "chess_item_1_03_e_a",
     "chess_char_1_17_a"
    ],
-   "advice": "先刷找 烛煌/号角（核心没到手，装备不急）",
-   "pick": "精准狙击镜(27)",
+   "advice": "没钱了，等下一回合进账",
+   "pick": "幽灵鲨(0)",
    "after": {
     "lp": 29,
     "bonds": [
-     "raidShip:2/24",
-     "victoriaShip:3/16",
+     "raidShip:3/37",
+     "victoriaShip:3/29",
      "steadShip:2/2",
+     "suntShip:2/0",
      "kjeragShip:1/2",
      "preciShip:0/2",
      "arcaneShip:0/2",
@@ -496,7 +497,7 @@
      "kazimierzShip:1/0",
      "skillfulShip:1/0",
      "deputShip:1/0",
-     "suntShip:1/0"
+     "visiShip:1/0"
     ],
     "table": [
      {
@@ -505,15 +506,15 @@
       "band": "band_paganini",
       "lp": 24,
       "lv": 3,
-      "bonds": "lateranoShip:3 preciShip:1 arcaneShip:0 egirShip:1 swiftShip:1 miraShip:1 suntShip:1"
+      "bonds": "lateranoShip:6 preciShip:2 suntShip:3 arcaneShip:0 egirShip:1 swiftShip:1 skillfulShip:1 steadShip:1 miraShip:1"
      },
      {
       "seat": 1,
       "name": "异类臆想病患#1697",
       "band": "band_clementia",
-      "lp": 23,
+      "lp": 15,
       "lv": 3,
-      "bonds": "egirShip:2 steadShip:1 raidShip:1 lateranoShip:1 preciShip:1 swiftShip:1 indomShip:1"
+      "bonds": "egirShip:4 steadShip:1 raidShip:1 lateranoShip:1 preciShip:1 swiftShip:1 arcaneShip:1"
      },
      {
       "seat": 2,
@@ -521,15 +522,103 @@
       "band": "band_damaztic",
       "lp": 29,
       "lv": 3,
-      "bonds": "raidShip:2 victoriaShip:3 steadShip:2 kjeragShip:1 preciShip:0 arcaneShip:0 lateranoShip:1 kazimierzShip:1 skillfulShip:1 deputShip:1 suntShip:1"
+      "bonds": "raidShip:3 victoriaShip:3 steadShip:2 suntShip:2 kjeragShip:1 preciShip:0 arcaneShip:0 lateranoShip:1 kazimierzShip:1 skillfulShip:1 deputShip:1 visiShip:1"
      },
      {
       "seat": 3,
       "name": "大漏特漏#1989",
       "band": "band_pepe",
-      "lp": 22,
+      "lp": 12,
+      "lv": 4,
+      "bonds": "suntShip:2 sargonShip:2 soloShip:0 lateranoShip:1 swiftShip:1 skillfulShip:1 steadShip:1 miraShip:1 emptyShip:1"
+     }
+    ]
+   }
+  },
+  {
+   "round": 8,
+   "funds": 0,
+   "lp": 29,
+   "level": 4,
+   "bonds": [
+    "raidShip:3/37",
+    "victoriaShip:4/32",
+    "suntShip:2/0",
+    "kjeragShip:1/2",
+    "preciShip:0/2",
+    "arcaneShip:0/2",
+    "steadShip:1/2",
+    "lateranoShip:1/0",
+    "kazimierzShip:1/0",
+    "skillfulShip:1/0",
+    "deputShip:1/0",
+    "visiShip:1/0"
+   ],
+   "shop": [
+    "chess_char_1_20_a@2",
+    "chess_char_4_04_a@3",
+    "chess_char_2_08_a@3",
+    "chess_char_4_01_a@3"
+   ],
+   "hand": [
+    "chess_char_1_06_a",
+    "chess_char_3_13_a",
+    "chess_char_3_12_a",
+    "chess_char_1_02_a",
+    "chess_item_1_04_e_a",
+    "chess_item_3_09_e_a",
+    "chess_char_1_17_a"
+   ],
+   "advice": "没钱了，等下一回合进账",
+   "pick": "雷蛇(0)",
+   "after": {
+    "lp": 29,
+    "bonds": [
+     "raidShip:3/37",
+     "victoriaShip:3/32",
+     "steadShip:2/2",
+     "suntShip:2/0",
+     "kjeragShip:1/2",
+     "preciShip:0/2",
+     "arcaneShip:0/2",
+     "lateranoShip:1/0",
+     "kazimierzShip:1/0",
+     "skillfulShip:1/0",
+     "deputShip:1/0",
+     "visiShip:1/0"
+    ],
+    "table": [
+     {
+      "seat": 0,
+      "name": "LiQt#7731",
+      "band": "band_paganini",
+      "lp": 24,
       "lv": 3,
-      "bonds": "soloShip:1 sargonShip:2 lateranoShip:2 siracusaShip:1 swiftShip:1 skillfulShip:1 steadShip:1 emptyShip:1 suntShip:1"
+      "bonds": "lateranoShip:6 preciShip:2 suntShip:3 arcaneShip:0 egirShip:1 swiftShip:1 skillfulShip:1 steadShip:1 miraShip:1"
+     },
+     {
+      "seat": 1,
+      "name": "异类臆想病患#1697",
+      "band": "band_clementia",
+      "lp": 15,
+      "lv": 3,
+      "bonds": "egirShip:4 steadShip:1 raidShip:1 lateranoShip:1 preciShip:1 swiftShip:1 arcaneShip:1"
+     },
+     {
+      "seat": 2,
+      "name": "大兜特兜#9944",
+      "band": "band_damaztic",
+      "lp": 29,
+      "lv": 3,
+      "bonds": "raidShip:3 victoriaShip:3 steadShip:2 suntShip:2 kjeragShip:1 preciShip:0 arcaneShip:0 lateranoShip:1 kazimierzShip:1 skillfulShip:1 deputShip:1 visiShip:1"
+     },
+     {
+      "seat": 3,
+      "name": "大漏特漏#1989",
+      "band": "band_pepe",
+      "lp": 12,
+      "lv": 4,
+      "bonds": "suntShip:2 sargonShip:2 soloShip:0 lateranoShip:1 swiftShip:1 skillfulShip:1 steadShip:1 miraShip:1 emptyShip:1"
      }
     ]
    }
@@ -6511,6 +6600,54 @@
    "type": "GOLDEN_CHAR",
    "text": "LiQt#7731博士的送葬人干员晋升为精锐",
    "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 943,
+   "at": 1792932917480,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "大漏特漏#1989博士的艾丝黛尔干员晋升为精锐",
+   "playerId": "p_0316675e94"
+  },
+  {
+   "id": 944,
+   "at": 1792932939164,
+   "round": 7,
+   "type": "GOLDEN_CHAR",
+   "text": "大兜特兜#9944博士的古米干员晋升为精锐",
+   "playerId": "p_1f97f7399d"
+  },
+  {
+   "id": 946,
+   "at": 1792933036794,
+   "round": 7,
+   "type": "CUSTOM",
+   "text": "联防阶段：大兜特兜#9944、LiQt#7731 迎战突破防线的敌人",
+   "playerId": null
+  },
+  {
+   "id": 947,
+   "at": 1792933094401,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "LiQt#7731博士将调度中心等级提升为4级",
+   "playerId": "p_95ee8bffde"
+  },
+  {
+   "id": 948,
+   "at": 1792933098688,
+   "round": 8,
+   "type": "SHOP_LEVEL",
+   "text": "大兜特兜#9944博士将调度中心等级提升为4级",
+   "playerId": "p_1f97f7399d"
+  },
+  {
+   "id": 949,
+   "at": 1792933112536,
+   "round": 8,
+   "type": "GOLDEN_CHAR",
+   "text": "异类臆想病患#1697博士的跃跃干员晋升为精锐",
+   "playerId": "p_d2a9bdde8f"
   }
  ],
  "results": [
