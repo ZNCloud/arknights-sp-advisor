@@ -42,6 +42,6 @@ export async function loadAdvisor(page = PLUGIN_PAGE) {
       nextThreshold, nameOf, bondsOf, baseOf, tierOf, isGolden, mergeOf, missingFor, bondName, thresholdsOf,
       layersOf, damageMultiplier, survivalMultiplier, bbOf, coreBondsFor, modeOf, lastRoundOf, upgradePrice, shopSlotsOf,
       placeOf, isKeyOp, keyOpsOf, canHitFlyOf, airOf, tierEffectsOf, tierLineOf, addonStatusOf, addonAdvice, investMult, gainOf, stackPlanOf, stackChannelOf, placementPlanOf, armorCheckOf, reachOdds, terminalOf, carryCapOf, effectiveLayersOf, policyOf, bandUsageOf, scoreBounty,
-      axisCtxOf, axisCardOf, axisItemOf };`)(stub);
+      axisCtxOf, axisCardOf, axisItemOf, refreshEV, freezeEV };`)(stub);
   return { DATA, api, core };
 }

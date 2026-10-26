@@ -28,8 +28,12 @@ async function check(id, view) {
   const run = poolEval(pool, toJSON(st), `live:${id}`);
   const evalMany = (lists, opts) => { if (cancelled.has(id)) throw Error('cancelled'); return run(lists, opts); };
   const res = await checkLineup(st, { playerId: 'p0', evalMany, recheckMetric: 'own' });
+  // current/best/names (sprlui_1825): the board diagram in the desktop box's additional window needs the actual
+  // layouts (uid@row,col,dir), not just the step descriptions — checkLineup already computes them, this just stops
+  // throwing them away before the postMessage back to the overlay thread.
   return { kind: res.kind, round: res.round, recommend: res.recommend, gain: res.gain, recheck: res.recheck, evals: res.evals,
-    steps: res.steps.map(s => ({ what: s.what, kind: s.kind })), ms: res.ms, buildMs, notes };
+    steps: res.steps.map(s => ({ what: s.what, kind: s.kind })), ms: res.ms, buildMs, notes,
+    current: res.current, best: res.best, names: res.names };
 }
 
 parentPort.on('message', async (msg) => {

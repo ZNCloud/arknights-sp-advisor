@@ -24,6 +24,8 @@ import { loadAdvisor, PLUGIN_PAGE } from './core-loader.mjs';
 import { matesOf, resultOf } from './advisor/team.mjs';
 import { redactRow } from './advisor/redact.mjs';
 import { routeFor } from './route-pick.mjs';
+import { injectSrc } from './real-dom.mjs';
+import { boardDiagramOf } from './advisor/board-diagram.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STATE = path.join(here, 'state.json');
@@ -50,6 +52,10 @@ const lineupOn = !g06 || args.includes('--lineup');
 // --no-axis：关掉盟约轴心权重（sprlaxis_1532，默认开），退回规则 A 那版；这时顾问输出与加轴心权重之前逐字节相同
 // （test/overlay-axis.test.mjs 锁住）。--g06 也一并关掉它。
 const noAxis = g06 || args.includes('--no-axis');
+// --no-badges：关掉「权重标在商店卡片/刷新/freeze 按钮上」的覆盖层（sprlui_1825，默认开）。关掉时 box 里不带
+// badge 字段，real-dom.mjs 的 applyOverlay 收到 null plan 会把已经画上去的标注清空、不再画新的——
+// 真实客户端画面与加这个功能之前逐字节相同（test/real-dom.test.mjs 锁住）。
+const noBadges = g06 || args.includes('--no-badges');
 
 // ── 热更新：顾问逻辑/数据的文件一变，下一 tick 就用新的（不用重启游戏，也不用重启这个进程）──
 const WATCHED = [
@@ -387,6 +393,16 @@ export function boxOf(snap, route) {
   // 盟约轴心权重（sprlaxis_1532）：主轴配哪几条副羁绊、多强——商店里沾到它们的牌和道具已经加了分
   if (view.axis) {
     out.axis = { main: bond.n, partners: view.axis.partners.map((p) => ({ name: p.name, s: p.s, count: p.count, open: p.open })) };
+  }
+  // 商店卡片/刷新/freeze 按钮上的权重标注（sprlui_1825，默认开，--no-badges/--g06 关）：real-dom.mjs 用它去真实
+  // 客户端的 DOM 上画角标——这里给「每一格」（不是前三/前四），画哪一格全看 view.rows 本身的 index，不另开一套
+  if (!noBadges) {
+    out.badge = {
+      slots: view.rows.map((r) => ({ index: r.index, score: r.score })),
+      top: view.rows.length ? view.rows[0].index : null,
+      refresh: view.refreshScore || 0,
+      freeze: (view.freeze && view.freeze.ev) || 0,
+    };
   }
   out.server = serverInfoOf(snap);   // 这台服务器是谁、它的盟约表和顾问的 0.3.1 差在哪
   out.nl = nlOf(out);          // 自然语言版建议（小框与 --once 都读它）
@@ -851,6 +867,15 @@ async function main() {
       const snap = await cdp.evaluate(SNAPSHOT);
       const box = boxOf(snap, await readRoute(snap && snap.ok ? api.matchKeyOf(snap.brief) : null));
       if (lineup) await lineup.attach(box, snap, cdp);   // 站位检查：在宿主线程里异步跑，这里只取它当前的结果（不等）
+      // additional 窗口的棋盘示意图：lineup-live.mjs 只给 uid/行列朝向 + uid→id 表，这里解析成名字（box.ps1 不碰插件核心）
+      if (box.lineup && box.lineup.board) {
+        const d = boardDiagramOf(box.lineup, api.nameOf);
+        if (d) box.lineup.board = d; else delete box.lineup.board;
+      }
+      // 商店卡片/刷新/freeze 按钮上的权重标注：画在真实客户端的 DOM 上（real-dom.mjs），只读它的屏幕坐标，
+      // 不碰游戏自己的任何属性/样式。best-effort：没有真实页面（测试用的 fake cdp）或页面还没渲染出商店时
+      // 这里会抛，吞掉不让它影响顾问本身的建议（box/state.json 完全不受这一步成败影响）。
+      try { await cdp.evaluate(injectSrc(box.badge || null)); } catch { /* 画标注失败不该影响顾问 */ }
       await writeState(box);
       if (record) await recordTurn(snap, box);     // 复盘：逐回合落盘（含所有座位的公开快照）
       if (record && (snap.phase === 'RESULT' || snap.phase === 'FINAL_ASSAULT')) await recordResult(cdp, snap);

@@ -403,6 +403,33 @@
     return { ev: Math.round(ev), targets: targets.slice(0, 3), p: +p.toFixed(3), cost: cost };
   }
 
+  /**
+   * 冻结的分：同一口径（scoreSlot 的分制）。冻结是整个商店一起冻（engine server/match/player/economy.js
+   * toggleFreeze 对每个未售格统一置 frozen；clearUnfrozenShop 在作战开始时清空所有「未冻结」的格子），
+   * 所以这不是某一格的分，是「现在商店里钱不够买、但值得买的那张」值不值得整组保留到下回合有钱再买。
+   * 算法和 sellFundOf 同一个套路：把那一格的钱临时设成刚好够，照 scoreSlot 现算一遍得到它「有钱时」的真实分，
+   * 减掉一次刷新的机会成本（不冻的话，下一刷有概率刷到更好的，用 refreshEV 同一个 cost 折算）。
+   * 没有钱不够但值得买的格子（要么已经买得起，要么都不值）→ 0 分，不编造。
+   */
+  function freezeEV(priv, ctx, slots) {
+    var funds = ctx.funds;
+    var best = null, bestScore = -1, i;
+    for (i = 0; i < slots.length; i++) {
+      var slot = slots[i];
+      if (!slot || slot.sold) continue;
+      var price = typeof slot.price === 'number' ? slot.price : 0;
+      if (price <= funds) continue;   // 买得起：直接买，不需要冻
+      var saved = ctx.funds;
+      ctx.funds = price;              // 和 sellFundOf 一样的手法：临时当作钱够，照 scoreSlot 现算
+      var r = scoreSlot(slot, ctx);
+      ctx.funds = saved;
+      if (r.score > bestScore) { bestScore = r.score; best = { index: i, name: r.name, score: r.score, price: price }; }
+    }
+    if (!best || best.score < 40) return { ev: 0, target: null };   // 没有「钱不够但值得抓」的格子
+    var ev = best.score - (EC.refresh || 1) * 4;   // 机会成本：和 refreshEV 同一个单位（每刷新费 4 分）
+    return { ev: Math.max(0, Math.round(ev)), target: best };
+  }
+
 
   /**
    * 摆位配对（不是「把放大器放前排」这种废话）：逐个放大器找收益最高的接收者，并算一个期望层数。
@@ -1225,6 +1252,9 @@
       mult: damageMultiplier(route, layers),
       ehp: survivalMultiplier(route, layers),
       rows: rows,
+      // 刷新/冻结的分（sprlui_1825）：和 adviceRaw 里「刷新」那条同一个数（refreshEV），冻结新算（freezeEV，见上）
+      refreshScore: refreshEV(priv, route, modeId).ev,
+      freeze: freezeEV(priv, ctx, slots),
       advice: adviceOf(priv, ctx),
       missing: missingFor(priv, route),
       est: estimate(priv, route, 1200, round, modeId),

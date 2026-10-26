@@ -111,7 +111,7 @@ export async function runOverlay({ frames, args = ['--watch', '--log', '--interv
  * state's `lineup` fragment and the one nl line it appends (lineup-live.mjs attach), the log lines carrying that text,
  * and the harness's random temp directory from the log (the check's error names a path inside it).
  */
-export function withoutLineup(r) {
+export function withoutLineup(r, { keepBadge = false } = {}) {
   const texts = new Set();
   const transcript = r.transcript.map((t) => {
     if (t.state === undefined) return { frame: t.frame };
@@ -123,6 +123,9 @@ export function withoutLineup(r) {
       }
       delete s.lineup;
     }
+    // sprlui_1825: default-on DOM-overlay plan, not part of any golden recorded before it existed — keepBadge lets a
+    // badges-specific test (test/overlay-badges.test.mjs) still see it while reusing this same lineup-stripping step
+    if (!keepBadge) delete s.badge;
     return { frame: t.frame, state: JSON.stringify(s) };
   });
   const stdout = r.stdout.split('\n').filter((l) => !texts.has(l)).join('\n')

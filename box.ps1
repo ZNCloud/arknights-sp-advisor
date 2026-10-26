@@ -64,7 +64,9 @@ $lAux = New-BoxLabel $font $fg
 $lRisk = New-BoxLabel $fontSmall $warn
 # 自然语言建议块：state.json 的 nl[] 一句一行，整段放在这一个标签里（Set-Line 会按宽度折行算高）
 $lNl = New-BoxLabel $font $fg
-$labels = @($lHead, $lMain, $lAdvice, $lNl, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk)
+# 站位棋盘示意图（additional 窗口，sprlui_1825）的说明行；图本身是下面的 $boardBox（不是 Label，单独摆）
+$lBoardNote = New-BoxLabel $fontSmall $dim
+$labels = @($lHead, $lMain, $lAdvice, $lNl, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk, $lBoardNote)
 
 $coreBonds = [ordered]@{
   yanShip = '炎'; sargonShip = '萨尔贡'; victoriaShip = '维多利亚'; kjeragShip = '谢拉格'
@@ -116,6 +118,57 @@ if (Test-Path $routePath) {
 }
 Paint-Route
 
+# ── 站位顾问棋盘示意图（additional 窗口，sprlui_1825）──
+# 画本方可部署区域（shared/constants.js 的 GEO.FIELD：行 9–12、列 2–10，4×9 格），每个干员一个圆点头像，
+# 头像没有游戏贴图可读，统一用干员名字的第一个字代替（owner 10-26 任务书允许的退路）；建议换位的干员从当前
+# 格画一条箭头指向建议格；从手牌新上场的干员没有「当前格」，画一个虚线圈当起点。
+$boardC0 = 2; $boardR0 = 9; $boardCols = 9; $boardRows = 4; $cellSize = 28
+$boardBox = New-Object System.Windows.Forms.Panel
+$boardBox.Width = $cellSize * $boardCols + 2
+$boardBox.Height = $cellSize * $boardRows + 2
+$boardBox.BackColor = $bg
+$boardBox.Visible = $false
+$script:boardUnits = @()
+$boardBox.Add_Paint({
+  $g = $_.Graphics
+  $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+  $gridPen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(39, 73, 74))
+  for ($c = 0; $c -le $boardCols; $c++) { $g.DrawLine($gridPen, $c * $cellSize, 0, $c * $cellSize, $boardRows * $cellSize) }
+  for ($r = 0; $r -le $boardRows; $r++) { $g.DrawLine($gridPen, 0, $r * $cellSize, $boardCols * $cellSize, $r * $cellSize) }
+  $arrowPen = New-Object System.Drawing.Pen($warn, 2)
+  $arrowPen.EndCap = [System.Drawing.Drawing2D.LineCap]::ArrowAnchor
+  $dashPen = New-Object System.Drawing.Pen($dim, 1)
+  $dashPen.DashStyle = [System.Drawing.Drawing2D.DashStyle]::Dash
+  $idleFill = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(22, 38, 42))
+  $moveFill = New-Object System.Drawing.SolidBrush($warn)
+  $addFill = New-Object System.Drawing.SolidBrush($hi)
+  $ringPen = New-Object System.Drawing.Pen($fg)
+  $inkBrush = New-Object System.Drawing.SolidBrush($ink)
+  foreach ($u in $script:boardUnits) {
+    $hasCur = ($null -ne $u.row) -and ($null -ne $u.col)
+    $cx = $null; $cy = $null
+    if ($hasCur) { $cx = ($u.col - $boardC0) * $cellSize + $cellSize / 2; $cy = ($u.row - $boardR0) * $cellSize + $cellSize / 2 }
+    if ($u.to) {
+      $tx = ($u.to.col - $boardC0) * $cellSize + $cellSize / 2
+      $ty = ($u.to.row - $boardR0) * $cellSize + $cellSize / 2
+      if ($hasCur) { $g.DrawLine($arrowPen, $cx, $cy, $tx, $ty) }
+      else { $g.DrawEllipse($dashPen, $tx - 10, $ty - 10, 20, 20) }   # 从手牌上场：没有起点，画虚线圈代替
+      $g.FillEllipse($addFill, $tx - 11, $ty - 11, 22, 22)
+      $g.DrawEllipse($ringPen, $tx - 11, $ty - 11, 22, 22)
+      $sz = $g.MeasureString($u.avatar, $fontSmall)
+      $g.DrawString($u.avatar, $fontSmall, $inkBrush, [float]($tx - $sz.Width / 2), [float]($ty - $sz.Height / 2))
+    }
+    if ($hasCur) {
+      $fill = if ($u.to) { $moveFill } else { $idleFill }
+      $g.FillEllipse($fill, $cx - 11, $cy - 11, 22, 22)
+      $g.DrawEllipse($ringPen, $cx - 11, $cy - 11, 22, 22)
+      $sz2 = $g.MeasureString($u.avatar, $fontSmall)
+      $g.DrawString($u.avatar, $fontSmall, $inkBrush, [float]($cx - $sz2.Width / 2), [float]($cy - $sz2.Height / 2))
+    }
+  }
+})
+$form.Controls.Add($boardBox)
+
 # 设置一行文本：固定宽度，按实际排版量高度（长文本自动换行，高度跟着长）
 function Set-Line($label, $text, $color) {
   if (-not $text) {
@@ -159,6 +212,12 @@ function Reflow {
   }
   $contentH = $by + $rowH + 7
   $contentW = [Math]::Max(($maxRight + $padX), 240)
+  if ($boardBox.Visible) {
+    $boardBox.Left = $padX
+    $boardBox.Top = $contentH
+    $contentH = $boardBox.Top + $boardBox.Height + 7
+    $contentW = [Math]::Max($contentW, $boardBox.Width + $padX * 2)
+  }
   $form.ClientSize = New-Object System.Drawing.Size($contentW, $contentH)
 
   $screen = [System.Windows.Forms.Screen]::PrimaryScreen.WorkingArea
@@ -195,6 +254,23 @@ $timer.Add_Tick({
   $age = [int](([DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) - $box.at)
   $stale = if ($age -gt 4000) { " · 数据 $age ms 旧" } else { '' }
   $headColor = if ($age -gt 4000) { $warn } else { $dim }
+
+  # 站位顾问棋盘示意图：box.lineup.board 存在就画（没有建议时只画当前站位，见 overlay.mjs boardDiagramOf）；
+  # 不管下面走哪条分支（开局/纯文本/nl/电报体）都先摆好，棋盘和文字各管各的
+  if ($box.lineup -and $box.lineup.board -and $box.lineup.board.units -and $box.lineup.board.units.Count -gt 0) {
+    $script:boardUnits = $box.lineup.board.units | ForEach-Object {
+      $ch = if ($_.name -and $_.name.Length -gt 0) { $_.name.Substring(0, 1) } else { '?' }
+      [pscustomobject]@{ row = $_.row; col = $_.col; to = $_.to; avatar = $ch }
+    }
+    $noteText = if ($box.lineup.recommend) { '站位示意（头像=干员名首字，没有游戏贴图可读）· 箭头=建议挪位' } else { '站位示意（头像=干员名首字）· 现在这样站就行，没找到更好的摆法' }
+    Set-Line $lBoardNote $noteText $dim
+    $boardBox.Visible = $true
+    $boardBox.Invalidate()
+  } else {
+    $script:boardUnits = @()
+    Set-Line $lBoardNote '' $dim
+    $boardBox.Visible = $false
+  }
 
   if ($box.open) {
     $demoMark = if ($box.demo) { ' · 演示数据（非本局）' } else { '' }

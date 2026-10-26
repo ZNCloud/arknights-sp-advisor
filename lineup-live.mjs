@@ -128,6 +128,9 @@ export class LiveLineup {
       const res = r.res, fresh = r.key === key;
       const out = { state: fresh ? 'done' : 'outdated', round, recommend: res.recommend, kind: res.kind, steps: res.steps.map(s => s.what),
         gain: res.gain, recheck: res.recheck, ms: r.ms, evals: res.evals, notes: res.notes, text: lineupLine(res) };
+      // 棋盘示意图（sprlui_1825 的「additional 窗口」）要画的原料：谁站哪（uid@row,col,dir）、建议挪到哪、
+      // uid→干员 id 的表——名字由 overlay.mjs 的 boardDiagramOf 用插件核心的 nameOf 解析（这里不碰插件核心）。
+      if (Array.isArray(res.current)) out.board = { current: res.current, best: res.best, names: res.names };
       if (!fresh) out.text = `（棋盘动过，正在按新站位重算）${out.text}`;
       return out;
     }
