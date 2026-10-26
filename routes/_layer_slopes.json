@@ -1,0 +1,26 @@
+{
+ "slopes": {
+  "arcaneShip": 0.02663,
+  "deputShip": 0.0367,
+  "egirShip": 0.05333,
+  "emptyShip": 0.0,
+  "indomShip": 0.02139,
+  "investShip": 0.00014,
+  "kazimierzShip": 0.07771,
+  "kjeragShip": 0.00167,
+  "lateranoShip": 0.04417,
+  "miraShip": 0.0,
+  "preciShip": 0.03151,
+  "raidShip": 0.08972,
+  "sargonShip": 0.0425,
+  "siracusaShip": 0.055,
+  "skillfulShip": 0.04844,
+  "soloShip": 0.0,
+  "steadShip": 0.03986,
+  "swiftShip": 0.02885,
+  "victoriaShip": 0.01479,
+  "visiShip": 0.0,
+  "yanShip": 0.07
+ },
+ "source": "sprluse_1910 out/slope: sprlmath axis boards, R12 ABYSS, seeds 1-60, partner layers 20 vs 80, core 60 vs 140; slope = leaks saved per fight per layer, pooled over axes"
+}

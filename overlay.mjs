@@ -49,6 +49,9 @@ const interval = Number(flag('--interval', '600')) || 600;
 const g06 = args.includes('--g06');
 // --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；默认开，--g06 关掉
 const lineupOn = !g06 || args.includes('--lineup');
+// --board：站位检查换成引擎摆位 + 道具分配搜索（sprluse_1910，advisor/lineup.mjs boardSearch；层数估值表 routes/_layer_slopes.json）。
+// 默认关：不加时站位检查和顾问输出与之前逐字节相同。
+const boardOn = args.includes('--board');
 // --no-axis：关掉盟约轴心权重（sprlaxis_1532，默认开），退回规则 A 那版；这时顾问输出与加轴心权重之前逐字节相同
 // （test/overlay-axis.test.mjs 锁住）。--g06 也一并关掉它。
 const noAxis = g06 || args.includes('--no-axis');
@@ -92,7 +95,9 @@ const lineup = lineupOn ? await (async () => {
   const { LiveLineup, defaultThreads } = await import('./lineup-live.mjs');
   const threads = Number(flag('--lineup-threads', String(defaultThreads())));
   if (log) console.log(`[${new Date().toLocaleTimeString()}] 站位检查已开（${threads} 线程）`);
-  return new LiveLineup({ threads, log: log ? (s) => console.log(`[${new Date().toLocaleTimeString()}] ${s}`) : () => {} });
+  const slopes = boardOn ? JSON.parse(await fs.readFile(new URL('./routes/_layer_slopes.json', import.meta.url), 'utf8')).slopes : null;
+  if (boardOn && !slopes) throw Error('--board: routes/_layer_slopes.json has no slopes');
+  return new LiveLineup({ threads, slopes, log: log ? (s) => console.log(`[${new Date().toLocaleTimeString()}] ${s}`) : () => {} });
 })() : null;
 
 const SNAPSHOT = `(async () => {

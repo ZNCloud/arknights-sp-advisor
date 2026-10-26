@@ -19,6 +19,13 @@ const DIRS = ['RIGHT', 'UP', 'DOWN', 'LEFT'];
 // worth more the less of it is left (lpWeight = LP_REF / LP, clamped). Measured on the owner's games (docs/MODEL.md):
 // swaps that saved 2–5 LP but cost 4–8 layers per fight ended the game with less boss damage.
 const LAYER_WEIGHT = 0.25, LP_REF = 10;
+// Board search (searchBoard) score per battle seed, in LP (× lpWeight like the lineup check):
+//   − LP lost + Σ_bond layerValue[bond] · layers the fight earns + EFF_WEIGHT · eff / eff₀ − cost
+// layerValue[b] = leaks one more layer of b saves per fight (layer-slope table, the same fixed-board injection for every
+// bond) × fights left in the match; eff = damage per second of the fight (DPS × time on the field) over the starting
+// board's; cost = HOLD_COST per item kept in the hand (a bench slot; gold is spent before the board is searched).
+// EFF_WEIGHT: a board twice as effective is worth half an LP this fight — a tie-break where nothing leaks either way.
+const EFF_WEIGHT = 0.5, HOLD_COST = 0.25;
 export const lpWeight = lp => Math.min(4, Math.max(0.25, LP_REF / Math.max(1, lp)));
 const DIR_CN = { RIGHT: '朝右', LEFT: '朝左', UP: '朝上', DOWN: '朝下' };
 
@@ -39,7 +46,7 @@ export function fieldKind(st, playerId = 'p0') {
 // [seedFrom, seedFrom + seeds) of `tag` (search and re-check never share seeds). Higher `value` is better; `samples` are
 // per seed, so two boards scored on the same seeds compare pairwise.
 // metric 'own' = the seat's own field, 'round' = the whole round (team LP loss; needs every teammate ready).
-export function scoreSteps(st, steps, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4, seedFrom = 0, metric = 'own' }) {
+export function scoreSteps(st, steps, { kind, round, hidden, bosses, playerId = 'p0', tag = 'search', seeds = 4, seedFrom = 0, metric = 'own', layerValue = null, effRef = 0, cost = 0 }) {
   const mutate = steps.length ? (m, ps) => replaySteps(ps, steps).ok : null;
   if (kind === 'normal') {
     const battleSeeds = battleSeedsOf(`${tag}:${round}`, seedFrom + seeds).slice(seedFrom);
@@ -58,6 +65,12 @@ export function scoreSteps(st, steps, { kind, round, hidden, bosses, playerId = 
     }
     const s = waveLoss(st, mutate, { battleSeeds, playerId });
     if (!s) return null;
+    if (layerValue) {
+      // board search (searchBoard): every bond's layers at their own value, effective DPS, the candidate's cost
+      const samples = searchSamples(s, w, { layerValue, effRef, cost });
+      return { value: mean(samples) - s.leaks * 1e-3, loss: s.loss, leaks: s.leaks, layers: s.layers, samples, ownLoss: s.losses, layerSamples: s.layerSamples,
+        gains: s.gainSamples, eff: mean(s.effSamples), effSamples: s.effSamples, dmgBy: s.dmgBy };
+    }
     const samples = s.losses.map((x, i) => -w * x + LAYER_WEIGHT * s.layerSamples[i]);
     return { value: mean(samples) - s.leaks * 1e-3, loss: s.loss, leaks: s.leaks, layers: s.layers, samples, ownLoss: s.losses, layerSamples: s.layerSamples };
   }
@@ -110,6 +123,15 @@ export function neighbours(ctx, L) {
 // rebuilt elsewhere (the recorded games' hindsight replays, other uids) falls back to the first copy of the same id.
 export function replaySteps(ps, steps) {
   for (const s of steps) {
+    if (s.op.equip) {   // board search: an item from the hand onto a carrier (equipped items are locked: equip is final)
+      const o = s.op, items = [...ps.hand, ...ps.temp].filter(p => p?.kind === 'item');
+      const item = items.find(p => p.uid === o.itemUid && p.id === o.itemId) ?? items.find(p => p.id === o.itemId);
+      const carrier = o.from ? ps.board.get(o.from) : null;
+      if (!item || !carrier || carrier.id !== o.id) return { ok: false, error: `board step "${s.what}": no ${o.itemId} in hand or no ${o.id} at ${o.from}` };
+      const r = ps.equip(item.uid, carrier.uid);
+      if (!r?.ok) return { ok: false, error: `board step "${s.what}" refused by the engine: ${JSON.stringify(r)}` };
+      continue;
+    }
     const o = s.op, hand = [...ps.hand, ...ps.temp].filter(p => p?.kind === 'chess');
     const piece = o.from ? ps.board.get(o.from) : (hand.find(p => p.uid === o.uid && p.id === o.id) ?? hand.find(p => p.id === o.id));
     if (!piece || piece.id !== o.id) return { ok: false, error: `lineup step "${s.what}": no ${o.id} at ${o.from ?? 'hand'}` };
@@ -244,3 +266,118 @@ export function describe(res) {
 export const inlineEval = st => async (stepLists, opts) => stepLists.map(steps => scoreSteps(st, steps, opts));
 export const poolEval = (pool, stateJSON, stateKey) => (stepLists, opts) =>
   Promise.all(stepLists.map(steps => pool.run({ kind: 'field', stateJSON, stateKey, steps, opts })));
+
+// The board search's score of each battle seed of a waveLoss result (see EFF_WEIGHT).
+function searchSamples(s, w, { layerValue, effRef = 0, cost = 0 }) {
+  return s.losses.map((x, i) => -w * x + w * Object.entries(s.gainSamples[i]).reduce((a, [b, n]) => a + (layerValue[b] || 0) * (Number(n) || 0), 0)
+    + w * EFF_WEIGHT * (effRef > 0 ? s.effSamples[i] / effRef : 0) - w * cost);
+}
+// ── Board search (sprluse_1910): who stands where and which item goes to whom, scored by the engine ──────────────────
+// One value function for every bond and every item (scoreSteps with layerValue): no bond, operator or item is named.
+// The value of a layer: layerValueOf(slopes, round) = slope (leaks saved per fight per layer, the layer-slope table) ×
+// the fights left after this one (layers stay for the rest of the match).
+export const layerValueOf = (slopes, round, lastRound = 15) =>
+  Object.fromEntries(Object.entries(slopes).map(([b, k]) => [b, Math.max(0, k) * Math.max(0, lastRound - round)]));
+
+// Candidates (pruned so a prep stays affordable; the pruning names no bond / operator / item):
+//   items  every unequipped piece of equipment in the hand, one after another: the starting fight's 3 top and 2 lowest
+//          damage dealers (if the engine lets them carry it), or keep it in the hand (HOLD_COST);
+//   places the starting fight's top damage dealer ("main") and its lowest deployed damage dealer ("low") may trade
+//          places with any other deployed operator; a benched operator may take the low one's place. So the main only
+//          moves over the tiles the board already holds, and the cheap pieces are the ones that move around it.
+// Each candidate is screened on `screenSeeds` battle seeds, the `refine` best get the rest of `seeds`; a change is taken
+// when it beats the current board (greedy, ≤ maxSteps placement changes). A generator: yields batches of step lists
+// for the caller's evaluator (searchBoardSync / searchBoardAsync), so the bot (inline) and the overlay (pool) share it.
+export function* boardSearch(st, { playerId = 'p0', slopes, seeds = 2, screenSeeds = 1, refine = 2, maxSteps = 1, keep = 6, carriers: nCarry = [3, 2], lows: nLow = 1, lastRound = 15, trace = null } = {}) {
+  const t0 = performance.now();
+  const fk = fieldKind(st, playerId);
+  if (fk.kind !== 'normal') return { kind: fk.kind, round: fk.round, steps: [], skipped: 'boss round', evals: 0, ms: 0 };
+  const m = restore(st, { rngMode: 'exact' }), ps = m.players.get(playerId);
+  const pieces = new Map(); for (const p of [...ps.board.values(), ...ps.hand]) if (p?.kind === 'chess') pieces.set(p.uid, p);
+  const ctx = { pieces, cap: ps.deployCap, legal: new Map([...pieces].map(([u, p]) => [u, new Set(legalTiles(ps, p).map(t => t.join(',')))])),
+    name: u => ps.gd.chess(pieces.get(u)?.id)?.name || String(u) };
+  const items = [...ps.hand, ...ps.temp].filter(p => p?.kind === 'item' && ps.gd.item(p.id)?.itemType === 'EQUIP').map(p => ({ uid: p.uid, id: p.id, name: ps.gd.item(p.id)?.name || p.id }));
+  const start = layoutOf(ps);
+  m.dispose();
+  const layerValue = layerValueOf(slopes, fk.round, lastRound);
+  const opts = { ...fk, playerId, seeds, tag: 'board', layerValue };
+  let evals = 1;
+  const [base] = yield [[[], { ...opts }]];
+  if (!base) throw Error(`board search R${fk.round}: the starting board does not fight`);
+  opts.effRef = base.eff;
+  // the starting board in board-search units: its eff/eff₀ term added to the same fights (no second evaluation)
+  const w0 = lpWeight(st.seats.find(x => x.playerId === playerId).lp), effTerm = base.effSamples.map(e => w0 * EFF_WEIGHT * (base.eff > 0 ? e / base.eff : 0));
+  const cur0 = { ...base, samples: base.samples.map((x, i) => x + effTerm[i]), value: base.value + mean(effTerm) };
+  let cur = cur0, L = start;
+  const steps = [], decisions = [];
+  const at = x => `${x.row},${x.col}`;
+  // items first (who carries what changes who deals the damage the placement step reads)
+  const byDmg = start.slice().sort((a, b) => (base.dmgBy?.[b.uid] || 0) - (base.dmgBy?.[a.uid] || 0));
+  const carrierSet = new Set([...byDmg.slice(0, nCarry[0]), ...byDmg.slice(-nCarry[1])].map(x => x.uid));
+  for (const it of items) {
+    const carriers = L.filter(x => carrierSet.has(x.uid)).map(x => ({ x, step: { what: `${it.name} 给 ${ctx.name(x.uid)}（${at(x)}）`, kind: 'equip', op: { equip: true, itemUid: it.uid, itemId: it.id, uid: x.uid, id: pieces.get(x.uid).id, from: at(x) } } }));
+    const res = yield carriers.map(c => [[...steps, c.step], opts]);
+    evals += carriers.length;
+    const hold = { value: cur.value - (cur.samples.length ? HOLD_COST * lpWeight(st.seats.find(s => s.playerId === playerId).lp) : 0) };
+    let best = null;
+    carriers.forEach((c, i) => { if (res[i] && (!best || res[i].value > best.score.value)) best = { ...c, score: res[i] }; });
+    const row = { item: it.id, name: it.name, hold: +hold.value.toFixed(3), options: carriers.map((c, i) => [pieces.get(c.x.uid).id, res[i] ? +res[i].value.toFixed(3) : null]) };
+    if (trace) trace({ stage: 'item', base: cur, steps, cands: carriers.map((c, i) => ({ step: c.step, value: res[i] ? res[i].value : null })), hold: hold.value });
+    if (best && best.score.value > hold.value) { steps.push(best.step); cur = best.score; row.pick = pieces.get(best.x.uid).id; } else row.pick = 'hold';
+    decisions.push(row);
+  }
+  // placement
+  let shortlist = new Set();
+  for (let s = 0; s < maxSteps; s++) {
+    const dmg = u => cur.dmgBy?.[u] || 0;
+    const ranked = L.slice().sort((a, b) => dmg(b.uid) - dmg(a.uid));
+    const main = ranked[0], lows = ranked.slice(1).slice(-nLow);
+    const movers = [main, ...lows].filter(Boolean);
+    const cands = [], seen = new Set();
+    for (const n of neighbours(ctx, L)) {
+      if (n.kind === 'exchange') {
+        const a = n.op.uid, b = L.find(z => z.row === n.op.row && z.col === n.op.col)?.uid;
+        if (!movers.some(x => x.uid === a || x.uid === b)) continue;
+        n.key = [a, b].sort().join('|'); if (seen.has(n.key)) continue; seen.add(n.key);
+        cands.push(n);
+      } else if (n.kind === 'swap' && lows.some(x => at(x) === `${n.op.row},${n.op.col}`)) { n.key = `${n.op.uid}>${L.find(z => z.row === n.op.row && z.col === n.op.col)?.uid}`; cands.push(n); }
+    }
+    // a later step only re-checks the changes that screened best in the first one (`keep`), on the new board
+    if (s > 0) { const k = cands.filter(n => shortlist.has(n.key)); cands.length = 0; cands.push(...k); }
+    const plus = n => [...steps.map(({ what, op }) => ({ what, op })), { what: n.what, op: n.op }];
+    if (!cands.length) break;
+    const screen = yield cands.map(n => [plus(n), { ...opts, seeds: Math.min(screenSeeds, seeds) }]);
+    evals += cands.length;
+    if (trace) trace({ stage: `place${s + 1}`, base: cur, steps, cands: cands.map((n, i) => ({ step: { what: n.what, kind: n.kind, op: n.op }, value: screen[i] ? screen[i].value : null })), seeds: Math.min(screenSeeds, seeds) });
+    const ranked1 = cands.map((n, i) => ({ ...n, score: screen[i] })).filter(x => x.score).sort((a, b) => b.score.value - a.score.value);
+    if (s === 0) shortlist = new Set(ranked1.slice(0, keep).map(x => x.key));
+    const top = ranked1.slice(0, refine);
+    if (seeds > screenSeeds && top.length) {
+      const more = yield top.map(x => [plus(x), { ...opts, seeds: seeds - screenSeeds, seedFrom: screenSeeds }]);
+      evals += top.length;
+      top.forEach((x, i) => { x.score = more[i] ? merged(x.score, more[i]) : null; });
+    }
+    let best = null;
+    for (const x of top) if (x.score && (!best || x.score.value > best.score.value)) best = x;
+    decisions.push({ place: s + 1, cands: cands.length, cur: +cur.value.toFixed(3), best: best ? +best.score.value.toFixed(3) : null, what: best?.what || null });
+    if (!best || best.score.value <= cur.value + 1e-9) break;
+    steps.push({ what: best.what, kind: best.kind, op: best.op });
+    shortlist.delete(best.key);
+    cur = { ...best.score, dmgBy: best.score.dmgBy || cur.dmgBy }; L = best.L;
+  }
+  return { kind: fk.kind, round: fk.round, steps: steps.map(({ what, kind, op }) => ({ what, kind, op })), start: cur0, best: cur, layout: L, decisions, evals,
+    ms: Math.round(performance.now() - t0) };
+}
+// Drivers: the bot's prep is synchronous (inline engine), the overlay's is a pool (async).
+export function searchBoardSync(st, o = {}) {
+  const g = boardSearch(st, o);
+  let r = g.next();
+  while (!r.done) r = g.next(r.value.map(([steps, opts]) => scoreSteps(st, steps, opts)));
+  return r.value;
+}
+export async function searchBoardAsync(st, evalMany, o = {}) {
+  const g = boardSearch(st, o);
+  let r = g.next();
+  while (!r.done) r = g.next(await Promise.all(r.value.map(([steps, opts]) => evalMany([steps], opts).then(x => x[0]))));
+  return r.value;
+}

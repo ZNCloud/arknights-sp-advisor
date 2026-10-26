@@ -78,24 +78,29 @@ function ownFight(st, mutate, pick, { battleSeed = null, playerId = 'p0' } = {})
     if (battleSeed != null) m.seed = battleSeed;   // the normal battle's stream is deriveSeed(m.seed, round, seat)
     const b = m.newBattle(m._normalOpts(ps));
     while (!b.finished) b.step();
-    const r = b.result().perPlayer?.[playerId] || {};
+    const res = b.result(), r = res.perPlayer?.[playerId] || {};
     const counted = (r.leaked || []).filter(l => l && l.counted !== false).length;
     const layers = Object.values(r.layerGains || {}).reduce((a, n) => a + (Number(n) || 0), 0);   // settled after the round
-    return { loss: Math.min(m.gd.lpCapPerRound ?? 10, counted), leaks: counted, killed: r.killed, total: r.total, layers, layerGains: r.layerGains || {} };
+    // eff = damage dealt per second of the fight: an operator deals damage only while it stands, so this is DPS × time on the field
+    const dmgBy = {};
+    for (const u of r.unitStats || []) if (u.kind === 'op' && u.uid != null) dmgBy[u.uid] = (dmgBy[u.uid] || 0) + (u.dmg || 0);
+    return { loss: Math.min(m.gd.lpCapPerRound ?? 10, counted), leaks: counted, killed: r.killed, total: r.total, layers, layerGains: r.layerGains || {},
+      eff: (Number(r.damageDealt) || 0) / Math.max(1, Number(res.time) || 0), dmgBy };
   } finally { m.dispose(); }
 }
 
 // Mean LP charge / leaks of the seat's own field under one pick over `battleSeeds` (null entry = the position's own
 // battle stream); `losses` keeps the per-seed charges so two boards scored on the same seeds can be compared pairwise.
 export function waveLoss(st, mutate, { pick = null, battleSeeds = [null], playerId = 'p0' } = {}) {
-  const losses = [], leaks = [], layers = [];
+  const losses = [], leaks = [], layers = [], gains = [], effs = [], dmgBy = {};
   for (const battleSeed of battleSeeds) {
     const o = ownFight(st, mutate, pick, { battleSeed, playerId });
     if (!o) return null;
-    losses.push(o.loss); leaks.push(o.leaks); layers.push(o.layers);
+    losses.push(o.loss); leaks.push(o.leaks); layers.push(o.layers); gains.push(o.layerGains); effs.push(o.eff);
+    for (const [u, d] of Object.entries(o.dmgBy)) dmgBy[u] = (dmgBy[u] || 0) + d;
   }
   const mean = a => a.reduce((x, y) => x + y, 0) / a.length;
-  return { loss: mean(losses), leaks: mean(leaks), layers: mean(layers), losses, layerSamples: layers };
+  return { loss: mean(losses), leaks: mean(leaks), layers: mean(layers), losses, layerSamples: layers, gainSamples: gains, effSamples: effs, leakSamples: leaks, dmgBy };
 }
 // Battle seeds a player cannot know: `n` streams derived from `tag` (search and re-check use different tags).
 export const battleSeedsOf = (tag, n) => Array.from({ length: n }, (_, i) => deriveSeed(i + 1, `field:${tag}`) >>> 0);

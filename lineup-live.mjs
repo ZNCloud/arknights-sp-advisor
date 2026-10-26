@@ -37,9 +37,9 @@ export function lineupLine(r) {
 }
 
 export class LiveLineup {
-  constructor({ threads = defaultThreads(), settleMs = 1500, marginMs = 10000, log = () => {}, host = HOST, now = () => Date.now() } = {}) {
+  constructor({ threads = defaultThreads(), settleMs = 1500, marginMs = 10000, log = () => {}, host = HOST, now = () => Date.now(), slopes = null } = {}) {
     if (!(Number.isInteger(threads) && threads >= 1)) throw Error(`--lineup-threads must be a whole number ≥ 1, got ${threads}`);
-    Object.assign(this, { threads, settleMs, marginMs, log, hostUrl: host, now });
+    Object.assign(this, { threads, settleMs, marginMs, log, hostUrl: host, now, slopes });
     this.worker = null; this.job = null; this.seq = 0;
     this.round = null; this.key = null; this.keySince = 0; this.deadline = null; this.clock = null;
     this.result = null;          // { key, round, state: 'done' | 'error' | 'timeout', res?, error? }
@@ -49,7 +49,7 @@ export class LiveLineup {
 
   _host() {
     if (this.worker) return this.worker;
-    const w = new Worker(this.hostUrl, { workerData: { threads: this.threads } });
+    const w = new Worker(this.hostUrl, { workerData: this.slopes ? { threads: this.threads, slopes: this.slopes } : { threads: this.threads } });
     w.on('message', msg => this._reply(msg));
     w.on('error', e => { this.hostError = String(e?.message || e); this.log(`站位检查宿主出错：${this.hostError}`); this._drop(w); });
     w.on('exit', code => { if (this.worker === w) { if (code !== 0 && !this.hostError) this.hostError = `宿主线程退出 ${code}`; this._drop(w); } });

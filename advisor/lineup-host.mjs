@@ -8,7 +8,7 @@ import { parentPort, workerData } from 'node:worker_threads';
 import { RolloutPool } from './pool.mjs';
 import { toJSON } from './state.mjs';
 import { scaffoldOf, scaffoldKey, positionOf } from './live.mjs';
-import { checkLineup, poolEval } from './lineup.mjs';
+import { checkLineup, poolEval, searchBoardAsync } from './lineup.mjs';
 
 const pool = new RolloutPool(workerData.threads);
 const cancelled = new Set();
@@ -27,6 +27,9 @@ async function check(id, view) {
   const buildMs = Math.round(performance.now() - t0);
   const run = poolEval(pool, toJSON(st), `live:${id}`);
   const evalMany = (lists, opts) => { if (cancelled.has(id)) throw Error('cancelled'); return run(lists, opts); };
+  // --board (sprluse_1910): the engine board search (placement + item carriers, advisor/lineup.mjs boardSearch)
+  // instead of the greedy lineup check. Not wired into the board-diagram current/best/names shape yet (§ below).
+  if (workerData.slopes) return { ...boardResult(await searchBoardAsync(st, evalMany, { playerId: 'p0', slopes: workerData.slopes })), buildMs, notes };
   const res = await checkLineup(st, { playerId: 'p0', evalMany, recheckMetric: 'own' });
   // current/best/names (sprlui_1825): the board diagram in the desktop box's additional window needs the actual
   // layouts (uid@row,col,dir), not just the step descriptions — checkLineup already computes them, this just stops
@@ -34,6 +37,16 @@ async function check(id, view) {
   return { kind: res.kind, round: res.round, recommend: res.recommend, gain: res.gain, recheck: res.recheck, evals: res.evals,
     steps: res.steps.map(s => ({ what: s.what, kind: s.kind })), ms: res.ms, buildMs, notes,
     current: res.current, best: res.best, names: res.names };
+}
+
+// --board (overlay): the engine board search's result in the lineup check's result shape, so lineupLine shows it the
+// same way. Its gain is the search's own paired score over the same fights (no separate re-check: the search already
+// scores every candidate on the starting board's fight seeds).
+function boardResult(r) {
+  const gain = r.best && r.start ? { mean: r.best.value - r.start.value, se: null, n: r.best.samples?.length || 0 } : null;
+  const recheck = r.best && r.start ? { metric: 'own', current: { loss: r.start.loss, layers: r.start.layers }, best: { loss: r.best.loss, layers: r.best.layers } } : null;
+  return { kind: r.kind, round: r.round, recommend: r.steps.length > 0, gain, recheck, evals: r.evals, ms: r.ms,
+    steps: r.steps.map(s => ({ what: s.what, kind: s.kind })) };
 }
 
 parentPort.on('message', async (msg) => {
