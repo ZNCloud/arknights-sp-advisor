@@ -104,3 +104,28 @@ export async function runOverlay({ frames, args = ['--watch', '--log', '--interv
     return { stdout, transcript, records, root };
   } finally { if (!keep) fs.rmSync(root, { recursive: true, force: true }); }
 }
+
+/**
+ * The run with the lineup check's asynchronous part taken out, for byte comparisons of everything else (state.json, the
+ * log, the records): the check answers on its own thread, so how far it got by a given tick varies run to run. Drops each
+ * state's `lineup` fragment and the one nl line it appends (lineup-live.mjs attach), the log lines carrying that text,
+ * and the harness's random temp directory from the log (the check's error names a path inside it).
+ */
+export function withoutLineup(r) {
+  const texts = new Set();
+  const transcript = r.transcript.map((t) => {
+    if (t.state === undefined) return { frame: t.frame };
+    const s = JSON.parse(t.state);
+    if (s.lineup) {
+      if (s.lineup.text) {
+        texts.add(s.lineup.text);
+        if (Array.isArray(s.nl) && s.nl[s.nl.length - 1] === s.lineup.text) s.nl = s.nl.slice(0, -1);
+      }
+      delete s.lineup;
+    }
+    return { frame: t.frame, state: JSON.stringify(s) };
+  });
+  const stdout = r.stdout.split('\n').filter((l) => !texts.has(l)).join('\n')
+    .replace(/\S*overlay-harness-[A-Za-z0-9]{6}/g, '<tmp>/overlay-harness');
+  return { transcript, stdout, records: r.records };
+}

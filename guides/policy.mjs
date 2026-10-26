@@ -34,6 +34,9 @@ function routeInfo(m,ps){const core=m.guideTeam.routes[ps.playerId];return {core
 function ownsName(ps,n){return ps.allChess().some(p=>name(ps,p)===n);}
 function canTake(m,ps,id){const o=m.guideTeam.reservations[ps.gd.baseIdOf(id)];return o==null||o===ps.playerId;}
 function econSeat(m,ps){return ps===m.order[0]&&['cycle','onebook','yan','layers','bank','general'].includes(m.guideSpec.style);}
+// 盟约轴心权重（sprlaxis_1532 评测用）：m.guideAxis(ps,id) = 顾问内核自己的轴心加分（插件页 axisCardOf/axisItemOf，
+// eval/axis-bot.mjs 只给一个座位装上），乘 spec.axisScale 折到本攻略的买牌分上。两者缺一 = 0，行为不变。
+const axisPts=(m,ps,id)=>m.guideAxis&&m.guideSpec.axisScale?m.guideAxis(ps,id)*m.guideSpec.axisScale:0;
 function value(m,ps,p,{buy=false}={}){
  const c=rec(ps,p);if(!c)return -100;const r=routeInfo(m,ps),late=m.round>=m.guideSpec.transitionRound;
  let v=c.tier*3+(ps.gd.isGolden(p.id)?9:0)+(p.items?.length||0)*3;
@@ -51,6 +54,7 @@ function value(m,ps,p,{buy=false}={}){
    if(copies.some(x=>ps.gd.isGolden(x.id)))v-=55;
    v+=Math.max(-12,Math.min(15,buyScoreOf(m,ps,p.id)*.22));
    if(copies.length===0&&ps.allChess().length<ps.deployCap)v+=10;
+   v+=axisPts(m,ps,p.id);
  }
  return v;
 }
@@ -284,7 +288,7 @@ function prepSeat(m,ps){
     const deployedNames=[...ps.board.values()].filter(p=>p.kind==='chess').map(p=>name(ps,p));
     const hasEngine=(deployedNames.includes('小满')&&ps.bonds.yanShip?.active)||(deployedNames.includes('夕')&&(ps.bonds.yanShip?.active||ps.bonds.arcaneShip?.active))||(deployedNames.includes('山')&&ps.bonds.investShip?.active);
     if(spec.economy.cycle&&econSeat(m,ps)&&!late&&hasEngine&&copies.length===0&&ps.priceOf(s)<=Math.min(2,ps.funds-1)){v=Math.max(v,45);cy=!keep;}
-   }else {const target=itemTarget(m,ps,s);if(!target&&!spec.itemIds?.includes(s.id))return;v=(late?20:0)+ps.gd.tierOf(s.id)*3-ps.priceOf(s)*2;if(spec.style==='equipment')v+=15;if(spec.itemIds?.includes(s.id))v+=40;}
+   }else {const target=itemTarget(m,ps,s);if(!target&&!spec.itemIds?.includes(s.id))return;v=(late?20:0)+ps.gd.tierOf(s.id)*3-ps.priceOf(s)*2+axisPts(m,ps,s.id);if(spec.style==='equipment')v+=15;if(spec.itemIds?.includes(s.id))v+=40;}
    if(v>bv){bv=v;best=i;cycle=cy;}
   });
   // Only when normal scoring would stop: use affordable bodies for an empty slot.

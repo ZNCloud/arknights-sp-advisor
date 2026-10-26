@@ -1,0 +1,2866 @@
+{
+ "meta": {
+  "method": "strength = (T/maxT + H/maxH + S/maxS)/3; T = 两线共用牌/主轴牌; H = 收缩后的真人共激活提升 (α=5); S = max(0, 配对效用差 − 1SE)",
+  "maxima": {
+   "T": 0.2,
+   "H": 0.5141,
+   "S": 0.0255,
+   "itemH": 0.5455
+  },
+  "humanSeats": 79,
+  "humanSeatsWithItemIds": 54,
+  "mains": {
+   "yanShip": 8,
+   "sargonShip": 9,
+   "victoriaShip": 10,
+   "kjeragShip": 10,
+   "lateranoShip": 7,
+   "egirShip": 9,
+   "siracusaShip": 13,
+   "kazimierzShip": 13
+  }
+ },
+ "axis": {
+  "yanShip": {
+   "partners": [
+    {
+     "id": "arcaneShip",
+     "s": 0.5
+    },
+    {
+     "id": "skillfulShip",
+     "s": 0.355
+    },
+    {
+     "id": "visiShip",
+     "s": 0.196
+    }
+   ],
+   "items": {
+    "chess_item_3_04_e_a": [
+     0.387,
+     "yanShip"
+    ],
+    "chess_item_3_04_e_b": [
+     0.387,
+     "yanShip"
+    ],
+    "chess_item_3_08_e_a": [
+     0.295,
+     "arcaneShip"
+    ],
+    "chess_item_3_08_e_b": [
+     0.295,
+     "arcaneShip"
+    ]
+   }
+  },
+  "sargonShip": {
+   "partners": [
+    {
+     "id": "swiftShip",
+     "s": 0.41
+    },
+    {
+     "id": "preciShip",
+     "s": 0.333
+    },
+    {
+     "id": "skillfulShip",
+     "s": 0.167
+    }
+   ],
+   "items": {
+    "chess_item_3_05_e_a": [
+     0.663,
+     "swiftShip"
+    ],
+    "chess_item_3_05_e_b": [
+     0.663,
+     "swiftShip"
+    ],
+    "chess_item_2_04_e_a": [
+     0.348,
+     "sargonShip"
+    ],
+    "chess_item_2_04_e_b": [
+     0.348,
+     "sargonShip"
+    ],
+    "chess_item_6_07_e_a": [
+     0.26,
+     "sargonShip"
+    ],
+    "chess_item_6_07_e_b": [
+     0.26,
+     "sargonShip"
+    ],
+    "chess_item_3_02_e_a": [
+     0.204,
+     "preciShip"
+    ],
+    "chess_item_3_02_e_b": [
+     0.204,
+     "preciShip"
+    ]
+   }
+  },
+  "victoriaShip": {
+   "partners": [
+    {
+     "id": "indomShip",
+     "s": 0.409
+    },
+    {
+     "id": "skillfulShip",
+     "s": 0.294
+    },
+    {
+     "id": "arcaneShip",
+     "s": 0.255
+    }
+   ],
+   "items": {
+    "chess_item_6_09_e_a": [
+     0.5,
+     "victoriaShip"
+    ],
+    "chess_item_6_09_e_b": [
+     0.5,
+     "victoriaShip"
+    ],
+    "chess_item_1_01_e_a": [
+     0.5,
+     "victoriaShip"
+    ],
+    "chess_item_1_01_e_b": [
+     0.5,
+     "victoriaShip"
+    ],
+    "chess_item_3_10_e_a": [
+     0.408,
+     "victoriaShip"
+    ],
+    "chess_item_3_10_e_b": [
+     0.408,
+     "victoriaShip"
+    ],
+    "chess_item_2_03_e_a": [
+     0.404,
+     "victoriaShip"
+    ],
+    "chess_item_2_03_e_b": [
+     0.404,
+     "victoriaShip"
+    ],
+    "chess_item_3_09_e_a": [
+     0.316,
+     "victoriaShip"
+    ],
+    "chess_item_3_09_e_b": [
+     0.316,
+     "victoriaShip"
+    ]
+   }
+  },
+  "kjeragShip": {
+   "partners": [
+    {
+     "id": "skillfulShip",
+     "s": 0.477
+    },
+    {
+     "id": "swiftShip",
+     "s": 0.333
+    },
+    {
+     "id": "arcaneShip",
+     "s": 0.314
+    }
+   ],
+   "items": {
+    "chess_item_5_02_e_a": [
+     0.429,
+     "kjeragShip"
+    ],
+    "chess_item_5_02_e_b": [
+     0.429,
+     "kjeragShip"
+    ],
+    "chess_item_3_05_e_a": [
+     0.337,
+     "swiftShip"
+    ],
+    "chess_item_3_05_e_b": [
+     0.337,
+     "swiftShip"
+    ],
+    "chess_item_1_01_e_a": [
+     0.292,
+     "kjeragShip"
+    ],
+    "chess_item_1_01_e_b": [
+     0.292,
+     "kjeragShip"
+    ],
+    "chess_item_4_10_e_a": [
+     0.271,
+     "kjeragShip"
+    ],
+    "chess_item_4_10_e_b": [
+     0.271,
+     "kjeragShip"
+    ],
+    "chess_item_3_08_e_a": [
+     0.223,
+     "arcaneShip"
+    ],
+    "chess_item_3_08_e_b": [
+     0.223,
+     "arcaneShip"
+    ]
+   }
+  },
+  "lateranoShip": {
+   "partners": [
+    {
+     "id": "preciShip",
+     "s": 0.582
+    },
+    {
+     "id": "visiShip",
+     "s": 0.199
+    },
+    {
+     "id": "swiftShip",
+     "s": 0.167
+    }
+   ],
+   "items": {
+    "chess_item_3_02_e_a": [
+     0.291,
+     "preciShip"
+    ],
+    "chess_item_3_02_e_b": [
+     0.291,
+     "preciShip"
+    ]
+   }
+  },
+  "egirShip": {
+   "partners": [
+    {
+     "id": "indomShip",
+     "s": 0.325
+    },
+    {
+     "id": "visiShip",
+     "s": 0.243
+    },
+    {
+     "id": "arcaneShip",
+     "s": 0.185
+    }
+   ],
+   "items": {
+    "chess_item_3_07_e_a": [
+     0.449,
+     "egirShip"
+    ],
+    "chess_item_3_07_e_b": [
+     0.449,
+     "egirShip"
+    ],
+    "chess_item_2_01_e_a": [
+     0.322,
+     "indomShip"
+    ],
+    "chess_item_2_01_e_b": [
+     0.322,
+     "indomShip"
+    ],
+    "chess_item_6_09_e_a": [
+     0.217,
+     "egirShip"
+    ],
+    "chess_item_6_09_e_b": [
+     0.217,
+     "egirShip"
+    ]
+   }
+  },
+  "siracusaShip": {
+   "partners": [
+    {
+     "id": "swiftShip",
+     "s": 0.394
+    },
+    {
+     "id": "miraShip",
+     "s": 0.364
+    },
+    {
+     "id": "soloShip",
+     "s": 0.184
+    }
+   ],
+   "items": {
+    "chess_item_3_01_e_a": [
+     0.395,
+     "siracusaShip"
+    ],
+    "chess_item_3_01_e_b": [
+     0.395,
+     "siracusaShip"
+    ],
+    "chess_item_3_05_e_a": [
+     0.313,
+     "swiftShip"
+    ],
+    "chess_item_3_05_e_b": [
+     0.313,
+     "swiftShip"
+    ],
+    "chess_item_3_08_e_a": [
+     0.218,
+     "siracusaShip"
+    ],
+    "chess_item_3_08_e_b": [
+     0.218,
+     "siracusaShip"
+    ]
+   }
+  },
+  "kazimierzShip": {
+   "partners": [
+    {
+     "id": "raidShip",
+     "s": 0.728
+    },
+    {
+     "id": "indomShip",
+     "s": 0.462
+    },
+    {
+     "id": "swiftShip",
+     "s": 0.368
+    }
+   ],
+   "items": {
+    "chess_item_2_01_e_a": [
+     0.617,
+     "indomShip"
+    ],
+    "chess_item_2_01_e_b": [
+     0.617,
+     "indomShip"
+    ],
+    "chess_item_3_11_e_a": [
+     0.545,
+     "raidShip"
+    ],
+    "chess_item_3_11_e_b": [
+     0.545,
+     "raidShip"
+    ],
+    "chess_item_4_07_e_a": [
+     0.4,
+     "kazimierzShip"
+    ],
+    "chess_item_4_07_e_b": [
+     0.4,
+     "kazimierzShip"
+    ],
+    "chess_item_1_05_e_a": [
+     0.336,
+     "kazimierzShip"
+    ],
+    "chess_item_1_05_e_b": [
+     0.336,
+     "kazimierzShip"
+    ]
+   }
+  }
+ },
+ "evidence": {
+  "yanShip": {
+   "partners": [
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.5,
+     "T": 0.5,
+     "H": 1,
+     "S": 0,
+     "human": {
+      "k": 7,
+      "n": 8,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0086,
+      "se": 0.0121,
+      "dWin": -0.017,
+      "dP0Round": -0.1
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.355,
+     "T": 0.5,
+     "H": 0.564,
+     "S": 0,
+     "human": {
+      "k": 5,
+      "n": 8,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0064,
+      "se": 0.0093,
+      "dWin": 0,
+      "dP0Round": 0.11
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.196,
+     "T": 0.5,
+     "H": 0,
+     "S": 0.089,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0106,
+      "se": 0.0084,
+      "dWin": 0.008,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0.194,
+     "T": 0.5,
+     "H": 0,
+     "S": 0.081,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0192,
+      "se": 0.0172,
+      "dWin": 0,
+      "dP0Round": 0.22
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0.17,
+     "T": 0.5,
+     "H": 0,
+     "S": 0.01,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.007,
+      "se": 0.0068,
+      "dWin": 0.008,
+      "dP0Round": 0.06
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0141,
+      "se": 0.0118,
+      "dWin": 0,
+      "dP0Round": 0.17
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0081,
+      "se": 0.0233,
+      "dWin": -0.05,
+      "dP0Round": 0.4
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.061,
+     "T": 0,
+     "H": 0,
+     "S": 0.184,
+     "human": {
+      "k": 1,
+      "n": 8,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0198,
+      "se": 0.0151,
+      "dWin": -0.025,
+      "dP0Round": 0.28
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0.034,
+     "T": 0,
+     "H": 0,
+     "S": 0.103,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0126,
+      "se": 0.01,
+      "dWin": 0,
+      "dP0Round": 0.2
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 8,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0204,
+      "se": 0.0254,
+      "dWin": 0,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0269,
+      "se": 0.0193,
+      "dWin": -0.025,
+      "dP0Round": -0.4
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0373,
+      "se": 0.0221,
+      "dWin": -0.025,
+      "dP0Round": -0.3
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 8,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0024,
+      "se": 0.0121,
+      "dWin": 0.05,
+      "dP0Round": 0.2
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_3_04_e_a",
+     "name": "炎国短刀",
+     "w": 0.387,
+     "link": 0,
+     "H": 0.774,
+     "human": {
+      "k": 6,
+      "n": 8,
+      "base": 0.204
+     },
+     "bond": "yanShip"
+    },
+    {
+     "id": "chess_item_3_08_e_a",
+     "name": "奥术法阵",
+     "w": 0.295,
+     "link": 0.5,
+     "H": 0.09,
+     "human": {
+      "k": 2,
+      "n": 8,
+      "base": 0.185
+     },
+     "bond": "arcaneShip"
+    }
+   ]
+  },
+  "sargonShip": {
+   "partners": [
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.41,
+     "T": 0.5,
+     "H": 0.32,
+     "S": 0.41,
+     "human": {
+      "k": 4,
+      "n": 9,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0248,
+      "se": 0.0144,
+      "dWin": 0.008,
+      "dP0Round": 0.15
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0.333,
+     "T": 1,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 9,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0051,
+      "se": 0.0113,
+      "dWin": -0.017,
+      "dP0Round": -0.04
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 9,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0148,
+      "se": 0.0094,
+      "dWin": 0.008,
+      "dP0Round": -0.13
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0123,
+      "se": 0.0147,
+      "dWin": 0,
+      "dP0Round": 0.09
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0052,
+      "se": 0.0131,
+      "dWin": 0.017,
+      "dP0Round": -0.17
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0027,
+      "se": 0.0277,
+      "dWin": 0,
+      "dP0Round": 0.05
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 9,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.008,
+      "se": 0.0095,
+      "dWin": 0,
+      "dP0Round": 0.1
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0287,
+      "se": 0.0169,
+      "dWin": -0.025,
+      "dP0Round": -0.13
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0011,
+      "se": 0.0275,
+      "dWin": 0.05,
+      "dP0Round": -0.28
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0052,
+      "se": 0.0105,
+      "dWin": 0.025,
+      "dP0Round": -0.05
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0332,
+      "se": 0.0283,
+      "dWin": 0,
+      "dP0Round": -0.5
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0121,
+      "se": 0.0101,
+      "dWin": 0,
+      "dP0Round": -0.25
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0014,
+      "se": 0.0221,
+      "dWin": 0,
+      "dP0Round": -0.07
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_3_05_e_a",
+     "name": "迅捷作战粮",
+     "w": 0.663,
+     "link": 0.41,
+     "H": 0.917,
+     "human": {
+      "k": 5,
+      "n": 5,
+      "base": 0.37
+     },
+     "bond": "swiftShip"
+    },
+    {
+     "id": "chess_item_2_04_e_a",
+     "name": "萨尔贡浓茶",
+     "w": 0.348,
+     "link": 0,
+     "H": 0.697,
+     "human": {
+      "k": 4,
+      "n": 5,
+      "base": 0.167
+     },
+     "bond": "sargonShip"
+    },
+    {
+     "id": "chess_item_6_07_e_a",
+     "name": "黄沙罗盘",
+     "w": 0.26,
+     "link": 0,
+     "H": 0.521,
+     "human": {
+      "k": 3,
+      "n": 5,
+      "base": 0.074
+     },
+     "bond": "sargonShip"
+    },
+    {
+     "id": "chess_item_3_02_e_a",
+     "name": "精准狙击镜",
+     "w": 0.204,
+     "link": 0.333,
+     "H": 0.074,
+     "human": {
+      "k": 1,
+      "n": 5,
+      "base": 0.13
+     },
+     "bond": "preciShip"
+    }
+   ]
+  },
+  "victoriaShip": {
+   "partners": [
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0.409,
+     "T": 0.5,
+     "H": 0,
+     "S": 0.728,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0325,
+      "se": 0.0139,
+      "dWin": 0.033,
+      "dP0Round": 0.1
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.294,
+     "T": 0.5,
+     "H": 0.382,
+     "S": 0,
+     "human": {
+      "k": 5,
+      "n": 10,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0043,
+      "se": 0.009,
+      "dWin": 0.008,
+      "dP0Round": -0.02
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.255,
+     "T": 0.5,
+     "H": 0.102,
+     "S": 0.163,
+     "human": {
+      "k": 3,
+      "n": 10,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0163,
+      "se": 0.0122,
+      "dWin": 0.025,
+      "dP0Round": 0.17
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.23,
+     "T": 0.5,
+     "H": 0.189,
+     "S": 0,
+     "human": {
+      "k": 2,
+      "n": 10,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0041,
+      "se": 0.0054,
+      "dWin": -0.008,
+      "dP0Round": 0.07
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 10,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0164,
+      "se": 0.0229,
+      "dWin": -0.05,
+      "dP0Round": -0.5
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0018,
+      "se": 0.0068,
+      "dWin": 0,
+      "dP0Round": 0.15
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0057,
+      "se": 0.0139,
+      "dWin": 0,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.098,
+     "T": 0,
+     "H": 0,
+     "S": 0.293,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0329,
+      "se": 0.0255,
+      "dWin": 0,
+      "dP0Round": 0.35
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0.076,
+     "T": 0,
+     "H": 0,
+     "S": 0.227,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0208,
+      "se": 0.0151,
+      "dWin": 0.05,
+      "dP0Round": 0.05
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.022,
+     "T": 0,
+     "H": 0,
+     "S": 0.066,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0167,
+      "se": 0.015,
+      "dWin": 0,
+      "dP0Round": 0.17
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0032,
+      "se": 0.0257,
+      "dWin": 0,
+      "dP0Round": -0.2
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0079,
+      "se": 0.021,
+      "dWin": 0,
+      "dP0Round": -0.07
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0059,
+      "se": 0.0097,
+      "dWin": 0,
+      "dP0Round": -0.07
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_6_09_e_a",
+     "name": "变形同构体",
+     "w": 0.5,
+     "link": 0,
+     "H": 1,
+     "human": {
+      "k": 6,
+      "n": 6,
+      "base": 0.759
+     },
+     "bond": "victoriaShip"
+    },
+    {
+     "id": "chess_item_1_01_e_a",
+     "name": "维式重锤",
+     "w": 0.5,
+     "link": 0,
+     "H": 1,
+     "human": {
+      "k": 6,
+      "n": 6,
+      "base": 0.37
+     },
+     "bond": "victoriaShip"
+    },
+    {
+     "id": "chess_item_3_10_e_a",
+     "name": "加速维式重锤",
+     "w": 0.408,
+     "link": 0,
+     "H": 0.816,
+     "human": {
+      "k": 5,
+      "n": 6,
+      "base": 0.093
+     },
+     "bond": "victoriaShip"
+    },
+    {
+     "id": "chess_item_2_03_e_a",
+     "name": "战栗维式重锤",
+     "w": 0.404,
+     "link": 0,
+     "H": 0.809,
+     "human": {
+      "k": 5,
+      "n": 6,
+      "base": 0.13
+     },
+     "bond": "victoriaShip"
+    },
+    {
+     "id": "chess_item_3_09_e_a",
+     "name": "坚固维式重锤",
+     "w": 0.316,
+     "link": 0,
+     "H": 0.633,
+     "human": {
+      "k": 4,
+      "n": 6,
+      "base": 0.093
+     },
+     "bond": "victoriaShip"
+    }
+   ]
+  },
+  "kjeragShip": {
+   "partners": [
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.477,
+     "T": 0.5,
+     "H": 0.931,
+     "S": 0,
+     "human": {
+      "k": 8,
+      "n": 10,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0014,
+      "se": 0.0067,
+      "dWin": 0,
+      "dP0Round": -0.02
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.333,
+     "T": 1,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 2,
+      "n": 10,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0138,
+      "se": 0.0159,
+      "dWin": 0.033,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.314,
+     "T": 0.5,
+     "H": 0.443,
+     "S": 0,
+     "human": {
+      "k": 5,
+      "n": 10,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0178,
+      "se": 0.0147,
+      "dWin": -0.025,
+      "dP0Round": -0.17
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.184,
+     "T": 0.5,
+     "H": 0.051,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 10,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0007,
+      "se": 0.0099,
+      "dWin": 0.008,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 10,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0086,
+      "se": 0.0373,
+      "dWin": 0,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0065,
+      "se": 0.0294,
+      "dWin": 0.05,
+      "dP0Round": -0.07
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0001,
+      "se": 0.0358,
+      "dWin": 0.025,
+      "dP0Round": -0.47
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0089,
+      "se": 0.0101,
+      "dWin": 0,
+      "dP0Round": -0.05
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0.039,
+     "T": 0,
+     "H": 0.099,
+     "S": 0.017,
+     "human": {
+      "k": 1,
+      "n": 10,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0032,
+      "se": 0.0028,
+      "dWin": 0,
+      "dP0Round": 0.07
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0104,
+      "se": 0.0288,
+      "dWin": -0.025,
+      "dP0Round": -0.07
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0014,
+      "se": 0.0377,
+      "dWin": 0.05,
+      "dP0Round": -0.35
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.031,
+      "se": 0.0314,
+      "dWin": 0,
+      "dP0Round": -0.68
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 10,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0018,
+      "se": 0.0126,
+      "dWin": 0,
+      "dP0Round": -0.07
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_5_02_e_a",
+     "name": "谢拉格不融冰",
+     "w": 0.429,
+     "link": 0,
+     "H": 0.858,
+     "human": {
+      "k": 6,
+      "n": 7,
+      "base": 0.278
+     },
+     "bond": "kjeragShip"
+    },
+    {
+     "id": "chess_item_3_05_e_a",
+     "name": "迅捷作战粮",
+     "w": 0.337,
+     "link": 0.333,
+     "H": 0.342,
+     "human": {
+      "k": 4,
+      "n": 7,
+      "base": 0.37
+     },
+     "bond": "swiftShip"
+    },
+    {
+     "id": "chess_item_1_01_e_a",
+     "name": "维式重锤",
+     "w": 0.292,
+     "link": 0,
+     "H": 0.584,
+     "human": {
+      "k": 5,
+      "n": 7,
+      "base": 0.37
+     },
+     "bond": "kjeragShip"
+    },
+    {
+     "id": "chess_item_4_10_e_a",
+     "name": "浓缩嗅盐",
+     "w": 0.271,
+     "link": 0,
+     "H": 0.543,
+     "human": {
+      "k": 4,
+      "n": 7,
+      "base": 0.13
+     },
+     "bond": "kjeragShip"
+    },
+    {
+     "id": "chess_item_3_08_e_a",
+     "name": "奥术法阵",
+     "w": 0.223,
+     "link": 0.314,
+     "H": 0.132,
+     "human": {
+      "k": 2,
+      "n": 7,
+      "base": 0.185
+     },
+     "bond": "arcaneShip"
+    }
+   ]
+  },
+  "lateranoShip": {
+   "partners": [
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0.582,
+     "T": 1,
+     "H": 0.747,
+     "S": 0,
+     "human": {
+      "k": 5,
+      "n": 7,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0119,
+      "se": 0.0155,
+      "dWin": -0.033,
+      "dP0Round": -0.01
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.199,
+     "T": 0.5,
+     "H": 0.096,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 7,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0195,
+      "se": 0.0134,
+      "dWin": -0.008,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 7,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0052,
+      "se": 0.0091,
+      "dWin": -0.008,
+      "dP0Round": 0.06
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 7,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0069,
+      "se": 0.0044,
+      "dWin": -0.008,
+      "dP0Round": -0.12
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0087,
+      "se": 0.0118,
+      "dWin": 0,
+      "dP0Round": -0.01
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0062,
+      "se": 0.0233,
+      "dWin": -0.025,
+      "dP0Round": 0.38
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0142,
+      "se": 0.0259,
+      "dWin": -0.05,
+      "dP0Round": -0.13
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0.046,
+     "T": 0,
+     "H": 0.137,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 7,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0089,
+      "se": 0.0101,
+      "dWin": -0.025,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.034,
+     "T": 0,
+     "H": 0,
+     "S": 0.101,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.025,
+      "se": 0.0224,
+      "dWin": 0,
+      "dP0Round": 0.15
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0.025,
+     "T": 0,
+     "H": 0,
+     "S": 0.075,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.021,
+      "se": 0.0191,
+      "dWin": 0.025,
+      "dP0Round": 0.07
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0211,
+      "se": 0.0238,
+      "dWin": 0.025,
+      "dP0Round": 0.15
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0043,
+      "se": 0.0052,
+      "dWin": 0,
+      "dP0Round": -0.07
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 7,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0033,
+      "se": 0.0319,
+      "dWin": -0.075,
+      "dP0Round": 0.13
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_3_02_e_a",
+     "name": "精准狙击镜",
+     "w": 0.291,
+     "link": 0.582,
+     "H": 0,
+     "human": {
+      "k": 0,
+      "n": 3,
+      "base": 0.13
+     },
+     "bond": "preciShip"
+    }
+   ]
+  },
+  "egirShip": {
+   "partners": [
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0.325,
+     "T": 0.556,
+     "H": 0.419,
+     "S": 0,
+     "human": {
+      "k": 4,
+      "n": 9,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0057,
+      "se": 0.0137,
+      "dWin": 0,
+      "dP0Round": -0.2
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.243,
+     "T": 0,
+     "H": 0,
+     "S": 0.729,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0285,
+      "se": 0.0099,
+      "dWin": 0.042,
+      "dP0Round": 0.14
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.185,
+     "T": 0.556,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0222,
+      "se": 0.0243,
+      "dWin": 0.05,
+      "dP0Round": 0.05
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.185,
+     "T": 0.556,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0037,
+      "se": 0.0161,
+      "dWin": -0.008,
+      "dP0Round": 0.24
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.185,
+     "T": 0.556,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0076,
+      "se": 0.0278,
+      "dWin": 0,
+      "dP0Round": -0.13
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0.185,
+     "T": 0.556,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0037,
+      "se": 0.0056,
+      "dWin": 0,
+      "dP0Round": -0.03
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0.132,
+     "T": 0,
+     "H": 0,
+     "S": 0.396,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0185,
+      "se": 0.0084,
+      "dWin": 0.025,
+      "dP0Round": 0.13
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0.072,
+     "T": 0,
+     "H": 0,
+     "S": 0.217,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0177,
+      "se": 0.0122,
+      "dWin": 0,
+      "dP0Round": -0.05
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0038,
+      "se": 0.0147,
+      "dWin": 0,
+      "dP0Round": -0.38
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0113,
+      "se": 0.0183,
+      "dWin": 0,
+      "dP0Round": -0.25
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 2,
+      "n": 9,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0009,
+      "se": 0.0113,
+      "dWin": 0,
+      "dP0Round": 0.01
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.002,
+      "se": 0.0141,
+      "dWin": 0,
+      "dP0Round": -0.17
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 9,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0012,
+      "se": 0.0091,
+      "dWin": 0.025,
+      "dP0Round": -0.05
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_3_07_e_a",
+     "name": "阿戈尔重刃",
+     "w": 0.449,
+     "link": 0,
+     "H": 0.898,
+     "human": {
+      "k": 6,
+      "n": 7,
+      "base": 0.111
+     },
+     "bond": "egirShip"
+    },
+    {
+     "id": "chess_item_2_01_e_a",
+     "name": "不屈弹射器",
+     "w": 0.322,
+     "link": 0.325,
+     "H": 0.319,
+     "human": {
+      "k": 3,
+      "n": 7,
+      "base": 0.185
+     },
+     "bond": "indomShip"
+    },
+    {
+     "id": "chess_item_6_09_e_a",
+     "name": "变形同构体",
+     "w": 0.217,
+     "link": 0,
+     "H": 0.435,
+     "human": {
+      "k": 6,
+      "n": 7,
+      "base": 0.759
+     },
+     "bond": "egirShip"
+    }
+   ]
+  },
+  "siracusaShip": {
+   "partners": [
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.394,
+     "T": 0.5,
+     "H": 0.681,
+     "S": 0,
+     "human": {
+      "k": 8,
+      "n": 13,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0152,
+      "se": 0.0153,
+      "dWin": 0.025,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0.364,
+     "T": 1,
+     "H": 0.091,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 13,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0137,
+      "se": 0.015,
+      "dWin": 0.033,
+      "dP0Round": -0.07
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0.184,
+     "T": 0.5,
+     "H": 0,
+     "S": 0.052,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0045,
+      "se": 0.0031,
+      "dWin": 0,
+      "dP0Round": 0.11
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 3,
+      "n": 13,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0193,
+      "se": 0.0105,
+      "dWin": -0.025,
+      "dP0Round": -0.08
+     }
+    },
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0063,
+      "se": 0.0185,
+      "dWin": 0,
+      "dP0Round": 0.25
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0009,
+      "se": 0.0029,
+      "dWin": 0,
+      "dP0Round": -0.05
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0.03,
+     "T": 0,
+     "H": 0.091,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 13,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0149,
+      "se": 0.0115,
+      "dWin": -0.025,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0.001,
+     "T": 0,
+     "H": 0,
+     "S": 0.002,
+     "human": {
+      "k": 1,
+      "n": 13,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0121,
+      "se": 0.0121,
+      "dWin": 0,
+      "dP0Round": 0.1
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 1,
+      "n": 13,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0092,
+      "se": 0.0168,
+      "dWin": 0,
+      "dP0Round": -0.2
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0073,
+      "se": 0.0213,
+      "dWin": 0.025,
+      "dP0Round": 0
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.016,
+      "se": 0.0178,
+      "dWin": 0.025,
+      "dP0Round": 0.23
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0066,
+      "se": 0.0185,
+      "dWin": 0.025,
+      "dP0Round": 0.15
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0028,
+      "se": 0.0279,
+      "dWin": -0.05,
+      "dP0Round": 0.03
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_3_01_e_a",
+     "name": "叙拉古正装",
+     "w": 0.395,
+     "link": 0,
+     "H": 0.79,
+     "human": {
+      "k": 6,
+      "n": 8,
+      "base": 0.167
+     },
+     "bond": "siracusaShip"
+    },
+    {
+     "id": "chess_item_3_05_e_a",
+     "name": "迅捷作战粮",
+     "w": 0.313,
+     "link": 0.394,
+     "H": 0.232,
+     "human": {
+      "k": 4,
+      "n": 8,
+      "base": 0.37
+     },
+     "bond": "swiftShip"
+    },
+    {
+     "id": "chess_item_3_08_e_a",
+     "name": "奥术法阵",
+     "w": 0.218,
+     "link": 0,
+     "H": 0.436,
+     "human": {
+      "k": 4,
+      "n": 8,
+      "base": 0.185
+     },
+     "bond": "siracusaShip"
+    }
+   ]
+  },
+  "kazimierzShip": {
+   "partners": [
+    {
+     "id": "raidShip",
+     "name": "突袭",
+     "strength": 0.728,
+     "T": 1,
+     "H": 0.185,
+     "S": 1,
+     "human": {
+      "k": 2,
+      "n": 13,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.04,
+      "se": 0.0145,
+      "dWin": 0.033,
+      "dP0Round": 0.27
+     }
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "strength": 0.462,
+     "T": 0.5,
+     "H": 0.887,
+     "S": 0,
+     "human": {
+      "k": 9,
+      "n": 13,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0305,
+      "se": 0.0138,
+      "dWin": 0,
+      "dP0Round": -0.33
+     }
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "strength": 0.368,
+     "T": 1,
+     "H": 0.103,
+     "S": 0,
+     "human": {
+      "k": 4,
+      "n": 13,
+      "base": 0.253
+     },
+     "sim": {
+      "n": 120,
+      "dU": 0.0051,
+      "se": 0.0134,
+      "dWin": 0.017,
+      "dP0Round": 0.01
+     }
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "strength": 0.204,
+     "T": 0.5,
+     "H": 0.111,
+     "S": 0,
+     "human": {
+      "k": 3,
+      "n": 13,
+      "base": 0.165
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.0052,
+      "se": 0.0114,
+      "dWin": 0,
+      "dP0Round": -0.17
+     }
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0213,
+      "se": 0.0242,
+      "dWin": -0.025,
+      "dP0Round": 0.23
+     }
+    },
+    {
+     "id": "soloShip",
+     "name": "独行",
+     "strength": 0.167,
+     "T": 0.5,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 120,
+      "dU": -0.004,
+      "se": 0.0063,
+      "dWin": 0,
+      "dP0Round": 0.04
+     }
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "strength": 0.016,
+     "T": 0,
+     "H": 0,
+     "S": 0.048,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0162,
+      "se": 0.0149,
+      "dWin": 0.05,
+      "dP0Round": -0.05
+     }
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "strength": 0.013,
+     "T": 0,
+     "H": 0.02,
+     "S": 0.018,
+     "human": {
+      "k": 1,
+      "n": 13,
+      "base": 0.063
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0136,
+      "se": 0.0131,
+      "dWin": 0.05,
+      "dP0Round": 0.1
+     }
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.291
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0084,
+      "se": 0.0205,
+      "dWin": -0.025,
+      "dP0Round": 0.03
+     }
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.241
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0029,
+      "se": 0.0166,
+      "dWin": -0.05,
+      "dP0Round": 0.13
+     }
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0
+     },
+     "sim": {
+      "n": 40,
+      "dU": 0.0212,
+      "se": 0.0241,
+      "dWin": 0,
+      "dP0Round": -0.2
+     }
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.013
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0057,
+      "se": 0.0191,
+      "dWin": -0.05,
+      "dP0Round": -0.35
+     }
+    },
+    {
+     "id": "emptyShip",
+     "name": "协防干员",
+     "strength": 0,
+     "T": 0,
+     "H": 0,
+     "S": 0,
+     "human": {
+      "k": 0,
+      "n": 13,
+      "base": 0.025
+     },
+     "sim": {
+      "n": 40,
+      "dU": -0.0027,
+      "se": 0.0061,
+      "dWin": 0,
+      "dP0Round": -0.05
+     }
+    }
+   ],
+   "items": [
+    {
+     "id": "chess_item_2_01_e_a",
+     "name": "不屈弹射器",
+     "w": 0.617,
+     "link": 0.462,
+     "H": 0.772,
+     "human": {
+      "k": 7,
+      "n": 10,
+      "base": 0.185
+     },
+     "bond": "indomShip"
+    },
+    {
+     "id": "chess_item_3_11_e_a",
+     "name": "突袭手雷",
+     "w": 0.545,
+     "link": 0.728,
+     "H": 0.361,
+     "human": {
+      "k": 4,
+      "n": 10,
+      "base": 0.148
+     },
+     "bond": "raidShip"
+    },
+    {
+     "id": "chess_item_4_07_e_a",
+     "name": "卡西米尔竞技旗",
+     "w": 0.4,
+     "link": 0,
+     "H": 0.801,
+     "human": {
+      "k": 7,
+      "n": 10,
+      "base": 0.13
+     },
+     "bond": "kazimierzShip"
+    },
+    {
+     "id": "chess_item_1_05_e_a",
+     "name": "源石溶剂",
+     "w": 0.336,
+     "link": 0,
+     "H": 0.672,
+     "human": {
+      "k": 7,
+      "n": 10,
+      "base": 0.333
+     },
+     "bond": "kazimierzShip"
+    }
+   ]
+  }
+ }
+}

@@ -47,6 +47,9 @@ const interval = Number(flag('--interval', '600')) || 600;
 const g06 = args.includes('--g06');
 // --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；默认开，--g06 关掉
 const lineupOn = !g06 || args.includes('--lineup');
+// --no-axis：关掉盟约轴心权重（sprlaxis_1532，默认开），退回规则 A 那版；这时顾问输出与加轴心权重之前逐字节相同
+// （test/overlay-axis.test.mjs 锁住）。--g06 也一并关掉它。
+const noAxis = g06 || args.includes('--no-axis');
 
 // ── 热更新：顾问逻辑/数据的文件一变，下一 tick 就用新的（不用重启游戏，也不用重启这个进程）──
 const WATCHED = [
@@ -282,7 +285,9 @@ export function boxOf(snap, route) {
   const pivoted = own.length && own[0].bondId !== route ? own[0].bondId : null;
   const route_ = pivoted || api.autoRoute(priv, route, banned);
   const pubBoss = (snap.brief && (snap.brief.bossId || snap.brief.hiddenBossId)) || null;
-  const view = api.analyseState(priv, { round: snap.round, modeId: snap.brief && snap.brief.modeId, disabledBonds: banned, bossId: pubBoss, g06 }, route_);
+  const pub = { round: snap.round, modeId: snap.brief && snap.brief.modeId, disabledBonds: banned, bossId: pubBoss, g06 };
+  if (noAxis) pub.noAxis = true;
+  const view = api.analyseState(priv, pub, route_);
   const assist = pickAssist(priv, route_);
   const dual = dualStack(priv, route_, assist);
   const bond = DATA.bonds[route_] || { n: route_, t: [] };
@@ -379,6 +384,10 @@ export function boxOf(snap, route) {
     lpKind: (view.lp && view.lp.kind) || null,
     role: (view.role && view.role.name) || null,
   };
+  // 盟约轴心权重（sprlaxis_1532）：主轴配哪几条副羁绊、多强——商店里沾到它们的牌和道具已经加了分
+  if (view.axis) {
+    out.axis = { main: bond.n, partners: view.axis.partners.map((p) => ({ name: p.name, s: p.s, count: p.count, open: p.open })) };
+  }
   out.server = serverInfoOf(snap);   // 这台服务器是谁、它的盟约表和顾问的 0.3.1 差在哪
   out.nl = nlOf(out);          // 自然语言版建议（小框与 --once 都读它）
   return out;
@@ -472,6 +481,12 @@ export function nlOf(box) {
     out.push(`买完把${pair.amp}放到${pair.target}${pair.pos ? `的${pair.pos}` : '身前那一格'}——这一格能多叠 ${pair.gain} 层，摆错一格就白拿了。`);
   } else if (inPrep && box.stackPlace) {
     out.push(`叠层放大器要放前排第一格${box.stackChannel ? `（${human(box.stackChannel)}）` : ''}，位置类放大器摆错等于白占一个坑。`);
+  }
+
+  // ②½ 盟约轴心：主轴配哪几条副羁绊（数据算的搭配强度），这几条的牌和道具在打分里已经加了权
+  if (inPrep && box.axis && box.axis.partners.length) {
+    const ps = box.axis.partners.map((p) => `${p.name}（${p.s.toFixed(2)}${p.open ? '' : '，已满档'}）`).join('、');
+    out.push(`轴心是${box.axis.main}，最搭的副羁绊：${ps}——商店里这几条的牌和道具已加权。`);
   }
 
   // ③ 钱不够 / 血线：这两件事都比「再加层」优先（0 金的情况在 ① 里已经说完了）
