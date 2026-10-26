@@ -42,8 +42,11 @@ const log = args.includes('--log') || once;
 const redact = args.includes('--redact');
 const port = flag('--port', process.env.CDP_PORT || '9222');
 const interval = Number(flag('--interval', '600')) || 600;
-// --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；不加则顾问的一切输出与原来逐字节相同
-const lineupOn = args.includes('--lineup');
+// --g06：唯一的退回开关（sprlruleA_1345）。规则 A「卖线外牌凑钱」和站位检查现在默认都开；加 --g06 退回到
+// 两样都没有的旧默认，这时顾问的一切输出与加规则 A/站位检查之前逐字节相同（test/overlay-lineup.test.mjs 锁住）。
+const g06 = args.includes('--g06');
+// --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；默认开，--g06 关掉
+const lineupOn = !g06 || args.includes('--lineup');
 
 // ── 热更新：顾问逻辑/数据的文件一变，下一 tick 就用新的（不用重启游戏，也不用重启这个进程）──
 const WATCHED = [
@@ -279,7 +282,7 @@ export function boxOf(snap, route) {
   const pivoted = own.length && own[0].bondId !== route ? own[0].bondId : null;
   const route_ = pivoted || api.autoRoute(priv, route, banned);
   const pubBoss = (snap.brief && (snap.brief.bossId || snap.brief.hiddenBossId)) || null;
-  const view = api.analyseState(priv, { round: snap.round, modeId: snap.brief && snap.brief.modeId, disabledBonds: banned, bossId: pubBoss }, route_);
+  const view = api.analyseState(priv, { round: snap.round, modeId: snap.brief && snap.brief.modeId, disabledBonds: banned, bossId: pubBoss, g06 }, route_);
   const assist = pickAssist(priv, route_);
   const dual = dualStack(priv, route_, assist);
   const bond = DATA.bonds[route_] || { n: route_, t: [] };
@@ -448,6 +451,9 @@ export function nlOf(box) {
   } else if (inPrep && box.adviceKind === 'refresh') {
     const want = (box.gap || []).slice(0, 2).map((g) => String(g).split(' ')[0]).join('、');
     out.push(`商店这几格不值得花，刷一次把它换掉${want ? `，目标是找${want}` : ''}：核心还没齐，装备可以往后放。`);
+  } else if (inPrep && box.adviceKind === 'sell_fund') {
+    // 规则 A：卖线外牌凑钱（sprlruleA_1345，默认开，--g06 关）
+    out.push(`${box.advice}——钱差一点，卖掉场上用不上这条线的牌来凑。`);
   } else if (inPrep && top && top.score >= 26) {
     out.push(`商店第 ${top.slot} 格的${top.name}可以拿（${money(top.price)}）：${whyOf(top) || '评分够'}。`);
   } else if (inPrep && funds === 0) {

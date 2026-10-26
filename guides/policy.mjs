@@ -2,6 +2,7 @@
 import { buyScoreOf, itemTarget, planLayout, fieldModel, effDps } from '../../engine/server/match/bot.js';
 import { computeBonds, pieceBonds } from '../../engine/server/match/bondsMeta.js';
 import { legalTiles, placeClass, parseKey } from '../../engine/server/match/board.js';
+import { topActiveBondMeta } from '../../engine/server/sim/content/garrisons/meta.js';
 const econBonds=['visiShip','miraShip','investShip'];
 const econNames=['山','锡人','琳琅诗怀雅','寒檀','赫默','华法琳'];
 const coreBands={yanShip:'band_duyaoy',kjeragShip:'band_sciurus',lateranoShip:'band_paganini',sargonShip:'band_pepe',victoriaShip:'band_harold',egirShip:'band_pith',siracusaShip:'band_chiave',kazimierzShip:'band_mlynar'};
@@ -181,6 +182,75 @@ function prep(m,ps){
  const base=m.guideSpec;m.guideSpec=seatSpec(base,ps);
  try{prepSeat(m,ps);}finally{m.guideSpec=base;}
 }
+// ── 规则 A：卖线外牌凑钱 (spec.sellFund, default off; humanopt_1231 g11_A seats.p0.sellFund) ──
+// Minimal port of the helpers sellFund needs, cherry-picked from the humanopt_1231 research branch (033a667:
+// trig/ids/topNow/topOf; c4207c8: prepFeed/battleFeed/stackWindow; 1d7187d: lineWants; c6eae61: sellFund itself) —
+// those commits' other switches (earlyStack, mergeStack, layerSteer, economy.investCycle, buyOut, pairs, …) are not
+// ported; this file does not carry them, sprlruleA_1345 is in scope for sellFund only.
+const ids=s=>String(s??'').split(',').map(x=>x.trim()).filter(Boolean);
+const trig=(gd,id,ev)=>(gd.chess(id)?.garrisonIds||[]).map(g=>gd.garrison(g)).filter(g=>g?.eventType===ev);
+// The lit bond a 「当前激活且层数最多」 trait feeds (ties → bond data order), board as it stands.
+const topOf=(ps,lit)=>topActiveBondMeta({gd:ps.gd,data:{},bondActive:lit,layers:b=>ps.layers[b]||0});
+const topNow=ps=>topOf(ps,b=>!!ps.bonds[b]?.active);
+const stackWindow=(m,o)=>!!o&&m.round>=o.fromRound&&m.round<=o.untilRound;
+// A piece p0's own line keeps (core member / recipe producer or terminal); anything else is a candidate to sell.
+const lineWants=(m,ps,c)=>{const r=routeInfo(m,ps);return c.bonds.includes(r.core)||r.producers.includes(c.name)||r.terminals.includes(c.name);};
+const lastRound=new WeakMap();
+function lastRoundOf(m,ps){
+ const k=lastRound.get(ps);if(k?.round===m.round)return k;
+ const a=m.guideActions.filter(x=>x.player===ps.playerId&&x.round===m.round-1&&x.ok);
+ const v={round:m.round,gained:a.filter(x=>['buy','reward','steer_buy'].includes(x.type)).length,refreshes:a.filter(x=>x.type==='refresh').length,spent:a.reduce((t,x)=>t+Math.max(0,(x.fundsBefore??0)-(x.fundsAfter??0)),0)};
+ lastRound.set(ps,v);return v;
+}
+// prepFeed: one prep's 休整期 layers (SERVER_PREP_START/FIN, operator on the board) a holder of chess `id` adds to
+// `bond`; sellFund uses it (with battleFeed) only to tell a dead single copy (feeds the core nothing) from one worth keeping.
+function prepFeed(m,ps,id,bond,anyTop=false){
+ const c=ps.gd.chess(id);if(!c)return 0;const has=c.bonds.includes(bond),top=topNow(ps),isTop=anyTop||!top||top===bond;
+ const board=[...ps.board.entries()].filter(([,p])=>p.kind==='chess'),hand=ps.hand.filter(p=>p?.kind==='chess');
+ const tiers=()=>new Set(board.filter(([,p])=>pieceBonds(ps.gd,p).includes(bond)).map(([,p])=>ps.gd.tierOf(p.id))).size;
+ const rowMax=()=>{const n={};for(const [k] of board){const r=parseKey(k)[0];n[r]=(n[r]||0)+1;}return Math.max(0,...Object.values(n));};
+ let v=0;
+ for(const g of [...trig(ps.gd,id,'SERVER_PREP_START'),...trig(ps.gd,id,'SERVER_PREP_FIN')]){
+  const bb=g.bb||{},bs=ids(g.bbStr?.bond),n=Number(bb.count)||0,mu=Number(bb.multi)||1;
+  if(g.effectType==='SERVER_ADD_BOND'){if(bs.includes(bond))v+=n;}
+  else if(g.effectType==='SERVER_ADD_BOND_CHESS_ALL'){if(has)v+=n;}
+  else if(g.effectType==='SERVER_ADD_BOND_POSITION')v+=n*(has?2:1);
+  else if(g.effectType==='SERVER_ADD_BOND_ACTIVATED_MOST_LAYER'){if(isTop)v+=n;}
+  else if(g.effectType==='SERVER_ADD_ACT_BOND_DIFF_LV_MOST_LAYER'){if(isTop)v+=mu*tiers();}
+  else if(g.effectType==='SERVER_ADD_BOND_IN_HAND')v+=n*hand.filter(p=>pieceBonds(ps.gd,p).includes(bond)).length;
+  else if(g.effectType==='SERVER_ADD_BOND_METHOD'&&bs.includes(bond)){const k=g.bbStr?.add_method;
+   v+=mu*(k==='shoplv'?ps.shop.level:k==='round_gain_char'?lastRoundOf(m,ps).gained:k==='hand_count'?hand.length:k==='same_row'?rowMax():k==='same_bond_diff_lv'?tiers():0);}
+  else if(g.effectType==='SERVER_ADD_BOND_ROUND_COIN_COST'&&bs.includes(bond))v+=Math.floor(lastRoundOf(m,ps).spent/Math.max(1,n))*(Number(bb.layer)||0);
+  else if(g.effectType==='SERVER_ADD_REFRESH_CNT_MULTIPLIER_BOND_LAYER'&&bs.includes(bond))v+=Math.min(Number(bb.max_layer)||Infinity,(Number(bb.multiplier)||0)*lastRoundOf(m,ps).refreshes);
+ }
+ return v;
+}
+// battleFeed: an IN_BATTLE ADD_BOND trait's per-battle cap on `bond` — sellFund's other half of "feeds it nothing".
+function battleFeed(ps,id,bond){
+ const c=ps.gd.chess(id);if(!c)return 0;const top=topNow(ps);let v=0;
+ for(const g of trig(ps.gd,id,'IN_BATTLE')){if(g.effectType!=='ADD_BOND')continue;const t=g.bbStr?.bond_type;
+  if(t==='bond_by_id'&&ids(g.bbStr?.bond_id).includes(bond)||t==='bond_self'&&c.bonds.includes(bond)||t==='bond_actived_maxstack'&&(!top||top===bond))v+=Number(g.bb?.max_add_count_per_battle)||Number(g.bb?.bond_add_count)||0;}
+ return v;
+}
+// spec.sellFund (default off; {fromRound, untilRound, gap, maxSells}): 卖线外牌凑钱 (humanopt_1231). Before a refresh, when
+// a shop operator the line wants (member / recipe: the buy loop keeps it, no off-line penalty) scores above the buy floor
+// but costs at most `gap` more than the funds, sell owned single copies the line does not want and that feed it nothing
+// (prepFeed / battleFeed = 0, garrisons data), lowest value first, at most maxSells per round; the next step buys it.
+function sellFund(m,ps,floor){
+ const sf=m.guideSpec.sellFund,core=routeInfo(m,ps).core,cap=sf.maxSells??2;
+ const done=m.guideActions.filter(x=>x.type==='sell_fund'&&x.round===m.round&&x.player===ps.playerId).length;if(done>=cap)return false;
+ let tgt=-1,tv=-Infinity;
+ ps.shop.slots.forEach((s,i)=>{if(!s||s.sold||s.kind!=='chess'||!canTake(m,ps,s.id))return;const gap=ps.priceOf(s)-ps.funds;if(gap<=0||gap>(sf.gap??2))return;
+  if(!lineWants(m,ps,rec(ps,s)))return;const v=value(m,ps,s,{buy:true})-ps.priceOf(s)*2;if(v>floor&&v>tv){tv=v;tgt=i;}});
+ if(tgt<0)return false;
+ const single=p=>ps.allChess().filter(x=>base(ps,x)===base(ps,p)).length===1;
+ const cands=ps.allChess().filter(p=>{const c=rec(ps,p);return c&&!ps.gd.isGolden(p.id)&&!lineWants(m,ps,c)&&prepFeed(m,ps,p.id,core,true)===0&&battleFeed(ps,p.id,core)===0&&single(p);}).sort((a,b)=>value(m,ps,a)-value(m,ps,b)||a.uid-b.uid);
+ const price=ps.priceOf(ps.shop.slots[tgt]),sell=[];let f=ps.funds;
+ for(const p of cands){if(f>=price||done+sell.length>=cap)break;sell.push(p);f+=ps.gd.sellPrice(p.id);}
+ if(f<price)return false;
+ for(const p of sell)if(!act(m,ps,'sell_fund',()=>ps.sell(p.uid),{id:p.id,for:ps.shop.slots[tgt].id}))return false;
+ return true;
+}
 function prepSeat(m,ps){
  const spec=m.guideSpec;const start=performance.now();m.autoPickPersonalChoice(ps,'bot');snapshot(m,ps,'before');
  r15Transform(m,ps);
@@ -231,6 +301,7 @@ function prepSeat(m,ps){
   if(best>=0&&bv>buyFloor){const s=ps.shop.slots[best],before=new Set(ps.allChess().map(p=>p.uid));if(!act(m,ps,'buy',()=>ps.buy(best),{id:s.id,score:bv,reservedOwner:m.guideTeam.reservations[ps.gd.baseIdOf(s.id)]}))break;
    if(cycle){const added=ps.allChess().find(p=>!before.has(p.uid)&&p.id===s.id);if(added)act(m,ps,'cycle_sell',()=>ps.sell(added.uid),{id:added.id});}continue;}
   if(holding)break;
+  if(stackWindow(m,spec.sellFund)&&sellFund(m,ps,buyFloor))continue;
   const refreshCost=ps.shop.freeRefreshes>0?0:ps.gd.refreshPrice;const reserve=bank?5:0;
   if(refreshes>=(r15?99:spec.maxRefreshes)||ps.funds<refreshCost+reserve+1)break;
   if(!act(m,ps,'refresh',()=>ps.refresh()))break;refreshes++;

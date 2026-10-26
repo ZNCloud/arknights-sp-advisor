@@ -722,6 +722,51 @@
   }
 
   /** The one action word the panel leads with. */
+  // 规则 A「卖线外牌凑钱」(humanopt_1231 g11_A；sprlAlu_1728 实测 8001-8300：A+站位检查通关率 15.3%→22.7%，
+  // McNemar p=0.005，效用 +0.065±0.015)。默认开（sprlruleA_1345），ctx.ruleA=false（--g06）时这条分支整个不跑，
+  // adviceRaw 和加规则 A 之前逐字节一样。
+  var RULE_A = { fromRound: 3, untilRound: 12, gap: 3, maxSells: 2 };
+  function sellPriceOf(id) {
+    var row = (EC.sell || {})[tierOf(id)];
+    if (!row) return 0;
+    return (isGolden(id) ? row.golden : row.normal) || 0;
+  }
+  // best 这一格本该是 >=40 的「抓」，只是钱差一点（<= RULE_A.gap）：卖场上不属于当前线、只有一张、
+  // 不会合卡的牌来凑钱；candidates 按阶数/价格从低到高卖，凑够差额为止，凑不够就不建议。
+  function sellFundOf(priv, ctx, slots, best, up) {
+    if (!ctx.ruleA || !best || !ctx.route) return null;
+    var round = ctx.round || 0;
+    if (round < RULE_A.fromRound || round > RULE_A.untilRound) return null;
+    var slot = slots[best.index];
+    var price = slot ? (typeof slot.price === 'number' ? slot.price : 0) : 0;
+    var gap = price - ctx.funds;
+    if (gap <= 0 || gap > RULE_A.gap) return null;
+    // 这一格钱够的话评分是不是真的 >=40（而不是被「资金不够」扣分后侥幸落在别的分支）
+    var savedFunds = ctx.funds;
+    ctx.funds = price;
+    var r2 = scoreSlot(slot, ctx);
+    ctx.funds = savedFunds;
+    if (r2.score < 40 || r2.score <= up) return null;
+    var held = ctx.held || heldCounts(priv);
+    var board = (priv.board || []).filter(function (p) { return p && p.kind === 'chess' && typeof p.id === 'string'; });
+    var cands = [];
+    for (var i = 0; i < board.length; i++) {
+      var p = board[i];
+      if (isGolden(p.id)) continue;
+      if ((held[baseOf(p.id)] || 0) > 1) continue;          // 留着能合的（独苗才卖）
+      if (bondsOf(p.id).indexOf(ctx.route) >= 0) continue;  // 本线的牌不卖
+      cands.push(p);
+    }
+    cands.sort(function (a, b) { return tierOf(a.id) - tierOf(b.id) || priceOf(a.id) - priceOf(b.id); });
+    var sold = [], raised = 0;
+    for (var j = 0; j < cands.length && sold.length < RULE_A.maxSells && raised < gap; j++) {
+      sold.push(cands[j]);
+      raised += sellPriceOf(cands[j].id);
+    }
+    if (raised < gap) return null;
+    return { sold: sold, raised: raised, price: price };
+  }
+
   function adviceRaw(priv, ctx) {
     var slots = (priv.shop && priv.shop.slots) || [];
     var best = null, bestScore = -1, r, i;
@@ -737,6 +782,11 @@
     var cap = (pol && pol.levelCap && (ctx.round || 0) < pol.levelCap.untilRound) ? pol.levelCap.level : (EC.maxLevel || 6);
     if (best && best.score >= 40 && best.score > up) {
       return { kind: 'buy', text: '抓 ' + best.name + '（槽位 ' + (best.index + 1) + '）', best: best };
+    }
+    var sellFund = sellFundOf(priv, ctx, slots, best, up);
+    if (sellFund) {
+      var soldNames = sellFund.sold.map(function (p) { return nameOf(p.id); }).join('、');
+      return { kind: 'sell_fund', text: '卖 ' + soldNames + '（补 ' + sellFund.raised + ' 金）→ 抓 ' + best.name + '（槽位 ' + (best.index + 1) + '）', best: best, sell: sellFund.sold.map(function (p) { return p.id; }) };
     }
     var lvBuffer = carryCapOf(priv).cap > 0 ? 6 : 1;   // 钱本来就要被清掉，别为「留缓冲」拖一回合
     if (level < cap && funds >= up + lvBuffer) {
@@ -1057,6 +1107,8 @@
       held: heldCounts(priv),
       progress: progressOf(priv, route),
       offBond: true,
+      // 规则 A 默认开（卖线外牌凑钱）；pub.g06 是唯一的退回开关，退回时和加规则 A 之前逐字节相同
+      ruleA: !(pub && pub.g06),
       air: airOf(priv),
       equipped: (function () {
         var n0 = 0, bs0 = priv.board || [];
