@@ -7,8 +7,15 @@
 //   # keep it running next to the game (box.ps1 reads state.json)
 //   node advisor-dev/overlay.mjs --watch
 //
-//   # + the lineup check (站位检查) in every prep: off unless asked for (lineup-live.mjs; needs the engine checkout)
-//   node advisor-dev/overlay.mjs --watch --lineup [--lineup-threads 16]
+// Default-on advice (sprldef_2055): rule A (卖线外牌凑钱), the lineup check (站位检查, needs ../engine next to this
+// directory) with the engine board-search placement+item-carrier variant (advisor/lineup.mjs boardSearch), the
+// 盟约轴心权重 scoring, and the shop/button score badges + additional-window board diagram. One switch reverts
+// everything to the oldest baseline: --g06. Narrower reverts: --no-board (keep the lineup check's old greedy
+// checkLineup instead of the engine search), --no-axis, --no-badges (also hides the board diagram). What's on is
+// printed in state.json's `features` field (box.ps1 shows it as a line in the box) — not on stdout, so the
+// --no-*/--g06 byte-identical regression tests stay pinned to their historical references.
+//   node advisor-dev/overlay.mjs --watch --lineup-threads 16 --no-board --no-axis --no-badges   # narrow reverts
+//   node advisor-dev/overlay.mjs --watch --g06                                                  # oldest baseline
 //
 // What it reads: `globalThis.__SP__.store.get('match')` — the same public/private views the game page renders. It
 // posts nothing, sends no match intent, and touches no client file. The client must have been started with
@@ -49,16 +56,33 @@ const interval = Number(flag('--interval', '600')) || 600;
 const g06 = args.includes('--g06');
 // --lineup：休整期里跑站位检查（lineup-live.mjs），结果作为小框的一行建议；默认开，--g06 关掉
 const lineupOn = !g06 || args.includes('--lineup');
-// --board：站位检查换成引擎摆位 + 道具分配搜索（sprluse_1910，advisor/lineup.mjs boardSearch；层数估值表 routes/_layer_slopes.json）。
-// 默认关：不加时站位检查和顾问输出与之前逐字节相同。
-const boardOn = args.includes('--board');
+// --no-board：关掉「站位检查换成引擎摆位 + 道具分配搜索」（sprluse_1910/sprlpush3_2245 引入，sprldef_2055 起默认开）。
+// 关掉时站位检查退回老的贪心规则 checkLineup（advisor/lineup.mjs boardSearch；层数估值表 routes/_layer_slopes.json
+// 不再读取），顾问输出与「--board 默认开之前」逐字节相同（test/overlay-board.test.mjs 锁住）。--g06 也一并关掉它；
+// 旧的显式 --board 开关继续可用（已经是默认行为，传不传都一样，不冲突）。
+const noBoard = g06 || args.includes('--no-board');
+const boardOn = !noBoard;
 // --no-axis：关掉盟约轴心权重（sprlaxis_1532，默认开），退回规则 A 那版；这时顾问输出与加轴心权重之前逐字节相同
 // （test/overlay-axis.test.mjs 锁住）。--g06 也一并关掉它。
 const noAxis = g06 || args.includes('--no-axis');
-// --no-badges：关掉「权重标在商店卡片/刷新/freeze 按钮上」的覆盖层（sprlui_1825，默认开）。关掉时 box 里不带
-// badge 字段，real-dom.mjs 的 applyOverlay 收到 null plan 会把已经画上去的标注清空、不再画新的——
-// 真实客户端画面与加这个功能之前逐字节相同（test/real-dom.test.mjs 锁住）。
+// --no-badges：关掉「权重标在商店卡片/刷新/freeze 按钮上」的覆盖层（sprlui_1825，默认开），以及 additional 窗口的
+// 站位棋盘示意图（sprldef_2055：棋盘图此前没有真的跟着这个开关走，这里补上，和已经发给 owner 的说明对齐）。关掉时
+// box 里不带 badge 字段、box.lineup.board 也不带，real-dom.mjs 的 applyOverlay 收到 null plan 会把已经画上去的
+// 标注清空、不再画新的——真实客户端画面与加这个功能之前逐字节相同（test/real-dom.test.mjs 锁住）。
 const noBadges = g06 || args.includes('--no-badges');
+// sprldef_2055：当前开着哪些默认建议，写进 state.json 给小框（box.ps1）显示一行；不进 console 日志/stdout，
+// 避免影响 test/overlay-{lineup,axis,badges}.test.mjs 里那些「跟某个历史提交逐字节相同」的回归金样本。
+const FEATURES = { ruleA: !g06, lineup: lineupOn, axis: !noAxis, badges: !noBadges, boardDiagram: lineupOn && !noBadges, board: boardOn };
+FEATURES.text = (() => {
+  const on = [];
+  if (FEATURES.ruleA) on.push('规则A');
+  if (FEATURES.lineup) on.push('站位检查');
+  if (FEATURES.axis) on.push('轴心权重');
+  if (FEATURES.badges) on.push('商店标注');
+  if (FEATURES.boardDiagram) on.push('棋盘图');
+  if (FEATURES.board) on.push('引擎摆位搜索');
+  return on.length ? `已开：${on.join('·')}` : '已退回最早默认（--g06）';
+})();
 
 // ── 热更新：顾问逻辑/数据的文件一变，下一 tick 就用新的（不用重启游戏，也不用重启这个进程）──
 const WATCHED = [
@@ -409,6 +433,7 @@ export function boxOf(snap, route) {
       freeze: (view.freeze && view.freeze.ev) || 0,
     };
   }
+  out.features = FEATURES;           // sprldef_2055：当前开着哪些默认建议，小框显示一行，不影响任何判断逻辑
   out.server = serverInfoOf(snap);   // 这台服务器是谁、它的盟约表和顾问的 0.3.1 差在哪
   out.nl = nlOf(out);          // 自然语言版建议（小框与 --once 都读它）
   return out;
@@ -872,10 +897,15 @@ async function main() {
       const snap = await cdp.evaluate(SNAPSHOT);
       const box = boxOf(snap, await readRoute(snap && snap.ok ? api.matchKeyOf(snap.brief) : null));
       if (lineup) await lineup.attach(box, snap, cdp);   // 站位检查：在宿主线程里异步跑，这里只取它当前的结果（不等）
-      // additional 窗口的棋盘示意图：lineup-live.mjs 只给 uid/行列朝向 + uid→id 表，这里解析成名字（box.ps1 不碰插件核心）
+      // additional 窗口的棋盘示意图：lineup-live.mjs 只给 uid/行列朝向 + uid→id 表，这里解析成名字（box.ps1 不碰插件核心）。
+      // --no-badges/--g06 一并关掉它（sprldef_2055：此前这里没有真的查 noBadges，和已经发给 owner 的「--no-badges 只关
+      // 标注和棋盘图」说明对不上，这里补上）。
       if (box.lineup && box.lineup.board) {
-        const d = boardDiagramOf(box.lineup, api.nameOf);
-        if (d) box.lineup.board = d; else delete box.lineup.board;
+        if (noBadges) delete box.lineup.board;
+        else {
+          const d = boardDiagramOf(box.lineup, api.nameOf);
+          if (d) box.lineup.board = d; else delete box.lineup.board;
+        }
       }
       // 商店卡片/刷新/freeze 按钮上的权重标注：画在真实客户端的 DOM 上（real-dom.mjs），只读它的屏幕坐标，
       // 不碰游戏自己的任何属性/样式。best-effort：没有真实页面（测试用的 fake cdp）或页面还没渲染出商店时

@@ -54,6 +54,8 @@ function New-BoxLabel($fontObj, $color) {
 }
 
 $lHead = New-BoxLabel $fontSmall $dim
+# 当前开着哪些默认建议（sprldef_2055，overlay.mjs 的 out.features.text；不随局面变，只随启动参数变）
+$lFeatures = New-BoxLabel $fontSmall $dim
 $lMain = New-BoxLabel $font $hi
 $lAdvice = New-BoxLabel $font $hi
 $lPlace = New-BoxLabel $fontSmall $fg
@@ -66,7 +68,7 @@ $lRisk = New-BoxLabel $fontSmall $warn
 $lNl = New-BoxLabel $font $fg
 # 站位棋盘示意图（additional 窗口，sprlui_1825）的说明行；图本身是下面的 $boardBox（不是 Label，单独摆）
 $lBoardNote = New-BoxLabel $fontSmall $dim
-$labels = @($lHead, $lMain, $lAdvice, $lNl, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk, $lBoardNote)
+$labels = @($lHead, $lFeatures, $lMain, $lAdvice, $lNl, $lPlace, $lHand, $lGap, $lShop, $lAux, $lRisk, $lBoardNote)
 
 $coreBonds = [ordered]@{
   yanShip = '炎'; sargonShip = '萨尔贡'; victoriaShip = '维多利亚'; kjeragShip = '谢拉格'
@@ -233,6 +235,7 @@ $timer.Interval = 400
 $timer.Add_Tick({
   if (-not (Test-Path $statePath)) {
     Set-Line $lHead 'state.json 未找到 · 先跑 node advisor-dev\overlay.mjs --watch' $dim
+    Set-Line $lFeatures '' $dim
     Set-Line $lMain '等待对局…' $hi
     Set-Line $lAdvice '' $hi ; Set-Line $lNl '' $fg ; Set-Line $lPlace '' $fg ; Set-Line $lHand '' $dim ; Set-Line $lGap '' $fg ; Set-Line $lShop '' $fg ; Set-Line $lAux '' $fg ; Set-Line $lRisk '' $warn
     Reflow
@@ -254,6 +257,8 @@ $timer.Add_Tick({
   $age = [int](([DateTimeOffset]::UtcNow.ToUnixTimeMilliseconds()) - $box.at)
   $stale = if ($age -gt 4000) { " · 数据 $age ms 旧" } else { '' }
   $headColor = if ($age -gt 4000) { $warn } else { $dim }
+  # 当前开着哪些默认建议：不管下面走哪条分支都先摆好这一行（sprldef_2055）
+  Set-Line $lFeatures ($box.features.text) $dim
 
   # 站位顾问棋盘示意图：box.lineup.board 存在就画（没有建议时只画当前站位，见 overlay.mjs boardDiagramOf）；
   # 不管下面走哪条分支（开局/纯文本/nl/电报体）都先摆好，棋盘和文字各管各的

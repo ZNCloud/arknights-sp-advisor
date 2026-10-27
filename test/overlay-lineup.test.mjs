@@ -7,14 +7,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { runOverlay } from './overlay-harness.mjs';
+import { runOverlay, withoutLineup } from './overlay-harness.mjs';
 
 const fx = (f) => new URL(`./fixtures/${f}`, import.meta.url);
 const frames = fs.readFileSync(fx('overlay-frames.jsonl'), 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l));
 
 test('--g06: state.json, log and records are byte-identical to the overlay before the lineup check and 规则 A', async () => {
   const golden = JSON.parse(fs.readFileSync(fx('overlay-off.golden.json'), 'utf8'));
-  const r = await runOverlay({ frames, args: ['--watch', '--log', '--interval', '20', '--g06'] });
+  // sprldef_2055: strip the `features` field (box.ps1-only, didn't exist in this golden either) the same way the
+  // axis/badges tests already strip `lineup`/`badge` — the point of --g06 is the *advice*, not whether a brand-new
+  // informational field that every mode now carries happens to be absent from a frozen historical snapshot.
+  const r = withoutLineup(await runOverlay({ frames, args: ['--watch', '--log', '--interval', '20', '--g06'] }));
   assert.equal(r.transcript.length, golden.transcript.length);
   r.transcript.forEach((t, i) => assert.equal(t.state, golden.transcript[i].state, `state.json after tick ${i} (${t.frame})`));
   assert.equal(r.stdout, golden.stdout);

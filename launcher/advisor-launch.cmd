@@ -10,7 +10,11 @@ set "ADV=D:\CodeProject\advisor-dev"
 set "PORT=9222"
 set "EXE="
 
-rem --- optional: --lineup turns the lineup check on (off by default) ---
+rem --- the lineup check (plus the engine board search, axis weight, badges and board diagram) is on by default now;
+rem --- --lineup here is a legacy no-op, kept so old shortcuts still work. This script does not forward other flags
+rem --- to overlay.mjs — to narrow or fully revert (--no-board/--no-axis/--no-badges/--g06, see README.md's "默认开关
+rem --- 一览") either run "node overlay.mjs --watch --log <flag>" directly in %ADV%, or add the flag to the
+rem --- "node overlay.mjs" line below.
 set "LINEUP="
 for %%A in (%*) do if /i "%%~A"=="--lineup" set "LINEUP=--lineup"
 
