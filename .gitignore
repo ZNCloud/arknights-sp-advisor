@@ -7,3 +7,4 @@ records/
 .sync-secret.json
 .sync-state.json
 *.zip
+_chrome-profile/
