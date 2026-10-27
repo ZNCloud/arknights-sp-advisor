@@ -365,8 +365,11 @@ export function* boardSearch(st, { playerId = 'p0', slopes, seeds = 2, screenSee
     shortlist.delete(best.key);
     cur = { ...best.score, dmgBy: best.score.dmgBy || cur.dmgBy }; L = best.L;
   }
+  // sprldef_2055: layoutStart/names so the caller can build the board diagram the same way checkLineup already does
+  // (board-diagram.mjs just wants {current, best, names}) — `start` above is the score summary, `layoutStart` is the
+  // actual pre-move layout (`start` the local `const`, untouched by the `L = best.L` reassignment in the loop above).
   return { kind: fk.kind, round: fk.round, steps: steps.map(({ what, kind, op }) => ({ what, kind, op })), start: cur0, best: cur, layout: L, decisions, evals,
-    ms: Math.round(performance.now() - t0) };
+    ms: Math.round(performance.now() - t0), layoutStart: start, names: Object.fromEntries([...pieces].map(([u, p]) => [u, p.id])) };
 }
 // Drivers: the bot's prep is synchronous (inline engine), the overlay's is a pool (async).
 export function searchBoardSync(st, o = {}) {
