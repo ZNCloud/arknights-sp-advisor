@@ -8,13 +8,19 @@
 //   import { loadAdvisor } from './core-loader.mjs';
 //   const { DATA, api } = await loadAdvisor();
 
+import { existsSync } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export const PLUGIN_PAGE = path.join(
-  path.dirname(fileURLToPath(import.meta.url)), '..', 'Stronghold-Protocol', 'plugins', 'pick-advisor', 'ui', 'index.html',
-);
+// This repo's own plugin page IS the source of truth; the copy installed into the engine's plugins/ can be stale
+// (reading it cost an afternoon: the engine still had a 2026-10-18 page without `axisCtxOf`, and the overlay died on
+// the load). Prefer the repo's copy, fall back to the installed one for a checkout that only has the plugin deployed.
+const here = path.dirname(fileURLToPath(import.meta.url));
+export const PLUGIN_PAGE = [
+  path.join(here, 'plugin', 'ui', 'index.html'),
+  path.join(here, '..', 'Stronghold-Protocol', 'plugins', 'pick-advisor', 'ui', 'index.html'),
+].find((p) => existsSync(p)) || path.join(here, 'plugin', 'ui', 'index.html');
 
 const DATA_MARK = '<script id="sp-data" type="application/json">';
 const CORE_OPEN = '// <CORE>';
