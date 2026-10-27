@@ -64,3 +64,23 @@ node lab\replay.mjs --json          # 机器可读
 
 - `records/` 在 `.gitignore` 里，还在被 overlay 持续追加；这里是拷出来的留档版本（每局打完再拷一次）。
 - 不含账号、昵称或任何令牌：字段全部来自对局视图本身。
+
+## 整局 demo（`.spdemo`，0.3.2 起游戏自带导出）
+
+游戏页可以导出整局 `.spdemo`（gzip JSON：`m.public` / `m.layer` / `b.start` / `m.unitStats` / `m.result` 的帧序列）。
+它**只有公开视图**（没有商店、手牌、资金、站位），但覆盖四家的层数、上阵人数、调度中心等级、LP 与每场战斗的阵容，
+所以比 `recordTurn` 的逐动作记录更适合复盘「为什么这局能胡」。
+
+| 文件 | 内容 |
+|---|---|
+| `2026-10-27-abyss-15r.spdemo` | 整局 demo（已脱敏：昵称 → `座位N`，账号 id → `seatN`，含 battleId 里内嵌的 id） |
+| `2026-10-27-abyss-15r.summary.json` | `lab/analyze-demo.mjs` 的结构化输出（四家终局、每回合、层数、战斗阵容） |
+| `../model/POSTMORTEM-2026-10-27-ABYSS-15R.md` | 这局的复盘：核心人数 → 层数加速段，以及 BOSS 伤害归属 |
+
+工具：
+
+```powershell
+node tools/redact-demo.mjs <in .spdemo|.json> <out .spdemo|.json>   # 昵称/账号 id → 座位，失败就不落盘
+node lab/analyze-demo.mjs matches/2026-10-27-abyss-15r.spdemo        # 打印复盘表；--json / --out <file> 给机器读
+```
+
