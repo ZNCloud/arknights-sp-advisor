@@ -73,14 +73,17 @@ node lab\replay.mjs --json          # 机器可读
 
 | 文件 | 内容 |
 |---|---|
-| `2026-10-27-abyss-15r.spdemo` | 整局 demo（已脱敏：昵称 → `座位N`，账号 id → `seatN`，含 battleId 里内嵌的 id） |
-| `2026-10-27-abyss-15r.summary.json` | `lab/analyze-demo.mjs` 的结构化输出（四家终局、每回合、层数、战斗阵容） |
-| `../model/POSTMORTEM-2026-10-27-ABYSS-15R.md` | 这局的复盘：核心人数 → 层数加速段，以及 BOSS 伤害归属 |
+| `2026-10-27-abyss-15r` / `2026-10-28-abyss-15r` / `2026-10-29-hard-15r` / `2026-10-29-abyss-15r` / `2026-10-30-abyss-1` / `2026-10-30-abyss-2` / `2026-10-30-abyss-3` | 七局整局 demo（`.spdemo`，已脱敏：昵称 → `座位N`，账号 id → `seatN`，含 battleId 里内嵌的 id） |
+| 同名 `.summary.json` | `lab/analyze-demo.mjs` 的结构化输出（四家终局、每回合、层数、战斗阵容） |
+
+复盘文档：[`../model/POSTMORTEM-2026-10-27-ABYSS-15R.md`](../model/POSTMORTEM-2026-10-27-ABYSS-15R.md)（单局）、
+[`../model/MATCHES-2026-10-28-30-TOP2.md`](../model/MATCHES-2026-10-28-30-TOP2.md)（六局：逐局前两名怎么打、为什么胡）。
 
 工具：
 
 ```powershell
 node tools/redact-demo.mjs <in .spdemo|.json> <out .spdemo|.json>   # 昵称/账号 id → 座位，失败就不落盘
-node lab/analyze-demo.mjs matches/2026-10-27-abyss-15r.spdemo        # 打印复盘表；--json / --out <file> 给机器读
+node lab/analyze-demo.mjs matches/2026-10-27-abyss-15r.spdemo        # 单局细表；--json / --out <file> 给机器读
+node lab/match-digest.mjs matches/2026-10-30-abyss-3.spdemo          # 四家排名 + 前两名层数/等级曲线；--json
 ```
 

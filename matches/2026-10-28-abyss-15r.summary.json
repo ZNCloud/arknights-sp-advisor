@@ -1,0 +1,2173 @@
+{
+ "meta": {
+  "id": "1793194332530-ut3wiz",
+  "mode": "INFO_CHECK",
+  "startedAt": "2026-10-28T13:32:12.530Z",
+  "durationMin": 46,
+  "result": {
+   "victory": true,
+   "roundsPassed": 15,
+   "hiddenCleared": true,
+   "reason": "victory",
+   "teamLp": 25,
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "stageId": "act2autochess_m01",
+   "bossId": "boss_1",
+   "hiddenBossId": "boss_8",
+   "seed": 4249990846
+  },
+  "me": {
+   "playerId": "seat3",
+   "name": "搴т綅3"
+  },
+  "firstPublic": {
+   "factions": [
+    "ELEMENT",
+    "INVISIBLE",
+    "REFLECTION"
+   ],
+   "disabledBonds": [
+    "奥术",
+    "阿戈尔",
+    "不屈",
+    "拉特兰",
+    "奇迹",
+    "突袭",
+    "叙拉古"
+   ],
+   "bannedCount": 24,
+   "variant": "blitz"
+  }
+ },
+ "players": [
+  {
+   "seat": 0,
+   "name": "搴т綅0",
+   "isBot": false,
+   "lp": 4,
+   "alive": true,
+   "roundsPassed": 15,
+   "band": "band_sciurus",
+   "kills": 233,
+   "lineup": [
+    {
+     "id": "chess_char_4_13_a",
+     "name": "灵知",
+     "golden": false,
+     "row": 12,
+     "col": 8,
+     "items": []
+    },
+    {
+     "id": "chess_char_3_14_b",
+     "name": "初雪",
+     "golden": true,
+     "row": 11,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_5_14_a",
+     "name": "凛御银灰",
+     "golden": false,
+     "row": 11,
+     "col": 8,
+     "items": []
+    },
+    {
+     "id": "chess_char_6_16_b",
+     "name": "溯光星源",
+     "golden": true,
+     "row": 10,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_4_21_a",
+     "name": "白面鸮",
+     "golden": false,
+     "row": 10,
+     "col": 8,
+     "items": []
+    },
+    {
+     "id": "chess_char_2_05_b",
+     "name": "哈洛德",
+     "golden": true,
+     "row": 9,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_3_21_b",
+     "name": "空弦",
+     "golden": true,
+     "row": 9,
+     "col": 8,
+     "items": [
+      "chess_item_5_02_e_b"
+     ]
+    },
+    {
+     "id": "chess_char_6_19_a",
+     "name": "锏",
+     "golden": false,
+     "row": 9,
+     "col": 9,
+     "items": []
+    }
+   ],
+   "bonds": [
+    {
+     "id": "kjeragShip",
+     "name": "谢拉格",
+     "count": 5,
+     "layers": 436,
+     "tier": 1
+    },
+    {
+     "id": "skillfulShip",
+     "name": "灵巧",
+     "count": 4,
+     "layers": 135,
+     "tier": 1
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "count": 2,
+     "layers": 8,
+     "tier": 1
+    },
+    {
+     "id": "suntShip",
+     "name": "绝技",
+     "count": 4,
+     "layers": 2,
+     "tier": 1
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "count": 0,
+     "layers": 20,
+     "tier": 0
+    },
+    {
+     "id": "kazimierzShip",
+     "name": "卡西米尔",
+     "count": 1,
+     "layers": 8,
+     "tier": 0
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "count": 1,
+     "layers": 8,
+     "tier": 0
+    },
+    {
+     "id": "yanShip",
+     "name": "炎",
+     "count": 0,
+     "layers": 6,
+     "tier": 0
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "count": 0,
+     "layers": 4,
+     "tier": 0
+    },
+    {
+     "id": "miraShip",
+     "name": "奇迹",
+     "count": 0,
+     "layers": 3,
+     "tier": 0
+    }
+   ],
+   "stats": {
+    "dmgDealt": 14149411,
+    "kills": 210,
+    "leaks": 84,
+    "gold": 174,
+    "refreshes": 62,
+    "merges": 4,
+    "itemsEquipped": 10,
+    "bossDamage": 8361631,
+    "activatedLayers": 581,
+    "lpLost": 12,
+    "perfectRounds": 4
+   }
+  },
+  {
+   "seat": 1,
+   "name": "搴т綅1",
+   "isBot": false,
+   "lp": 7,
+   "alive": true,
+   "roundsPassed": 15,
+   "band": "band_duyaoy",
+   "kills": 338,
+   "lineup": [
+    {
+     "id": "chess_char_5_12_a",
+     "name": "夕",
+     "golden": false,
+     "row": 11,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_5_03_b",
+     "name": "烛煌",
+     "golden": true,
+     "row": 11,
+     "col": 8,
+     "items": [
+      "chess_item_3_05_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_6_20_b",
+     "name": "纯烬艾雅法拉",
+     "golden": true,
+     "row": 10,
+     "col": 5,
+     "items": [
+      "chess_item_3_04_e_b",
+      "chess_item_6_09_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_3_04_b",
+     "name": "琳琅诗怀雅",
+     "golden": true,
+     "row": 10,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_1_03_b",
+     "name": "惊蛰",
+     "golden": true,
+     "row": 10,
+     "col": 8,
+     "items": []
+    },
+    {
+     "id": "chess_char_4_17_b",
+     "name": "星熊",
+     "golden": true,
+     "row": 9,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_6_15_a",
+     "name": "仇白",
+     "golden": false,
+     "row": 9,
+     "col": 8,
+     "items": []
+    },
+    {
+     "id": "chess_char_6_03_a",
+     "name": "余",
+     "golden": false,
+     "row": 9,
+     "col": 9,
+     "items": [
+      "chess_item_1_02_e_a",
+      "chess_item_5_09_e_a"
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "id": "yanShip",
+     "name": "炎",
+     "count": 8,
+     "layers": 155,
+     "tier": 2
+    },
+    {
+     "id": "suntShip",
+     "name": "绝技",
+     "count": 5,
+     "layers": 0,
+     "tier": 2
+    },
+    {
+     "id": "victoriaShip",
+     "name": "维多利亚",
+     "count": 1,
+     "layers": 20,
+     "tier": 0
+    },
+    {
+     "id": "investShip",
+     "name": "投资人",
+     "count": 1,
+     "layers": 3,
+     "tier": 0
+    }
+   ],
+   "stats": {
+    "dmgDealt": 14775682,
+    "kills": 341,
+    "leaks": 29,
+    "gold": 193,
+    "refreshes": 70,
+    "merges": 6,
+    "itemsEquipped": 16,
+    "bossDamage": 4358477,
+    "activatedLayers": 155,
+    "lpLost": 9,
+    "perfectRounds": 9
+   }
+  },
+  {
+   "seat": 2,
+   "name": "搴т綅2",
+   "isBot": false,
+   "lp": 8,
+   "alive": true,
+   "roundsPassed": 15,
+   "band": "band_pepe",
+   "kills": 425,
+   "lineup": [
+    {
+     "id": "chess_char_5_15_a",
+     "name": "引星棘刺",
+     "golden": false,
+     "row": 12,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_6_05_a",
+     "name": "异客",
+     "golden": false,
+     "row": 12,
+     "col": 8,
+     "items": [
+      "chess_item_6_11_e_a",
+      "chess_item_3_05_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_5_02_b",
+     "name": "缇缇",
+     "golden": true,
+     "row": 11,
+     "col": 5,
+     "items": [
+      "chess_item_3_05_e_b",
+      "chess_item_3_02_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_6_16_a",
+     "name": "溯光星源",
+     "golden": false,
+     "row": 11,
+     "col": 7,
+     "items": [
+      "chess_item_2_04_e_b",
+      "chess_item_6_09_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_6_06_a",
+     "name": "佩佩",
+     "golden": false,
+     "row": 11,
+     "col": 8,
+     "items": [
+      "chess_item_3_04_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_2_06_b",
+     "name": "莎草",
+     "golden": true,
+     "row": 10,
+     "col": 5,
+     "items": []
+    },
+    {
+     "id": "chess_char_2_08_b",
+     "name": "泡泡",
+     "golden": true,
+     "row": 10,
+     "col": 7,
+     "items": []
+    },
+    {
+     "id": "chess_char_4_23_b",
+     "name": "百炼嘉维尔",
+     "golden": true,
+     "row": 10,
+     "col": 8,
+     "items": [
+      "chess_item_3_05_e_b",
+      "chess_item_3_08_e_a"
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "id": "sargonShip",
+     "name": "萨尔贡",
+     "count": 7,
+     "layers": 385,
+     "tier": 2
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "count": 2,
+     "layers": 116,
+     "tier": 1
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "count": 2,
+     "layers": 40,
+     "tier": 1
+    },
+    {
+     "id": "suntShip",
+     "name": "绝技",
+     "count": 4,
+     "layers": 0,
+     "tier": 1
+    },
+    {
+     "id": "yanShip",
+     "name": "炎",
+     "count": 0,
+     "layers": 1,
+     "tier": 0
+    }
+   ],
+   "stats": {
+    "dmgDealt": 33392104,
+    "kills": 446,
+    "leaks": 14,
+    "gold": 172,
+    "refreshes": 40,
+    "merges": 8,
+    "itemsEquipped": 19,
+    "bossDamage": 20242997,
+    "activatedLayers": 541,
+    "lpLost": 2,
+    "perfectRounds": 6
+   }
+  },
+  {
+   "seat": 3,
+   "name": "搴т綅3",
+   "isBot": false,
+   "lp": 6,
+   "alive": true,
+   "roundsPassed": 15,
+   "band": "band_damaztic",
+   "kills": 205,
+   "lineup": [
+    {
+     "id": "chess_char_6_01_b",
+     "name": "蕾缪安",
+     "golden": true,
+     "row": 12,
+     "col": 6,
+     "items": [
+      "chess_item_6_09_e_a",
+      "chess_item_3_09_e_b"
+     ]
+    },
+    {
+     "id": "chess_char_6_05_a",
+     "name": "异客",
+     "golden": false,
+     "row": 12,
+     "col": 7,
+     "items": [
+      "chess_item_4_09_e_a",
+      "chess_item_6_09_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_6_08_a",
+     "name": "焰影苇草",
+     "golden": false,
+     "row": 11,
+     "col": 5,
+     "items": [
+      "chess_item_3_09_e_a",
+      "chess_item_6_05_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_5_diy2_a",
+     "name": "甄选干员",
+     "golden": false,
+     "row": 11,
+     "col": 7,
+     "items": [
+      "chess_item_6_09_e_a",
+      "chess_item_3_05_e_b"
+     ]
+    },
+    {
+     "id": "chess_char_4_07_a",
+     "name": "风笛",
+     "golden": false,
+     "row": 11,
+     "col": 8,
+     "items": [
+      "chess_item_3_10_e_b",
+      "chess_item_5_02_e_b"
+     ]
+    },
+    {
+     "id": "chess_char_2_05_a",
+     "name": "哈洛德",
+     "golden": false,
+     "row": 10,
+     "col": 5,
+     "items": [
+      "chess_item_4_11_e_b",
+      "chess_item_4_11_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_2_10_b",
+     "name": "洛洛",
+     "golden": true,
+     "row": 10,
+     "col": 8,
+     "items": [
+      "chess_item_3_10_e_a",
+      "chess_item_4_04_e_a"
+     ]
+    },
+    {
+     "id": "chess_char_3_16_a",
+     "name": "蛇屠箱",
+     "golden": false,
+     "row": 9,
+     "col": 8,
+     "items": [
+      "chess_item_6_09_e_a",
+      "chess_item_3_08_e_a"
+     ]
+    }
+   ],
+   "bonds": [
+    {
+     "id": "victoriaShip",
+     "name": "维多利亚",
+     "count": 7,
+     "layers": 156,
+     "tier": 2
+    },
+    {
+     "id": "indomShip",
+     "name": "不屈",
+     "count": 2,
+     "layers": 61,
+     "tier": 1
+    },
+    {
+     "id": "swiftShip",
+     "name": "迅捷",
+     "count": 2,
+     "layers": 12,
+     "tier": 1
+    },
+    {
+     "id": "preciShip",
+     "name": "精准",
+     "count": 3,
+     "layers": 0,
+     "tier": 2
+    },
+    {
+     "id": "arcaneShip",
+     "name": "奥术",
+     "count": 2,
+     "layers": 0,
+     "tier": 1
+    },
+    {
+     "id": "suntShip",
+     "name": "绝技",
+     "count": 2,
+     "layers": 0,
+     "tier": 1
+    },
+    {
+     "id": "visiShip",
+     "name": "远见",
+     "count": 1,
+     "layers": 61,
+     "tier": 0
+    },
+    {
+     "id": "deputShip",
+     "name": "助力",
+     "count": 0,
+     "layers": 27,
+     "tier": 0
+    },
+    {
+     "id": "steadShip",
+     "name": "坚守",
+     "count": 1,
+     "layers": 26,
+     "tier": 0
+    },
+    {
+     "id": "kazimierzShip",
+     "name": "卡西米尔",
+     "count": 0,
+     "layers": 2,
+     "tier": 0
+    }
+   ],
+   "stats": {
+    "dmgDealt": 14526612,
+    "kills": 180,
+    "leaks": 129,
+    "gold": 177,
+    "refreshes": 48,
+    "merges": 2,
+    "itemsEquipped": 33,
+    "bossDamage": 10236896,
+    "activatedLayers": 229,
+    "lpLost": 14,
+    "perfectRounds": 3
+   }
+  }
+ ],
+ "layerTotals": [
+  {
+   "pid": "seat3",
+   "bondId": "victoriaShip",
+   "total": 102,
+   "byRound": {
+    "7": 12,
+    "8": 22,
+    "9": 40,
+    "10": 58,
+    "11": 75,
+    "12": 88,
+    "13": 101,
+    "14": 102
+   },
+   "events": 26,
+   "who": "S3 搴т綅3",
+   "bond": "维多利亚"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "deputShip",
+   "total": 27,
+   "byRound": {
+    "1": 3,
+    "2": 6,
+    "3": 9,
+    "4": 12,
+    "5": 17,
+    "6": 22,
+    "7": 25,
+    "8": 27
+   },
+   "events": 15,
+   "who": "S3 搴т綅3",
+   "bond": "助力"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "steadShip",
+   "total": 26,
+   "byRound": {
+    "5": 7,
+    "6": 14,
+    "7": 18,
+    "8": 22,
+    "9": 24,
+    "10": 26
+   },
+   "events": 10,
+   "who": "S3 搴т綅3",
+   "bond": "坚守"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "swiftShip",
+   "total": 12,
+   "byRound": {
+    "4": 4,
+    "5": 8,
+    "6": 12
+   },
+   "events": 4,
+   "who": "S3 搴т綅3",
+   "bond": "迅捷"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "visiShip",
+   "total": 7,
+   "byRound": {
+    "7": 5,
+    "8": 7
+   },
+   "events": 3,
+   "who": "S3 搴т綅3",
+   "bond": "远见"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "indomShip",
+   "total": 7,
+   "byRound": {
+    "7": 5,
+    "8": 7
+   },
+   "events": 3,
+   "who": "S3 搴т綅3",
+   "bond": "不屈"
+  },
+  {
+   "pid": "seat3",
+   "bondId": "kazimierzShip",
+   "total": 2,
+   "byRound": {
+    "4": 2
+   },
+   "events": 1,
+   "who": "S3 搴т綅3",
+   "bond": "卡西米尔"
+  }
+ ],
+ "rounds": [
+  {
+   "round": 0,
+   "phase": "BATTLE_CHECK",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 24,
+     "level": 1,
+     "board": 0,
+     "bonds": ""
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 1,
+     "board": 0,
+     "bonds": ""
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 23,
+     "level": 1,
+     "board": 0,
+     "bonds": ""
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 29,
+     "level": 1,
+     "board": 0,
+     "bonds": ""
+    }
+   ]
+  },
+  {
+   "round": 1,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 24,
+     "level": 1,
+     "board": 2,
+     "bonds": ""
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 1,
+     "board": 2,
+     "bonds": "炎:1/1"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 23,
+     "level": 1,
+     "board": 2,
+     "bonds": "炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 29,
+     "level": 1,
+     "board": 2,
+     "bonds": "助力:2/3"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 24,
+     "level": 2,
+     "board": 2,
+     "bonds": ""
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 2,
+     "board": 2,
+     "bonds": "炎:1/1"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 23,
+     "level": 2,
+     "board": 2,
+     "bonds": "炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 29,
+     "level": 1,
+     "board": 4,
+     "bonds": "助力:2/6"
+    }
+   ]
+  },
+  {
+   "round": 3,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 24,
+     "level": 3,
+     "board": 2,
+     "bonds": ""
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 2,
+     "board": 3,
+     "bonds": "炎:2/10 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 23,
+     "level": 2,
+     "board": 4,
+     "bonds": "炎:1/1 萨尔贡:2/0"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 29,
+     "level": 2,
+     "board": 5,
+     "bonds": "助力:2/9"
+    }
+   ]
+  },
+  {
+   "round": 4,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 3,
+     "board": 5,
+     "bonds": "谢拉格:2/10 精准:1/10"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 3,
+     "board": 4,
+     "bonds": "炎:3/11 灵巧:2/0 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 2,
+     "board": 6,
+     "bonds": "炎:1/1 萨尔贡:2/0"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 3,
+     "board": 7,
+     "bonds": "助力:2/12 迅捷:2/4 卡西米尔:1/2"
+    }
+   ]
+  },
+  {
+   "round": 5,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 4,
+     "board": 5,
+     "bonds": "谢拉格:3/10 精准:1/10"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 3,
+     "board": 6,
+     "bonds": "炎:4/13 灵巧:2/0 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 3,
+     "board": 6,
+     "bonds": "萨尔贡:3/19 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 3,
+     "board": 7,
+     "bonds": "助力:3/17 迅捷:2/8 坚守:2/7 卡西米尔:1/2"
+    }
+   ]
+  },
+  {
+   "round": 6,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 4,
+     "board": 7,
+     "bonds": "谢拉格:5/22 精准:1/20"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 4,
+     "board": 6,
+     "bonds": "炎:4/13 灵巧:2/0 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 4,
+     "board": 5,
+     "bonds": "萨尔贡:3/38 炎:0/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 4,
+     "board": 7,
+     "bonds": "助力:3/22 坚守:2/14 迅捷:2/12 卡西米尔:1/2"
+    }
+   ]
+  },
+  {
+   "round": 7,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 4,
+     "board": 7,
+     "bonds": "谢拉格:6/42 精准:1/20 坚守:0/2"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 4,
+     "board": 7,
+     "bonds": "炎:6/34 灵巧:2/0 绝技:2/0 维多利亚:1/5 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 4,
+     "board": 8,
+     "bonds": "萨尔贡:6/74 炎:0/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 4,
+     "board": 8,
+     "bonds": "助力:2/25 维多利亚:3/18 坚守:2/18 远见:2/11 不屈:2/11 迅捷:1/12 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 8,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 4,
+     "board": 7,
+     "bonds": "谢拉格:6/110 绝技:2/0 精准:1/20 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 5,
+     "board": 8,
+     "bonds": "炎:6/43 灵巧:2/0 绝技:2/0 维多利亚:1/5 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 5,
+     "board": 8,
+     "bonds": "萨尔贡:6/108 炎:0/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 5,
+     "board": 8,
+     "bonds": "维多利亚:3/34 助力:2/27 坚守:2/22 远见:2/19 不屈:2/19 迅捷:1/12 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 9,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 5,
+     "board": 7,
+     "bonds": "谢拉格:6/129 绝技:3/0 精准:1/20 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 5,
+     "board": 8,
+     "bonds": "炎:6/51 灵巧:2/0 绝技:2/0 维多利亚:1/5 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 5,
+     "board": 8,
+     "bonds": "萨尔贡:6/142 坚守:2/0 绝技:2/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 5,
+     "board": 8,
+     "bonds": "维多利亚:5/61 远见:2/28 不屈:2/28 坚守:2/24 助力:1/27 迅捷:0/12 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 10,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 23,
+     "level": 5,
+     "board": 8,
+     "bonds": "谢拉格:5/147 灵巧:2/2 助力:2/2 绝技:3/2 精准:1/20 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:6/79 绝技:3/0 维多利亚:1/5 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:6/170 坚守:2/0 绝技:2/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 27,
+     "level": 5,
+     "board": 8,
+     "bonds": "维多利亚:6/88 远见:2/37 不屈:2/37 坚守:2/26 助力:1/27 迅捷:1/12 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 11,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 22,
+     "level": 5,
+     "board": 8,
+     "bonds": "谢拉格:5/278 灵巧:3/19 绝技:2/2 精准:0/20 助力:1/8 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 29,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:7/99 绝技:4/0 维多利亚:1/10 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 22,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:6/245 精准:2/28 迅捷:2/8 坚守:2/0 绝技:2/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 25,
+     "level": 6,
+     "board": 8,
+     "bonds": "维多利亚:6/114 远见:2/46 不屈:2/46 迅捷:2/12 助力:0/27 坚守:1/26 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 12,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 12,
+     "level": 6,
+     "board": 8,
+     "bonds": "谢拉格:4/385 灵巧:4/43 绝技:3/2 精准:0/20 助力:1/8 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 20,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:8/127 绝技:5/0 维多利亚:1/20 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 21,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:6/298 精准:2/56 迅捷:2/16 坚守:2/0 绝技:2/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 15,
+     "level": 6,
+     "board": 8,
+     "bonds": "维多利亚:6/136 远见:2/55 不屈:2/55 迅捷:2/12 助力:0/27 坚守:1/26 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 13,
+   "phase": "SETTLE",
+   "teamLp": null,
+   "bossHp": null,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 12,
+     "level": 6,
+     "board": 8,
+     "bonds": "谢拉格:4/422 灵巧:4/75 绝技:3/2 精准:0/20 助力:1/8 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 20,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:7/139 绝技:5/0 维多利亚:1/20 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 21,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:6/377 精准:2/108 迅捷:2/24 坚守:2/0 绝技:3/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 15,
+     "level": 6,
+     "board": 8,
+     "bonds": "维多利亚:5/155 远见:2/61 不屈:2/61 助力:0/27 坚守:1/26 迅捷:1/12 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 14,
+   "phase": "FINAL_ASSAULT",
+   "teamLp": 68,
+   "bossHp": 0,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 12,
+     "level": 6,
+     "board": 8,
+     "bonds": "谢拉格:4/422 灵巧:4/107 绝技:3/2 精准:0/20 助力:1/8 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 20,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:8/143 绝技:5/0 维多利亚:1/20 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 21,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:7/381 精准:2/112 迅捷:2/32 绝技:4/0 炎:1/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 15,
+     "level": 6,
+     "board": 8,
+     "bonds": "维多利亚:6/156 远见:2/61 不屈:2/61 迅捷:2/12 精准:3/0 助力:0/27 坚守:1/26 卡西米尔:0/2"
+    }
+   ]
+  },
+  {
+   "round": 15,
+   "phase": "RESULT",
+   "teamLp": 25,
+   "bossHp": 0,
+   "seats": [
+    {
+     "seat": 0,
+     "name": "搴т綅0",
+     "isBot": false,
+     "lp": 4,
+     "level": 6,
+     "board": 8,
+     "bonds": "谢拉格:5/436 灵巧:4/135 迅捷:2/8 绝技:4/2 精准:0/20 卡西米尔:1/8 助力:1/8 炎:0/6 坚守:0/4 奇迹:0/3"
+    },
+    {
+     "seat": 1,
+     "name": "搴т綅1",
+     "isBot": false,
+     "lp": 7,
+     "level": 6,
+     "board": 8,
+     "bonds": "炎:8/155 绝技:5/0 维多利亚:1/20 投资人:1/3"
+    },
+    {
+     "seat": 2,
+     "name": "搴т綅2",
+     "isBot": false,
+     "lp": 8,
+     "level": 6,
+     "board": 8,
+     "bonds": "萨尔贡:7/385 精准:2/116 迅捷:2/40 绝技:4/0 炎:0/1"
+    },
+    {
+     "seat": 3,
+     "name": "搴т綅3",
+     "isBot": false,
+     "lp": 6,
+     "level": 6,
+     "board": 8,
+     "bonds": "维多利亚:7/156 不屈:2/61 迅捷:2/12 精准:3/0 奥术:2/0 绝技:2/0 远见:1/61 助力:0/27 坚守:1/26 卡西米尔:0/2"
+    }
+   ]
+  }
+ ],
+ "battles": [
+  {
+   "round": 1,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 2,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 2,
+   "kind": "unite",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 3,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 3,
+   "kind": "unite",
+   "seat": [
+    "seat3",
+    "seat1"
+   ]
+  },
+  {
+   "round": 4,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 4,
+   "kind": "unite",
+   "seat": [
+    "seat1"
+   ]
+  },
+  {
+   "round": 5,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 5,
+   "kind": "unite",
+   "seat": [
+    "seat2"
+   ]
+  },
+  {
+   "round": 6,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 6,
+   "kind": "unite",
+   "seat": [
+    "seat0",
+    "seat1"
+   ]
+  },
+  {
+   "round": 7,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 7,
+   "kind": "unite",
+   "seat": [
+    "seat2",
+    "seat1"
+   ]
+  },
+  {
+   "round": 8,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 8,
+   "kind": "unite",
+   "seat": [
+    "seat1",
+    "seat0"
+   ]
+  },
+  {
+   "round": 9,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 9,
+   "kind": "unite",
+   "seat": [
+    "seat1",
+    "seat0"
+   ]
+  },
+  {
+   "round": 10,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 10,
+   "kind": "unite",
+   "seat": [
+    "seat2",
+    "seat1"
+   ]
+  },
+  {
+   "round": 11,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 11,
+   "kind": "unite",
+   "seat": [
+    "seat1"
+   ]
+  },
+  {
+   "round": 12,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 13,
+   "kind": "normal",
+   "seat": [
+    "seat3"
+   ]
+  },
+  {
+   "round": 13,
+   "kind": "unite",
+   "seat": [
+    "seat2"
+   ]
+  },
+  {
+   "round": 14,
+   "kind": "boss",
+   "seat": [
+    "seat1",
+    "seat3"
+   ]
+  },
+  {
+   "round": 15,
+   "kind": "hidden",
+   "seat": [
+    "seat1",
+    "seat3"
+   ]
+  }
+ ],
+ "boards": [
+  {
+   "round": 1,
+   "who": "S3 搴т綅3",
+   "units": 2,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_06_a",
+    "chess_char_1_13_a"
+   ]
+  },
+  {
+   "round": 2,
+   "who": "S3 搴т綅3",
+   "units": 4,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_13_a",
+    "chess_char_1_10_a",
+    "chess_char_1_06_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 3,
+   "who": "S3 搴т綅3",
+   "units": 5,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_10_a",
+    "chess_char_1_06_a",
+    "chess_char_1_13_a",
+    "chess_char_1_01_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 3,
+   "who": "S1 搴т綅1",
+   "units": 3,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_14_a",
+    "chess_char_3_04_a",
+    "chess_char_1_03_b"
+   ]
+  },
+  {
+   "round": 4,
+   "who": "S3 搴т綅3",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_02_a",
+    "chess_char_1_10_a",
+    "chess_char_1_06_a",
+    "chess_char_1_13_a",
+    "chess_char_1_01_a",
+    "chess_char_1_19_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 4,
+   "who": "S1 搴т綅1",
+   "units": 4,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_1_14_a",
+    "chess_char_3_04_a",
+    "chess_char_1_03_b"
+   ]
+  },
+  {
+   "round": 5,
+   "who": "S3 搴т綅3",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_19_a",
+    "chess_char_1_06_a",
+    "chess_char_1_10_a",
+    "chess_char_1_01_a",
+    "chess_char_3_20_a",
+    "chess_char_3_16_a",
+    "chess_char_1_13_a"
+   ]
+  },
+  {
+   "round": 5,
+   "who": "S2 搴т綅2",
+   "units": 6,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_03_a",
+    "chess_char_2_06_a",
+    "chess_char_1_09_a",
+    "chess_char_2_08_b",
+    "chess_char_2_06_a",
+    "chess_char_4_23_a"
+   ]
+  },
+  {
+   "round": 6,
+   "who": "S3 搴т綅3",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_1_19_a",
+    "chess_char_1_10_a",
+    "chess_char_3_16_a",
+    "chess_char_1_01_a",
+    "chess_char_1_06_a",
+    "chess_char_3_20_a",
+    "chess_char_1_13_a"
+   ]
+  },
+  {
+   "round": 6,
+   "who": "S0 搴т綅0",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_05_a",
+    "chess_char_5_14_a",
+    "chess_char_2_05_a",
+    "chess_char_3_14_a",
+    "chess_char_3_11_b",
+    "chess_char_3_20_a",
+    "chess_char_1_10_a"
+   ]
+  },
+  {
+   "round": 6,
+   "who": "S1 搴т綅1",
+   "units": 6,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_1_14_a",
+    "chess_char_3_04_a",
+    "chess_char_1_03_b",
+    "chess_char_3_03_a",
+    "chess_char_3_04_a"
+   ]
+  },
+  {
+   "round": 7,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_3_16_a",
+    "chess_char_1_13_a",
+    "chess_char_3_08_a",
+    "chess_char_1_01_a",
+    "chess_char_1_10_a",
+    "chess_char_1_06_a",
+    "chess_char_4_25_a",
+    "chess_char_4_07_a"
+   ]
+  },
+  {
+   "round": 7,
+   "who": "S2 搴т綅2",
+   "units": 8,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_06_a",
+    "chess_char_3_06_a",
+    "chess_char_4_23_a",
+    "chess_char_3_13_a",
+    "chess_char_4_23_a",
+    "chess_char_2_06_a",
+    "chess_char_1_12_a",
+    "chess_char_2_08_b"
+   ]
+  },
+  {
+   "round": 7,
+   "who": "S1 搴т綅1",
+   "units": 7,
+   "golden": 0,
+   "items": 2,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_4_17_a",
+    "chess_char_5_03_a",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_3_03_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 8,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_1_06_a",
+    "chess_char_3_16_a",
+    "chess_char_1_01_a",
+    "chess_char_3_08_a",
+    "chess_char_1_13_a",
+    "chess_char_1_10_a"
+   ]
+  },
+  {
+   "round": 8,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 2,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_4_17_a",
+    "chess_char_4_17_a",
+    "chess_char_5_03_a",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_3_03_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 8,
+   "who": "S0 搴т綅0",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_05_a",
+    "chess_char_4_25_a",
+    "chess_char_3_14_b",
+    "chess_char_4_22_a",
+    "chess_char_3_11_b",
+    "chess_char_5_14_a",
+    "chess_char_3_20_a"
+   ]
+  },
+  {
+   "round": 9,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 1,
+   "ids": [
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_1_06_a",
+    "chess_char_3_16_a",
+    "chess_char_5_diy2_a",
+    "chess_char_3_08_a",
+    "chess_char_5_08_a",
+    "chess_char_1_10_a"
+   ]
+  },
+  {
+   "round": 9,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 2,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_4_17_a",
+    "chess_char_4_17_a",
+    "chess_char_5_03_a",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_3_03_a",
+    "chess_char_1_14_a"
+   ]
+  },
+  {
+   "round": 9,
+   "who": "S0 搴т綅0",
+   "units": 7,
+   "golden": 0,
+   "items": 0,
+   "ids": [
+    "chess_char_2_05_b",
+    "chess_char_4_25_a",
+    "chess_char_3_14_b",
+    "chess_char_4_22_a",
+    "chess_char_3_11_b",
+    "chess_char_5_14_a",
+    "chess_char_3_20_a"
+   ]
+  },
+  {
+   "round": 10,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 6,
+   "ids": [
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_1_06_a",
+    "chess_char_3_16_a",
+    "chess_char_5_diy2_a",
+    "chess_char_3_08_a",
+    "chess_char_5_08_a",
+    "chess_char_1_10_a"
+   ]
+  },
+  {
+   "round": 10,
+   "who": "S2 搴т綅2",
+   "units": 8,
+   "golden": 0,
+   "items": 1,
+   "ids": [
+    "chess_char_2_06_a",
+    "chess_char_4_23_b",
+    "chess_char_6_03_a",
+    "chess_char_2_06_a",
+    "chess_char_3_06_a",
+    "chess_char_6_05_a",
+    "chess_char_3_13_a",
+    "chess_char_2_08_b"
+   ]
+  },
+  {
+   "round": 10,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 1,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_3_03_a",
+    "chess_char_4_17_b",
+    "chess_char_5_03_a",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_3_03_a",
+    "chess_char_6_20_a"
+   ]
+  },
+  {
+   "round": 11,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 6,
+   "ids": [
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_1_01_a",
+    "chess_char_3_16_a",
+    "chess_char_5_diy2_a",
+    "chess_char_3_08_a",
+    "chess_char_5_08_a",
+    "chess_char_2_05_a"
+   ]
+  },
+  {
+   "round": 11,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 1,
+   "ids": [
+    "chess_char_2_04_a",
+    "chess_char_3_03_b",
+    "chess_char_4_17_b",
+    "chess_char_5_03_a",
+    "chess_char_3_04_b",
+    "chess_char_5_12_a",
+    "chess_char_1_03_b",
+    "chess_char_6_20_a"
+   ]
+  },
+  {
+   "round": 12,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 8,
+   "ids": [
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_5_diy2_a",
+    "chess_char_3_16_a",
+    "chess_char_1_01_a",
+    "chess_char_3_08_a",
+    "chess_char_5_08_a",
+    "chess_char_4_11_a"
+   ]
+  },
+  {
+   "round": 13,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 9,
+   "ids": [
+    "chess_char_5_diy2_a",
+    "chess_char_3_08_a",
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_6_01_a",
+    "chess_char_3_16_a",
+    "chess_char_5_08_a",
+    "chess_char_4_11_a"
+   ]
+  },
+  {
+   "round": 13,
+   "who": "S2 搴т綅2",
+   "units": 8,
+   "golden": 0,
+   "items": 2,
+   "ids": [
+    "chess_char_2_06_a",
+    "chess_char_4_23_b",
+    "chess_char_6_03_a",
+    "chess_char_5_02_b",
+    "chess_char_6_06_a",
+    "chess_char_6_05_a",
+    "chess_char_2_08_b",
+    "chess_char_5_15_a"
+   ]
+  },
+  {
+   "round": 14,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 5,
+   "ids": [
+    "chess_char_5_12_a",
+    "chess_char_5_03_b",
+    "chess_char_6_20_b",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_4_17_b",
+    "chess_char_6_15_a",
+    "chess_char_6_03_a"
+   ]
+  },
+  {
+   "round": 14,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 12,
+   "ids": [
+    "chess_char_5_diy2_a",
+    "chess_char_6_05_a",
+    "chess_char_6_01_b",
+    "chess_char_4_25_a",
+    "chess_char_4_07_a",
+    "chess_char_6_08_a",
+    "chess_char_4_11_a",
+    "chess_char_3_16_a"
+   ]
+  },
+  {
+   "round": 15,
+   "who": "S1 搴т綅1",
+   "units": 8,
+   "golden": 0,
+   "items": 5,
+   "ids": [
+    "chess_char_5_12_a",
+    "chess_char_5_03_b",
+    "chess_char_6_20_b",
+    "chess_char_3_04_b",
+    "chess_char_1_03_b",
+    "chess_char_4_17_b",
+    "chess_char_6_15_a",
+    "chess_char_6_03_a"
+   ]
+  },
+  {
+   "round": 15,
+   "who": "S3 搴т綅3",
+   "units": 8,
+   "golden": 0,
+   "items": 16,
+   "ids": [
+    "chess_char_6_01_b",
+    "chess_char_6_05_a",
+    "chess_char_6_08_a",
+    "chess_char_5_diy2_a",
+    "chess_char_4_07_a",
+    "chess_char_2_05_a",
+    "chess_char_2_10_b",
+    "chess_char_3_16_a"
+   ]
+  }
+ ]
+}
