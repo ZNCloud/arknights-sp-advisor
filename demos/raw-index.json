@@ -1,0 +1,177 @@
+{
+ "generatedAt": "2026-11-02T13:29:58.874Z",
+ "source": "C:\\Users\\Administrator\\Downloads",
+ "count": 21,
+ "totalBytes": 7222135,
+ "note": "这是 .spdemo 原片的逐字节上传（gzip 压缩的 JSON）。sha256 为本地原文件摘要，可用于校验无损。",
+ "files": [
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-27T13-48-10.spdemo",
+   "bytes": 264052,
+   "sha256": "1c4a7e92c397607354946fa19f58f4e5316a609796aada82ddaf003ba04746af",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-27T13-48-10.spdemo",
+   "commit": "5795812",
+   "verifiedSize": 264052
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-28T13-32-12.spdemo",
+   "bytes": 138250,
+   "sha256": "edef48d1584e00e9591c4fdd2466f54b86be4702b6263a8487bb85ac4e2bc7d8",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-28T13-32-12.spdemo",
+   "commit": "2076b81",
+   "verifiedSize": 138250
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-29T12-16-37.spdemo",
+   "bytes": 218395,
+   "sha256": "b4494a853cff0a3f019bf52605b3c9133b32910c16e51cf329722cc6cd04c2bc",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-29T12-16-37.spdemo",
+   "commit": "43d0f07",
+   "verifiedSize": 218395
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-29T13-00-26.spdemo",
+   "bytes": 199382,
+   "sha256": "04f0c01be36e24ebe5af2debf9e1b11c4523b06962bf03dc15fe81cd4fa0229d",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-29T13-00-26.spdemo",
+   "commit": "789ce8b",
+   "verifiedSize": 199382
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T05-36-31.spdemo",
+   "bytes": 334464,
+   "sha256": "f04b4117ab24940f47a62de3dc4a4cabd4714170fac4073fdedfb51886a13172",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T05-36-31.spdemo",
+   "commit": "6dba365",
+   "verifiedSize": 334464
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T06-18-53.spdemo",
+   "bytes": 310727,
+   "sha256": "e65845ebf41afed39ce9207045c5a34f01cdca81bc6d9dff578fddd4ca4bfebf",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T06-18-53.spdemo",
+   "commit": "7240e28",
+   "verifiedSize": 310727
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T07-05-20.spdemo",
+   "bytes": 269493,
+   "sha256": "067fa1b3f4e9f0014d91baf7ada3bab02a2f2f2011156e7ddaa971dac5a09adf",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T07-05-20.spdemo",
+   "commit": "e96e788",
+   "verifiedSize": 269493
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T10-15-45 (1).spdemo",
+   "bytes": 350367,
+   "sha256": "d8a3189517b3083a8be1561aba2496973ebcfb7f170f516e81a8b579fad09d54",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T10-15-45 (1).spdemo",
+   "commit": "9556005",
+   "verifiedSize": 350367
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T10-15-45.spdemo",
+   "bytes": 350367,
+   "sha256": "d8a3189517b3083a8be1561aba2496973ebcfb7f170f516e81a8b579fad09d54",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T10-15-45.spdemo",
+   "commit": "42af13a",
+   "verifiedSize": 350367
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T11-04-40.spdemo",
+   "bytes": 317401,
+   "sha256": "0e87c5045c4cf11ce3fa47ad7b5f8f0c90270ed2e7ac9eb6de03ef46835ed1e7",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T11-04-40.spdemo",
+   "commit": "1523627",
+   "verifiedSize": 317401
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-30T11-44-49.spdemo",
+   "bytes": 319495,
+   "sha256": "2e475c6080cfc6f586dc0ba4f23d8cbacbd59ad730c1394dc35d12075541bfcb",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-30T11-44-49.spdemo",
+   "commit": "686369c",
+   "verifiedSize": 319495
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T07-11-29.spdemo",
+   "bytes": 407755,
+   "sha256": "2eb5afb4bf50390cd56ad67fb7b126d4b6adc946aef7f927479ccfc5f13b7a8b",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T07-11-29.spdemo",
+   "commit": "cef869c",
+   "verifiedSize": 407755
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T07-53-02.spdemo",
+   "bytes": 432866,
+   "sha256": "04dd7cdba12ece170ca17d1e1f77f0b6f85221b6c009140c81e906c9c560bf6a",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T07-53-02.spdemo",
+   "commit": "2f98258",
+   "verifiedSize": 432866
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T08-38-16.spdemo",
+   "bytes": 419251,
+   "sha256": "9f0ae83d7d3d0f1c481d8a52c91107fd1809a27cdaddd223a9d8cc8efe37be00",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T08-38-16.spdemo",
+   "commit": "4079f87",
+   "verifiedSize": 419251
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T09-20-04.spdemo",
+   "bytes": 424929,
+   "sha256": "0f2728239f389594ac004dc6d355c33e2f756bc589a326c5b825c01fa4cd9c02",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T09-20-04.spdemo",
+   "commit": "7d9a3d9",
+   "verifiedSize": 424929
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T13-45-48.spdemo",
+   "bytes": 377770,
+   "sha256": "c8f221fcc865d737ac4ceb3b6ecff5619b4c4a0ef2f7efcc558f8ec4af1ec672",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T13-45-48.spdemo",
+   "commit": "ff84bc1",
+   "verifiedSize": 377770
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-10-31T14-25-45.spdemo",
+   "bytes": 448978,
+   "sha256": "2e5e6fd83c2e8f57383834f41fdd52754f2fb94a1fa496d5519cf193f52ffc06",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-10-31T14-25-45.spdemo",
+   "commit": "cdf12e7",
+   "verifiedSize": 448978
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-11-01T12-13-38.spdemo",
+   "bytes": 435498,
+   "sha256": "e7b3530c8892dd669817fd0cdd32fccb3ca05299af8488e5d3d7ceadea98e9be",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-11-01T12-13-38.spdemo",
+   "commit": "ca2f8e6",
+   "verifiedSize": 435498
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-11-01T12-53-25.spdemo",
+   "bytes": 454900,
+   "sha256": "afde38454056f67bf85e65f0be2ce4ddbbe730f34cec9704cda25bc9636922fd",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-11-01T12-53-25.spdemo",
+   "commit": "788b637",
+   "verifiedSize": 454900
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-11-01T13-39-48.spdemo",
+   "bytes": 405304,
+   "sha256": "39702cae2d2a223640d2f9b85c1169f05bb23913e5cb7bba9677b26ded99466a",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-11-01T13-39-48.spdemo",
+   "commit": "474cbb3",
+   "verifiedSize": 405304
+  },
+  {
+   "file": "spdemo-INFO_CHECK-2026-11-02T12-20-04.spdemo",
+   "bytes": 342491,
+   "sha256": "1a8b1dffc1882ec44ba5a767d81d7431e614ab8ed3722aa62b6c8133c229047a",
+   "remote": "demos/raw/spdemo-INFO_CHECK-2026-11-02T12-20-04.spdemo",
+   "commit": "9730504",
+   "verifiedSize": 342491
+  }
+ ]
+}
