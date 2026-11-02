@@ -1,0 +1,889 @@
+{
+ "generatedAt": "2026-11-02T13:13:44.435Z",
+ "count": 21,
+ "wins": 20,
+ "demos": [
+  {
+   "id": "1793108890895-3l4vra",
+   "file": "spdemo-INFO_CHECK-2026-10-27T13-48-10.spdemo",
+   "at": "2026-10-27T13:48:10.895Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_2",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 48,
+   "hiddenCleared": true,
+   "bossDamagePct": null,
+   "durationMin": 45,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 2,
+     "name": "南流景",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 3,
+     "name": "xiaozhi9426",
+     "band": "band_damaztic"
+    }
+   ],
+   "kb": 33,
+   "packedKB": 258
+  },
+  {
+   "id": "1793194332530-ut3wiz",
+   "file": "spdemo-INFO_CHECK-2026-10-28T13-32-12.spdemo",
+   "at": "2026-10-28T13:32:12.530Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_1",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 25,
+   "hiddenCleared": true,
+   "bossDamagePct": null,
+   "durationMin": 46.5,
+   "me": {
+    "name": "Cloud",
+    "seat": 3
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "凝雨",
+     "band": "band_sciurus"
+    },
+    {
+     "seat": 1,
+     "name": "芝诺",
+     "band": "band_duyaoy"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "Cloud",
+     "band": "band_damaztic"
+    }
+   ],
+   "kb": 31,
+   "packedKB": 135
+  },
+  {
+   "id": "1793276197742-v6jafe",
+   "file": "spdemo-INFO_CHECK-2026-10-29T12-16-37.spdemo",
+   "at": "2026-10-29T12:16:37.742Z",
+   "modeId": "mode_multi_hard",
+   "difficulty": "HARD",
+   "bossId": "boss_2",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 74,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 40.6,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "区区",
+     "band": "band_bldsk"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 3,
+     "name": "茉莉雨morian",
+     "band": "band_damaztic"
+    }
+   ],
+   "kb": 25,
+   "packedKB": 213
+  },
+  {
+   "id": "1793278826908-86826i",
+   "file": "spdemo-INFO_CHECK-2026-10-29T13-00-26.spdemo",
+   "at": "2026-10-29T13:00:26.908Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_6",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 61,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 41.8,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_duyaoy"
+    },
+    {
+     "seat": 2,
+     "name": "万重山",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "🐱",
+     "band": "band_mlyss"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 195
+  },
+  {
+   "id": "1793338591485-rgnu10",
+   "file": "spdemo-INFO_CHECK-2026-10-30T05-36-31.spdemo",
+   "at": "2026-10-30T05:36:31.485Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_2",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 69,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 41.9,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "大漏特漏",
+     "band": "band_duyaoy"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 2,
+     "name": "小小怪下士",
+     "band": "band_damaztic"
+    },
+    {
+     "seat": 3,
+     "name": "阿戈尔是区",
+     "band": "band_pith"
+    }
+   ],
+   "kb": 32,
+   "packedKB": 327
+  },
+  {
+   "id": "1793341133947-t4ijve",
+   "file": "spdemo-INFO_CHECK-2026-10-30T06-18-53.spdemo",
+   "at": "2026-10-30T06:18:53.947Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_7",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 52,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 45.7,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "晟日",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "wwww",
+     "band": "band_emperor"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 303
+  },
+  {
+   "id": "1793343920754-ar8kaw",
+   "file": "spdemo-INFO_CHECK-2026-10-30T07-05-20.spdemo",
+   "at": "2026-10-30T07:05:20.754Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_2",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 100,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 41,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "荧惑",
+     "band": "band_sciurus"
+    },
+    {
+     "seat": 3,
+     "name": "冬夜革命",
+     "band": "band_damaztic"
+    }
+   ],
+   "kb": 33,
+   "packedKB": 263
+  },
+  {
+   "id": "1793355345026-kisfhq",
+   "file": "spdemo-INFO_CHECK-2026-10-30T10-15-45 (1).spdemo",
+   "at": "2026-10-30T10:15:45.026Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_5",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 70,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 47.9,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "四叠半",
+     "band": "band_justin"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "离离",
+     "band": "band_chiave"
+    }
+   ],
+   "kb": 28,
+   "packedKB": 342
+  },
+  {
+   "id": "1793355345026-kisfhq",
+   "file": "spdemo-INFO_CHECK-2026-10-30T10-15-45.spdemo",
+   "at": "2026-10-30T10:15:45.026Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_5",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 70,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 47.9,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "四叠半",
+     "band": "band_justin"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "离离",
+     "band": "band_chiave"
+    }
+   ],
+   "kb": 28,
+   "packedKB": 342
+  },
+  {
+   "id": "1793358280699-y9vys9",
+   "file": "spdemo-INFO_CHECK-2026-10-30T11-04-40.spdemo",
+   "at": "2026-10-30T11:04:40.699Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_7",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 88,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 39.3,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "p53",
+     "band": "band_lmlee"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 3,
+     "name": "若叶真是好搞笑哦8989",
+     "band": "band_justin"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 310
+  },
+  {
+   "id": "1793360689538-cz77fv",
+   "file": "spdemo-INFO_CHECK-2026-10-30T11-44-49.spdemo",
+   "at": "2026-10-30T11:44:49.538Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_1",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 80,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 40.2,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "行间",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 2,
+     "name": "大漏特漏",
+     "band": "band_pith"
+    },
+    {
+     "seat": 3,
+     "name": "SIA晴空",
+     "band": "band_quintus"
+    }
+   ],
+   "kb": 32,
+   "packedKB": 312
+  },
+  {
+   "id": "1793430689687-nho1n3",
+   "file": "spdemo-INFO_CHECK-2026-10-31T07-11-29.spdemo",
+   "at": "2026-10-31T07:11:29.687Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_7",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 49,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 41.1,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "powder",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "大漏特漏",
+     "band": "band_sciurus"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 3,
+     "name": "奥术厨",
+     "band": "band_damaztic"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 398
+  },
+  {
+   "id": "1793433182794-tfdeke",
+   "file": "spdemo-INFO_CHECK-2026-10-31T07-53-02.spdemo",
+   "at": "2026-10-31T07:53:02.794Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_3",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 80,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 44.6,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "powder",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_sciurus"
+    },
+    {
+     "seat": 3,
+     "name": "奥术厨",
+     "band": "band_pith"
+    }
+   ],
+   "kb": 33,
+   "packedKB": 423
+  },
+  {
+   "id": "1793435896242-x80bdn",
+   "file": "spdemo-INFO_CHECK-2026-10-31T08-38-16.spdemo",
+   "at": "2026-10-31T08:38:16.242Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_1",
+   "victory": true,
+   "rounds": 14,
+   "teamLp": 10,
+   "hiddenCleared": false,
+   "bossDamagePct": 100,
+   "durationMin": 41.4,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "powder",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_duyaoy"
+    },
+    {
+     "seat": 3,
+     "name": "ROBOKO",
+     "band": "band_vodfox"
+    }
+   ],
+   "kb": 28,
+   "packedKB": 409
+  },
+  {
+   "id": "1793438404036-b466h3",
+   "file": "spdemo-INFO_CHECK-2026-10-31T09-20-04.spdemo",
+   "at": "2026-10-31T09:20:04.036Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_1",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 72,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 37.7,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "powder",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 3,
+     "name": "理塘丁先生",
+     "band": "band_pepe"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 415
+  },
+  {
+   "id": "1793454348131-lplu52",
+   "file": "spdemo-INFO_CHECK-2026-10-31T13-45-48.spdemo",
+   "at": "2026-10-31T13:45:48.131Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_2",
+   "victory": false,
+   "rounds": 13,
+   "teamLp": 0,
+   "hiddenCleared": false,
+   "bossDamagePct": 44,
+   "durationMin": 39.6,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "你骂谁是正常人呢？！",
+     "band": "band_cathy"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "百年的大葱",
+     "band": "band_pepe"
+    },
+    {
+     "seat": 3,
+     "name": "大漏特漏",
+     "band": "band_sciurus"
+    }
+   ],
+   "kb": 29,
+   "packedKB": 369
+  },
+  {
+   "id": "1793456745633-ppkuvv",
+   "file": "spdemo-INFO_CHECK-2026-10-31T14-25-45.spdemo",
+   "at": "2026-10-31T14:25:45.633Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_4",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 10,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 43.9,
+   "me": {
+    "name": "Cloud",
+    "seat": 1
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "你骂谁是正常人呢？！",
+     "band": "band_jesica"
+    },
+    {
+     "seat": 1,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 2,
+     "name": "百年的大葱",
+     "band": "band_vodfox"
+    },
+    {
+     "seat": 3,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    }
+   ],
+   "kb": 34,
+   "packedKB": 438
+  },
+  {
+   "id": "1793535218230-6gyymi",
+   "file": "spdemo-INFO_CHECK-2026-11-01T12-13-38.spdemo",
+   "at": "2026-11-01T12:13:38.230Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_6",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 53,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 39.4,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "滕源明",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 1,
+     "name": "司臻",
+     "band": "band_damaztic"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_pith"
+    },
+    {
+     "seat": 3,
+     "name": "大漏特漏",
+     "band": "band_sciurus"
+    }
+   ],
+   "kb": 32,
+   "packedKB": 425
+  },
+  {
+   "id": "1793537605116-8wojsx",
+   "file": "spdemo-INFO_CHECK-2026-11-01T12-53-25.spdemo",
+   "at": "2026-11-01T12:53:25.116Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_5",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 40,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 43.3,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "滕源明",
+     "band": "band_qalaisa"
+    },
+    {
+     "seat": 1,
+     "name": "司臻",
+     "band": "band_lisa"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 3,
+     "name": "大漏特漏",
+     "band": "band_chiave"
+    }
+   ],
+   "kb": 32,
+   "packedKB": 444
+  },
+  {
+   "id": "1793540388531-iii7ck",
+   "file": "spdemo-INFO_CHECK-2026-11-01T13-39-48.spdemo",
+   "at": "2026-11-01T13:39:48.531Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_1",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 37,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 35.9,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "dolphin",
+     "band": "band_lisa"
+    },
+    {
+     "seat": 1,
+     "name": "司臻",
+     "band": "band_paganini"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_emperor"
+    },
+    {
+     "seat": 3,
+     "name": "大漏特漏",
+     "band": "band_pepe"
+    }
+   ],
+   "kb": 33,
+   "packedKB": 396
+  },
+  {
+   "id": "1793622004609-jr4c42",
+   "file": "spdemo-INFO_CHECK-2026-11-02T12-20-04.spdemo",
+   "at": "2026-11-02T12:20:04.609Z",
+   "modeId": "mode_multi_abyss",
+   "difficulty": "ABYSS",
+   "bossId": "boss_7",
+   "victory": true,
+   "rounds": 15,
+   "teamLp": 18,
+   "hiddenCleared": true,
+   "bossDamagePct": 100,
+   "durationMin": 43.3,
+   "me": {
+    "name": "Cloud",
+    "seat": 2
+   },
+   "players": [
+    {
+     "seat": 0,
+     "name": "佩尔塞芙涅",
+     "band": "band_duyaoy"
+    },
+    {
+     "seat": 1,
+     "name": "大漏特漏",
+     "band": "band_sciurus"
+    },
+    {
+     "seat": 2,
+     "name": "Cloud",
+     "band": "band_damaztic"
+    },
+    {
+     "seat": 3,
+     "name": "0.0",
+     "band": "band_paganini"
+    }
+   ],
+   "kb": 33,
+   "packedKB": 334
+  }
+ ]
+}
