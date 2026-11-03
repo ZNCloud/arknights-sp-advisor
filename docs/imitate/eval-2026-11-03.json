@@ -1,0 +1,5234 @@
+{
+ "data": {
+  "sha256": "8fb2051a3e9926f16e24b6a23c597ba9dbf52ebfa49ef2ae18261a5c27e8d964",
+  "n_records": 609,
+  "n_games": 29,
+  "by_source": {
+   "spdemo": 20,
+   "overlay": 9
+  }
+ },
+ "runs": {
+  "default": {
+   "config": {
+    "model": {
+     "d": 128,
+     "layers": 2,
+     "heads": 4,
+     "ff": 2,
+     "dropout": 0.1
+    },
+    "train": {
+     "batch": 32,
+     "lr": 0.001,
+     "weight_decay": 0.01,
+     "token_dropout": 0.1,
+     "loss_weights": {
+      "board": 1.0,
+      "level": 1.0,
+      "buy": 1.0
+     },
+     "max_epochs": 60,
+     "patience": 15,
+     "inner_val_mod": 4,
+     "selection": "last"
+    },
+    "seeds": 3,
+    "vram_frac": 0.1,
+    "cpu_threads": 4
+   },
+   "device": "cpu",
+   "torch": "2.15.0+cpu",
+   "summary": {
+    "model": {
+     "board": {
+      "add@5": [
+       0.2222,
+       0.0406
+      ],
+      "add@10": [
+       0.3403,
+       0.0484
+      ],
+      "keep_auc": [
+       0.5381,
+       0.0548
+      ],
+      "keep_pairs": [
+       381.0,
+       134.472
+      ]
+     },
+     "level": {
+      "auc": [
+       0.6615,
+       0.0547
+      ],
+      "brier": [
+       0.2925,
+       0.0313
+      ],
+      "pos": [
+       27.0,
+       7.5498
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.664,
+       0.06
+      ],
+      "top1": [
+       0.6937,
+       0.0639
+      ]
+     }
+    },
+    "table_global": {
+     "board": {
+      "add@5": [
+       0.1107,
+       0.0323
+      ],
+      "add@10": [
+       0.1734,
+       0.0378
+      ],
+      "keep_auc": [
+       0.4619,
+       0.0591
+      ],
+      "keep_pairs": [
+       381.0,
+       145.2463
+      ]
+     },
+     "level": {
+      "auc": [
+       0.8048,
+       0.033
+      ],
+      "brier": [
+       0.1747,
+       0.0156
+      ],
+      "pos": [
+       27.0,
+       8.1548
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.5915,
+       0.0365
+      ],
+      "top1": [
+       0.7011,
+       0.0677
+      ]
+     }
+    },
+    "table_band": {
+     "board": {
+      "add@5": [
+       0.2395,
+       0.0347
+      ],
+      "add@10": [
+       0.3681,
+       0.0802
+      ],
+      "keep_auc": [
+       0.5232,
+       0.0557
+      ],
+      "keep_pairs": [
+       381.0,
+       145.2463
+      ]
+     },
+     "level": {
+      "auc": [
+       0.8048,
+       0.033
+      ],
+      "brier": [
+       0.1747,
+       0.0156
+      ],
+      "pos": [
+       27.0,
+       8.1548
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.5915,
+       0.0365
+      ],
+      "top1": [
+       0.7011,
+       0.0677
+      ]
+     }
+    }
+   },
+   "loss_curve": [
+    {
+     "epoch": 1,
+     "n_runs": 15,
+     "train": {
+      "board": 0.45595,
+      "level": 0.67283,
+      "buy": 0.6778
+     },
+     "val": {
+      "board": 0.26377,
+      "level": 0.64191,
+      "buy": 0.55083
+     },
+     "heldout": {
+      "board": 0.26573,
+      "level": 0.64837,
+      "buy": 0.66054
+     }
+    },
+    {
+     "epoch": 2,
+     "n_runs": 15,
+     "train": {
+      "board": 0.21977,
+      "level": 0.65078,
+      "buy": 0.63639
+     },
+     "val": {
+      "board": 0.18777,
+      "level": 0.63303,
+      "buy": 0.49213
+     },
+     "heldout": {
+      "board": 0.19304,
+      "level": 0.64024,
+      "buy": 0.66775
+     }
+    },
+    {
+     "epoch": 3,
+     "n_runs": 15,
+     "train": {
+      "board": 0.18285,
+      "level": 0.64671,
+      "buy": 0.61141
+     },
+     "val": {
+      "board": 0.17595,
+      "level": 0.64008,
+      "buy": 0.4874
+     },
+     "heldout": {
+      "board": 0.1839,
+      "level": 0.64908,
+      "buy": 0.67739
+     }
+    },
+    {
+     "epoch": 4,
+     "n_runs": 15,
+     "train": {
+      "board": 0.17525,
+      "level": 0.63401,
+      "buy": 0.5872
+     },
+     "val": {
+      "board": 0.17209,
+      "level": 0.61411,
+      "buy": 0.45174
+     },
+     "heldout": {
+      "board": 0.18196,
+      "level": 0.62996,
+      "buy": 0.65894
+     }
+    },
+    {
+     "epoch": 5,
+     "n_runs": 15,
+     "train": {
+      "board": 0.17155,
+      "level": 0.62542,
+      "buy": 0.56782
+     },
+     "val": {
+      "board": 0.16936,
+      "level": 0.60325,
+      "buy": 0.44433
+     },
+     "heldout": {
+      "board": 0.18114,
+      "level": 0.61796,
+      "buy": 0.66431
+     }
+    },
+    {
+     "epoch": 6,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16977,
+      "level": 0.61676,
+      "buy": 0.55922
+     },
+     "val": {
+      "board": 0.16806,
+      "level": 0.59405,
+      "buy": 0.43087
+     },
+     "heldout": {
+      "board": 0.18075,
+      "level": 0.61602,
+      "buy": 0.66177
+     }
+    },
+    {
+     "epoch": 7,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16853,
+      "level": 0.61013,
+      "buy": 0.54204
+     },
+     "val": {
+      "board": 0.16579,
+      "level": 0.58902,
+      "buy": 0.4003
+     },
+     "heldout": {
+      "board": 0.17964,
+      "level": 0.61609,
+      "buy": 0.66926
+     }
+    },
+    {
+     "epoch": 8,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16647,
+      "level": 0.60698,
+      "buy": 0.53406
+     },
+     "val": {
+      "board": 0.16416,
+      "level": 0.57901,
+      "buy": 0.40845
+     },
+     "heldout": {
+      "board": 0.17941,
+      "level": 0.62574,
+      "buy": 0.67085
+     }
+    },
+    {
+     "epoch": 9,
+     "n_runs": 15,
+     "train": {
+      "board": 0.1648,
+      "level": 0.60479,
+      "buy": 0.51516
+     },
+     "val": {
+      "board": 0.16296,
+      "level": 0.56386,
+      "buy": 0.39483
+     },
+     "heldout": {
+      "board": 0.17951,
+      "level": 0.62054,
+      "buy": 0.69016
+     }
+    },
+    {
+     "epoch": 10,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16441,
+      "level": 0.59063,
+      "buy": 0.50624
+     },
+     "val": {
+      "board": 0.1617,
+      "level": 0.54947,
+      "buy": 0.38614
+     },
+     "heldout": {
+      "board": 0.17919,
+      "level": 0.62341,
+      "buy": 0.70152
+     }
+    },
+    {
+     "epoch": 11,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16313,
+      "level": 0.58229,
+      "buy": 0.4939
+     },
+     "val": {
+      "board": 0.16026,
+      "level": 0.56116,
+      "buy": 0.36052
+     },
+     "heldout": {
+      "board": 0.17874,
+      "level": 0.63336,
+      "buy": 0.70187
+     }
+    },
+    {
+     "epoch": 12,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16205,
+      "level": 0.58563,
+      "buy": 0.47493
+     },
+     "val": {
+      "board": 0.15889,
+      "level": 0.53651,
+      "buy": 0.34183
+     },
+     "heldout": {
+      "board": 0.17795,
+      "level": 0.62285,
+      "buy": 0.73268
+     }
+    },
+    {
+     "epoch": 13,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16087,
+      "level": 0.57751,
+      "buy": 0.46631
+     },
+     "val": {
+      "board": 0.15888,
+      "level": 0.53175,
+      "buy": 0.34736
+     },
+     "heldout": {
+      "board": 0.17902,
+      "level": 0.61834,
+      "buy": 0.75613
+     }
+    },
+    {
+     "epoch": 14,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15987,
+      "level": 0.56732,
+      "buy": 0.45273
+     },
+     "val": {
+      "board": 0.15715,
+      "level": 0.51811,
+      "buy": 0.31927
+     },
+     "heldout": {
+      "board": 0.1785,
+      "level": 0.62312,
+      "buy": 0.74998
+     }
+    },
+    {
+     "epoch": 15,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15877,
+      "level": 0.55867,
+      "buy": 0.44062
+     },
+     "val": {
+      "board": 0.15625,
+      "level": 0.51008,
+      "buy": 0.3192
+     },
+     "heldout": {
+      "board": 0.17849,
+      "level": 0.63112,
+      "buy": 0.75974
+     }
+    },
+    {
+     "epoch": 16,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15795,
+      "level": 0.54875,
+      "buy": 0.42005
+     },
+     "val": {
+      "board": 0.15458,
+      "level": 0.49563,
+      "buy": 0.29269
+     },
+     "heldout": {
+      "board": 0.17824,
+      "level": 0.63858,
+      "buy": 0.77469
+     }
+    },
+    {
+     "epoch": 17,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15716,
+      "level": 0.54193,
+      "buy": 0.39998
+     },
+     "val": {
+      "board": 0.15387,
+      "level": 0.47272,
+      "buy": 0.27928
+     },
+     "heldout": {
+      "board": 0.17848,
+      "level": 0.63402,
+      "buy": 0.82001
+     }
+    },
+    {
+     "epoch": 18,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15545,
+      "level": 0.53589,
+      "buy": 0.39181
+     },
+     "val": {
+      "board": 0.15179,
+      "level": 0.47468,
+      "buy": 0.27646
+     },
+     "heldout": {
+      "board": 0.17739,
+      "level": 0.64695,
+      "buy": 0.82856
+     }
+    },
+    {
+     "epoch": 19,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15381,
+      "level": 0.53135,
+      "buy": 0.37202
+     },
+     "val": {
+      "board": 0.15001,
+      "level": 0.45169,
+      "buy": 0.2568
+     },
+     "heldout": {
+      "board": 0.17665,
+      "level": 0.64284,
+      "buy": 0.88177
+     }
+    },
+    {
+     "epoch": 20,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15236,
+      "level": 0.52335,
+      "buy": 0.37915
+     },
+     "val": {
+      "board": 0.14993,
+      "level": 0.44803,
+      "buy": 0.25382
+     },
+     "heldout": {
+      "board": 0.17754,
+      "level": 0.65991,
+      "buy": 0.85295
+     }
+    },
+    {
+     "epoch": 21,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15193,
+      "level": 0.51089,
+      "buy": 0.36475
+     },
+     "val": {
+      "board": 0.14828,
+      "level": 0.44396,
+      "buy": 0.24336
+     },
+     "heldout": {
+      "board": 0.17581,
+      "level": 0.67406,
+      "buy": 0.88244
+     }
+    },
+    {
+     "epoch": 22,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15078,
+      "level": 0.50594,
+      "buy": 0.33843
+     },
+     "val": {
+      "board": 0.14668,
+      "level": 0.42494,
+      "buy": 0.21787
+     },
+     "heldout": {
+      "board": 0.1757,
+      "level": 0.67725,
+      "buy": 0.93157
+     }
+    },
+    {
+     "epoch": 23,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14859,
+      "level": 0.48874,
+      "buy": 0.32702
+     },
+     "val": {
+      "board": 0.14516,
+      "level": 0.41113,
+      "buy": 0.19918
+     },
+     "heldout": {
+      "board": 0.17549,
+      "level": 0.67162,
+      "buy": 0.9173
+     }
+    },
+    {
+     "epoch": 24,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14834,
+      "level": 0.47481,
+      "buy": 0.30716
+     },
+     "val": {
+      "board": 0.14499,
+      "level": 0.41005,
+      "buy": 0.1847
+     },
+     "heldout": {
+      "board": 0.17706,
+      "level": 0.70776,
+      "buy": 0.95813
+     }
+    },
+    {
+     "epoch": 25,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14666,
+      "level": 0.47796,
+      "buy": 0.29619
+     },
+     "val": {
+      "board": 0.14309,
+      "level": 0.38624,
+      "buy": 0.19281
+     },
+     "heldout": {
+      "board": 0.17612,
+      "level": 0.68754,
+      "buy": 1.03902
+     }
+    },
+    {
+     "epoch": 26,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14625,
+      "level": 0.46677,
+      "buy": 0.29028
+     },
+     "val": {
+      "board": 0.14165,
+      "level": 0.38565,
+      "buy": 0.16866
+     },
+     "heldout": {
+      "board": 0.17611,
+      "level": 0.70187,
+      "buy": 1.0568
+     }
+    },
+    {
+     "epoch": 27,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14527,
+      "level": 0.46542,
+      "buy": 0.27981
+     },
+     "val": {
+      "board": 0.14111,
+      "level": 0.36785,
+      "buy": 0.15218
+     },
+     "heldout": {
+      "board": 0.17619,
+      "level": 0.69494,
+      "buy": 1.03578
+     }
+    },
+    {
+     "epoch": 28,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14354,
+      "level": 0.45082,
+      "buy": 0.26882
+     },
+     "val": {
+      "board": 0.13975,
+      "level": 0.34409,
+      "buy": 0.14511
+     },
+     "heldout": {
+      "board": 0.17637,
+      "level": 0.70117,
+      "buy": 1.07026
+     }
+    },
+    {
+     "epoch": 29,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14321,
+      "level": 0.41604,
+      "buy": 0.26019
+     },
+     "val": {
+      "board": 0.13823,
+      "level": 0.32215,
+      "buy": 0.13425
+     },
+     "heldout": {
+      "board": 0.17664,
+      "level": 0.7253,
+      "buy": 1.09851
+     }
+    },
+    {
+     "epoch": 30,
+     "n_runs": 15,
+     "train": {
+      "board": 0.1421,
+      "level": 0.42348,
+      "buy": 0.24645
+     },
+     "val": {
+      "board": 0.13727,
+      "level": 0.31695,
+      "buy": 0.1169
+     },
+     "heldout": {
+      "board": 0.1764,
+      "level": 0.71637,
+      "buy": 1.09327
+     }
+    },
+    {
+     "epoch": 31,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14135,
+      "level": 0.40418,
+      "buy": 0.23882
+     },
+     "val": {
+      "board": 0.13605,
+      "level": 0.31605,
+      "buy": 0.10771
+     },
+     "heldout": {
+      "board": 0.17543,
+      "level": 0.75311,
+      "buy": 1.20771
+     }
+    },
+    {
+     "epoch": 32,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13911,
+      "level": 0.40985,
+      "buy": 0.22645
+     },
+     "val": {
+      "board": 0.1341,
+      "level": 0.28437,
+      "buy": 0.12627
+     },
+     "heldout": {
+      "board": 0.1761,
+      "level": 0.76648,
+      "buy": 1.20106
+     }
+    },
+    {
+     "epoch": 33,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13869,
+      "level": 0.40815,
+      "buy": 0.22888
+     },
+     "val": {
+      "board": 0.13381,
+      "level": 0.29733,
+      "buy": 0.12877
+     },
+     "heldout": {
+      "board": 0.17794,
+      "level": 0.75452,
+      "buy": 1.26093
+     }
+    },
+    {
+     "epoch": 34,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13755,
+      "level": 0.38541,
+      "buy": 0.22294
+     },
+     "val": {
+      "board": 0.13178,
+      "level": 0.27677,
+      "buy": 0.10674
+     },
+     "heldout": {
+      "board": 0.17702,
+      "level": 0.7853,
+      "buy": 1.22985
+     }
+    },
+    {
+     "epoch": 35,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13669,
+      "level": 0.39053,
+      "buy": 0.20993
+     },
+     "val": {
+      "board": 0.13186,
+      "level": 0.26125,
+      "buy": 0.09314
+     },
+     "heldout": {
+      "board": 0.17742,
+      "level": 0.81935,
+      "buy": 1.21363
+     }
+    },
+    {
+     "epoch": 36,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13531,
+      "level": 0.37479,
+      "buy": 0.19401
+     },
+     "val": {
+      "board": 0.13059,
+      "level": 0.27148,
+      "buy": 0.08214
+     },
+     "heldout": {
+      "board": 0.17599,
+      "level": 0.81446,
+      "buy": 1.31947
+     }
+    },
+    {
+     "epoch": 37,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13416,
+      "level": 0.36874,
+      "buy": 0.19168
+     },
+     "val": {
+      "board": 0.12963,
+      "level": 0.24542,
+      "buy": 0.0802
+     },
+     "heldout": {
+      "board": 0.17748,
+      "level": 0.81067,
+      "buy": 1.36637
+     }
+    },
+    {
+     "epoch": 38,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13349,
+      "level": 0.34727,
+      "buy": 0.18042
+     },
+     "val": {
+      "board": 0.12849,
+      "level": 0.23359,
+      "buy": 0.06888
+     },
+     "heldout": {
+      "board": 0.17718,
+      "level": 0.84443,
+      "buy": 1.38216
+     }
+    },
+    {
+     "epoch": 39,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13294,
+      "level": 0.35332,
+      "buy": 0.17835
+     },
+     "val": {
+      "board": 0.12689,
+      "level": 0.25406,
+      "buy": 0.07506
+     },
+     "heldout": {
+      "board": 0.17648,
+      "level": 0.88524,
+      "buy": 1.38704
+     }
+    },
+    {
+     "epoch": 40,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13168,
+      "level": 0.36204,
+      "buy": 0.17713
+     },
+     "val": {
+      "board": 0.12535,
+      "level": 0.22768,
+      "buy": 0.07737
+     },
+     "heldout": {
+      "board": 0.17649,
+      "level": 0.82267,
+      "buy": 1.37898
+     }
+    },
+    {
+     "epoch": 41,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13086,
+      "level": 0.34141,
+      "buy": 0.17641
+     },
+     "val": {
+      "board": 0.12486,
+      "level": 0.20613,
+      "buy": 0.06498
+     },
+     "heldout": {
+      "board": 0.17577,
+      "level": 0.87964,
+      "buy": 1.42458
+     }
+    },
+    {
+     "epoch": 42,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13014,
+      "level": 0.33257,
+      "buy": 0.17932
+     },
+     "val": {
+      "board": 0.12516,
+      "level": 0.22196,
+      "buy": 0.06773
+     },
+     "heldout": {
+      "board": 0.17851,
+      "level": 0.92314,
+      "buy": 1.37132
+     }
+    },
+    {
+     "epoch": 43,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13061,
+      "level": 0.34425,
+      "buy": 0.16724
+     },
+     "val": {
+      "board": 0.12524,
+      "level": 0.22805,
+      "buy": 0.06263
+     },
+     "heldout": {
+      "board": 0.17696,
+      "level": 0.8842,
+      "buy": 1.4191
+     }
+    },
+    {
+     "epoch": 44,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12971,
+      "level": 0.33347,
+      "buy": 0.16428
+     },
+     "val": {
+      "board": 0.12389,
+      "level": 0.20859,
+      "buy": 0.08883
+     },
+     "heldout": {
+      "board": 0.17602,
+      "level": 0.9105,
+      "buy": 1.40981
+     }
+    },
+    {
+     "epoch": 45,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12857,
+      "level": 0.31121,
+      "buy": 0.16652
+     },
+     "val": {
+      "board": 0.12244,
+      "level": 0.18903,
+      "buy": 0.05411
+     },
+     "heldout": {
+      "board": 0.17565,
+      "level": 0.94731,
+      "buy": 1.43929
+     }
+    },
+    {
+     "epoch": 46,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12762,
+      "level": 0.3068,
+      "buy": 0.15937
+     },
+     "val": {
+      "board": 0.12151,
+      "level": 0.16929,
+      "buy": 0.07368
+     },
+     "heldout": {
+      "board": 0.17529,
+      "level": 0.93298,
+      "buy": 1.4195
+     }
+    },
+    {
+     "epoch": 47,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12734,
+      "level": 0.30042,
+      "buy": 0.15738
+     },
+     "val": {
+      "board": 0.12199,
+      "level": 0.18068,
+      "buy": 0.05561
+     },
+     "heldout": {
+      "board": 0.17698,
+      "level": 0.92303,
+      "buy": 1.50483
+     }
+    },
+    {
+     "epoch": 48,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12613,
+      "level": 0.29203,
+      "buy": 0.14016
+     },
+     "val": {
+      "board": 0.11981,
+      "level": 0.18487,
+      "buy": 0.05702
+     },
+     "heldout": {
+      "board": 0.17707,
+      "level": 0.94301,
+      "buy": 1.53548
+     }
+    },
+    {
+     "epoch": 49,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12613,
+      "level": 0.2828,
+      "buy": 0.14423
+     },
+     "val": {
+      "board": 0.11922,
+      "level": 0.16097,
+      "buy": 0.05061
+     },
+     "heldout": {
+      "board": 0.17841,
+      "level": 0.95167,
+      "buy": 1.46712
+     }
+    },
+    {
+     "epoch": 50,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12526,
+      "level": 0.2886,
+      "buy": 0.14256
+     },
+     "val": {
+      "board": 0.11871,
+      "level": 0.16698,
+      "buy": 0.04708
+     },
+     "heldout": {
+      "board": 0.17777,
+      "level": 1.01626,
+      "buy": 1.5144
+     }
+    },
+    {
+     "epoch": 51,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12434,
+      "level": 0.27552,
+      "buy": 0.13331
+     },
+     "val": {
+      "board": 0.11751,
+      "level": 0.15233,
+      "buy": 0.04808
+     },
+     "heldout": {
+      "board": 0.17639,
+      "level": 0.98626,
+      "buy": 1.54986
+     }
+    },
+    {
+     "epoch": 52,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12343,
+      "level": 0.26649,
+      "buy": 0.13168
+     },
+     "val": {
+      "board": 0.11655,
+      "level": 0.14171,
+      "buy": 0.04473
+     },
+     "heldout": {
+      "board": 0.17733,
+      "level": 0.99036,
+      "buy": 1.57116
+     }
+    },
+    {
+     "epoch": 53,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12253,
+      "level": 0.25527,
+      "buy": 0.13876
+     },
+     "val": {
+      "board": 0.11634,
+      "level": 0.12509,
+      "buy": 0.05589
+     },
+     "heldout": {
+      "board": 0.17724,
+      "level": 0.97899,
+      "buy": 1.54451
+     }
+    },
+    {
+     "epoch": 54,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12216,
+      "level": 0.2558,
+      "buy": 0.12968
+     },
+     "val": {
+      "board": 0.11582,
+      "level": 0.1326,
+      "buy": 0.05751
+     },
+     "heldout": {
+      "board": 0.17721,
+      "level": 0.9976,
+      "buy": 1.58864
+     }
+    },
+    {
+     "epoch": 55,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12141,
+      "level": 0.25931,
+      "buy": 0.13087
+     },
+     "val": {
+      "board": 0.11527,
+      "level": 0.12326,
+      "buy": 0.05036
+     },
+     "heldout": {
+      "board": 0.17689,
+      "level": 1.00201,
+      "buy": 1.60905
+     }
+    },
+    {
+     "epoch": 56,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12191,
+      "level": 0.25362,
+      "buy": 0.12776
+     },
+     "val": {
+      "board": 0.11409,
+      "level": 0.12643,
+      "buy": 0.04277
+     },
+     "heldout": {
+      "board": 0.17772,
+      "level": 1.01374,
+      "buy": 1.61538
+     }
+    },
+    {
+     "epoch": 57,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12136,
+      "level": 0.23185,
+      "buy": 0.12144
+     },
+     "val": {
+      "board": 0.11433,
+      "level": 0.11511,
+      "buy": 0.04551
+     },
+     "heldout": {
+      "board": 0.17728,
+      "level": 1.03619,
+      "buy": 1.61443
+     }
+    },
+    {
+     "epoch": 58,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12045,
+      "level": 0.23052,
+      "buy": 0.12176
+     },
+     "val": {
+      "board": 0.1131,
+      "level": 0.10518,
+      "buy": 0.04145
+     },
+     "heldout": {
+      "board": 0.17721,
+      "level": 1.06845,
+      "buy": 1.66558
+     }
+    },
+    {
+     "epoch": 59,
+     "n_runs": 15,
+     "train": {
+      "board": 0.12068,
+      "level": 0.23197,
+      "buy": 0.12338
+     },
+     "val": {
+      "board": 0.11287,
+      "level": 0.11043,
+      "buy": 0.04299
+     },
+     "heldout": {
+      "board": 0.17798,
+      "level": 1.04962,
+      "buy": 1.64443
+     }
+    },
+    {
+     "epoch": 60,
+     "n_runs": 15,
+     "train": {
+      "board": 0.11964,
+      "level": 0.22961,
+      "buy": 0.11566
+     },
+     "val": {
+      "board": 0.11219,
+      "level": 0.08998,
+      "buy": 0.03557
+     },
+     "heldout": {
+      "board": 0.1786,
+      "level": 1.06192,
+      "buy": 1.69722
+     }
+    }
+   ],
+   "detail": [
+    {
+     "fold": 0,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.12797619047619047,
+      "add@10": 0.22321428571428573,
+      "n_add": 84,
+      "keep_auc": 0.49412915851272016,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.8274682306940372,
+      "brier": 0.15563049463771766,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.6396224273607748,
+      "top1": 0.7272727272727273,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.27182539682539686,
+      "add@10": 0.4831349206349206,
+      "n_add": 84,
+      "keep_auc": 0.5489236790606654,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.8274682306940372,
+      "brier": 0.15563049463771766,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.6396224273607748,
+      "top1": 0.7272727272727273,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 22,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.25595238095238093,
+      "add@10": 0.3452380952380952,
+      "n_add": 84,
+      "keep_auc": 0.5225048923679061,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.6891495601173021,
+      "brier": 0.2598401945431911,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.7588529055690073,
+      "top1": 0.7954545454545454,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 22,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.24603174603174605,
+      "add@10": 0.3898809523809524,
+      "n_add": 84,
+      "keep_auc": 0.49902152641878667,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.7033235581622679,
+      "brier": 0.29780814330311156,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.7589285714285714,
+      "top1": 0.7727272727272727,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 22,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.24206349206349204,
+      "add@10": 0.3551587301587301,
+      "n_add": 84,
+      "keep_auc": 0.5636007827788649,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.5962854349951124,
+      "brier": 0.32864010173314445,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.7250680992736077,
+      "top1": 0.7045454545454546,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.07751937984496124,
+      "add@10": 0.14341085271317827,
+      "n_add": 43,
+      "keep_auc": 0.3910891089108911,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.7710437710437711,
+      "brier": 0.19243620776343245,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6035879629629629,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.1821705426356589,
+      "add@10": 0.2635658914728682,
+      "n_add": 43,
+      "keep_auc": 0.5024752475247525,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.7710437710437711,
+      "brier": 0.19243620776343245,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6035879629629629,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 1020,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.19379844961240308,
+      "add@10": 0.32170542635658916,
+      "n_add": 43,
+      "keep_auc": 0.49504950495049505,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.6212121212121212,
+      "brier": 0.27842321290206906,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6253858024691358,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 1020,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.18023255813953487,
+      "add@10": 0.25,
+      "n_add": 43,
+      "keep_auc": 0.5099009900990099,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.6616161616161617,
+      "brier": 0.31331599156065376,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.5216049382716049,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 1020,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.20542635658914726,
+      "add@10": 0.26744186046511625,
+      "n_add": 43,
+      "keep_auc": 0.5198019801980198,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.5757575757575758,
+      "brier": 0.33543404471667077,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6450617283950617,
+      "top1": 0.7222222222222222,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.08830845771144277,
+      "add@10": 0.13805970149253732,
+      "n_add": 67,
+      "keep_auc": 0.5436893203883495,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.8066976127320955,
+      "brier": 0.17613842572855917,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.5874255678894361,
+      "top1": 0.6,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.23507462686567165,
+      "add@10": 0.34203980099502485,
+      "n_add": 67,
+      "keep_auc": 0.5983009708737864,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.8066976127320955,
+      "brier": 0.17613842572855917,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.5874255678894361,
+      "top1": 0.6,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 23,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.18656716417910452,
+      "add@10": 0.2960199004975124,
+      "n_add": 67,
+      "keep_auc": 0.5995145631067961,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.7234748010610079,
+      "brier": 0.22462654719928649,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6210762331838565,
+      "top1": 0.6,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 23,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.2300995024875622,
+      "add@10": 0.3184079601990049,
+      "n_add": 67,
+      "keep_auc": 0.6577669902912622,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.6425729442970822,
+      "brier": 0.305616942618621,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6339410424171139,
+      "top1": 0.5555555555555556,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 23,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.2462686567164179,
+      "add@10": 0.37189054726368154,
+      "n_add": 67,
+      "keep_auc": 0.6286407766990292,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.6492042440318302,
+      "brier": 0.3299359977314804,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6903256634565904,
+      "top1": 0.6888888888888889,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.1575091575091575,
+      "add@10": 0.2032967032967033,
+      "n_add": 91,
+      "keep_auc": 0.45201535508637236,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.7728174603174603,
+      "brier": 0.18682822780954858,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.5887943442553552,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.2582417582417582,
+      "add@10": 0.3956043956043956,
+      "n_add": 91,
+      "keep_auc": 0.5182341650671785,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.7728174603174603,
+      "brier": 0.18682822780954858,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.5887943442553552,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 21,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.2161172161172161,
+      "add@10": 0.3626373626373626,
+      "n_add": 91,
+      "keep_auc": 0.5028790786948176,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.5912698412698413,
+      "brier": 0.31010667436339845,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.6298789264245195,
+      "top1": 0.6976744186046512,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 21,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.18681318681318682,
+      "add@10": 0.33699633699633696,
+      "n_add": 91,
+      "keep_auc": 0.5143953934740882,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.638095238095238,
+      "brier": 0.30534760927854193,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.6816103632207264,
+      "top1": 0.6976744186046512,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 900,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 21,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.1465201465201465,
+      "add@10": 0.30586080586080583,
+      "n_add": 91,
+      "keep_auc": 0.5067178502879078,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.6583333333333333,
+      "brier": 0.2946257104785481,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.6415629497925662,
+      "top1": 0.6744186046511628,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.10227272727272728,
+      "add@10": 0.1590909090909091,
+      "n_add": 44,
+      "keep_auc": 0.42857142857142855,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.8458646616541353,
+      "brier": 0.16249915912158375,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.5381623212783851,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.25,
+      "add@10": 0.3560606060606061,
+      "n_add": 44,
+      "keep_auc": 0.44787644787644787,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.8458646616541353,
+      "brier": 0.16249915912158375,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.5381623212783851,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 960,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.2897727272727273,
+      "add@10": 0.3806818181818181,
+      "n_add": 44,
+      "keep_auc": 0.4594594594594595,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.675187969924812,
+      "brier": 0.2818356942192546,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.6954163162321279,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 960,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.28977272727272724,
+      "add@10": 0.43371212121212116,
+      "n_add": 44,
+      "keep_auc": 0.5714285714285714,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.7699248120300752,
+      "brier": 0.2675437622822718,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.672161480235492,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 960,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 60,
+      "level": 60,
+      "buy": 60
+     },
+     "n_fit_games": 25,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.21780303030303028,
+      "add@10": 0.3693181818181818,
+      "n_add": 44,
+      "keep_auc": 0.5212355212355212,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.7278195488721805,
+      "brier": 0.2549263593491564,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.6584945332211943,
+      "top1": 0.6511627906976745,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    }
+   ]
+  },
+  "early-metric": {
+   "config": {
+    "model": {
+     "d": 128,
+     "layers": 2,
+     "heads": 4,
+     "ff": 2,
+     "dropout": 0.1
+    },
+    "train": {
+     "batch": 32,
+     "lr": 0.001,
+     "weight_decay": 0.01,
+     "token_dropout": 0.1,
+     "loss_weights": {
+      "board": 1.0,
+      "level": 1.0,
+      "buy": 1.0
+     },
+     "max_epochs": 60,
+     "patience": 15,
+     "inner_val_mod": 4,
+     "selection": "metric"
+    },
+    "seeds": 3,
+    "vram_frac": 0.1,
+    "cpu_threads": 4
+   },
+   "device": "cpu",
+   "torch": "2.15.0+cpu",
+   "summary": {
+    "model": {
+     "board": {
+      "add@5": [
+       0.198,
+       0.0481
+      ],
+      "add@10": [
+       0.3194,
+       0.0546
+      ],
+      "keep_auc": [
+       0.5223,
+       0.0353
+      ],
+      "keep_pairs": [
+       381.0,
+       134.472
+      ]
+     },
+     "level": {
+      "auc": [
+       0.6295,
+       0.0503
+      ],
+      "brier": [
+       0.2633,
+       0.0419
+      ],
+      "pos": [
+       27.0,
+       7.5498
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.6351,
+       0.0534
+      ],
+      "top1": [
+       0.6781,
+       0.0674
+      ]
+     }
+    },
+    "table_global": {
+     "board": {
+      "add@5": [
+       0.1107,
+       0.0323
+      ],
+      "add@10": [
+       0.1734,
+       0.0378
+      ],
+      "keep_auc": [
+       0.4619,
+       0.0591
+      ],
+      "keep_pairs": [
+       381.0,
+       145.2463
+      ]
+     },
+     "level": {
+      "auc": [
+       0.8048,
+       0.033
+      ],
+      "brier": [
+       0.1747,
+       0.0156
+      ],
+      "pos": [
+       27.0,
+       8.1548
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.5915,
+       0.0365
+      ],
+      "top1": [
+       0.7011,
+       0.0677
+      ]
+     }
+    },
+    "table_band": {
+     "board": {
+      "add@5": [
+       0.2395,
+       0.0347
+      ],
+      "add@10": [
+       0.3681,
+       0.0802
+      ],
+      "keep_auc": [
+       0.5232,
+       0.0557
+      ],
+      "keep_pairs": [
+       381.0,
+       145.2463
+      ]
+     },
+     "level": {
+      "auc": [
+       0.8048,
+       0.033
+      ],
+      "brier": [
+       0.1747,
+       0.0156
+      ],
+      "pos": [
+       27.0,
+       8.1548
+      ]
+     },
+     "buy": {
+      "auc": [
+       0.5915,
+       0.0365
+      ],
+      "top1": [
+       0.7011,
+       0.0677
+      ]
+     }
+    }
+   },
+   "loss_curve": [
+    {
+     "epoch": 1,
+     "n_runs": 15,
+     "train": {
+      "board": 0.49472,
+      "level": 0.68743,
+      "buy": 0.67656
+     },
+     "val": {
+      "board": 0.30658,
+      "level": 0.655,
+      "buy": 0.56513
+     },
+     "heldout": {
+      "board": 0.30633,
+      "level": 0.66123,
+      "buy": 0.66725
+     }
+    },
+    {
+     "epoch": 2,
+     "n_runs": 15,
+     "train": {
+      "board": 0.24485,
+      "level": 0.65599,
+      "buy": 0.63746
+     },
+     "val": {
+      "board": 0.20431,
+      "level": 0.64402,
+      "buy": 0.58831
+     },
+     "heldout": {
+      "board": 0.20492,
+      "level": 0.65067,
+      "buy": 0.67944
+     }
+    },
+    {
+     "epoch": 3,
+     "n_runs": 15,
+     "train": {
+      "board": 0.18973,
+      "level": 0.64583,
+      "buy": 0.61923
+     },
+     "val": {
+      "board": 0.18839,
+      "level": 0.6311,
+      "buy": 0.55059
+     },
+     "heldout": {
+      "board": 0.18795,
+      "level": 0.63496,
+      "buy": 0.66133
+     }
+    },
+    {
+     "epoch": 4,
+     "n_runs": 15,
+     "train": {
+      "board": 0.17676,
+      "level": 0.63464,
+      "buy": 0.58863
+     },
+     "val": {
+      "board": 0.18564,
+      "level": 0.62438,
+      "buy": 0.54233
+     },
+     "heldout": {
+      "board": 0.1848,
+      "level": 0.63264,
+      "buy": 0.67135
+     }
+    },
+    {
+     "epoch": 5,
+     "n_runs": 15,
+     "train": {
+      "board": 0.17211,
+      "level": 0.63189,
+      "buy": 0.57486
+     },
+     "val": {
+      "board": 0.18561,
+      "level": 0.62792,
+      "buy": 0.52734
+     },
+     "heldout": {
+      "board": 0.18399,
+      "level": 0.6357,
+      "buy": 0.67518
+     }
+    },
+    {
+     "epoch": 6,
+     "n_runs": 15,
+     "train": {
+      "board": 0.1699,
+      "level": 0.62188,
+      "buy": 0.55481
+     },
+     "val": {
+      "board": 0.18496,
+      "level": 0.6187,
+      "buy": 0.53399
+     },
+     "heldout": {
+      "board": 0.18364,
+      "level": 0.62276,
+      "buy": 0.68252
+     }
+    },
+    {
+     "epoch": 7,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16804,
+      "level": 0.62026,
+      "buy": 0.54369
+     },
+     "val": {
+      "board": 0.18528,
+      "level": 0.62036,
+      "buy": 0.54551
+     },
+     "heldout": {
+      "board": 0.18356,
+      "level": 0.62198,
+      "buy": 0.69238
+     }
+    },
+    {
+     "epoch": 8,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16648,
+      "level": 0.61925,
+      "buy": 0.53729
+     },
+     "val": {
+      "board": 0.18527,
+      "level": 0.61145,
+      "buy": 0.52189
+     },
+     "heldout": {
+      "board": 0.18316,
+      "level": 0.624,
+      "buy": 0.69249
+     }
+    },
+    {
+     "epoch": 9,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16555,
+      "level": 0.60655,
+      "buy": 0.51391
+     },
+     "val": {
+      "board": 0.18473,
+      "level": 0.61916,
+      "buy": 0.54095
+     },
+     "heldout": {
+      "board": 0.18249,
+      "level": 0.63183,
+      "buy": 0.70956
+     }
+    },
+    {
+     "epoch": 10,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16406,
+      "level": 0.59682,
+      "buy": 0.50793
+     },
+     "val": {
+      "board": 0.18524,
+      "level": 0.61587,
+      "buy": 0.51958
+     },
+     "heldout": {
+      "board": 0.18306,
+      "level": 0.63024,
+      "buy": 0.69261
+     }
+    },
+    {
+     "epoch": 11,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16337,
+      "level": 0.59312,
+      "buy": 0.4902
+     },
+     "val": {
+      "board": 0.18519,
+      "level": 0.59959,
+      "buy": 0.52898
+     },
+     "heldout": {
+      "board": 0.18165,
+      "level": 0.62247,
+      "buy": 0.7186
+     }
+    },
+    {
+     "epoch": 12,
+     "n_runs": 15,
+     "train": {
+      "board": 0.161,
+      "level": 0.58024,
+      "buy": 0.47616
+     },
+     "val": {
+      "board": 0.18485,
+      "level": 0.61342,
+      "buy": 0.55969
+     },
+     "heldout": {
+      "board": 0.18148,
+      "level": 0.63646,
+      "buy": 0.73882
+     }
+    },
+    {
+     "epoch": 13,
+     "n_runs": 15,
+     "train": {
+      "board": 0.16007,
+      "level": 0.57687,
+      "buy": 0.461
+     },
+     "val": {
+      "board": 0.18509,
+      "level": 0.61775,
+      "buy": 0.56118
+     },
+     "heldout": {
+      "board": 0.18127,
+      "level": 0.63699,
+      "buy": 0.74564
+     }
+    },
+    {
+     "epoch": 14,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15918,
+      "level": 0.56723,
+      "buy": 0.44593
+     },
+     "val": {
+      "board": 0.18559,
+      "level": 0.63172,
+      "buy": 0.53937
+     },
+     "heldout": {
+      "board": 0.18121,
+      "level": 0.64984,
+      "buy": 0.75902
+     }
+    },
+    {
+     "epoch": 15,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15863,
+      "level": 0.55769,
+      "buy": 0.43998
+     },
+     "val": {
+      "board": 0.1853,
+      "level": 0.62855,
+      "buy": 0.55652
+     },
+     "heldout": {
+      "board": 0.18102,
+      "level": 0.65552,
+      "buy": 0.76651
+     }
+    },
+    {
+     "epoch": 16,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15653,
+      "level": 0.55969,
+      "buy": 0.42335
+     },
+     "val": {
+      "board": 0.18453,
+      "level": 0.62743,
+      "buy": 0.56069
+     },
+     "heldout": {
+      "board": 0.18068,
+      "level": 0.65358,
+      "buy": 0.80074
+     }
+    },
+    {
+     "epoch": 17,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15501,
+      "level": 0.55186,
+      "buy": 0.39799
+     },
+     "val": {
+      "board": 0.18436,
+      "level": 0.63853,
+      "buy": 0.57158
+     },
+     "heldout": {
+      "board": 0.18055,
+      "level": 0.65231,
+      "buy": 0.83145
+     }
+    },
+    {
+     "epoch": 18,
+     "n_runs": 15,
+     "train": {
+      "board": 0.1544,
+      "level": 0.53631,
+      "buy": 0.3949
+     },
+     "val": {
+      "board": 0.18492,
+      "level": 0.62821,
+      "buy": 0.59113
+     },
+     "heldout": {
+      "board": 0.18009,
+      "level": 0.66566,
+      "buy": 0.85943
+     }
+    },
+    {
+     "epoch": 19,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15321,
+      "level": 0.52598,
+      "buy": 0.38218
+     },
+     "val": {
+      "board": 0.18499,
+      "level": 0.6439,
+      "buy": 0.5974
+     },
+     "heldout": {
+      "board": 0.18029,
+      "level": 0.65983,
+      "buy": 0.87896
+     }
+    },
+    {
+     "epoch": 20,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15184,
+      "level": 0.52181,
+      "buy": 0.35939
+     },
+     "val": {
+      "board": 0.18343,
+      "level": 0.66244,
+      "buy": 0.65423
+     },
+     "heldout": {
+      "board": 0.17955,
+      "level": 0.68942,
+      "buy": 0.95377
+     }
+    },
+    {
+     "epoch": 21,
+     "n_runs": 15,
+     "train": {
+      "board": 0.15057,
+      "level": 0.51217,
+      "buy": 0.34893
+     },
+     "val": {
+      "board": 0.18472,
+      "level": 0.65651,
+      "buy": 0.6864
+     },
+     "heldout": {
+      "board": 0.18011,
+      "level": 0.68382,
+      "buy": 0.93856
+     }
+    },
+    {
+     "epoch": 22,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14953,
+      "level": 0.49866,
+      "buy": 0.34457
+     },
+     "val": {
+      "board": 0.18393,
+      "level": 0.6495,
+      "buy": 0.65645
+     },
+     "heldout": {
+      "board": 0.18023,
+      "level": 0.70457,
+      "buy": 0.9557
+     }
+    },
+    {
+     "epoch": 23,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14833,
+      "level": 0.486,
+      "buy": 0.32245
+     },
+     "val": {
+      "board": 0.18446,
+      "level": 0.66076,
+      "buy": 0.69674
+     },
+     "heldout": {
+      "board": 0.17976,
+      "level": 0.70206,
+      "buy": 0.99295
+     }
+    },
+    {
+     "epoch": 24,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14721,
+      "level": 0.47979,
+      "buy": 0.30911
+     },
+     "val": {
+      "board": 0.18515,
+      "level": 0.67887,
+      "buy": 0.70512
+     },
+     "heldout": {
+      "board": 0.17952,
+      "level": 0.72165,
+      "buy": 1.03618
+     }
+    },
+    {
+     "epoch": 25,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14626,
+      "level": 0.47367,
+      "buy": 0.2954
+     },
+     "val": {
+      "board": 0.18409,
+      "level": 0.69018,
+      "buy": 0.76236
+     },
+     "heldout": {
+      "board": 0.17998,
+      "level": 0.74319,
+      "buy": 1.07778
+     }
+    },
+    {
+     "epoch": 26,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14499,
+      "level": 0.46385,
+      "buy": 0.28531
+     },
+     "val": {
+      "board": 0.18431,
+      "level": 0.66905,
+      "buy": 0.7795
+     },
+     "heldout": {
+      "board": 0.18116,
+      "level": 0.72842,
+      "buy": 1.09983
+     }
+    },
+    {
+     "epoch": 27,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14366,
+      "level": 0.45284,
+      "buy": 0.27659
+     },
+     "val": {
+      "board": 0.18363,
+      "level": 0.70751,
+      "buy": 0.79411
+     },
+     "heldout": {
+      "board": 0.1798,
+      "level": 0.75704,
+      "buy": 1.11481
+     }
+    },
+    {
+     "epoch": 28,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14248,
+      "level": 0.44091,
+      "buy": 0.2694
+     },
+     "val": {
+      "board": 0.18381,
+      "level": 0.7206,
+      "buy": 0.83067
+     },
+     "heldout": {
+      "board": 0.18028,
+      "level": 0.76323,
+      "buy": 1.20029
+     }
+    },
+    {
+     "epoch": 29,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14167,
+      "level": 0.43674,
+      "buy": 0.2596
+     },
+     "val": {
+      "board": 0.18333,
+      "level": 0.74389,
+      "buy": 0.8607
+     },
+     "heldout": {
+      "board": 0.17991,
+      "level": 0.77726,
+      "buy": 1.23765
+     }
+    },
+    {
+     "epoch": 30,
+     "n_runs": 15,
+     "train": {
+      "board": 0.14051,
+      "level": 0.41697,
+      "buy": 0.25229
+     },
+     "val": {
+      "board": 0.1838,
+      "level": 0.71707,
+      "buy": 0.85685
+     },
+     "heldout": {
+      "board": 0.17997,
+      "level": 0.78232,
+      "buy": 1.20088
+     }
+    },
+    {
+     "epoch": 31,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13931,
+      "level": 0.41802,
+      "buy": 0.24179
+     },
+     "val": {
+      "board": 0.18443,
+      "level": 0.70942,
+      "buy": 0.94841
+     },
+     "heldout": {
+      "board": 0.18039,
+      "level": 0.77876,
+      "buy": 1.32767
+     }
+    },
+    {
+     "epoch": 32,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13798,
+      "level": 0.39877,
+      "buy": 0.23387
+     },
+     "val": {
+      "board": 0.18347,
+      "level": 0.76598,
+      "buy": 0.90798
+     },
+     "heldout": {
+      "board": 0.18092,
+      "level": 0.83233,
+      "buy": 1.28498
+     }
+    },
+    {
+     "epoch": 33,
+     "n_runs": 15,
+     "train": {
+      "board": 0.13664,
+      "level": 0.39678,
+      "buy": 0.22857
+     },
+     "val": {
+      "board": 0.1845,
+      "level": 0.75599,
+      "buy": 0.87742
+     },
+     "heldout": {
+      "board": 0.18131,
+      "level": 0.82093,
+      "buy": 1.35079
+     }
+    },
+    {
+     "epoch": 34,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13528,
+      "level": 0.39596,
+      "buy": 0.22153
+     },
+     "val": {
+      "board": 0.18465,
+      "level": 0.75781,
+      "buy": 0.87725
+     },
+     "heldout": {
+      "board": 0.17933,
+      "level": 0.81814,
+      "buy": 1.33069
+     }
+    },
+    {
+     "epoch": 35,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13493,
+      "level": 0.39214,
+      "buy": 0.21124
+     },
+     "val": {
+      "board": 0.1843,
+      "level": 0.75103,
+      "buy": 0.99014
+     },
+     "heldout": {
+      "board": 0.18049,
+      "level": 0.82842,
+      "buy": 1.34611
+     }
+    },
+    {
+     "epoch": 36,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13341,
+      "level": 0.3718,
+      "buy": 0.20633
+     },
+     "val": {
+      "board": 0.18513,
+      "level": 0.78298,
+      "buy": 0.96557
+     },
+     "heldout": {
+      "board": 0.18045,
+      "level": 0.84355,
+      "buy": 1.34714
+     }
+    },
+    {
+     "epoch": 37,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13275,
+      "level": 0.34848,
+      "buy": 0.18575
+     },
+     "val": {
+      "board": 0.18484,
+      "level": 0.79044,
+      "buy": 0.98436
+     },
+     "heldout": {
+      "board": 0.18041,
+      "level": 0.8785,
+      "buy": 1.44603
+     }
+    },
+    {
+     "epoch": 38,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13197,
+      "level": 0.34426,
+      "buy": 0.19101
+     },
+     "val": {
+      "board": 0.18425,
+      "level": 0.78269,
+      "buy": 1.00729
+     },
+     "heldout": {
+      "board": 0.18099,
+      "level": 0.89089,
+      "buy": 1.47465
+     }
+    },
+    {
+     "epoch": 39,
+     "n_runs": 14,
+     "train": {
+      "board": 0.13066,
+      "level": 0.33045,
+      "buy": 0.1857
+     },
+     "val": {
+      "board": 0.18595,
+      "level": 0.83446,
+      "buy": 1.10162
+     },
+     "heldout": {
+      "board": 0.18232,
+      "level": 0.94232,
+      "buy": 1.48252
+     }
+    },
+    {
+     "epoch": 40,
+     "n_runs": 13,
+     "train": {
+      "board": 0.13137,
+      "level": 0.352,
+      "buy": 0.18893
+     },
+     "val": {
+      "board": 0.18581,
+      "level": 0.81969,
+      "buy": 1.06784
+     },
+     "heldout": {
+      "board": 0.18283,
+      "level": 0.89892,
+      "buy": 1.47926
+     }
+    },
+    {
+     "epoch": 41,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12978,
+      "level": 0.33223,
+      "buy": 0.18745
+     },
+     "val": {
+      "board": 0.18462,
+      "level": 0.80105,
+      "buy": 1.0898
+     },
+     "heldout": {
+      "board": 0.1812,
+      "level": 0.89584,
+      "buy": 1.42215
+     }
+    },
+    {
+     "epoch": 42,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12862,
+      "level": 0.32047,
+      "buy": 0.18179
+     },
+     "val": {
+      "board": 0.1845,
+      "level": 0.8106,
+      "buy": 1.0986
+     },
+     "heldout": {
+      "board": 0.18347,
+      "level": 0.89808,
+      "buy": 1.4424
+     }
+    },
+    {
+     "epoch": 43,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12766,
+      "level": 0.31732,
+      "buy": 0.17919
+     },
+     "val": {
+      "board": 0.18549,
+      "level": 0.82779,
+      "buy": 1.07626
+     },
+     "heldout": {
+      "board": 0.18318,
+      "level": 0.92054,
+      "buy": 1.44835
+     }
+    },
+    {
+     "epoch": 44,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12737,
+      "level": 0.31161,
+      "buy": 0.16872
+     },
+     "val": {
+      "board": 0.18659,
+      "level": 0.88186,
+      "buy": 1.12605
+     },
+     "heldout": {
+      "board": 0.18301,
+      "level": 0.96549,
+      "buy": 1.47471
+     }
+    },
+    {
+     "epoch": 45,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12628,
+      "level": 0.28792,
+      "buy": 0.16273
+     },
+     "val": {
+      "board": 0.18577,
+      "level": 0.86797,
+      "buy": 1.14698
+     },
+     "heldout": {
+      "board": 0.18187,
+      "level": 1.02667,
+      "buy": 1.46452
+     }
+    },
+    {
+     "epoch": 46,
+     "n_runs": 13,
+     "train": {
+      "board": 0.12621,
+      "level": 0.29484,
+      "buy": 0.15641
+     },
+     "val": {
+      "board": 0.18751,
+      "level": 0.88,
+      "buy": 1.05463
+     },
+     "heldout": {
+      "board": 0.18362,
+      "level": 0.98342,
+      "buy": 1.45008
+     }
+    },
+    {
+     "epoch": 47,
+     "n_runs": 12,
+     "train": {
+      "board": 0.12623,
+      "level": 0.28415,
+      "buy": 0.15302
+     },
+     "val": {
+      "board": 0.18657,
+      "level": 0.90944,
+      "buy": 1.135
+     },
+     "heldout": {
+      "board": 0.18355,
+      "level": 1.00492,
+      "buy": 1.52744
+     }
+    },
+    {
+     "epoch": 48,
+     "n_runs": 12,
+     "train": {
+      "board": 0.124,
+      "level": 0.2753,
+      "buy": 0.13479
+     },
+     "val": {
+      "board": 0.18736,
+      "level": 0.92014,
+      "buy": 1.18956
+     },
+     "heldout": {
+      "board": 0.18219,
+      "level": 1.0201,
+      "buy": 1.63215
+     }
+    },
+    {
+     "epoch": 49,
+     "n_runs": 12,
+     "train": {
+      "board": 0.12316,
+      "level": 0.25357,
+      "buy": 0.14125
+     },
+     "val": {
+      "board": 0.18816,
+      "level": 0.94896,
+      "buy": 1.18224
+     },
+     "heldout": {
+      "board": 0.18372,
+      "level": 1.01262,
+      "buy": 1.56894
+     }
+    },
+    {
+     "epoch": 50,
+     "n_runs": 12,
+     "train": {
+      "board": 0.12359,
+      "level": 0.26533,
+      "buy": 0.13729
+     },
+     "val": {
+      "board": 0.1909,
+      "level": 0.96389,
+      "buy": 1.18591
+     },
+     "heldout": {
+      "board": 0.18439,
+      "level": 1.05318,
+      "buy": 1.63206
+     }
+    },
+    {
+     "epoch": 51,
+     "n_runs": 12,
+     "train": {
+      "board": 0.1229,
+      "level": 0.26913,
+      "buy": 0.13825
+     },
+     "val": {
+      "board": 0.1911,
+      "level": 0.9647,
+      "buy": 1.19772
+     },
+     "heldout": {
+      "board": 0.18433,
+      "level": 1.05234,
+      "buy": 1.56723
+     }
+    },
+    {
+     "epoch": 52,
+     "n_runs": 12,
+     "train": {
+      "board": 0.12134,
+      "level": 0.24958,
+      "buy": 0.1445
+     },
+     "val": {
+      "board": 0.19076,
+      "level": 0.95231,
+      "buy": 1.25166
+     },
+     "heldout": {
+      "board": 0.18543,
+      "level": 1.07078,
+      "buy": 1.62496
+     }
+    },
+    {
+     "epoch": 53,
+     "n_runs": 12,
+     "train": {
+      "board": 0.12087,
+      "level": 0.26147,
+      "buy": 0.13762
+     },
+     "val": {
+      "board": 0.19059,
+      "level": 0.97322,
+      "buy": 1.17198
+     },
+     "heldout": {
+      "board": 0.18534,
+      "level": 1.06273,
+      "buy": 1.55834
+     }
+    },
+    {
+     "epoch": 54,
+     "n_runs": 12,
+     "train": {
+      "board": 0.11967,
+      "level": 0.25714,
+      "buy": 0.1495
+     },
+     "val": {
+      "board": 0.19083,
+      "level": 0.96764,
+      "buy": 1.23752
+     },
+     "heldout": {
+      "board": 0.18514,
+      "level": 1.04754,
+      "buy": 1.7066
+     }
+    },
+    {
+     "epoch": 55,
+     "n_runs": 12,
+     "train": {
+      "board": 0.11963,
+      "level": 0.25777,
+      "buy": 0.13552
+     },
+     "val": {
+      "board": 0.19085,
+      "level": 0.96913,
+      "buy": 1.20839
+     },
+     "heldout": {
+      "board": 0.18517,
+      "level": 1.02251,
+      "buy": 1.66497
+     }
+    },
+    {
+     "epoch": 56,
+     "n_runs": 10,
+     "train": {
+      "board": 0.12026,
+      "level": 0.23554,
+      "buy": 0.13156
+     },
+     "val": {
+      "board": 0.19389,
+      "level": 1.0462,
+      "buy": 1.28861
+     },
+     "heldout": {
+      "board": 0.18494,
+      "level": 1.07742,
+      "buy": 1.6736
+     }
+    },
+    {
+     "epoch": 57,
+     "n_runs": 10,
+     "train": {
+      "board": 0.11934,
+      "level": 0.22982,
+      "buy": 0.12708
+     },
+     "val": {
+      "board": 0.19309,
+      "level": 1.1365,
+      "buy": 1.274
+     },
+     "heldout": {
+      "board": 0.1854,
+      "level": 1.17388,
+      "buy": 1.61957
+     }
+    },
+    {
+     "epoch": 58,
+     "n_runs": 9,
+     "train": {
+      "board": 0.11913,
+      "level": 0.22343,
+      "buy": 0.11614
+     },
+     "val": {
+      "board": 0.1923,
+      "level": 1.13022,
+      "buy": 1.37334
+     },
+     "heldout": {
+      "board": 0.18667,
+      "level": 1.14993,
+      "buy": 1.69414
+     }
+    },
+    {
+     "epoch": 59,
+     "n_runs": 9,
+     "train": {
+      "board": 0.11838,
+      "level": 0.20141,
+      "buy": 0.12388
+     },
+     "val": {
+      "board": 0.19158,
+      "level": 1.11054,
+      "buy": 1.35511
+     },
+     "heldout": {
+      "board": 0.18688,
+      "level": 1.14737,
+      "buy": 1.70301
+     }
+    },
+    {
+     "epoch": 60,
+     "n_runs": 8,
+     "train": {
+      "board": 0.11864,
+      "level": 0.22329,
+      "buy": 0.1126
+     },
+     "val": {
+      "board": 0.19309,
+      "level": 1.20498,
+      "buy": 1.3893
+     },
+     "heldout": {
+      "board": 0.18644,
+      "level": 1.19039,
+      "buy": 1.65551
+     }
+    }
+   ],
+   "detail": [
+    {
+     "fold": 0,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.12797619047619047,
+      "add@10": 0.22321428571428573,
+      "n_add": 84,
+      "keep_auc": 0.49412915851272016,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.8274682306940372,
+      "brier": 0.15563049463771766,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.6396224273607748,
+      "top1": 0.7272727272727273,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.27182539682539686,
+      "add@10": 0.4831349206349206,
+      "n_add": 84,
+      "keep_auc": 0.5489236790606654,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.8274682306940372,
+      "brier": 0.15563049463771766,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.6396224273607748,
+      "top1": 0.7272727272727273,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 840,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 53,
+      "level": 38,
+      "buy": 1
+     },
+     "n_fit_games": 20,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.24007936507936506,
+      "add@10": 0.373015873015873,
+      "n_add": 84,
+      "keep_auc": 0.538160469667319,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.6930596285434996,
+      "brier": 0.22772014838231022,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.657649818401937,
+      "top1": 0.6590909090909091,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 840,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 49,
+      "level": 1,
+      "buy": 1
+     },
+     "n_fit_games": 20,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.17261904761904762,
+      "add@10": 0.3482142857142857,
+      "n_add": 84,
+      "keep_auc": 0.50293542074364,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.6016617790811339,
+      "brier": 0.23076302831438253,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.6464134382566586,
+      "top1": 0.6363636363636364,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 0,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 798,
+     "epochs_run": 57,
+     "best_epoch": {
+      "board": 42,
+      "level": 2,
+      "buy": 1
+     },
+     "n_fit_games": 20,
+     "n_val_games": 2,
+     "n_train_games": 22,
+     "board": {
+      "add@5": 0.2638888888888889,
+      "add@10": 0.376984126984127,
+      "n_add": 84,
+      "keep_auc": 0.5283757338551859,
+      "keep_pairs": 511
+     },
+     "level": {
+      "auc": 0.6290322580645161,
+      "brier": 0.24064317449494566,
+      "n": 95,
+      "pos": 33
+     },
+     "buy": {
+      "auc": 0.728889225181598,
+      "top1": 0.8409090909090909,
+      "n_points": 61,
+      "n_slots": 342
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.07751937984496124,
+      "add@10": 0.14341085271317827,
+      "n_add": 43,
+      "keep_auc": 0.3910891089108911,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.7710437710437711,
+      "brier": 0.19243620776343245,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6035879629629629,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.1821705426356589,
+      "add@10": 0.2635658914728682,
+      "n_add": 43,
+      "keep_auc": 0.5024752475247525,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.7710437710437711,
+      "brier": 0.19243620776343245,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.6035879629629629,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 644,
+     "epochs_run": 46,
+     "best_epoch": {
+      "board": 24,
+      "level": 30,
+      "buy": 31
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.14341085271317827,
+      "add@10": 0.23449612403100772,
+      "n_add": 43,
+      "keep_auc": 0.46534653465346537,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.6178451178451179,
+      "brier": 0.23940366637769972,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.5817901234567902,
+      "top1": 0.6666666666666666,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 826,
+     "epochs_run": 59,
+     "best_epoch": {
+      "board": 44,
+      "level": 13,
+      "buy": 14
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.19767441860465115,
+      "add@10": 0.27906976744186046,
+      "n_add": 43,
+      "keep_auc": 0.5,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.5858585858585859,
+      "brier": 0.23872164432184115,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.5281635802469136,
+      "top1": 0.6111111111111112,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 1,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 770,
+     "epochs_run": 55,
+     "best_epoch": {
+      "board": 35,
+      "level": 29,
+      "buy": 40
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.20542635658914726,
+      "add@10": 0.32751937984496127,
+      "n_add": 43,
+      "keep_auc": 0.5099009900990099,
+      "keep_pairs": 202
+     },
+     "level": {
+      "auc": 0.6313131313131313,
+      "brier": 0.2576662791370812,
+      "n": 51,
+      "pos": 18
+     },
+     "buy": {
+      "auc": 0.5713734567901234,
+      "top1": 0.6111111111111112,
+      "n_points": 20,
+      "n_slots": 102
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.08830845771144277,
+      "add@10": 0.13805970149253732,
+      "n_add": 67,
+      "keep_auc": 0.5436893203883495,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.8066976127320955,
+      "brier": 0.17613842572855917,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.5874255678894361,
+      "top1": 0.6,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.23507462686567165,
+      "add@10": 0.34203980099502485,
+      "n_add": 67,
+      "keep_auc": 0.5983009708737864,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.8066976127320955,
+      "brier": 0.17613842572855917,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.5874255678894361,
+      "top1": 0.6,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 720,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 46,
+      "level": 45,
+      "buy": 7
+     },
+     "n_fit_games": 16,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.14800995024875624,
+      "add@10": 0.23880597014925373,
+      "n_add": 67,
+      "keep_auc": 0.5485436893203883,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.6114058355437666,
+      "brier": 0.3176613044825251,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6444534293905756,
+      "top1": 0.5777777777777777,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 468,
+     "epochs_run": 39,
+     "best_epoch": {
+      "board": 22,
+      "level": 22,
+      "buy": 24
+     },
+     "n_fit_games": 16,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.13557213930348258,
+      "add@10": 0.2562189054726368,
+      "n_add": 67,
+      "keep_auc": 0.5752427184466019,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.5795755968169761,
+      "brier": 0.2868201874057121,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6190546203043447,
+      "top1": 0.6444444444444445,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 2,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 660,
+     "epochs_run": 55,
+     "best_epoch": {
+      "board": 40,
+      "level": 27,
+      "buy": 6
+     },
+     "n_fit_games": 16,
+     "n_val_games": 7,
+     "n_train_games": 23,
+     "board": {
+      "add@5": 0.20024875621890548,
+      "add@10": 0.30970149253731344,
+      "n_add": 67,
+      "keep_auc": 0.5898058252427184,
+      "keep_pairs": 412
+     },
+     "level": {
+      "auc": 0.6803713527851459,
+      "brier": 0.22217143056215732,
+      "n": 81,
+      "pos": 29
+     },
+     "buy": {
+      "auc": 0.6687127839447181,
+      "top1": 0.6444444444444445,
+      "n_points": 61,
+      "n_slots": 345
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.1575091575091575,
+      "add@10": 0.2032967032967033,
+      "n_add": 91,
+      "keep_auc": 0.45201535508637236,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.7728174603174603,
+      "brier": 0.18682822780954858,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.5887943442553552,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.2582417582417582,
+      "add@10": 0.3956043956043956,
+      "n_add": 91,
+      "keep_auc": 0.5182341650671785,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.7728174603174603,
+      "brier": 0.18682822780954858,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.5887943442553552,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 720,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 51,
+      "level": 47,
+      "buy": 24
+     },
+     "n_fit_games": 16,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.17032967032967034,
+      "add@10": 0.31135531135531136,
+      "n_add": 91,
+      "keep_auc": 0.5297504798464492,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.6039682539682539,
+      "brier": 0.3305841274439309,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.6483362966725933,
+      "top1": 0.6976744186046512,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 720,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 59,
+      "level": 50,
+      "buy": 21
+     },
+     "n_fit_games": 16,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.26373626373626374,
+      "add@10": 0.35714285714285715,
+      "n_add": 91,
+      "keep_auc": 0.4875239923224568,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.6134920634920635,
+      "brier": 0.32559387673891144,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.6836423672847346,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 3,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 396,
+     "epochs_run": 33,
+     "best_epoch": {
+      "board": 12,
+      "level": 18,
+      "buy": 15
+     },
+     "n_fit_games": 16,
+     "n_val_games": 5,
+     "n_train_games": 21,
+     "board": {
+      "add@5": 0.14285714285714288,
+      "add@10": 0.2857142857142857,
+      "n_add": 91,
+      "keep_auc": 0.46833013435700577,
+      "keep_pairs": 521
+     },
+     "level": {
+      "auc": 0.6515873015873016,
+      "brier": 0.23690265310613318,
+      "n": 106,
+      "pos": 36
+     },
+     "buy": {
+      "auc": 0.7010414020828042,
+      "top1": 0.6976744186046512,
+      "n_points": 56,
+      "n_slots": 313
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "table_global",
+     "board": {
+      "add@5": 0.10227272727272728,
+      "add@10": 0.1590909090909091,
+      "n_add": 44,
+      "keep_auc": 0.42857142857142855,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.8458646616541353,
+      "brier": 0.16249915912158375,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.5381623212783851,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "table_band",
+     "board": {
+      "add@5": 0.25,
+      "add@10": 0.3560606060606061,
+      "n_add": 44,
+      "keep_auc": 0.44787644787644787,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.8458646616541353,
+      "brier": 0.16249915912158375,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.5381623212783851,
+      "top1": 0.7441860465116279,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1000,
+     "steps": 780,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 57,
+      "level": 43,
+      "buy": 37
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.23484848484848483,
+      "add@10": 0.3106060606060606,
+      "n_add": 44,
+      "keep_auc": 0.5173745173745173,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.530827067669173,
+      "brier": 0.3041115738726622,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.6418839360807401,
+      "top1": 0.6976744186046512,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1001,
+     "steps": 780,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 56,
+      "level": 41,
+      "buy": 46
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.2765151515151515,
+      "add@10": 0.42424242424242425,
+      "n_add": 44,
+      "keep_auc": 0.5482625482625483,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.6947368421052632,
+      "brier": 0.2892171790063209,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.5742640874684609,
+      "top1": 0.6744186046511628,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    },
+    {
+     "fold": 4,
+     "arm": "model",
+     "seed": 1002,
+     "steps": 780,
+     "epochs_run": 60,
+     "best_epoch": {
+      "board": 48,
+      "level": 11,
+      "buy": 4
+     },
+     "n_fit_games": 18,
+     "n_val_games": 7,
+     "n_train_games": 25,
+     "board": {
+      "add@5": 0.17424242424242425,
+      "add@10": 0.35795454545454547,
+      "n_add": 44,
+      "keep_auc": 0.525096525096525,
+      "keep_pairs": 259
+     },
+     "level": {
+      "auc": 0.7172932330827068,
+      "brier": 0.20077323210256945,
+      "n": 54,
+      "pos": 19
+     },
+     "buy": {
+      "auc": 0.6315811606391926,
+      "top1": 0.7674418604651163,
+      "n_points": 56,
+      "n_slots": 309
+     }
+    }
+   ]
+  }
+ },
+ "final": {
+  "config": {
+   "model": {
+    "d": 128,
+    "layers": 2,
+    "heads": 4,
+    "ff": 2,
+    "dropout": 0.1
+   },
+   "train": {
+    "batch": 32,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "token_dropout": 0.1,
+    "loss_weights": {
+     "board": 1.0,
+     "level": 1.0,
+     "buy": 1.0
+    },
+    "max_epochs": 60,
+    "patience": 15,
+    "inner_val_mod": 4,
+    "selection": "last"
+   },
+   "seeds": 3,
+   "vram_frac": 0.1,
+   "cpu_threads": 4
+  },
+  "params": 459015,
+  "steps": 1200,
+  "epochs_run": 60,
+  "best_epoch": {
+   "board": 60,
+   "level": 60,
+   "buy": 60
+  },
+  "n_fit_games": 29,
+  "n_val_games": 7,
+  "latency_ms_batch1": 7.174,
+  "latency_ms_batch1_cpu": 8.395,
+  "loss_curve": [
+   {
+    "epoch": 1,
+    "train": {
+     "board": 0.43992,
+     "level": 0.69734,
+     "buy": 0.63467
+    },
+    "val": {
+     "board": 0.23971,
+     "level": 0.75617,
+     "buy": 0.8037
+    },
+    "val_crit": {
+     "board": -0.23971,
+     "level": -0.75617,
+     "buy": -0.8037
+    }
+   },
+   {
+    "epoch": 2,
+    "train": {
+     "board": 0.20277,
+     "level": 0.69464,
+     "buy": 0.62653
+    },
+    "val": {
+     "board": 0.18123,
+     "level": 0.63595,
+     "buy": 0.76668
+    },
+    "val_crit": {
+     "board": -0.18123,
+     "level": -0.63595,
+     "buy": -0.76668
+    }
+   },
+   {
+    "epoch": 3,
+    "train": {
+     "board": 0.17977,
+     "level": 0.63031,
+     "buy": 0.57694
+    },
+    "val": {
+     "board": 0.1731,
+     "level": 0.60999,
+     "buy": 0.6047
+    },
+    "val_crit": {
+     "board": -0.1731,
+     "level": -0.60999,
+     "buy": -0.6047
+    }
+   },
+   {
+    "epoch": 4,
+    "train": {
+     "board": 0.17766,
+     "level": 0.61035,
+     "buy": 0.56634
+    },
+    "val": {
+     "board": 0.16875,
+     "level": 0.58999,
+     "buy": 0.77215
+    },
+    "val_crit": {
+     "board": -0.16875,
+     "level": -0.58999,
+     "buy": -0.77215
+    }
+   },
+   {
+    "epoch": 5,
+    "train": {
+     "board": 0.17218,
+     "level": 0.63807,
+     "buy": 0.55966
+    },
+    "val": {
+     "board": 0.16525,
+     "level": 0.57265,
+     "buy": 0.56411
+    },
+    "val_crit": {
+     "board": -0.16525,
+     "level": -0.57265,
+     "buy": -0.56411
+    }
+   },
+   {
+    "epoch": 6,
+    "train": {
+     "board": 0.16065,
+     "level": 0.62191,
+     "buy": 0.54414
+    },
+    "val": {
+     "board": 0.16275,
+     "level": 0.63014,
+     "buy": 0.58972
+    },
+    "val_crit": {
+     "board": -0.16275,
+     "level": -0.63014,
+     "buy": -0.58972
+    }
+   },
+   {
+    "epoch": 7,
+    "train": {
+     "board": 0.17002,
+     "level": 0.621,
+     "buy": 0.51178
+    },
+    "val": {
+     "board": 0.16183,
+     "level": 0.5907,
+     "buy": 0.48719
+    },
+    "val_crit": {
+     "board": -0.16183,
+     "level": -0.5907,
+     "buy": -0.48719
+    }
+   },
+   {
+    "epoch": 8,
+    "train": {
+     "board": 0.1566,
+     "level": 0.5824,
+     "buy": 0.53073
+    },
+    "val": {
+     "board": 0.16229,
+     "level": 0.61002,
+     "buy": 0.52483
+    },
+    "val_crit": {
+     "board": -0.16229,
+     "level": -0.61002,
+     "buy": -0.52483
+    }
+   },
+   {
+    "epoch": 9,
+    "train": {
+     "board": 0.15642,
+     "level": 0.56855,
+     "buy": 0.53086
+    },
+    "val": {
+     "board": 0.1592,
+     "level": 0.56446,
+     "buy": 0.48754
+    },
+    "val_crit": {
+     "board": -0.1592,
+     "level": -0.56446,
+     "buy": -0.48754
+    }
+   },
+   {
+    "epoch": 10,
+    "train": {
+     "board": 0.16616,
+     "level": 0.5799,
+     "buy": 0.503
+    },
+    "val": {
+     "board": 0.15851,
+     "level": 0.55467,
+     "buy": 0.44425
+    },
+    "val_crit": {
+     "board": -0.15851,
+     "level": -0.55467,
+     "buy": -0.44425
+    }
+   },
+   {
+    "epoch": 11,
+    "train": {
+     "board": 0.1665,
+     "level": 0.60833,
+     "buy": 0.47769
+    },
+    "val": {
+     "board": 0.15791,
+     "level": 0.56511,
+     "buy": 0.50952
+    },
+    "val_crit": {
+     "board": -0.15791,
+     "level": -0.56511,
+     "buy": -0.50952
+    }
+   },
+   {
+    "epoch": 12,
+    "train": {
+     "board": 0.16319,
+     "level": 0.5787,
+     "buy": 0.48523
+    },
+    "val": {
+     "board": 0.15868,
+     "level": 0.54894,
+     "buy": 0.46417
+    },
+    "val_crit": {
+     "board": -0.15868,
+     "level": -0.54894,
+     "buy": -0.46417
+    }
+   },
+   {
+    "epoch": 13,
+    "train": {
+     "board": 0.15693,
+     "level": 0.60369,
+     "buy": 0.45226
+    },
+    "val": {
+     "board": 0.15772,
+     "level": 0.64342,
+     "buy": 0.43602
+    },
+    "val_crit": {
+     "board": -0.15772,
+     "level": -0.64342,
+     "buy": -0.43602
+    }
+   },
+   {
+    "epoch": 14,
+    "train": {
+     "board": 0.16175,
+     "level": 0.60356,
+     "buy": 0.44155
+    },
+    "val": {
+     "board": 0.15624,
+     "level": 0.55852,
+     "buy": 0.4438
+    },
+    "val_crit": {
+     "board": -0.15624,
+     "level": -0.55852,
+     "buy": -0.4438
+    }
+   },
+   {
+    "epoch": 15,
+    "train": {
+     "board": 0.15126,
+     "level": 0.56462,
+     "buy": 0.44445
+    },
+    "val": {
+     "board": 0.1533,
+     "level": 0.53709,
+     "buy": 0.42493
+    },
+    "val_crit": {
+     "board": -0.1533,
+     "level": -0.53709,
+     "buy": -0.42493
+    }
+   },
+   {
+    "epoch": 16,
+    "train": {
+     "board": 0.15059,
+     "level": 0.52435,
+     "buy": 0.48005
+    },
+    "val": {
+     "board": 0.15129,
+     "level": 0.54852,
+     "buy": 0.41968
+    },
+    "val_crit": {
+     "board": -0.15129,
+     "level": -0.54852,
+     "buy": -0.41968
+    }
+   },
+   {
+    "epoch": 17,
+    "train": {
+     "board": 0.15692,
+     "level": 0.60063,
+     "buy": 0.44349
+    },
+    "val": {
+     "board": 0.15068,
+     "level": 0.54133,
+     "buy": 0.44502
+    },
+    "val_crit": {
+     "board": -0.15068,
+     "level": -0.54133,
+     "buy": -0.44502
+    }
+   },
+   {
+    "epoch": 18,
+    "train": {
+     "board": 0.15627,
+     "level": 0.56741,
+     "buy": 0.40945
+    },
+    "val": {
+     "board": 0.15285,
+     "level": 0.55457,
+     "buy": 0.33602
+    },
+    "val_crit": {
+     "board": -0.15285,
+     "level": -0.55457,
+     "buy": -0.33602
+    }
+   },
+   {
+    "epoch": 19,
+    "train": {
+     "board": 0.1551,
+     "level": 0.57524,
+     "buy": 0.40552
+    },
+    "val": {
+     "board": 0.15167,
+     "level": 0.51994,
+     "buy": 0.34756
+    },
+    "val_crit": {
+     "board": -0.15167,
+     "level": -0.51994,
+     "buy": -0.34756
+    }
+   },
+   {
+    "epoch": 20,
+    "train": {
+     "board": 0.15239,
+     "level": 0.55083,
+     "buy": 0.37391
+    },
+    "val": {
+     "board": 0.15082,
+     "level": 0.52304,
+     "buy": 0.32029
+    },
+    "val_crit": {
+     "board": -0.15082,
+     "level": -0.52304,
+     "buy": -0.32029
+    }
+   },
+   {
+    "epoch": 21,
+    "train": {
+     "board": 0.15997,
+     "level": 0.54991,
+     "buy": 0.347
+    },
+    "val": {
+     "board": 0.14997,
+     "level": 0.4993,
+     "buy": 0.3081
+    },
+    "val_crit": {
+     "board": -0.14997,
+     "level": -0.4993,
+     "buy": -0.3081
+    }
+   },
+   {
+    "epoch": 22,
+    "train": {
+     "board": 0.15533,
+     "level": 0.53436,
+     "buy": 0.32267
+    },
+    "val": {
+     "board": 0.15068,
+     "level": 0.50319,
+     "buy": 0.26887
+    },
+    "val_crit": {
+     "board": -0.15068,
+     "level": -0.50319,
+     "buy": -0.26887
+    }
+   },
+   {
+    "epoch": 23,
+    "train": {
+     "board": 0.15319,
+     "level": 0.49366,
+     "buy": 0.32211
+    },
+    "val": {
+     "board": 0.14871,
+     "level": 0.48333,
+     "buy": 0.24984
+    },
+    "val_crit": {
+     "board": -0.14871,
+     "level": -0.48333,
+     "buy": -0.24984
+    }
+   },
+   {
+    "epoch": 24,
+    "train": {
+     "board": 0.15782,
+     "level": 0.49191,
+     "buy": 0.3009
+    },
+    "val": {
+     "board": 0.14968,
+     "level": 0.4757,
+     "buy": 0.2598
+    },
+    "val_crit": {
+     "board": -0.14968,
+     "level": -0.4757,
+     "buy": -0.2598
+    }
+   },
+   {
+    "epoch": 25,
+    "train": {
+     "board": 0.15371,
+     "level": 0.47949,
+     "buy": 0.32519
+    },
+    "val": {
+     "board": 0.14915,
+     "level": 0.50487,
+     "buy": 0.24922
+    },
+    "val_crit": {
+     "board": -0.14915,
+     "level": -0.50487,
+     "buy": -0.24922
+    }
+   },
+   {
+    "epoch": 26,
+    "train": {
+     "board": 0.14503,
+     "level": 0.4995,
+     "buy": 0.33286
+    },
+    "val": {
+     "board": 0.14852,
+     "level": 0.51394,
+     "buy": 0.26829
+    },
+    "val_crit": {
+     "board": -0.14852,
+     "level": -0.51394,
+     "buy": -0.26829
+    }
+   },
+   {
+    "epoch": 27,
+    "train": {
+     "board": 0.1504,
+     "level": 0.50465,
+     "buy": 0.2938
+    },
+    "val": {
+     "board": 0.14745,
+     "level": 0.44389,
+     "buy": 0.20605
+    },
+    "val_crit": {
+     "board": -0.14745,
+     "level": -0.44389,
+     "buy": -0.20605
+    }
+   },
+   {
+    "epoch": 28,
+    "train": {
+     "board": 0.14242,
+     "level": 0.46327,
+     "buy": 0.24619
+    },
+    "val": {
+     "board": 0.14517,
+     "level": 0.4012,
+     "buy": 0.25152
+    },
+    "val_crit": {
+     "board": -0.14517,
+     "level": -0.4012,
+     "buy": -0.25152
+    }
+   },
+   {
+    "epoch": 29,
+    "train": {
+     "board": 0.14545,
+     "level": 0.45034,
+     "buy": 0.2771
+    },
+    "val": {
+     "board": 0.14472,
+     "level": 0.41444,
+     "buy": 0.35347
+    },
+    "val_crit": {
+     "board": -0.14472,
+     "level": -0.41444,
+     "buy": -0.35347
+    }
+   },
+   {
+    "epoch": 30,
+    "train": {
+     "board": 0.1442,
+     "level": 0.46899,
+     "buy": 0.26679
+    },
+    "val": {
+     "board": 0.14457,
+     "level": 0.39869,
+     "buy": 0.23257
+    },
+    "val_crit": {
+     "board": -0.14457,
+     "level": -0.39869,
+     "buy": -0.23257
+    }
+   },
+   {
+    "epoch": 31,
+    "train": {
+     "board": 0.14886,
+     "level": 0.48325,
+     "buy": 0.25299
+    },
+    "val": {
+     "board": 0.14637,
+     "level": 0.39958,
+     "buy": 0.23054
+    },
+    "val_crit": {
+     "board": -0.14637,
+     "level": -0.39958,
+     "buy": -0.23054
+    }
+   },
+   {
+    "epoch": 32,
+    "train": {
+     "board": 0.15281,
+     "level": 0.44871,
+     "buy": 0.24023
+    },
+    "val": {
+     "board": 0.14485,
+     "level": 0.36684,
+     "buy": 0.22437
+    },
+    "val_crit": {
+     "board": -0.14485,
+     "level": -0.36684,
+     "buy": -0.22437
+    }
+   },
+   {
+    "epoch": 33,
+    "train": {
+     "board": 0.14119,
+     "level": 0.41708,
+     "buy": 0.23726
+    },
+    "val": {
+     "board": 0.14262,
+     "level": 0.43315,
+     "buy": 0.31676
+    },
+    "val_crit": {
+     "board": -0.14262,
+     "level": -0.43315,
+     "buy": -0.31676
+    }
+   },
+   {
+    "epoch": 34,
+    "train": {
+     "board": 0.14587,
+     "level": 0.43854,
+     "buy": 0.20726
+    },
+    "val": {
+     "board": 0.14084,
+     "level": 0.34887,
+     "buy": 0.1848
+    },
+    "val_crit": {
+     "board": -0.14084,
+     "level": -0.34887,
+     "buy": -0.1848
+    }
+   },
+   {
+    "epoch": 35,
+    "train": {
+     "board": 0.1441,
+     "level": 0.41989,
+     "buy": 0.19039
+    },
+    "val": {
+     "board": 0.14144,
+     "level": 0.30524,
+     "buy": 0.1714
+    },
+    "val_crit": {
+     "board": -0.14144,
+     "level": -0.30524,
+     "buy": -0.1714
+    }
+   },
+   {
+    "epoch": 36,
+    "train": {
+     "board": 0.13748,
+     "level": 0.45165,
+     "buy": 0.22618
+    },
+    "val": {
+     "board": 0.14465,
+     "level": 0.34152,
+     "buy": 0.16324
+    },
+    "val_crit": {
+     "board": -0.14465,
+     "level": -0.34152,
+     "buy": -0.16324
+    }
+   },
+   {
+    "epoch": 37,
+    "train": {
+     "board": 0.14704,
+     "level": 0.39819,
+     "buy": 0.21218
+    },
+    "val": {
+     "board": 0.14048,
+     "level": 0.29005,
+     "buy": 0.14456
+    },
+    "val_crit": {
+     "board": -0.14048,
+     "level": -0.29005,
+     "buy": -0.14456
+    }
+   },
+   {
+    "epoch": 38,
+    "train": {
+     "board": 0.14534,
+     "level": 0.40394,
+     "buy": 0.20778
+    },
+    "val": {
+     "board": 0.13917,
+     "level": 0.27169,
+     "buy": 0.14493
+    },
+    "val_crit": {
+     "board": -0.13917,
+     "level": -0.27169,
+     "buy": -0.14493
+    }
+   },
+   {
+    "epoch": 39,
+    "train": {
+     "board": 0.1444,
+     "level": 0.52492,
+     "buy": 0.28656
+    },
+    "val": {
+     "board": 0.13967,
+     "level": 0.27639,
+     "buy": 0.15631
+    },
+    "val_crit": {
+     "board": -0.13967,
+     "level": -0.27639,
+     "buy": -0.15631
+    }
+   },
+   {
+    "epoch": 40,
+    "train": {
+     "board": 0.13746,
+     "level": 0.43651,
+     "buy": 0.24964
+    },
+    "val": {
+     "board": 0.14261,
+     "level": 0.3551,
+     "buy": 0.25297
+    },
+    "val_crit": {
+     "board": -0.14261,
+     "level": -0.3551,
+     "buy": -0.25297
+    }
+   },
+   {
+    "epoch": 41,
+    "train": {
+     "board": 0.14758,
+     "level": 0.37381,
+     "buy": 0.2304
+    },
+    "val": {
+     "board": 0.14017,
+     "level": 0.26884,
+     "buy": 0.10988
+    },
+    "val_crit": {
+     "board": -0.14017,
+     "level": -0.26884,
+     "buy": -0.10988
+    }
+   },
+   {
+    "epoch": 42,
+    "train": {
+     "board": 0.13675,
+     "level": 0.40867,
+     "buy": 0.17603
+    },
+    "val": {
+     "board": 0.13963,
+     "level": 0.27246,
+     "buy": 0.16898
+    },
+    "val_crit": {
+     "board": -0.13963,
+     "level": -0.27246,
+     "buy": -0.16898
+    }
+   },
+   {
+    "epoch": 43,
+    "train": {
+     "board": 0.13325,
+     "level": 0.33882,
+     "buy": 0.17579
+    },
+    "val": {
+     "board": 0.1369,
+     "level": 0.21201,
+     "buy": 0.09856
+    },
+    "val_crit": {
+     "board": -0.1369,
+     "level": -0.21201,
+     "buy": -0.09856
+    }
+   },
+   {
+    "epoch": 44,
+    "train": {
+     "board": 0.14052,
+     "level": 0.35315,
+     "buy": 0.14034
+    },
+    "val": {
+     "board": 0.13898,
+     "level": 0.28827,
+     "buy": 0.12941
+    },
+    "val_crit": {
+     "board": -0.13898,
+     "level": -0.28827,
+     "buy": -0.12941
+    }
+   },
+   {
+    "epoch": 45,
+    "train": {
+     "board": 0.14079,
+     "level": 0.43148,
+     "buy": 0.17921
+    },
+    "val": {
+     "board": 0.14036,
+     "level": 0.33763,
+     "buy": 0.10235
+    },
+    "val_crit": {
+     "board": -0.14036,
+     "level": -0.33763,
+     "buy": -0.10235
+    }
+   },
+   {
+    "epoch": 46,
+    "train": {
+     "board": 0.13399,
+     "level": 0.42475,
+     "buy": 0.16469
+    },
+    "val": {
+     "board": 0.13615,
+     "level": 0.30813,
+     "buy": 0.12803
+    },
+    "val_crit": {
+     "board": -0.13615,
+     "level": -0.30813,
+     "buy": -0.12803
+    }
+   },
+   {
+    "epoch": 47,
+    "train": {
+     "board": 0.13131,
+     "level": 0.34583,
+     "buy": 0.14451
+    },
+    "val": {
+     "board": 0.13368,
+     "level": 0.24803,
+     "buy": 0.12744
+    },
+    "val_crit": {
+     "board": -0.13368,
+     "level": -0.24803,
+     "buy": -0.12744
+    }
+   },
+   {
+    "epoch": 48,
+    "train": {
+     "board": 0.14254,
+     "level": 0.34892,
+     "buy": 0.11541
+    },
+    "val": {
+     "board": 0.13422,
+     "level": 0.21472,
+     "buy": 0.10153
+    },
+    "val_crit": {
+     "board": -0.13422,
+     "level": -0.21472,
+     "buy": -0.10153
+    }
+   },
+   {
+    "epoch": 49,
+    "train": {
+     "board": 0.13318,
+     "level": 0.26451,
+     "buy": 0.14536
+    },
+    "val": {
+     "board": 0.13412,
+     "level": 0.19555,
+     "buy": 0.11728
+    },
+    "val_crit": {
+     "board": -0.13412,
+     "level": -0.19555,
+     "buy": -0.11728
+    }
+   },
+   {
+    "epoch": 50,
+    "train": {
+     "board": 0.13961,
+     "level": 0.34929,
+     "buy": 0.14441
+    },
+    "val": {
+     "board": 0.13398,
+     "level": 0.22256,
+     "buy": 0.09323
+    },
+    "val_crit": {
+     "board": -0.13398,
+     "level": -0.22256,
+     "buy": -0.09323
+    }
+   },
+   {
+    "epoch": 51,
+    "train": {
+     "board": 0.1348,
+     "level": 0.29156,
+     "buy": 0.19215
+    },
+    "val": {
+     "board": 0.13097,
+     "level": 0.1977,
+     "buy": 0.08584
+    },
+    "val_crit": {
+     "board": -0.13097,
+     "level": -0.1977,
+     "buy": -0.08584
+    }
+   },
+   {
+    "epoch": 52,
+    "train": {
+     "board": 0.13572,
+     "level": 0.32269,
+     "buy": 0.14941
+    },
+    "val": {
+     "board": 0.13151,
+     "level": 0.18545,
+     "buy": 0.09187
+    },
+    "val_crit": {
+     "board": -0.13151,
+     "level": -0.18545,
+     "buy": -0.09187
+    }
+   },
+   {
+    "epoch": 53,
+    "train": {
+     "board": 0.12696,
+     "level": 0.28486,
+     "buy": 0.16985
+    },
+    "val": {
+     "board": 0.13202,
+     "level": 0.16366,
+     "buy": 0.06372
+    },
+    "val_crit": {
+     "board": -0.13202,
+     "level": -0.16366,
+     "buy": -0.06372
+    }
+   },
+   {
+    "epoch": 54,
+    "train": {
+     "board": 0.12705,
+     "level": 0.28163,
+     "buy": 0.14876
+    },
+    "val": {
+     "board": 0.12829,
+     "level": 0.14161,
+     "buy": 0.07721
+    },
+    "val_crit": {
+     "board": -0.12829,
+     "level": -0.14161,
+     "buy": -0.07721
+    }
+   },
+   {
+    "epoch": 55,
+    "train": {
+     "board": 0.13413,
+     "level": 0.33619,
+     "buy": 0.14749
+    },
+    "val": {
+     "board": 0.12983,
+     "level": 0.20448,
+     "buy": 0.10237
+    },
+    "val_crit": {
+     "board": -0.12983,
+     "level": -0.20448,
+     "buy": -0.10237
+    }
+   },
+   {
+    "epoch": 56,
+    "train": {
+     "board": 0.13945,
+     "level": 0.40554,
+     "buy": 0.13139
+    },
+    "val": {
+     "board": 0.13443,
+     "level": 0.22541,
+     "buy": 0.06999
+    },
+    "val_crit": {
+     "board": -0.13443,
+     "level": -0.22541,
+     "buy": -0.06999
+    }
+   },
+   {
+    "epoch": 57,
+    "train": {
+     "board": 0.13173,
+     "level": 0.31832,
+     "buy": 0.12788
+    },
+    "val": {
+     "board": 0.1353,
+     "level": 0.2001,
+     "buy": 0.08174
+    },
+    "val_crit": {
+     "board": -0.1353,
+     "level": -0.2001,
+     "buy": -0.08174
+    }
+   },
+   {
+    "epoch": 58,
+    "train": {
+     "board": 0.13114,
+     "level": 0.27674,
+     "buy": 0.12788
+    },
+    "val": {
+     "board": 0.13103,
+     "level": 0.1616,
+     "buy": 0.07751
+    },
+    "val_crit": {
+     "board": -0.13103,
+     "level": -0.1616,
+     "buy": -0.07751
+    }
+   },
+   {
+    "epoch": 59,
+    "train": {
+     "board": 0.13571,
+     "level": 0.26669,
+     "buy": 0.13468
+    },
+    "val": {
+     "board": 0.13061,
+     "level": 0.15128,
+     "buy": 0.05244
+    },
+    "val_crit": {
+     "board": -0.13061,
+     "level": -0.15128,
+     "buy": -0.05244
+    }
+   },
+   {
+    "epoch": 60,
+    "train": {
+     "board": 0.13263,
+     "level": 0.23675,
+     "buy": 0.14209
+    },
+    "val": {
+     "board": 0.12965,
+     "level": 0.1206,
+     "buy": 0.11569
+    },
+    "val_crit": {
+     "board": -0.12965,
+     "level": -0.1206,
+     "buy": -0.11569
+    }
+   }
+  ]
+ }
+}

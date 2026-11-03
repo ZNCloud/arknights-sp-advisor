@@ -14,6 +14,7 @@
 | `lab/` | 实验工具：`soloarm`（配对差）、`bossarm`（BOSS 掉血%）、`paired`、`dose`（处理强度）、`inspect`（逐回合层数/精锐/装备）、`diagnose`（高低掉血分组 + 秩相关）、`feasible`（可行性反解） |
 | `samples/` | 各实验臂 20 seeds 的原始 `matchrun --json` 输出 |
 | `plugin/` | 游戏内顾问（UI 插件，`hud.right` 槽）：抓谁 / 配谁 / 下步 / 冻否 / 组谁 |
+| `imitate/` | 从 owner 的真人局（`.spdemo` 录像 + overlay 记录）学每回合的阵容 / 升级 / 买牌的小 transformer：数据切片、token 编码、按局分折评估、推理接口（见 `imitate/README.md`，数字在 `docs/imitate/`） |
 | `overlay.mjs` / `box.ps1` / `launch.ps1` | 桌面小框（通过 Chrome DevTools Protocol 读客户端私有视图，只读、不发任何对局意图） |
 
 ## 核心结论（都有测量数据支撑）

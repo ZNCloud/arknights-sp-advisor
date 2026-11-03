@@ -1,0 +1,27 @@
+{
+ "model": {
+  "d": 32,
+  "layers": 1,
+  "heads": 2,
+  "ff": 2,
+  "dropout": 0.1
+ },
+ "train": {
+  "batch": 32,
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "token_dropout": 0.1,
+  "loss_weights": {
+   "board": 1.0,
+   "level": 1.0,
+   "buy": 1.0
+  },
+  "max_epochs": 2,
+  "patience": 1,
+  "inner_val_mod": 5,
+  "selection": "metric"
+ },
+ "seeds": 1,
+ "vram_frac": 0.05,
+ "cpu_threads": 16
+}
