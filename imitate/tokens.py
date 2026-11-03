@@ -28,6 +28,7 @@ POS_BOARD = 10 + 22 + 33 + 1
 POS_SHOP = POS_BOARD + N_BOARD * BOARD_W + 1
 POS_HAND = POS_SHOP + N_SHOP * SHOP_W + 1
 SEQ_LEN = POS_HAND + N_HAND * HAND_W + 3
+POS_ROUND, POS_ME_SL = 2, 12  # R_r in the global block, the owner's SL_n (dispatch-center level) in the <ME> block
 N_SPECIAL = 13  # [PAD] .. EMPTY: structure tokens, never masked by augmentation
 
 

@@ -1,0 +1,37 @@
+{
+ "model": {
+  "d": 128,
+  "layers": 2,
+  "heads": 4,
+  "ff": 2,
+  "dropout": 0.1,
+  "prior": [
+   "board",
+   "level"
+  ],
+  "level_direct": 16
+ },
+ "train": {
+  "batch": 32,
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "token_dropout": 0.1,
+  "loss_weights": {
+   "board": 1.0,
+   "level": 1.0,
+   "buy": 1.0
+  },
+  "max_epochs": 60,
+  "patience": 15,
+  "inner_val_mod": 4,
+  "selection": "last",
+  "prior_oof": 4,
+  "residual_l2": {
+   "board": 0.01,
+   "level": 1.0
+  }
+ },
+ "seeds": 3,
+ "vram_frac": 0.1,
+ "cpu_threads": 4
+}

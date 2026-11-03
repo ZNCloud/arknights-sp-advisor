@@ -6,6 +6,8 @@
          (each fold keeps only its first k training games in sha1(game id + "/lc") order).
   final  one net on every game (seed 0) -> <out>/final.pt (weights + itos + config) and its latency.
 Writes <out>/eval.json (every fold x seed and the means) and prints the summary table.
+Heads listed in model.prior (imitate/model.py) add the lookup-table logit of evaluate.py, fitted on the same training
+records as the baseline tables (prior_tables); the test records only ever see tables fitted without them.
 --only-fold f [--only-seed s] runs the cv of one fold (one seed) and writes <out>/cv_fold<f>[_s<s>].json instead;
 --stage merge then pools every cv_fold*.json in <out> into eval.json (same numbers as one cv run: folds and seeds are
 independent) and refuses if a (fold, seed) is missing / duplicated or the parts saw another decisions.jsonl.
@@ -61,12 +63,51 @@ def masked_bce(logit, y, m):
     return (loss * m).sum() / m.sum()
 
 
-def head_losses(net, x, yb, mb, yl, ml, ysh, msh):
-    o = net(x)
+def head_losses(net, x, yb, mb, yl, ml, ysh, msh, pr):
+    return output_losses(net(x, pr), yb, mb, yl, ml, ysh, msh)
+
+
+def output_losses(o, yb, mb, yl, ml, ysh, msh):
     return {"board": masked_bce(o["board"], yb, mb), "level": masked_bce(o["level"], yl, ml), "buy": masked_bce(o["buy"], ysh, msh)}
 
 
 HEADS = ("board", "level", "buy")
+
+
+def fit_tables(recs, vocab):
+    """the two tables that are also head priors, fitted on recs (only records carrying that head's label)"""
+    return {"board": evaluate.BoardTable([r for r in recs if r["labels"]["board_next"] is not None], vocab, by_band=True),
+            "level": evaluate.LevelTable([r for r in recs if r["labels"]["level_up"] is not None])}
+
+
+def table_logits(tables, heads, recs, idx, out):
+    for h in heads:
+        for i in idx:
+            out[h][i] = torch.tensor(tables[h].logits(recs[i]))
+
+
+def prior_tables(recs, fit_idx, vocab, cfg):
+    """Prior logits {head: tensor over every record} for the heads in model.prior, plus the fitted tables' state.
+    Records outside fit_idx get the tables fitted on all of fit_idx. Records inside fit_idx get the same tables when
+    train.prior_oof is 0 (in-sample), else out-of-fold ones: fit_idx is split by game (sha1(game + "/prior") % k) and
+    each part reads tables fitted on the other parts, so during training the prior is as good as it will be at test."""
+    heads = cfg["model"].get("prior", [])
+    if not heads:
+        return {}, None
+    pr = {"board": torch.zeros(len(recs), len(vocab.base_ids)), "level": torch.zeros(len(recs))}
+    pr = {h: pr[h] for h in heads}
+    tables = fit_tables([recs[i] for i in fit_idx], vocab)
+    inside = set(fit_idx)
+    table_logits(tables, heads, recs, [i for i in range(len(recs)) if i not in inside], pr)
+    k = cfg["train"].get("prior_oof", 0)
+    if not k:
+        table_logits(tables, heads, recs, fit_idx, pr)
+    else:
+        part = lambda i: int(hashlib.sha1((recs[i]["game"] + "/prior").encode()).hexdigest(), 16) % k
+        for q in range(k):
+            table_logits(fit_tables([recs[i] for i in fit_idx if part(i) != q], vocab), heads, recs,
+                         [i for i in fit_idx if part(i) == q], pr)
+    return pr, {h: tables[h].state() for h in heads}
 
 
 def inner_split(recs, idx, k):
@@ -77,11 +118,13 @@ def inner_split(recs, idx, k):
     return [i for i in idx if recs[i]["game"] not in val], [i for i in idx if recs[i]["game"] in val]
 
 
-def fit(X, ys, recs, idx, vocab, cfg, seed, dev, heldout=None):
+def fit(X, ys, pr, recs, idx, vocab, cfg, seed, dev, heldout=None):
     """Train on records idx; each head keeps the weights of its best epoch on an inner game split of idx
     (inner_split), judged by train.selection: "metric" = the head's held-out ranking metric (board add@5, level AUC,
     buy AUC; evaluate.py), "loss" = its BCE, "last" = no selection (every head = the last epoch, max_epochs, no
     early stop). Training stops when no head improved for `patience` epochs.
+    pr: prior logits per head (prior_tables). train.residual_l2 (a number, or {head: number}) adds that weight x
+    mean(residual logit^2) per prior head: shrinks the net's correction towards the table.
     Returns (states, info, curve): states[head] = that head's weights (predict() reads each head from its own snapshot); curve[e] = per-head mean loss on the training part (augmentation on), the
     inner validation part and, if `heldout` is given, those records (diagnostic only, nothing is selected on it)."""
     torch.manual_seed(seed)
@@ -93,10 +136,12 @@ def fit(X, ys, recs, idx, vocab, cfg, seed, dev, heldout=None):
     tr, va = inner_split(recs, idx, tc["inner_val_mod"])
     if tc["selection"] == "last":  # nothing is selected: train on all of idx (the "val" curve is then in-sample)
         tr = list(idx)
-    pack = lambda ii: [a[ii].to(dev) for a in (X, Yb, Mb, Yl, Ml, Ys, Ms)]
-    x, yb, mb, yl, ml, ysh, msh = pack(tr)
+    pack = lambda ii: [a[ii].to(dev) for a in (X, Yb, Mb, Yl, Ml, Ys, Ms)] + [{h: v[ii].to(dev) for h, v in pr.items()}]
+    x, yb, mb, yl, ml, ysh, msh, ptr = pack(tr)
     vv, hv = pack(va), (pack(heldout) if heldout else None)
     w = tc["loss_weights"]
+    l2 = tc.get("residual_l2") or 0
+    l2 = {h: (l2.get(h, 0) if isinstance(l2, dict) else l2) for h in pr}
     best = {h: (-float("inf"), 0, None) for h in HEADS}
     steps, curve = 0, []
     for ep in range(tc["max_epochs"]):
@@ -108,8 +153,13 @@ def fit(X, ys, recs, idx, vocab, cfg, seed, dev, heldout=None):
             xb = x[b].clone()
             drop = (torch.rand(xb.shape, device=dev) < tc["token_dropout"]) & (xb >= tokens.N_SPECIAL)
             xb[drop] = vocab.stoi["[MASK]"]
-            hl = head_losses(net, xb, yb[b], mb[b], yl[b], ml[b], ysh[b], msh[b])
+            pb = {h: v[b] for h, v in ptr.items()}
+            o = net(xb, pb)
+            hl = output_losses(o, yb[b], mb[b], yl[b], ml[b], ysh[b], msh[b])
             loss = sum(w[k] * v for k, v in hl.items())
+            for h in pb:
+                if l2[h]:
+                    loss = loss + l2[h] * ((o[h] - pb[h]) ** 2).mean()
             opt.zero_grad()
             loss.backward()
             opt.step()
@@ -122,7 +172,7 @@ def fit(X, ys, recs, idx, vocab, cfg, seed, dev, heldout=None):
             vl = {k: v.item() for k, v in head_losses(net, *vv).items()}
             crit = {k: -v for k, v in vl.items()}
             if tc["selection"] == "metric":
-                p = {h: torch.sigmoid(v).cpu() for h, v in net(vv[0]).items()}
+                p = {h: torch.sigmoid(v).cpu() for h, v in net(vv[0], vv[-1]).items()}
                 pos = {i: k for k, i in enumerate(va)}
                 m = score_all(recs, va, vocab, lambda i: dict(zip(vocab.base_ids, p["board"][pos[i]].tolist())),
                               lambda i: float(p["level"][pos[i]]), lambda i: p["buy"][pos[i]].tolist())
@@ -143,13 +193,13 @@ def fit(X, ys, recs, idx, vocab, cfg, seed, dev, heldout=None):
 
 
 @torch.no_grad()
-def predict(states, net, X, idx, dev):
+def predict(states, net, X, pr, idx, dev):
     """each head from its own snapshot"""
     out = {}
     for h in HEADS:
         net.load_state_dict(states[h])
         net.eval()
-        out[h] = torch.sigmoid(net(X[idx].to(dev))[h]).cpu()
+        out[h] = torch.sigmoid(net(X[idx].to(dev), {k: v[idx].to(dev) for k, v in pr.items()})[h]).cpu()
     return out
 
 
@@ -194,16 +244,16 @@ def mean_curve(curves):
     return out
 
 
-def latency(net, X, dev, n=200):
-    x1 = X[:1].to(dev)
+def latency(net, X, pr, dev, n=200):
+    x1, p1 = X[:1].to(dev), {h: v[:1].to(dev) for h, v in pr.items()}
     with torch.no_grad():
         for _ in range(10):
-            net(x1)
+            net(x1, p1)
         if dev == "cuda":
             torch.cuda.synchronize()
         t = time.time()
         for _ in range(n):
-            net(x1)
+            net(x1, p1)
         if dev == "cuda":
             torch.cuda.synchronize()
     return round((time.time() - t) / n * 1000, 3)
@@ -262,10 +312,11 @@ def main():
                 m = score_all(recs, te, vocab, lambda i: brd(recs[i]), lambda i: lt(recs[i]), lambda i: bt(recs[i]))
                 runs[arm].append(m)
                 detail.append({"fold": f, "arm": arm, **m})
+            pr, _ = prior_tables(recs, tr, vocab, cfg)
             for s in ([a.only_seed] if a.only_seed is not None else range(cfg["seeds"])):
-                states, info, curve = fit(X, ys, recs, tr, vocab, cfg, 1000 + s, dev, heldout=te)
+                states, info, curve = fit(X, ys, pr, recs, tr, vocab, cfg, 1000 + s, dev, heldout=te)
                 curves.append(curve)
-                p = predict(states, net, X, te, dev)
+                p = predict(states, net, X, pr, te, dev)
                 pos = {i: k for k, i in enumerate(te)}
                 m = score_all(recs, te, vocab,
                               lambda i: dict(zip(vocab.base_ids, p["board"][pos[i]].tolist())),
@@ -293,14 +344,15 @@ def main():
         report["cv"] = {"summary": summarize(runs), "loss_curve": mean_curve([c for p in parts for c in p["curves"]]),
                         "detail": [d for p in parts for d in p["detail"]]}
     if "final" in a.stage:
-        states, info, curve = fit(X, ys, recs, list(range(len(recs))), vocab, cfg, 0, dev)
+        pr, prior_state = prior_tables(recs, list(range(len(recs))), vocab, cfg)
+        states, info, curve = fit(X, ys, pr, recs, list(range(len(recs))), vocab, cfg, 0, dev)
         report["final_loss_curve"] = curve
         nparams = sum(p.numel() for p in net.parameters())
         net.load_state_dict(states["board"])  # any head's weights: only used for the latency probe below
-        torch.save({"heads": states, "itos": vocab.itos, "base_ids": vocab.base_ids, "config": cfg,
+        torch.save({"heads": states, "itos": vocab.itos, "base_ids": vocab.base_ids, "config": cfg, "prior_tables": prior_state,
                     "data_sha256": report["data"]["sha256"], "n_games": len(games)}, os.path.join(a.out, "final.pt"))
-        report["final"] = {"params": nparams, **info, "latency_ms_batch1": latency(net, X, dev),
-                           "latency_ms_batch1_cpu": latency(net.cpu(), X, "cpu", 50)}
+        report["final"] = {"params": nparams, **info, "latency_ms_batch1": latency(net, X, pr, dev),
+                           "latency_ms_batch1_cpu": latency(net.cpu(), X, pr, "cpu", 50)}
     report["wall_s"] = round(time.time() - t0, 1)
     if dev == "cuda":
         report["max_vram_MB"] = round(torch.cuda.max_memory_allocated() / 2 ** 20, 1)

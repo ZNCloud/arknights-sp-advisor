@@ -2,6 +2,7 @@
 
 Uses a three-chess fake table, so no engine checkout is needed.
 """
+import json
 import os
 import sys
 import unittest
@@ -91,6 +92,38 @@ class Metrics(unittest.TestCase):
         self.assertIsNone(evaluate.auc([], [1]))
 
 
+class Tables(unittest.TestCase):
+    def recs(self):
+        lab = lambda nxt, up: {"board_next": [{"id": b} for b in nxt], "level_up": up, "buys": None}
+        return [rec(round=5, labels=lab(["chess_char_2_02_a", "chess_char_3_03_a"], 1)),
+                rec(round=5, labels=lab(["chess_char_2_02_a"], 0)),
+                rec(round=5, band=None, labels=lab(["chess_char_1_01_a", "chess_char_2_02_a", "chess_char_3_03_a"], 1))]
+
+    def test_board_logits_keep_the_baseline_candidate_order(self):
+        t = evaluate.BoardTable(self.recs(), V)
+        r = rec()
+        lg = dict(zip(V.base_ids, t.logits(r)))
+        base = t(r)
+        prev = {"chess_char_1_01_a", "chess_char_2_02_a"}
+        cand = [b for b in V.base_ids if b not in prev]
+        self.assertEqual(sorted(cand, key=lambda b: -lg[b]), sorted(cand, key=lambda b: -base[b]))
+        # on the board in all three records: chess_char_1_01_a kept 1/3, chess_char_2_02_a kept 3/3
+        self.assertLess(lg["chess_char_1_01_a"], lg["chess_char_2_02_a"])
+        unlabelled = {k: v for k, v in r.items() if k != "labels"}  # what predict.py gets
+        self.assertEqual(t.logits(unlabelled), t.logits(r))
+        self.assertEqual(t(unlabelled), base)
+
+    def test_state_round_trip(self):
+        b = evaluate.BoardTable(self.recs(), V)
+        l = evaluate.LevelTable(self.recs())
+        b2 = evaluate.BoardTable.from_state(json.loads(json.dumps(b.state())), V)
+        l2 = evaluate.LevelTable.from_state(json.loads(json.dumps(l.state())))
+        for r in self.recs() + [rec(round=9, band=None)]:  # rec() carries labels=None, like an inference record
+            self.assertEqual(b.logits(r), b2.logits(r))
+            self.assertEqual(b(r), b2(r))
+            self.assertEqual(l(r), l2(r))
+
+
 try:
     import torch
 
@@ -103,6 +136,14 @@ try:
             self.assertEqual(tuple(o["board"].shape), (2, len(V.base_ids)))
             self.assertEqual(tuple(o["level"].shape), (2,))
             self.assertEqual(tuple(o["buy"].shape), (2, tokens.N_SHOP))
+
+        def test_prior_heads_start_at_the_table(self):
+            net = M.build(len(V.itos), len(V.base_ids), {"d": 16, "layers": 1, "heads": 2, "prior": ["board", "level"], "level_direct": 4})
+            net.eval()
+            pr = {"board": torch.randn(2, len(V.base_ids)), "level": torch.randn(2)}
+            o = net(torch.tensor([V.ids(rec()), V.ids(rec(round=9))]), pr)
+            self.assertTrue(torch.equal(o["board"], pr["board"]))
+            self.assertTrue(torch.equal(o["level"], pr["level"]))
 except ImportError:
     pass
 

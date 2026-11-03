@@ -17,6 +17,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import evaluate  # noqa: E402
 import model as M  # noqa: E402
 import tokens  # noqa: E402
 import torch  # noqa: E402
@@ -31,15 +32,21 @@ class Policy:
             raise SystemExit("checkpoint base_ids do not match its itos")
         self.net = M.build(len(ck["itos"]), len(ck["base_ids"]), ck["config"]["model"]).to(device).eval()
         self.heads, self.device = ck["heads"], device
+        st = ck.get("prior_tables") or {}  # heads in config model.prior read the tables fitted on the training games
+        if sorted(st) != sorted(ck["config"]["model"].get("prior", [])):
+            raise SystemExit("checkpoint prior tables do not match its config model.prior")
+        load = {"board": lambda x: evaluate.BoardTable.from_state(x, self.vocab), "level": evaluate.LevelTable.from_state}
+        self.tables = {h: load[h](x) for h, x in st.items()}
         self.names = {c["baseId"]: c.get("name") for c in chess.values()}
 
     @torch.no_grad()
     def __call__(self, rec, k=5):
         x = torch.tensor([self.vocab.ids(rec)], device=self.device)
+        pr = {h: torch.tensor([t.logits(rec)], device=self.device) for h, t in self.tables.items()}
         p = {}
         for h, state in self.heads.items():
             self.net.load_state_dict(state)
-            p[h] = torch.sigmoid(self.net(x)[h][0]).cpu().tolist()
+            p[h] = torch.sigmoid(self.net(x, pr)[h][0]).cpu().tolist()
         board = dict(zip(self.vocab.base_ids, p["board"]))
         units = tokens.board_slots(rec.get("board_prev"))
         on = {self.vocab.base(u["id"]) for u in units if not u.get("token")}
