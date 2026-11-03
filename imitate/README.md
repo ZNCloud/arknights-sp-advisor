@@ -35,7 +35,7 @@ python3 imitate/report.py --run default=../data/imitate/run/eval.json --final ..
 # 想限制并发：每个（折, 种子）单独跑，再合并
 python3 imitate/train.py ... --only-fold 0 --only-seed 0      # 写 <out>/cv_fold0_s0.json
 python3 imitate/train.py ... --stage merge                    # 缺任何一个（折, 种子）直接报错
-# 学习曲线：每折只用前 k 局训练
+# 学习曲线：每折只用 k 局训练（按对局 id 的哈希挑，两种来源混着挑），结果见 docs/imitate/learning-curve-*.md
 python3 imitate/train.py ... --stage cv --train-games 8
 ```
 

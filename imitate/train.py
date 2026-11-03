@@ -3,7 +3,7 @@
 
   cv     game-grouped K-fold (folds from the record's `fold`, fixed by game id) x model seeds; the lookup tables
          (imitate/evaluate.py) are fitted on the same training folds. Optional --train-games k = learning curve
-         (each fold keeps only its first k training games, in game-id order).
+         (each fold keeps only its first k training games in sha1(game id + "/lc") order).
   final  one net on every game (seed 0) -> <out>/final.pt (weights + itos + config) and its latency.
 Writes <out>/eval.json (every fold x seed and the means) and prints the summary table.
 --only-fold f [--only-seed s] runs the cv of one fold (one seed) and writes <out>/cv_fold<f>[_s<s>].json instead;
@@ -248,7 +248,10 @@ def main():
         for f in ([a.only_fold] if a.only_fold is not None else folds):
             tr = [i for i, r in enumerate(recs) if r["fold"] != f]
             if a.train_games:
-                keep = set([g for g in games if any(recs[i]["game"] == g for i in tr)][: a.train_games])
+                # first k training games in a fixed hash order (sources mixed: sorting by id would put every
+                # .spdemo game before every overlay game)
+                pool = sorted({recs[i]["game"] for i in tr}, key=lambda g: hashlib.sha1((g + "/lc").encode()).hexdigest())
+                keep = set(pool[: a.train_games])
                 tr = [i for i in tr if recs[i]["game"] in keep]
             te = [i for i, r in enumerate(recs) if r["fold"] == f]
             trr = [recs[i] for i in tr]
